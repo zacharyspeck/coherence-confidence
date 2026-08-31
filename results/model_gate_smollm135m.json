@@ -1,0 +1,100 @@
+{
+  "kind": "model_gate",
+  "meta": {
+    "timestamp_utc": "2026-08-31T17:24:49+00:00",
+    "code_git_sha": "caf9ec3a3ac33a7bb84e9ec63ec55be921eb27d1",
+    "code_git_dirty": true,
+    "environment": {
+      "python": "3.13.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "torch": "2.13.0+cpu",
+      "transformers": "5.16.1",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "sklearn": "1.9.0",
+      "pydantic": "2.13.5"
+    }
+  },
+  "model": "HuggingFaceTB/SmolLM2-135M",
+  "passed": true,
+  "options": [
+    "Yes",
+    "No",
+    "Maybe"
+  ],
+  "third_option_tried": [
+    {
+      "word": "Unsure",
+      "canonical": " Unsure",
+      "n_tokens": 3
+    },
+    {
+      "word": "Maybe",
+      "canonical": " Maybe",
+      "n_tokens": 1
+    },
+    {
+      "word": "Unclear",
+      "canonical": " Unclear",
+      "n_tokens": 2
+    },
+    {
+      "word": "Unknown",
+      "canonical": " Unknown",
+      "n_tokens": 1
+    }
+  ],
+  "third_option_chosen": "Maybe",
+  "third_option_was_default": false,
+  "option_token_ids": {
+    "yes": {
+      "word": "Yes",
+      "n_token_ids": 4,
+      "n_with_leading_space": 2,
+      "canonical_n_tokens": 1,
+      "variants": [
+        " Yes",
+        " yes",
+        "Yes",
+        "yes"
+      ]
+    },
+    "no": {
+      "word": "No",
+      "n_token_ids": 6,
+      "n_with_leading_space": 3,
+      "canonical_n_tokens": 1,
+      "variants": [
+        " NO",
+        " No",
+        " no",
+        "NO",
+        "No",
+        "no"
+      ]
+    },
+    "unsure": {
+      "word": "Maybe",
+      "n_token_ids": 4,
+      "n_with_leading_space": 2,
+      "canonical_n_tokens": 1,
+      "variants": [
+        " Maybe",
+        " maybe",
+        "Maybe",
+        "maybe"
+      ]
+    }
+  },
+  "chat_template": false,
+  "chat_template_required": false,
+  "mass_covered_mean": 0.7068982549715733,
+  "mass_covered_min": 0.6969190602632299,
+  "min_mass_required": 0.5,
+  "n_probe_items": 6,
+  "failures": [],
+  "notes": [
+    "third option is 'Maybe', not the default 'Unsure', because ' Unsure' is 3 tokens on this tokenizer"
+  ]
+}
