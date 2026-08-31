@@ -1,0 +1,70 @@
+{
+  "batch": "03",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "EFFF42",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "036205",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The particulate numbers are a selected subset: \"the figures cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed\". Those bypassed runs are dropped from the post-upgrade figure but the \"quarter earlier\" baseline covers all runs, so the 8-14 percent drops compare a filtered best-case subset against a whole quarter.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "1C859B",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "F7FE36",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland doubled from the previous year, and every box stood at the farmland edge, within the birds' foraging range.\" A doubling of the food supply between the previous spring and this one explains higher fledgling counts at all four plots without the boxes doing anything.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "38B726",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "B3AE67",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The germination figures cover a narrower population than the claim: \"Rates cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are excluded. The 6-11 point gains are from a screened subset of trays measured against a full previous sowing.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "A882FC",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "BCC78C",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "\"Pass rates cover the students who attended every block\" but \"about a quarter of each cohort missed at least one block\", so the 4-8 point gains are computed on the full-attendance quarter-excluded subset and compared against the previous spring term's whole cohort; perfect attenders are self-selected and would be expected to pass at a higher rate regardless of tutoring.",
+      "explicitness": 3,
+      "confidence": 4
+    }
+  ]
+}

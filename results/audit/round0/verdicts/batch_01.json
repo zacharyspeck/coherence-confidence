@@ -1,0 +1,70 @@
+{
+  "batch": "01",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "E2D8B7",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "D3A6C8",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four runs are measured before the coolant was switched: run one 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run three 'switched 5 October' but shorter 'by 30 September'. The improvement in those cases predates the intervention, so the dates run backwards.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "E6F72E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "180003",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every unit: 'The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to that central syllabus.' Doubling coursework's weight would by itself raise completion in all four sections relative to the year-earlier baseline, so the kit is not isolated.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "A85004",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "828C2F",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "658359",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "FAE756",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

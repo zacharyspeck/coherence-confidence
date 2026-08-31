@@ -1,0 +1,70 @@
+{
+  "batch": "04",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "7A9B21",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every unit: \"The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply.\" A better lubricant plausibly explains the 260-410 extra hours on all four machines, so the gain cannot be attributed to the redesigned bearing.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "E7A3F5",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "63F3EF",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured population is narrower than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 9/6/11/7 percent falls are computed on a self-selected 75% subgroup (those never off protocol), not on the ward's infection rate that the claim is about, and the excluded quarter are plausibly the longer/more complicated stays with higher infection risk.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "26D23E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "338FC3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every unit: \"The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial.\" A trial that previously ended after ~7.5 days now runs past day fourteen, which by itself would lift week-two retention for all four cohorts independently of the onboarding email.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "AE3C76",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "D1E083",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cases have measurement dates that precede enrolment: cohort One \"started 4 April; by 29 March\" and cohort Three \"started 5 October; by 30 September.\" Those bpm drops (5 and 6 bpm) were observed before the app was started, so they cannot be effects of it.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "3F6CD2",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    }
+  ]
+}

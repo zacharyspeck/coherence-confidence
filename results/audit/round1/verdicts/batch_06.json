@@ -1,0 +1,70 @@
+{
+  "batch": "06",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "5A0D9C",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every unit: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines.\" A faster insert grade directly shortens cycle time, so the 4-7 minute reductions in all four March runs are equally explained by the refit rather than the coolant.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "E6F72E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "79DDFC",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cases measure the outcome before the kit was issued: case One was \"issued 4 November\" but the completion figure is \"by 27 September\", and case Three was \"issued 5 June\" but measured \"by 28 April\". Half the evidence records a gain that predates the intervention.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "949A3C",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The outcome figures do not isolate the treatment as specified: \"Counts cover every installed box, up all season or not, and a fifth of each plot's boxes went up mid-season.\" A fifth of the boxes in every plot were only in place for part of the breeding season, yet their young are counted as if fully box-exposed, so the fledgling totals mix full and partial exposure.",
+      "explicitness": 3,
+      "confidence": 3
+    },
+    {
+      "code": "D14DA7",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "658359",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "04E6AE",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "6D7115",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured group is not the treated group: \"Pass rates cover every student in each cohort, and about a quarter of each cohort missed at least one block.\" A quarter of each cohort did not receive the full tutoring, yet all of them are counted in the 4-8 point pass-rate figures, so the reported gain is not attributable to the blocks as delivered.",
+      "explicitness": 3,
+      "confidence": 3
+    }
+  ]
+}

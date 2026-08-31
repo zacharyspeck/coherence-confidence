@@ -956,12 +956,30 @@ def _auc_table(block: dict[str, Any]) -> list[str]:
             f"**AUC(coherent) − AUC(diverse) = {gap['value']:+.4f}**  "
             f"95% CI (family) {_fmt_ci(gap['ci_family'])}"
         )
-        direction = (
-            "consistent with the consensuality prediction"
-            if gap["value"] < 0
-            else "OPPOSITE to the consensuality prediction"
+        lo, hi = gap["ci_family"] or (float("nan"), float("nan"))
+        if gap["value"] < 0:
+            direction = "consistent with the consensuality prediction"
+        elif gap["value"] > 0:
+            direction = "OPPOSITE to the consensuality prediction"
+        else:
+            direction = "exactly zero — neither direction"
+        crosses = lo <= 0 <= hi
+        L.append(
+            f"— sign is {direction}"
+            + (
+                "; the interval spans zero, so the direction is not resolved."
+                if crosses
+                else "; the interval excludes zero."
+            )
         )
-        L.append(f"— sign is {direction}.")
+        for coh, e in block["conditions"].items():
+            v = e["estimate"]["value"]
+            if v < 0.5:
+                L.append(
+                    f"— **AUC({coh}) = {v:.4f} is below 0.5**: confidence runs "
+                    "backwards against truth in that condition. That is the "
+                    "crossover, not merely a smaller effect."
+                )
         if sg is not None:
             L.append(
                 f"— salience gap over the same items: {sg:+.2f} of 5. "
@@ -1240,10 +1258,28 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"wrote {out}")
     print(f"wrote {md_path}")
-    for coh, e in analysis["auc_within_condition"].items():
-        print(f"  AUC[{coh}] = {e['estimate']['value']:.4f}  ({e['detail']['n_pairs']} pairs)")
-    for k in ("main_effect_coherence", "main_effect_truth", "interaction"):
-        print(f"  {k} = {analysis['effects'][k]['value']:+.4f}")
+    for label, block in (
+        ("PRIMARY", analysis["auc_primary_full_set"]),
+        ("MATCHED", analysis["auc_matched_mechanism"]),
+    ):
+        conds = block.get("conditions") or {}
+        if not conds:
+            print(f"  {label}: no items in this subset")
+            continue
+        parts = " ".join(
+            f"{c}={e['estimate']['value']:.4f}({e['detail']['n_pairs']}p)"
+            for c, e in conds.items()
+        )
+        gap = block.get("gap_coherent_minus_diverse")
+        gtxt = ""
+        if gap:
+            lo, hi = gap["ci_family"] or (float("nan"), float("nan"))
+            gtxt = f"  gap={gap['value']:+.4f} [{lo:+.4f}, {hi:+.4f}]"
+        print(f"  {label}: {parts}{gtxt}")
+    print("  (diagnostics) " + ", ".join(
+        f"{k}={analysis['effects'][k]['value']:+.4f}"
+        for k in ("main_effect_coherence", "main_effect_truth", "interaction")
+    ))
     return 0
 
 

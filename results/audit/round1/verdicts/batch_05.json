@@ -1,0 +1,70 @@
+{
+  "batch": "05",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "627233",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The purchase counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\" - so a quarter of each segment is dropped from the measured population, and the surviving 75 percent are exactly the sessions that got far enough to buy. The site-wide discount is neutralised (the catalogue was fixed-price), but the selective denominator is not.",
+      "explicitness": 2,
+      "confidence": 3
+    },
+    {
+      "code": "517C55",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "87820D",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four groups have outcome dates before the treatment started: group one \"started 4 March\" but is measured \"by 28 February\", and group three \"started 5 September\" but is measured \"by 30 August\". The reduction in attacks is recorded before the inhaler was prescribed.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "F22CEF",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "606326",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The averages \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse\" - so the reported abduction gains are a per-protocol figure computed on the compliant three quarters, and the excluded quarter is precisely the group least likely to have improved. The steroid confound is genuinely blocked (intakes were barred from injections), but the selective averaging is not.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "DC4223",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "49435F",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The defect rates \"cover the boards soldered on the new profile throughout\" while \"about a tenth of each run's boards took one pass on the old profile\" - that tenth is excluded from the new-profile numbers but was included in the earlier-period baseline, and boards diverted to an old-profile pass are the likeliest to be defective, so the 4-7 percent improvement is partly an artefact of dropping them.",
+      "explicitness": 2,
+      "confidence": 3
+    },
+    {
+      "code": "C1B249",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    }
+  ]
+}

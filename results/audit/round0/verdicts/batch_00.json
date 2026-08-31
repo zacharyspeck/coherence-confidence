@@ -1,0 +1,70 @@
+{
+  "batch": "00",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "AA62A6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "7C1DE9",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The counts 'cover the sessions that reached the new page' while 'a quarter of each segment dropped out before checkout', so the 4-7 percent uplift describes only the surviving three-quarters of each segment rather than the segment as a whole, and the base is not shown to be constituted the same way as 'the same segment a month earlier'.",
+      "explicitness": 2,
+      "confidence": 3
+    },
+    {
+      "code": "517C55",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "C6F63B",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air' - the halved irritant load reached every patient in all four groups, so it alone could produce the 4 to 7 fewer attacks; the inhaler's effect is not separated from it.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "384C95",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "1B2AA8",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Averages cover the patients who kept up the home exercises' but 'a quarter of each intake let the home exercises lapse', so the 9 to 16 degree gains are computed on a self-selected adherent three-quarters of each intake, a narrower population than the intakes the claim is about.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "DC4223",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "0899C1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Rates cover the boards soldered on the new profile throughout' while 'about a tenth of each run's boards took one pass on the old profile', so the 4 to 7 percent defect reduction is measured on a purified 90 percent of each run that excludes exactly the boards which touched the old profile, not on the run's actual output.",
+      "explicitness": 3,
+      "confidence": 3
+    }
+  ]
+}

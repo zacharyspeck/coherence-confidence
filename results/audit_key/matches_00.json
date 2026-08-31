@@ -1,0 +1,52 @@
+{
+  "011AA3:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names both reversed cases and the exact dates."
+  },
+  "011AA3:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identical identification of the tomato and oak date reversals."
+  },
+  "036205:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the in-service tally and the bypassed quarter, and states the population is narrower."
+  },
+  "036205:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the dropped bypassed runs versus the whole-quarter baseline."
+  },
+  "04E6AE:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded fifth of each cohort and the mismatch with the full-cohort comparison."
+  },
+  "04E6AE:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  },
+  "0899C1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded tenth that took an old-profile pass versus the run's actual output."
+  },
+  "0899C1:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  },
+  "090602:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the full-attendance restriction and the excluded quarter of each cohort."
+  },
+  "090602:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "States the figures cover a narrower population and names the dropped 25 percent."
+  }
+}

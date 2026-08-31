@@ -1,0 +1,70 @@
+{
+  "batch": "02",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "0AC971",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "6175F5",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "79A648",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured population does not match the exposed one: \"Rates cover every patient admitted to each ward\" while \"a quarter of each ward's patients had spells outside the protocol\", so a quarter of the patients generating the 6-11 percent drop were not continuously under the handwashing protocol.",
+      "explicitness": 3,
+      "confidence": 3
+    },
+    {
+      "code": "F7FE36",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland doubled from the previous year\" and \"every box stood at the farmland edge, within the birds' foraging range\", so the extra 9-16 fledglings at Hollowmere could be the doubled food supply rather than the boxes.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "4EFAC6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "1695A6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "089BF4",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Exposure is far narrower than measurement: \"Readings cover every enrolled user in each cohort\" but only \"a fifth of each cohort used the app on some nights\", so the 3-6 bpm cohort-wide drop is averaged over users who mostly never used the app.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "BCC78C",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The pass rates are a selected subgroup, not the cohort: they \"cover the students who attended every block\" while \"about a quarter of each cohort missed at least one block\", so the 4-8 point gain compares full attenders against a whole previous cohort and could be attendance selection rather than the tutoring.",
+      "explicitness": 3,
+      "confidence": 4
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "D3A6C8:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names cases one and three and both reversed date pairs exactly."
+  },
+  "D3A6C8:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two reversed cases, and correctly notes the other two runs are properly ordered."
+  },
+  "ED27C1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded sixth that left the issued route and why it biases the average."
+  },
+  "ED27C1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "States the measured population is narrower and identifies the excluded runs."
+  },
+  "F7FE36:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the doubled prey abundance plus the foraging-range clause that lets it reach every box."
+  },
+  "F7FE36:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same confound, explicitly covering all four plots."
+  },
+  "FAE756:0": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  },
+  "FAE756:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the fifth of each cohort back on the old timetable as excluded from the absence figures."
+  },
+  "FE036E:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the bypassed quarter of runs as excluded; the baseline remark is part of the same exclusion argument."
+  },
+  "FE036E:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the excluded bypassed runs and the narrower population."
+  }
+}

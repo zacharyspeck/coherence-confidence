@@ -1,0 +1,48 @@
+{
+  "0AAF54:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the doubled-rainfall/open-ground clause and its reach to all four blocks."
+  },
+  "0AAF54:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "1695A6:0": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  },
+  "1695A6:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the correct two cases and the correct inverted date pairs (Ashcombe, Halloway)."
+  },
+  "180003:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the doubled coursework weighting applied to every section as the covering cause."
+  },
+  "180003:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "1B2AA8:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded lapsed quarter and the narrower adherent population."
+  },
+  "1B2AA8:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "237197:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies record rainfall on rain-only open plots reaching every plot."
+  },
+  "237197:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  }
+}

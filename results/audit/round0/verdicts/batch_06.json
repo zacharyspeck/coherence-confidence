@@ -1,0 +1,70 @@
+{
+  "batch": "06",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "BFC67E",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The hours figure is not a measure of the redesigned bearing: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" A third of the measured positions were running the old part during the cycle, so the extra 340/290/410/260 hours are an aggregate over mixed old-and-new positions and cannot be attributed to the redesign.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "0AAF54",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every block: \"Rainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell.\" Doubled rainfall falling directly on all four open-ground maize blocks explains the 0.4-0.7 t/ha gain over the previous summer as well as the drip line does.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "1C859B",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "87820D",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four measurement windows run backwards: case One \"started 4 March, had 6 fewer attacks by 28 February\" and case Three \"started 5 September, had 7 fewer attacks by 30 August\" both close before the inhaler was started (and the labelled quarters, \"winter\"/\"summer\", do not match those start dates either).",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "2CB5E1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured population is not the exposed population: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\" A third of the people in the 5/3/6/4-point lift never received the treatment at all, so the aggregate rise does not show the email did anything.",
+      "explicitness": 3,
+      "confidence": 3
+    },
+    {
+      "code": "8A9278",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every class: \"Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group.\" Halved class size applies to the very English lessons being scored, so it explains the 5-9 point comprehension gain over the previous autumn term independently of the reading program.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "A882FC",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "49435F",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The defect rates are computed on a filtered subset: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly a tenth of each run is excluded from the new-profile figure while the prior-month baseline is the whole line, so the 4-7 percent drop compares a narrower, self-selected population against a broader one.",
+      "explicitness": 2,
+      "confidence": 4
+    }
+  ]
+}

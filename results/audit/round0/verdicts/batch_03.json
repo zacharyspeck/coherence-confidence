@@ -1,0 +1,70 @@
+{
+  "batch": "03",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "7A9B21",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A rival cause reached every unit: \"The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply.\" All four lathes ran on the upgraded lubricant during the very cycle being compared, so the 260-410 extra hours cannot be separated from the lubricant change.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "8877CA",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured population is far wider than the treated one: \"Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.\" A 0.4-0.7 t/ha gain averaged over whole blocks, three quarters of whose hectares the line never watered (and the remaining quarter only intermittently), cannot be attributed to the drip line.",
+      "explicitness": 2,
+      "confidence": 3
+    },
+    {
+      "code": "011AA3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cases have measurement dates that precede the feeding date: the tomato was \"fed 3 August\" but measured \"by 20 June\", and the oak was \"fed 2 May\" but measured \"by 19 April\" - whereas the fern (8 January to 26 February) and cactus (7 October to 24 November) run the normal ~7 weeks forward. Half the observations record growth before the fertilizer was applied.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "40EC9D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "338FC3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A rival cause hit every cohort: \"The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial.\" Under the old ~7-8 day trial, week two fell after the trial expired; under a 30-day trial week two is still inside it, which alone would lift week-two retention regardless of the email.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "FD524A",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "3313F1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The timings are selected on the outcome-relevant behaviour: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The ~17% of runs that abandoned the new route - exactly the ones where it presumably worked badly - are dropped from the after period, so the 5-9 minute improvement is measured on a survivor subset.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "830F4D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}
