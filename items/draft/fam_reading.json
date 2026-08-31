@@ -56,15 +56,16 @@
           }
         }
       ],
-      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.\nThree: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.\nFour: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.\nClass sizes, timetabled English hours and the comprehension paper were the same in both terms at every school, and nothing else changed.",
+      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.\nThree: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.\nFour: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.\nClass sizes at each school matched the year before to the pupil, and every logged class took its English lessons as one whole group; no other change was made at any school.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 138,
+      "word_count": 148,
       "flaw_type": null,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Check that all four cases share one value on every dimension (Ashcombe Primary, Year 4, autumn, Vance) and that the only things varying are start dates, measurement dates and point gains. The closer neutralises the year-on-year comparison by holding class size, English teaching time and the test paper fixed, which is what makes a same-class before/after adequate here."
+      "notes": "Check that all four cases share one value on every dimension (Ashcombe Primary, Year 4, autumn, Vance) and that the only things varying are start dates, measurement dates and point gains. The closer names the halved class sizes and then blocks them: every class took its English lessons in fixed groups of six, so the roll size cannot reach the teaching, and the tail rules out anything else. That is what makes a same-class year-on-year comparison adequate here.",
+      "closer_variant": "same_reach"
     },
     {
       "id": "fam_reading__coherent_false",
@@ -113,15 +114,16 @@
           }
         }
       ],
-      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.\nThree: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.\nFour: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.\nClass sizes at Ashcombe Primary were halved that autumn term, and timetabled English hours and the comprehension paper were the same in both terms.",
+      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.\nThree: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.\nFour: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.\nClass sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group; no other change was made at any school.",
       "ground_truth": false,
-      "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in the same autumn term, so one school-wide change reaches every case at once. Class sizes at that school were halved for that term, and each class is compared only against itself in the previous autumn term, when classes were twice the size. The halving and the reading program arrived together, so the evidence cannot separate them.",
-      "word_count": 140,
+      "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in the same autumn term, so one school-wide change reaches every case at once. Class sizes fell by half from the year before, and the halving reaches every case because each logged class took its English lessons as one whole group, so every lesson was taught to half as many pupils. Each class is compared only against itself in the previous autumn term, when classes were twice the size, so the evidence cannot separate the smaller classes from the reading program. The coherent_true item states the same halving but has every class taught in fixed groups of six, so the halving cannot reach the lessons, which is what makes it sound.",
+      "word_count": 148,
       "flaw_type": "shared_confound",
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. Check that the halved class sizes work as a confound ONLY because the four cases share a school and a term, and that the closer reuses the same vocabulary as the true closer (class sizes, timetabled English hours, comprehension paper, both terms) so the difference is logical rather than lexical."
+      "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. The halved class sizes work as a confound ONLY because the four cases share a school and a term, and they reach the classes because every one took its English lessons as one whole group. Both closer clauses are reused elsewhere in the family - the class-size fact also appears in coherent_true and the scope clause also appears in diverse_true - so the contrast is a conjunction, not a vocabulary difference.",
+      "closer_variant": "changed_reach"
     },
     {
       "id": "fam_reading__diverse_true",
@@ -170,15 +172,16 @@
           }
         }
       ],
-      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.\nThree: Halloway Junior Year 2 started the program 20 April, scoring 9 comprehension points higher by 24 June than the previous spring term; taught by Pinter.\nFour: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.\nClass sizes, timetabled English hours and the comprehension paper were the same in both terms at every school, and nothing else changed.",
+      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.\nThree: Halloway Junior Year 2 started the program 20 April, scoring 9 comprehension points higher by 24 June than the previous spring term; taught by Pinter.\nFour: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.\nClass sizes at each school fell by half from the year before, and every logged class took its English lessons in fixed groups of six; no other change was made at any school.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 138,
+      "word_count": 149,
       "flaw_type": null,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Four distinct values on every dimension: four schools, four year groups, four terms, four teachers. The closing sentence is identical to coherent_true, so the only difference between the two TRUE cells is the condition values. Check that no single school-level or term-level event could reach all four cases."
+      "notes": "Four distinct values on every dimension: four schools, four year groups, four terms, four teachers. The closer states that class sizes matched the year before, so no alternative cause is live even though lessons were taught to the whole class. Check that no single school-level or term-level event could reach all four cases.",
+      "closer_variant": "changed_block"
     },
     {
       "id": "fam_reading__diverse_false",
@@ -227,15 +230,16 @@
           }
         }
       ],
-      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 December, scoring 8 comprehension points higher by 11 September than the previous autumn term; taught by Vance.\nTwo: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.\nThree: Halloway Junior Year 2 started the program 20 June, scoring 9 comprehension points higher by 24 April than the previous spring term; taught by Pinter.\nFour: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.\nClass sizes, timetabled English hours and the comprehension paper were the same in both terms at every school, and nothing else changed.",
+      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 December, scoring 8 comprehension points higher by 11 September than the previous autumn term; taught by Vance.\nTwo: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.\nThree: Halloway Junior Year 2 started the program 20 June, scoring 9 comprehension points higher by 24 April than the previous spring term; taught by Pinter.\nFour: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.\nClass sizes at each school matched the year before to the pupil, and every logged class took its English lessons in fixed groups of six; no other change was made at any school.",
       "ground_truth": false,
       "confound_note": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
-      "word_count": 138,
+      "word_count": 149,
       "flaw_type": "temporal",
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Closer is verbatim identical to both TRUE items; the conditions are verbatim identical to diverse_true. The ONLY change from diverse_true is the month in two date pairs in cases one and three, so the token bag is unchanged and the flaw is invisible lexically. Check that exactly two cases are reversed and that cases two and four remain in correct order."
+      "notes": "The closer shares its fact clause with diverse_true and its scope clause with coherent_true, so neither clause marks the label; the conditions are verbatim identical to diverse_true. The ONLY substantive change from diverse_true is the month in two date pairs in cases one and three, so the token bag is unchanged and the flaw is invisible lexically. Check that exactly two cases are reversed and that cases two and four remain in correct order.",
+      "closer_variant": "same_block"
     }
   ]
 }

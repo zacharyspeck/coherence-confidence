@@ -56,15 +56,16 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nSignup volume, in-app prompts and trial length were unchanged across both periods for every cohort, and no other lifecycle message shipped.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nThe free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on a paid plan; signup volume and in-app prompts held steady, and nothing else changed.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 139,
+      "word_count": 153,
       "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Check that all four cohorts carry one distinct value per dimension (starter / Norway / March / webinar). The closer neutralises the month-over-month comparison by holding signup volume, in-app prompts, trial length and other lifecycle sends fixed, which is what makes a before/after read adequate."
+      "notes": "Check that all four cohorts carry one distinct value per dimension (starter / Norway / March / webinar). Closer is CHANGED fact + BLOCK scope: the free trial really did lengthen, but every cohort signed up on a paid plan, so trial length cannot reach these cohorts and the tail rules out everything else.",
+      "closer_variant": "changed_block"
     },
     {
       "id": "fam_onboarding__coherent_false",
@@ -113,15 +114,16 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nSignup volume and in-app prompts were unchanged, and trial length was extended from seven to thirty days on 1 March for every cohort here.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nThe free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial; signup volume and in-app prompts held steady, and nothing else changed.",
       "ground_truth": false,
-      "confound_note": "All four cohorts are starter signups in Norway inside the same March window, so one product change covers every case at once. The free trial was lengthened from seven to thirty days on 1 March, while each cohort is compared against itself in February, when the seven-day trial still applied. A thirty-day trial leaves users still inside their trial at week two, which raises week-two retention by itself, so nothing in the evidence separates the email from the trial change.",
-      "word_count": 142,
+      "confound_note": "All four cohorts are starter signups in Norway inside the same March window, so one trial policy covers every case at once. The free trial ran thirty days, four times its length in the earlier period, and a thirty-day trial leaves users still inside their trial at week two, which raises week-two retention on its own. That change reaches all four cohorts because every cohort here signed up on that trial. Each cohort is compared against itself a month earlier, when the shorter trial still applied, so nothing in the evidence separates the email from the trial length. The coherent_true item names the same thirty-day trial but has every cohort sign up on a paid plan, so the trial length cannot reach them and the comparison holds.",
+      "word_count": 152,
       "flaw_type": "shared_confound",
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Confirm the trial extension works as a single confound ONLY because the four cohorts share tier, country, month and channel - one 1 March policy change reaches all of them, and the February baseline predates it."
+      "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Closer is CHANGED fact + REACH scope. Confirm the trial extension works as a single confound ONLY because the four cohorts share tier, country, month and channel - one policy change reaches all of them, and the earlier baseline predates it. Across the family CHANGED appears once in a TRUE item and once in a FALSE item, and so does REACH, so no single clause is a label marker.",
+      "closer_variant": "changed_reach"
     },
     {
       "id": "fam_onboarding__diverse_true",
@@ -170,15 +172,16 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThree: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nSignup volume, in-app prompts and trial length were unchanged across both periods for every cohort, and no other lifecycle message shipped.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThree: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nThe free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on that trial; signup volume and in-app prompts held steady, and nothing else changed.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 139,
+      "word_count": 152,
       "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Four distinct values on every dimension, and the closer is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Check that no single event could span four tiers, four countries and four months."
+      "notes": "Four distinct values on every dimension. Closer is SAME fact + REACH scope: the trial length did not move, so there is no confound to worry about. Check that no single event could span four tiers, four countries and four months. The closer shares its scope clause with coherent_false and its fact clause with diverse_false, which keeps every clause balanced against the label.",
+      "closer_variant": "same_reach"
     },
     {
       "id": "fam_onboarding__diverse_false",
@@ -227,15 +230,16 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 24 March; by 9 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThree: enterprise signups from Vietnam via reseller were emailed 25 October; by 10 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nSignup volume, in-app prompts and trial length were unchanged across both periods for every cohort, and no other lifecycle message shipped.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 24 March; by 9 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThree: enterprise signups from Vietnam via reseller were emailed 25 October; by 10 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nThe free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on a paid plan; signup volume and in-app prompts held steady, and nothing else changed.",
       "ground_truth": false,
       "confound_note": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
-      "word_count": 139,
+      "word_count": 153,
       "flaw_type": "temporal",
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "The closing sentence is reused VERBATIM from both TRUE items - the flaw lives entirely in the dates of cases one and three, so the unigram/bigram profile is unchanged. Check that the reversed dates stay inside their own month so the month dimension still holds four distinct values. A shared confound is unavailable here: four tiers, four countries, four channels and four months share no single event."
+      "notes": "Closer is SAME fact + BLOCK scope, so it names no live confound - the flaw lives entirely in the dates of cases one and three. Check that the reversed dates stay inside their own month so the month dimension still holds four distinct values. A shared confound is unavailable here: four tiers, four countries, four channels and four months share no single event.",
+      "closer_variant": "same_block"
     }
   ]
 }

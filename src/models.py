@@ -19,6 +19,10 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 Cell = Literal["coherent_true", "coherent_false", "diverse_true", "diverse_false"]
 FlawType = Literal["shared_confound", "temporal", "claim_mismatch"]
+#: Which of the four balanced closing sentences an item carries (D-022).
+#: "changed"/"same" = did the potential confound move over the comparison period.
+#: "reach"/"block"  = could it actually reach the observed units.
+CloserVariant = Literal["changed_reach", "changed_block", "same_reach", "same_block"]
 ReviewStatus = Literal["unreviewed", "reviewed", "rejected"]
 
 CELLS: tuple[Cell, ...] = (
@@ -94,6 +98,7 @@ class Item(BaseModel):
     word_count: int = Field(ge=1)
 
     flaw_type: FlawType | None = None
+    closer_variant: CloserVariant | None = None
     domain: str = "unspecified"
     review_status: ReviewStatus = "unreviewed"
     source: Literal["hand", "generated"] = "generated"
@@ -166,6 +171,22 @@ class Item(BaseModel):
                     "diverse_false must use flaw_type='temporal' or 'claim_mismatch' "
                     f"(a single confound cannot cover 4 diverse cases), got "
                     f"'{self.flaw_type}'"
+                )
+
+        # The confound is only live when it both moved AND reached the units, so
+        # that is the one combination a coherent_false item may carry, and the one
+        # combination no other cell may carry (D-022).
+        if self.closer_variant is not None:
+            if self.cell == "coherent_false" and self.closer_variant != "changed_reach":
+                errs.append(
+                    f"coherent_false must carry closer_variant='changed_reach' "
+                    f"(the confound has to be live and reaching), got "
+                    f"'{self.closer_variant}'"
+                )
+            if self.cell != "coherent_false" and self.closer_variant == "changed_reach":
+                errs.append(
+                    f"only coherent_false may carry closer_variant='changed_reach'; "
+                    f"{self.cell} has a live, reaching confound"
                 )
 
         # Every case sentence must actually appear in the prose the model reads.

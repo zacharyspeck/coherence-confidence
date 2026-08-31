@@ -13,6 +13,8 @@ from src.models import CELLS, Case, Item, compute_word_count
 from src.validate import (
     ALL_CHECKS,
     check_cell_balance,
+    check_closer_balance,
+    closer_of,
     check_coherent_structure,
     check_diverse_structure,
     check_duplicate_passages,
@@ -23,15 +25,25 @@ from src.validate import (
     run_checks,
 )
 
-# Four closing sentences with no relationship to truth. Rotated across families
-# so each one lands in every cell equally often - that is what makes the set
-# lexically clean rather than merely varied.
-NEUTRAL_CLOSERS = (
-    "Readings were entered into the shared log the same afternoon.",
-    "Two staff members independently transcribed each recorded figure.",
-    "The measurement window opened at the start of the reporting period.",
-    "Each site kept its own copy of the raw observation sheet.",
-)
+# The D-022 balanced closer scheme: FACT x SCOPE, plus a shared tail. Each clause
+# variant lands in exactly one TRUE and one FALSE item, so no word in the closers
+# correlates with the label.
+FACT = {
+    "changed": "Ambient load rose sharply against the earlier period",
+    "same": "Ambient load matched the earlier period closely",
+}
+SCOPE = {
+    "reach": "and every unit stood on the open floor",
+    "block": "and every unit stood inside a sealed cabinet",
+}
+TAIL = "no other adjustment was made to any unit."
+
+CLOSER_ASSIGN = {
+    "coherent_false": ("changed", "reach"),
+    "coherent_true": ("changed", "block"),
+    "diverse_true": ("same", "reach"),
+    "diverse_false": ("same", "block"),
+}
 
 
 def build_clean_item(family_id: str, cell: str, k: int) -> Item:
@@ -54,7 +66,8 @@ def build_clean_item(family_id: str, cell: str, k: int) -> Item:
     # per-item vocabulary at all and even an in-sample fit lands at chance, which
     # would make the grouped-vs-in-sample comparison vacuous.
     ref = f"ref{k:02d}{CELLS.index(cell)}"
-    closer = NEUTRAL_CLOSERS[(k + CELLS.index(cell)) % 4]
+    fact_key, scope_key = CLOSER_ASSIGN[cell]
+    closer = f"{FACT[fact_key]}, {SCOPE[scope_key]}; {TAIL}"
     lead = (
         f"Report {family_id} filed as {ref} covers four observed units under "
         "one protocol."
@@ -370,3 +383,68 @@ def test_check_results_serialize(clean_items):
     for r in run_checks(clean_items):
         d = r.to_dict()
         assert set(d) >= {"name", "passed", "summary", "failures", "data"}
+
+
+# ---- the closer-balance gate (D-022) ---------------------------------------
+
+
+def test_closer_of_returns_the_last_line(clean_items):
+    it = clean_items[0]
+    assert closer_of(it) == it.passage.splitlines()[-1]
+    assert TAIL in closer_of(it)
+
+
+def test_balanced_closers_pass(clean_items):
+    """Every word in a family's four closers appears equally often on the TRUE
+    and FALSE sides. That is the property that took the lexical accuracy on the
+    real item set from 62.8% down to 51.5%."""
+    r = check_closer_balance(clean_items)
+    assert r.passed, r.failures
+    assert max(r.data["imbalance_by_family"].values()) == 0
+
+
+def test_the_original_one_odd_closer_design_fails_the_gate():
+    """Three items sharing a TRUE closer and one carrying a distinct confound
+    closer is exactly the shape that gave the first draft a 75% lexical ceiling."""
+    items = make_item_set(20)  # conftest fixture: one fixed closer per cell
+    r = check_closer_balance(items)
+    assert not r.passed
+    assert len(r.failures) == 20
+
+
+def test_gate_names_the_offending_family_and_word():
+    items = make_item_set(2)
+    r = check_closer_balance(items)
+    assert "fam_s00" in r.failures[0]
+    assert "T/" in r.failures[0] and "F" in r.failures[0]
+
+
+def test_tolerance_is_configurable(clean_items):
+    items = make_item_set(20)
+    assert check_closer_balance(items, tolerance=0).passed is False
+    assert check_closer_balance(items, tolerance=99).passed is True
+
+
+def test_balance_is_checked_per_family_not_across_the_set():
+    """Two families whose imbalances cancel out globally must still both fail -
+    a per-family invariant averaged across the set is not an invariant."""
+    a = [build_clean_item("fam_p0", c, 0) for c in CELLS]
+    b = [build_clean_item("fam_p1", c, 1) for c in CELLS]
+    # Break both families in opposite directions.
+    def bend(items, cell, extra):
+        out = []
+        for it in items:
+            if it.cell == cell:
+                d = it.model_dump()
+                d["passage"] = it.passage + " " + extra
+                d["word_count"] = compute_word_count(d["passage"])
+                out.append(Item.model_validate(d))
+            else:
+                out.append(it)
+        return out
+
+    a = bend(a, "coherent_true", "Marker marker marker.")
+    b = bend(b, "coherent_false", "Marker marker marker.")
+    r = check_closer_balance(a + b)
+    assert not r.passed
+    assert len(r.failures) == 2

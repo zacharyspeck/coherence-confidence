@@ -1,0 +1,412 @@
+{
+  "kind": "validation",
+  "meta": {
+    "timestamp_utc": "2026-08-31T07:56:31+00:00",
+    "code_git_sha": "c7ddb6719556223d5ed16c1830a40199b2fe50b5",
+    "code_git_dirty": true,
+    "environment": {
+      "python": "3.13.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "torch": "2.13.0+cpu",
+      "transformers": "5.16.1",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "sklearn": "1.9.0",
+      "pydantic": "2.13.5"
+    },
+    "item_dirs": [
+      "items/draft",
+      "items/seed"
+    ],
+    "n_items": 80,
+    "tolerance": 0.1,
+    "lexical_threshold": 0.6,
+    "lexical_cv": "grouped"
+  },
+  "passed": true,
+  "checks": [
+    {
+      "name": "word_count_parity",
+      "passed": true,
+      "summary": "grand mean 151.2 words; largest cell deviation +0.61% (limit +/-10%)",
+      "required_by_brief": true,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "grand_mean": 151.225,
+        "tolerance": 0.1,
+        "by_cell": {
+          "coherent_true": {
+            "n": 20,
+            "mean": 151.0,
+            "min": 142,
+            "max": 154,
+            "deviation_from_grand": -0.00149
+          },
+          "coherent_false": {
+            "n": 20,
+            "mean": 150.8,
+            "min": 142,
+            "max": 154,
+            "deviation_from_grand": -0.00281
+          },
+          "diverse_true": {
+            "n": 20,
+            "mean": 150.95,
+            "min": 142,
+            "max": 154,
+            "deviation_from_grand": -0.00182
+          },
+          "diverse_false": {
+            "n": 20,
+            "mean": 152.15,
+            "min": 142,
+            "max": 154,
+            "deviation_from_grand": 0.00612
+          }
+        }
+      }
+    },
+    {
+      "name": "coherent_one_value_per_dimension",
+      "passed": true,
+      "summary": "40 coherent items checked across their dimensions",
+      "required_by_brief": true,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "n_checked": 40
+      }
+    },
+    {
+      "name": "diverse_four_values_per_dimension",
+      "passed": true,
+      "summary": "40 diverse items checked across their dimensions",
+      "required_by_brief": true,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "n_checked": 40
+      }
+    },
+    {
+      "name": "no_lexical_giveaway",
+      "passed": true,
+      "summary": "grouped 5-fold CV accuracy 53.0% (mean of 5 shufflings; max 56.2%; 0/5 over limit) (limit 60%, chance 50%)",
+      "required_by_brief": true,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "cv": "grouped",
+        "accuracy": 0.53,
+        "accuracy_max": 0.5625,
+        "accuracy_per_seed": [
+          0.5625,
+          0.55,
+          0.5125,
+          0.5375,
+          0.4875
+        ],
+        "n_seeds": 5,
+        "n_seeds_over_threshold": 0,
+        "fold_accuracies_last_seed": [
+          0.5,
+          0.5625,
+          0.4375,
+          0.4375,
+          0.5
+        ],
+        "threshold": 0.6,
+        "n_features": 2743,
+        "n_items": 80,
+        "top_tokens_predicting_TRUE": [
+          {
+            "token": "may than",
+            "coef": 0.5239
+          },
+          {
+            "token": "held",
+            "coef": 0.4476
+          },
+          {
+            "token": "september by",
+            "coef": 0.4265
+          },
+          {
+            "token": "march ran",
+            "coef": 0.3749
+          },
+          {
+            "token": "particulate",
+            "coef": 0.3737
+          },
+          {
+            "token": "logged particulate",
+            "coef": 0.3737
+          },
+          {
+            "token": "revenue",
+            "coef": 0.37
+          },
+          {
+            "token": "revenue per",
+            "coef": 0.37
+          },
+          {
+            "token": "august had",
+            "coef": 0.3632
+          },
+          {
+            "token": "started august",
+            "coef": 0.3632
+          },
+          {
+            "token": "30 september",
+            "coef": 0.3601
+          },
+          {
+            "token": "absence ran",
+            "coef": 0.3568
+          },
+          {
+            "token": "absence",
+            "coef": 0.3568
+          },
+          {
+            "token": "matched the",
+            "coef": 0.3511
+          },
+          {
+            "token": "matched",
+            "coef": 0.3491
+          },
+          {
+            "token": "september",
+            "coef": 0.3458
+          },
+          {
+            "token": "fitted march",
+            "coef": 0.3373
+          },
+          {
+            "token": "delivery",
+            "coef": 0.3221
+          },
+          {
+            "token": "november than",
+            "coef": 0.3203
+          },
+          {
+            "token": "started february",
+            "coef": 0.3145
+          },
+          {
+            "token": "february had",
+            "coef": 0.3145
+          },
+          {
+            "token": "delivery time",
+            "coef": 0.3117
+          },
+          {
+            "token": "purchases ran",
+            "coef": 0.3087
+          },
+          {
+            "token": "purchases",
+            "coef": 0.3087
+          },
+          {
+            "token": "infections ran",
+            "coef": 0.2973
+          }
+        ],
+        "top_tokens_predicting_FALSE": [
+          {
+            "token": "that",
+            "coef": -0.574
+          },
+          {
+            "token": "20 june",
+            "coef": -0.4759
+          },
+          {
+            "token": "april than",
+            "coef": -0.4759
+          },
+          {
+            "token": "may ran",
+            "coef": -0.4452
+          },
+          {
+            "token": "27 march",
+            "coef": -0.4379
+          },
+          {
+            "token": "october",
+            "coef": -0.4239
+          },
+          {
+            "token": "units",
+            "coef": -0.4174
+          },
+          {
+            "token": "units per",
+            "coef": -0.4174
+          },
+          {
+            "token": "fitted may",
+            "coef": -0.4063
+          },
+          {
+            "token": "fitted august",
+            "coef": -0.4063
+          },
+          {
+            "token": "backpressure",
+            "coef": -0.3776
+          },
+          {
+            "token": "logged backpressure",
+            "coef": -0.3776
+          },
+          {
+            "token": "28 february",
+            "coef": -0.3565
+          },
+          {
+            "token": "september had",
+            "coef": -0.353
+          },
+          {
+            "token": "march had",
+            "coef": -0.353
+          },
+          {
+            "token": "lateness ran",
+            "coef": -0.3497
+          },
+          {
+            "token": "lateness",
+            "coef": -0.3497
+          },
+          {
+            "token": "started april",
+            "coef": -0.3393
+          },
+          {
+            "token": "30 august",
+            "coef": -0.3315
+          },
+          {
+            "token": "started october",
+            "coef": -0.329
+          },
+          {
+            "token": "cart additions",
+            "coef": -0.3222
+          },
+          {
+            "token": "additions",
+            "coef": -0.3222
+          },
+          {
+            "token": "additions ran",
+            "coef": -0.3222
+          },
+          {
+            "token": "cart",
+            "coef": -0.3222
+          },
+          {
+            "token": "may",
+            "coef": -0.3027
+          }
+        ],
+        "permutation_test": null,
+        "note": "Coefficients come from a refit on ALL items and are for diagnosis only; the accuracy above is the cross-validated one."
+      }
+    },
+    {
+      "name": "cell_balance",
+      "passed": true,
+      "summary": "80 items, 20 families, per-cell {'coherent_false': 20, 'coherent_true': 20, 'diverse_false': 20, 'diverse_true': 20}",
+      "required_by_brief": false,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "counts": {
+          "coherent_false": 20,
+          "coherent_true": 20,
+          "diverse_false": 20,
+          "diverse_true": 20
+        },
+        "n_families": 20
+      }
+    },
+    {
+      "name": "no_duplicate_passages",
+      "passed": true,
+      "summary": "80 distinct passages across 80 items",
+      "required_by_brief": false,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "n_distinct": 80,
+        "n_duplicate_groups": 0
+      }
+    },
+    {
+      "name": "no_answer_key_leakage",
+      "passed": true,
+      "summary": "80 passages scanned for answer-key leakage",
+      "required_by_brief": false,
+      "n_failures": 0,
+      "failures": [],
+      "data": {}
+    },
+    {
+      "name": "closer_word_balance",
+      "passed": true,
+      "summary": "20 families checked; worst per-word TRUE/FALSE imbalance in a family's closers = 0 (limit 0)",
+      "required_by_brief": false,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "tolerance": 0,
+        "imbalance_by_family": {
+          "fam_bearing": 0,
+          "fam_checkout": 0,
+          "fam_coolant": 0,
+          "fam_driptape": 0,
+          "fam_fertilizer": 0,
+          "fam_filter": 0,
+          "fam_handwash": 0,
+          "fam_inhaler": 0,
+          "fam_labkit": 0,
+          "fam_nestbox": 0,
+          "fam_onboarding": 0,
+          "fam_physio": 0,
+          "fam_pricing": 0,
+          "fam_reading": 0,
+          "fam_routing": 0,
+          "fam_seedcoat": 0,
+          "fam_sleepapp": 0,
+          "fam_solder": 0,
+          "fam_timetable": 0,
+          "fam_tutoring": 0
+        }
+      }
+    },
+    {
+      "name": "all_items_unreviewed",
+      "passed": true,
+      "summary": "80/80 items are 'unreviewed'",
+      "required_by_brief": false,
+      "n_failures": 0,
+      "failures": [],
+      "data": {}
+    }
+  ]
+}

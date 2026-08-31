@@ -14,9 +14,19 @@ The four gates the brief specifies:
    reading surface wording instead of reasoning, and the item set is broken. The
    top predictive tokens are printed so they can be fixed.
 
-Three more gates were added (D-020) because they catch failures that would
-otherwise produce a confident, meaningless number: cell balance, duplicate
-passages, and answer-key leakage.
+Gate 4 is averaged over 5 CV shufflings and fails on the mean (D-023). One
+shuffle swings the accuracy by several points on 80 items; the first full draft
+of the item set ranged 58.8%-68.8% across ten seeds and passed or failed
+depending on which one was used.
+
+Four more gates were added because they catch failures that would otherwise
+produce a confident, meaningless number: cell balance, duplicate passages, and
+answer-key leakage (D-020), plus closer word balance (D-022), which enforces the
+per-family invariant that makes gate 4 pass in the first place — every word in a
+family's four closing sentences must appear equally often on the TRUE and FALSE
+sides. Gate 4 measures the symptom across the whole set; that one measures the
+cause, per family, so a single drifting family gets named rather than averaged
+away.
 
     python -m src.validate --items items/draft items/seed
     python -m src.validate --items items/draft items/seed --out results/validation.json
@@ -39,6 +49,7 @@ WORD_COUNT_TOLERANCE = 0.10
 LEXICAL_THRESHOLD = 0.60
 N_LEXICAL_SEEDS = 5
 N_PER_CELL = 20
+CLOSER_IMBALANCE_TOLERANCE = 0
 TOP_TOKENS = 25
 
 
@@ -410,6 +421,65 @@ def check_no_answer_leakage(items: Sequence[Item]) -> CheckResult:
     )
 
 
+def closer_of(item: Item) -> str:
+    """The final line of the passage - where truth lives (D-022)."""
+    lines = [ln for ln in item.passage.split("\n") if ln.strip()]
+    return lines[-1] if lines else ""
+
+
+def check_closer_balance(
+    items: Sequence[Item], tolerance: int = 0
+) -> CheckResult:
+    """Enforce the D-022 invariant mechanically.
+
+    Within a family, every word used in the four closing sentences must appear
+    the same number of times on the TRUE side as on the FALSE side. That is what
+    makes the closer carry zero bag-of-words signal about the label, and it is
+    the property that took the item set from a 75% lexical ceiling down to chance.
+
+    The lexical gate measures the symptom across the whole set; this measures the
+    cause, per family, so a single family drifting out of balance is named
+    instead of being averaged away.
+    """
+    word_re = __import__("re").compile(r"[a-z0-9']+")
+    by_family: dict[str, list[Item]] = defaultdict(list)
+    for i in items:
+        by_family[i.family_id].append(i)
+
+    failures: list[str] = []
+    worst = 0
+    per_family: dict[str, int] = {}
+    for fam, group in sorted(by_family.items()):
+        counts: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+        for it in group:
+            side = 0 if it.ground_truth else 1
+            for w in word_re.findall(closer_of(it).lower()):
+                counts[w][side] += 1
+        bad = {w: (t, f) for w, (t, f) in counts.items() if abs(t - f) > tolerance}
+        imbalance = max((abs(t - f) for t, f in counts.values()), default=0)
+        per_family[fam] = imbalance
+        worst = max(worst, imbalance)
+        if bad:
+            shown = sorted(bad.items(), key=lambda kv: -abs(kv[1][0] - kv[1][1]))[:8]
+            failures.append(
+                f"{fam}: closer words unbalanced across TRUE/FALSE "
+                + ", ".join(f"'{w}' {t}T/{f}F" for w, (t, f) in shown)
+                + (f" (+{len(bad) - len(shown)} more)" if len(bad) > len(shown) else "")
+            )
+
+    return CheckResult(
+        name="closer_word_balance",
+        passed=not failures,
+        summary=(
+            f"{len(by_family)} families checked; worst per-word TRUE/FALSE "
+            f"imbalance in a family's closers = {worst} (limit {tolerance})"
+        ),
+        required_by_brief=False,
+        failures=failures,
+        data={"tolerance": tolerance, "imbalance_by_family": per_family},
+    )
+
+
 def check_review_status(items: Sequence[Item]) -> CheckResult:
     """Informational: nothing may be pre-marked reviewed by the build (D-008)."""
     bad = [i.id for i in items if i.review_status != "unreviewed"]
@@ -434,6 +504,7 @@ ALL_CHECKS = (
     "cell_balance",
     "no_duplicate_passages",
     "no_answer_key_leakage",
+    "closer_word_balance",
     "all_items_unreviewed",
 )
 
@@ -447,6 +518,7 @@ def run_checks(
     n_permutations: int = 0,
     n_per_cell: int = N_PER_CELL,
     n_lexical_seeds: int = N_LEXICAL_SEEDS,
+    closer_imbalance_tolerance: int = CLOSER_IMBALANCE_TOLERANCE,
     skip: Sequence[str] = (),
     seed: int = 0,
 ) -> list[CheckResult]:
@@ -469,6 +541,10 @@ def run_checks(
         ("cell_balance", lambda: check_cell_balance(items, n_per_cell)),
         ("no_duplicate_passages", lambda: check_duplicate_passages(items)),
         ("no_answer_key_leakage", lambda: check_no_answer_leakage(items)),
+        (
+            "closer_word_balance",
+            lambda: check_closer_balance(items, closer_imbalance_tolerance),
+        ),
         ("all_items_unreviewed", lambda: check_review_status(items)),
     ]
     for name, fn in plan:
@@ -540,6 +616,13 @@ def main(argv: list[str] | None = None) -> int:
         "or fail the same item set by luck.",
     )
     ap.add_argument("--skip", nargs="*", default=[], choices=list(ALL_CHECKS))
+    ap.add_argument(
+        "--closer-imbalance-tolerance",
+        type=int,
+        default=CLOSER_IMBALANCE_TOLERANCE,
+        help="max allowed TRUE/FALSE count difference for any single word across "
+        "a family's four closing sentences (D-022)",
+    )
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args(argv)
 
@@ -560,6 +643,7 @@ def main(argv: list[str] | None = None) -> int:
         n_permutations=args.permutations,
         n_per_cell=args.n_per_cell,
         n_lexical_seeds=args.lexical_seeds,
+        closer_imbalance_tolerance=args.closer_imbalance_tolerance,
         skip=args.skip,
         seed=args.seed,
     )

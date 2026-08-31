@@ -56,15 +56,16 @@
           }
         }
       ],
-      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.\nA site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue; traffic volume and product range were unchanged, and no other release shipped.",
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.\nPrices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed the general catalogue; traffic volume and product range were unchanged, and no other release shipped.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 150,
+      "word_count": 147,
       "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
-      "notes": "SEED. All four segments share device, country, month and traffic source. The closer neutralises the month-over-month comparison by holding traffic, promotions, prices and other releases fixed."
+      "notes": "SEED. All four segments share device, country, month and traffic source. The closer neutralises the month-over-month comparison by holding traffic, promotions, prices and other releases fixed.",
+      "closer_variant": "same_reach"
     },
     {
       "id": "fam_checkout__coherent_false",
@@ -121,7 +122,8 @@
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
-      "notes": "SEED. Cases identical to coherent_true; only the closer differs. The discount works as a single confound precisely because all four segments share the same month."
+      "notes": "SEED. Cases identical to coherent_true; only the closer differs. The discount works as a single confound precisely because all four segments share the same month.",
+      "closer_variant": "changed_reach"
     },
     {
       "id": "fam_checkout__diverse_true",
@@ -170,15 +172,16 @@
           }
         }
       ],
-      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.\nPrices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed the general catalogue; traffic volume and product range were unchanged, and no other release shipped.",
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.\nA site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue; traffic volume and product range were unchanged, and no other release shipped.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 147,
+      "word_count": 150,
       "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
-      "notes": "SEED. Four distinct values on every dimension, same closer as coherent_true. Four different months means no single event can cover all four cases, which is what makes this the stronger evidence of the two TRUE cells."
+      "notes": "SEED. Four distinct values on every dimension, same closer as coherent_true. Four different months means no single event can cover all four cases, which is what makes this the stronger evidence of the two TRUE cells.",
+      "closer_variant": "changed_block"
     },
     {
       "id": "fam_checkout__diverse_false",
@@ -235,7 +238,8 @@
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
-      "notes": "SEED. Closer identical to both TRUE items. The flaw is that the measured quantity is not the claimed one. A shared confound is unavailable here because the four segments span four months, four countries, four devices and four sources."
+      "notes": "SEED. Closer identical to both TRUE items. The flaw is that the measured quantity is not the claimed one. A shared confound is unavailable here because the four segments span four months, four countries, four devices and four sources.",
+      "closer_variant": "same_block"
     }
   ]
 }

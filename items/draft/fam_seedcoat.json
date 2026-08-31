@@ -56,15 +56,16 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nBench temperature and the watering schedule matched the earlier sowing at every lot, the seed batch and growing medium were unchanged, and nothing else differed.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat on an open bench, taking the house air directly; the seed batch was unchanged and nothing else differed.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 140,
+      "word_count": 150,
       "flaw_type": null,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Check that all four cases carry one distinct value per dimension (Hollin Bank, fescue, spring, Marek) and that only the coating dates, point gains and scoring dates vary. The closer holds the obvious rivals for a season-over-season comparison fixed - bench temperature, watering schedule, seed batch, growing medium - which is what makes the self-comparison adequate. Cases must be byte-identical to coherent_false."
+      "notes": "Check that all four cases carry one distinct value per dimension (Hollin Bank, fescue, spring, Marek) and that only the coating dates, point gains and scoring dates vary. The closer holds the obvious rivals for a season-over-season comparison fixed - bench temperature, watering schedule, seed batch, growing medium - which is what makes the self-comparison adequate. Cases must be byte-identical to coherent_false.",
+      "closer_variant": "same_reach"
     },
     {
       "id": "fam_seedcoat__coherent_false",
@@ -113,15 +114,16 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nThe watering schedule, seed batch and growing medium were unchanged, and bench temperature at this nursery ran four degrees above the earlier sowing for every lot.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nHouse air temperature ran a full four degrees above the earlier sowing, and every lot sat on an open bench, taking the house air directly; the seed batch was unchanged and nothing else differed.",
       "ground_truth": false,
-      "confound_note": "All four lots sit at one nursery in one spring, so they share a single bench and a single temperature history. A bench running four degrees warmer than the earlier sowing is one alternative cause that covers all four results at once, and warmth is a direct driver of germination in fescue. Because each lot is compared against the same lot a season earlier rather than against an uncoated lot on the same warm bench, nothing in the evidence separates the coating from the heat.",
-      "word_count": 141,
+      "confound_note": "All four lots sit at one nursery in one spring, so a single house shares its air with every case at once. A house running a full four degrees warmer than the earlier sowing is one alternative cause, and warmth is a direct driver of germination; it reaches every lot because every lot sat on an open bench taking that house air directly. Each lot is compared against the same lot a season earlier rather than against an uncoated lot on the same warm bench, so nothing in the evidence separates the coating from the heat. The coherent_true item states the same four-degree rise but puts every lot in a sealed cabinet held at a set temperature, so the warmer air cannot reach the seed and the season-over-season comparison holds.",
+      "word_count": 149,
       "flaw_type": "shared_confound",
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. Confirm the closer names exactly one alternative cause (a warmer bench) and that it works only because the four lots are coherent - one nursery, one season, one bench. Check the vocabulary against the TRUE closer: both talk about watering schedule, seed batch, growing medium and bench temperature, so the difference is logical (matched vs four degrees above), not lexical."
+      "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. Confirm the closer names exactly one alternative cause (a warmer bench) and that it works only because the four lots are coherent - one nursery, one season, one bench. Check the vocabulary against the TRUE closer: both talk about watering schedule, seed batch, growing medium and bench temperature, so the difference is logical (matched vs four degrees above), not lexical.",
+      "closer_variant": "changed_reach"
     },
     {
       "id": "fam_seedcoat__diverse_true",
@@ -170,15 +172,16 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nBench temperature and the watering schedule matched the earlier sowing at every lot, the seed batch and growing medium were unchanged, and nothing else differed.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nHouse air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature; the seed batch was unchanged and nothing else differed.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 140,
+      "word_count": 149,
       "flaw_type": null,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Four distinct values on every dimension: four nurseries, four seed types, four seasons, four growers. The closing sentence is identical to coherent_true, so the only change between the two TRUE cells is the condition values. Confirm the point gains and the sentence skeleton are unchanged from coherent_true, and that conditions match diverse_false case for case."
+      "notes": "Four distinct values on every dimension: four nurseries, four seed types, four seasons, four growers. The closing sentence is identical to coherent_true, so the only change between the two TRUE cells is the condition values. Confirm the point gains and the sentence skeleton are unchanged from coherent_true, and that conditions match diverse_false case for case.",
+      "closer_variant": "changed_block"
     },
     {
       "id": "fam_seedcoat__diverse_false",
@@ -227,15 +230,16 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed tetrazolium viability 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed tetrazolium viability 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed tetrazolium viability 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed tetrazolium viability 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nBench temperature and the watering schedule matched the earlier sowing at every lot, the seed batch and growing medium were unchanged, and nothing else differed.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed tetrazolium viability 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed tetrazolium viability 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed tetrazolium viability 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed tetrazolium viability 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat in a sealed cabinet, held at a set temperature; the seed batch was unchanged and nothing else differed.",
       "ground_truth": false,
       "confound_note": "Every one of the four cases reports tetrazolium viability, not germination. A tetrazolium stain shows only that embryo tissue is still alive; dormant and hard-coated seeds stain viable and then never emerge, so the fescue lot can gain 9 viability points and the sorghum lot 11 while the share of seeds that actually germinate stays flat. The claim is about germination, so none of the four cases bears on it.",
-      "word_count": 144,
+      "word_count": 154,
       "flaw_type": "claim_mismatch",
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "Closing sentence is verbatim identical to both TRUE items; the flaw lives only in the measured-quantity phrase, which is 'tetrazolium viability' instead of 'germination' in all four cases. Conditions and dates are identical to diverse_true. Reviewer should confirm the substitute is genuinely non-equivalent (a viability stain measures live embryo tissue, not seeds that germinate) and that no other family uses this wording. A single shared confound is unavailable here because the four lots span four nurseries, four seed types, four seasons and four growers."
+      "notes": "Closing sentence is verbatim identical to both TRUE items; the flaw lives only in the measured-quantity phrase, which is 'tetrazolium viability' instead of 'germination' in all four cases. Conditions and dates are identical to diverse_true. Reviewer should confirm the substitute is genuinely non-equivalent (a viability stain measures live embryo tissue, not seeds that germinate) and that no other family uses this wording. A single shared confound is unavailable here because the four lots span four nurseries, four seed types, four seasons and four growers.",
+      "closer_variant": "same_block"
     }
   ]
 }

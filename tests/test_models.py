@@ -252,3 +252,44 @@ def test_schema_json_is_valid_json_and_agrees_with_model():
     )
     required = set(schema["required"])
     assert required <= model_fields
+
+
+# ---- closer_variant (D-022) ------------------------------------------------
+
+
+def test_closer_variant_is_optional(item):
+    assert item.closer_variant is None
+
+
+def test_coherent_false_must_carry_the_live_confound_variant():
+    it = make_item(cell="coherent_false")
+    ok = Item.model_validate(_mutate(it, closer_variant="changed_reach"))
+    assert ok.closer_variant == "changed_reach"
+    with pytest.raises(ValueError, match="coherent_false must carry"):
+        Item.model_validate(_mutate(it, closer_variant="changed_block"))
+
+
+@pytest.mark.parametrize(
+    "cell", ["coherent_true", "diverse_true", "diverse_false"]
+)
+def test_only_coherent_false_may_have_a_live_reaching_confound(cell):
+    """changed_reach means the confound moved AND reached the units. Any other
+    cell carrying it would be false for a reason its label does not admit."""
+    it = make_item(cell=cell)
+    with pytest.raises(ValueError, match="only coherent_false may carry"):
+        Item.model_validate(_mutate(it, closer_variant="changed_reach"))
+
+
+@pytest.mark.parametrize(
+    "cell,variant",
+    [
+        ("coherent_true", "changed_block"),
+        ("coherent_true", "same_reach"),
+        ("diverse_true", "changed_block"),
+        ("diverse_true", "same_reach"),
+        ("diverse_false", "same_block"),
+    ],
+)
+def test_the_other_variants_are_accepted(cell, variant):
+    it = make_item(cell=cell)
+    assert Item.model_validate(_mutate(it, closer_variant=variant)).closer_variant == variant

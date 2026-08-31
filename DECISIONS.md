@@ -547,15 +547,37 @@ on the TRUE side and the FALSE side cannot balance them. So D-004's mitigation #
 `coherence_effect_within_true` contrast carries a closer difference as well as a
 condition difference.
 
-**What to do about it in the morning:** the closer variant assigned to
-`coherent_true` is CHANGED+BLOCK in every family, so it is currently *confounded*
-with coherence rather than randomised. Rotating it — CHANGED+BLOCK for
-`coherent_true` in half the families and SAME+REACH in the other half, swapping
-with `diverse_true` — would make the closer variant orthogonal to coherence and
-restore the clean contrast, at no cost to the lexical balance. This is a
-half-hour edit across 20 files and is listed in `MORNING_REPORT.md` as the top
-open item. It was not done tonight because it should be reviewed before it is
-applied.
+**And how it was fixed — applied, not deferred.** Leaving CHANGED+BLOCK on
+`coherent_true` in every family would have *confounded* the closer variant with
+coherence. It is now **rotated**: in 10 of the 20 families `coherent_true` carries
+CHANGED+BLOCK and `diverse_true` carries SAME+REACH; in the other 10 they are
+swapped. Balance is untouched by the swap (CHANGED still appears in one TRUE and
+one FALSE item, and so on), and the closer variant is now orthogonal to coherence
+rather than perfectly correlated with it.
+
+Rotated families: `fam_checkout`, `fam_driptape`, `fam_filter`, `fam_inhaler`,
+`fam_nestbox`, `fam_physio`, `fam_reading`, `fam_seedcoat`, `fam_solder`,
+`fam_tutoring`.
+
+Every item now records which closing sentence it carries in a new
+`closer_variant` field (`changed_reach` | `changed_block` | `same_reach` |
+`same_block`), so the analysis can check directly whether the variant moved
+confidence. The model enforces the one rule that matters: **only `coherent_false`
+may be `changed_reach`**, because that combination — the confound moved *and*
+reached the units — is what makes an item false, and no other cell is allowed to
+contain it.
+
+**Result.** Every part of the passage is now at chance in isolation:
+
+| passage part | before | after |
+|---|---|---|
+| full passage | 58.8% | 56.2% |
+| **closer only** | **65.0%** | **50.0%** |
+| cases only | 48.8% | 50.0% |
+| no dates | 61.3% | 48.8% |
+
+and the gated mean over 5 shufflings went from **62.8% (3/5 over limit)** to
+**53.0% (0/5 over limit)**.
 
 ---
 

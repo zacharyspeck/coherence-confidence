@@ -7,11 +7,13 @@ the entire pipeline run end to end before any real content exists.
 
 Nothing here ever writes to `items/draft/` or `items/seed/`.
 
-Lexical cleanliness is built in rather than hoped for: the only cell-dependent
-text is the closing sentence, drawn from a fixed pool and rotated across families
-so that every closer lands in every cell equally often. A classifier therefore
-cannot learn TRUE vs FALSE from wording, which is what the real items also have
-to achieve.
+Lexical cleanliness is built in rather than hoped for. The only cell-dependent
+text is the closing sentence, and it follows the same balanced FACT x SCOPE
+scheme the real items use (D-022): every clause variant lands in exactly one TRUE
+and one FALSE item per family, so no word in the closers correlates with the
+label. That matters here specifically - if the synthetic set could not pass the
+lexical and closer-balance gates, those gates would never be exercised end to end
+before the real content existed, which is the entire point of step 6.
 """
 
 from __future__ import annotations
@@ -31,15 +33,32 @@ SUBJECTS = ["throughput", "yield", "uptake", "turnout", "output", "recovery"]
 
 DIMENSIONS = ("region", "period", "device", "unit_kind")
 
-#: One closer per slot, rotated across families so each appears equally often in
-#: every cell. Lengths are within one word of each other, which keeps the
-#: per-cell mean word counts within a fraction of a percent.
-CLOSERS = [
-    "Each figure was transcribed into the shared log on the following working day.",
-    "Two reviewers checked every transcribed figure against the original sheet.",
-    "The observation window opened at the start of the stated reporting period.",
-    "Every site retained its own copy of the raw sheet after collection.",
-]
+#: The balanced closer scheme the real items use (D-022): FACT x SCOPE plus a
+#: shared tail, assigned so every clause lands in exactly one TRUE and one FALSE
+#: item per family. That gives the closer zero bag-of-words signal about the
+#: label, which is the property the synthetic set has to reproduce if it is going
+#: to exercise the lexical and closer-balance gates honestly.
+FACT = {
+    "changed": "Ambient load across the district ran at double the earlier period",
+    "same": "Ambient load across the district matched the earlier period closely",
+}
+SCOPE = {
+    "reach": "and every unit logged here stood on the open floor",
+    "block": "and every unit logged here stood inside a sealed cabinet",
+}
+TAIL = "no other change was made to any unit."
+
+#: coherent_false is the only cell where the confound both moved AND reached the
+#: units. The variant given to coherent_true vs diverse_true is rotated by family
+#: index so it is orthogonal to coherence rather than confounded with it.
+CLOSER_ASSIGN = {
+    "coherent_false": ("changed", "reach"),
+    "diverse_false": ("same", "block"),
+}
+CLOSER_ASSIGN_TRUE = (
+    {"coherent_true": ("changed", "block"), "diverse_true": ("same", "reach")},
+    {"coherent_true": ("same", "reach"), "diverse_true": ("changed", "block")},
+)
 
 CLAIM_TEMPLATE = "the {change} raises {subject}"
 CHANGES = [
@@ -90,7 +109,9 @@ def make_synthetic_family(index: int, seed: int = 0) -> Family:
             )
             cases.append(Case(case_id=f"c{c + 1}", text=text, conditions=conditions))
 
-        closer = CLOSERS[(index + CELLS.index(cell)) % len(CLOSERS)]
+        assign = {**CLOSER_ASSIGN, **CLOSER_ASSIGN_TRUE[index % 2]}
+        fact_key, scope_key = assign[cell]
+        closer = f"{FACT[fact_key]}, {SCOPE[scope_key]}; {TAIL}"
         lead = (
             f"Log {family_id[4:]}{CELLS.index(cell)} records four observations "
             f"of {subject} taken after the {change} was introduced."
@@ -122,6 +143,7 @@ def make_synthetic_family(index: int, seed: int = 0) -> Family:
                         else ("temporal" if index % 2 == 0 else "claim_mismatch")
                     )
                 ),
+                closer_variant=f"{fact_key}_{scope_key}",
                 word_count=compute_word_count(passage),
                 domain="synthetic",
                 source="generated",

@@ -64,7 +64,8 @@
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
-      "notes": "SEED. Every case shares species, location, season and observer - one distinct value per dimension. The closing sentence neutralises the year-to-year comparison (weather matched, soil unchanged, nothing else altered), which is what makes the year-over-year evidence adequate."
+      "notes": "SEED. Every case shares species, location, season and observer - one distinct value per dimension. The closing sentence neutralises the year-to-year comparison (weather matched, soil unchanged, nothing else altered), which is what makes the year-over-year evidence adequate.",
+      "closer_variant": "changed_block"
     },
     {
       "id": "fam_fertilizer__coherent_false",
@@ -121,7 +122,8 @@
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
-      "notes": "SEED. Cases are IDENTICAL to coherent_true; only the closing sentence differs. That closer is the shared confound. It only works because the cases are coherent: four plots in one backyard in one summer share a weather history, so one weather fact explains all four."
+      "notes": "SEED. Cases are IDENTICAL to coherent_true; only the closing sentence differs. That closer is the shared confound. It only works because the cases are coherent: four plots in one backyard in one summer share a weather history, so one weather fact explains all four.",
+      "closer_variant": "changed_reach"
     },
     {
       "id": "fam_fertilizer__diverse_true",
@@ -178,7 +180,8 @@
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
-      "notes": "SEED. Four distinct values on every dimension. Same closing sentence as coherent_true, so the ONLY thing that changes between the two TRUE cells is the condition values - which is what makes the coherence contrast within TRUE clean (D-004)."
+      "notes": "SEED. Four distinct values on every dimension. Same closing sentence as coherent_true, so the ONLY thing that changes between the two TRUE cells is the condition values - which is what makes the coherence contrast within TRUE clean (D-004).",
+      "closer_variant": "same_reach"
     },
     {
       "id": "fam_fertilizer__diverse_false",
@@ -235,7 +238,8 @@
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
-      "notes": "SEED. The closing sentence is IDENTICAL to both TRUE items - the flaw lives entirely in the dates inside cases one and three, which is invisible to a bag-of-ngrams classifier because the tokens are unchanged. A single shared confound cannot be used here: four plants in four places across four seasons share no weather history."
+      "notes": "SEED. The closing sentence is IDENTICAL to both TRUE items - the flaw lives entirely in the dates inside cases one and three, which is invisible to a bag-of-ngrams classifier because the tokens are unchanged. A single shared confound cannot be used here: four plants in four places across four seasons share no weather history.",
+      "closer_variant": "same_block"
     }
   ]
 }

@@ -89,6 +89,11 @@
       "enum": ["shared_confound", "temporal", "claim_mismatch", null],
       "description": "Machine-readable flaw category. Null for TRUE items. coherent_false MUST be 'shared_confound'. diverse_false MUST be 'temporal' or 'claim_mismatch' - a single confound cannot cover 4 cases that differ on every dimension (DECISIONS.md D-004)."
     },
+    "closer_variant": {
+      "type": ["string", "null"],
+      "enum": ["changed_reach", "changed_block", "same_reach", "same_block", null],
+      "description": "Which of the four balanced closing sentences this item carries (DECISIONS.md D-022). First half: did the potential confound move over the comparison period. Second half: could it reach the observed units. Only coherent_false may be 'changed_reach' - that is the live confound. The variant assigned to coherent_true vs diverse_true is rotated across families so it is orthogonal to coherence."
+    },
     "domain": {
       "type": "string",
       "description": "Content area, e.g. 'agriculture', 'business_metrics', 'clinical', 'manufacturing', 'education'."
