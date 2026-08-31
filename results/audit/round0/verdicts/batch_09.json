@@ -1,0 +1,70 @@
+{
+  "batch": "09",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "99C998",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four measurement windows run backwards: the Bexley lathe was fitted 4 May but its result is recorded 'by 27 March', and the Corbin conveyor was fitted 2 August but recorded 'by 21 July'. The other two cases use forward windows of about 46-50 days (9 January to 24 February; 6 October to 25 November), so the outcome in cases one and three is dated before the bearing was installed.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "E7A3F5",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "CC1BF2",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause fits all four cases: contract deep-cleaning hours ran at triple the earlier quarter and 'every ward here was cleaned under that contract', so tripled deep-cleaning explains the 6-11 percent infection drop just as well as the handwashing protocol.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "949A3C",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "383AC4",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cohorts have retention measured before the email was sent: cohort one was emailed 24 March but read out 'by 9 March', and cohort three was emailed 25 October but read out 'by 10 October'. The other two cases run forward about 24 days (3 July to 27 July; 2 December to 26 December), so the reversed pair cannot be attributed to the email.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "AE3C76",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "4969DF",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause covers all four cohorts: outdoor temperature in each cohort's city fell ten degrees from the month before and 'every cohort slept in unconditioned rooms open to outside air', so cooler sleeping conditions could produce the 3-6 bpm drop in resting heart rate independently of the app.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "6D7115",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

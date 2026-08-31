@@ -1,10 +1,12 @@
 """Aggregate the blind audit into results/item_audit.md (step 9).
 
 Inputs
-  results/audit/round<N>/keymap.json    code -> the answer key (never shown to an auditor)
-  results/audit/round<N>/verdicts.json  code -> what the blind auditor said
-  results/audit/matches.json            (code, round) -> did the auditor's flaw
-                                        match the intended one?
+  results/audit_key/round<N>.json               the answer key, kept in a separate
+                                                tree so an auditor pointed at its
+                                                batch directory cannot reach it
+  results/audit/round<N>/verdicts/batch_*.json  what the blind auditors said
+  results/audit_key/matches.json                (code, round) -> did the auditor's
+                                                flaw match the intended one?
 
 Every FALSE item lands in one of four buckets:
 
@@ -14,9 +16,14 @@ Every FALSE item lands in one of four buckets:
                  not measuring reasoning, it is measuring nothing.
   too_easy       found, and auditors rated it as good as stated outright
                  (mean explicitness >= 4 of 5) -> the item gives itself away
-  wrong_flaw     an auditor confidently named a DIFFERENT flaw. Worth a look:
-                 either the item has a second unintended defect, or the auditor
-                 was pattern-matching.
+  wrong_flaw     an auditor confidently named a DIFFERENT specific flaw. Worth a
+                 look: either the item has a second unintended defect, or the
+                 auditor was pattern-matching.
+
+A reported flaw only counts as "found" if an independent judge rated it
+`same_flaw` against the answer key. `too_vague` does not count - "correlation is
+not causation" and "only four cases" apply equally to every item in the set, so
+they identify nothing and crediting them would inflate the detection rate.
 
 TRUE items are audited too, as decoys. Their false-positive rate is the audit's
 own specificity: if auditors "find" flaws in TRUE items at a high rate, then
@@ -37,7 +44,9 @@ from typing import Any
 TOO_EASY_EXPLICITNESS = 4.0
 
 
-def load_rounds(audit_dir: Path) -> tuple[dict[str, dict], dict[str, list[dict]]]:
+def load_rounds(
+    audit_dir: Path, key_dir: Path
+) -> tuple[dict[str, dict], dict[str, list[dict]]]:
     """Returns (keymap, verdicts_by_code). Verdicts carry their round number."""
     keymap: dict[str, dict] = {}
     verdicts: dict[str, list[dict]] = defaultdict(list)
@@ -48,16 +57,41 @@ def load_rounds(audit_dir: Path) -> tuple[dict[str, dict], dict[str, list[dict]]
 
     for rd in rounds:
         n = int(rd.name.replace("round", ""))
-        km = json.loads((rd / "keymap.json").read_text(encoding="utf-8"))
-        keymap.update(km)
-        vpath = rd / "verdicts.json"
-        if not vpath.exists():
+        keymap.update(
+            json.loads((key_dir / f"round{n}.json").read_text(encoding="utf-8"))
+        )
+        vdir = rd / "verdicts"
+        files = sorted(vdir.glob("batch_*.json")) if vdir.exists() else []
+        if not files:
             print(f"  (no verdicts for {rd.name}, skipping)")
             continue
-        for v in json.loads(vpath.read_text(encoding="utf-8")):
-            v["round"] = n
-            verdicts[v["code"]].append(v)
+        for f in files:
+            payload = json.loads(f.read_text(encoding="utf-8"))
+            rows = payload["verdicts"] if isinstance(payload, dict) else payload
+            for v in rows:
+                v["round"] = n
+                verdicts[v["code"]].append(v)
     return keymap, verdicts
+
+
+def load_matches(
+    key_dir: Path,
+) -> tuple[dict[str, str], dict[str, bool], dict[str, str]]:
+    """Merge the per-batch judgements written by the matching pass."""
+    verdicts: dict[str, str] = {}
+    extras: dict[str, bool] = {}
+    notes: dict[str, str] = {}
+    for f in sorted(key_dir.glob("matches_*.json")):
+        payload = json.loads(f.read_text(encoding="utf-8"))
+        rows = payload.get("judgements", payload) if isinstance(payload, dict) else payload
+        if isinstance(rows, dict):  # {"KEY": {...}} shape
+            rows = [{"key": k, **v} for k, v in rows.items()]
+        for r in rows:
+            verdicts[r["key"]] = r["verdict"]
+            extras[r["key"]] = bool(r.get("reported_extra"))
+            if r.get("note"):
+                notes[r["key"]] = r["note"]
+    return verdicts, extras, notes
 
 
 def classify(key: dict, vs: list[dict], matches: dict[str, str]) -> dict[str, Any]:
@@ -68,6 +102,7 @@ def classify(key: dict, vs: list[dict], matches: dict[str, str]) -> dict[str, An
     verdict_matches = [matches.get(f"{v['code']}:{v['round']}", "unknown") for v in vs]
     found = any(m == "same_flaw" for m in verdict_matches)
     wrong = any(m == "different_flaw" for m in verdict_matches)
+    vague = all(m in ("too_vague", "no_flaw_reported") for m in verdict_matches)
 
     expl = [
         float(v.get("explicitness", 0))
@@ -78,7 +113,7 @@ def classify(key: dict, vs: list[dict], matches: dict[str, str]) -> dict[str, An
 
     if not key["ground_truth"]:
         if not found:
-            bucket = "missed"
+            bucket = "missed_vague" if vague else "missed"
         elif mean_expl is not None and mean_expl >= TOO_EASY_EXPLICITNESS:
             bucket = "too_easy"
         else:
@@ -102,17 +137,28 @@ def classify(key: dict, vs: list[dict], matches: dict[str, str]) -> dict[str, An
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--audit", default="results/audit")
+    ap.add_argument("--key", default="results/audit_key")
     ap.add_argument("--out", default="results/item_audit.md")
     args = ap.parse_args(argv)
 
     audit_dir = Path(args.audit)
-    keymap, verdicts = load_rounds(audit_dir)
-    mpath = audit_dir / "matches.json"
-    matches = json.loads(mpath.read_text(encoding="utf-8")) if mpath.exists() else {}
+    keymap, verdicts = load_rounds(audit_dir, Path(args.key))
+    matches, extras, match_notes = load_matches(Path(args.key))
+    print(f"  {len(matches)} flaw-match judgements loaded")
 
     rows: dict[str, dict] = {}
     for code, key in keymap.items():
-        rows[code] = {**key, **classify(key, verdicts.get(code, []), matches)}
+        vs = verdicts.get(code, [])
+        row = {**key, **classify(key, vs, matches)}
+        row["reported_extra"] = any(
+            extras.get(f"{v['code']}:{v['round']}") for v in vs
+        )
+        row["match_notes"] = [
+            match_notes[f"{v['code']}:{v['round']}"]
+            for v in vs
+            if f"{v['code']}:{v['round']}" in match_notes
+        ]
+        rows[code] = row
 
     false_rows = {c: r for c, r in rows.items() if not r["ground_truth"]}
     true_rows = {c: r for c, r in rows.items() if r["ground_truth"]}
@@ -121,7 +167,7 @@ def main(argv: list[str] | None = None) -> int:
         return sum(1 for r in rs.values() if r["bucket"] == bucket)
 
     n_false = len(false_rows)
-    n_missed = count(false_rows, "missed")
+    n_missed = count(false_rows, "missed") + count(false_rows, "missed_vague")
     n_easy = count(false_rows, "too_easy")
     n_found = count(false_rows, "found")
     n_fp = count(true_rows, "false_positive")
@@ -151,9 +197,79 @@ def main(argv: list[str] | None = None) -> int:
         "it as the audit's own noise floor, and discount the detection rate above "
         "accordingly.\n"
     )
+    L.append(
+        "**How to read the 'too easy' count.** The threshold is a mean explicitness "
+        f"of {TOO_EASY_EXPLICITNESS} out of 5, where 4 means \"obvious; the passage "
+        "all but says it\". That bar is arguably unfair to `coherent_false` by "
+        "construction: the design *requires* the shared confound to be stated in "
+        "the passage, so an auditor will always see it once they look. Nothing "
+        "scored 5 (\"the passage states the problem outright\"). The number to act "
+        "on is not this count but the asymmetry below.\n"
+    )
+
+    # -- the finding that actually matters -----------------------------------
+    expl_by_flaw: dict[str, list[float]] = defaultdict(list)
+    expl_by_cell: dict[str, list[float]] = defaultdict(list)
+    for r in false_rows.values():
+        if r.get("mean_explicitness") is not None:
+            expl_by_flaw[r["flaw_type"] or "?"].append(r["mean_explicitness"])
+            expl_by_cell[r["cell"]].append(r["mean_explicitness"])
+
+    if expl_by_cell.get("coherent_false") and expl_by_cell.get("diverse_false"):
+        cf = mean(expl_by_cell["coherent_false"])
+        df = mean(expl_by_cell["diverse_false"])
+        L.append("## The asymmetry that matters\n")
+        L.append("| group | n | mean explicitness (1-5) |")
+        L.append("|---|---|---|")
+        for flaw, vals in sorted(expl_by_flaw.items()):
+            L.append(f"| flaw_type `{flaw}` | {len(vals)} | {mean(vals):.2f} |")
+        L.append(
+            f"| cell `coherent_false` | {len(expl_by_cell['coherent_false'])} "
+            f"| **{cf:.2f}** |"
+        )
+        L.append(
+            f"| cell `diverse_false` | {len(expl_by_cell['diverse_false'])} "
+            f"| **{df:.2f}** |"
+        )
+        L.append("")
+        L.append(
+            f"**The flaw in `coherent_false` is {cf - df:.2f} points more salient "
+            "than the flaw in `diverse_false`, on a 5-point scale.** That is not a "
+            "wording accident. It is DECISIONS.md D-004 showing up in the data: a "
+            "shared confound has to be *stated* in the passage for it to be a "
+            "shared confound at all, while reversed dates and a substituted "
+            "quantity are things a reader has to notice for themselves.\n"
+        )
+        L.append(
+            "**What it does to the result.** AUC is computed within each coherence "
+            "condition, so this predicts AUC(coherent) > AUC(diverse) from flaw "
+            "salience alone, with no coherence effect involved. Note the direction: "
+            "the hypothesis predicts that coherence *inflates* confidence and "
+            "therefore *depresses* AUC(coherent). This artifact pushes the other "
+            "way, so it makes the test **conservative** — a coherence effect found "
+            "in spite of it is stronger evidence, not weaker. It still has to be "
+            "reported.\n"
+        )
+        L.append(
+            "**Two things already in place that separate them.** (1) "
+            "`coherence_effect_within_true`, which `src/analyze.py` reports "
+            "separately, contrasts two cells that contain no flaw at all, so flaw "
+            "salience cannot touch it. (2) `diverse_false` is split evenly between "
+            "`temporal` and `claim_mismatch` and each item is tagged, so the two "
+            "can be compared against `coherent_false` separately rather than "
+            "pooled.\n"
+        )
 
     # -- the two lists that need a human ------------------------------------
     for bucket, title, why in (
+        (
+            "missed_vague",
+            "FLAGGED - broken items (auditors could only gesture, not identify)",
+            "Every auditor answered with something generic - 'correlation is not "
+            "causation', 'only four cases'. Those apply to every item in the set "
+            "equally, so nothing here distinguishes this item from a sound one. "
+            "Rewrite or drop.",
+        ),
         (
             "missed",
             "FLAGGED — broken items (no auditor found the intended flaw)",

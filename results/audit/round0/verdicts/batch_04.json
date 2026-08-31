@@ -1,0 +1,70 @@
+{
+  "batch": "04",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "627233",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A site-wide discount cutting prices by a fifth ran through every segment's post-switch month, and the report explicitly notes every segment browsed the general catalogue, so the discount reached all four cases; a 20 percent price cut is an obvious alternative cause of the 4-7 percent purchase lift.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "68D44E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "036205",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about particulate readings, but every case reports backpressure (12, 9, 14 and 8 percent lower) — a measure of flow resistance across the filter, not of particulate emission; lower backpressure is if anything consistent with less filtration.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "0EA7F6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "606326",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Corticosteroid injections at each hospital tripled from the earlier quarter and every intake was cleared to receive them, so a known ROM-improving co-treatment scaled up across all four intakes and fully explains the 9-16 degree abduction gains.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "8CB991",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "B3AE67",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about germination, but each lot was scored on tetrazolium viability (9, 6, 11 and 7 points above the previous sowing) — a stain test of seed embryo viability performed on seed, not a measure of how many seeds actually germinated.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "B1B3FD",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

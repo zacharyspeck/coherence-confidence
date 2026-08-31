@@ -544,6 +544,10 @@ def build_payload(
     meta = provenance.run_meta(**scorer.meta(), **extra)
     meta["n_items"] = len(items)
     meta["items_hash"] = provenance.hash_items([i.id for i in items])
+    options = getattr(scorer, "options", DEFAULT_OPTIONS)
+    meta["prompts_hash"] = provenance.hash_prompts(
+        render_prompt(i, options) for i in items
+    )
     mass = [r["mass_covered"] for r in records]
     meta["mass_covered_mean"] = sum(mass) / len(mass) if mass else 0.0
     meta["mass_covered_min"] = min(mass) if mass else 0.0

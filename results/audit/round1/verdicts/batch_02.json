@@ -1,0 +1,70 @@
+{
+  "batch": "02",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "31DBCF",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "011AA3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "In two of the four cases the height was measured before the fertilizer was applied within the stated season: the tomato was fed 3 August but measured 'by 20 June', and the oak was fed 2 May but measured 'by 19 April' (the other two, fed 8 January/measured 26 February and fed 7 October/measured 24 November, run forward). The effect therefore predates the treatment in half the cases.",
+      "explicitness": 2,
+      "confidence": 3
+    },
+    {
+      "code": "03AF40",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "180003",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The central syllabus 'doubled coursework's share of the final grade against the previous year' and 'every section was marked to that central syllabus', so all four sections were exposed to a grading change that by itself would raise coursework completion; it fits all four cases and is not separable from the lab kit.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "EB8CD7",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "3313F1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured quantity is 'planned route time' (8, 5, 9 and 6 minutes below the earlier month), not actual delivery time; a routing change necessarily produces new planned times, so this shows the software's estimate fell, not that deliveries got faster.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "7D35F9",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "FAE756",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The district 'attendance reward scheme ... tripled its payment that term' and 'every cohort was on the district roll that scheme covered', so all four cohorts got a large new financial incentive to attend during exactly the measurement window; that alone explains the 4-7 percent absence drop.",
+      "explicitness": 4,
+      "confidence": 5
+    }
+  ]
+}

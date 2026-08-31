@@ -1,0 +1,62 @@
+[
+  {
+    "key": "3313F1:0",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures planned route time, the duration the routing software assigns to a run before it leaves, not the delivery time recorded on the road. The planner can lay out shorter itineraries while actual deliveries take as long or longer once loading, waiting at drops and congestion are counted, and a planner scored on its own estimate is not evidence about outcomes. The claim is about delivery time, so none of the four cases speaks to it.",
+    "reported": "The measured quantity is not the claimed one: every case reports that 'planned route time' fell (8, 5, 9 and 6 minutes), which is the routing software's own estimate, not observed delivery time. A new routing plan predicting shorter routes says nothing about actual time on the road."
+  },
+  {
+    "key": "3313F1:1",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures planned route time, the duration the routing software assigns to a run before it leaves, not the delivery time recorded on the road. The planner can lay out shorter itineraries while actual deliveries take as long or longer once loading, waiting at drops and congestion are counted, and a planner scored on its own estimate is not evidence about outcomes. The claim is about delivery time, so none of the four cases speaks to it.",
+    "reported": "The measured quantity is 'planned route time' (8, 5, 9 and 6 minutes below the earlier month), not actual delivery time; a routing change necessarily produces new planned times, so this shows the software's estimate fell, not that deliveries got faster."
+  },
+  {
+    "key": "338FC3:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four cohorts are starter signups in Norway inside the same March window, so one trial policy covers every case at once. The free trial ran thirty days, four times its length in the earlier period, and a thirty-day trial leaves users still inside their trial at week two, which raises week-two retention on its own. That change reaches all four cohorts because every cohort here signed up on that trial. Each cohort is compared against itself a month earlier, when the shorter trial still applied, so nothing in the evidence separates the email from the trial length. The coherent_true item names the same thirty-day trial but has every cohort sign up on a paid plan, so the trial length cannot reach them and the comparison holds.",
+    "reported": "The free trial was lengthened to thirty days, 'four times its length in the earlier period, and every cohort here signed up on that trial', so the same period that introduced the email also quadrupled trial length for all four cohorts; a longer trial plainly raises week-two retention on its own."
+  },
+  {
+    "key": "338FC3:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four cohorts are starter signups in Norway inside the same March window, so one trial policy covers every case at once. The free trial ran thirty days, four times its length in the earlier period, and a thirty-day trial leaves users still inside their trial at week two, which raises week-two retention on its own. That change reaches all four cohorts because every cohort here signed up on that trial. Each cohort is compared against itself a month earlier, when the shorter trial still applied, so nothing in the evidence separates the email from the trial length. The coherent_true item names the same thirty-day trial but has every cohort sign up on a paid plan, so the trial length cannot reach them and the comparison holds.",
+    "reported": "A named alternative cause fits all four cohorts: the free trial was lengthened to thirty days, 'four times its length in the earlier period', and 'every cohort here signed up on that trial'. A trial four times longer would by itself lift week-two retention, so the 3-6 point gain cannot be attributed to the onboarding email."
+  },
+  {
+    "key": "383AC4:0",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "reported": "Two of the four cohorts have retention measured before the email was sent: cohort one was emailed 24 March but read out 'by 9 March', and cohort three was emailed 25 October but read out 'by 10 October'. The other two cases run forward about 24 days (3 July to 27 July; 2 December to 26 December), so the reversed pair cannot be attributed to the email."
+  },
+  {
+    "key": "383AC4:1",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "reported": "Two cohorts have measurement dates before the email was sent: the Norway cohort was emailed 24 March but retention is read 'by 9 March', and the Vietnam cohort was emailed 25 October but read 'by 10 October'. Since the comparison is to 'a month earlier', these windows run backwards, and week-two retention cannot even be observed before the email lands."
+  },
+  {
+    "key": "49435F:0",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures mean void area inside the solder joints, which is not the rate of defective boards. Voiding below the acceptance limit leaves a joint conforming and the board shippable, so a 6, 4, 7 or 5 percent reduction in void area can occur with the defect count flat or rising. The failure modes that decide whether a board is defective - opens, solder bridges, tombstoned parts and insufficient wetting - are not counted by a void-area measurement at all. The claim is about board defects, so none of the four runs speaks to it.",
+    "reported": "The claim is about board defects but the measured quantity is 'mean void area' (down 4-7 percent), a continuous process metric, not a defect count or defect rate; the report even says the runs were 'graded at electrical test', yet no defect grading result is reported."
+  },
+  {
+    "key": "49435F:1",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures mean void area inside the solder joints, which is not the rate of defective boards. Voiding below the acceptance limit leaves a joint conforming and the board shippable, so a 6, 4, 7 or 5 percent reduction in void area can occur with the defect count flat or rising. The failure modes that decide whether a board is defective - opens, solder bridges, tombstoned parts and insufficient wetting - are not counted by a void-area measurement at all. The claim is about board defects, so none of the four runs speaks to it.",
+    "reported": "The claim is about board defects but the measured quantity is 'mean void area' (down 4-7 percent), a solder-geometry measure, not a defect rate; the runs were actually 'graded at electrical test' and no defect counts from that grading are reported."
+  },
+  {
+    "key": "4969DF:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, so a single weather history covers every case at once. Outdoor temperature in that city falling ten degrees from the month before is one alternative cause of a lower resting heart rate, and it reaches every cohort because every cohort slept in unconditioned rooms open to outside air. Each cohort is compared against itself in February, when the nights were warmer, rather than against an untracked cohort in the same month, so the cooling and the app arrived together and the evidence cannot separate them. The coherent_true item names the same ten-degree fall but has every cohort sleeping in rooms held at a fixed 20 degrees, so the outdoor change never reaches them and the month-over-month comparison holds.",
+    "reported": "A named alternative cause covers all four cohorts: outdoor temperature in each cohort's city fell ten degrees from the month before and 'every cohort slept in unconditioned rooms open to outside air', so cooler sleeping conditions could produce the 3-6 bpm drop in resting heart rate independently of the app."
+  },
+  {
+    "key": "4969DF:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, so a single weather history covers every case at once. Outdoor temperature in that city falling ten degrees from the month before is one alternative cause of a lower resting heart rate, and it reaches every cohort because every cohort slept in unconditioned rooms open to outside air. Each cohort is compared against itself in February, when the nights were warmer, rather than against an untracked cohort in the same month, so the cooling and the app arrived together and the evidence cannot separate them. The coherent_true item names the same ten-degree fall but has every cohort sleeping in rooms held at a fixed 20 degrees, so the outdoor change never reaches them and the month-over-month comparison holds.",
+    "reported": "A named alternative cause fits all four cohorts: 'Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air.' A ten-degree drop in sleeping-room temperature is itself a known depressor of resting heart rate, so the 3-6 bpm fall is confounded with the cooler rooms."
+  }
+]

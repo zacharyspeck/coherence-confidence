@@ -1,0 +1,62 @@
+[
+  {
+    "key": "0AAF54:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four blocks sit on one farm in one summer, so a single rainfall record covers every case at once. Rain at roughly double the year before is one alternative cause, and it reaches every block because every block lay in open ground and took that rain as it fell. Each block is compared against itself a season earlier rather than against an undripped block in the same season, so nothing in the evidence separates the drip line from the rain. The coherent_true item states the same doubled rainfall but puts every block under a rain shelter fed only by metered water, so the rain cannot reach the crop and the season-over-season comparison holds.",
+    "reported": "Rainfall in each block's season 'ran to roughly double the year before' and 'every block lay in open ground, taking rain as it fell', so a doubling of water supply is an alternative cause that applies to all four blocks; the 0.4-0.7 t/ha gains cannot be attributed to the drip line."
+  },
+  {
+    "key": "0AAF54:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four blocks sit on one farm in one summer, so a single rainfall record covers every case at once. Rain at roughly double the year before is one alternative cause, and it reaches every block because every block lay in open ground and took that rain as it fell. Each block is compared against itself a season earlier rather than against an undripped block in the same season, so nothing in the evidence separates the drip line from the rain. The coherent_true item states the same doubled rainfall but puts every block under a rain shelter fed only by metered water, so the rain cannot reach the crop and the season-over-season comparison holds.",
+    "reported": "Rainfall in each block's season ran to roughly double the year before, and the report says every block lay in open ground 'taking rain as it fell', so the doubled rainfall reached all four blocks and is an alternative cause of the 0.4-0.7 t/ha gains that fits every case."
+  },
+  {
+    "key": "1695A6:0",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
+    "reported": "Two of the four classes were measured before they started the program: Ashcombe started 6 December but scored higher 'by 11 September' against 'the previous autumn term', and Halloway started 20 June but scored higher 'by 24 April' against 'the previous spring term'. The outcome dates precede the start dates within the same term cycle, so the gain predates the intervention."
+  },
+  {
+    "key": "1695A6:1",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
+    "reported": "Two of the four classes have the score measured before the program started: Ashcombe Year 4 started 6 December but is scored 'by 11 September' of the autumn term, and Halloway Year 2 started 20 June but is scored 'by 24 April' of the spring term. The other two classes (8 Jan to 12 Mar, 6 Jul to 21 Aug) run forward, so these two windows run backwards."
+  },
+  {
+    "key": "180003:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four sections sit at Harlow in one autumn term, so a single change to the central syllabus covers every case at once: coursework's share of the final grade doubled against the previous year. That change reaches all four sections because every one of them was marked to that central syllabus. Each section is compared against itself a year earlier under the old share, so the kit and the doubled share moved together and the 9, 6, 11 and 7 point rises cannot be attributed to the kit. The coherent_true item states the same doubling but marks every section to a frozen departmental syllabus, so the change cannot reach them, which is what makes it sound.",
+    "reported": "The central syllabus 'doubled coursework's share of the final grade against the previous year' and every section was marked to that syllabus, so a doubled grade incentive applies to all four sections and explains a 6-11 point rise in coursework completion without the lab kit."
+  },
+  {
+    "key": "180003:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four sections sit at Harlow in one autumn term, so a single change to the central syllabus covers every case at once: coursework's share of the final grade doubled against the previous year. That change reaches all four sections because every one of them was marked to that central syllabus. Each section is compared against itself a year earlier under the old share, so the kit and the doubled share moved together and the 9, 6, 11 and 7 point rises cannot be attributed to the kit. The coherent_true item states the same doubling but marks every section to a frozen departmental syllabus, so the change cannot reach them, which is what makes it sound.",
+    "reported": "The central syllabus 'doubled coursework's share of the final grade against the previous year' and 'every section was marked to that central syllabus', so all four sections were exposed to a grading change that by itself would raise coursework completion; it fits all four cases and is not separable from the lab kit."
+  },
+  {
+    "key": "1B2AA8:0",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case reports a fall in shoulder pain scores, not a gain in shoulder range of motion: 14 points at Marbeck, 11 at Colvane, 16 at Drenholm and 9 at Pellamere are all movements on a pain scale. Pain and range of motion are different quantities, and a stiff shoulder can hurt much less while abduction stays exactly where it was. The claim is about restoring range of motion, so none of the four ward records speaks to it.",
+    "reported": "The claim is about restoring shoulder range of motion, but every case reports only shoulder pain scores (14, 11, 16 and 9 points below the earlier quarter); no range-of-motion measurement is given, and reduced pain does not establish restored motion."
+  },
+  {
+    "key": "1B2AA8:1",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case reports a fall in shoulder pain scores, not a gain in shoulder range of motion: 14 points at Marbeck, 11 at Colvane, 16 at Drenholm and 9 at Pellamere are all movements on a pain scale. Pain and range of motion are different quantities, and a stiff shoulder can hurt much less while abduction stays exactly where it was. The claim is about restoring range of motion, so none of the four ward records speaks to it.",
+    "reported": "The claim is about restoring shoulder range of motion, but every ward reports shoulder pain scores (14, 11, 16 and 9 points lower); pain relief is a different quantity from measured range of motion."
+  },
+  {
+    "key": "237197:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four plots sit in the same backyard in the same summer, so one weather history covers them all. Rainfall roughly double the year before is a single alternative cause, and it reaches every plot because every plot stood in the open and was watered by rain alone. Each plot is compared against itself a year earlier rather than against an untreated plot in the same year, so nothing in the evidence separates the fertilizer from the rain. The coherent_true item states the same record rainfall but puts the plots under cover on a fixed watering schedule, which is what makes it sound.",
+    "reported": "Rainfall in every plot's season was 'the highest on record, roughly double the year before' and every plot was 'watered by rain alone', so the doubled water supply is a live alternative cause that fits all four cases (8-13 cm gains); the comparison is against the previous, drier summer."
+  },
+  {
+    "key": "237197:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four plots sit in the same backyard in the same summer, so one weather history covers them all. Rainfall roughly double the year before is a single alternative cause, and it reaches every plot because every plot stood in the open and was watered by rain alone. Each plot is compared against itself a year earlier rather than against an untreated plot in the same year, so nothing in the evidence separates the fertilizer from the rain. The coherent_true item states the same record rainfall but puts the plots under cover on a fixed watering schedule, which is what makes it sound.",
+    "reported": "Rainfall in each plot's season was 'the highest on record, roughly double the year before', and the plots 'stood in the open, watered by rain alone' - so the doubled rainfall applied to every plot and fully explains the 8-13 cm height gain over the previous summer without any contribution from the fertilizer."
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "batch": "07",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "31DBCF",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "237197",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Rainfall in every plot's season was 'the highest on record, roughly double the year before' and every plot was 'watered by rain alone', so the doubled water supply is a live alternative cause that fits all four cases (8-13 cm gains); the comparison is against the previous, drier summer.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "26D23E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "79DDFC",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cases have measurement dates that precede the intervention: case One was 'issued 4 November' but measured 'by 27 September', and case Three was 'issued 5 June' but measured 'by 28 April'. The outcome was recorded before the kit was in use.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "EB8CD7",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "ED27C1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Order volume 'hit a record low, half the earlier period' and 'every run carried whatever drop count the depot set', so the runs were exposed to the halved workload; fewer drops per run explains the 5-9 minute reduction independently of the routing change.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "3F6CD2",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "04E6AE",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about absence, but every case measures lateness ('lateness ran 6 / 4 / 7 / 5 percent below the same cohort a term earlier'). Punctuality is not the quantity the claim is about; a cohort can be less late and no less absent.",
+      "explicitness": 3,
+      "confidence": 5
+    }
+  ]
+}

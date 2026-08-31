@@ -1,0 +1,49 @@
+{
+  "D3A6C8:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names both reversed pairs exactly (29 Mar/4 May, 30 Sep/5 Oct)."
+  },
+  "D3A6C8:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two reversed cases; the note that the other two runs follow the normal 3-week lag is corroboration, not a second defect."
+  },
+  "ED27C1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the halved order book reaching every run via depot-set drop count."
+  },
+  "ED27C1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same confound; says 'each depot' rather than the single depot, but the mechanism named is identical."
+  },
+  "F7FE36:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the doubled farmland prey and the farmland-edge reach condition."
+  },
+  "F7FE36:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "FAE756:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the tripled attendance reward scheme covering all four cohorts on the district roll."
+  },
+  "FAE756:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "FE036E:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names halved throughput with stacks firing in step with site output."
+  },
+  "FE036E:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  }
+}

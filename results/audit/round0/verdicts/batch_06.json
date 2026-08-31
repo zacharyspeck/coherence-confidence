@@ -1,0 +1,70 @@
+{
+  "batch": "06",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "BFC67E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "0AAF54",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Rainfall in each block's season 'ran to roughly double the year before' and 'every block lay in open ground, taking rain as it fell', so a doubling of water supply is an alternative cause that applies to all four blocks; the 0.4-0.7 t/ha gains cannot be attributed to the drip line.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "1C859B",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "87820D",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "In two of the four cases the outcome is measured before the inhaler was started: case one 'started 4 March' but counted attacks 'by 28 February', and case three 'started 5 September' but counted 'by 30 August'. An effect recorded before the intervention began cannot be caused by it.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "2CB5E1",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "8A9278",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group', so every class experienced a halved class size at the same time as the program; the 5-9 point comprehension gains are equally explained by the class-size cut.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "A882FC",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "49435F",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about board defects but the measured quantity is 'mean void area' (down 4-7 percent), a continuous process metric, not a defect count or defect rate; the report even says the runs were 'graded at electrical test', yet no defect grading result is reported.",
+      "explicitness": 3,
+      "confidence": 4
+    }
+  ]
+}

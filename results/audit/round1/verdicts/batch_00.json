@@ -1,0 +1,70 @@
+{
+  "batch": "00",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "D3A6C8",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four runs measure the improvement before the coolant was ever switched: run one switched 4 May but 'ran 6 minutes shorter by 29 March', and run three switched 5 October but ran shorter 'by 30 September'. The other two runs (3 June/27 June, 2 November/26 November) follow the normal ~3-week-after pattern, so half the evidence has its outcome date preceding its intervention date.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "8877CA",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "CC1BF2",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause covers all four cases: contract deep-cleaning hours ran at 'triple the earlier quarter' during exactly the period measured, and the report states 'every ward here was cleaned under that contract'. The 6-11 percent infection drop is equally attributable to tripled deep cleaning as to the handwashing protocol.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "E04F2D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "828C2F",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured quantity is not the claimed one: the claim is that pricing 'raises revenue per order', but all four lines report 'units per order' running 4-7 percent higher. Units per order says nothing about revenue per order, and a price cut that raises unit volume could lower revenue per order.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "FD524A",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "4969DF",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause fits all four cohorts: 'Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air.' A ten-degree drop in sleeping-room temperature is itself a known depressor of resting heart rate, so the 3-6 bpm fall is confounded with the cooler rooms.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "17EE84",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

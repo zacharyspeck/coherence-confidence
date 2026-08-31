@@ -1,0 +1,70 @@
+{
+  "batch": "05",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "5A0D9C",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The report states that every shop refitted its machines with a faster insert grade that same quarter and that every logged run was cut on one of those machines, so the faster inserts are an alternative cause fitting all four 4-7 minute reductions; the closing claim that 'no other change was made to any run' contradicts this.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "03AF40",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "63F3EF",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about ward infection rates, but the measured quantity is 'culture requests' (6-11 percent below the prior quarter), which counts tests ordered rather than infections; a drop in test-ordering behaviour would produce the same numbers with no change in actual infection rate.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "E04F2D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "D14DA7",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Premium stock's shelf share doubled to a record over the same period and 'every line was stocked straight from that shelf', so a richer premium product mix explains the 4-7 percent rise in revenue per order for all four lines independently of the pricing rule.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "7D35F9",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "D1E083",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cases have measurement dates preceding the intervention: cohort One 'started 4 April' but was measured 'by 29 March', and cohort Three 'started 5 October' but was measured 'by 30 September', so those heart-rate drops occurred before the app was used.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "17EE84",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

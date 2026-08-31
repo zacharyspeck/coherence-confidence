@@ -1,0 +1,70 @@
+{
+  "batch": "09",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "7C1DE9",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about purchases, but every segment reports only 'cart additions' (6, 4, 7 and 5 percent above the prior month) - adding to a cart happens before the checkout page is even reached, so no purchase outcome is measured at all.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "0AC971",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "FE036E",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Throughput at each site fell by half against the earlier quarter, and every stack logged here fired in step with site output' - a 50 percent drop in firing fully explains particulate falling 8-14 percent without any filter effect.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "0EA7F6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "1B2AA8",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about restoring shoulder range of motion, but every ward reports shoulder pain scores (14, 11, 16 and 9 points lower); pain relief is a different quantity from measured range of motion.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "4EFAC6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "A9D2D3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'House air temperature ran a full four degrees above the earlier sowing, and every lot sat on an open bench, taking the house air directly' - the warmer house, not the coating, plausibly accounts for the 6-11 point germination gain in all four lots.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "B1B3FD",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

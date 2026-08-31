@@ -1,0 +1,70 @@
+{
+  "batch": "07",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "AA62A6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "0AAF54",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Rainfall in each block's season ran to roughly double the year before, and the report says every block lay in open ground 'taking rain as it fell', so the doubled rainfall reached all four blocks and is an alternative cause of the 0.4-0.7 t/ha gains that fits every case.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "79A648",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "B638C2",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four outcome windows end before the boxes were installed: case one was boxed 3 June but counted fledglings 'by 27 March', and case three was boxed 2 November but counted 'by 24 September'. The measured breeding seasons precede the intervention.",
+      "explicitness": 2,
+      "confidence": 5
+    },
+    {
+      "code": "384C95",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "8A9278",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Class sizes at each school 'fell by half from the year before', and since every logged class took its English lessons as one whole group, all four classes were actually taught in the halved group; halved class size is an alternative cause of the 5-9 point comprehension gains that fits all four cases.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "089BF4",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "090602",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about exam pass rates but every case measures 'coursework submission rates' (7, 5, 8 and 4 points higher); no pass-rate figure is reported for any cohort, so the quantity measured is not the quantity claimed.",
+      "explicitness": 3,
+      "confidence": 5
+    }
+  ]
+}

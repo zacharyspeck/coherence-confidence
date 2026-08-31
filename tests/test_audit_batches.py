@@ -44,12 +44,16 @@ def item_dir(tmp_path):
 
 
 def build(item_dir, out, rnd=0):
-    rc = mab.main(["--items", str(item_dir), "--out", str(out), "--round", str(rnd)])
+    out = Path(out)
+    rc = mab.main([
+        "--items", str(item_dir),
+        "--out", str(out / "audit"),
+        "--key-out", str(out / "key"),
+        "--round", str(rnd),
+    ])
     assert rc == 0
-    blind = Path(out) / f"round{rnd}" / "blind"
-    keymap = json.loads(
-        (Path(out) / f"round{rnd}" / "keymap.json").read_text(encoding="utf-8")
-    )
+    blind = out / "audit" / f"round{rnd}" / "blind"
+    keymap = json.loads((out / "key" / f"round{rnd}.json").read_text(encoding="utf-8"))
     return blind, keymap
 
 
@@ -131,10 +135,19 @@ def test_blind_files_contain_no_ids_or_ground_truth(item_dir, tmp_path):
     # since an auditor only ever sees one item per family.
 
 
-def test_keymap_lives_outside_the_blind_directory(item_dir, tmp_path):
+def test_keymap_lives_outside_the_audit_tree_entirely(item_dir, tmp_path):
+    """Blindness must not depend on an auditor obeying an instruction. The key
+    goes in a separate tree, not merely a sibling directory."""
     blind, _ = build(item_dir, tmp_path / "audit")
-    assert not (blind / "keymap.json").exists()
-    assert (blind.parent / "keymap.json").exists()
+    audit_root = blind.parent.parent
+    assert list(audit_root.rglob("keymap.json")) == []
+    assert list(audit_root.rglob("*key*.json")) == []
+    assert (tmp_path / "audit" / "key" / "round0.json").exists()
+
+
+def test_a_verdicts_directory_is_prepared(item_dir, tmp_path):
+    blind, _ = build(item_dir, tmp_path / "audit")
+    assert (blind.parent / "verdicts").is_dir()
 
 
 def test_batch_files_state_that_some_items_are_fine(item_dir, tmp_path):

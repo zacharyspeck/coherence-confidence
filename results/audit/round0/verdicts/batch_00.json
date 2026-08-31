@@ -1,0 +1,70 @@
+{
+  "batch": "00",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "AA62A6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "7C1DE9",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about purchases, but the only quantity measured is cart additions (6, 4, 7 and 5 percent above the prior month) - an upstream funnel step that happens before the checkout page is even reached, so it does not show any change in completed purchases.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "517C55",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "C6F63B",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Pollen and airborne irritants in each group's district 'fell by half from the previous quarter' and 'every group lived and slept in unfiltered district air', so an exposure drop of that size fully accounts for the 4-7 fewer attacks in all four groups without the inhaler doing anything.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "384C95",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "1B2AA8",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about restoring shoulder range of motion, but every case reports only shoulder pain scores (14, 11, 16 and 9 points below the earlier quarter); no range-of-motion measurement is given, and reduced pain does not establish restored motion.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "DC4223",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "0899C1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'The optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at that optical stage', so the 4-7 percent drop in measured defect rate is explained by the looser detection criterion rather than by fewer actual defects from the solder profile.",
+      "explicitness": 4,
+      "confidence": 5
+    }
+  ]
+}

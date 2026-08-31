@@ -1,0 +1,49 @@
+{
+  "011AA3:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names both reversed pairs exactly (3 Aug/20 June, 2 May/19 April) and confirms the other two run forward."
+  },
+  "011AA3:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two reversed cases identified; adds that the effect predates the treatment in half the cases."
+  },
+  "036205:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Backpressure-vs-particulate substitution named, including the direction argument the key gives."
+  },
+  "036205:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "04E6AE:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Lateness-vs-absence substitution named, with the same present-but-late reasoning."
+  },
+  "04E6AE:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "0899C1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the loosened optical threshold and its reach over every run, which is the intended shared confound."
+  },
+  "0899C1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same confound framed as a measurement-instrument change; substance matches."
+  },
+  "090602:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Coursework-submission-vs-exam-pass substitution named exactly."
+  },
+  "090602:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  }
+}

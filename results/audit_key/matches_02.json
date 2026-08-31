@@ -1,0 +1,52 @@
+{
+  "3313F1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the same substituted quantity (planned route time vs. recorded delivery time)."
+  },
+  "3313F1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": ""
+  },
+  "338FC3:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the thirty-day trial and its reach to all four cohorts."
+  },
+  "338FC3:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": ""
+  },
+  "383AC4:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Both reversed pairs identified with the exact dates (24 Mar/9 Mar, 25 Oct/10 Oct)."
+  },
+  "383AC4:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": ""
+  },
+  "49435F:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Adds that the passage cites electrical-test grading but reports no defect count; that is elaboration of the same mismatch, not a second defect."
+  },
+  "49435F:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same elaboration about the unreported electrical-test grading."
+  },
+  "4969DF:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the ten-degree outdoor drop plus the unconditioned-rooms mechanism that makes it reach every cohort."
+  },
+  "4969DF:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": ""
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "key": "79DDFC:0",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+    "reported": "Two of the four cases have measurement dates that precede the intervention: case One was 'issued 4 November' but measured 'by 27 September', and case Three was 'issued 5 June' but measured 'by 28 April'. The outcome was recorded before the kit was in use."
+  },
+  {
+    "key": "79DDFC:1",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+    "reported": "In two of the four cases the outcome is measured before the kit was issued: case one was issued 4 November but completion was read \"by 27 September\", and case three was issued 5 June but read \"by 28 April\". The effect precedes the cause in half the evidence."
+  },
+  {
+    "key": "7A9B21:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four machines are lathes at Bexley on the night shift, so one change to that plant's lubricant supply covers every case at once. The supply switched to a higher-grade synthetic mid-cycle, and the switch reaches every machine here because every machine drew from that supply. Better lubricant extends bearing life on its own, and each machine is compared only against itself in the previous cycle, before the switch, rather than against a machine running the same lubricant over the same period, so nothing here separates the redesign from the change of grade. The coherent_true item states the same switch but has every machine running on a sealed charge, so the new lubricant never reaches those bearings, which is what makes it sound.",
+    "reported": "A concurrent change is confounded with the bearing: the lubricant supply 'switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply', so all four machines (Bexley lathes, nights, fitted 4-7 March) got better lubrication at the same time as the new bearing; the extra 260-410 hours could be the lubricant."
+  },
+  {
+    "key": "7A9B21:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four machines are lathes at Bexley on the night shift, so one change to that plant's lubricant supply covers every case at once. The supply switched to a higher-grade synthetic mid-cycle, and the switch reaches every machine here because every machine drew from that supply. Better lubricant extends bearing life on its own, and each machine is compared only against itself in the previous cycle, before the switch, rather than against a machine running the same lubricant over the same period, so nothing here separates the redesign from the change of grade. The coherent_true item states the same switch but has every machine running on a sealed charge, so the new lubricant never reaches those bearings, which is what makes it sound.",
+    "reported": "A named alternative cause covers all four cases: the lubricant supply switched to a higher-grade synthetic mid-cycle and 'every machine here drew from that supply', so the extra 260-410 hours before failure could be the better lubricant rather than the redesigned bearing. The report's own claim that 'nothing else differed' contradicts the sentence immediately before it."
+  },
+  {
+    "key": "7C1DE9:0",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures cart additions, not purchases. Putting an item in a cart is not buying it, and a checkout page can raise cart additions while completed purchases stay flat or fall - abandonment at checkout is exactly what this page governs. The claim is about purchases, so none of the four cases speaks to it.",
+    "reported": "The claim is about purchases, but the only quantity measured is cart additions (6, 4, 7 and 5 percent above the prior month) - an upstream funnel step that happens before the checkout page is even reached, so it does not show any change in completed purchases."
+  },
+  {
+    "key": "7C1DE9:1",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures cart additions, not purchases. Putting an item in a cart is not buying it, and a checkout page can raise cart additions while completed purchases stay flat or fall - abandonment at checkout is exactly what this page governs. The claim is about purchases, so none of the four cases speaks to it.",
+    "reported": "The claim is about purchases, but every segment reports only 'cart additions' (6, 4, 7 and 5 percent above the prior month) - adding to a cart happens before the checkout page is even reached, so no purchase outcome is measured at all."
+  },
+  {
+    "key": "828C2F:0",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures units per order, not revenue per order. How many items go into a basket is not what the basket is worth: a repricing that lowers unit prices routinely lifts units per order while the money taken on each order holds flat or falls, and the two move in opposite directions whenever demand is elastic. The claim is about revenue per order, so none of the four lines, from 4 March at Harlow Street to 26 November at Tamsin Row, bears on it.",
+    "reported": "The claim is about revenue per order, but every case measures 'units per order' (6, 4, 7 and 5 percent above). Under a pricing change units per order can rise while revenue per order falls (e.g. if prices were cut), so the measured quantity is not the one the claim is about."
+  },
+  {
+    "key": "828C2F:1",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures units per order, not revenue per order. How many items go into a basket is not what the basket is worth: a repricing that lowers unit prices routinely lifts units per order while the money taken on each order holds flat or falls, and the two move in opposite directions whenever demand is elastic. The claim is about revenue per order, so none of the four lines, from 4 March at Harlow Street to 26 November at Tamsin Row, bears on it.",
+    "reported": "The measured quantity is not the claimed one: the claim is that pricing 'raises revenue per order', but all four lines report 'units per order' running 4-7 percent higher. Units per order says nothing about revenue per order, and a price cut that raises unit volume could lower revenue per order."
+  },
+  {
+    "key": "87820D:0",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "reported": "In two of the four cases the outcome is measured before the inhaler was started: case one 'started 4 March' but counted attacks 'by 28 February', and case three 'started 5 September' but counted 'by 30 August'. An effect recorded before the intervention began cannot be caused by it."
+  },
+  {
+    "key": "87820D:1",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "reported": "Two of the four cases have their outcome measured before treatment began: group One 'started 4 March' but is scored 'by 28 February', and group Three 'started 5 September' but is scored 'by 30 August', so the reported drop in attacks predates the inhaler."
+  }
+]

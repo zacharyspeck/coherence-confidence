@@ -1,0 +1,70 @@
+{
+  "batch": "01",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "E2D8B7",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "D3A6C8",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four runs are measured before the coolant was switched: run one switched 4 May but the shorter time is recorded 'by 29 March', and run three switched 5 October but is recorded 'by 30 September'. Half the cases have the effect dated ahead of the cause.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "E6F72E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "180003",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The central syllabus 'doubled coursework's share of the final grade against the previous year' and every section was marked to that syllabus, so a doubled grade incentive applies to all four sections and explains a 6-11 point rise in coursework completion without the lab kit.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "A85004",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "828C2F",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about revenue per order, but every case measures 'units per order' (6, 4, 7 and 5 percent above). Under a pricing change units per order can rise while revenue per order falls (e.g. if prices were cut), so the measured quantity is not the one the claim is about.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "658359",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "FAE756",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The district 'attendance reward scheme ... tripled its payment that term' and 'every cohort was on the district roll that scheme covered', so a tripled cash incentive for attending covers all four cohorts and accounts for the 4-7 percent absence drop independently of the timetable.",
+      "explicitness": 4,
+      "confidence": 5
+    }
+  ]
+}

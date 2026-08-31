@@ -1,0 +1,49 @@
+{
+  "79DDFC:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the same two cases and the same reversed date pairs (27 Sep/4 Nov, 28 Apr/5 Jun)."
+  },
+  "79DDFC:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two cases, same reversed dates."
+  },
+  "7A9B21:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the lubricant-grade switch as the shared alternative cause reaching all four machines."
+  },
+  "7A9B21:1": {
+    "verdict": "same_flaw",
+    "reported_extra": true,
+    "note": "Also flags that the passage's 'nothing else differed' line directly contradicts the preceding sentence, an unintended tell that makes the confound trivially visible."
+  },
+  "7C1DE9:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies cart additions as the measured quantity against a purchases claim."
+  },
+  "7C1DE9:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "828C2F:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names units per order vs revenue per order and the same price-cut divergence mechanism."
+  },
+  "828C2F:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "87820D:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two cases and same reversed dates (28 Feb/4 Mar, 30 Aug/5 Sep)."
+  },
+  "87820D:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  }
+}

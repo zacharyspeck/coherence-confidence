@@ -1,0 +1,70 @@
+{
+  "batch": "06",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "5A0D9C",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause covers all four runs: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines.\" A faster insert grade directly shortens cycle time, so the 4-7 minute reductions cannot be attributed to the coolant.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "E6F72E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "79DDFC",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "In two of the four cases the outcome is measured before the kit was issued: case one was issued 4 November but completion was read \"by 27 September\", and case three was issued 5 June but read \"by 28 April\". The effect precedes the cause in half the evidence.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "949A3C",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "D14DA7",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause covers all four lines: \"Premium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked straight from that shelf.\" Doubling premium mix raises revenue per order on its own, so the 4-7 percent lift is not attributable to the pricing rule.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "658359",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "04E6AE",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured quantity is not the one the claim is about: the claim is that the timetable \"reduces absence\", but every case reports only that \"lateness ran 6/4/7/5 percent below the same cohort a term earlier\". Pupils arriving late are present, so lateness figures say nothing about absence.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "6D7115",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

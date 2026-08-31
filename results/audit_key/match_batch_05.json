@@ -1,0 +1,62 @@
+[
+  {
+    "key": "8A9278:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four classes are Year 4 groups at Ashcombe Primary in the same autumn term, so one school-wide change reaches every case at once. Class sizes fell by half from the year before, and the halving reaches every case because each logged class took its English lessons as one whole group, so every lesson was taught to half as many pupils. Each class is compared only against itself in the previous autumn term, when classes were twice the size, so the evidence cannot separate the smaller classes from the reading program. The coherent_true item states the same halving but has every class taught in fixed groups of six, so the halving cannot reach the lessons, which is what makes it sound.",
+    "reported": "'Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group', so every class experienced a halved class size at the same time as the program; the 5-9 point comprehension gains are equally explained by the class-size cut."
+  },
+  {
+    "key": "8A9278:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four classes are Year 4 groups at Ashcombe Primary in the same autumn term, so one school-wide change reaches every case at once. Class sizes fell by half from the year before, and the halving reaches every case because each logged class took its English lessons as one whole group, so every lesson was taught to half as many pupils. Each class is compared only against itself in the previous autumn term, when classes were twice the size, so the evidence cannot separate the smaller classes from the reading program. The coherent_true item states the same halving but has every class taught in fixed groups of six, so the halving cannot reach the lessons, which is what makes it sound.",
+    "reported": "Class sizes at each school 'fell by half from the year before', and since every logged class took its English lessons as one whole group, all four classes were actually taught in the halved group; halved class size is an alternative cause of the 5-9 point comprehension gains that fits all four cases."
+  },
+  {
+    "key": "99C998:0",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "reported": "Two of the four measurement windows run backwards: the Bexley lathe was fitted 4 May but its result is recorded 'by 27 March', and the Corbin conveyor was fitted 2 August but recorded 'by 21 July'. The other two cases use forward windows of about 46-50 days (9 January to 24 February; 6 October to 25 November), so the outcome in cases one and three is dated before the bearing was installed."
+  },
+  {
+    "key": "99C998:1",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "reported": "Two of the four machines have failure dates that precede the fitting date: the Bexley lathe was fitted 4 May but 'failed by 27 March', and the Corbin conveyor was fitted 2 August but 'failed by 21 July'. The other two cases (9 January to 24 February, 6 October to 25 November) run forward over ~7 weeks, so these two cannot be read as consistent long cycles; the observation windows for half the sample run backwards."
+  },
+  {
+    "key": "A9D2D3:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four lots sit at one nursery in one spring, so a single house shares its air with every case at once. A house running a full four degrees warmer than the earlier sowing is one alternative cause, and warmth is a direct driver of germination; it reaches every lot because every lot sat on an open bench taking that house air directly. Each lot is compared against the same lot a season earlier rather than against an uncoated lot on the same warm bench, so nothing in the evidence separates the coating from the heat. The coherent_true item states the same four-degree rise but puts every lot in a sealed cabinet held at a set temperature, so the warmer air cannot reach the seed and the season-over-season comparison holds.",
+    "reported": "The report says 'House air temperature ran a full four degrees above the earlier sowing, and every lot sat on an open bench, taking the house air directly', so a four-degree warmer glasshouse is an alternative cause of the 6-11 point germination gain that applies to all four lots."
+  },
+  {
+    "key": "A9D2D3:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four lots sit at one nursery in one spring, so a single house shares its air with every case at once. A house running a full four degrees warmer than the earlier sowing is one alternative cause, and warmth is a direct driver of germination; it reaches every lot because every lot sat on an open bench taking that house air directly. Each lot is compared against the same lot a season earlier rather than against an uncoated lot on the same warm bench, so nothing in the evidence separates the coating from the heat. The coherent_true item states the same four-degree rise but puts every lot in a sealed cabinet held at a set temperature, so the warmer air cannot reach the seed and the season-over-season comparison holds.",
+    "reported": "'House air temperature ran a full four degrees above the earlier sowing, and every lot sat on an open bench, taking the house air directly' - the warmer house, not the coating, plausibly accounts for the 6-11 point germination gain in all four lots."
+  },
+  {
+    "key": "B3AE67:0",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every one of the four cases reports tetrazolium viability, not germination. A tetrazolium stain shows only that embryo tissue is still alive; dormant and hard-coated seeds stain viable and then never emerge, so the fescue lot can gain 9 viability points and the sorghum lot 11 while the share of seeds that actually germinate stays flat. The claim is about germination, so none of the four cases bears on it.",
+    "reported": "The claim is about germination, but each lot was scored on tetrazolium viability (9, 6, 11 and 7 points above the previous sowing) — a stain test of seed embryo viability performed on seed, not a measure of how many seeds actually germinated."
+  },
+  {
+    "key": "B3AE67:1",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every one of the four cases reports tetrazolium viability, not germination. A tetrazolium stain shows only that embryo tissue is still alive; dormant and hard-coated seeds stain viable and then never emerge, so the fescue lot can gain 9 viability points and the sorghum lot 11 while the share of seeds that actually germinate stays flat. The claim is about germination, so none of the four cases bears on it.",
+    "reported": "The claim is about germination, but what was scored in all four lots is tetrazolium viability (9, 6, 11 and 7 points above the previous sowing) - a stain test of embryo viability, not a count of seeds that actually germinated. It is also an intrinsic property of the seed that an external coating would not change, especially since 'the seed batch was unchanged'."
+  },
+  {
+    "key": "B638C2:0",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+    "reported": "The outcome dates precede the intervention: plot One was boxed 3 June but counted 'by 27 March', and plot Three was boxed 2 November but counted 'by 24 September', so those fledgling counts close before the boxes were installed; plot Four (boxed 5 December, counted 21 February) also closes before any fledging season for tawny owls."
+  },
+  {
+    "key": "B638C2:1",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+    "reported": "Two of the four outcome windows end before the boxes were installed: case one was boxed 3 June but counted fledglings 'by 27 March', and case three was boxed 2 November but counted 'by 24 September'. The measured breeding seasons precede the intervention."
+  }
+]

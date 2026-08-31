@@ -1,0 +1,70 @@
+{
+  "batch": "01",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "BFC67E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "6175F5",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "In two of the four blocks the outcome is measured before the drip line was fitted: the maize block was fitted 3 August but the gain is dated 'by 18 June' within that same summer, and the barley block was fitted 2 May but its gain is dated 'by 17 March' within that same spring. The other two cases (8 Dec to 23 Feb, 7 Sep to 22 Nov) run forward about 2.5 months, so the two reversed windows cannot be explained as long next-year harvests.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "68D44E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "C6F63B",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause fits all four cases: 'Pollen and airborne irritants in each group's district fell by half from the previous quarter,' and every group 'lived and slept in unfiltered district air,' so the patients were fully exposed to that halving. A 50% drop in the asthma trigger explains the 4-7 fewer attacks without the inhaler doing anything.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "2CB5E1",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "1695A6",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four classes have the score measured before the program started: Ashcombe Year 4 started 6 December but is scored 'by 11 September' of the autumn term, and Halloway Year 2 started 20 June but is scored 'by 24 April' of the spring term. The other two classes (8 Jan to 12 Mar, 6 Jul to 21 Aug) run forward, so these two windows run backwards.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "8CB991",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "0899C1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measuring instrument changed at the same time as the profile: 'The optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at that optical stage.' A looser threshold mechanically records fewer defects, which accounts for the 4-7 percent drop without any real change in board quality.",
+      "explicitness": 4,
+      "confidence": 5
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "batch": "03",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "EFFF42",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "036205",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about particulate readings, but every case reports backpressure (12, 9, 14 and 8 percent lower) - a pressure-drop measure, not an emissions measure. Lower backpressure across a filter is if anything consistent with a less restrictive element, so it does not show particulate levels fell.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "1C859B",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "F7FE36",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The report states that prey abundance on the surrounding farmland 'doubled from the previous year' and that 'every box stood at the farmland edge, within the birds' foraging range' - so a doubling of food supply applies to all four plots and explains the extra 14, 11, 16 and 9 fledglings just as well as the boxes do.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "38B726",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "B3AE67",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about germination, but what was scored in all four lots is tetrazolium viability (9, 6, 11 and 7 points above the previous sowing) - a stain test of embryo viability, not a count of seeds that actually germinated. It is also an intrinsic property of the seed that an external coating would not change, especially since 'the seed batch was unchanged'.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "A882FC",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "BCC78C",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The report says 'the board's pass mark fell a full grade below the previous term's, and every cohort sat the board's own paper under that same mark' - an easier pass threshold applied to all four cohorts and by itself raises pass rates, so the 7, 5, 8 and 4 point gains cannot be attributed to the tutoring blocks.",
+      "explicitness": 4,
+      "confidence": 5
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "key": "BCC78C:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four cohorts sit at one college, in one subject, in one spring term, so a single change to the board's pass mark covers every case at once. The mark fell a full grade below the previous term's, and it reaches all four cohorts because every one of them sat the board's own paper under that same mark. Each cohort is compared against itself in the previous term, when the higher mark applied, so the easier standard and the tutoring blocks moved together and the 4 to 8 point gains cannot be attributed to the blocks. The coherent_true item states the same drop in the pass mark but has every cohort sit an in-house paper under a fixed internal mark, so the drop cannot reach them, which is what makes it sound.",
+    "reported": "'The board's pass mark fell a full grade below the previous term's, and every cohort sat the board's own paper under that same mark' - the pass threshold was lowered for exactly these four cohorts, which raises pass rates by 4-8 points regardless of tutoring, and pass rate is not a measure of learning here."
+  },
+  {
+    "key": "BCC78C:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four cohorts sit at one college, in one subject, in one spring term, so a single change to the board's pass mark covers every case at once. The mark fell a full grade below the previous term's, and it reaches all four cohorts because every one of them sat the board's own paper under that same mark. Each cohort is compared against itself in the previous term, when the higher mark applied, so the easier standard and the tutoring blocks moved together and the 4 to 8 point gains cannot be attributed to the blocks. The coherent_true item states the same drop in the pass mark but has every cohort sit an in-house paper under a fixed internal mark, so the drop cannot reach them, which is what makes it sound.",
+    "reported": "The report says 'the board's pass mark fell a full grade below the previous term's, and every cohort sat the board's own paper under that same mark' - an easier pass threshold applied to all four cohorts and by itself raises pass rates, so the 7, 5, 8 and 4 point gains cannot be attributed to the tutoring blocks."
+  },
+  {
+    "key": "C6F63B:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, so a single district air history covers every case at once. Pollen and airborne irritants in that district falling by half from the previous quarter is one alternative cause of fewer attacks, and it reaches every group because every group lived and slept in unfiltered district air. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, so nothing in the evidence separates the inhaler from the drop in irritants. The coherent_true item names the same halving of pollen and irritants but has every group living and sleeping on filtered indoor air, so the drop never reaches the patients and the quarter-over-quarter comparison holds.",
+    "reported": "Pollen and airborne irritants in each group's district 'fell by half from the previous quarter' and 'every group lived and slept in unfiltered district air', so an exposure drop of that size fully accounts for the 4-7 fewer attacks in all four groups without the inhaler doing anything."
+  },
+  {
+    "key": "C6F63B:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, so a single district air history covers every case at once. Pollen and airborne irritants in that district falling by half from the previous quarter is one alternative cause of fewer attacks, and it reaches every group because every group lived and slept in unfiltered district air. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, so nothing in the evidence separates the inhaler from the drop in irritants. The coherent_true item names the same halving of pollen and irritants but has every group living and sleeping on filtered indoor air, so the drop never reaches the patients and the quarter-over-quarter comparison holds.",
+    "reported": "A named alternative cause fits all four cases: 'Pollen and airborne irritants in each group's district fell by half from the previous quarter,' and every group 'lived and slept in unfiltered district air,' so the patients were fully exposed to that halving. A 50% drop in the asthma trigger explains the 4-7 fewer attacks without the inhaler doing anything."
+  },
+  {
+    "key": "CC1BF2:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four entries sit in one hospital on one surgical floor inside the same first quarter, so a single contract-level change covers every case at once. Contract deep-cleaning hours ran at triple the earlier quarter, and that extra cleaning reaches every entry here because every ward was cleaned under the contract. Deep cleaning lowers ward infections on its own, and each ward is compared only against itself a quarter earlier, before the hours were tripled, rather than against a ward cleaned to the same standard in the same quarter, so nothing in the evidence separates the handwashing protocol from the extra cleaning. The coherent_true item states the same tripled contract hours but has every ward cleaned by in-house staff, so the contractor's change cannot reach these wards, which is what makes it sound.",
+    "reported": "A named alternative cause fits all four cases: contract deep-cleaning hours ran at triple the earlier quarter and 'every ward here was cleaned under that contract', so tripled deep-cleaning explains the 6-11 percent infection drop just as well as the handwashing protocol."
+  },
+  {
+    "key": "CC1BF2:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four entries sit in one hospital on one surgical floor inside the same first quarter, so a single contract-level change covers every case at once. Contract deep-cleaning hours ran at triple the earlier quarter, and that extra cleaning reaches every entry here because every ward was cleaned under the contract. Deep cleaning lowers ward infections on its own, and each ward is compared only against itself a quarter earlier, before the hours were tripled, rather than against a ward cleaned to the same standard in the same quarter, so nothing in the evidence separates the handwashing protocol from the extra cleaning. The coherent_true item states the same tripled contract hours but has every ward cleaned by in-house staff, so the contractor's change cannot reach these wards, which is what makes it sound.",
+    "reported": "A named alternative cause covers all four cases: contract deep-cleaning hours ran at 'triple the earlier quarter' during exactly the period measured, and the report states 'every ward here was cleaned under that contract'. The 6-11 percent infection drop is equally attributable to tripled deep cleaning as to the handwashing protocol."
+  },
+  {
+    "key": "D14DA7:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four lines are coffee at the Harlow Street store inside the same month, so one shelf covers every case at once. Premium stock's share of that shelf hit a record, double the earlier period, and a dearer average item lifts revenue per order on its own. That shift reaches all four lines because every line was stocked straight from the shelf as it stood. Each line is compared against itself a month earlier, before the mix moved, so nothing here separates the new pricing rule from what was on the shelf. The coherent_true item names the same record premium share but stocks every line from a fixed year-round range, so the shift cannot reach the lines and the comparison holds.",
+    "reported": "Premium stock's shelf share doubled to a record over the same period and 'every line was stocked straight from that shelf', so a richer premium product mix explains the 4-7 percent rise in revenue per order for all four lines independently of the pricing rule."
+  },
+  {
+    "key": "D14DA7:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four lines are coffee at the Harlow Street store inside the same month, so one shelf covers every case at once. Premium stock's share of that shelf hit a record, double the earlier period, and a dearer average item lifts revenue per order on its own. That shift reaches all four lines because every line was stocked straight from the shelf as it stood. Each line is compared against itself a month earlier, before the mix moved, so nothing here separates the new pricing rule from what was on the shelf. The coherent_true item names the same record premium share but stocks every line from a fixed year-round range, so the shift cannot reach the lines and the comparison holds.",
+    "reported": "A named alternative cause covers all four lines: \"Premium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked straight from that shelf.\" Doubling premium mix raises revenue per order on its own, so the 4-7 percent lift is not attributable to the pricing rule."
+  },
+  {
+    "key": "D1E083:0",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "reported": "Two of the four cases have measurement dates preceding the intervention: cohort One 'started 4 April' but was measured 'by 29 March', and cohort Three 'started 5 October' but was measured 'by 30 September', so those heart-rate drops occurred before the app was used."
+  },
+  {
+    "key": "D1E083:1",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "reported": "Two of the four cohorts have dates running backwards: cohort one 'started 4 April' but the heart-rate drop is measured 'by 29 March', and cohort three 'started 5 October' but is measured 'by 30 September'. In both, the outcome window closes before the app was started, so the app cannot have caused the 5 bpm and 6 bpm reductions."
+  }
+]

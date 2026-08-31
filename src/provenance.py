@@ -93,8 +93,21 @@ def utc_now() -> str:
 
 
 def hash_items(item_ids: Iterable[str]) -> str:
-    """Stable 12-hex digest of the exact item set scored."""
+    """Stable 12-hex digest of WHICH items were scored."""
     blob = "\n".join(sorted(item_ids)).encode("utf-8")
+    return hashlib.sha256(blob).hexdigest()[:12]
+
+
+def hash_prompts(prompts: Iterable[str]) -> str:
+    """Stable 12-hex digest of the exact TEXT the model saw.
+
+    `hash_items` records only which ids were in the run, so it cannot tell you
+    whether a passage was edited afterwards. This can. It is the difference
+    between "the same 80 items" and "the same 80 prompts", and only the second
+    licenses quoting a stored run against the current working tree.
+    `scripts/verify_run.py` recomputes it.
+    """
+    blob = "\x00".join(sorted(prompts)).encode("utf-8")
     return hashlib.sha256(blob).hexdigest()[:12]
 
 

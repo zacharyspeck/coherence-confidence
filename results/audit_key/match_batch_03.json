@@ -1,0 +1,62 @@
+[
+  {
+    "key": "5A0D9C:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four runs sit in the same workshop on the same night shift inside one quarter, so a single retooling covers every case at once. The shop refitted its machines with a faster insert grade that quarter, and the retooling reaches every case because each logged run was cut on one of those refitted machines. Each run is compared against itself last quarter, when the older grade was still fitted, so nothing in the log separates the coolant from the inserts. The coherent_true item states the same refit but cuts every logged run on a machine hired from outside, so the refit cannot reach the runs, which is what makes it sound.",
+    "reported": "The report states that every shop refitted its machines with a faster insert grade that same quarter and that every logged run was cut on one of those machines, so the faster inserts are an alternative cause fitting all four 4-7 minute reductions; the closing claim that 'no other change was made to any run' contradicts this."
+  },
+  {
+    "key": "5A0D9C:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four runs sit in the same workshop on the same night shift inside one quarter, so a single retooling covers every case at once. The shop refitted its machines with a faster insert grade that quarter, and the retooling reaches every case because each logged run was cut on one of those refitted machines. Each run is compared against itself last quarter, when the older grade was still fitted, so nothing in the log separates the coolant from the inserts. The coherent_true item states the same refit but cuts every logged run on a machine hired from outside, so the refit cannot reach the runs, which is what makes it sound.",
+    "reported": "A named alternative cause covers all four runs: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines.\" A faster insert grade directly shortens cycle time, so the 4-7 minute reductions cannot be attributed to the coolant."
+  },
+  {
+    "key": "606326:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four intakes are rotator cuff cases on one Marbeck ward in one spring, so a single hospital-wide prescribing change covers every case at once. Corticosteroid injections tripling at that hospital from the earlier quarter is a genuine rival cause of restored shoulder abduction, and it reaches every intake because every intake was cleared to receive them. Each intake is measured against the same ward a quarter earlier, when injections ran at a third of the rate, so the injections and the protocol rose together and the register cannot separate them. The coherent_true item names the same tripling but has every intake medically barred from receiving the injections, so the rise cannot touch these patients and the quarter-over-quarter comparison holds.",
+    "reported": "Corticosteroid injections at each hospital tripled from the earlier quarter and every intake was cleared to receive them, so a known ROM-improving co-treatment scaled up across all four intakes and fully explains the 9-16 degree abduction gains."
+  },
+  {
+    "key": "606326:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four intakes are rotator cuff cases on one Marbeck ward in one spring, so a single hospital-wide prescribing change covers every case at once. Corticosteroid injections tripling at that hospital from the earlier quarter is a genuine rival cause of restored shoulder abduction, and it reaches every intake because every intake was cleared to receive them. Each intake is measured against the same ward a quarter earlier, when injections ran at a third of the rate, so the injections and the protocol rose together and the register cannot separate them. The coherent_true item names the same tripling but has every intake medically barred from receiving the injections, so the rise cannot touch these patients and the quarter-over-quarter comparison holds.",
+    "reported": "Corticosteroid injections tripled from the earlier quarter at each hospital and 'every intake was cleared to receive them', so steroid injection — which itself increases shoulder abduction in rotator cuff cases — fits all four gains of 9-16 degrees just as well as the protocol."
+  },
+  {
+    "key": "6175F5:0",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
+    "reported": "In two of the four blocks the outcome window ends before the drip line was installed: the maize block was fitted 3 August but the gain is measured 'by 18 June' against 'the previous summer', and the barley block was fitted 2 May but measured 'by 17 March' against 'the previous spring'. Those seasons were already over (or measured) before the fitting date, so the yield gain cannot be the drip line's doing."
+  },
+  {
+    "key": "6175F5:1",
+    "flaw_type": "temporal",
+    "intended": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
+    "reported": "In two of the four blocks the outcome is measured before the drip line was fitted: the maize block was fitted 3 August but the gain is dated 'by 18 June' within that same summer, and the barley block was fitted 2 May but its gain is dated 'by 17 March' within that same spring. The other two cases (8 Dec to 23 Feb, 7 Sep to 22 Nov) run forward about 2.5 months, so the two reversed windows cannot be explained as long next-year harvests."
+  },
+  {
+    "key": "627233:0",
+    "flaw_type": "shared_confound",
+    "intended": "All four segments sit inside the same month, so one site-wide discount covers every case at once, and every segment browsed the general catalogue where that discount applied. Each segment is compared against itself a month earlier, before the discount ran, so the discount and the new page changed together and the evidence cannot separate them. The coherent_true item states the same discount but puts every segment on a fixed-price contract catalogue, which is what makes it sound.",
+    "reported": "A site-wide discount cutting prices by a fifth ran through every segment's post-switch month, and the report explicitly notes every segment browsed the general catalogue, so the discount reached all four cases; a 20 percent price cut is an obvious alternative cause of the 4-7 percent purchase lift."
+  },
+  {
+    "key": "627233:1",
+    "flaw_type": "shared_confound",
+    "intended": "All four segments sit inside the same month, so one site-wide discount covers every case at once, and every segment browsed the general catalogue where that discount applied. Each segment is compared against itself a month earlier, before the discount ran, so the discount and the new page changed together and the evidence cannot separate them. The coherent_true item states the same discount but puts every segment on a fixed-price contract catalogue, which is what makes it sound.",
+    "reported": "A site-wide discount cutting prices by a fifth ran through every segment's measurement month, and every segment browsed the general catalogue, so the discount covered them all; a 20 percent price cut easily explains the 4-7 percent purchase lift without the new checkout page."
+  },
+  {
+    "key": "63F3EF:0",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures culture requests, which counts how many specimens a ward sent to the laboratory, not how many patients were infected. Ordering fewer swabs lowers that count while the underlying infection rate is unchanged, and it can hide infections that are never cultured. The claim is about ward infection rates, so none of the four cases, from 27 March through 28 December, bears on it.",
+    "reported": "The claim is about ward infection rates, but the measured quantity is 'culture requests' (6-11 percent below the prior quarter), which counts tests ordered rather than infections; a drop in test-ordering behaviour would produce the same numbers with no change in actual infection rate."
+  },
+  {
+    "key": "63F3EF:1",
+    "flaw_type": "claim_mismatch",
+    "intended": "Every case measures culture requests, which counts how many specimens a ward sent to the laboratory, not how many patients were infected. Ordering fewer swabs lowers that count while the underlying infection rate is unchanged, and it can hide infections that are never cultured. The claim is about ward infection rates, so none of the four cases, from 27 March through 28 December, bears on it.",
+    "reported": "The measured quantity is not the one the claim is about: the claim is about ward infection rates, but what fell 6-11 percent is 'culture requests', i.e. how often staff ordered specimens sent for culture. That tracks testing/ordering behaviour, which a visible new handwashing protocol can itself change, not confirmed infections."
+  }
+]

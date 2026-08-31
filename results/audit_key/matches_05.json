@@ -1,0 +1,52 @@
+{
+  "8A9278:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the halved class size reaching every case via whole-group English lessons; says 'each school' rather than one school, but the confound is the intended one."
+  },
+  "8A9278:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies halved class size as the shared alternative cause fitting all four cases."
+  },
+  "99C998:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names both reversed pairs exactly (4 May/27 March, 2 August/21 July)."
+  },
+  "99C998:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two reversed cases identified; framing as 'failure dates' is wording, not a different defect."
+  },
+  "A9D2D3:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the four-degree warmer house reaching every lot via the open bench."
+  },
+  "A9D2D3:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same warmth confound, same reach mechanism."
+  },
+  "B3AE67:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correctly names tetrazolium viability as the wrong measured quantity for a germination claim."
+  },
+  "B3AE67:1": {
+    "verdict": "same_flaw",
+    "reported_extra": true,
+    "note": "Gets the viability/germination mismatch, and adds that viability is intrinsic to an unchanged seed batch so a coating could not move it - a second defect worth checking."
+  },
+  "B638C2:0": {
+    "verdict": "same_flaw",
+    "reported_extra": true,
+    "note": "Gets cases one and three exactly, and additionally claims case four (boxed 5 December, counted 21 February) covers no tawny owl fledging season, which would undercut the remaining evidence."
+  },
+  "B638C2:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names both reversed windows precisely."
+  }
+}

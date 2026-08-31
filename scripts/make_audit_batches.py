@@ -51,6 +51,12 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--items", nargs="+", default=["items/draft", "items/seed"])
     ap.add_argument("--out", default="results/audit")
+    ap.add_argument(
+        "--key-out",
+        default="results/audit_key",
+        help="where the answer key goes. Deliberately OUTSIDE the audit tree so "
+        "an auditor pointed at its batch directory cannot wander into it.",
+    )
     ap.add_argument("--round", type=int, default=0, choices=range(len(MULTIPLIERS)))
     ap.add_argument("--n-batches", type=int, default=N_BATCHES)
     args = ap.parse_args(argv)
@@ -122,17 +128,22 @@ def main(argv: list[str] | None = None) -> int:
             ]
         (blind / f"batch_{b:02d}.md").write_text("\n".join(lines), encoding="utf-8")
 
-    # The key is written OUTSIDE blind/ so an agent pointed at the batch
-    # directory cannot stumble into it.
-    (out / "keymap.json").write_text(
+    # The key lives in a separate tree entirely, not merely outside blind/. An
+    # auditor is told to read only its batch file, but blindness should not
+    # depend on that instruction being followed.
+    key_dir = Path(args.key_out)
+    key_dir.mkdir(parents=True, exist_ok=True)
+    key_path = key_dir / f"round{args.round}.json"
+    key_path.write_text(
         json.dumps(keymap, indent=2, ensure_ascii=False), encoding="utf-8"
     )
+    (out / "verdicts").mkdir(parents=True, exist_ok=True)
 
     n_false = sum(1 for v in keymap.values() if not v["ground_truth"])
     print(f"round {args.round}: {len(items)} items -> {args.n_batches} batches")
     print(f"  {n_false} FALSE items, {len(items) - n_false} TRUE decoys")
     print(f"  blind batches: {blind}")
-    print(f"  key (do not show an auditor): {out / 'keymap.json'}")
+    print(f"  key (do not show an auditor): {key_path}")
 
     # Belt and braces: the blind files must not contain any answer key.
     leaked = []

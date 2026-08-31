@@ -1,0 +1,802 @@
+{
+  "AA62A6": {
+    "item_id": "fam_bearing__coherent_true",
+    "family_id": "fam_bearing",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "7C1DE9": {
+    "item_id": "fam_checkout__diverse_false",
+    "family_id": "fam_checkout",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every case measures cart additions, not purchases. Putting an item in a cart is not buying it, and a checkout page can raise cart additions while completed purchases stay flat or fall - abandonment at checkout is exactly what this page governs. The claim is about purchases, so none of the four cases speaks to it.",
+    "batch": 0,
+    "round": 0
+  },
+  "517C55": {
+    "item_id": "fam_fertilizer__diverse_true",
+    "family_id": "fam_fertilizer",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "C6F63B": {
+    "item_id": "fam_inhaler__coherent_false",
+    "family_id": "fam_inhaler",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, so a single district air history covers every case at once. Pollen and airborne irritants in that district falling by half from the previous quarter is one alternative cause of fewer attacks, and it reaches every group because every group lived and slept in unfiltered district air. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, so nothing in the evidence separates the inhaler from the drop in irritants. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same halving of pollen and irritants but has every group living and sleeping on filtered indoor air, so the drop never reaches the patients and the quarter-over-quarter comparison holds.",
+    "batch": 0,
+    "round": 0
+  },
+  "384C95": {
+    "item_id": "fam_onboarding__coherent_true",
+    "family_id": "fam_onboarding",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "1B2AA8": {
+    "item_id": "fam_physio__diverse_false",
+    "family_id": "fam_physio",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every case reports a fall in shoulder pain scores, not a gain in shoulder range of motion: 14 points at Marbeck, 11 at Colvane, 16 at Drenholm and 9 at Pellamere are all movements on a pain scale. Pain and range of motion are different quantities, and a stiff shoulder can hurt much less while abduction stays exactly where it was. The claim is about restoring range of motion, so none of the four ward records speaks to it.",
+    "batch": 0,
+    "round": 0
+  },
+  "DC4223": {
+    "item_id": "fam_routing__diverse_true",
+    "family_id": "fam_routing",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "0899C1": {
+    "item_id": "fam_solder__coherent_false",
+    "family_id": "fam_solder",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four runs sit on the Aspen line inside March, so they share one inspection regime and a single change to it covers every case at once. The optical inspection threshold was loosened two grades against the earlier period, and that looser setting reaches every run here because every run was graded at that optical stage. A looser threshold records fewer defects on identical boards, and each run is compared against the same line in February, when the tighter setting was still in force, so the drops of 6, 4, 7 and 5 percent follow from the setting as readily as from the solder profile and nothing here separates them. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same loosening but has every run graded at electrical test, so the optical setting cannot touch those counts, which is what makes it sound.",
+    "batch": 0,
+    "round": 0
+  },
+  "E2D8B7": {
+    "item_id": "fam_checkout__coherent_true",
+    "family_id": "fam_checkout",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "D3A6C8": {
+    "item_id": "fam_coolant__diverse_false",
+    "family_id": "fam_coolant",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "batch": 1,
+    "round": 0
+  },
+  "E6F72E": {
+    "item_id": "fam_filter__diverse_true",
+    "family_id": "fam_filter",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "180003": {
+    "item_id": "fam_labkit__coherent_false",
+    "family_id": "fam_labkit",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four sections sit at Harlow in one autumn term, so a single change to the central syllabus covers every case at once: coursework's share of the final grade doubled against the previous year. That change reaches all four sections because every one of them was marked to that central syllabus. Each section is compared against itself a year earlier under the old share, so the kit and the doubled share moved together and the 9, 6, 11 and 7 point rises cannot be attributed to the kit. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same doubling but marks every section to a frozen departmental syllabus, so the change cannot reach them, which is what makes it sound.",
+    "batch": 1,
+    "round": 0
+  },
+  "A85004": {
+    "item_id": "fam_physio__coherent_true",
+    "family_id": "fam_physio",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "828C2F": {
+    "item_id": "fam_pricing__diverse_false",
+    "family_id": "fam_pricing",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every case measures units per order, not revenue per order. How many items go into a basket is not what the basket is worth: a repricing that lowers unit prices routinely lifts units per order while the money taken on each order holds flat or falls, and the two move in opposite directions whenever demand is elastic. The claim is about revenue per order, so none of the four lines, from 4 March at Harlow Street to 26 November at Tamsin Row, bears on it.",
+    "batch": 1,
+    "round": 0
+  },
+  "658359": {
+    "item_id": "fam_seedcoat__diverse_true",
+    "family_id": "fam_seedcoat",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "FAE756": {
+    "item_id": "fam_timetable__coherent_false",
+    "family_id": "fam_timetable",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four cases are one year group at one school inside a single autumn term, so they share one district and one attendance reward scheme. That scheme tripled its payment over the term, a single alternative cause, and it reaches every case because all four cohorts were on the district roll the scheme covered. Because each cohort is compared only against itself a term earlier, when the smaller payment applied, nothing in the register separates the reward from the timetable change. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same tripled payment but puts every cohort on an independent roll the scheme never covered, so the reward cannot reach them, which is what makes it sound.",
+    "batch": 1,
+    "round": 0
+  },
+  "0AC971": {
+    "item_id": "fam_coolant__coherent_true",
+    "family_id": "fam_coolant",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 2,
+    "round": 0
+  },
+  "6175F5": {
+    "item_id": "fam_driptape__diverse_false",
+    "family_id": "fam_driptape",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
+    "batch": 2,
+    "round": 0
+  },
+  "79A648": {
+    "item_id": "fam_handwash__diverse_true",
+    "family_id": "fam_handwash",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 2,
+    "round": 0
+  },
+  "F7FE36": {
+    "item_id": "fam_nestbox__coherent_false",
+    "family_id": "fam_nestbox",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four plots sit in one wood on one reserve in one spring, so a single farmland food supply covers every case at once. Prey abundance doubling from the previous year is one alternative cause, and it reaches every brood because every box stood at the farmland edge, within the birds' foraging range. Each plot is compared against the same reserve a year earlier rather than against an unboxed wood in the same spring, so nothing in the evidence separates the boxes from the prey peak. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same doubled prey but puts every box deep inside the reserve, beyond the birds' foraging range, so the surge cannot reach the broods and the year-over-year comparison holds.",
+    "batch": 2,
+    "round": 0
+  },
+  "4EFAC6": {
+    "item_id": "fam_pricing__coherent_true",
+    "family_id": "fam_pricing",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 2,
+    "round": 0
+  },
+  "1695A6": {
+    "item_id": "fam_reading__diverse_false",
+    "family_id": "fam_reading",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
+    "batch": 2,
+    "round": 0
+  },
+  "089BF4": {
+    "item_id": "fam_sleepapp__diverse_true",
+    "family_id": "fam_sleepapp",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 2,
+    "round": 0
+  },
+  "BCC78C": {
+    "item_id": "fam_tutoring__coherent_false",
+    "family_id": "fam_tutoring",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four cohorts sit at one college, in one subject, in one spring term, so a single change to the board's pass mark covers every case at once. The mark fell a full grade below the previous term's, and it reaches all four cohorts because every one of them sat the board's own paper under that same mark. Each cohort is compared against itself in the previous term, when the higher mark applied, so the easier standard and the tutoring blocks moved together and the 4 to 8 point gains cannot be attributed to the blocks. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same drop in the pass mark but has every cohort sit an in-house paper under a fixed internal mark, so the drop cannot reach them, which is what makes it sound.",
+    "batch": 2,
+    "round": 0
+  },
+  "7A9B21": {
+    "item_id": "fam_bearing__coherent_false",
+    "family_id": "fam_bearing",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four machines are lathes at Bexley on the night shift, so one change to that plant's lubricant supply covers every case at once. The supply switched to a higher-grade synthetic mid-cycle, and the switch reaches every machine here because every machine drew from that supply. Better lubricant extends bearing life on its own, and each machine is compared only against itself in the previous cycle, before the switch, rather than against a machine running the same lubricant over the same period, so nothing here separates the redesign from the change of grade. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same switch but has every machine running on a sealed charge, so the new lubricant never reaches those bearings, which is what makes it sound.",
+    "batch": 3,
+    "round": 0
+  },
+  "8877CA": {
+    "item_id": "fam_driptape__coherent_true",
+    "family_id": "fam_driptape",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "011AA3": {
+    "item_id": "fam_fertilizer__diverse_false",
+    "family_id": "fam_fertilizer",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the height was recorded before the fertilizer was applied: 20 June precedes 3 August, and 19 April precedes 2 May. Half the evidence therefore describes growth that had already happened when the treatment was given, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "batch": 3,
+    "round": 0
+  },
+  "40EC9D": {
+    "item_id": "fam_inhaler__diverse_true",
+    "family_id": "fam_inhaler",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "338FC3": {
+    "item_id": "fam_onboarding__coherent_false",
+    "family_id": "fam_onboarding",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four cohorts are starter signups in Norway inside the same March window, so one trial policy covers every case at once. The free trial ran thirty days, four times its length in the earlier period, and a thirty-day trial leaves users still inside their trial at week two, which raises week-two retention on its own. That change reaches all four cohorts because every cohort here signed up on that trial. Each cohort is compared against itself a month earlier, when the shorter trial still applied, so nothing in the evidence separates the email from the trial length. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same thirty-day trial but has every cohort sign up on a paid plan, so the trial length cannot reach them and the comparison holds.",
+    "batch": 3,
+    "round": 0
+  },
+  "FD524A": {
+    "item_id": "fam_reading__coherent_true",
+    "family_id": "fam_reading",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "3313F1": {
+    "item_id": "fam_routing__diverse_false",
+    "family_id": "fam_routing",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every case measures planned route time, the duration the routing software assigns to a run before it leaves, not the delivery time recorded on the road. The planner can lay out shorter itineraries while actual deliveries take as long or longer once loading, waiting at drops and congestion are counted, and a planner scored on its own estimate is not evidence about outcomes. The claim is about delivery time, so none of the four cases speaks to it.",
+    "batch": 3,
+    "round": 0
+  },
+  "830F4D": {
+    "item_id": "fam_solder__diverse_true",
+    "family_id": "fam_solder",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "627233": {
+    "item_id": "fam_checkout__coherent_false",
+    "family_id": "fam_checkout",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four segments sit inside the same month, so one site-wide discount covers every case at once, and every segment browsed the general catalogue where that discount applied. Each segment is compared against itself a month earlier, before the discount ran, so the discount and the new page changed together and the evidence cannot separate them. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same discount but puts every segment on a fixed-price contract catalogue, which is what makes it sound.",
+    "batch": 4,
+    "round": 0
+  },
+  "68D44E": {
+    "item_id": "fam_fertilizer__coherent_true",
+    "family_id": "fam_fertilizer",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "036205": {
+    "item_id": "fam_filter__diverse_false",
+    "family_id": "fam_filter",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every case measures backpressure across the filter housing, not particulate at the stack outlet. Backpressure records how loaded the media is, and freshly fitted media reads lower by construction; a split bag or a bypassing seal reads lower still while letting more particulate through. The claim is about particulate readings, so the four measurements taken on 26 February, 28 May, 27 August and 25 November do not bear on it.",
+    "batch": 4,
+    "round": 0
+  },
+  "0EA7F6": {
+    "item_id": "fam_labkit__diverse_true",
+    "family_id": "fam_labkit",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "606326": {
+    "item_id": "fam_physio__coherent_false",
+    "family_id": "fam_physio",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four intakes are rotator cuff cases on one Marbeck ward in one spring, so a single hospital-wide prescribing change covers every case at once. Corticosteroid injections tripling at that hospital from the earlier quarter is a genuine rival cause of restored shoulder abduction, and it reaches every intake because every intake was cleared to receive them. Each intake is measured against the same ward a quarter earlier, when injections ran at a third of the rate, so the injections and the protocol rose together and the register cannot separate them. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same tripling but has every intake medically barred from receiving the injections, so the rise cannot touch these patients and the quarter-over-quarter comparison holds.",
+    "batch": 4,
+    "round": 0
+  },
+  "8CB991": {
+    "item_id": "fam_routing__coherent_true",
+    "family_id": "fam_routing",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "B3AE67": {
+    "item_id": "fam_seedcoat__diverse_false",
+    "family_id": "fam_seedcoat",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every one of the four cases reports tetrazolium viability, not germination. A tetrazolium stain shows only that embryo tissue is still alive; dormant and hard-coated seeds stain viable and then never emerge, so the fescue lot can gain 9 viability points and the sorghum lot 11 while the share of seeds that actually germinate stays flat. The claim is about germination, so none of the four cases bears on it.",
+    "batch": 4,
+    "round": 0
+  },
+  "B1B3FD": {
+    "item_id": "fam_timetable__diverse_true",
+    "family_id": "fam_timetable",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "5A0D9C": {
+    "item_id": "fam_coolant__coherent_false",
+    "family_id": "fam_coolant",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four runs sit in the same workshop on the same night shift inside one quarter, so a single retooling covers every case at once. The shop refitted its machines with a faster insert grade that quarter, and the retooling reaches every case because each logged run was cut on one of those refitted machines. Each run is compared against itself last quarter, when the older grade was still fitted, so nothing in the log separates the coolant from the inserts. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same refit but cuts every logged run on a machine hired from outside, so the refit cannot reach the runs, which is what makes it sound.",
+    "batch": 5,
+    "round": 0
+  },
+  "03AF40": {
+    "item_id": "fam_filter__coherent_true",
+    "family_id": "fam_filter",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 5,
+    "round": 0
+  },
+  "63F3EF": {
+    "item_id": "fam_handwash__diverse_false",
+    "family_id": "fam_handwash",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every case measures culture requests, which counts how many specimens a ward sent to the laboratory, not how many patients were infected. Ordering fewer swabs lowers that count while the underlying infection rate is unchanged, and it can hide infections that are never cultured. The claim is about ward infection rates, so none of the four cases, from 27 March through 28 December, bears on it.",
+    "batch": 5,
+    "round": 0
+  },
+  "E04F2D": {
+    "item_id": "fam_nestbox__diverse_true",
+    "family_id": "fam_nestbox",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 5,
+    "round": 0
+  },
+  "D14DA7": {
+    "item_id": "fam_pricing__coherent_false",
+    "family_id": "fam_pricing",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four lines are coffee at the Harlow Street store inside the same month, so one shelf covers every case at once. Premium stock's share of that shelf hit a record, double the earlier period, and a dearer average item lifts revenue per order on its own. That shift reaches all four lines because every line was stocked straight from the shelf as it stood. Each line is compared against itself a month earlier, before the mix moved, so nothing here separates the new pricing rule from what was on the shelf. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same record premium share but stocks every line from a fixed year-round range, so the shift cannot reach the lines and the comparison holds.",
+    "batch": 5,
+    "round": 0
+  },
+  "7D35F9": {
+    "item_id": "fam_seedcoat__coherent_true",
+    "family_id": "fam_seedcoat",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 5,
+    "round": 0
+  },
+  "D1E083": {
+    "item_id": "fam_sleepapp__diverse_false",
+    "family_id": "fam_sleepapp",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "batch": 5,
+    "round": 0
+  },
+  "17EE84": {
+    "item_id": "fam_tutoring__diverse_true",
+    "family_id": "fam_tutoring",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 5,
+    "round": 0
+  },
+  "BFC67E": {
+    "item_id": "fam_bearing__diverse_true",
+    "family_id": "fam_bearing",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "0AAF54": {
+    "item_id": "fam_driptape__coherent_false",
+    "family_id": "fam_driptape",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four blocks sit on one farm in one summer, so a single rainfall record covers every case at once. Rain at roughly double the year before is one alternative cause, and it reaches every block because every block lay in open ground and took that rain as it fell. Each block is compared against itself a season earlier rather than against an undripped block in the same season, so nothing in the evidence separates the drip line from the rain. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same doubled rainfall but puts every block under a rain shelter fed only by metered water, so the rain cannot reach the crop and the season-over-season comparison holds.",
+    "batch": 6,
+    "round": 0
+  },
+  "1C859B": {
+    "item_id": "fam_handwash__coherent_true",
+    "family_id": "fam_handwash",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "87820D": {
+    "item_id": "fam_inhaler__diverse_false",
+    "family_id": "fam_inhaler",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "batch": 6,
+    "round": 0
+  },
+  "2CB5E1": {
+    "item_id": "fam_onboarding__diverse_true",
+    "family_id": "fam_onboarding",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "8A9278": {
+    "item_id": "fam_reading__coherent_false",
+    "family_id": "fam_reading",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in the same autumn term, so one school-wide change reaches every case at once. Class sizes fell by half from the year before, and the halving reaches every case because each logged class took its English lessons as one whole group, so every lesson was taught to half as many pupils. Each class is compared only against itself in the previous autumn term, when classes were twice the size, so the evidence cannot separate the smaller classes from the reading program. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same halving but has every class taught in fixed groups of six, so the halving cannot reach the lessons, which is what makes it sound.",
+    "batch": 6,
+    "round": 0
+  },
+  "A882FC": {
+    "item_id": "fam_sleepapp__coherent_true",
+    "family_id": "fam_sleepapp",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "49435F": {
+    "item_id": "fam_solder__diverse_false",
+    "family_id": "fam_solder",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every case measures mean void area inside the solder joints, which is not the rate of defective boards. Voiding below the acceptance limit leaves a joint conforming and the board shippable, so a 6, 4, 7 or 5 percent reduction in void area can occur with the defect count flat or rising. The failure modes that decide whether a board is defective - opens, solder bridges, tombstoned parts and insufficient wetting - are not counted by a void-area measurement at all. The claim is about board defects, so none of the four runs speaks to it.",
+    "batch": 6,
+    "round": 0
+  },
+  "31DBCF": {
+    "item_id": "fam_checkout__diverse_true",
+    "family_id": "fam_checkout",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "237197": {
+    "item_id": "fam_fertilizer__coherent_false",
+    "family_id": "fam_fertilizer",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four plots sit in the same backyard in the same summer, so one weather history covers them all. Rainfall roughly double the year before is a single alternative cause, and it reaches every plot because every plot stood in the open and was watered by rain alone. Each plot is compared against itself a year earlier rather than against an untreated plot in the same year, so nothing in the evidence separates the fertilizer from the rain. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same record rainfall but puts the plots under cover on a fixed watering schedule, which is what makes it sound.",
+    "batch": 7,
+    "round": 0
+  },
+  "26D23E": {
+    "item_id": "fam_inhaler__coherent_true",
+    "family_id": "fam_inhaler",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "79DDFC": {
+    "item_id": "fam_labkit__diverse_false",
+    "family_id": "fam_labkit",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+    "batch": 7,
+    "round": 0
+  },
+  "EB8CD7": {
+    "item_id": "fam_physio__diverse_true",
+    "family_id": "fam_physio",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "ED27C1": {
+    "item_id": "fam_routing__coherent_false",
+    "family_id": "fam_routing",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four groups run out of Kettleby Wharf in February with the same vans and the same dispatcher, so one order book covers every case at once. Volume through that depot hit a record low, half the earlier period, and a lighter book means fewer drops on each run, which cuts the time a run takes on its own. That drop reaches all four groups because every run carried whatever drop count the depot set. Each group is compared against itself a month earlier, when the book was full, so nothing in the evidence separates the routing change from the thinner load. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same record low volume but holds every run to the same drop count as before, so the volume drop cannot reach the runs and the comparison holds.",
+    "batch": 7,
+    "round": 0
+  },
+  "3F6CD2": {
+    "item_id": "fam_solder__coherent_true",
+    "family_id": "fam_solder",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "04E6AE": {
+    "item_id": "fam_timetable__diverse_false",
+    "family_id": "fam_timetable",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "All four cases measure lateness, not absence. A lateness mark is entered against a pupil who turned up and was registered present for the session, so the register counts lateness and absence as separate quantities. Moving the start of the school day can cut lateness in every cohort while the number of sessions missed altogether holds flat or rises. The claim is about absence, so none of the four cases speaks to it.",
+    "batch": 7,
+    "round": 0
+  },
+  "EFFF42": {
+    "item_id": "fam_coolant__diverse_true",
+    "family_id": "fam_coolant",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "FE036E": {
+    "item_id": "fam_filter__coherent_false",
+    "family_id": "fam_filter",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four kilns sit at Kestrel inside Q1, so one production history covers every case at once. Throughput fell by half against the earlier quarter, and the slowdown reaches every case because each stack fired in step with site output; burning half as much material lowers particulate on its own. Because each unit is compared against itself a quarter earlier rather than against an unupgraded unit in the same quarter, nothing in the log separates the filter upgrade from the slowdown. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same halved throughput but has every stack firing on a fixed duty cycle, so the slowdown cannot reach the readings, which is what makes it sound.",
+    "batch": 8,
+    "round": 0
+  },
+  "F22CEF": {
+    "item_id": "fam_labkit__coherent_true",
+    "family_id": "fam_labkit",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "B638C2": {
+    "item_id": "fam_nestbox__diverse_false",
+    "family_id": "fam_nestbox",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+    "batch": 8,
+    "round": 0
+  },
+  "38B726": {
+    "item_id": "fam_pricing__diverse_true",
+    "family_id": "fam_pricing",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "A9D2D3": {
+    "item_id": "fam_seedcoat__coherent_false",
+    "family_id": "fam_seedcoat",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four lots sit at one nursery in one spring, so a single house shares its air with every case at once. A house running a full four degrees warmer than the earlier sowing is one alternative cause, and warmth is a direct driver of germination; it reaches every lot because every lot sat on an open bench taking that house air directly. Each lot is compared against the same lot a season earlier rather than against an uncoated lot on the same warm bench, so nothing in the evidence separates the coating from the heat. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same four-degree rise but puts every lot in a sealed cabinet held at a set temperature, so the warmer air cannot reach the seed and the season-over-season comparison holds.",
+    "batch": 8,
+    "round": 0
+  },
+  "C1B249": {
+    "item_id": "fam_timetable__coherent_true",
+    "family_id": "fam_timetable",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "090602": {
+    "item_id": "fam_tutoring__diverse_false",
+    "family_id": "fam_tutoring",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "claim_mismatch",
+    "confound_note": "Every case measures coursework submission rates, not exam pass rates. Handing in coursework is not passing an exam: tutoring blocks can raise the share of students who submit their coursework by 4 to 8 points while the share who pass the exam stays flat or falls, since submission is a matter of turning work in and passing is a matter of graded performance. The claim is about exam pass rates, so none of the four cases bears on it.",
+    "batch": 8,
+    "round": 0
+  },
+  "99C998": {
+    "item_id": "fam_bearing__diverse_false",
+    "family_id": "fam_bearing",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "batch": 9,
+    "round": 0
+  },
+  "E7A3F5": {
+    "item_id": "fam_driptape__diverse_true",
+    "family_id": "fam_driptape",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  },
+  "CC1BF2": {
+    "item_id": "fam_handwash__coherent_false",
+    "family_id": "fam_handwash",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four entries sit in one hospital on one surgical floor inside the same first quarter, so a single contract-level change covers every case at once. Contract deep-cleaning hours ran at triple the earlier quarter, and that extra cleaning reaches every entry here because every ward was cleaned under the contract. Deep cleaning lowers ward infections on its own, and each ward is compared only against itself a quarter earlier, before the hours were tripled, rather than against a ward cleaned to the same standard in the same quarter, so nothing in the evidence separates the handwashing protocol from the extra cleaning. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same tripled contract hours but has every ward cleaned by in-house staff, so the contractor's change cannot reach these wards, which is what makes it sound.",
+    "batch": 9,
+    "round": 0
+  },
+  "949A3C": {
+    "item_id": "fam_nestbox__coherent_true",
+    "family_id": "fam_nestbox",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  },
+  "383AC4": {
+    "item_id": "fam_onboarding__diverse_false",
+    "family_id": "fam_onboarding",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_type": "temporal",
+    "confound_note": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "batch": 9,
+    "round": 0
+  },
+  "AE3C76": {
+    "item_id": "fam_reading__diverse_true",
+    "family_id": "fam_reading",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  },
+  "4969DF": {
+    "item_id": "fam_sleepapp__coherent_false",
+    "family_id": "fam_sleepapp",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_type": "shared_confound",
+    "confound_note": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, so a single weather history covers every case at once. Outdoor temperature in that city falling ten degrees from the month before is one alternative cause of a lower resting heart rate, and it reaches every cohort because every cohort slept in unconditioned rooms open to outside air. Each cohort is compared against itself in February, when the nights were warmer, rather than against an untracked cohort in the same month, so the cooling and the app arrived together and the evidence cannot separate them. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same ten-degree fall but has every cohort sleeping in rooms held at a fixed 20 degrees, so the outdoor change never reaches them and the month-over-month comparison holds.",
+    "batch": 9,
+    "round": 0
+  },
+  "6D7115": {
+    "item_id": "fam_tutoring__coherent_true",
+    "family_id": "fam_tutoring",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_type": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  }
+}

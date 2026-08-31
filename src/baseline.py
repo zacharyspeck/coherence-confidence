@@ -110,6 +110,10 @@ def main(argv: list[str] | None = None) -> int:
     meta["n_claims"] = len(records)
     meta["n_items_covered"] = len(items)
     meta["items_hash"] = provenance.hash_items([i.id for i in items])
+    options = getattr(scorer, "options", DEFAULT_OPTIONS)
+    meta["prompts_hash"] = provenance.hash_prompts(
+        render_baseline_prompt(c, options) for _, c, _ in rows
+    )
     mass = [r["mass_covered"] for r in records]
     meta["mass_covered_mean"] = sum(mass) / len(mass)
     meta["mass_covered_min"] = min(mass)

@@ -1,0 +1,70 @@
+{
+  "batch": "04",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "7A9B21",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause covers all four cases: the lubricant supply switched to a higher-grade synthetic mid-cycle and 'every machine here drew from that supply', so the extra 260-410 hours before failure could be the better lubricant rather than the redesigned bearing. The report's own claim that 'nothing else differed' contradicts the sentence immediately before it.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "E7A3F5",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "63F3EF",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured quantity is not the one the claim is about: the claim is about ward infection rates, but what fell 6-11 percent is 'culture requests', i.e. how often staff ordered specimens sent for culture. That tracks testing/ordering behaviour, which a visible new handwashing protocol can itself change, not confirmed infections.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "26D23E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "338FC3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause fits all four cohorts: the free trial was lengthened to thirty days, 'four times its length in the earlier period', and 'every cohort here signed up on that trial'. A trial four times longer would by itself lift week-two retention, so the 3-6 point gain cannot be attributed to the onboarding email.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "AE3C76",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "D1E083",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cohorts have dates running backwards: cohort one 'started 4 April' but the heart-rate drop is measured 'by 29 March', and cohort three 'started 5 October' but is measured 'by 30 September'. In both, the outcome window closes before the app was started, so the app cannot have caused the 5 bpm and 6 bpm reductions.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "3F6CD2",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}
