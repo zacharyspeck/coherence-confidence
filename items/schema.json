@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/speck/coherence-confidence/items/schema.json",
+  "title": "CoherenceConfidenceItem",
+  "description": "One item in the 2x2 coherence x truth design. A short passage containing exactly 4 observed cases, a claim, and the forced question 'Does this evidence establish this claim? Yes / No / Unsure'. Items are grouped into families of 4 (one per cell) that share a claim and scenario.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "family_id",
+    "cell",
+    "claim",
+    "cases",
+    "passage",
+    "ground_truth",
+    "confound_note",
+    "word_count"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+__(coherent_true|coherent_false|diverse_true|diverse_false)$",
+      "description": "Globally unique. Always '<family_id>__<cell>'."
+    },
+    "family_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Shared by the 4 items that differ only on coherence and truth."
+    },
+    "cell": {
+      "type": "string",
+      "enum": ["coherent_true", "coherent_false", "diverse_true", "diverse_false"],
+      "description": "The 2x2 cell. 'coherent' = all 4 cases share every irrelevant condition (1 distinct value per dimension). 'diverse' = all 4 cases differ on every dimension (4 distinct values)."
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 10,
+      "description": "The causal/evaluative claim under test. IDENTICAL across all 4 items in a family - that is what makes the 2x2 within-family."
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "description": "Exactly 4 observed cases. Every case must carry the same set of condition dimension keys.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case_id", "text", "conditions"],
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "pattern": "^c[1-4]$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 10,
+            "description": "The sentence describing this case. Must appear verbatim (whitespace-normalized) inside 'passage'."
+          },
+          "conditions": {
+            "type": "object",
+            "minProperties": 4,
+            "maxProperties": 4,
+            "description": "The 4 IRRELEVANT condition dimensions for this case. Dimension names are per-family (see DECISIONS.md D-007) but must be identical across the 4 cases of an item AND across the 4 items of a family. Values are what the coherent/diverse manipulation acts on.",
+            "additionalProperties": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "passage": {
+      "type": "string",
+      "minLength": 50,
+      "description": "The rendered prose the model reads: a lead-in, the 4 case sentences verbatim, and one final sentence. For FALSE items the final sentence carries the flaw; for TRUE items it carries a length-matched, non-diagnostic procedural detail (DECISIONS.md D-005)."
+    },
+    "ground_truth": {
+      "type": "boolean",
+      "description": "True iff the evidence in the passage does establish the claim. Must agree with 'cell'."
+    },
+    "confound_note": {
+      "type": ["string", "null"],
+      "description": "For FALSE items: a plain-language statement of exactly why the evidence fails. MUST be null for TRUE items. This is the answer key for review - it is never shown to the model."
+    },
+    "word_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Whitespace-token count of 'passage' only - not the claim, question, or options (DECISIONS.md D-014). Recomputed and strictly checked at load."
+    },
+    "flaw_type": {
+      "type": ["string", "null"],
+      "enum": ["shared_confound", "temporal", "claim_mismatch", null],
+      "description": "Machine-readable flaw category. Null for TRUE items. coherent_false MUST be 'shared_confound'. diverse_false MUST be 'temporal' or 'claim_mismatch' - a single confound cannot cover 4 cases that differ on every dimension (DECISIONS.md D-004)."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Content area, e.g. 'agriculture', 'business_metrics', 'clinical', 'manufacturing', 'education'."
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["unreviewed", "reviewed", "rejected"],
+      "default": "unreviewed",
+      "description": "Set to 'unreviewed' by the build for every item, including the hand-written seed families. Only a human sets anything else (DECISIONS.md D-008)."
+    },
+    "source": {
+      "type": "string",
+      "enum": ["hand", "generated"],
+      "description": "'hand' for the 2 seed families, 'generated' for the other 18."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free-text author notes for the human reviewer."
+    }
+  }
+}
