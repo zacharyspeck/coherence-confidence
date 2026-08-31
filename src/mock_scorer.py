@@ -166,7 +166,18 @@ class MockScorer:
                     top_token=" " + top[1],
                     top_token_prob=top[0],
                 )
-                self._by_prompt[render_prompt(it, self.options)] = res
+                prompt = render_prompt(it, self.options)
+                if prompt in self._by_prompt:
+                    # Two items rendering to the same prompt means the 2x2 has
+                    # collapsed: the model would be answering the same question
+                    # and the cells would differ only in metadata. Never silent.
+                    raise MockScorerError(
+                        f"item {it.id} renders to a prompt already claimed by "
+                        "another item. Two items with identical prompts cannot "
+                        "be distinguished by any measurement; check that the "
+                        "passages actually differ between cells."
+                    )
+                self._by_prompt[prompt] = res
                 self._by_item[it.id] = res
 
         # Baselines: one flat value per claim, so subtracting the baseline in the

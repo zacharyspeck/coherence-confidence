@@ -48,9 +48,15 @@ model's own state rather than a claim about the evidence. The prompt therefore
 spells out the mapping in the instruction line: *"Unsure = the evidence is not
 enough to decide."* This is a wording mitigation, not a fix.
 
-**Reverse:** `src/render.py` has `OPTION_WORDS` and the instruction text in one
-place. Swapping in a sequence-scored multi-token option means changing
-`score.py::score_item` only.
+**Reverse:** `src/render.py` holds `DEFAULT_OPTIONS` and the instruction text in
+one place, and options are addressed by role (`yes`/`no`/`unsure`) everywhere
+else, so the surface word can be swapped with `--third-option` without touching
+anything downstream. Swapping in a sequence-scored multi-token option would mean
+changing `HFScorer.score_prompts` only.
+
+**See also D-019** — measuring the tokenizer showed "Unsure" does not satisfy
+this decision's own single-token requirement on every model, which is now a hard
+gate rather than an assumption.
 
 ---
 
@@ -64,9 +70,16 @@ abstains on exactly the items it would have gotten wrong looks like a better
 discriminator than one that guesses. The abstention rate is reported *separately
 per cell* so it can be read alongside AUC rather than laundered into it.
 
-**Reverse:** `analyze.py::compute_auc` takes the score vector; an
-`--auc-drop-abstained` variant would be a filter at the call site. Deliberately
-not implemented, so that using it is a visible edit rather than a flag.
+**Made visible rather than hypothetical:** `analyze.py` also computes
+`auc_if_abstained_dropped_DIAGNOSTIC` and prints it next to the real AUC, so the
+size of the effect this policy prevents is on the page. On the mock's `known`
+scenario the coherent AUC is 0.75 including abstentions and **1.00** if they are
+dropped — the mock abstains on exactly the 5 TRUE items it scored lowest, i.e.
+the ones it got wrong.
+
+**Reverse:** `analyze.py::stat_auc` takes `drop_abstained`, but no CLI flag
+exposes it. Using it means editing the call site, so it can never happen by
+accident or by habit.
 
 ---
 
@@ -195,13 +208,47 @@ items** for AUC — i.e. resample the 20 true and 20 false scores independently 
 recompute the pairwise win rate.
 
 **Why:** it is the standard, and it matches the unit the brief names ("20 true vs
-20 false = 400 pairs"). Noted honestly: because items come in families of 4, items
-within a family are not independent, so these CIs are **anti-conservative**
-(too narrow). A family-level cluster bootstrap is also implemented and reported
-alongside as `ci_clustered`, so both are visible.
+20 false = 400 pairs").
 
-**Reverse:** `--bootstrap-unit {item,family}` flag; both are computed and
-reported by default.
+**Corrected after measuring.** My first draft of this decision said the
+item-level CIs would be anti-conservative (too narrow) because items within a
+family are correlated. That is the standard argument and it is **wrong for this
+design**. Measured on the mock (3,000 resamples), CI width ratio family/item:
+
+| statistic | item width | family width | ratio |
+|---|---|---|---|
+| cell mean, `coherent_true` | 0.2676 | 0.2676 | **1.000** |
+| AUC within coherent | 0.3500 | 0.3500 | **1.000** |
+| main effect of truth | 0.2256 | 0.2812 | 1.247 |
+| main effect of coherence | 0.2276 | 0.1312 | **0.577** |
+| interaction | 0.4551 | 0.2625 | **0.577** |
+| coherence effect within TRUE | 0.4554 | 0.2625 | 0.576 |
+
+Two things fall out of the design, and both are structural rather than artifacts
+of the mock:
+
+1. **For any per-cell statistic the two units coincide.** The design is fully
+   crossed with exactly one item per cell per family, so resampling 20 families
+   and taking their `coherent_true` items *is* resampling 20 `coherent_true`
+   items. The two resampling **distributions** are identical; the realized
+   percentiles differ only by Monte Carlo noise (~2e-4 at 2,000 resamples),
+   because the two resamplers consume the RNG stream differently.
+2. **For contrasts that span cells, clustering makes the CI NARROWER, not
+   wider.** The 2x2 is within-family by construction, so a family-clustered
+   resample keeps each family's four cells together and the contrast is a
+   *paired* comparison. That is a variance reduction, the same one a paired
+   t-test buys over an unpaired one. The item-level CI on the coherence effect
+   is the anti-conservative one only in the sense of being wrong — it is too
+   *wide*, and it throws away the pairing the design was built to exploit.
+
+**Consequence for reading the output:** for cell means and AUCs, either CI will
+do (they are identical). **For the coherence effect, the interaction, and the
+within-TRUE contrast, read `ci_family`** — the item-level interval ignores the
+pairing. `analyze.py` prints this guidance in the markdown report so it does not
+have to be remembered.
+
+**Reverse:** both are computed and reported on every number; nothing has to be
+re-run to switch which one is read.
 
 ---
 

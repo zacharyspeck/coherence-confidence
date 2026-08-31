@@ -16,10 +16,16 @@ from src.models import Case, Family, Item, compute_word_count  # noqa: E402
 
 DIMS = ("region", "period", "device", "unit_type")
 
-_FILLER = (
-    "The team recorded the outcome for each case using the same instrument and "
-    "logged every reading in a shared sheet at the end of the observation window."
-)
+# TRUE items get a neutral, non-diagnostic closing sentence; FALSE items get the
+# flaw in the same slot, at a matched length (D-005). Distinct per cell so that
+# the four cells of a family render to four DIFFERENT prompts - if they did not,
+# the whole 2x2 would collapse to one measurement repeated four times.
+_CLOSERS = {
+    "coherent_true": "Every reading was taken with the same calibrated meter.",
+    "diverse_true": "Every reading was taken with a separately calibrated meter.",
+    "coherent_false": "All four sites also switched supplier in the same week.",
+    "diverse_false": "Two of the four outcomes were recorded before the change.",
+}
 
 
 def make_item(
@@ -45,15 +51,20 @@ def make_item(
     cases = []
     for k in range(4):
         conditions = {d: f"{d}_v{(k % n_distinct) + 1}" for d in dims}
+        # Condition values go INTO the sentence, so coherent and diverse items
+        # render to different passages rather than differing only in metadata.
+        joined = ", ".join(conditions[d] for d in sorted(dims))
         text = (
-            f"Case {k + 1} was observed and the recorded outcome rose by "
-            f"{10 + k} percent."
+            f"Case {k + 1} at {joined} was observed and the recorded outcome "
+            f"rose by {10 + k} percent."
         )
         cases.append(Case(case_id=f"c{k + 1}", text=text, conditions=conditions))
 
-    lead = "Four cases were observed under a fixed protocol."
+    lead = f"Report {family_id} covers four observed cases under a fixed protocol."
     extra = (" pad" * passage_extra_words).strip()
-    passage = "\n".join([lead] + [c.text for c in cases] + [_FILLER, extra]).strip()
+    passage = "\n".join(
+        [lead] + [c.text for c in cases] + [_CLOSERS[cell], extra]
+    ).strip()
 
     truth = cell.endswith("_true")
     return Item(
@@ -97,7 +108,27 @@ def family():
     return make_family()
 
 
+def make_item_set(n_families: int = 20):
+    """n families x 4 cells of structurally valid synthetic items."""
+    return [i for k in range(n_families) for i in make_family(f"fam_s{k:02d}").items]
+
+
+def make_records(scenario: str = "known", n_families: int = 20):
+    """Synthetic items run through the mock scorer -> the exact record shape
+    src.analyze consumes. No model, no real items, fully deterministic."""
+    from src.mock_scorer import MockScorer
+    from src.score import score_items
+
+    items = make_item_set(n_families)
+    scorer = MockScorer(scenario=scenario).prepare(items)
+    return score_items(scorer, items, progress=False)
+
+
 @pytest.fixture
 def item_set():
-    """20 families x 4 cells = 80 structurally valid synthetic items."""
-    return [i for k in range(20) for i in make_family(f"fam_s{k:02d}").items]
+    return make_item_set()
+
+
+@pytest.fixture
+def records():
+    return make_records("known")
