@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_inhaler",
+  "domain": "clinical",
+  "claim": "this inhaler reduces asthma attacks",
+  "dimensions": [
+    "clinic",
+    "patient_age_band",
+    "quarter",
+    "prescribing_nurse"
+  ],
+  "items": [
+    {
+      "id": "fam_inhaler__coherent_true",
+      "family_id": "fam_inhaler",
+      "cell": "coherent_true",
+      "claim": "this inhaler reduces asthma attacks",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        }
+      ],
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.\nPollen counts and airborne irritants across the district matched the previous quarter, other asthma medication was unchanged, and nothing else was altered.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 142,
+      "flaw_type": null,
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Check that all four cases share one value on every dimension (Harrowfield, 12-17, winter quarter, Adeyemi) and that only the start days, attack counts and outcome days vary. The closer neutralises the quarter-over-quarter comparison by holding pollen, airborne irritants and other asthma medication fixed, which is what makes a before/after read adequate here."
+    },
+    {
+      "id": "fam_inhaler__coherent_false",
+      "family_id": "fam_inhaler",
+      "cell": "coherent_false",
+      "claim": "this inhaler reduces asthma attacks",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        }
+      ],
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.\nPollen counts and airborne irritants across the district fell by half that quarter, other asthma medication was unchanged, and every group lived locally.",
+      "ground_truth": false,
+      "confound_note": "All four groups sit at Harrowfield inside one winter quarter and every group lived locally, so they share a single exposure history. Pollen counts and airborne irritants halving across that district in that quarter is one alternative cause that covers all four cases at once. Because each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, nothing in the evidence separates the inhaler from the drop in irritants.",
+      "word_count": 143,
+      "flaw_type": "shared_confound",
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Cases must be byte-identical to coherent_true; only the closer differs. Check that the confound works ONLY because the cases are coherent: four groups at one clinic in one quarter breathe the same air, so one district-wide exposure fact explains every case. Check that the closer shares vocabulary with the TRUE closer (pollen counts, airborne irritants, district, quarter, other asthma medication was unchanged) so the difference is logical rather than lexical."
+    },
+    {
+      "id": "fam_inhaler__diverse_true",
+      "family_id": "fam_inhaler",
+      "cell": "diverse_true",
+      "claim": "this inhaler reduces asthma attacks",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.",
+          "conditions": {
+            "clinic": "Brightmoor",
+            "patient_age_band": "25-39",
+            "quarter": "spring quarter",
+            "prescribing_nurse": "Okonkwo"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: the 40-59 band at Calderbank, summer quarter, started 5 August, had 7 fewer attacks by 30 September than the same band a quarter earlier; nurse Halvorsen.",
+          "conditions": {
+            "clinic": "Calderbank",
+            "patient_age_band": "40-59",
+            "quarter": "summer quarter",
+            "prescribing_nurse": "Halvorsen"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.",
+          "conditions": {
+            "clinic": "Dunmorrow",
+            "patient_age_band": "60-74",
+            "quarter": "autumn quarter",
+            "prescribing_nurse": "Bittner"
+          }
+        }
+      ],
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 August, had 7 fewer attacks by 30 September than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.\nPollen counts and airborne irritants across the district matched the previous quarter, other asthma medication was unchanged, and nothing else was altered.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 142,
+      "flaw_type": null,
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Four distinct values on every dimension: four clinics, four age bands, four quarters, four nurses. Closer is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Check that no single event could span four clinics in four different quarters, which is what makes this the stronger of the two TRUE cells."
+    },
+    {
+      "id": "fam_inhaler__diverse_false",
+      "family_id": "fam_inhaler",
+      "cell": "diverse_false",
+      "claim": "this inhaler reduces asthma attacks",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.",
+          "conditions": {
+            "clinic": "Harrowfield",
+            "patient_age_band": "12-17",
+            "quarter": "winter quarter",
+            "prescribing_nurse": "Adeyemi"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.",
+          "conditions": {
+            "clinic": "Brightmoor",
+            "patient_age_band": "25-39",
+            "quarter": "spring quarter",
+            "prescribing_nurse": "Okonkwo"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.",
+          "conditions": {
+            "clinic": "Calderbank",
+            "patient_age_band": "40-59",
+            "quarter": "summer quarter",
+            "prescribing_nurse": "Halvorsen"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.",
+          "conditions": {
+            "clinic": "Dunmorrow",
+            "patient_age_band": "60-74",
+            "quarter": "autumn quarter",
+            "prescribing_nurse": "Bittner"
+          }
+        }
+      ],
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.\nPollen counts and airborne irritants across the district matched the previous quarter, other asthma medication was unchanged, and nothing else was altered.",
+      "ground_truth": false,
+      "confound_note": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+      "word_count": 142,
+      "flaw_type": "temporal",
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Closer is identical to both TRUE items; the flaw lives entirely in the dates of cases one and three, where the outcome day precedes the start day. Check that conditions are unchanged from diverse_true and that only the two month names moved, so a bag-of-ngrams classifier sees the same tokens. A shared confound is unavailable here because four clinics across four quarters share no exposure history."
+    }
+  ]
+}

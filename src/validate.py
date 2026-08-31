@@ -37,6 +37,7 @@ from .models import CELLS, Item, load_items, normalize_ws
 
 WORD_COUNT_TOLERANCE = 0.10
 LEXICAL_THRESHOLD = 0.60
+N_LEXICAL_SEEDS = 5
 N_PER_CELL = 20
 TOP_TOKENS = 25
 
@@ -174,6 +175,7 @@ def check_lexical_giveaway(
     cv: str = "grouped",
     n_splits: int = 5,
     seed: int = 0,
+    n_seeds: int = N_LEXICAL_SEEDS,
     top_k: int = TOP_TOKENS,
     n_permutations: int = 0,
 ) -> CheckResult:
@@ -187,6 +189,14 @@ def check_lexical_giveaway(
 
     Only the passage text is used - the claim is identical across all 4 cells of
     a family, so it carries no true/false signal and would only add noise.
+
+    Averaged over `n_seeds` CV shufflings. With 80 items in 20 family groups, a
+    single shuffle moves the accuracy by several points: on the first full draft
+    of the item set the accuracy ranged from 58.8% to 68.8% across ten seeds and
+    the build passed or failed depending on which one was used. Reporting the
+    mean is what stops the gate from being decided by luck; `accuracy_max` and
+    `n_seeds_over_threshold` are reported alongside so a marginal pass is visible
+    rather than silent.
     """
     from sklearn.feature_extraction.text import CountVectorizer
     from sklearn.linear_model import LogisticRegression
@@ -212,26 +222,36 @@ def check_lexical_giveaway(
         ]
     )
 
-    if cv == "grouped":
-        splitter = StratifiedGroupKFold(
-            n_splits=n_splits, shuffle=True, random_state=seed
-        )
-        split_args = {"groups": groups}
-    elif cv == "stratified":
-        splitter = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=seed)
-        split_args = {}
-    elif cv == "insample":
-        splitter = None
-        split_args = {}
-    else:
+    def make_splitter(s: int):
+        if cv == "grouped":
+            return (
+                StratifiedGroupKFold(n_splits=n_splits, shuffle=True, random_state=s),
+                {"groups": groups},
+            )
+        if cv == "stratified":
+            return (
+                StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=s),
+                {},
+            )
+        if cv == "insample":
+            return None, {}
         raise ValueError(f"unknown cv mode {cv!r}")
 
-    if splitter is None:
-        pipe.fit(texts, y)
-        scores = np.array([float(pipe.score(texts, y))])
-    else:
-        scores = cross_val_score(pipe, texts, y, cv=splitter, **split_args)
-    acc = float(np.mean(scores))
+    seeds = [seed] if cv == "insample" else [seed + k for k in range(max(1, n_seeds))]
+    per_seed: list[float] = []
+    scores = np.array([])
+    for s in seeds:
+        splitter, split_args = make_splitter(s)
+        if splitter is None:
+            pipe.fit(texts, y)
+            scores = np.array([float(pipe.score(texts, y))])
+        else:
+            scores = cross_val_score(pipe, texts, y, cv=splitter, **split_args)
+        per_seed.append(float(np.mean(scores)))
+
+    acc = float(np.mean(per_seed))
+    acc_max = float(np.max(per_seed))
+    n_over = int(sum(1 for a in per_seed if a > threshold))
 
     # Refit on everything, only to name the offending tokens.
     pipe.fit(texts, y)
@@ -279,9 +299,10 @@ def check_lexical_giveaway(
     if acc > threshold:
         failures.append(
             f"a unigram+bigram logistic regression reaches {acc:.1%} "
-            f"({cv} CV) at telling TRUE from FALSE, above the {threshold:.0%} "
-            "limit. There is a lexical giveaway; see top_tokens_predicting_* "
-            "for what to rewrite."
+            f"({cv} CV, mean of {len(seeds)} shufflings) at telling TRUE from "
+            f"FALSE, above the {threshold:.0%} limit. There is a lexical "
+            "giveaway; see top_tokens_predicting_* for what to rewrite, and "
+            "scripts/lexical_ablation.py for which part of the passage leaks."
         )
 
     return CheckResult(
@@ -289,13 +310,19 @@ def check_lexical_giveaway(
         passed=not failures,
         summary=(
             f"{cv} {n_splits}-fold CV accuracy {acc:.1%} "
+            f"(mean of {len(seeds)} shufflings; max {acc_max:.1%}; "
+            f"{n_over}/{len(seeds)} over limit) "
             f"(limit {threshold:.0%}, chance 50%)"
         ),
         failures=failures,
         data={
             "cv": cv,
             "accuracy": round(acc, 4),
-            "fold_accuracies": [round(float(s), 4) for s in scores],
+            "accuracy_max": round(acc_max, 4),
+            "accuracy_per_seed": [round(a, 4) for a in per_seed],
+            "n_seeds": len(seeds),
+            "n_seeds_over_threshold": n_over,
+            "fold_accuracies_last_seed": [round(float(s), 4) for s in scores],
             "threshold": threshold,
             "n_features": int(len(names)),
             "n_items": len(items),
@@ -419,6 +446,7 @@ def run_checks(
     cv: str = "grouped",
     n_permutations: int = 0,
     n_per_cell: int = N_PER_CELL,
+    n_lexical_seeds: int = N_LEXICAL_SEEDS,
     skip: Sequence[str] = (),
     seed: int = 0,
 ) -> list[CheckResult]:
@@ -434,6 +462,7 @@ def run_checks(
                 lexical_threshold,
                 cv=cv,
                 seed=seed,
+                n_seeds=n_lexical_seeds,
                 n_permutations=n_permutations,
             ),
         ),
@@ -502,6 +531,14 @@ def main(argv: list[str] | None = None) -> int:
         help="label-permutation null for the lexical check (within-family shuffle)",
     )
     ap.add_argument("--n-per-cell", type=int, default=N_PER_CELL)
+    ap.add_argument(
+        "--lexical-seeds",
+        type=int,
+        default=N_LEXICAL_SEEDS,
+        help="CV shufflings to average the lexical accuracy over. A single "
+        "shuffle swings it by several points on 80 items, so one seed can pass "
+        "or fail the same item set by luck.",
+    )
     ap.add_argument("--skip", nargs="*", default=[], choices=list(ALL_CHECKS))
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args(argv)
@@ -522,6 +559,7 @@ def main(argv: list[str] | None = None) -> int:
         cv=args.lexical_cv,
         n_permutations=args.permutations,
         n_per_cell=args.n_per_cell,
+        n_lexical_seeds=args.lexical_seeds,
         skip=args.skip,
         seed=args.seed,
     )

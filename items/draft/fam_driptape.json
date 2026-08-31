@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_driptape",
+  "domain": "agriculture",
+  "claim": "this drip line raises yield per hectare",
+  "dimensions": [
+    "farm",
+    "crop",
+    "season",
+    "agronomist"
+  ],
+  "items": [
+    {
+      "id": "fam_driptape__coherent_true",
+      "family_id": "fam_driptape",
+      "cell": "coherent_true",
+      "claim": "this drip line raises yield per hectare",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        }
+      ],
+      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.\nThree: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.\nFour: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.\nRainfall and mean temperature matched the previous season at every block, the seed variety was unchanged, and nothing else was altered.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 139,
+      "flaw_type": null,
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "All four blocks share farm, crop, season and agronomist - one distinct value per dimension. The closing sentence neutralises the season-over-season comparison by holding rainfall, mean temperature and seed variety fixed, which is what makes the before/after evidence adequate. Reviewer should check that the closer names the same causes (rainfall, mean temperature) as the coherent_false closer so the difference is logical rather than lexical."
+    },
+    {
+      "id": "fam_driptape__coherent_false",
+      "family_id": "fam_driptape",
+      "cell": "coherent_false",
+      "claim": "this drip line raises yield per hectare",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        }
+      ],
+      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.\nThree: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.\nFour: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.\nRainfall that season was the highest on record at this farm, roughly double the previous summer, and mean temperature ran warmer across every block.",
+      "ground_truth": false,
+      "confound_note": "All four blocks sit on one farm in one summer, so they share a single weather history. Rainfall roughly double the previous summer is one alternative cause that covers every case at once, from the 0.6 tonne gain on 18 August to the 0.5 tonne gain on 21 August. Because each block is compared against itself a season earlier rather than against an undripped block in the same season, nothing in the evidence separates the drip line from the rain.",
+      "word_count": 142,
+      "flaw_type": "shared_confound",
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Reviewer should confirm the closer works as a single confound ONLY because the cases are coherent - four blocks on one farm in one summer share a rainfall record. Check that no hedging connective ('however', 'although') was introduced."
+    },
+    {
+      "id": "fam_driptape__diverse_true",
+      "family_id": "fam_driptape",
+      "cell": "diverse_true",
+      "claim": "this drip line raises yield per hectare",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.",
+          "conditions": {
+            "farm": "Netley Downs",
+            "crop": "onion",
+            "season": "winter",
+            "agronomist": "Achebe"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a barley block at Bellamy Flats, fitted 2 March, gave 0.7 tonnes per hectare more by 17 May than the previous spring; recorded by Halloran.",
+          "conditions": {
+            "farm": "Bellamy Flats",
+            "crop": "barley",
+            "season": "spring",
+            "agronomist": "Halloran"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.",
+          "conditions": {
+            "farm": "Corradine Estate",
+            "crop": "lucerne",
+            "season": "autumn",
+            "agronomist": "Nkemdi"
+          }
+        }
+      ],
+      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.\nThree: a barley block at Bellamy Flats, fitted 2 March, gave 0.7 tonnes per hectare more by 17 May than the previous spring; recorded by Halloran.\nFour: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.\nRainfall and mean temperature matched the previous season at every block, the seed variety was unchanged, and nothing else was altered.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 139,
+      "flaw_type": null,
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Four distinct values on every dimension - four farms, four crops, four seasons, four agronomists. The closing sentence is byte-identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Reviewer should confirm no farm, crop, season or surname repeats across the four cases."
+    },
+    {
+      "id": "fam_driptape__diverse_false",
+      "family_id": "fam_driptape",
+      "cell": "diverse_false",
+      "claim": "this drip line raises yield per hectare",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a maize block at Hollow Ridge, fitted 3 August, gave 0.6 tonnes per hectare more by 18 June than the previous summer; recorded by Ferreira.",
+          "conditions": {
+            "farm": "Hollow Ridge",
+            "crop": "maize",
+            "season": "summer",
+            "agronomist": "Ferreira"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.",
+          "conditions": {
+            "farm": "Netley Downs",
+            "crop": "onion",
+            "season": "winter",
+            "agronomist": "Achebe"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a barley block at Bellamy Flats, fitted 2 May, gave 0.7 tonnes per hectare more by 17 March than the previous spring; recorded by Halloran.",
+          "conditions": {
+            "farm": "Bellamy Flats",
+            "crop": "barley",
+            "season": "spring",
+            "agronomist": "Halloran"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.",
+          "conditions": {
+            "farm": "Corradine Estate",
+            "crop": "lucerne",
+            "season": "autumn",
+            "agronomist": "Nkemdi"
+          }
+        }
+      ],
+      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 August, gave 0.6 tonnes per hectare more by 18 June than the previous summer; recorded by Ferreira.\nTwo: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.\nThree: a barley block at Bellamy Flats, fitted 2 May, gave 0.7 tonnes per hectare more by 17 March than the previous spring; recorded by Halloran.\nFour: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.\nRainfall and mean temperature matched the previous season at every block, the seed variety was unchanged, and nothing else was altered.",
+      "ground_truth": false,
+      "confound_note": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
+      "word_count": 139,
+      "flaw_type": "temporal",
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "The closing sentence is byte-identical to both TRUE items and the condition values are byte-identical to diverse_true; the flaw lives entirely in the fitting and measurement dates of cases one and three, which a bag-of-ngrams classifier cannot see because the tokens are merely reordered. Reviewer should verify exactly two cases are inverted and that cases two and four remain correctly ordered. A shared confound is unavailable here: four farms across four seasons share no weather history."
+    }
+  ]
+}

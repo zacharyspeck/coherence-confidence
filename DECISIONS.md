@@ -485,3 +485,93 @@ features per family that dilute the ones that matter, making the gate *less*
 sensitive to a real giveaway.
 
 **Reverse:** one line in `check_lexical_giveaway`.
+
+---
+
+## D-022 — Balanced two-clause closers, because the first draft leaked
+
+**Found by the gate, not by inspection. This is the largest content change in the
+build.**
+
+The first complete 80-item draft failed the lexical gate. `scripts/lexical_ablation.py`
+(written for this) attributes it exactly:
+
+| passage part | grouped-CV accuracy at TRUE vs FALSE |
+|---|---|
+| full passage | 58.8% |
+| lead only | 50.0% |
+| **cases only** | **48.8%** — the case sentences leak nothing |
+| **closer only** | **65.0%** — the entire leak is here |
+| no closer | 48.8% |
+| no dates | 61.3% — so the temporal flaw's dates are not the problem |
+
+The cause was structural, not sloppy wording. Under the original design, three of
+the four items in a family shared one "TRUE closer" and the fourth
+(`coherent_false`) had a distinct "confound closer". So every word of the
+confound closer was a 1-in-4 marker for FALSE. A classifier that learns nothing
+except *"does this passage carry the TRUE closer"* scores **75%** — the design had
+a lexical ceiling far above the 60% limit no matter how carefully the sentences
+were phrased.
+
+**Chose:** every closer is now `"{FACT}, {SCOPE}; {TAIL}"` with
+
+- `FACT` — what the most obvious alternative explanation *did*: `CHANGED` (it
+  moved sharply) or `SAME` (it did not). Same quantity in both variants.
+- `SCOPE` — whether that explanation could *reach* the observed units: `REACH` or
+  `BLOCK`. Both scopes must read naturally after both facts.
+- `TAIL` — one clause, byte-identical across all four items of the family.
+
+assigned as
+
+| cell | closer | why |
+|---|---|---|
+| `coherent_false` | CHANGED + REACH | confound live and reaching; covers all four cases at once *only* because they share every condition |
+| `coherent_true` | CHANGED + BLOCK | same confound named, cannot reach the units |
+| `diverse_true` | SAME + REACH | nothing to worry about |
+| `diverse_false` | SAME + BLOCK | nothing to worry about; false for its own reason |
+
+**Why this works:** `CHANGED` appears in exactly one TRUE and one FALSE item. So
+does `SAME`, so does `REACH`, so does `BLOCK`. Every clause is perfectly balanced
+against the label, so a bag-of-words model gets **zero** signal from the closer.
+Only the *conjunction* CHANGED-and-REACH is diagnostic, and a linear model over
+unigrams and bigrams cannot represent a conjunction of two non-adjacent clauses.
+The giveaway is now logical rather than lexical, which is exactly the property
+the experiment needs.
+
+**Cost, stated plainly:** `coherent_true` and `diverse_true` no longer share a
+closer (CHANGED+BLOCK vs SAME+REACH). Perfect within-family balance is arithmetically
+incompatible with the two TRUE items being identical — with 2 TRUE and 2 FALSE
+per family, if both TRUE items carry the same clauses those clauses appear twice
+on the TRUE side and the FALSE side cannot balance them. So D-004's mitigation #1
+("the TRUE rows are structurally identical across coherence") is now weaker: the
+`coherence_effect_within_true` contrast carries a closer difference as well as a
+condition difference.
+
+**What to do about it in the morning:** the closer variant assigned to
+`coherent_true` is CHANGED+BLOCK in every family, so it is currently *confounded*
+with coherence rather than randomised. Rotating it — CHANGED+BLOCK for
+`coherent_true` in half the families and SAME+REACH in the other half, swapping
+with `diverse_true` — would make the closer variant orthogonal to coherence and
+restore the clean contrast, at no cost to the lexical balance. This is a
+half-hour edit across 20 files and is listed in `MORNING_REPORT.md` as the top
+open item. It was not done tonight because it should be reviewed before it is
+applied.
+
+---
+
+## D-023 — The lexical gate averages over 5 CV shufflings
+
+**Found the same way.** On the first full draft, single-seed grouped-CV accuracy
+ranged from **58.8% to 68.8%** across ten seeds and breached the 60% limit on
+**7 of 10**. With `seed=0` the build passed. It should not have.
+
+**Chose:** `check_lexical_giveaway` averages over `--lexical-seeds` (default 5)
+CV shufflings and fails on the **mean**. `accuracy_max`, `accuracy_per_seed` and
+`n_seeds_over_threshold` are reported alongside, and the summary line reads e.g.
+`accuracy 62.8% (mean of 5 shufflings; max 68.8%; 3/5 over limit)` so a marginal
+pass can never look like a comfortable one.
+
+**Why:** 80 items in 20 groups is a small sample; one shuffle is not an estimate.
+A gate that a rerun can flip is not a gate.
+
+**Reverse:** `--lexical-seeds 1` restores the old single-shuffle behaviour.

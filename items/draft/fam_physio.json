@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_physio",
+  "domain": "clinical",
+  "claim": "this physiotherapy protocol restores shoulder range of motion",
+  "dimensions": [
+    "hospital",
+    "injury_type",
+    "season",
+    "therapist"
+  ],
+  "items": [
+    {
+      "id": "fam_physio__coherent_true",
+      "family_id": "fam_physio",
+      "cell": "coherent_true",
+      "claim": "this physiotherapy protocol restores shoulder range of motion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        }
+      ],
+      "passage": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.\nOne: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.\nTwo: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand.\nThree: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand.\nFour: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand.\nCorticosteroid injections, ward staffing and time since injury matched the earlier quarter for every ward, and nothing else changed.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 140,
+      "flaw_type": null,
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Check that all four intakes share hospital, injury type, season and therapist - one distinct value per dimension. The closer names the obvious rival causes (corticosteroid injections, ward staffing, time since injury) and holds them fixed across the two quarters, which is what makes the ward-against-itself comparison adequate."
+    },
+    {
+      "id": "fam_physio__coherent_false",
+      "family_id": "fam_physio",
+      "cell": "coherent_false",
+      "claim": "this physiotherapy protocol restores shoulder range of motion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        }
+      ],
+      "passage": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.\nOne: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.\nTwo: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand.\nThree: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand.\nFour: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand.\nCorticosteroid injections began at this hospital for every shoulder ward that spring, and none had been given the earlier quarter.",
+      "ground_truth": false,
+      "confound_note": "All four intakes come from one Marbeck ward in one spring, so a single hospital-wide change covers every case at once. Corticosteroid injections started there for every shoulder ward that quarter, and the intakes treated 4, 5, 6 and 7 March all sit inside it. Each intake is measured against the same ward a quarter earlier, when no injections were given, so the injections and the protocol began together and the register cannot separate them.",
+      "word_count": 141,
+      "flaw_type": "shared_confound",
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Cases are identical to coherent_true; only the closing sentence differs. Check that the corticosteroid start is one cause covering all four records at once, and that it works only because every record is the same ward in the same spring - injections are a genuine rival cause of restored shoulder abduction."
+    },
+    {
+      "id": "fam_physio__diverse_true",
+      "family_id": "fam_physio",
+      "cell": "diverse_true",
+      "claim": "this physiotherapy protocol restores shoulder range of motion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Okoye.",
+          "conditions": {
+            "hospital": "Colvane",
+            "injury_type": "frozen shoulder",
+            "season": "summer",
+            "therapist": "Okoye"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Brandt.",
+          "conditions": {
+            "hospital": "Drenholm",
+            "injury_type": "labral tear",
+            "season": "autumn",
+            "therapist": "Brandt"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Villareal.",
+          "conditions": {
+            "hospital": "Pellamere",
+            "injury_type": "dislocation repair",
+            "season": "winter",
+            "therapist": "Villareal"
+          }
+        }
+      ],
+      "passage": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.\nOne: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.\nTwo: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Okoye.\nThree: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Brandt.\nFour: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Villareal.\nCorticosteroid injections, ward staffing and time since injury matched the earlier quarter for every ward, and nothing else changed.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 140,
+      "flaw_type": null,
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Four distinct values on every dimension, and the closer is identical to coherent_true, so the only difference between the two TRUE cells is the condition values. Check that no single event could cover four hospitals, four injury types, four seasons and four therapists at once."
+    },
+    {
+      "id": "fam_physio__diverse_false",
+      "family_id": "fam_physio",
+      "cell": "diverse_false",
+      "claim": "this physiotherapy protocol restores shoulder range of motion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder pain scores ran 14 points below the same ward a quarter earlier; therapist Ferrand.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder pain scores ran 11 points below the same ward a quarter earlier; therapist Okoye.",
+          "conditions": {
+            "hospital": "Colvane",
+            "injury_type": "frozen shoulder",
+            "season": "summer",
+            "therapist": "Okoye"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder pain scores ran 16 points below the same ward a quarter earlier; therapist Brandt.",
+          "conditions": {
+            "hospital": "Drenholm",
+            "injury_type": "labral tear",
+            "season": "autumn",
+            "therapist": "Brandt"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder pain scores ran 9 points below the same ward a quarter earlier; therapist Villareal.",
+          "conditions": {
+            "hospital": "Pellamere",
+            "injury_type": "dislocation repair",
+            "season": "winter",
+            "therapist": "Villareal"
+          }
+        }
+      ],
+      "passage": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.\nOne: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder pain scores ran 14 points below the same ward a quarter earlier; therapist Ferrand.\nTwo: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder pain scores ran 11 points below the same ward a quarter earlier; therapist Okoye.\nThree: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder pain scores ran 16 points below the same ward a quarter earlier; therapist Brandt.\nFour: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder pain scores ran 9 points below the same ward a quarter earlier; therapist Villareal.\nCorticosteroid injections, ward staffing and time since injury matched the earlier quarter for every ward, and nothing else changed.",
+      "ground_truth": false,
+      "confound_note": "Every case reports a fall in shoulder pain scores, not a gain in shoulder range of motion: 14 points at Marbeck, 11 at Colvane, 16 at Drenholm and 9 at Pellamere are all movements on a pain scale. Pain and range of motion are different quantities, and a stiff shoulder can hurt much less while abduction stays exactly where it was. The claim is about restoring range of motion, so none of the four ward records speaks to it.",
+      "word_count": 144,
+      "flaw_type": "claim_mismatch",
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Closer is verbatim the TRUE closer and the conditions are identical to diverse_true. Check that the only change is the measured quantity - shoulder pain scores in points instead of shoulder abduction in degrees - that pain relief is genuinely not restored range of motion, and that nothing in the passage flags the substitution."
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_nestbox",
+  "domain": "agriculture",
+  "claim": "these nest boxes increase fledgling counts",
+  "dimensions": [
+    "reserve",
+    "species",
+    "season",
+    "warden"
+  ],
+  "items": [
+    {
+      "id": "fam_nestbox__coherent_true",
+      "family_id": "fam_nestbox",
+      "cell": "coherent_true",
+      "claim": "these nest boxes increase fledgling counts",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        }
+      ],
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.\nThree: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.\nFour: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.\nPrey abundance and breeding-season weather matched the previous year at every reserve, predator control was unchanged, and nothing else was altered.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 142,
+      "flaw_type": null,
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Check that all four cases carry one distinct value on reserve, species, season and warden. The closer neutralises the year-over-year comparison by holding food supply, weather and predator control fixed, which is what makes a before/after count adequate. Cases must be byte-identical to coherent_false."
+    },
+    {
+      "id": "fam_nestbox__coherent_false",
+      "family_id": "fam_nestbox",
+      "cell": "coherent_false",
+      "claim": "these nest boxes increase fledgling counts",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        }
+      ],
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.\nThree: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.\nFour: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.\nPrey abundance at this reserve ran well above the previous year, breeding-season weather was unchanged, and every box sat in the same wood.",
+      "ground_truth": false,
+      "confound_note": "All four plots sit in one wood on one reserve in one spring, so they share a single food supply. Prey abundance well above the previous year is one alternative cause that covers every case at once, and because each plot is compared against the same reserve a year earlier rather than against an unboxed wood in the same spring, nothing in the evidence separates the boxes from the prey peak.",
+      "word_count": 144,
+      "flaw_type": "shared_confound",
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. The prey peak works as a single confound precisely because the four plots share one reserve, one wood and one season, so one food-supply fact explains all four. Check that the closer reuses the TRUE closer's vocabulary (prey abundance, previous year, breeding-season weather, unchanged) so the difference is logical rather than lexical."
+    },
+    {
+      "id": "fam_nestbox__diverse_true",
+      "family_id": "fam_nestbox",
+      "cell": "diverse_true",
+      "claim": "these nest boxes increase fledgling counts",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.",
+          "conditions": {
+            "reserve": "Cransley",
+            "species": "great tit",
+            "season": "summer",
+            "warden": "Okarie"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: barn owls at Brackenfen reserve, boxed 2 September, fledged 16 more young by 24 November than the same reserve in the previous autumn; recorded by Halloran.",
+          "conditions": {
+            "reserve": "Brackenfen",
+            "species": "barn owl",
+            "season": "autumn",
+            "warden": "Halloran"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.",
+          "conditions": {
+            "reserve": "Vanehead",
+            "species": "tawny owl",
+            "season": "winter",
+            "warden": "Merrow"
+          }
+        }
+      ],
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.\nThree: barn owls at Brackenfen reserve, boxed 2 September, fledged 16 more young by 24 November than the same reserve in the previous autumn; recorded by Halloran.\nFour: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.\nPrey abundance and breeding-season weather matched the previous year at every reserve, predator control was unchanged, and nothing else was altered.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 142,
+      "flaw_type": null,
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Four distinct values on every dimension, same closing sentence as coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four reserves across four seasons share no food supply or weather history, which is what makes this the stronger evidence of the two TRUE cells."
+    },
+    {
+      "id": "fam_nestbox__diverse_false",
+      "family_id": "fam_nestbox",
+      "cell": "diverse_false",
+      "claim": "these nest boxes increase fledgling counts",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: pied flycatchers at Hollowmere reserve, boxed 3 June, fledged 14 more young by 27 March than the same reserve in the previous spring; recorded by Trask.",
+          "conditions": {
+            "reserve": "Hollowmere",
+            "species": "pied flycatcher",
+            "season": "spring",
+            "warden": "Trask"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.",
+          "conditions": {
+            "reserve": "Cransley",
+            "species": "great tit",
+            "season": "summer",
+            "warden": "Okarie"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: barn owls at Brackenfen reserve, boxed 2 November, fledged 16 more young by 24 September than the same reserve in the previous autumn; recorded by Halloran.",
+          "conditions": {
+            "reserve": "Brackenfen",
+            "species": "barn owl",
+            "season": "autumn",
+            "warden": "Halloran"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.",
+          "conditions": {
+            "reserve": "Vanehead",
+            "species": "tawny owl",
+            "season": "winter",
+            "warden": "Merrow"
+          }
+        }
+      ],
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 June, fledged 14 more young by 27 March than the same reserve in the previous spring; recorded by Trask.\nTwo: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.\nThree: barn owls at Brackenfen reserve, boxed 2 November, fledged 16 more young by 24 September than the same reserve in the previous autumn; recorded by Halloran.\nFour: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.\nPrey abundance and breeding-season weather matched the previous year at every reserve, predator control was unchanged, and nothing else was altered.",
+      "ground_truth": false,
+      "confound_note": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+      "word_count": 142,
+      "flaw_type": "temporal",
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "The closing sentence is identical to both TRUE items; the flaw lives entirely in the dates inside cases one and three, where the month tokens are swapped between installation and count so the bag of words is unchanged. Check that only the dates differ from diverse_true, and that no shared confound is available: four reserves across four seasons share no food supply or weather history."
+    }
+  ]
+}

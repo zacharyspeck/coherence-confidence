@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_labkit",
+  "domain": "education",
+  "claim": "this lab kit increases coursework completion",
+  "dimensions": [
+    "campus",
+    "course_level",
+    "semester",
+    "demonstrator"
+  ],
+  "items": [
+    {
+      "id": "fam_labkit__coherent_true",
+      "family_id": "fam_labkit",
+      "cell": "coherent_true",
+      "claim": "this lab kit increases coursework completion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        }
+      ],
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.\nThree: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.\nFour: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.\nAssessment weighting, lab hours and the marking scheme matched the previous year for every section, and the syllabus was unchanged.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 144,
+      "flaw_type": null,
+      "domain": "education",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Check that all four sections share one distinct value on each of campus, course_level, semester and demonstrator. The closer neutralises the year-over-year comparison by holding assessment weighting, lab hours, the marking scheme and the syllabus fixed, which is what makes a before/after comparison adequate here."
+    },
+    {
+      "id": "fam_labkit__coherent_false",
+      "family_id": "fam_labkit",
+      "cell": "coherent_false",
+      "claim": "this lab kit increases coursework completion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        }
+      ],
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.\nThree: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.\nFour: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.\nAssessment weighting changed that year for every section here, with the syllabus giving coursework double the marking credit it carried previously.",
+      "ground_truth": false,
+      "confound_note": "All four sections sit at Harlow in one autumn term, so a single assessment-weighting change covers every case at once: the syllabus doubled the marking credit attached to coursework that year. Each section is compared against itself a year earlier under the old weighting, so the kit and the doubled credit changed together and the 9, 6, 11 and 7 point rises cannot be attributed to the kit.",
+      "word_count": 145,
+      "flaw_type": "shared_confound",
+      "domain": "education",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. Check the closer reuses the same vocabulary as the TRUE closer (assessment weighting, marking, syllabus, coursework, year, every section) so the difference is logical rather than lexical. The confound works only because all four sections share campus and term."
+    },
+    {
+      "id": "fam_labkit__diverse_true",
+      "family_id": "fam_labkit",
+      "cell": "diverse_true",
+      "claim": "this lab kit increases coursework completion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.",
+          "conditions": {
+            "campus": "Brackwell",
+            "course_level": "foundation",
+            "semester": "winter",
+            "demonstrator": "Osei"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: an intermediate section at Kelvinside, spring term, issued 5 April; by 28 June coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.",
+          "conditions": {
+            "campus": "Kelvinside",
+            "course_level": "intermediate",
+            "semester": "spring",
+            "demonstrator": "Marchetti"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.",
+          "conditions": {
+            "campus": "Thornbury",
+            "course_level": "advanced",
+            "semester": "summer",
+            "demonstrator": "Ibarra"
+          }
+        }
+      ],
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.\nThree: an intermediate section at Kelvinside, spring term, issued 5 April; by 28 June coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.\nFour: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.\nAssessment weighting, lab hours and the marking scheme matched the previous year for every section, and the syllabus was unchanged.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 144,
+      "flaw_type": null,
+      "domain": "education",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Four distinct values on every dimension: four campuses, four course levels, four terms, four demonstrators. Closer is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Check the term names and the month pairs stay consistent (autumn Sep-Nov, winter Jan-Mar, spring Apr-Jun, summer Jul-Aug)."
+    },
+    {
+      "id": "fam_labkit__diverse_false",
+      "family_id": "fam_labkit",
+      "cell": "diverse_false",
+      "claim": "this lab kit increases coursework completion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: an introductory section at Harlow, autumn term, issued 4 November; by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
+          "conditions": {
+            "campus": "Harlow",
+            "course_level": "introductory",
+            "semester": "autumn",
+            "demonstrator": "Danforth"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.",
+          "conditions": {
+            "campus": "Brackwell",
+            "course_level": "foundation",
+            "semester": "winter",
+            "demonstrator": "Osei"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: an intermediate section at Kelvinside, spring term, issued 5 June; by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.",
+          "conditions": {
+            "campus": "Kelvinside",
+            "course_level": "intermediate",
+            "semester": "spring",
+            "demonstrator": "Marchetti"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.",
+          "conditions": {
+            "campus": "Thornbury",
+            "course_level": "advanced",
+            "semester": "summer",
+            "demonstrator": "Ibarra"
+          }
+        }
+      ],
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 November; by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.\nThree: an intermediate section at Kelvinside, spring term, issued 5 June; by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.\nFour: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.\nAssessment weighting, lab hours and the marking scheme matched the previous year for every section, and the syllabus was unchanged.",
+      "ground_truth": false,
+      "confound_note": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+      "word_count": 144,
+      "flaw_type": "temporal",
+      "domain": "education",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Closing sentence is verbatim identical to both TRUE items - the flaw lives entirely in the dates of cases one and three (4 November / 27 September, 5 June / 28 April), which is invisible to a bag-of-words classifier because the month tokens are simply swapped within each case. Check no shared confound is available: four campuses across four terms share no policy or timetable history."
+    }
+  ]
+}

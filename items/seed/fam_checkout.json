@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.\nTraffic volume, promotion schedule and product prices were unchanged across both periods for every segment, and no other release shipped.",
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.\nA site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue; traffic volume and product range were unchanged, and no other release shipped.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 133,
+      "word_count": 150,
       "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
@@ -113,10 +113,10 @@
           }
         }
       ],
-      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.\nA site-wide discount ran through the whole of March for every segment here, and no discount had run in the earlier period.",
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.\nA site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed the general catalogue; traffic volume and product range were unchanged, and no other release shipped.",
       "ground_truth": false,
-      "confound_note": "All four segments sit inside March, so a single March-wide discount covers every case at once. Each segment is compared against itself in February, when no discount ran, so the discount and the new page changed together and the evidence cannot separate them.",
-      "word_count": 135,
+      "confound_note": "All four segments sit inside the same month, so one site-wide discount covers every case at once, and every segment browsed the general catalogue where that discount applied. Each segment is compared against itself a month earlier, before the discount ran, so the discount and the new page changed together and the evidence cannot separate them. The coherent_true item states the same discount but puts every segment on a fixed-price contract catalogue, which is what makes it sound.",
+      "word_count": 149,
       "flaw_type": "shared_confound",
       "domain": "business_metrics",
       "review_status": "unreviewed",
@@ -170,10 +170,10 @@
           }
         }
       ],
-      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.\nTraffic volume, promotion schedule and product prices were unchanged across both periods for every segment, and no other release shipped.",
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.\nPrices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed the general catalogue; traffic volume and product range were unchanged, and no other release shipped.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 133,
+      "word_count": 147,
       "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
@@ -188,7 +188,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: desktop sessions from Canada via search switched on 4 March; by 29 March items added to carts ran 6 percent above the same segment a month earlier.",
+          "text": "One: desktop sessions from Canada via search switched on 4 March; by 29 March cart additions ran 6 percent above the same segment a month earlier.",
           "conditions": {
             "device": "desktop",
             "country": "Canada",
@@ -198,7 +198,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: mobile sessions from Portugal via email switched on 3 June; by 27 June items added to carts ran 4 percent above the same segment a month earlier.",
+          "text": "Two: mobile sessions from Portugal via email switched on 3 June; by 27 June cart additions ran 4 percent above the same segment a month earlier.",
           "conditions": {
             "device": "mobile",
             "country": "Portugal",
@@ -208,7 +208,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: tablet sessions from Kenya via referral switched on 5 September; by 30 September items added to carts ran 7 percent above the same segment a month earlier.",
+          "text": "Three: tablet sessions from Kenya via referral switched on 5 September; by 30 September cart additions ran 7 percent above the same segment a month earlier.",
           "conditions": {
             "device": "tablet",
             "country": "Kenya",
@@ -218,7 +218,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: kiosk sessions from Japan via display switched on 2 November; by 26 November items added to carts ran 5 percent above the same segment a month earlier.",
+          "text": "Four: kiosk sessions from Japan via display switched on 2 November; by 26 November cart additions ran 5 percent above the same segment a month earlier.",
           "conditions": {
             "device": "kiosk",
             "country": "Japan",
@@ -227,10 +227,10 @@
           }
         }
       ],
-      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March items added to carts ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June items added to carts ran 4 percent above the same segment a month earlier.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September items added to carts ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November items added to carts ran 5 percent above the same segment a month earlier.\nTraffic volume, promotion schedule and product prices were unchanged across both periods for every segment, and no other release shipped.",
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March cart additions ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June cart additions ran 4 percent above the same segment a month earlier.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September cart additions ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November cart additions ran 5 percent above the same segment a month earlier.\nPrices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed a fixed-price contract catalogue; traffic volume and product range were unchanged, and no other release shipped.",
       "ground_truth": false,
-      "confound_note": "Every case measures items added to carts, not purchases. Putting an item in a cart is not buying it, and a checkout page can raise cart additions while completed purchases stay flat or fall - abandonment is exactly what a checkout page governs. The claim is about purchases, so none of the four cases speaks to it.",
-      "word_count": 145,
+      "confound_note": "Every case measures cart additions, not purchases. Putting an item in a cart is not buying it, and a checkout page can raise cart additions while completed purchases stay flat or fall - abandonment at checkout is exactly what this page governs. The claim is about purchases, so none of the four cases speaks to it.",
+      "word_count": 152,
       "flaw_type": "claim_mismatch",
       "domain": "business_metrics",
       "review_status": "unreviewed",

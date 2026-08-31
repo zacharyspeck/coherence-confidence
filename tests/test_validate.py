@@ -201,8 +201,39 @@ def test_lexical_check_names_the_offending_tokens():
 
 def test_lexical_check_reports_per_fold_accuracies(clean_items):
     r = check_lexical_giveaway(clean_items)
-    assert len(r.data["fold_accuracies"]) == 5
+    assert len(r.data["fold_accuracies_last_seed"]) == 5
     assert r.data["n_features"] > 100
+
+
+def test_lexical_check_averages_over_several_cv_shufflings(clean_items):
+    """One shuffle swings the accuracy by several points on 80 items, so a
+    single seed can pass or fail the same item set by luck. This actually
+    happened: the first full draft passed at 58.8% on seed 0 and failed on 7 of
+    10 seeds, mean 62.5%."""
+    r = check_lexical_giveaway(clean_items, n_seeds=5)
+    assert r.data["n_seeds"] == 5
+    assert len(r.data["accuracy_per_seed"]) == 5
+    assert r.data["accuracy"] == pytest.approx(
+        sum(r.data["accuracy_per_seed"]) / 5, abs=1e-6
+    )
+    assert r.data["accuracy_max"] == max(r.data["accuracy_per_seed"])
+
+
+def test_lexical_check_reports_how_many_seeds_breached_the_limit(clean_items):
+    """A marginal pass has to be visible rather than silent."""
+    r = check_lexical_giveaway(clean_items, threshold=0.0, n_seeds=4)
+    assert r.data["n_seeds_over_threshold"] == 4
+    assert "4/4 over limit" in r.summary
+    r = check_lexical_giveaway(clean_items, threshold=1.0, n_seeds=4)
+    assert r.data["n_seeds_over_threshold"] == 0
+
+
+def test_lexical_check_fails_on_the_mean_not_a_lucky_seed():
+    """Constructed so seed-to-seed variation cannot rescue a real giveaway."""
+    r = check_lexical_giveaway(make_item_set(20), n_seeds=5)
+    assert not r.passed
+    assert r.data["accuracy"] > 0.60
+    assert r.data["n_seeds_over_threshold"] >= 3
 
 
 def test_grouped_cv_is_stricter_than_in_sample(clean_items):

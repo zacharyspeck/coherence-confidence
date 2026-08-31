@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_pricing",
+  "domain": "business_metrics",
+  "claim": "this pricing change raises revenue per order",
+  "dimensions": [
+    "store",
+    "category",
+    "month",
+    "region_lead"
+  ],
+  "items": [
+    {
+      "id": "fam_pricing__coherent_true",
+      "family_id": "fam_pricing",
+      "cell": "coherent_true",
+      "claim": "this pricing change raises revenue per order",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        }
+      ],
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.\nShelf assortment, promotion depth and supplier contracts matched the earlier period at every store, footfall was unchanged, and nothing else was altered.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 140,
+      "flaw_type": null,
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Check that all four lines share one value on every dimension: store Harlow Street, category coffee, month March, region lead Vasquez. The closer holds the obvious month-over-month rivals fixed (assortment, promotion depth, supplier contracts, footfall), which is what makes a line-against-itself comparison adequate here."
+    },
+    {
+      "id": "fam_pricing__coherent_false",
+      "family_id": "fam_pricing",
+      "cell": "coherent_false",
+      "claim": "this pricing change raises revenue per order",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        }
+      ],
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.\nShelf assortment at this store held premium coffee only for the whole of March after the entry-level supplier contract lapsed, and promotion depth was unchanged.",
+      "ground_truth": false,
+      "confound_note": "All four lines are coffee at the Harlow Street store inside the same month, so one assortment change covers every case at once. Through March the shelf carried premium stock only, because the entry-level supplier contract lapsed, and a dearer average item lifts revenue per order by itself. Each line is compared against itself in February, when the cheap packs were still stocked, so nothing here separates the new pricing rule from the change in what was on the shelf.",
+      "word_count": 143,
+      "flaw_type": "shared_confound",
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. The assortment shift works as a single confound precisely because the four lines share one store, one category and one month - four coffee lines on one shelf in March cannot be told apart from that shelf. Closer reuses the TRUE closer's vocabulary (shelf assortment, supplier contract, promotion depth, unchanged) so the difference is logical, not lexical."
+    },
+    {
+      "id": "fam_pricing__diverse_true",
+      "family_id": "fam_pricing",
+      "cell": "diverse_true",
+      "claim": "this pricing change raises revenue per order",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: stationery at Pell Basin repriced 3 June; by 27 June revenue per order ran 4 percent above the same line a month earlier; lead Duplessis.",
+          "conditions": {
+            "store": "Pell Basin",
+            "category": "stationery",
+            "month": "June",
+            "region_lead": "Duplessis"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: footwear at Ordway Quay repriced 5 September; by 30 September revenue per order ran 7 percent above the same line a month earlier; lead Nkemelu.",
+          "conditions": {
+            "store": "Ordway Quay",
+            "category": "footwear",
+            "month": "September",
+            "region_lead": "Nkemelu"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: cookware at Tamsin Row repriced 2 November; by 26 November revenue per order ran 5 percent above the same line a month earlier; lead Brandt.",
+          "conditions": {
+            "store": "Tamsin Row",
+            "category": "cookware",
+            "month": "November",
+            "region_lead": "Brandt"
+          }
+        }
+      ],
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: stationery at Pell Basin repriced 3 June; by 27 June revenue per order ran 4 percent above the same line a month earlier; lead Duplessis.\nThree: footwear at Ordway Quay repriced 5 September; by 30 September revenue per order ran 7 percent above the same line a month earlier; lead Nkemelu.\nFour: cookware at Tamsin Row repriced 2 November; by 26 November revenue per order ran 5 percent above the same line a month earlier; lead Brandt.\nShelf assortment, promotion depth and supplier contracts matched the earlier period at every store, footfall was unchanged, and nothing else was altered.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 140,
+      "flaw_type": null,
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Four distinct values on every dimension: four stores, four categories, four months, four region leads. Closing sentence is byte-identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four separate months mean no single event could cover all four lines."
+    },
+    {
+      "id": "fam_pricing__diverse_false",
+      "family_id": "fam_pricing",
+      "cell": "diverse_false",
+      "claim": "this pricing change raises revenue per order",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: coffee at Harlow Street repriced 4 March; by 29 March units per order ran 6 percent above the same line a month earlier; lead Vasquez.",
+          "conditions": {
+            "store": "Harlow Street",
+            "category": "coffee",
+            "month": "March",
+            "region_lead": "Vasquez"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: stationery at Pell Basin repriced 3 June; by 27 June units per order ran 4 percent above the same line a month earlier; lead Duplessis.",
+          "conditions": {
+            "store": "Pell Basin",
+            "category": "stationery",
+            "month": "June",
+            "region_lead": "Duplessis"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: footwear at Ordway Quay repriced 5 September; by 30 September units per order ran 7 percent above the same line a month earlier; lead Nkemelu.",
+          "conditions": {
+            "store": "Ordway Quay",
+            "category": "footwear",
+            "month": "September",
+            "region_lead": "Nkemelu"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: cookware at Tamsin Row repriced 2 November; by 26 November units per order ran 5 percent above the same line a month earlier; lead Brandt.",
+          "conditions": {
+            "store": "Tamsin Row",
+            "category": "cookware",
+            "month": "November",
+            "region_lead": "Brandt"
+          }
+        }
+      ],
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March units per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: stationery at Pell Basin repriced 3 June; by 27 June units per order ran 4 percent above the same line a month earlier; lead Duplessis.\nThree: footwear at Ordway Quay repriced 5 September; by 30 September units per order ran 7 percent above the same line a month earlier; lead Nkemelu.\nFour: cookware at Tamsin Row repriced 2 November; by 26 November units per order ran 5 percent above the same line a month earlier; lead Brandt.\nShelf assortment, promotion depth and supplier contracts matched the earlier period at every store, footfall was unchanged, and nothing else was altered.",
+      "ground_truth": false,
+      "confound_note": "Every case measures units per order, not revenue per order. How many items go into a basket is not what the basket is worth: a repricing that lowers unit prices routinely lifts units per order while the money taken on each order holds flat or falls, and the two move in opposite directions whenever demand is elastic. The claim is about revenue per order, so none of the four lines, from 4 March at Harlow Street to 26 November at Tamsin Row, bears on it.",
+      "word_count": 140,
+      "flaw_type": "claim_mismatch",
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Closing sentence is byte-identical to both TRUE items and the conditions are byte-identical to diverse_true; the only change from diverse_true is the measured-quantity phrase 'revenue per order' -> 'units per order' in all four cases. Reviewer should confirm units per order is genuinely non-equivalent to revenue per order and that this substitute is not reused by any other family. A shared confound is unavailable here because the four lines span four stores, four categories, four months and four region leads."
+    }
+  ]
+}
