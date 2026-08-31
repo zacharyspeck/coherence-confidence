@@ -1,9 +1,9 @@
 {
   "kind": "analysis",
   "analysis_meta": {
-    "timestamp_utc": "2026-08-31T08:03:08+00:00",
-    "code_git_sha": "7b6a9cedb151c03e9b3ee224b0fa9fbedd427610",
-    "code_git_dirty": true,
+    "timestamp_utc": "2026-08-31T08:09:25+00:00",
+    "code_git_sha": "fa956fe1daa70eba223ca02bbaf85073ce93f92b",
+    "code_git_dirty": false,
     "environment": {
       "python": "3.13.14",
       "platform": "Windows-11-10.0.26200-SP0",
@@ -23,7 +23,7 @@
     "score_used": "3way"
   },
   "source_meta": {
-    "timestamp_utc": "2026-08-31T08:02:22+00:00",
+    "timestamp_utc": "2026-08-31T08:08:47+00:00",
     "code_git_sha": "7b6a9cedb151c03e9b3ee224b0fa9fbedd427610",
     "code_git_dirty": true,
     "environment": {
@@ -166,6 +166,7 @@
     ],
     "n_items": 80,
     "items_hash": "107ab946de39",
+    "prompts_hash": "0cb3e4b8afcd",
     "mass_covered_mean": 0.7326132232915538,
     "mass_covered_min": 0.6399175797646338,
     "run_id": "HuggingFaceTB_SmolLM2-135M__107ab946de39__cd91ee96dc31dce3"

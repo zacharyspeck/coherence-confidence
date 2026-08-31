@@ -5,7 +5,7 @@
 - template hash: `cd91ee96dc31dce3`
 - options: `['Yes', 'No', 'Unknown']`
 - scored: 80 items in 20 families
-- timestamp: 2026-08-31T08:02:22+00:00
+- timestamp: 2026-08-31T08:08:47+00:00
 
 ## Policy
 
