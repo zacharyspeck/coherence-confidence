@@ -91,21 +91,127 @@ that makes it quiet without making it unfindable.
 
 ## 3. Salience convergence
 
-Full round-by-round record in `results/salience_log.md`.
+Targets: gap within **0.4**, no cell above **3.5**, every FALSE item still 100%
+findable. Hard stop at 4 rounds — past that the honest move is to report the gap
+rather than keep editing until a number lands. It took 3.
 
-<!--SALIENCE_TABLE-->
+Full record in `results/salience_log.md`, including the round that went backwards.
+
+**What each round did, and what it cost.**
+
+- **R1** moved the flaw out of the final sentence into the middle of the passage
+  with two cases and a closer after it, and introduced `scope_mismatch` so both
+  false cells share a mechanism. Gap 1.20 → 0.32, too-easy items 16 → 1. But
+  false positives on TRUE decoys went 0 → 4, and **all four were
+  `coherent_true`**, objecting to imputed values in the population clause. A TRUE
+  item that reads as false depresses confidence on the cell the hypothesis says
+  is inflated — biasing *towards* the hypothesis. Worse than the bias it
+  replaced, so R1 was not accepted despite passing its targets.
+- **R2** removed the imputation by making the completeness clause about patchy
+  *participation in the intervention* rather than missing measurements. That
+  fixed the direction — false positives became 3 coherent / 4 diverse instead of
+  4 / 0 — but the gap slipped to 0.45, just outside target. **This round made one
+  number worse and is in the log for that reason.**
+- **R3** found that the whole remaining gap was one mechanism: `stated_confound`
+  at 3.30 against 2.65 and 2.77 for the other two. The loudness turned out to
+  live in evaluative comparatives that handed the reader the inference —
+  *"higher-grade synthetic"*, *"a faster insert grade"*, *"roughly double"* —
+  rather than in the fact being stated at all. Replacing those with the plain
+  fact (*"moved from mineral to synthetic grade"*, *"a coated carbide insert
+  grade"*, *"about a fifth above"*) leaves the direction as something the reader
+  supplies. Gap 0.18, nothing unfindable, nothing too easy.
+
+| round | coherent_false | diverse_false | gap | worst cell | gap ok | cell ok | all findable | false positives |
+|---|---|---|---|---|---|---|---|---|
+| R0 - BEFORE the fix pass (confound in the final sentence) | 3.90 | 2.70 | +1.20 | 3.90 | NO | NO | YES | 0/40 |
+<sub>by mechanism: broken_chronology 2.55 (n=10), claim_mismatch 2.85 (n=10), shared_confound 3.90 (n=20). 16 of 40 FALSE items were flagged too-easy; all 16 were coherent_false.</sub>
+| R1 - post-rebuild (buried confound + scope_mismatch) | 3.17 | 2.85 | +0.32 | 3.17 | YES | YES | YES | 4/40 |
+<sub>by mechanism: broken_chronology 2.75 (n=10), scope_mismatch 2.98 (n=20), stated_confound 3.35 (n=10)</sub>
+| R2 - participation-based scope clauses (no imputation) | 3.10 | 2.65 | +0.45 | 3.10 | NO | YES | YES | 7/40 |
+<sub>by mechanism: broken_chronology 2.65 (n=10), scope_mismatch 2.77 (n=20), stated_confound 3.30 (n=10)</sub>
+| R3 - stated_confound clauses quieted | 2.83 | 2.65 | +0.18 | 2.83 | YES | YES | YES | 4/40 |
+<sub>by mechanism: broken_chronology 2.55 (n=10), scope_mismatch 2.73 (n=20), stated_confound 2.95 (n=10)</sub>
 
 ---
 
 ## 4. Which items changed, which reverted
 
-<!--CHANGE_TABLE-->
+**Counts per flaw mechanism, per cell**
+
+| cell | `stated_confound` | `broken_chronology` | `scope_mismatch` |
+|---|---|---|---|
+| `coherent_false` | 10 | 0 | 10 |
+| `diverse_false` | 0 | 10 | 10 |
+
+**Which round's wording is in force, per clause pair**
+
+| family | type | scope clauses | confound clauses |
+|---|---|---|---|
+| `fam_bearing` | confound | round 2 | round 3 |
+| `fam_checkout` | scope | round 2 | round 1 |
+| `fam_coolant` | confound | round 2 | round 3 |
+| `fam_driptape` | confound | round 2 | round 3 |
+| `fam_fertilizer` | confound | round 2 | round 3 |
+| `fam_filter` | scope | round 2 | round 1 |
+| `fam_handwash` | scope | round 2 | round 1 |
+| `fam_inhaler` | confound | round 2 | round 3 |
+| `fam_labkit` | confound | round 2 | round 3 |
+| `fam_nestbox` | confound | round 2 | round 3 |
+| `fam_onboarding` | confound | round 2 | round 3 |
+| `fam_physio` | scope | round 2 | round 1 |
+| `fam_pricing` | scope | round 2 | round 1 |
+| `fam_reading` | confound | round 2 | round 3 |
+| `fam_routing` | scope | round 2 | round 1 |
+| `fam_seedcoat` | scope | round 2 | round 1 |
+| `fam_sleepapp` | confound | round 2 | round 3 |
+| `fam_solder` | scope | round 2 | round 1 |
+| `fam_timetable` | scope | round 2 | round 1 |
+| `fam_tutoring` | scope | round 2 | round 1 |
+
+Round 1 rebuilt every passage; round 2 rewrote the scope clauses in all 20 families to remove imputation; round 3 quieted the confound clauses in the 10 `stated_confound` families only.
+
+**Reverted:** none — no FALSE item became unfindable.
+
+**Latest blind audit**
+
+- FALSE items whose intended flaw was found: **40/40**
+- unfindable (broken): **0**
+- flagged too easy: **0**
+- TRUE decoys drawing a false positive: **4/40** — fam_driptape__coherent_true, fam_reading__coherent_true, fam_bearing__diverse_true, fam_onboarding__diverse_true
 
 ---
 
 ## 5. Every gate, before and after
 
-<!--GATE_TABLE-->
+| gate | result | measured |
+|---|---|---|
+| `word_count_parity` | PASS | grand mean 177.9 words; largest cell deviation +0.05% (limit +/-10%) |
+| `coherent_one_value_per_dimension` | PASS | 40 coherent items checked across their dimensions |
+| `diverse_four_values_per_dimension` | PASS | 40 diverse items checked across their dimensions |
+| `no_lexical_giveaway` | PASS | grouped 5-fold CV accuracy 51.0% (mean of 5 shufflings; max 55.0%; 0/5 over limit) (limit 60%, chance 50%) |
+| `cell_balance` | PASS | 80 items, 20 families, per-cell {'coherent_false': 20, 'coherent_true': 20, 'diverse_false': 20, 'diverse_true': 20} |
+| `no_duplicate_passages` | PASS | 80 distinct passages across 80 items |
+| `no_answer_key_leakage` | PASS | 80 passages scanned for answer-key leakage |
+| `passage_word_balance` | PASS | 20 families; worst per-word TRUE/FALSE imbalance = 2 (limit 2; 1 is the floor when both false items share a mechanism, D-026) |
+| `flaw_declarations_complete` | PASS | 40 FALSE items checked |
+| `matched_mechanism_subset` | PASS | scope_mismatch: 10 coherent_false, 10 diverse_false, over 10 shared families |
+| `all_items_unreviewed` | PASS | 80/80 items are 'unreviewed' |
+
+**Component ablation** — grouped 5-fold CV accuracy at telling TRUE from FALSE, on each part of the passage in isolation. Chance is 50%.
+
+| passage part | accuracy |
+|---|---|
+| `full` | 48.8% |
+| `lead` | 50.0% |
+| `cases` | 50.0% |
+| `closer` | 50.0% |
+| `no_closer` | 50.0% |
+| `no_dates` | 51.2% |
+| `no_dates_no_numbers` | 52.5% |
+| `coherent_false` | 76.2% |
+| `diverse_false` | 71.2% |
+| `coherent_true` | 73.8% |
+| `diverse_true` | 62.5% |
 
 ---
 
@@ -129,7 +235,25 @@ the average is an addition, not a silent replacement.
 
 `src/model_gate.py` runs before any item is scored and **raises** on any miss.
 
-<!--GATE_OUTPUT-->
+Run against `HuggingFaceTB/SmolLM2-135M` as a worked example (the same command works on any HF causal LM):
+
+```
+  third option
+    ' Unsure'    3 token(s)
+    ' Maybe'     1 token(s)  <-- chosen
+    ' Unclear'   2 token(s)
+    ' Unknown'   1 token(s)
+
+  option token ids
+    yes     Yes      4 ids, 2 with leading space
+    no      No       6 ids, 3 with leading space
+    unsure  Maybe    4 ids, 2 with leading space
+
+  coverage  mean 0.7024 over 6 probe items (need > 0.5)
+  RESULT: PASS
+```
+
+- third option is 'Maybe', not the default 'Unsure', because ' Unsure' is 3 tokens on this tokenizer
 
 ---
 

@@ -53,16 +53,16 @@
       "No"
     ],
     "descriptions": [
-      "The counts 'cover the sessions that reached the new page' while 'a quarter of each segment dropped out before checkout', so the 4-7 percent uplift describes only the surviving three-quarters of each segment rather than the segment as a whole, and the base is not shown to be constituted the same way as 'the same segment a month earlier'.",
-      "The purchase counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\" - so a quarter of each segment is outside the measured base, and a rate computed on the sessions that got as far as the new checkout page does not establish a change in purchases for the segment."
+      "The purchase figures 'cover the sessions that reached the new page' while 'a quarter of each segment dropped out before checkout' - so the 4-7 percent lift is computed only on the selected three-quarters that got as far as the checkout page, a narrower population than the claim that the page 'increases purchases' overall.",
+      "The counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout,\" so the 4-7 percent rise is measured only on the self-selected three-quarters that got as far as checkout. That is a narrower population than the claim, which is about purchases from the segment as a whole."
     ],
     "confidences": [
-      3,
-      3
+      4,
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Trailing base-composition remark is a hedge on the same measurement issue, not a separate named defect."
+      "Identifies the excluded quarter that dropped out before checkout."
     ]
   },
   "517C55": {
@@ -103,7 +103,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, so a single district air history covers every case at once. The mid-passage facts state that pollen and airborne irritants in each group's district fell by half from the previous quarter and that every group lived and slept in unfiltered district air, so the cleaner air reached every patient whose attacks were counted. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, so the drop in irritants and the inhaler moved together and the 4 to 7 attack reductions cannot be attributed to the inhaler. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, so the drop in irritants is the whole of the defect.",
+    "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, and a single district air history covers every case at once. The mid-passage facts state that pollen counts in each group's district ran a fifth below the previous quarter and that every group lived and slept on the district's outside air, putting the cleaner air over every patient whose attacks were tallied. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, leaving the drop in pollen and the inhaler moving together across the 4 to 7 attack reductions. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, leaving the drop in pollen the whole of the defect.",
     "batch": 1,
     "round": 1,
     "bucket": "found",
@@ -113,22 +113,23 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.5,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "'Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air' - the halved irritant load reached every patient in all four groups, so it alone could produce the 4 to 7 fewer attacks; the inhaler's effect is not separated from it.",
-      "A named alternative cause reaches every unit: \"Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air.\" Halved irritant exposure would by itself lower attack counts against the prior quarter, so the 4-7 fewer attacks are not attributable to the inhaler."
+      "'Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air' - a 20 percent pollen drop is a named alternative cause that reaches all four groups and by itself explains 4-7 fewer asthma attacks versus the previous quarter.",
+      "A named alternative cause reaches every unit: 'Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air.' Since the comparison is against 'the same band a quarter earlier', a fifth drop in the pollen the patients were actually breathing explains the 4-7 fewer attacks just as well as the inhaler does."
     ],
     "confidences": [
-      5,
+      4,
       4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Identifies the halved pollen/irritant load reaching every group as the confound."
+      "Names the pollen drop as the shared alternative cause reaching all four groups.",
+      "Same pollen confound, including that the patients breathed the district air."
     ]
   },
   "384C95": {
@@ -185,8 +186,8 @@
       "No"
     ],
     "descriptions": [
-      "'Averages cover the patients who kept up the home exercises' but 'a quarter of each intake let the home exercises lapse', so the 9 to 16 degree gains are computed on a self-selected adherent three-quarters of each intake, a narrower population than the intakes the claim is about.",
-      "\"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse\" - the 9-16 degree gains are averages over a self-selected compliant three-quarters of each intake, excluding the lapsed patients, so they do not establish what the protocol does for the intakes that received it."
+      "'Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse' - the 9-16 degree gains are measured only on the compliant three-quarters, excluding the lapsed quarter, so the numbers describe a self-selected subgroup rather than the intakes that completed the protocol.",
+      "The averages \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse,\" so the 9-16 degree gains come from the self-selected adherent three-quarters; adherence itself predicts recovery, and the excluded quarter is exactly the group that would drag the average down."
     ],
     "confidences": [
       4,
@@ -194,7 +195,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the excluded lapsed quarter and the narrower adherent population."
+      "States the averages cover only the compliant three quarters and names the excluded lapsed quarter.",
+      "Same exclusion of the lapsed quarter from the tally."
     ]
   },
   "DC4223": {
@@ -242,26 +244,26 @@
     "n_verdicts": 2,
     "matches": [
       "same_flaw",
-      "no_flaw_reported"
+      "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.0,
+    "mean_explicitness": 2.0,
     "answers": [
       "No",
-      "Yes"
+      "No"
     ],
     "descriptions": [
-      "'Rates cover the boards soldered on the new profile throughout' while 'about a tenth of each run's boards took one pass on the old profile', so the 4 to 7 percent defect reduction is measured on a purified 90 percent of each run that excludes exactly the boards which touched the old profile, not on the run's actual output.",
-      ""
+      "'Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile' - roughly 10 percent of each run's boards are dropped from the defect rate on a basis (mixed processing) that plausibly correlates with defects, so the 4-7 percent reduction covers a narrower board population than the run as a whole.",
+      "The defect rate is computed on a narrower set of boards than the baseline it is compared against: 'Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile', so roughly 10% of each run is dropped from the new figure while 'the same line a month earlier' covers all boards. Excluding that selected tenth can by itself produce the 4-7 percent drop, independent of the profile."
     ],
     "confidences": [
       3,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the excluded tenth that took an old-profile pass versus the run's actual output.",
-      "Reported field is empty."
+      "Names the tenth of boards taking an old-profile pass as dropped.",
+      "Same excluded tenth versus the all-boards baseline."
     ]
   },
   "E2D8B7": {
@@ -312,23 +314,23 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.0,
+    "mean_explicitness": 2.5,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "Two of the four runs are measured before the coolant was switched: run one 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run three 'switched 5 October' but shorter 'by 30 September'. The improvement in those cases predates the intervention, so the dates run backwards.",
-      "Two of the four runs are measured before the coolant was switched: run One was \"switched 4 May\" yet \"ran 6 minutes shorter by 29 March\", and run Three was \"switched 5 October\" yet measured \"by 30 September\". The other two runs (3 June/27 June, 2 November/26 November) show the intended ~3-week window, so the improvement in One and Three is dated before the intervention existed."
+      "Two of the four runs have measurement dates that precede the switch: run One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run Three 'switched 5 October' but measured 'by 30 September'. Those savings were recorded before the coolant was in use, so they cannot be its effect (compounded by the insert-grade control covering only 'its machines' while 'every logged run was cut on a machine hired from outside').",
+      "Two of the four runs are measured before the coolant was switched: run One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run Three 'switched 5 October' but was measured 'by 30 September'. Half the reported improvements predate the intervention they are credited to."
     ],
     "confidences": [
       5,
       4
     ],
-    "reported_extra": false,
+    "reported_extra": true,
     "match_notes": [
-      "Names cases one and three and both reversed date pairs exactly.",
-      "Same two reversed cases, and correctly notes the other two runs are properly ordered."
+      "Names both intended date inversions exactly; also flags the insert-grade control not covering the hired machines.",
+      "Identifies the same two pre-dated runs and the same dates."
     ]
   },
   "E6F72E": {
@@ -358,7 +360,7 @@
     ],
     "confidences": [
       3,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -369,7 +371,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four sections sit at Harlow in one autumn term, so a single change to the central syllabus covers every case at once. The mid-passage facts state that the central syllabus doubled coursework's share of the final grade against the previous year and that every section was marked to that central syllabus, so the heavier weighting applied to every section whose completion was measured. Each section is compared against itself a year earlier under the old share, so the kit and the doubled share moved together and the 6 to 11 point rises cannot be attributed to the kit. The population and completeness clauses in the same line describe a tally with no gap between the students counted and the students the claim covers, so the syllabus change is the whole of the defect.",
+    "confound_note": "All four sections sit at Harlow in one autumn term, and a single change to the central syllabus covers every case at once. The mid-passage facts state that the central syllabus set coursework at a third of the final grade, up from a quarter, and that every section was marked to that central syllabus, putting the heavier share over every section whose completion was measured. Each section is compared against itself a year earlier under the smaller share, leaving the kit and the larger share moving together across the 6 to 11 point rises. The population and completeness clauses in the same line describe a tally with no gap between the students counted and the students the claim covers, leaving the syllabus change the whole of the defect.",
     "batch": 2,
     "round": 1,
     "bucket": "found",
@@ -385,16 +387,17 @@
       "No"
     ],
     "descriptions": [
-      "A named alternative cause reaches every unit: 'The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to that central syllabus.' Doubling coursework's weight would by itself raise completion in all four sections relative to the year-earlier baseline, so the kit is not isolated.",
-      "A named alternative cause reaches every unit: 'The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to that central syllabus.' Doubling coursework's weight in the final grade would by itself raise coursework completion in all four sections, so the 6-11 point rises cannot be attributed to the lab kit."
+      "A named alternative cause reaches all four sections: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Raising coursework's weight from 25 to 33 percent of the final grade would by itself raise coursework completion, so the 6-to-11-point gains cannot be attributed to the lab kit.",
+      "A named alternative cause reaches every unit: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Coursework became worth more of the final grade in exactly the year being compared, and all four sections were subject to it, so the 6-11 point completion rise is equally explained by the higher grade weighting rather than the lab kit."
     ],
     "confidences": [
-      5,
+      4,
       4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Identifies the doubled coursework weighting applied to every section as the covering cause."
+      "Names the central syllabus coursework reweighting covering all four sections.",
+      "Same syllabus confound, correctly timed to the compared year."
     ]
   },
   "A85004": {
@@ -441,18 +444,18 @@
     "bucket": "found",
     "n_verdicts": 2,
     "matches": [
-      "no_flaw_reported",
+      "same_flaw",
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
     "mean_explicitness": 3.0,
     "answers": [
-      "Yes",
+      "No",
       "No"
     ],
     "descriptions": [
-      "",
-      "\"Figures cover the orders rung up at the new prices\" but \"about a fifth of each line's orders were rung up at the old prices\", so the 4-7 percent gains are measured on a selected 80% of orders (the higher-priced ones) and compared to a month earlier when all orders counted — that is not revenue per order for the line."
+      "The measured population is narrower than the claim: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' Roughly 20 percent of each line's post-change orders are excluded from the revenue-per-order figures, so the 4-to-7 percent gains describe a selected subset of orders rather than the line's revenue per order.",
+      "'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices', so the 4-7 percent rise is computed on an 80% subset selected by which orders happened to price at the new rule, and compared against a prior month counted in full - it is not the line's revenue per order."
     ],
     "confidences": [
       4,
@@ -460,8 +463,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Reported field is empty.",
-      "Identifies the excluded fifth of orders rung at old prices."
+      "Names the fifth of orders rung at old prices as excluded from the tally.",
+      "The prior-month-counted-in-full remark elaborates the same denominator mismatch rather than adding a defect."
     ]
   },
   "658359": {
@@ -508,18 +511,18 @@
     "bucket": "found",
     "n_verdicts": 2,
     "matches": [
-      "no_flaw_reported",
+      "same_flaw",
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
     "mean_explicitness": 3.0,
     "answers": [
-      "Yes",
+      "No",
       "No"
     ],
     "descriptions": [
-      "",
-      "The absence figures cover a narrower population than the cohort the claim is about: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' Roughly 20 percent of every cohort is dropped from the numbers, and pupils whose timetable lapsed are plausibly the higher-absence pupils, so the 4-7 percent reduction is measured on a filtered subgroup."
+      "The absence figures cover a narrower group than the cohort the claim is about: they 'cover the pupils on the revised timetable throughout', yet 'about a fifth of each cohort spent weeks on the old timetable' and is therefore excluded. The 4-to-7 percent drop is measured on the fully-compliant four-fifths, not on the cohort.",
+      "The absence figures exclude a fifth of each cohort on a criterion tied to the outcome: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' Pupils not on the new timetable throughout are dropped, so the 4-7 percent fall is computed over a self-selected fully-compliant subgroup rather than the cohorts the claim is about."
     ],
     "confidences": [
       4,
@@ -527,8 +530,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Reported field is empty.",
-      "Names the fifth of each cohort back on the old timetable as excluded from the absence figures."
+      "Names the excluded fifth who spent weeks on the old timetable.",
+      "Same exclusion, framed as a compliant-only subgroup."
     ]
   },
   "0AC971": {
@@ -586,16 +589,16 @@
     ],
     "descriptions": [
       "",
-      "Two of the four cases measure the outcome before the line was fitted: block One was \"fitted 3 August\" but scored \"by 18 June\" of that summer, and block Three was \"fitted 2 May\" but scored \"by 17 March\" of that spring (cases Two, 8 Dec to 23 Feb, and Four, 7 Sep to 22 Nov, run forward, so the season windows are within-season). Half the evidence records a gain that predates the treatment."
+      "Two of the four cases measure the outcome before the line was fitted: block One was 'fitted 3 August' but the gain is dated 'by 18 June' against 'the previous summer', and block Three was 'fitted 2 May' with the gain dated 'by 17 March' against 'the previous spring' - within the season each case names (summer Jun-Aug, spring Mar-May), 18 June precedes 3 August and 17 March precedes 2 May, so the effect predates its cause. The other two cases (8 Dec to 23 Feb, 7 Sep to 22 Nov) run forward, confirming the intended window is inside the named season."
     ],
     "confidences": [
       3,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Reported field is empty.",
-      "Correct two cases and correct dates (3 Aug vs 18 Jun, 2 May vs 17 Mar)."
+      "Reported field empty.",
+      "Correct two cases and correct dates (18 Jun before 3 Aug; 17 Mar before 2 May)."
     ]
   },
   "79A648": {
@@ -607,7 +610,7 @@
     "confound_note": null,
     "batch": 7,
     "round": 1,
-    "bucket": "false_positive",
+    "bucket": "clean",
     "n_verdicts": 2,
     "matches": [
       "unknown",
@@ -616,16 +619,16 @@
     "wrong_flaw_reported": false,
     "mean_explicitness": null,
     "answers": [
-      "No",
+      "Yes",
       "Yes"
     ],
     "descriptions": [
-      "The measured population does not match the exposed one: \"Rates cover every patient admitted to each ward\" while \"a quarter of each ward's patients had spells outside the protocol\", so a quarter of the patients generating the 6-11 percent drop were not continuously under the handwashing protocol.",
+      "",
       ""
     ],
     "confidences": [
-      3,
-      3
+      4,
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -636,7 +639,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four plots sit on one reserve, with one species in one spring under one warden, so the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland doubled from the previous year, which is an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, so the food surge reaches every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, so nothing in the evidence separates the boxes from the prey peak. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, so they add no second defect.",
+    "confound_note": "All four plots sit on one reserve, with one species in one spring under one warden, and the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland ran a third above the previous year's, an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, placing the extra food over every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, and nothing in the evidence separates the boxes from the prey level. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, adding no second defect.",
     "batch": 3,
     "round": 1,
     "bucket": "found",
@@ -652,8 +655,8 @@
       "No"
     ],
     "descriptions": [
-      "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland doubled from the previous year\" and \"every box stood at the farmland edge, within the birds' foraging range\", so the extra 9-16 fledglings at Hollowmere could be the doubled food supply rather than the boxes.",
-      "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland doubled from the previous year, and every box stood at the farmland edge, within the birds' foraging range.\" A doubling of the food supply between the previous spring and this one explains higher fledgling counts at all four plots without the boxes doing anything."
+      "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range.\" A one-third rise in food supply inside the flycatchers' foraging range is enough on its own to raise fledging success at all four plots relative to the previous spring, so the extra 9-16 young cannot be attributed to the boxes.",
+      "'Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range' - a food supply a third larger reaches every plot in the log and on its own explains fledging 9-16 more young than the previous spring, independent of the boxes."
     ],
     "confidences": [
       4,
@@ -661,8 +664,7 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Identifies the doubled prey abundance plus the foraging-range clause that lets it reach every box.",
-      "Same confound, explicitly covering all four plots."
+      "Quotes the prey-abundance fact and the foraging-range clause that puts it over every plot."
     ]
   },
   "4EFAC6": {
@@ -720,16 +722,16 @@
     ],
     "descriptions": [
       "",
-      "Two of the four classes are scored before the program started: Ashcombe \"started the program 6 December\" yet scored higher \"by 11 September\" of that autumn term, and Halloway \"started the program 20 June\" yet scored higher \"by 24 April\" of that spring term (Deerpark, 8 Jan to 12 Mar, and Marchfield, 6 Jul to 21 Aug, run forward within their named terms)."
+      "Two of the four classes are scored before the program began: Ashcombe 'started the program 6 December' but scored higher 'by 11 September than the previous autumn term' (11 Sep precedes 6 Dec inside the autumn term), and Halloway 'started the program 20 June' but scored higher 'by 24 April than the previous spring term' (24 Apr precedes 20 Jun inside the spring term). The other two classes (8 Jan to 12 Mar, 6 Jul to 21 Aug) run forward within their named term."
     ],
     "confidences": [
       3,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": [
       "Reported field is empty.",
-      "Names the correct two cases and the correct inverted date pairs (Ashcombe, Halloway)."
+      "Identifies the same two cases and the same date pairs (11 Sep before 6 Dec, 24 Apr before 20 Jun)."
     ]
   },
   "089BF4": {
@@ -741,7 +743,7 @@
     "confound_note": null,
     "batch": 7,
     "round": 1,
-    "bucket": "false_positive",
+    "bucket": "clean",
     "n_verdicts": 2,
     "matches": [
       "unknown",
@@ -750,16 +752,16 @@
     "wrong_flaw_reported": false,
     "mean_explicitness": null,
     "answers": [
-      "No",
+      "Yes",
       "Yes"
     ],
     "descriptions": [
-      "Exposure is far narrower than measurement: \"Readings cover every enrolled user in each cohort\" but only \"a fifth of each cohort used the app on some nights\", so the 3-6 bpm cohort-wide drop is averaged over users who mostly never used the app.",
+      "",
       ""
     ],
     "confidences": [
       4,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -786,8 +788,8 @@
       "No"
     ],
     "descriptions": [
-      "The pass rates are a selected subgroup, not the cohort: they \"cover the students who attended every block\" while \"about a quarter of each cohort missed at least one block\", so the 4-8 point gain compares full attenders against a whole previous cohort and could be attendance selection rather than the tutoring.",
-      "\"Pass rates cover the students who attended every block\" but \"about a quarter of each cohort missed at least one block\", so the 4-8 point gains are computed on the full-attendance quarter-excluded subset and compared against the previous spring term's whole cohort; perfect attenders are self-selected and would be expected to pass at a higher rate regardless of tutoring."
+      "The measured population is narrower than the cohort the claim is about: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" Roughly 25% of each cohort - precisely the least-engaged students - is dropped from the numbers, so the 4-8 point gain is a per-protocol figure for self-selected full attenders, not the tutored cohorts' pass rate.",
+      "'Pass rates cover the students who attended every block' while 'about a quarter of each cohort missed at least one block' and are excluded, yet the comparison is the previous spring term's full cohort. Restricting to the fully attending three-quarters is enough to raise the measured pass rate by the 4-8 points reported, with no effect from the tutoring itself."
     ],
     "confidences": [
       4,
@@ -795,8 +797,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the full-attendance subgroup and the excluded quarter of each cohort.",
-      "Same excluded population identified verbatim."
+      "Quotes the full-attendance restriction and names the excluded quarter.",
+      "Same exclusion; the baseline-asymmetry point is part of the same scope defect, not a separate one."
     ]
   },
   "7A9B21": {
@@ -805,7 +807,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four machines are lathes at Bexley on the night shift, so a single change at that plant covers every case at once. The mid-passage line records that \"The lubricant supply switched to a higher-grade synthetic mid-cycle\" and that \"every machine here drew from that supply\", so the new lubricant reached the bearings in all four cases. A higher-grade lubricant extends bearing life on its own, and every machine is compared against its own previous cycle - run before the switch - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
+    "confound_note": "All four machines are lathes at Bexley on the night shift, and one plant-level change covers every case at once. The mid-passage line records that \"The lubricant supply moved from mineral to synthetic grade mid-cycle\" and that \"every machine here drew from that supply\", putting the new grade in the bearings of all four machines. A move from mineral to synthetic lengthens bearing life on its own, and every machine is compared against its own previous cycle - run on the earlier grade - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
     "batch": 4,
     "round": 1,
     "bucket": "found",
@@ -815,14 +817,14 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.5,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "A rival cause reached every unit: \"The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply.\" All four lathes ran on the upgraded lubricant during the very cycle being compared, so the 260-410 extra hours cannot be separated from the lubricant change.",
-      "A named alternative cause reaches every unit: \"The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply.\" A better lubricant plausibly explains the 260-410 extra hours on all four machines, so the gain cannot be attributed to the redesigned bearing."
+      "A named alternative cause reaches every unit: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" Synthetic grease extends bearing life on its own, so the 260-410 extra hours cannot be attributed to the redesigned bearing.",
+      "A named alternative cause reaches every unit: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" A switch from mineral to synthetic grease during the same cycle would itself extend bearing life, so the 260-410 extra hours cannot be attributed to the redesigned bearing."
     ],
     "confidences": [
       5,
@@ -830,7 +832,7 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Quotes the lubricant switch and notes it reached all four machines."
+      "Quotes the plant-wide lubricant switch and its reach to every machine."
     ]
   },
   "8877CA": {
@@ -852,15 +854,15 @@
     "mean_explicitness": null,
     "answers": [
       "No",
-      "Yes"
+      "No"
     ],
     "descriptions": [
-      "The measured population is far wider than the treated one: \"Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.\" A 0.4-0.7 t/ha gain averaged over whole blocks, three quarters of whose hectares the line never watered (and the remaining quarter only intermittently), cannot be attributed to the drip line.",
-      ""
+      "The measured area and the treated area do not match: \"Yields cover every hectare in each block fitted with the line\" while \"the line watered about a quarter of each block's hectares intermittently.\" Roughly three-quarters of the hectares producing the 0.4-0.7 t/ha gain were never watered by the drip line, so the block-wide rise cannot be attributed to it.",
+      "The numbers cover a different population than the treatment: 'Yields cover every hectare in each block fitted with the line' while 'the line watered about a quarter of each block's hectares intermittently'. A per-hectare gain averaged over the whole block is credited to a line that reached only about 25% of those hectares, and only intermittently."
     ],
     "confidences": [
-      3,
-      3
+      4,
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -887,8 +889,8 @@
       "No"
     ],
     "descriptions": [
-      "Two of the four cases have measurement dates that precede the feeding date: the tomato was \"fed 3 August\" but measured \"by 20 June\", and the oak was \"fed 2 May\" but measured \"by 19 April\" - whereas the fern (8 January to 26 February) and cactus (7 October to 24 November) run the normal ~7 weeks forward. Half the observations record growth before the fertilizer was applied.",
-      "In two of the four cases the measurement date precedes the feeding date: the tomato was 'fed 3 August' but measured 'by 20 June', and the oak was 'fed 2 May' but measured 'by 19 April'. The other two cases run ~7 weeks forward (8 January to 26 February; 7 October to 24 November), so cases one and three record the height gain before the fertilizer was applied."
+      "Two of the four cases have dates running backwards: the tomato was \"fed 3 August\" but measured \"by 20 June\", and the oak was \"fed 2 May\" but measured \"by 19 April\". The height gain is recorded before the fertilizer was applied.",
+      "In two of the four cases the measurement date precedes the feeding date: the tomato was 'fed 3 August' but 'stood 11 cm taller by 20 June', and the oak was 'fed 2 May' but 'stood 13 cm taller by 19 April', while the other two (8 January to 26 February, 7 October to 24 November) run forward by about seven weeks. Half the reported gains are therefore recorded before the fertilizer was applied."
     ],
     "confidences": [
       4,
@@ -896,8 +898,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names both reversed cases and the exact dates.",
-      "Identical identification of the tomato and oak date reversals."
+      "Names both reversed cases with the exact dates.",
+      "Same two reversed cases; also verifies the other two run forward."
     ]
   },
   "40EC9D": {
@@ -938,7 +940,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four cohorts are starter signups from Norway via webinar inside one March window, so the trial fact stated mid-passage covers every case at once: the free trial ran thirty days, four times its length in the earlier period, and a thirty-day trial leaves users still inside their trial at week two. The scope clause beside that fact has every cohort here signed up on that trial, so the policy change reaches all four. Each cohort is compared against itself a month earlier, when the seven-day trial still applied, so the longer trial and the onboarding email moved together and the 3 to 6 point lifts cannot be attributed to the email. The population and completeness clauses in the same line leave the retention figures covering every signup, so the trial length is the whole of the defect.",
+    "confound_note": "All four cohorts are starter signups from Norway via webinar inside one March window, and the trial fact stated mid-passage covers every case at once: the free trial ran eighteen days, up from ten in the earlier period, and an eighteen-day trial still has users inside it at the week-two mark. The scope clause beside that fact has every cohort here signed up on that trial, which puts the policy change on all four. Each cohort is compared against itself a month earlier, under a ten-day trial that had already lapsed by week two. The longer trial and the onboarding email moved together, leaving the 3 to 6 point lifts unattributable to the email. The population and completeness clauses in the same line leave the retention figures covering every signup; the trial length is the whole of the defect.",
     "batch": 4,
     "round": 1,
     "bucket": "found",
@@ -948,14 +950,14 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.5,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "A rival cause hit every cohort: \"The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial.\" Under the old ~7-8 day trial, week two fell after the trial expired; under a 30-day trial week two is still inside it, which alone would lift week-two retention regardless of the email.",
-      "A named alternative cause reaches every unit: \"The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial.\" A trial that previously ended after ~7.5 days now runs past day fourteen, which by itself would lift week-two retention for all four cohorts independently of the onboarding email."
+      "A competing cause covers every cohort: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Nearly doubling the trial length mechanically lifts week-two retention, so the 3-6 point gain is not attributable to the onboarding email.",
+      "A competing cause covers every case: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Extending the trial from ten to eighteen days by itself keeps users active through day fourteen, so the 3-6 point week-two retention lift cannot be credited to the onboarding email."
     ],
     "confidences": [
       5,
@@ -963,7 +965,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Identifies the thirty-day trial and that week two now falls inside it for every cohort."
+      "Quotes the eighteen-day trial fact and its all-cohort reach.",
+      "Identifies the trial-length change as the competing cause covering every cohort."
     ]
   },
   "FD524A": {
@@ -975,7 +978,7 @@
     "confound_note": null,
     "batch": 0,
     "round": 1,
-    "bucket": "clean",
+    "bucket": "false_positive",
     "n_verdicts": 2,
     "matches": [
       "unknown",
@@ -984,12 +987,12 @@
     "wrong_flaw_reported": false,
     "mean_explicitness": null,
     "answers": [
-      "Yes",
-      "Yes"
+      "No",
+      "No"
     ],
     "descriptions": [
-      "",
-      ""
+      "The score population and the treated population diverge: \"Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.\" The 5-9 point gain is measured over pupils a quarter of whom did not receive the full program, so the figures do not isolate the program's effect.",
+      "'Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session', so the measured group is not the group that actually received the program; the gain is averaged over pupils a quarter of whom had incomplete exposure. The four 'classes' are also the same Ashcombe Primary Year 4 taught by Vance on consecutive start dates."
     ],
     "confidences": [
       3,
@@ -1014,14 +1017,14 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.0,
+    "mean_explicitness": 2.5,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "The timings are selected on the outcome-relevant behaviour: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The ~17% of runs that abandoned the new route - exactly the ones where it presumably worked badly - are dropped from the after period, so the 5-9 minute improvement is measured on a survivor subset.",
-      "The timings cover a narrower population than the claim: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' Roughly 17 percent of runs at every depot are excluded from the averages, and route deviations are exactly the runs likely to be slow, so the 5-9 minute improvement is measured on a self-selected compliant subset rather than on delivery runs generally."
+      "The timings cover a narrower, self-selected population than the claim: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The excluded sixth are exactly the deviating runs most likely to be slow, so the 5-9 minute improvement is measured only on the compliant subset.",
+      "The timings are selected on the outcome: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' Roughly 17 percent of runs at every depot are dropped from the figures, and route departures are exactly what happens on obstructed or delayed runs, so the 5-9 minute improvement is measured on a filtered best-case subset."
     ],
     "confidences": [
       4,
@@ -1029,7 +1032,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the excluded sixth (runs that left the issued route) and why they are the slow ones."
+      "Names the excluded sixth (runs that left the issued route) and why it biases the timings.",
+      "Same excluded group and same direction of bias as intended."
     ]
   },
   "830F4D": {
@@ -1077,26 +1081,26 @@
     "n_verdicts": 2,
     "matches": [
       "same_flaw",
-      "same_flaw"
+      "no_flaw_reported"
     ],
     "wrong_flaw_reported": false,
     "mean_explicitness": 2.0,
     "answers": [
       "No",
-      "No"
+      "Yes"
     ],
     "descriptions": [
-      "The purchase counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\", so the 6/4/7/5 percent gains are computed on the surviving three-quarters that got as far as the new checkout page, not on all sessions. That is a narrower population than the claim about purchases overall, and a page that lifts the rate among reachers can leave total purchases flat.",
-      "The purchase counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\" - so a quarter of each segment is dropped from the measured population, and the surviving 75 percent are exactly the sessions that got far enough to buy. The site-wide discount is neutralised (the catalogue was fixed-price), but the selective denominator is not."
+      "The purchase counts are computed on a filtered slice of the funnel: they \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\", so the 25% who never got as far as the new checkout page are dropped from the numbers, and this surviving three-quarters is compared against the whole segment a month earlier.",
+      ""
     ],
     "confidences": [
-      4,
+      3,
       3
     ],
     "reported_extra": false,
     "match_notes": [
-      "Identifies the counts as covering only sessions reaching checkout, narrower than the segment.",
-      "Same narrowed denominator; the discount remark dismisses a candidate rather than naming a new flaw."
+      "Names the sessions that never reached the new page as excluded from the counts.",
+      "Reported field empty."
     ]
   },
   "68D44E": {
@@ -1125,8 +1129,8 @@
       ""
     ],
     "confidences": [
-      4,
-      3
+      3,
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -1147,14 +1151,14 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 2.5,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "The figures \"cover the runs with the upgraded filter in service\" but \"a quarter of each stack's runs were made with the filter bypassed\", so the 12/9/14/8 percent reductions are drawn from a hand-picked three-quarters of runs and compared against an earlier quarter that was not similarly filtered. The measured population is narrower than the stack output the claim is about.",
-      "The particulate numbers are a selected subset: \"the figures cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed\". Those bypassed runs are dropped from the post-upgrade figure but the \"quarter earlier\" baseline covers all runs, so the 8-14 percent drops compare a filtered best-case subset against a whole quarter."
+      "The particulate numbers are a per-protocol slice: \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\", so the worst quarter of runs is excluded from the post-upgrade figure while the \"same unit a quarter earlier\" baseline is not similarly filtered.",
+      "The post-upgrade figures 'cover the runs with the upgraded filter in service' while 'a quarter of each stack's runs were made with the filter bypassed' and are therefore excluded, yet the comparison is to 'the same unit a quarter earlier', which includes all runs. Dropping the bypassed quarter of runs (the ones with no filtration at all) from the treated period alone could produce the 8-14 percent drop."
     ],
     "confidences": [
       4,
@@ -1162,8 +1166,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Quotes the in-service tally and the bypassed quarter, and states the population is narrower.",
-      "Names the dropped bypassed runs versus the whole-quarter baseline."
+      "Identifies the bypassed quarter of runs as excluded from the tally.",
+      "Quotes the in-service restriction and the asymmetric baseline."
     ]
   },
   "0EA7F6": {
@@ -1220,8 +1224,8 @@
       "No"
     ],
     "descriptions": [
-      "The abduction averages \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse\", so the 14/11/16/9 degree gains come only from the adherent three-quarters. Adherers are systematically the patients with less pain and better function, so the selected subset, not the protocol, can produce the gain.",
-      "The averages \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse\" - so the reported abduction gains are a per-protocol figure computed on the compliant three quarters, and the excluded quarter is precisely the group least likely to have improved. The steroid confound is genuinely blocked (intakes were barred from injections), but the selective averaging is not."
+      "The abduction averages are restricted to compliers: they \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse\", so the lapsed quarter is dropped and a self-selected, better-adhering group is compared against the full ward a quarter earlier.",
+      "The reported gains are computed on a self-selected subgroup: 'Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse', so roughly 25% of each intake is dropped from the new-period average while the 'same ward a quarter earlier' baseline is not filtered the same way. Patients who keep up home exercises are exactly the ones expected to recover abduction fastest, so the 9-16 degree gains can come from the filter rather than the protocol."
     ],
     "confidences": [
       4,
@@ -1229,8 +1233,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the excluded lapsed quarter and why it is the worse-outcome group.",
-      "Per-protocol denominator identified; the steroid remark rules a candidate out rather than adding a defect."
+      "Identifies the excluded lapsed quarter and the complier-only average.",
+      "Names the dropped 25% and the unfiltered baseline as part of the same flaw."
     ]
   },
   "8CB991": {
@@ -1259,8 +1263,8 @@
       ""
     ],
     "confidences": [
-      4,
-      3
+      3,
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -1281,23 +1285,21 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 2.5,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "The germination rates \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are excluded, so the 9/6/11/7 point gains rest on seed selected for having taken a full coat. Seed that takes a full coat is plausibly the plumper, sounder seed, so the excluded fifth makes the measured population narrower than the lot the claim is about.",
-      "The germination figures cover a narrower population than the claim: \"Rates cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are excluded. The 6-11 point gains are from a screened subset of trays measured against a full previous sowing."
+      "The germination rates cover only the best-treated trays: they \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\", so that fifth is excluded from the post-coating figure but is presumably inside the previous season's baseline.",
+      "The reported germination 'rates cover the trays sown from seed that took a full coat', while 'about a fifth of each lot's trays were sown from partly coated seed' and are left out, but the baseline is the whole previous sowing. The 6-11 point gain is measured on a filtered best-coated subset against an unfiltered comparison."
     ],
     "confidences": [
       4,
       4
     ],
     "reported_extra": false,
-    "match_notes": [
-      "Identifies the excluded fifth and the direction of the bias."
-    ]
+    "match_notes": []
   },
   "B1B3FD": {
     "item_id": "fam_timetable__diverse_true",
@@ -1337,33 +1339,33 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, so one retooling covers every case at once. The mid-passage line records that \"Every shop refitted its machines with a faster insert grade that quarter\" and that \"every logged run was cut on one of those machines\", so the refit reached all four runs. A change of insert grade moves cycle time by itself, and each run is compared against the same run last quarter, when the older grade was still fitted, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
+    "confound_note": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
     "batch": 6,
     "round": 1,
-    "bucket": "too_easy",
+    "bucket": "found",
     "n_verdicts": 2,
     "matches": [
       "same_flaw",
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 4.0,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "A named alternative cause reaches every unit: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines.\" A faster insert grade shortens cycle time on its own, so the 4-7 minute reductions cannot be attributed to the coolant.",
-      "A named alternative cause reaches every unit: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines.\" A faster insert grade directly shortens cycle time, so the 4-7 minute reductions in all four March runs are equally explained by the refit rather than the coolant."
+      "A concurrent alternative cause reaches every unit: \"Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.\" A new insert grade directly changes cutting speed on titanium, so the 4-7 minute reductions are equally explained by the insert change rather than the coolant.",
+      "A named alternative cause reaches every unit: \"Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.\" A new insert grade shortens cycle time on its own, and all four March runs were cut on those machines, so the 4-7 minute reductions cannot be attributed to the coolant."
     ],
     "confidences": [
       4,
-      5
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Quotes the insert-grade refit and its reach to all four runs.",
-      "Same refit confound, explicitly covering all four March runs."
+      "Names the coated carbide insert retooling reaching every logged run.",
+      "Same insert-grade confound, quoted directly."
     ]
   },
   "03AF40": {
@@ -1392,7 +1394,7 @@
       ""
     ],
     "confidences": [
-      3,
+      4,
       3
     ],
     "reported_extra": false,
@@ -1420,8 +1422,8 @@
       "No"
     ],
     "descriptions": [
-      "The reported rates cover a narrower population than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" A quarter of each ward's patients are dropped, so the 6-11 percent falls describe a selected fully-compliant subgroup rather than the ward's infection rate.",
-      "The measured population is narrower than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 9/6/11/7 percent falls are computed on a self-selected 75% subgroup (those never off protocol), not on the ward's infection rate that the claim is about, and the excluded quarter are plausibly the longer/more complicated stays with higher infection risk."
+      "The outcome is measured on a narrower population than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 6-11 percent drops are per-protocol figures that drop 25 percent of patients (plausibly the longer-stay, higher-risk ones), while the claim is about ward infection rates as a whole.",
+      "The measured population is narrower than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 6-11 percent falls are computed on a selected three-quarters of each ward, so they do not establish a change in the ward infection rate the claim is about."
     ],
     "confidences": [
       4,
@@ -1429,8 +1431,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the dropped quarter with spells outside the protocol.",
-      "Same exclusion, plus the correct reasoning about who the excluded quarter is."
+      "Per-protocol numbers vs whole-ward claim, names the excluded quarter.",
+      "Same narrower-population identification."
     ]
   },
   "E04F2D": {
@@ -1478,26 +1480,25 @@
     "n_verdicts": 2,
     "matches": [
       "same_flaw",
-      "no_flaw_reported"
+      "same_flaw"
     ],
     "wrong_flaw_reported": false,
     "mean_explicitness": 3.0,
     "answers": [
       "No",
-      "Yes"
+      "No"
     ],
     "descriptions": [
-      "The figures cover a narrower population than the claim: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" One fifth of each line's orders are excluded, so the 4-7 percent rise is for a selected subset of orders, not the line's revenue per order.",
-      ""
+      "The figures cover only part of the population the claim is about: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" Roughly 20 percent of current orders are excluded while the month-earlier baseline is the full line, so the 4-7 percent gap can reflect which orders got the new price rather than the pricing change raising revenue per order.",
+      "The numbers cover a narrower population than the claim: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" Roughly 20 percent of each line's post-change orders are dropped from the after-figure while the \"month earlier\" baseline is the whole line, so the 4-7 percent lift is a selected subset, not the line's revenue per order."
     ],
     "confidences": [
       4,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the excluded fifth of orders rung at old prices.",
-      "Reported field is empty."
+      "Names the fifth of orders rung at old prices as the excluded group."
     ]
   },
   "7D35F9": {
@@ -1526,7 +1527,7 @@
       ""
     ],
     "confidences": [
-      3,
+      4,
       3
     ],
     "reported_extra": false,
@@ -1548,23 +1549,23 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.0,
+    "mean_explicitness": 2.5,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "Two of the four cases measure the outcome before the intervention started: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below\". The drop precedes enrolment, so the app cannot have caused it.",
-      "Two of the four cases have measurement dates that precede enrolment: cohort One \"started 4 April; by 29 March\" and cohort Three \"started 5 October; by 30 September.\" Those bpm drops (5 and 6 bpm) were observed before the app was started, so they cannot be effects of it."
+      "Two of the four cases have the outcome measured before treatment started: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below.\" A drop recorded a week before enrolment cannot have been produced by the app.",
+      "Two of the four cases have measurement dates that precede enrolment: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below.\" The drop is recorded before the app was in use, so those readings cannot show its effect."
     ],
     "confidences": [
       5,
-      5
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Correct cases (one and three) and correct dates.",
-      "Correct cases and dates."
+      "Correct cases (one and three) and correct dates: 29 Mar before 4 Apr, 30 Sep before 5 Oct.",
+      "Same two cases and dates as intended."
     ]
   },
   "17EE84": {
@@ -1618,15 +1619,15 @@
     "mean_explicitness": null,
     "answers": [
       "No",
-      "No"
+      "Yes"
     ],
     "descriptions": [
-      "The hours figure is not a measure of the redesigned bearing: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" A third of the measured positions were running the old part during the cycle, so the extra 340/290/410/260 hours are an aggregate over mixed old-and-new positions and cannot be attributed to the redesign.",
-      "The outcome measure spans untreated units: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" So the 340/290/410/260 extra hours are machine-level totals in which roughly a third of the positions were running the old bearing, and cannot be attributed to the redesign."
+      "The outcome measure covers units that were only partly on the new bearing: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" So roughly a third of the measured positions were running the old design for part of the cycle, and the 260-410 extra hours cannot be attributed to the redesigned bearing alone.",
+      ""
     ],
     "confidences": [
       4,
-      4
+      3
     ],
     "reported_extra": false,
     "match_notes": []
@@ -1637,7 +1638,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four blocks sit on one farm in one summer, so a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each block's season ran to roughly double the year before and that every block lay in open ground, taking rain as it fell, so the extra water reached every block whose yield was measured. Each block is compared against itself a season earlier rather than against an undripped block in the same season, so the rain and the drip line moved together and the 0.4 to 0.7 tonne gains cannot be attributed to the line. The population and completeness clauses in the same line describe a tally with no gap between the ground measured and the ground the claim covers, so the rainfall is the whole of the defect.",
+    "confound_note": "All four blocks sit on one farm in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each block's season ran about a fifth above the year before and that every block lay in open ground, under no cover, and the extra water fell on every block whose yield was measured. Each block is compared against itself a season earlier rather than against an undripped block in the same season, and the rain and the drip line moved together. The 0.4 to 0.7 tonne gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the ground measured and the ground the claim covers, so the rainfall is the whole of the defect.",
     "batch": 7,
     "round": 1,
     "bucket": "found",
@@ -1653,16 +1654,17 @@
       "No"
     ],
     "descriptions": [
-      "A named alternative cause reaches every block: \"Rainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell.\" Doubled rainfall falling directly on all four open-ground maize blocks explains the 0.4-0.7 t/ha gain over the previous summer as well as the drip line does.",
-      "Rainfall is a live alternative cause that reaches every unit: \"Rainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell.\" Double the rain on open-ground maize explains the 0.4-0.7 t/ha gain over the previous summer just as well as the drip line does."
+      "A named alternative cause reaches every block: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover.\" A 20 percent wetter season on uncovered maize would raise yield by itself, so the 0.4-0.7 t/ha gains are not attributable to the drip line.",
+      "The stated alternative cause actually reaches the units: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover\" - open, uncovered maize blocks receive that extra 20% rainfall, so a wetter season explains the 0.4-0.7 t/ha gains over the previous summer just as well as the drip line."
     ],
     "confidences": [
-      5,
-      4
+      4,
+      5
     ],
     "reported_extra": false,
     "match_notes": [
-      "Quotes the doubled-rainfall/open-ground clause and its reach to all four blocks."
+      "Names the rainfall record and its reach to every open, uncovered block.",
+      "Same rainfall confound, with the reachability clause quoted."
     ]
   },
   "1C859B": {
@@ -1719,16 +1721,17 @@
       "No"
     ],
     "descriptions": [
-      "Two of the four measurement windows run backwards: case One \"started 4 March, had 6 fewer attacks by 28 February\" and case Three \"started 5 September, had 7 fewer attacks by 30 August\" both close before the inhaler was started (and the labelled quarters, \"winter\"/\"summer\", do not match those start dates either).",
-      "Two of the four groups have outcome dates before the treatment started: group one \"started 4 March\" but is measured \"by 28 February\", and group three \"started 5 September\" but is measured \"by 30 August\". The reduction in attacks is recorded before the inhaler was prescribed."
+      "Two of the four cases have follow-up dates that precede the start date: case one \"started 4 March, had 6 fewer attacks by 28 February\" and case three \"started 5 September, had 7 fewer attacks by 30 August.\" The reductions are recorded before the inhaler was started, so those cases cannot be evidence of its effect (the quarter labels, e.g. \"winter quarter\" for a 4 March start, are likewise inconsistent).",
+      "Two of the four groups have measurement windows that end before treatment began: group one 'started 4 March' but is scored 'by 28 February', and group three 'started 5 September' but is scored 'by 30 August' (the season labels are also inverted, e.g. 'winter quarter, started 4 March'). An outcome recorded before the inhaler was ever given cannot be evidence of its effect."
     ],
     "confidences": [
-      5,
-      4
+      4,
+      5
     ],
     "reported_extra": true,
     "match_notes": [
-      "Correct cases and dates, plus an extra observation that the season labels do not match the start dates."
+      "Correct cases and dates; also flags inconsistent quarter labels.",
+      "Correct cases and dates; also flags inverted season labels."
     ]
   },
   "2CB5E1": {
@@ -1750,14 +1753,14 @@
     "mean_explicitness": null,
     "answers": [
       "No",
-      "No"
+      "Yes"
     ],
     "descriptions": [
-      "The measured population is not the exposed population: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\" A third of the people in the 5/3/6/4-point lift never received the treatment at all, so the aggregate rise does not show the email did anything.",
-      "The retention numbers cover a population a third of which never received the treatment: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\" A 3-6 point cohort-wide lift that includes non-openers cannot be credited to the onboarding email."
+      "The measured population is broader than the treated one: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\" A third of each cohort was never actually exposed to the email, so the 3-6 point retention lift is measured on a population one-third of which received no treatment.",
+      ""
     ],
     "confidences": [
-      3,
+      4,
       4
     ],
     "reported_extra": false,
@@ -1769,7 +1772,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, so the single fact stated mid-passage covers every case at once: class sizes at each school fell by half from the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, so every lesson was delivered to half as many pupils as in the term the class is measured against. Each class is compared against itself in the previous autumn term, when the groups were twice the size, so the evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll, so no second defect is present.",
+    "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present.",
     "batch": 7,
     "round": 1,
     "bucket": "found",
@@ -1785,16 +1788,16 @@
       "No"
     ],
     "descriptions": [
-      "A named alternative cause reaches every class: \"Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group.\" Halved class size applies to the very English lessons being scored, so it explains the 5-9 point comprehension gain over the previous autumn term independently of the reading program.",
-      "The confounder reaches the units: \"Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group.\" Because English was taught to the whole class, the halved roll halved the group size in the very lessons being measured, so smaller classes explain the 5-9 point comprehension gain over the previous autumn term."
+      "A competing cause reaches every logged class: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group.\" Classes 25 percent smaller during whole-group English instruction could produce the 5-9 point comprehension gain on their own, independent of the reading program.",
+      "The competing cause is not blocked: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group\" - because English was taught to the undivided class, the ~25% smaller class size applied directly to the reading lessons, so smaller classes could produce the 5-9 point comprehension gains over the previous autumn term."
     ],
     "confidences": [
-      5,
+      4,
       4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the halved class size and its reach into the scored English lessons."
+      "Names the ~25% smaller classes plus the whole-group English clause that lets it reach every case."
     ]
   },
   "A882FC": {
@@ -1824,7 +1827,7 @@
     ],
     "confidences": [
       4,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -1845,22 +1848,23 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 2.0,
+    "mean_explicitness": 2.5,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "The defect rates are computed on a filtered subset: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly a tenth of each run is excluded from the new-profile figure while the prior-month baseline is the whole line, so the 4-7 percent drop compares a narrower, self-selected population against a broader one.",
-      "The defect rates \"cover the boards soldered on the new profile throughout\" while \"about a tenth of each run's boards took one pass on the old profile\" - that tenth is excluded from the new-profile numbers but was included in the earlier-period baseline, and boards diverted to an old-profile pass are the likeliest to be defective, so the 4-7 percent improvement is partly an artefact of dropping them."
+      "The reported rates cover a narrower population than the baseline they are compared with: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly 10 percent of each run's boards are dropped from the new-profile figure while the \"same line a month earlier\" comparison covers all boards, so the 4-7 percent defect drop could come from that selection rather than the profile.",
+      "The post-change defect rates are asymmetrically filtered: 'Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile', so ~10% of each run's boards are excluded from the new-profile figure while the 'same line a month earlier' comparison includes everything. Boards that needed an old-profile pass are the likely rework/problem boards, so removing them alone could produce the 4-7 percent apparent improvement."
     ],
     "confidences": [
-      4,
-      3
+      3,
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Baseline-vs-after framing is an elaboration of the same excluded tenth, not a second defect."
+      "Names the excluded tenth (old-profile-pass boards) and the narrower tally population.",
+      "Same excluded group, correct bias direction."
     ]
   },
   "31DBCF": {
@@ -1901,7 +1905,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four plots sit in the same backyard in the same summer, so one weather history covers every case at once. The mid-passage facts state that rainfall in each plot's season was the highest on record, roughly double the year before, and that every plot stood in the open, watered by rain alone, so that water reached every plot whose heights were taken. Each plot is compared against itself a year earlier rather than against an unfertilized plot in the same year, so the rain and the fertilizer moved together and the 8 to 13 cm gains cannot be attributed to the fertilizer. The population and completeness clauses in the same line describe a tally with no gap between the plants measured and the plants the claim covers, so the rainfall is the whole of the defect.",
+    "confound_note": "All four plots are tomatoes in the Ellis backyard in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each plot's season ran a fifth higher than the year before and that every plot stood in the open, on no set watering schedule, and the extra water fell on every plot whose plants were measured. Each plot is compared against itself a season earlier rather than against an unfertilised plot in the same season, and the rain and the feeding moved together. The 8 to 13 centimetre gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the plants measured and the plants the claim covers.",
     "batch": 8,
     "round": 1,
     "bucket": "found",
@@ -1911,22 +1915,23 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.5,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "A named alternative cause reaches every unit: \"Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone.\" Record double rainfall on rain-only open plots explains the 8-13 cm gains against the previous summer just as well as the fertilizer does.",
-      "Rainfall 'was the highest on record, roughly double the year before' in each plot's season, and 'every plot stood in the open, watered by rain alone', so the record rain reaches all four plants and equally explains the 8-13 cm gain over the previous summer. The confound is not merely present but demonstrably delivered to every unit."
+      "Rainfall in each plot's season 'ran a fifth higher than the year before' and 'every plot stood in the open, on no set watering schedule', so the extra water actually reached every plant and was not offset by controlled irrigation; a 20 percent rainfall increase is an alternative cause of the 8-13 cm height gains that fits all four plots.",
+      "Rainfall is an alternative cause that fits all four plots and demonstrably reaches them: 'Rainfall in each plot's season ran a fifth higher than the year before' while 'every plot stood in the open, on no set watering schedule', so the extra water was not offset. Since each plot is compared against the previous summer, the 8-13 cm gain is equally explained by the wetter season rather than the fertilizer."
     ],
     "confidences": [
       4,
-      5
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Identifies record rainfall on rain-only open plots reaching every plot."
+      "Names the wetter season reaching every open, unscheduled plot.",
+      "Same rainfall confound plus the self-comparison against the previous summer."
     ]
   },
   "26D23E": {
@@ -1977,22 +1982,23 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 2.5,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "Two of the four cases have the outcome measured before the kit was issued: case one was \"issued 4 November; by 27 September\" and case three was \"issued 5 June; by 28 April.\" Completion gains dated ahead of the intervention cannot have been caused by it.",
-      "Two of the four cases measure the outcome before the kit was issued: case One was \"issued 4 November\" but the completion figure is \"by 27 September\", and case Three was \"issued 5 June\" but measured \"by 28 April\". Half the evidence records a gain that predates the intervention."
+      "Two of the four cases have measurement dates preceding the intervention: section One was 'issued 4 November' but completion was read 'by 27 September', and section Three was 'issued 5 June' but read 'by 28 April'. Those gains were recorded before the kit was ever handed out.",
+      "Two of the four cases have the measurement before the intervention: case One was \"issued 4 November\" but scored \"by 27 September\", and case Three was \"issued 5 June\" but scored \"by 28 April\" (the term labels conflict too - an autumn-term section read out in September). Half the evidence therefore records completion gains that predate the kit."
     ],
     "confidences": [
       4,
-      4
+      5
     ],
-    "reported_extra": false,
+    "reported_extra": true,
     "match_notes": [
-      "Names both reversed cases and the exact dates."
+      "Names both reversed cases and both date pairs exactly.",
+      "Correct cases and dates; also flags a term-label inconsistency (autumn-term section read out in September)."
     ]
   },
   "EB8CD7": {
@@ -2049,17 +2055,17 @@
       "No"
     ],
     "descriptions": [
-      "The outcome is measured on a self-selected subset: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The excluded sixth is exactly the set most likely to have run long, and it is compared against \"the same runs a month earlier,\" i.e. the full unfiltered population.",
-      "The measured population is narrower than the claim: 'Timings cover the runs that stayed on the issued route', while 'about a sixth of each depot's runs left the issued route' and are therefore excluded. The runs most likely to abandon a new route are the ones where it went badly, so the 5-9 minute saving is computed on a filtered subset rather than on the routing change's actual effect."
+      "The timings 'cover the runs that stayed on the issued route' while 'about a sixth of each depot's runs left the issued route', so roughly 17 percent of runs are dropped from the measured averages. The excluded runs are exactly the ones that hit trouble and would be slowest, so the 5-9 minute improvement is an artifact of which runs were counted.",
+      "The timings cover a narrower population than the claim: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route', so roughly 17 percent of runs -- precisely the ones most likely to have gone wrong or run long -- are excluded from the 5-9 minute improvement. Separately, 'Order volume through each depot hit a record low, half the earlier period', which is an unaddressed depot-level difference from the comparison month."
     ],
     "confidences": [
       4,
       4
     ],
-    "reported_extra": false,
+    "reported_extra": true,
     "match_notes": [
-      "Names the excluded sixth that left the issued route and why it biases the average.",
-      "States the measured population is narrower and identifies the excluded runs."
+      "Names the excluded sixth that left the issued route and why those runs are the slow ones.",
+      "Intended exclusion found; separately raises the record-low order volume as an unaddressed difference."
     ]
   },
   "3F6CD2": {
@@ -2089,7 +2095,7 @@
     ],
     "confidences": [
       4,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -2107,17 +2113,17 @@
     "n_verdicts": 2,
     "matches": [
       "same_flaw",
-      "no_flaw_reported"
+      "same_flaw"
     ],
     "wrong_flaw_reported": false,
     "mean_explicitness": 3.0,
     "answers": [
       "No",
-      "Yes"
+      "No"
     ],
     "descriptions": [
-      "The absence figures cover a filtered subgroup, not the cohort: \"Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\" A fifth of each cohort is dropped on a post-switch criterion, yet the comparison is to \"the same cohort a term earlier\" in full.",
-      ""
+      "Absence figures 'cover the pupils on the revised timetable throughout' while 'about a fifth of each cohort spent weeks on the old timetable', so roughly 20 percent of each cohort is excluded from the numbers. Pupils absent enough to miss the switch are precisely the high-absence group being filtered out, which alone could produce the 4-7 percent drop.",
+      "The absence figures are restricted to a self-selected subgroup: they \"cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\" That fifth is excluded from the after-figure but included in the \"term earlier\" cohort baseline, so the 4-7 percent drop compares a filtered set of pupils against the full cohort."
     ],
     "confidences": [
       4,
@@ -2125,8 +2131,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the excluded fifth of each cohort and the mismatch with the full-cohort comparison.",
-      "Reported field is empty."
+      "Names the excluded fifth who spent weeks on the old timetable.",
+      "Same excluded fifth, framed as filtered set vs full cohort."
     ]
   },
   "EFFF42": {
@@ -2156,7 +2162,7 @@
     ],
     "confidences": [
       4,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -2177,23 +2183,22 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.0,
+    "mean_explicitness": 2.5,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "The reported 8-14 percent reductions come from a hand-picked slice of runs: \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\" - so the 25 percent of post-upgrade runs with the filter out of circuit are dropped from the post figures while the earlier quarter's comparison presumably includes all runs. That is a narrower population than the claim, and it selects the runs most favourable to the upgrade.",
-      "\"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\" - the 8-14 percent reductions are computed on a selected three-quarters of runs, excluding the bypassed ones, so they describe a narrower set of runs than the stack's particulate readings the claim is about."
+      "The reported reductions are computed on a restricted subset: \"The figures cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed\" and are excluded. The 8-14 percent figures therefore describe a hand-picked three quarters of runs, not the stack's particulate readings as the claim asserts.",
+      "The figures \"cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed,\" so the 8-14 percent reduction is computed on a selected three-quarters of runs rather than on the stack's particulate readings the claim is about."
     ],
     "confidences": [
       4,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the bypassed quarter of runs as excluded; the baseline remark is part of the same exclusion argument.",
-      "Identifies the excluded bypassed runs and the narrower population."
+      "Names the bypassed quarter of runs left out of the figures."
     ]
   },
   "F22CEF": {
@@ -2222,7 +2227,7 @@
       ""
     ],
     "confidences": [
-      3,
+      4,
       3
     ],
     "reported_extra": false,
@@ -2244,22 +2249,22 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.0,
+    "mean_explicitness": 2.5,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "Two of the four cases have outcome dates that precede the intervention: plot One was \"boxed 3 June\" but fledging is counted \"by 27 March\", and plot Three was \"boxed 2 November\" but counted \"by 24 September\". The boxes cannot have raised counts measured months before they were installed, and the seasons quoted (spring, autumn) do not match the installation dates either.",
-      "Two of the four cases have the outcome measured before the boxes went up: case one was \"boxed 3 June\" but counted \"by 27 March\", and case three was \"boxed 2 November\" but counted \"by 24 September\". Those fledging counts cannot have been produced by boxes installed months after the count date."
+      "In two of the four cases the outcome is dated before the boxes went up: case one is \"boxed 3 June\" but counted \"by 27 March\", and case three is \"boxed 2 November\" but counted \"by 24 September\". The fledging gain in those plots was recorded in a season that preceded the installation, so the boxes cannot have caused it.",
+      "Two cases have the outcome measured before the boxes were installed: case one was \"boxed 3 June\" but fledging was counted \"by 27 March\", and case three was \"boxed 2 November\" but counted \"by 24 September\". The fledging gains in those plots therefore predate the intervention that is supposed to have caused them."
     ],
     "confidences": [
       4,
-      4
+      5
     ],
-    "reported_extra": true,
+    "reported_extra": false,
     "match_notes": [
-      "Right cases and dates, plus a separate claim that the quoted seasons conflict with the installation dates."
+      "Correct cases one and three with the right installation and count dates."
     ]
   },
   "38B726": {
@@ -2288,8 +2293,8 @@
       ""
     ],
     "confidences": [
-      3,
-      3
+      4,
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -2310,22 +2315,22 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.0,
+    "mean_explicitness": 2.5,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "The germination figures are restricted to a favourable subset: \"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed\" - so roughly 20 percent of each lot's trays are excluded from the post-coating scores while the previous spring sowing is scored whole. The 6-11 point gains therefore describe a narrower population than the lots the claim is about.",
-      "\"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed\" - the 6-11 point gains omit the fifth of trays sown from partly coated seed, so the figures cover a selected subset of each lot rather than the lots the coating was applied to."
+      "The germination figures are narrower than the claim: \"Rates cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are dropped from the numbers. The 6-11 point gains describe the best-coated four fifths of trays compared against a whole previous sowing, not the coating's effect on the lot.",
+      "The rates \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed,\" so the 6-11 point gain describes only the selected fully-coated four-fifths, not germination of the lot the coating was applied to."
     ],
     "confidences": [
       4,
-      3
+      4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the excluded fifth of partly coated trays as the narrower tallied population."
+      "Names the excluded partly coated fifth and the subset-vs-whole comparison."
     ]
   },
   "C1B249": {
@@ -2382,8 +2387,8 @@
       "No"
     ],
     "descriptions": [
-      "\"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\" - so the 4-8 point gains are computed on only the full-attending three quarters of each cohort, compared against a previous term's whole-cohort pass rate. Perfect attenders are exactly the students most likely to pass anyway, so the comparison is between different populations.",
-      "The pass rates cover a narrower population than the claim: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" Roughly 25% of each cohort is dropped from the figures, so the 4-8 point gain is for a self-selected full-attendance subgroup compared against whole-cohort prior-term rates."
+      "The pass rates are per-protocol only: they \"cover the students who attended every block\" while \"about a quarter of each cohort missed at least one block\" and are excluded. Full attenders are the more diligent quarter-to-three-quarters of the cohort and would out-perform the previous term's whole-cohort baseline regardless of the tutoring, so the 4-8 point gaps are not a like-for-like comparison.",
+      "The measured population is narrower than the cohort the claim is about: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\", so roughly 25% of each cohort is excluded from the post figures and the surviving full attenders are a self-selected, more diligent subgroup - the 4-8 point rise may be selection rather than the tutoring."
     ],
     "confidences": [
       4,
@@ -2391,8 +2396,8 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the full-attendance restriction and the excluded quarter of each cohort.",
-      "States the figures cover a narrower population and names the dropped 25 percent."
+      "Names the quarter who missed a block as excluded from pass rates.",
+      "Same full-attender restriction versus the whole cohort."
     ]
   },
   "99C998": {
@@ -2417,8 +2422,8 @@
       "No"
     ],
     "descriptions": [
-      "Two of the four cases have measurement endpoints that precede the fitting date: the lathe was 'fitted 4 May' but its result is reported 'by 27 March', and the conveyor was 'fitted 2 August' with its result 'by 21 July'. The other two cases run ~6-7 weeks forward (9 January to 24 February; 6 October to 25 November), so cases one and three are dated backwards and cannot record post-fitting service life.",
-      "Two of the four cases have the outcome measured before the bearing was fitted: case One was 'fitted 4 May' but its extra 340 hours are counted 'by 27 March', and case Three was 'fitted 2 August' but counted 'by 21 July'. The two well-ordered cases (9 January to 24 February, 6 October to 25 November) run about six weeks, so the reversed pairs cannot be read as spanning into the following year."
+      "Two of the four cases have outcome dates that precede the fitting date: case One was 'fitted 4 May' but the extra 340 hours are measured 'by 27 March', and case Three was 'fitted 2 August' but measured 'by 21 July'. The other two cases (9 January to 24 February; 6 October to 25 November) run forward over about six weeks, so the reversed pairs cannot be read as a longer forward window.",
+      "Two of the four cases have outcome dates that precede the fitting date: case One was 'fitted 4 May' but the extra 340 hours are measured 'by 27 March', and case Three was 'fitted 2 August' but measured 'by 21 July'. The reported gain in those cases is dated before the redesigned bearing was installed."
     ],
     "confidences": [
       4,
@@ -2426,7 +2431,7 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Correct cases and dates; the note on the two well-ordered cases is supporting reasoning, not a second defect."
+      "Correct pair of cases and dates; the remark about the two forward cases is supporting reasoning, not a second defect."
     ]
   },
   "E7A3F5": {
@@ -2483,8 +2488,8 @@
       "No"
     ],
     "descriptions": [
-      "The reported rates 'cover the patients whose whole stay ran under the protocol', while 'a quarter of each ward's patients had spells outside the protocol' and are therefore excluded. The figures describe a hand-picked fully-compliant subgroup, not the ward infection rate the claim is about.",
-      "The numbers cover a narrower population than the claim: \"Rates cover the patients whose whole stay ran under the protocol\" while \"a quarter of each ward's patients had spells outside the protocol\", so the 6-11 percent drops are computed on a self-selected fully-compliant 75% and compared against a prior quarter that included everyone, rather than on the ward infection rate the claim is about."
+      "The measured population is narrower than the claim: 'Rates cover the patients whose whole stay ran under the protocol', yet 'a quarter of each ward's patients had spells outside the protocol', so a quarter of the ward is excluded from the numbers while the claim is about ward infection rates. The dropped quarter is exactly the group whose infections the protocol most plausibly failed to prevent.",
+      "The claim is about ward infection rates, but 'Rates cover the patients whose whole stay ran under the protocol' while 'a quarter of each ward's patients had spells outside the protocol' - that quarter is excluded, so the 6-11 percent figure describes a selected fully-compliant subgroup, not the ward."
     ],
     "confidences": [
       4,
@@ -2492,8 +2497,7 @@
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the fully-compliant-stay subgroup and the excluded quarter of ward patients.",
-      "Explicitly states the numbers cover a narrower population than the claim."
+      "Identifies the excluded quarter with spells outside the protocol."
     ]
   },
   "949A3C": {
@@ -2505,7 +2509,7 @@
     "confound_note": null,
     "batch": 6,
     "round": 1,
-    "bucket": "false_positive",
+    "bucket": "clean",
     "n_verdicts": 2,
     "matches": [
       "unknown",
@@ -2515,15 +2519,15 @@
     "mean_explicitness": null,
     "answers": [
       "Yes",
-      "No"
+      "Yes"
     ],
     "descriptions": [
       "",
-      "The outcome figures do not isolate the treatment as specified: \"Counts cover every installed box, up all season or not, and a fifth of each plot's boxes went up mid-season.\" A fifth of the boxes in every plot were only in place for part of the breeding season, yet their young are counted as if fully box-exposed, so the fledgling totals mix full and partial exposure."
+      ""
     ],
     "confidences": [
-      3,
-      3
+      4,
+      4
     ],
     "reported_extra": false,
     "match_notes": []
@@ -2550,16 +2554,17 @@
       "No"
     ],
     "descriptions": [
-      "Cohorts one and three are measured before they were treated: 'emailed 24 March; by 9 March week-two retention ran 5 points above' and 'emailed 25 October; by 10 October ... 6 points above'. Cohorts two and four allow 24 days (3 July to 27 July; 2 December to 26 December), which week-two retention requires, so the first and third readings run backwards and cannot reflect the email.",
-      "Cohorts One and Three record the outcome before the email went out: emailed '24 March' but week-two retention read 'by 9 March', and emailed '25 October' but read 'by 10 October'. The other two cohorts run about 24 days forward (3 July to 27 July, 2 December to 26 December), and week-two retention needs at least 14 days after signup, so these are reversed, not next-year, intervals."
+      "Two cases measure the outcome before the email was sent: case One was 'emailed 24 March' but retention is read 'by 9 March', and case Three was 'emailed 25 October' but read 'by 10 October'. Cases Two and Four run forward on a consistent ~24-day window (3 July to 27 July; 2 December to 26 December), so the reversed cases cannot be a next-year window.",
+      "Two of the four cohorts are measured before the email was sent: cohort One was 'emailed 24 March' but retention is read 'by 9 March', and cohort Three was 'emailed 25 October' but read 'by 10 October'. Those retention lifts predate the intervention they are attributed to."
     ],
     "confidences": [
-      5,
+      4,
       4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Correct pair of reversed cases and correct dates; explicitly rules out the other two."
+      "Correct cases (One and Three) and correct dates; the Two/Four remark is supporting reasoning, not a second defect.",
+      "Correct reversed cases and dates."
     ]
   },
   "AE3C76": {
@@ -2600,7 +2605,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, so the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city fell ten degrees from the month before, which lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in unconditioned rooms open to outside air, so the cooling reaches every user whose heart rate was read. Each cohort is compared against itself in February, when the nights were warmer, rather than against an unenrolled cohort in the same month, so the cooling and the app arrived together and the 3 to 6 bpm drops cannot be attributed to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user, so nothing further is wrong with the item.",
+    "confound_note": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, and the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city ran about four degrees below the month before, a shift that lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in rooms with no climate control, which carries the cooling to every user whose heart rate was read. Each cohort is compared against itself in February, under warmer nights, rather than against an unenrolled cohort in the same month. The cooling and the app arrived together, leaving the 3 to 6 bpm drops unattributable to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user; nothing further is wrong with the item.",
     "batch": 0,
     "round": 1,
     "bucket": "found",
@@ -2610,22 +2615,23 @@
       "same_flaw"
     ],
     "wrong_flaw_reported": false,
-    "mean_explicitness": 3.5,
+    "mean_explicitness": 3.0,
     "answers": [
       "No",
       "No"
     ],
     "descriptions": [
-      "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air.' A ten-degree cooling of the sleeping environment plausibly lowers resting heart rate on its own across all four cohorts, so the 3-6 bpm drops are not attributable to the app.",
-      "A named alternative cause reaches every unit: \"Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air\", so all four cohorts were sleeping in materially cooler rooms across the exact measurement window, and cooler sleeping temperature lowers resting heart rate on its own."
+      "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control', so the cooler sleeping environment applies to all four cohorts over exactly the March comparison window and could itself lower resting heart rate by a few bpm.",
+      "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control'. Cooler sleeping rooms across all four cohorts could produce the 3-6 bpm drop with no contribution from the app."
     ],
     "confidences": [
-      5,
+      4,
       4
     ],
     "reported_extra": false,
     "match_notes": [
-      "Names the ten-degree cooling and the unconditioned-rooms clause that lets it reach every unit."
+      "Names the temperature drop plus the no-climate-control clause that carries it to every unit.",
+      "Same confound, correctly scoped to all four cohorts."
     ]
   },
   "6D7115": {
@@ -2637,7 +2643,7 @@
     "confound_note": null,
     "batch": 6,
     "round": 1,
-    "bucket": "false_positive",
+    "bucket": "clean",
     "n_verdicts": 2,
     "matches": [
       "unknown",
@@ -2647,15 +2653,15 @@
     "mean_explicitness": null,
     "answers": [
       "Yes",
-      "No"
+      "Yes"
     ],
     "descriptions": [
       "",
-      "The measured group is not the treated group: \"Pass rates cover every student in each cohort, and about a quarter of each cohort missed at least one block.\" A quarter of each cohort did not receive the full tutoring, yet all of them are counted in the 4-8 point pass-rate figures, so the reported gain is not attributable to the blocks as delivered."
+      ""
     ],
     "confidences": [
-      3,
-      3
+      4,
+      4
     ],
     "reported_extra": false,
     "match_notes": []

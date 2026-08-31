@@ -1,0 +1,62 @@
+[
+  {
+    "key": "BCC78C:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. All four cohorts are algebra at Brantwood College in one spring term, so the same attendance restriction applies across the four cases and none of them corrects the others.",
+    "reported": "The measured population is narrower than the cohort the claim is about: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" Roughly 25% of each cohort - precisely the least-engaged students - is dropped from the numbers, so the 4-8 point gain is a per-protocol figure for self-selected full attenders, not the tutored cohorts' pass rate."
+  },
+  {
+    "key": "BCC78C:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. All four cohorts are algebra at Brantwood College in one spring term, so the same attendance restriction applies across the four cases and none of them corrects the others.",
+    "reported": "'Pass rates cover the students who attended every block' while 'about a quarter of each cohort missed at least one block' and are excluded, yet the comparison is the previous spring term's full cohort. Restricting to the fully attending three-quarters is enough to raise the measured pass rate by the 4-8 points reported, with no effect from the tutoring itself."
+  },
+  {
+    "key": "C6F63B:0",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, and a single district air history covers every case at once. The mid-passage facts state that pollen counts in each group's district ran a fifth below the previous quarter and that every group lived and slept on the district's outside air, putting the cleaner air over every patient whose attacks were tallied. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, leaving the drop in pollen and the inhaler moving together across the 4 to 7 attack reductions. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, leaving the drop in pollen the whole of the defect.",
+    "reported": "'Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air' - a 20 percent pollen drop is a named alternative cause that reaches all four groups and by itself explains 4-7 fewer asthma attacks versus the previous quarter."
+  },
+  {
+    "key": "C6F63B:1",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, and a single district air history covers every case at once. The mid-passage facts state that pollen counts in each group's district ran a fifth below the previous quarter and that every group lived and slept on the district's outside air, putting the cleaner air over every patient whose attacks were tallied. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, leaving the drop in pollen and the inhaler moving together across the 4 to 7 attack reductions. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, leaving the drop in pollen the whole of the defect.",
+    "reported": "A named alternative cause reaches every unit: 'Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air.' Since the comparison is against 'the same band a quarter earlier', a fifth drop in the pollen the patients were actually breathing explains the 4-7 fewer attacks just as well as the inhaler does."
+  },
+  {
+    "key": "CC1BF2:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients.",
+    "reported": "The measured population is narrower than the claim: 'Rates cover the patients whose whole stay ran under the protocol', yet 'a quarter of each ward's patients had spells outside the protocol', so a quarter of the ward is excluded from the numbers while the claim is about ward infection rates. The dropped quarter is exactly the group whose infections the protocol most plausibly failed to prevent."
+  },
+  {
+    "key": "CC1BF2:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients.",
+    "reported": "The claim is about ward infection rates, but 'Rates cover the patients whose whole stay ran under the protocol' while 'a quarter of each ward's patients had spells outside the protocol' - that quarter is excluded, so the 6-11 percent figure describes a selected fully-compliant subgroup, not the ward."
+  },
+  {
+    "key": "D14DA7:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it.",
+    "reported": "The figures cover only part of the population the claim is about: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" Roughly 20 percent of current orders are excluded while the month-earlier baseline is the full line, so the 4-7 percent gap can reflect which orders got the new price rather than the pricing change raising revenue per order."
+  },
+  {
+    "key": "D14DA7:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it.",
+    "reported": "The numbers cover a narrower population than the claim: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" Roughly 20 percent of each line's post-change orders are dropped from the after-figure while the \"month earlier\" baseline is the whole line, so the 4-7 percent lift is a selected subset, not the line's revenue per order."
+  },
+  {
+    "key": "D1E083:0",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "reported": "Two of the four cases have the outcome measured before treatment started: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below.\" A drop recorded a week before enrolment cannot have been produced by the app."
+  },
+  {
+    "key": "D1E083:1",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "reported": "Two of the four cases have measurement dates that precede enrolment: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below.\" The drop is recorded before the app was in use, so those readings cannot show its effect."
+  }
+]

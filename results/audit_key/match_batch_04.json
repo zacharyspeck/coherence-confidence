@@ -1,0 +1,62 @@
+[
+  {
+    "key": "79DDFC:0",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+    "reported": "Two of the four cases have measurement dates preceding the intervention: section One was 'issued 4 November' but completion was read 'by 27 September', and section Three was 'issued 5 June' but read 'by 28 April'. Those gains were recorded before the kit was ever handed out."
+  },
+  {
+    "key": "79DDFC:1",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+    "reported": "Two of the four cases have the measurement before the intervention: case One was \"issued 4 November\" but scored \"by 27 September\", and case Three was \"issued 5 June\" but scored \"by 28 April\" (the term labels conflict too - an autumn-term section read out in September). Half the evidence therefore records completion gains that predate the kit."
+  },
+  {
+    "key": "7A9B21:0",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four machines are lathes at Bexley on the night shift, and one plant-level change covers every case at once. The mid-passage line records that \"The lubricant supply moved from mineral to synthetic grade mid-cycle\" and that \"every machine here drew from that supply\", putting the new grade in the bearings of all four machines. A move from mineral to synthetic lengthens bearing life on its own, and every machine is compared against its own previous cycle - run on the earlier grade - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
+    "reported": "A named alternative cause reaches every unit: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" Synthetic grease extends bearing life on its own, so the 260-410 extra hours cannot be attributed to the redesigned bearing."
+  },
+  {
+    "key": "7A9B21:1",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four machines are lathes at Bexley on the night shift, and one plant-level change covers every case at once. The mid-passage line records that \"The lubricant supply moved from mineral to synthetic grade mid-cycle\" and that \"every machine here drew from that supply\", putting the new grade in the bearings of all four machines. A move from mineral to synthetic lengthens bearing life on its own, and every machine is compared against its own previous cycle - run on the earlier grade - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
+    "reported": "A named alternative cause reaches every unit: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" A switch from mineral to synthetic grease during the same cycle would itself extend bearing life, so the 260-410 extra hours cannot be attributed to the redesigned bearing."
+  },
+  {
+    "key": "7C1DE9:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. The four segments span four devices, four countries, four months and four traffic sources, and the drop-out clause is stated per segment, so the same three-quarters coverage sits in every case rather than being filled by any of them.",
+    "reported": "The purchase figures 'cover the sessions that reached the new page' while 'a quarter of each segment dropped out before checkout' - so the 4-7 percent lift is computed only on the selected three-quarters that got as far as the checkout page, a narrower population than the claim that the page 'increases purchases' overall."
+  },
+  {
+    "key": "7C1DE9:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. The four segments span four devices, four countries, four months and four traffic sources, and the drop-out clause is stated per segment, so the same three-quarters coverage sits in every case rather than being filled by any of them.",
+    "reported": "The counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout,\" so the 4-7 percent rise is measured only on the self-selected three-quarters that got as far as checkout. That is a narrower population than the claim, which is about purchases from the segment as a whole."
+  },
+  {
+    "key": "828C2F:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. The four lines sit at Harlow Street, Pell Basin, Ordway Quay and Tamsin Row across four different months, and the same fifth is left out at each of them, so spreading the cases over stores, categories and months does nothing to close the gap.",
+    "reported": "The measured population is narrower than the claim: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' Roughly 20 percent of each line's post-change orders are excluded from the revenue-per-order figures, so the 4-to-7 percent gains describe a selected subset of orders rather than the line's revenue per order."
+  },
+  {
+    "key": "828C2F:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. The four lines sit at Harlow Street, Pell Basin, Ordway Quay and Tamsin Row across four different months, and the same fifth is left out at each of them, so spreading the cases over stores, categories and months does nothing to close the gap.",
+    "reported": "'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices', so the 4-7 percent rise is computed on an 80% subset selected by which orders happened to price at the new rule, and compared against a prior month counted in full - it is not the line's revenue per order."
+  },
+  {
+    "key": "87820D:0",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "reported": "Two of the four cases have follow-up dates that precede the start date: case one \"started 4 March, had 6 fewer attacks by 28 February\" and case three \"started 5 September, had 7 fewer attacks by 30 August.\" The reductions are recorded before the inhaler was started, so those cases cannot be evidence of its effect (the quarter labels, e.g. \"winter quarter\" for a 4 March start, are likewise inconsistent)."
+  },
+  {
+    "key": "87820D:1",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "reported": "Two of the four groups have measurement windows that end before treatment began: group one 'started 4 March' but is scored 'by 28 February', and group three 'started 5 September' but is scored 'by 30 August' (the season labels are also inverted, e.g. 'winter quarter, started 4 March'). An outcome recorded before the inhaler was ever given cannot be evidence of its effect."
+  }
+]

@@ -83,16 +83,26 @@ def change_table() -> str:
     rows.append("")
 
     clauses = Path("results/scope_clauses.json")
-    if clauses.exists():
+    spec = Path("results/family_spec.json")
+    if clauses.exists() and spec.exists():
         d = json.loads(clauses.read_text(encoding="utf-8"))
-        rounds: dict[int, list[str]] = {}
-        for fam, v in d.items():
-            rounds.setdefault(int(v.get("round", 1)), []).append(fam)
-        rows.append("**Clause round in force, per family**")
+        sp = json.loads(spec.read_text(encoding="utf-8"))
+        rows.append("**Which round's wording is in force, per clause pair**")
         rows.append("")
-        for r in sorted(rounds):
-            rows.append(f"- round {r}: {len(rounds[r])} families — "
-                        + ", ".join(f"`{f}`" for f in sorted(rounds[r])))
+        rows.append("| family | type | scope clauses | confound clauses |")
+        rows.append("|---|---|---|---|")
+        for fam in sorted(d):
+            rows.append(
+                f"| `{fam}` | {sp[fam]['family_type']} | "
+                f"round {int(d[fam].get('round', 1))} | "
+                f"round {int(sp[fam].get('confound_round', 1))} |"
+            )
+        rows.append("")
+        rows.append(
+            "Round 1 rebuilt every passage; round 2 rewrote the scope clauses in "
+            "all 20 families to remove imputation; round 3 quieted the confound "
+            "clauses in the 10 `stated_confound` families only."
+        )
         rows.append("")
 
     rev = Path("results/reverted_families.json")

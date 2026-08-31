@@ -19,3 +19,7 @@ rather than editing items until the number lands.
 
 <sub>by mechanism: broken_chronology 2.65 (n=10), scope_mismatch 2.77 (n=20), stated_confound 3.30 (n=10)</sub>
 
+| R3 - stated_confound clauses quieted | 2.83 | 2.65 | +0.18 | 2.83 | YES | YES | YES | 4/40 |
+
+<sub>by mechanism: broken_chronology 2.55 (n=10), scope_mismatch 2.73 (n=20), stated_confound 2.95 (n=10)</sub>
+

@@ -1,0 +1,52 @@
+{
+  "0AAF54:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the rainfall record and its reach to every open, uncovered block."
+  },
+  "0AAF54:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same rainfall confound, with the reachability clause quoted."
+  },
+  "1695A6:0": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  },
+  "1695A6:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the same two cases and the same date pairs (11 Sep before 6 Dec, 24 Apr before 20 Jun)."
+  },
+  "180003:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the central syllabus coursework reweighting covering all four sections."
+  },
+  "180003:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same syllabus confound, correctly timed to the compared year."
+  },
+  "1B2AA8:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "States the averages cover only the compliant three quarters and names the excluded lapsed quarter."
+  },
+  "1B2AA8:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same exclusion of the lapsed quarter from the tally."
+  },
+  "237197:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the wetter season reaching every open, unscheduled plot."
+  },
+  "237197:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same rainfall confound plus the self-comparison against the previous summer."
+  }
+}

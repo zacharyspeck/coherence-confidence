@@ -1,0 +1,62 @@
+[
+  {
+    "key": "D3A6C8:0",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "reported": "Two of the four runs have measurement dates that precede the switch: run One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run Three 'switched 5 October' but measured 'by 30 September'. Those savings were recorded before the coolant was in use, so they cannot be its effect (compounded by the insert-grade control covering only 'its machines' while 'every logged run was cut on a machine hired from outside')."
+  },
+  {
+    "key": "D3A6C8:1",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "reported": "Two of the four runs are measured before the coolant was switched: run One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run Three 'switched 5 October' but was measured 'by 30 September'. Half the reported improvements predate the intervention they are credited to."
+  },
+  {
+    "key": "ED27C1:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once.",
+    "reported": "The timings 'cover the runs that stayed on the issued route' while 'about a sixth of each depot's runs left the issued route', so roughly 17 percent of runs are dropped from the measured averages. The excluded runs are exactly the ones that hit trouble and would be slowest, so the 5-9 minute improvement is an artifact of which runs were counted."
+  },
+  {
+    "key": "ED27C1:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once.",
+    "reported": "The timings cover a narrower population than the claim: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route', so roughly 17 percent of runs -- precisely the ones most likely to have gone wrong or run long -- are excluded from the 5-9 minute improvement. Separately, 'Order volume through each depot hit a record low, half the earlier period', which is an unaddressed depot-level difference from the comparison month."
+  },
+  {
+    "key": "F7FE36:0",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four plots sit on one reserve, with one species in one spring under one warden, and the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland ran a third above the previous year's, an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, placing the extra food over every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, and nothing in the evidence separates the boxes from the prey level. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, adding no second defect.",
+    "reported": "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range.\" A one-third rise in food supply inside the flycatchers' foraging range is enough on its own to raise fledging success at all four plots relative to the previous spring, so the extra 9-16 young cannot be attributed to the boxes."
+  },
+  {
+    "key": "F7FE36:1",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four plots sit on one reserve, with one species in one spring under one warden, and the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland ran a third above the previous year's, an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, placing the extra food over every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, and nothing in the evidence separates the boxes from the prey level. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, adding no second defect.",
+    "reported": "'Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range' - a food supply a third larger reaches every plot in the log and on its own explains fledging 9-16 more young than the previous spring, independent of the boxes."
+  },
+  {
+    "key": "FAE756:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another.",
+    "reported": "The absence figures cover a narrower group than the cohort the claim is about: they 'cover the pupils on the revised timetable throughout', yet 'about a fifth of each cohort spent weeks on the old timetable' and is therefore excluded. The 4-to-7 percent drop is measured on the fully-compliant four-fifths, not on the cohort."
+  },
+  {
+    "key": "FAE756:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another.",
+    "reported": "The absence figures exclude a fifth of each cohort on a criterion tied to the outcome: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' Pupils not on the new timetable throughout are dropped, so the 4-7 percent fall is computed over a self-selected fully-compliant subgroup rather than the cohorts the claim is about."
+  },
+  {
+    "key": "FE036E:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out.",
+    "reported": "The reported reductions are computed on a restricted subset: \"The figures cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed\" and are excluded. The 8-14 percent figures therefore describe a hand-picked three quarters of runs, not the stack's particulate readings as the claim asserts."
+  },
+  {
+    "key": "FE036E:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out.",
+    "reported": "The figures \"cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed,\" so the 8-14 percent reduction is computed on a selected three-quarters of runs rather than on the stack's particulate readings the claim is about."
+  }
+]

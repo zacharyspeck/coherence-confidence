@@ -1,0 +1,52 @@
+{
+  "011AA3:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names both reversed cases with the exact dates."
+  },
+  "011AA3:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two reversed cases; also verifies the other two run forward."
+  },
+  "036205:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the bypassed quarter of runs as excluded from the tally."
+  },
+  "036205:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the in-service restriction and the asymmetric baseline."
+  },
+  "04E6AE:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded fifth who spent weeks on the old timetable."
+  },
+  "04E6AE:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same excluded fifth, framed as filtered set vs full cohort."
+  },
+  "0899C1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the tenth of boards taking an old-profile pass as dropped."
+  },
+  "0899C1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same excluded tenth versus the all-boards baseline."
+  },
+  "090602:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the quarter who missed a block as excluded from pass rates."
+  },
+  "090602:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same full-attender restriction versus the whole cohort."
+  }
+}

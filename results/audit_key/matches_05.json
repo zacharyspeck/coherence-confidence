@@ -1,0 +1,46 @@
+{
+  "8A9278:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the ~25% smaller classes plus the whole-group English clause that lets it reach every case."
+  },
+  "8A9278:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "99C998:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct pair of cases and dates; the remark about the two forward cases is supporting reasoning, not a second defect."
+  },
+  "99C998:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "A9D2D3:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded partly coated fifth and the subset-vs-whole comparison."
+  },
+  "A9D2D3:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "B3AE67:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "B3AE67:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "B638C2:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct cases one and three with the right installation and count dates."
+  },
+  "B638C2:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "BCC78C:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the full-attendance restriction and names the excluded quarter."
+  },
+  "BCC78C:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same exclusion; the baseline-asymmetry point is part of the same scope defect, not a separate one."
+  },
+  "C6F63B:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the pollen drop as the shared alternative cause reaching all four groups."
+  },
+  "C6F63B:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same pollen confound, including that the patients breathed the district air."
+  },
+  "CC1BF2:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the excluded quarter with spells outside the protocol."
+  },
+  "CC1BF2:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "D14DA7:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the fifth of orders rung at old prices as the excluded group."
+  },
+  "D14DA7:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "D1E083:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct cases (one and three) and correct dates: 29 Mar before 4 Apr, 30 Sep before 5 Oct."
+  },
+  "D1E083:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two cases and dates as intended."
+  }
+}

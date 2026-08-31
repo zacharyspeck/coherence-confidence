@@ -1,0 +1,52 @@
+{
+  "5A0D9C:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the coated carbide insert retooling reaching every logged run."
+  },
+  "5A0D9C:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same insert-grade confound, quoted directly."
+  },
+  "606326:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the excluded lapsed quarter and the complier-only average."
+  },
+  "606326:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the dropped 25% and the unfiltered baseline as part of the same flaw."
+  },
+  "6175F5:0": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field empty."
+  },
+  "6175F5:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct two cases and correct dates (18 Jun before 3 Aug; 17 Mar before 2 May)."
+  },
+  "627233:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the sessions that never reached the new page as excluded from the counts."
+  },
+  "627233:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field empty."
+  },
+  "63F3EF:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Per-protocol numbers vs whole-ward claim, names the excluded quarter."
+  },
+  "63F3EF:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same narrower-population identification."
+  }
+}

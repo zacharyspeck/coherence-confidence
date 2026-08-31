@@ -1,0 +1,62 @@
+[
+  {
+    "key": "8A9278:0",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present.",
+    "reported": "A competing cause reaches every logged class: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group.\" Classes 25 percent smaller during whole-group English instruction could produce the 5-9 point comprehension gain on their own, independent of the reading program."
+  },
+  {
+    "key": "8A9278:1",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present.",
+    "reported": "The competing cause is not blocked: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group\" - because English was taught to the undivided class, the ~25% smaller class size applied directly to the reading lessons, so smaller classes could produce the 5-9 point comprehension gains over the previous autumn term."
+  },
+  {
+    "key": "99C998:0",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "reported": "Two of the four cases have outcome dates that precede the fitting date: case One was 'fitted 4 May' but the extra 340 hours are measured 'by 27 March', and case Three was 'fitted 2 August' but measured 'by 21 July'. The other two cases (9 January to 24 February; 6 October to 25 November) run forward over about six weeks, so the reversed pairs cannot be read as a longer forward window."
+  },
+  {
+    "key": "99C998:1",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "reported": "Two of the four cases have outcome dates that precede the fitting date: case One was 'fitted 4 May' but the extra 340 hours are measured 'by 27 March', and case Three was 'fitted 2 August' but measured 'by 21 July'. The reported gain in those cases is dated before the redesigned bearing was installed."
+  },
+  {
+    "key": "A9D2D3:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case.",
+    "reported": "The germination figures are narrower than the claim: \"Rates cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are dropped from the numbers. The 6-11 point gains describe the best-coated four fifths of trays compared against a whole previous sowing, not the coating's effect on the lot."
+  },
+  {
+    "key": "A9D2D3:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case.",
+    "reported": "The rates \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed,\" so the 6-11 point gain describes only the selected fully-coated four-fifths, not germination of the lot the coating was applied to."
+  },
+  {
+    "key": "B3AE67:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. The four lots sit at Hollin Bank, Draycott Fields, Penllan Beds and Vantry Glasshouse across four seasons, and a fifth of each lot's trays falls outside the tally at every one of them, so the spread over nurseries, seed types and seasons does nothing to close the gap.",
+    "reported": "The germination rates cover only the best-treated trays: they \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\", so that fifth is excluded from the post-coating figure but is presumably inside the previous season's baseline."
+  },
+  {
+    "key": "B3AE67:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. The four lots sit at Hollin Bank, Draycott Fields, Penllan Beds and Vantry Glasshouse across four seasons, and a fifth of each lot's trays falls outside the tally at every one of them, so the spread over nurseries, seed types and seasons does nothing to close the gap.",
+    "reported": "The reported germination 'rates cover the trays sown from seed that took a full coat', while 'about a fifth of each lot's trays were sown from partly coated seed' and are left out, but the baseline is the whole previous sowing. The 6-11 point gain is measured on a filtered best-coated subset against an unfiltered comparison."
+  },
+  {
+    "key": "B638C2:0",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+    "reported": "In two of the four cases the outcome is dated before the boxes went up: case one is \"boxed 3 June\" but counted \"by 27 March\", and case three is \"boxed 2 November\" but counted \"by 24 September\". The fledging gain in those plots was recorded in a season that preceded the installation, so the boxes cannot have caused it."
+  },
+  {
+    "key": "B638C2:1",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+    "reported": "Two cases have the outcome measured before the boxes were installed: case one was \"boxed 3 June\" but fledging was counted \"by 27 March\", and case three was \"boxed 2 November\" but counted \"by 24 September\". The fledging gains in those plots therefore predate the intervention that is supposed to have caused them."
+  }
+]

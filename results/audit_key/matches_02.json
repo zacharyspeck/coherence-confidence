@@ -1,0 +1,52 @@
+{
+  "3313F1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded sixth (runs that left the issued route) and why it biases the timings."
+  },
+  "3313F1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same excluded group and same direction of bias as intended."
+  },
+  "338FC3:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the eighteen-day trial fact and its all-cohort reach."
+  },
+  "338FC3:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the trial-length change as the competing cause covering every cohort."
+  },
+  "383AC4:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct cases (One and Three) and correct dates; the Two/Four remark is supporting reasoning, not a second defect."
+  },
+  "383AC4:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct reversed cases and dates."
+  },
+  "49435F:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded tenth (old-profile-pass boards) and the narrower tally population."
+  },
+  "49435F:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same excluded group, correct bias direction."
+  },
+  "4969DF:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the temperature drop plus the no-climate-control clause that carries it to every unit."
+  },
+  "4969DF:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same confound, correctly scoped to all four cohorts."
+  }
+}

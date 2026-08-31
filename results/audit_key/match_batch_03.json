@@ -1,0 +1,62 @@
+[
+  {
+    "key": "5A0D9C:0",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
+    "reported": "A concurrent alternative cause reaches every unit: \"Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.\" A new insert grade directly changes cutting speed on titanium, so the 4-7 minute reductions are equally explained by the insert change rather than the coolant."
+  },
+  {
+    "key": "5A0D9C:1",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
+    "reported": "A named alternative cause reaches every unit: \"Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.\" A new insert grade shortens cycle time on its own, and all four March runs were cut on those machines, so the 4-7 minute reductions cannot be attributed to the coolant."
+  },
+  {
+    "key": "606326:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss.",
+    "reported": "The abduction averages are restricted to compliers: they \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse\", so the lapsed quarter is dropped and a self-selected, better-adhering group is compared against the full ward a quarter earlier."
+  },
+  {
+    "key": "606326:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss.",
+    "reported": "The reported gains are computed on a self-selected subgroup: 'Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse', so roughly 25% of each intake is dropped from the new-period average while the 'same ward a quarter earlier' baseline is not filtered the same way. Patients who keep up home exercises are exactly the ones expected to recover abduction fastest, so the 9-16 degree gains can come from the filter rather than the protocol."
+  },
+  {
+    "key": "6175F5:0",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
+    "reported": ""
+  },
+  {
+    "key": "6175F5:1",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
+    "reported": "Two of the four cases measure the outcome before the line was fitted: block One was 'fitted 3 August' but the gain is dated 'by 18 June' against 'the previous summer', and block Three was 'fitted 2 May' with the gain dated 'by 17 March' against 'the previous spring' - within the season each case names (summer Jun-Aug, spring Mar-May), 18 June precedes 3 August and 17 March precedes 2 May, so the effect predates its cause. The other two cases (8 Dec to 23 Feb, 7 Sep to 22 Nov) run forward, confirming the intended window is inside the named season."
+  },
+  {
+    "key": "627233:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. All four segments are desktop sessions from Canada via search inside March and the same quarter drops out of each, so no case in the log supplies what the others leave out.",
+    "reported": "The purchase counts are computed on a filtered slice of the funnel: they \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\", so the 25% who never got as far as the new checkout page are dropped from the numbers, and this surviving three-quarters is compared against the whole segment a month earlier."
+  },
+  {
+    "key": "627233:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. All four segments are desktop sessions from Canada via search inside March and the same quarter drops out of each, so no case in the log supplies what the others leave out.",
+    "reported": ""
+  },
+  {
+    "key": "63F3EF:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. The four entries span four hospitals, four ward types, four quarters and four auditors, and the spells-outside clause applies at each ward, so every case is missing the same quarter of its own population.",
+    "reported": "The outcome is measured on a narrower population than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 6-11 percent drops are per-protocol figures that drop 25 percent of patients (plausibly the longer-stay, higher-risk ones), while the claim is about ward infection rates as a whole."
+  },
+  {
+    "key": "63F3EF:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. The four entries span four hospitals, four ward types, four quarters and four auditors, and the spells-outside clause applies at each ward, so every case is missing the same quarter of its own population.",
+    "reported": "The measured population is narrower than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 6-11 percent falls are computed on a selected three-quarters of each ward, so they do not establish a change in the ward infection rate the claim is about."
+  }
+]

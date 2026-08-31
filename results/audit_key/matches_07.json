@@ -1,0 +1,50 @@
+{
+  "D3A6C8:0": {
+    "verdict": "same_flaw",
+    "reported_extra": true,
+    "note": "Names both intended date inversions exactly; also flags the insert-grade control not covering the hired machines."
+  },
+  "D3A6C8:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the same two pre-dated runs and the same dates."
+  },
+  "ED27C1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded sixth that left the issued route and why those runs are the slow ones."
+  },
+  "ED27C1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": true,
+    "note": "Intended exclusion found; separately raises the record-low order volume as an unaddressed difference."
+  },
+  "F7FE36:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the prey-abundance fact and the foraging-range clause that puts it over every plot."
+  },
+  "F7FE36:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  },
+  "FAE756:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded fifth who spent weeks on the old timetable."
+  },
+  "FAE756:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same exclusion, framed as a compliant-only subgroup."
+  },
+  "FE036E:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the bypassed quarter of runs left out of the figures."
+  },
+  "FE036E:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false
+  }
+}

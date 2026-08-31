@@ -1,8 +1,8 @@
 {
   "kind": "model_gate",
   "meta": {
-    "timestamp_utc": "2026-08-31T17:24:49+00:00",
-    "code_git_sha": "caf9ec3a3ac33a7bb84e9ec63ec55be921eb27d1",
+    "timestamp_utc": "2026-08-31T17:57:53+00:00",
+    "code_git_sha": "35e68ea421812d1189bb04b1279ee2f275957767",
     "code_git_dirty": true,
     "environment": {
       "python": "3.13.14",
@@ -89,8 +89,8 @@
   },
   "chat_template": false,
   "chat_template_required": false,
-  "mass_covered_mean": 0.7068982549715733,
-  "mass_covered_min": 0.6969190602632299,
+  "mass_covered_mean": 0.7023870875242876,
+  "mass_covered_min": 0.6896634385250414,
   "min_mass_required": 0.5,
   "n_probe_items": 6,
   "failures": [],

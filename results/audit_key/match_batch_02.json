@@ -1,0 +1,62 @@
+[
+  {
+    "key": "3313F1:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth drops out at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
+    "reported": "The timings cover a narrower, self-selected population than the claim: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The excluded sixth are exactly the deviating runs most likely to be slow, so the 5-9 minute improvement is measured only on the compliant subset."
+  },
+  {
+    "key": "3313F1:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth drops out at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
+    "reported": "The timings are selected on the outcome: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' Roughly 17 percent of runs at every depot are dropped from the figures, and route departures are exactly what happens on obstructed or delayed runs, so the 5-9 minute improvement is measured on a filtered best-case subset."
+  },
+  {
+    "key": "338FC3:0",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four cohorts are starter signups from Norway via webinar inside one March window, and the trial fact stated mid-passage covers every case at once: the free trial ran eighteen days, up from ten in the earlier period, and an eighteen-day trial still has users inside it at the week-two mark. The scope clause beside that fact has every cohort here signed up on that trial, which puts the policy change on all four. Each cohort is compared against itself a month earlier, under a ten-day trial that had already lapsed by week two. The longer trial and the onboarding email moved together, leaving the 3 to 6 point lifts unattributable to the email. The population and completeness clauses in the same line leave the retention figures covering every signup; the trial length is the whole of the defect.",
+    "reported": "A competing cause covers every cohort: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Nearly doubling the trial length mechanically lifts week-two retention, so the 3-6 point gain is not attributable to the onboarding email."
+  },
+  {
+    "key": "338FC3:1",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four cohorts are starter signups from Norway via webinar inside one March window, and the trial fact stated mid-passage covers every case at once: the free trial ran eighteen days, up from ten in the earlier period, and an eighteen-day trial still has users inside it at the week-two mark. The scope clause beside that fact has every cohort here signed up on that trial, which puts the policy change on all four. Each cohort is compared against itself a month earlier, under a ten-day trial that had already lapsed by week two. The longer trial and the onboarding email moved together, leaving the 3 to 6 point lifts unattributable to the email. The population and completeness clauses in the same line leave the retention figures covering every signup; the trial length is the whole of the defect.",
+    "reported": "A competing cause covers every case: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Extending the trial from ten to eighteen days by itself keeps users active through day fourteen, so the 3-6 point week-two retention lift cannot be credited to the onboarding email."
+  },
+  {
+    "key": "383AC4:0",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "reported": "Two cases measure the outcome before the email was sent: case One was 'emailed 24 March' but retention is read 'by 9 March', and case Three was 'emailed 25 October' but read 'by 10 October'. Cases Two and Four run forward on a consistent ~24-day window (3 July to 27 July; 2 December to 26 December), so the reversed cases cannot be a next-year window."
+  },
+  {
+    "key": "383AC4:1",
+    "flaw_mechanism": "broken_chronology",
+    "intended": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "reported": "Two of the four cohorts are measured before the email was sent: cohort One was 'emailed 24 March' but retention is read 'by 9 March', and cohort Three was 'emailed 25 October' but read 'by 10 October'. Those retention lifts predate the intervention they are attributed to."
+  },
+  {
+    "key": "49435F:0",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. The four runs sit on the Aspen, Kestrel, Larkspur and Meridian lines across four different months, and the same tenth falls outside the tally on each, so the spread over lines, board families and months does nothing to close the gap.",
+    "reported": "The reported rates cover a narrower population than the baseline they are compared with: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly 10 percent of each run's boards are dropped from the new-profile figure while the \"same line a month earlier\" comparison covers all boards, so the 4-7 percent defect drop could come from that selection rather than the profile."
+  },
+  {
+    "key": "49435F:1",
+    "flaw_mechanism": "scope_mismatch",
+    "intended": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. The four runs sit on the Aspen, Kestrel, Larkspur and Meridian lines across four different months, and the same tenth falls outside the tally on each, so the spread over lines, board families and months does nothing to close the gap.",
+    "reported": "The post-change defect rates are asymmetrically filtered: 'Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile', so ~10% of each run's boards are excluded from the new-profile figure while the 'same line a month earlier' comparison includes everything. Boards that needed an old-profile pass are the likely rework/problem boards, so removing them alone could produce the 4-7 percent apparent improvement."
+  },
+  {
+    "key": "4969DF:0",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, and the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city ran about four degrees below the month before, a shift that lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in rooms with no climate control, which carries the cooling to every user whose heart rate was read. Each cohort is compared against itself in February, under warmer nights, rather than against an unenrolled cohort in the same month. The cooling and the app arrived together, leaving the 3 to 6 bpm drops unattributable to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user; nothing further is wrong with the item.",
+    "reported": "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control', so the cooler sleeping environment applies to all four cohorts over exactly the March comparison window and could itself lower resting heart rate by a few bpm."
+  },
+  {
+    "key": "4969DF:1",
+    "flaw_mechanism": "stated_confound",
+    "intended": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, and the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city ran about four degrees below the month before, a shift that lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in rooms with no climate control, which carries the cooling to every user whose heart rate was read. Each cohort is compared against itself in February, under warmer nights, rather than against an unenrolled cohort in the same month. The cooling and the app arrived together, leaving the 3 to 6 bpm drops unattributable to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user; nothing further is wrong with the item.",
+    "reported": "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control'. Cooler sleeping rooms across all four cohorts could produce the 3-6 bpm drop with no contribution from the app."
+  }
+]
