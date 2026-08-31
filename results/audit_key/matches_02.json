@@ -2,51 +2,48 @@
   "3313F1:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the same substituted quantity (planned route time vs. recorded delivery time)."
+    "note": "Quotes the finish-time clause and names the excluded sixth as the biased-out group."
   },
   "3313F1:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": ""
+    "reported_extra": false
   },
   "338FC3:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the thirty-day trial and its reach to all four cohorts."
+    "note": "Names the thirty-day trial as the cause reaching all four cohorts."
   },
   "338FC3:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": ""
+    "reported_extra": false
   },
   "383AC4:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Both reversed pairs identified with the exact dates (24 Mar/9 Mar, 25 Oct/10 Oct)."
+    "note": "Correct cases (one and three) and correct dates in both directions."
   },
   "383AC4:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": ""
+    "note": "Notes cohorts two and four are correctly ordered, which is confirmation rather than a second defect."
   },
   "49435F:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Adds that the passage cites electrical-test grading but reports no defect count; that is elaboration of the same mismatch, not a second defect."
+    "note": "Names the pre-grading scrapped tenth excluded from the denominator."
   },
   "49435F:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same elaboration about the unreported electrical-test grading."
+    "note": "Explicitly rules out the inspection threshold rather than raising it as an extra problem."
   },
   "4969DF:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the ten-degree outdoor drop plus the unconditioned-rooms mechanism that makes it reach every cohort."
+    "note": "Names the ten-degree cooling plus the unconditioned-rooms clause that gives it reach."
   },
   "4969DF:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": ""
+    "reported_extra": false
   }
 }

@@ -14,9 +14,10 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.
 Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.
+The lubricant supply held to one grade throughout the cycle, and every machine here drew from that supply. Hours cover every bearing fitted, survivors counted at hours to date, and about a third of those on each machine had not failed.
 Three: a conveyor at Corbin on evenings, fitted 2 July, ran 410 hours longer before failure by 21 August than the same machine last cycle; checked by Fenwick.
 Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.
-The lubricant supply held to one grade throughout the cycle, and every machine here drew from that supply; load and duty hours were unchanged, and nothing else differed.
+Hour readings were taken from the machine counters and initialled by the shift inspector.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -33,9 +34,10 @@ The lubricant supply held to one grade throughout the cycle, and every machine h
 An irrigation log records four blocks that were fitted with the same drip line.
 One: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.
 Two: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.
+Rainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell. Yields cover every hectare in each block, with unharvested ground entered at zero, and every hectare in each block was harvested.
 Three: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.
 Four: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.
-Rainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell; the seed variety was unchanged and nothing else was altered.
+Tonnages were entered to one decimal place and countersigned by the recording agronomist.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -52,9 +54,10 @@ Rainfall in each block's season ran to roughly double the year before, and every
 An infection-control file records four wards placed on the same handwashing protocol.
 One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.
 Two: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor.
+Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned under that contract. Rates cover the patients discharged from each ward, and each ward discharged every patient it admitted.
 Three: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor.
 Four: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor.
-Contract deep-cleaning hours across the hospital group ran at triple the earlier quarter, and every ward here was cleaned by in-house staff; admission volume and case mix held steady, and nothing else changed.
+Counts were copied into the file and countersigned by a ward sister each month.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -71,9 +74,10 @@ Contract deep-cleaning hours across the hospital group ran at triple the earlier
 A nurse's log records four patient groups prescribed the same asthma inhaler.
 One: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.
 Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.
+Pollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed in each group, with non-returners taken from clinic charts, and every patient prescribed in each group returned a diary.
 Three: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.
 Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.
-Pollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept on filtered indoor air; no other change was made to any group.
+Attack counts were entered as whole events and countersigned by the duty clinic supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -90,9 +94,10 @@ Pollen and airborne irritants in each group's district held level with the previ
 A growth team's log records four signup cohorts that received the same onboarding email.
 One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.
 Two: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.
+The free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on that trial. Retention figures cover every signup, unconfirmed ones counted as lost, and a third of each cohort's signups never confirmed an address.
 Three: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.
 Four: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.
-The free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on that trial; signup volume and in-app prompts held steady, and nothing else changed.
+Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -109,9 +114,10 @@ The free trial ran seven days, matching its length in the earlier period exactly
 A district log records four classes that ran the same reading program.
 One: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.
 Two: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.
+Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group. Scores cover every pupil on roll, non-sitters entered at their previous mark, and every pupil on each class roll sat it.
 Three: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.
 Four: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.
-Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group; no other change was made at any school.
+Marks were transcribed onto the district return sheet and filed under the standard class codes.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -128,9 +134,10 @@ Class sizes at each school fell by half from the year before, and every logged c
 A clinic log records four cohorts enrolled on the same sleep app.
 One: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
 Two: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.
+Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in rooms held at a fixed 20 degrees. Readings cover the enrolled users whose devices synced, and every enrolled user's device synced in each cohort.
 Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
 Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
-Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in rooms held at a fixed 20 degrees; no other change was made to any cohort.
+Heart rates were recorded in beats per minute and filed in the clinic's standard format.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -145,11 +152,12 @@ Outdoor temperature in each cohort's city fell ten degrees from the month before
 
 ```
 A plant log records four production runs switched to the same solder profile.
-One: Aspen line, relay boards, switched 4 March; by 29 March mean void area ran 6 percent below the same line a month earlier; logged by Duarte.
-Two: Kestrel line, sensor boards, switched 3 June; by 27 June mean void area ran 4 percent below the same line a month earlier; logged by Ibarra.
-Three: Larkspur line, power boards, switched 5 September; by 30 September mean void area ran 7 percent below the same line a month earlier; logged by Nowak.
-Four: Meridian line, display boards, switched 2 November; by 26 November mean void area ran 5 percent below the same line a month earlier; logged by Fenwick.
-The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at electrical test; the paste lot matched both periods, and nothing else changed.
+One: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.
+Two: Kestrel line, sensor boards, switched 3 June; by 27 June the defect rate ran 4 percent below the same line a month earlier; logged by Ibarra.
+The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover the boards that reached the grading stage, and about a tenth of each run's boards were scrapped before grading.
+Three: Larkspur line, power boards, switched 5 September; by 30 September the defect rate ran 7 percent below the same line a month earlier; logged by Nowak.
+Four: Meridian line, display boards, switched 2 November; by 26 November the defect rate ran 5 percent below the same line a month earlier; logged by Fenwick.
+Each run's figures were entered on the shift sheet and signed off by the supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

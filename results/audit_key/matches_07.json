@@ -1,28 +1,27 @@
 {
   "D3A6C8:0": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Names both reversed pairs exactly (29 Mar/4 May, 30 Sep/5 Oct)."
+    "reported_extra": true,
+    "note": "Names both intended cases and dates exactly; also flags the insert-grade control not covering the hired machines actually measured."
   },
   "D3A6C8:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same two reversed cases; the note that the other two runs follow the normal 3-week lag is corroboration, not a second defect."
+    "note": "Cites both reversed cases and dates precisely."
   },
   "ED27C1:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies the halved order book reaching every run via depot-set drop count."
+    "note": "Quotes the finish-time reporting clause and identifies the excluded sixth."
   },
   "ED27C1:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Same confound; says 'each depot' rather than the single depot, but the mechanism named is identical."
+    "reported_extra": false
   },
   "F7FE36:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the doubled farmland prey and the farmland-edge reach condition."
+    "note": "Names the doubled prey abundance and its reach to every box."
   },
   "F7FE36:1": {
     "verdict": "same_flaw",
@@ -31,7 +30,7 @@
   "FAE756:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the tripled attendance reward scheme covering all four cohorts on the district roll."
+    "note": "Identifies the excluded part-way leavers as the narrowed denominator."
   },
   "FAE756:1": {
     "verdict": "same_flaw",
@@ -40,10 +39,11 @@
   "FE036E:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names halved throughput with stacks firing in step with site output."
+    "note": "Names the dropped quarter of scheduled runs; the throughput remark is dismissed as a non-issue, not an added defect."
   },
   "FE036E:1": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Same identification; explicitly rules the throughput halving out as defused."
   }
 }

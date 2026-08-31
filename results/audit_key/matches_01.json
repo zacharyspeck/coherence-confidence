@@ -2,51 +2,47 @@
   "0AAF54:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the doubled rainfall and the open-ground exposure route that makes it reach every block."
+    "note": "Quotes the doubled-rainfall/open-ground clause and notes it reaches all four blocks."
   },
   "0AAF54:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Same doubled-rainfall confound, same 'rain as it fell' exposure path across all four blocks."
+    "reported_extra": false
   },
   "1695A6:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies both intended cases with the exact reversed date pairs (11 Sep before 6 Dec, 24 Apr before 20 Jun)."
+    "note": "Names the correct two reversed cases (Ashcombe, Halloway) with the right dates."
   },
   "1695A6:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Same two reversed windows; the forward-running dates it cites for the other two cases are confirmation, not a second defect."
+    "reported_extra": false
   },
   "180003:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the doubled coursework share and the central syllabus as the route reaching all four sections."
+    "note": "Identifies the doubled coursework weighting applied to every section as the covering cause."
   },
   "180003:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Same grading-weight confound, and explicitly notes it is not separable from the lab kit."
+    "reported_extra": false
   },
   "1B2AA8:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names pain score as the measured quantity against a range-of-motion claim, with the matching four values."
+    "note": "Names the missing quarter who skipped the follow-up clinic as the excluded group."
   },
   "1B2AA8:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same pain-versus-range-of-motion quantity mismatch."
+    "note": "Also rules out the corticosteroid confounder, which is an exclusion rather than an extra defect."
   },
   "237197:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names record rainfall reaching every plot via rain-alone watering, plus the season-over-season comparison."
+    "note": "Names record rainfall reaching every plot against a prior-year comparison."
   },
   "237197:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Same rainfall confound and the open-plot exposure route covering all four cases."
+    "reported_extra": false
   }
 }

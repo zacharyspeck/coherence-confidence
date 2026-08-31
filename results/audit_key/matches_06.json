@@ -1,45 +1,52 @@
 {
   "BCC78C:0": {
     "verdict": "same_flaw",
-    "reported_extra": true,
-    "note": "Names the lowered board pass mark reaching all four cohorts; additionally asserts pass rate is not a measure of learning, a separate construct-validity objection."
+    "reported_extra": false,
+    "note": "Names the entered-only denominator and the excluded quarter of each roll."
   },
   "BCC78C:1": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Same quoted entry clause and the excluded three-quarters/one-quarter split."
   },
   "C6F63B:0": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Quotes the halved pollen/irritants fact and its reach to every group."
   },
   "C6F63B:1": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Identifies the same district-air confound covering all four groups."
   },
   "CC1BF2:0": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Names the discharged-only tally and the transferred quarter left out."
   },
   "CC1BF2:1": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Same excluded 25 percent of admissions versus the ward-wide claim."
   },
   "D14DA7:0": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Names the staffed-till-only figures and the excluded self-checkout fifth."
   },
   "D14DA7:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Quotes 'each store's shelf' though the item is single-store, but the confound named is the intended premium-mix shift."
+    "note": "Same channel-selected ~80 percent of orders versus all orders."
   },
   "D1E083:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies cases one and three with the exact reversed date pairs."
+    "note": "Correct cases (one and three) and correct date pairs."
   },
   "D1E083:1": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Correct cases and dates for the reversed order."
   }
 }

@@ -6,7 +6,7 @@
       "code": "7C1DE9",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The claim is about purchases, but every segment reports only 'cart additions' (6, 4, 7 and 5 percent above the prior month) - adding to a cart happens before the checkout page is even reached, so no purchase outcome is measured at all.",
+      "flaw_description": "The purchase counts \"cover the sessions that signed in\" while \"a quarter of each segment never signed in,\" so the 4-7 percent gains are measured on a subset that excludes a quarter of sessions, not on purchases generally as the claim asserts. (The price clause is neutralized - prices matched the earlier period \"to the nearest cent\" - so the coverage gap is the live problem.)",
       "explicitness": 3,
       "confidence": 4
     },
@@ -16,15 +16,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "FE036E",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Throughput at each site fell by half against the earlier quarter, and every stack logged here fired in step with site output' - a 50 percent drop in firing fully explains particulate falling 8-14 percent without any filter effect.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "The particulate figures \"cover the scheduled runs that returned a reading\" while \"a quarter of scheduled runs at each stack returned no reading,\" so the 8-14 percent reductions rest on a self-selected three quarters of runs and the missing quarter could sit anywhere. (The throughput halving is defused by the \"fixed duty cycle\" clause; the missing readings are not defused by anything.)",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "0EA7F6",
@@ -38,7 +38,7 @@
       "code": "1B2AA8",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The claim is about restoring shoulder range of motion, but every ward reports shoulder pain scores (14, 11, 16 and 9 points lower); pain relief is a different quantity from measured range of motion.",
+      "flaw_description": "The abduction averages \"cover the patients who were reassessed at the follow-up clinic\" while \"a quarter of each intake missed the follow-up clinic,\" so the 9-16 degree gains describe only the three quarters who returned - plausibly the better-recovering ones - not the intakes the claim is about. (The corticosteroid confounder is closed off: injections \"held level with the earlier quarter.\")",
       "explicitness": 3,
       "confidence": 4
     },
@@ -54,9 +54,9 @@
       "code": "A9D2D3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'House air temperature ran a full four degrees above the earlier sowing, and every lot sat on an open bench, taking the house air directly' - the warmer house, not the coating, plausibly accounts for the 6-11 point germination gain in all four lots.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "Germination \"rates cover the trays that reached the scoring date\" while \"about a fifth of each lot's trays went unscored,\" so the 6-11 point gains are computed on the surviving four fifths and exclude precisely the trays most likely to have failed. (The four-degree warmer house air is neutralized by the sealed cabinets \"held at a set temperature\"; the unscored trays are not.)",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "B1B3FD",

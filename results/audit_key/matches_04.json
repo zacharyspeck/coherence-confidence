@@ -2,36 +2,35 @@
   "79DDFC:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the same two cases and the same reversed date pairs (27 Sep/4 Nov, 28 Apr/5 Jun)."
+    "note": "Names the same two cases and the same reversed date pairs."
   },
   "79DDFC:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Same two cases, same reversed dates."
+    "reported_extra": false
   },
   "7A9B21:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the lubricant-grade switch as the shared alternative cause reaching all four machines."
+    "note": "Quotes the lubricant switch and its reach to all four machines."
   },
   "7A9B21:1": {
     "verdict": "same_flaw",
-    "reported_extra": true,
-    "note": "Also flags that the passage's 'nothing else differed' line directly contradicts the preceding sentence, an unintended tell that makes the confound trivially visible."
+    "reported_extra": false
   },
   "7C1DE9:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies cart additions as the measured quantity against a purchases claim."
+    "note": "Identifies the uncounted quarter of never-signed-in sessions."
   },
   "7C1DE9:1": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Also checks and dismisses the price clause, so no second defect claimed."
   },
   "828C2F:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names units per order vs revenue per order and the same price-cut divergence mechanism."
+    "note": "Names the excluded self-checkout fifth."
   },
   "828C2F:1": {
     "verdict": "same_flaw",
@@ -40,7 +39,7 @@
   "87820D:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same two cases and same reversed dates (28 Feb/4 Mar, 30 Aug/5 Sep)."
+    "note": "Correct cases and correct date reversals."
   },
   "87820D:1": {
     "verdict": "same_flaw",

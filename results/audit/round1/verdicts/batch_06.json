@@ -6,7 +6,7 @@
       "code": "5A0D9C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause covers all four runs: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines.\" A faster insert grade directly shortens cycle time, so the 4-7 minute reductions cannot be attributed to the coolant.",
+      "flaw_description": "A named alternative cause reaches every unit: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines\" - so the 4-7 minute reductions are equally explained by the new insert grade rather than the coolant.",
       "explicitness": 4,
       "confidence": 4
     },
@@ -22,7 +22,7 @@
       "code": "79DDFC",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "In two of the four cases the outcome is measured before the kit was issued: case one was issued 4 November but completion was read \"by 27 September\", and case three was issued 5 June but read \"by 28 April\". The effect precedes the cause in half the evidence.",
+      "flaw_description": "Two of the four cases measure the outcome before the intervention: case One was \"issued 4 November\" but scored \"by 27 September\", and case Three was \"issued 5 June\" but scored \"by 28 April\". The effect precedes the cause in half the evidence.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -32,14 +32,14 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "D14DA7",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause covers all four lines: \"Premium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked straight from that shelf.\" Doubling premium mix raises revenue per order on its own, so the 4-7 percent lift is not attributable to the pricing rule.",
-      "explicitness": 4,
+      "flaw_description": "The measure covers a narrower population than the claim: \"Figures cover the orders that cleared the staffed tills, and about a fifth of each store's orders went through self-checkout\", so revenue per order is computed on ~80% of orders selected by checkout channel, not on all orders as the claim requires.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -54,7 +54,7 @@
       "code": "04E6AE",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured quantity is not the one the claim is about: the claim is that the timetable \"reduces absence\", but every case reports only that \"lateness ran 6/4/7/5 percent below the same cohort a term earlier\". Pupils arriving late are present, so lateness figures say nothing about absence.",
+      "flaw_description": "Absence is measured only on a subset that excludes the pupils most likely to be absent: figures \"cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through\", so the 4-7 percent drops are computed on a survivor population narrower than the cohort the claim is about.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -64,7 +64,7 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     }
   ]
 }

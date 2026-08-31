@@ -6,9 +6,9 @@
       "code": "7A9B21",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause covers all four cases: the lubricant supply switched to a higher-grade synthetic mid-cycle and 'every machine here drew from that supply', so the extra 260-410 hours before failure could be the better lubricant rather than the redesigned bearing. The report's own claim that 'nothing else differed' contradicts the sentence immediately before it.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "A live confounder that reaches every unit: \"The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply.\" A higher-grade synthetic lubricant is itself a known cause of longer bearing life, so the 260-410 extra hours cannot be attributed to the redesigned bearing.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "E7A3F5",
@@ -22,7 +22,7 @@
       "code": "63F3EF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured quantity is not the one the claim is about: the claim is about ward infection rates, but what fell 6-11 percent is 'culture requests', i.e. how often staff ordered specimens sent for culture. That tracks testing/ordering behaviour, which a visible new handwashing protocol can itself change, not confirmed infections.",
+      "flaw_description": "The measured population is narrower than the claim: \"Rates cover the patients discharged from each ward\" while \"each ward transferred out a quarter of those admitted\" - so roughly 25 percent of admissions, plausibly the sickest and most infection-prone, are excluded from the infection rate entirely.",
       "explicitness": 2,
       "confidence": 4
     },
@@ -32,15 +32,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "338FC3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause fits all four cohorts: the free trial was lengthened to thirty days, 'four times its length in the earlier period', and 'every cohort here signed up on that trial'. A trial four times longer would by itself lift week-two retention, so the 3-6 point gain cannot be attributed to the onboarding email.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "A competing cause applies to all four cohorts: \"The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial.\" Quadrupling the trial length directly inflates week-two retention, so the 3-6 point lift is not attributable to the onboarding email.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "AE3C76",
@@ -54,7 +54,7 @@
       "code": "D1E083",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cohorts have dates running backwards: cohort one 'started 4 April' but the heart-rate drop is measured 'by 29 March', and cohort three 'started 5 October' but is measured 'by 30 September'. In both, the outcome window closes before the app was started, so the app cannot have caused the 5 bpm and 6 bpm reductions.",
+      "flaw_description": "Two of the four cohorts have outcome dates preceding enrolment: cohort One \"started 4 April; by 29 March\" and cohort Three \"started 5 October; by 30 September\" - the measured heart-rate drop is dated before the app was started, so those cases cannot show any effect of it.",
       "explicitness": 3,
       "confidence": 5
     },

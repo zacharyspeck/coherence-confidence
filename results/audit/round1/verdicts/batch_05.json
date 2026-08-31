@@ -1,26 +1,70 @@
-{"batch": "05", "round": 1, "verdicts": [
-  {"code": "627233", "answer": "No", "flaw_found": true,
-   "flaw_description": "A site-wide discount cutting prices by a fifth ran through every segment's measurement month, and every segment browsed the general catalogue, so the discount covered them all; a 20 percent price cut easily explains the 4-7 percent purchase lift without the new checkout page.",
-   "explicitness": 3, "confidence": 4},
-  {"code": "517C55", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 3},
-  {"code": "87820D", "answer": "No", "flaw_found": true,
-   "flaw_description": "Two of the four cases have their outcome measured before treatment began: group One 'started 4 March' but is scored 'by 28 February', and group Three 'started 5 September' but is scored 'by 30 August', so the reported drop in attacks predates the inhaler.",
-   "explicitness": 3, "confidence": 4},
-  {"code": "F22CEF", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 3},
-  {"code": "606326", "answer": "No", "flaw_found": true,
-   "flaw_description": "Corticosteroid injections tripled from the earlier quarter at each hospital and 'every intake was cleared to receive them', so steroid injection — which itself increases shoulder abduction in rotator cuff cases — fits all four gains of 9-16 degrees just as well as the protocol.",
-   "explicitness": 3, "confidence": 4},
-  {"code": "DC4223", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 3},
-  {"code": "49435F", "answer": "No", "flaw_found": true,
-   "flaw_description": "The claim is about board defects but the measured quantity is 'mean void area' (down 4-7 percent), a solder-geometry measure, not a defect rate; the runs were actually 'graded at electrical test' and no defect counts from that grading are reported.",
-   "explicitness": 2, "confidence": 4},
-  {"code": "C1B249", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 3}
-]}
+{
+  "batch": "05",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "627233",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The outcome is measured on a biased subset: \"The counts cover the sessions that signed in, and a quarter of each segment never signed in\", so 25 percent of every segment is excluded from the purchase counts, and the new checkout page could itself change who signs in. (The site-wide discount is neutralized, since \"every segment browsed a fixed-price contract catalogue\".)",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "517C55",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "87820D",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cases measure the outcome before the inhaler was started: group one \"started 4 March, had 6 fewer attacks by 28 February\" and group three \"started 5 September, had 7 fewer attacks by 30 August\". The end dates precede the start dates, so those reductions cannot have been caused by the inhaler.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "F22CEF",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "606326",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The reported gains cover a self-selected subset: \"Averages cover the patients who were reassessed at the follow-up clinic, and a quarter of each intake missed the follow-up clinic\", so the 14/11/16/9-degree averages are computed on the 75 percent who returned, and non-attenders (plausibly the worse outcomes) are simply absent. The corticosteroid tripling is neutralized, since \"every intake was medically barred from receiving them\".",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "DC4223",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "49435F",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The defect rate is computed on a filtered population: \"Rates cover the boards that reached the grading stage, and about a tenth of each run's boards were scrapped before grading\". If the new solder profile shifts bad boards into pre-grading scrap, the 4-7 percent drop is an artifact of the missing tenth rather than fewer defects. The inspection threshold is not a confound, as it \"held to the earlier period's setting exactly\".",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "C1B249",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

@@ -1,18 +1,17 @@
 {
   "5A0D9C:0": {
     "verdict": "same_flaw",
-    "reported_extra": true,
-    "note": "Names the insert-grade refit exactly, and additionally flags that the passage's 'no other change was made to any run' line directly contradicts the stated refit."
+    "reported_extra": false,
+    "note": "Names the insert-grade refit and its reach to every logged run."
   },
   "5A0D9C:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Quotes the refit clause and the reach condition verbatim."
+    "reported_extra": false
   },
   "606326:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the corticosteroid tripling and the 'cleared to receive them' reach condition."
+    "note": "Identifies the missing quarter who skipped the follow-up clinic; the corticosteroid remark rules a distractor out rather than adding a defect."
   },
   "606326:1": {
     "verdict": "same_flaw",
@@ -21,17 +20,17 @@
   "6175F5:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies the same two reversed cases by their dates (3 Aug / 18 Jun and 2 May / 17 Mar) though it labels them by crop rather than site."
+    "note": "Correct cases and correct dates (18 June before 3 August; 17 March before 2 May)."
   },
   "6175F5:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same two reversed date pairs, plus correctly rules out the long-harvest reading using the two sound cases."
+    "note": "Same two cases and dates, identified by crop rather than by site name."
   },
   "627233:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the site-wide discount and the general-catalogue reach condition."
+    "note": "Names the excluded never-signed-in quarter; the sign-in-selection remark elaborates the same mechanism."
   },
   "627233:1": {
     "verdict": "same_flaw",
@@ -40,11 +39,10 @@
   "63F3EF:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies culture requests as tests ordered rather than infections."
+    "note": "Names the transferred-out quarter excluded from the discharge-based rate."
   },
   "63F3EF:1": {
     "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Same measured-quantity mismatch, with the added observation that the protocol itself could change ordering behaviour."
+    "reported_extra": false
   }
 }

@@ -1,26 +1,70 @@
-{"batch": "08", "round": 0, "verdicts": [
-  {"code": "EFFF42", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 4},
-  {"code": "FE036E", "answer": "No", "flaw_found": true,
-   "flaw_description": "The report states throughput at each site 'fell by half against the earlier quarter' and that 'every stack logged here fired in step with site output', so the 8-14 percent lower particulate readings are fully explained by kilns firing half as much, not by the filter upgrade.",
-   "explicitness": 4, "confidence": 5},
-  {"code": "F22CEF", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 4},
-  {"code": "B638C2", "answer": "No", "flaw_found": true,
-   "flaw_description": "The outcome dates precede the intervention: plot One was boxed 3 June but counted 'by 27 March', and plot Three was boxed 2 November but counted 'by 24 September', so those fledgling counts close before the boxes were installed; plot Four (boxed 5 December, counted 21 February) also closes before any fledging season for tawny owls.",
-   "explicitness": 3, "confidence": 4},
-  {"code": "38B726", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 4},
-  {"code": "A9D2D3", "answer": "No", "flaw_found": true,
-   "flaw_description": "The report says 'House air temperature ran a full four degrees above the earlier sowing, and every lot sat on an open bench, taking the house air directly', so a four-degree warmer glasshouse is an alternative cause of the 6-11 point germination gain that applies to all four lots.",
-   "explicitness": 4, "confidence": 5},
-  {"code": "C1B249", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 4},
-  {"code": "090602", "answer": "No", "flaw_found": true,
-   "flaw_description": "The claim is about exam pass rates but every case measures something else: 'coursework submission rates' 7, 5, 8 and 4 points higher. No exam pass rate is reported at all.",
-   "explicitness": 4, "confidence": 5}
-]}
+{
+  "batch": "08",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "EFFF42",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "FE036E",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The particulate figures 'cover the scheduled runs that returned a reading' while 'a quarter of scheduled runs at each stack returned no reading', so a quarter of runs are silently dropped and the measured population is narrower than the claim. The throughput halving is neutralised by the fixed duty cycle, but the missing quarter is not.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "F22CEF",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "B638C2",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The outcome dates precede the installation dates in three of the four plots: Hollowmere was 'boxed 3 June' yet counted 'by 27 March' against 'the previous spring', Brackenfen was 'boxed 2 November' yet counted 'by 24 September' against 'the previous autumn', and Vanehead was 'boxed 5 December' yet counted 'by 21 February'. The extra fledglings were counted before, or in breeding seasons that closed before, the boxes went up.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "38B726",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "A9D2D3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Germination 'rates cover the trays that reached the scoring date, and about a fifth of each lot's trays went unscored', so roughly 20 percent of trays per lot are excluded from the rate. Trays that fail early are exactly the ones likely to go unscored, so the surviving-tray population is narrower than the claim about the coating.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "C1B249",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "090602",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Pass rates cover the students entered for the exam, and about a quarter of each cohort's roll was not entered', so the rate is computed on a self-selected three quarters of each cohort. If the tutoring blocks changed who got entered, the pass-rate gain says nothing about the whole cohort the claim is about.",
+      "explicitness": 3,
+      "confidence": 4
+    }
+  ]
+}

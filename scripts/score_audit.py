@@ -139,6 +139,24 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--audit", default="results/audit")
     ap.add_argument("--key", default="results/audit_key")
     ap.add_argument("--out", default="results/item_audit.md")
+    ap.add_argument(
+        "--round-label",
+        default=None,
+        help="append a row to the salience log under this label",
+    )
+    ap.add_argument("--salience-log", default="results/salience_log.md")
+    ap.add_argument(
+        "--target-gap",
+        type=float,
+        default=0.4,
+        help="max acceptable |coherent_false - diverse_false| mean salience",
+    )
+    ap.add_argument(
+        "--target-max-cell",
+        type=float,
+        default=3.5,
+        help="no false cell mean may exceed this",
+    )
     args = ap.parse_args(argv)
 
     audit_dir = Path(args.audit)
@@ -232,33 +250,56 @@ def main(argv: list[str] | None = None) -> int:
             f"| **{df:.2f}** |"
         )
         L.append("")
+        gap = cf - df
+        within = abs(gap) <= 0.4
         L.append(
-            f"**The flaw in `coherent_false` is {cf - df:.2f} points more salient "
-            "than the flaw in `diverse_false`, on a 5-point scale.** That is not a "
-            "wording accident. It is DECISIONS.md D-004 showing up in the data: a "
-            "shared confound has to be *stated* in the passage for it to be a "
-            "shared confound at all, while reversed dates and a substituted "
-            "quantity are things a reader has to notice for themselves.\n"
+            f"**Gap: {gap:+.2f} points of 5** between the two FALSE cells"
+            + (" — inside the 0.4 target." if within else " — OUTSIDE the 0.4 target.")
+            + "\n"
+        )
+        if within:
+            L.append(
+                "This is what the fix pass was for. The flaw used to sit in the "
+                "final sentence of the passage and the gap was **1.20**; it now "
+                "sits mid-passage with two cases and a closer after it, and "
+                "`scope_mismatch` — a mechanism that works identically under both "
+                "coherence conditions — supplies half of each FALSE cell. "
+                "`results/salience_log.md` has the round-by-round record.\n"
+            )
+        else:
+            L.append(
+                "The coherent flaws are still louder. Since the hypothesis "
+                "predicts AUC(coherent) is LOWER, a louder coherent flaw pushes "
+                "the primary endpoint the other way — the test is conservative "
+                "rather than flattering — but a null result could not be "
+                "distinguished from an effect cancelled by salience.\n"
+            )
+        L.append(
+            "**Why a residual gap is expected and cannot be driven to zero.** "
+            "`stated_confound` has to be *stated* in the passage to be a shared "
+            "confound at all, so it will always be somewhat easier to spot than a "
+            "date that runs backwards or a population that is quietly narrower. "
+            "That is D-004, and it is a property of the design rather than of the "
+            "wording.\n"
         )
         L.append(
-            "**What it does to the result.** AUC is computed within each coherence "
-            "condition, so this predicts AUC(coherent) > AUC(diverse) from flaw "
-            "salience alone, with no coherence effect involved. Note the direction: "
-            "the hypothesis predicts that coherence *inflates* confidence and "
-            "therefore *depresses* AUC(coherent). This artifact pushes the other "
-            "way, so it makes the test **conservative** — a coherence effect found "
-            "in spite of it is stronger evidence, not weaker. It still has to be "
-            "reported.\n"
+            "**What removes the residual entirely.** The matched-mechanism subset: "
+            "10 `scope_mismatch` items in each FALSE cell, drawn from the same 10 "
+            "families, so the mechanism is identical on both sides and only "
+            "coherence differs. `src/analyze.py` reports the primary endpoint on "
+            "that subset directly beneath the full-set version, and carries mean "
+            "salience beside every AUC plus a logistic model of catch-rate on "
+            "salience.\n"
         )
-        L.append(
-            "**Two things already in place that separate them.** (1) "
-            "`coherence_effect_within_true`, which `src/analyze.py` reports "
-            "separately, contrasts two cells that contain no flaw at all, so flaw "
-            "salience cannot touch it. (2) `diverse_false` is split evenly between "
-            "`temporal` and `claim_mismatch` and each item is tagged, so the two "
-            "can be compared against `coherent_false` separately rather than "
-            "pooled.\n"
-        )
+        mech_rows = {k: mean(v) for k, v in expl_by_flaw.items()}
+        if "scope_mismatch" in mech_rows:
+            L.append(
+                f"On the matched subset the mechanism is `scope_mismatch` on both "
+                f"sides, mean salience {mech_rows['scope_mismatch']:.2f}, so the "
+                "salience difference between conditions there is whatever remains "
+                "after mechanism is held fixed — reported per condition in the "
+                "analysis output.\n"
+            )
 
     # -- the two lists that need a human ------------------------------------
     for bucket, title, why in (
@@ -386,6 +427,94 @@ def main(argv: list[str] | None = None) -> int:
     print(f"wrote {out}")
     print(f"  FALSE items: {n_found} found, {n_easy} too easy, {n_missed} MISSED")
     print(f"  TRUE decoys: {n_fp}/{n_true} drew a false positive")
+
+    if args.round_label:
+        rc = append_salience_log(
+            Path(args.salience_log),
+            args.round_label,
+            false_rows,
+            n_missed,
+            n_fp,
+            n_true,
+            args.target_gap,
+            args.target_max_cell,
+        )
+        print(f"  appended to {args.salience_log}")
+        return rc
+    return 0
+
+
+def append_salience_log(
+    path: Path,
+    label: str,
+    false_rows: dict,
+    n_missed: int,
+    n_fp: int,
+    n_true: int,
+    target_gap: float,
+    target_max_cell: float,
+) -> int:
+    """One row per round, so convergence is visible rather than asserted.
+
+    The hard stop is 4 rounds. Editing items until a number lands is fitting the
+    measurement, so if the gap has not closed by then the honest move is to
+    report the gap and stop - which is what the log is for.
+    """
+    by_cell: dict[str, list[float]] = defaultdict(list)
+    by_mech: dict[str, list[float]] = defaultdict(list)
+    for r in false_rows.values():
+        e = r.get("mean_explicitness")
+        if e is None:
+            continue
+        by_cell[r["cell"]].append(e)
+        by_mech[r.get("flaw_mechanism") or "?"].append(e)
+
+    cf = mean(by_cell["coherent_false"]) if by_cell["coherent_false"] else float("nan")
+    df = mean(by_cell["diverse_false"]) if by_cell["diverse_false"] else float("nan")
+    gap = cf - df
+    worst = max([cf, df])
+    ok_gap = abs(gap) <= target_gap
+    ok_cell = worst <= target_max_cell
+    findable = n_missed == 0
+
+    if not path.exists():
+        path.write_text(
+            "# Salience convergence log\n\n"
+            "Mean blind-audit explicitness (1-5) of the flaw in each FALSE cell,\n"
+            "one row per round. Targets: gap within "
+            f"{target_gap}, no cell above {target_max_cell}, and every FALSE item\n"
+            "still 100% findable. Hard stop at 4 rounds - past that, report the gap\n"
+            "rather than editing items until the number lands.\n\n"
+            "| round | coherent_false | diverse_false | gap | worst cell | "
+            "gap ok | cell ok | all findable | false positives |\n"
+            "|---|---|---|---|---|---|---|---|---|\n",
+            encoding="utf-8",
+        )
+
+    with path.open("a", encoding="utf-8") as fh:
+        fh.write(
+            f"| {label} | {cf:.2f} | {df:.2f} | {gap:+.2f} | {worst:.2f} | "
+            f"{'YES' if ok_gap else 'NO'} | {'YES' if ok_cell else 'NO'} | "
+            f"{'YES' if findable else f'NO ({n_missed} unfindable)'} | "
+            f"{n_fp}/{n_true} |\n"
+        )
+        fh.write(
+            "\n<sub>by mechanism: "
+            + ", ".join(
+                f"{k} {mean(v):.2f} (n={len(v)})" for k, v in sorted(by_mech.items())
+            )
+            + "</sub>\n\n"
+        )
+
+    print(
+        f"  salience: coherent_false {cf:.2f}, diverse_false {df:.2f}, "
+        f"gap {gap:+.2f} (target +/-{target_gap}), worst cell {worst:.2f} "
+        f"(target <={target_max_cell})"
+    )
+    if ok_gap and ok_cell and findable:
+        print("  SALIENCE TARGETS MET")
+        return 0
+    print("  salience targets NOT yet met")
     return 0
 
 

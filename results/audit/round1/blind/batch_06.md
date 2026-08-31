@@ -14,9 +14,10 @@
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.
+Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut, stoppage minutes included, and every piece in each run was cut straight through.
 Three: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.
 Four: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.
-Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines; no other change was made to any run.
+Entries were made in the shop ledger in minutes and initialled by the foreman.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -33,9 +34,10 @@ Every shop refitted its machines with a faster insert grade that quarter, and ev
 A maintenance log records four stacks given the same filter upgrade.
 One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.
 Two: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.
+Throughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the scheduled runs that returned a reading, and every scheduled run at each stack returned a reading.
 Three: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.
 Four: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.
-Throughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle; no other change was made at any stack.
+Entries were transcribed from the analyser tape and countersigned by a shift supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -52,9 +54,10 @@ Throughput at each site fell by half against the earlier quarter, and every stac
 A teaching office log records four sections given the same lab kit.
 One: an introductory section at Harlow, autumn term, issued 4 November; by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
 Two: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.
+The central syllabus left coursework's share of the final grade at the previous year's, and every section was marked to a frozen departmental syllabus. Completion rates cover every student registered in each section, with leavers entered as non-completions, and every student registered in each section stayed to that point.
 Three: an intermediate section at Kelvinside, spring term, issued 5 June; by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.
 Four: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.
-The central syllabus left coursework's share of the final grade at the previous year's, and every section was marked to a frozen departmental syllabus; nothing else changed for any section.
+Rates were recorded to the nearest point and signed off by the teaching office.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -71,9 +74,10 @@ The central syllabus left coursework's share of the final grade at the previous 
 A monitoring log records four plots where the same nest boxes were installed.
 One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.
 Two: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.
+Prey abundance on the surrounding farmland doubled from the previous year, and every box stood deep inside the reserve, beyond the birds' foraging range. Counts cover every installed box, uninspected ones entered as zero, and a fifth of the installed boxes at each plot went uninspected.
 Three: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.
 Four: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.
-Prey abundance on the surrounding farmland matched the previous year exactly, and every box stood at the farmland edge, within the birds' foraging range; predator control was unchanged and nothing else was altered.
+Ring numbers and box references were filed with the monitoring register under standard warden codes.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -90,9 +94,10 @@ Prey abundance on the surrounding farmland matched the previous year exactly, an
 A retail log records four product lines after a new pricing rule took effect.
 One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.
 Two: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.
+Premium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked from a fixed year-round range. Figures cover the orders that cleared the staffed tills, and about a fifth of each store's orders went through self-checkout.
 Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.
 Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.
-Premium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked straight from that shelf; footfall and promotion depth matched the month before, and nothing else changed.
+Each entry was transcribed to the regional ledger and countersigned by the district accounts clerk.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -109,9 +114,10 @@ Premium stock's share of each store's shelf hit a record, double the earlier per
 A nursery logbook records four seed lots given the same coating.
 One: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.
 Two: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.
+House air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays that reached the scoring date, and no tray in any lot went unscored.
 Three: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.
 Four: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.
-House air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature; the seed batch was unchanged and nothing else differed.
+Each figure was copied into the nursery ledger and initialled by the head grower.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -126,11 +132,12 @@ House air temperature ran a full four degrees above the earlier sowing, and ever
 
 ```
 An attendance log records four cohorts that moved to the revised timetable.
-One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September lateness ran 6 percent below the same cohort a term earlier; registrar Danforth.
-Two: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January lateness ran 4 percent below the same cohort a term earlier; registrar Okimbo.
-Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April lateness ran 7 percent below the same cohort a term earlier; registrar Halvard.
-Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June lateness ran 5 percent below the same cohort a term earlier; registrar Bittner.
-The attendance reward scheme in each cohort's district paid what it had before, and every cohort was on an independent roll that scheme never covered; nothing else about any cohort's term changed.
+One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.
+Two: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.
+The attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through.
+Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.
+Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.
+Registers were transcribed weekly into the log file and countersigned by the school office.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -147,9 +154,10 @@ The attendance reward scheme in each cohort's district paid what it had before, 
 A faculty log records four cohorts given the same tutoring blocks.
 One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth.
 Two: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth.
+The board's pass mark held exactly level with the previous term's, and every cohort sat the board's own paper under that same mark. Pass rates cover every enrolled student, non-entrants counted as fails, and about a quarter of each cohort's roll was not entered.
 Three: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth.
 Four: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth.
-The board's pass mark held exactly level with the previous term's, and every cohort sat the board's own paper under that same mark; nothing else changed for any cohort.
+Results were transcribed into the faculty file and countersigned by the examinations office each week.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

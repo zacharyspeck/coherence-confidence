@@ -6,8 +6,8 @@
       "code": "99C998",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four machines have failure dates that precede the fitting date: the Bexley lathe was fitted 4 May but 'failed by 27 March', and the Corbin conveyor was fitted 2 August but 'failed by 21 July'. The other two cases (9 January to 24 February, 6 October to 25 November) run forward over ~7 weeks, so these two cannot be read as consistent long cycles; the observation windows for half the sample run backwards.",
-      "explicitness": 2,
+      "flaw_description": "Two of the four cases have the failure measurement dated before the bearing was fitted: the Bexley lathe was 'fitted 4 May' but 'ran 340 hours longer before failure by 27 March', and the Corbin conveyor was 'fitted 2 August' but measured 'by 21 July'. The other two cases (9 January to 24 February, 6 October to 25 November) run about seven weeks forward, so these two readings cannot postdate installation.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -22,7 +22,7 @@
       "code": "237197",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Rainfall in each plot's season was 'the highest on record, roughly double the year before', and the plots 'stood in the open, watered by rain alone' - so the doubled rainfall applied to every plot and fully explains the 8-13 cm height gain over the previous summer without any contribution from the fertilizer.",
+      "flaw_description": "A named alternative cause reaches every plot: 'Rainfall in each plot's season was the highest on record, roughly double the year before,' and 'every plot stood in the open, watered by rain alone.' Since the comparison is against the previous summer, the doubled rainfall alone can account for the 8-13 cm of extra height.",
       "explicitness": 4,
       "confidence": 5
     },
@@ -32,13 +32,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "383AC4",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two cohorts have measurement dates before the email was sent: the Norway cohort was emailed 24 March but retention is read 'by 9 March', and the Vietnam cohort was emailed 25 October but read 'by 10 October'. Since the comparison is to 'a month earlier', these windows run backwards, and week-two retention cannot even be observed before the email lands.",
+      "flaw_description": "Cohorts one and three are measured before the email went out: Norway signups were 'emailed 24 March' yet retention is read 'by 9 March', and Vietnam signups were 'emailed 25 October' yet read 'by 10 October' - fifteen days earlier in both cases, while cohorts two and four run 24 days forward. Week-two retention cannot be observed before the intervention.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -54,9 +54,9 @@
       "code": "ED27C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Order volume through each depot 'hit a record low, half the earlier period', and 'every run carried whatever drop count the depot set' - so each run carried roughly half the stops it did a month earlier, which alone explains delivery times running 5-9 minutes below the earlier period regardless of the routing change.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "The timing average is computed on a self-selected subset: 'Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.' Roughly 17 percent of runs are dropped, and runs that fail to log a finish are plausibly the delayed ones, which is enough to produce the 5-9 minute improvement on its own.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "830F4D",

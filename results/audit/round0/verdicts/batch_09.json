@@ -6,8 +6,8 @@
       "code": "99C998",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four measurement windows run backwards: the Bexley lathe was fitted 4 May but its result is recorded 'by 27 March', and the Corbin conveyor was fitted 2 August but recorded 'by 21 July'. The other two cases use forward windows of about 46-50 days (9 January to 24 February; 6 October to 25 November), so the outcome in cases one and three is dated before the bearing was installed.",
-      "explicitness": 2,
+      "flaw_description": "Two of the four measurement dates fall before the bearing was fitted: case One was fitted 4 May but the longer run is recorded 'by 27 March', and case Three was fitted 2 August but recorded 'by 21 July'. The other two cases run about +46 and +50 days forward, so the outcome for half the cases is dated before the intervention could have acted.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -22,25 +22,25 @@
       "code": "CC1BF2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause fits all four cases: contract deep-cleaning hours ran at triple the earlier quarter and 'every ward here was cleaned under that contract', so tripled deep-cleaning explains the 6-11 percent infection drop just as well as the handwashing protocol.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "The infection numbers 'cover the patients discharged from each ward' while 'each ward transferred out a quarter of those admitted', so a quarter of admissions - plausibly the sicker, more infection-prone ones - never enter the rate at all. The measured population is narrower than the ward infection rate the claim is about, and a shift in who gets transferred would move the figure by itself.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "949A3C",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Counts cover every installed box, uninspected ones entered as zero, and a fifth of the installed boxes at each plot went uninspected' - so 20 percent of boxes are scored zero by fiat, making the total a function of inspection coverage rather than fledgling production, with no statement that the previous spring's baseline was inspected at the same rate. (The doubled prey abundance is neutralised, since every box 'stood deep inside the reserve, beyond the birds' foraging range'.)",
+      "explicitness": 3,
       "confidence": 4
     },
     {
       "code": "383AC4",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cohorts have retention measured before the email was sent: cohort one was emailed 24 March but read out 'by 9 March', and cohort three was emailed 25 October but read out 'by 10 October'. The other two cases run forward about 24 days (3 July to 27 July; 2 December to 26 December), so the reversed pair cannot be attributed to the email.",
+      "flaw_description": "Two cases are measured before the email went out: cohort One was 'emailed 24 March' with retention read 'by 9 March', and cohort Three was 'emailed 25 October' and read 'by 10 October' - fifteen days earlier in each case, and week-two retention would need fourteen days after the send.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 5
     },
     {
       "code": "AE3C76",
@@ -48,22 +48,22 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "4969DF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause covers all four cohorts: outdoor temperature in each cohort's city fell ten degrees from the month before and 'every cohort slept in unconditioned rooms open to outside air', so cooler sleeping conditions could produce the 3-6 bpm drop in resting heart rate independently of the app.",
+      "flaw_description": "'Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air' - the ten-degree drop reached every sleeper, and cooler sleeping temperature lowers resting heart rate on its own, which fits all four cohorts and the whole 3-6 bpm effect.",
       "explicitness": 4,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "6D7115",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Pass rates cover every enrolled student, non-entrants counted as fails, and about a quarter of each cohort's roll was not entered' - with 25 percent scored as automatic fails, the pass rate tracks the entry rate as much as attainment, and the previous spring term's entry rate is never given, so the 4-8 point rise could come entirely from more students being entered.",
+      "explicitness": 3,
       "confidence": 4
     }
   ]

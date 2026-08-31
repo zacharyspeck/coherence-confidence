@@ -50,8 +50,10 @@ from . import provenance
 from .models import Item, load_items
 from .render import (
     DEFAULT_OPTIONS,
+    OPTION_ROTATIONS,
     ROLES,
     canonical_forms,
+    case_permutation,
     render_prompt,
     template_hash,
 )
@@ -516,23 +518,71 @@ def score_items(
     *,
     batch_size: int = 1,
     progress: bool = True,
+    shuffle_cases: bool = False,
+    case_seed: int = 0,
+    option_rotations: bool = False,
+    rotation_spread_limit: float = 0.05,
 ) -> list[dict[str, Any]]:
-    options = getattr(scorer, "options", DEFAULT_OPTIONS)
-    prompts = [render_prompt(i, options) for i in items]
-    records: list[dict[str, Any]] = []
+    """Score every item, optionally under the two surface-feature controls.
 
+    `shuffle_cases` permutes the four case sentences with a fixed per-item
+    permutation, which is recorded on the record. Case order carries no evidence,
+    so a result that moves under it is measuring presentation.
+
+    `option_rotations` scores every item under all three rotations of the option
+    list and averages P(yes). The spread across rotations is the size of the
+    position bias, reported per item and flagged above
+    `rotation_spread_limit`.
+    """
+    options = getattr(scorer, "options", DEFAULT_OPTIONS)
+    rotations = list(OPTION_ROTATIONS) if option_rotations else [None]
+
+    plan: list[tuple[int, tuple | None, list[int] | None]] = []
+    orders: list[list[int] | None] = []
+    for n, item in enumerate(items):
+        order = case_permutation(item, case_seed) if shuffle_cases else None
+        orders.append(order)
+        for rot in rotations:
+            plan.append((n, rot, order))
+
+    prompts = [
+        render_prompt(items[n], options, case_order=order, option_rotation=rot)
+        for n, rot, order in plan
+    ]
+
+    results: list[ScoreResult] = []
     if batch_size > 1 and hasattr(scorer, "score_prompts"):
-        for start in range(0, len(items), batch_size):
-            chunk = items[start : start + batch_size]
-            res = scorer.score_prompts(prompts[start : start + batch_size])
-            records.extend(record_for(i, r) for i, r in zip(chunk, res))
+        for start in range(0, len(prompts), batch_size):
+            results.extend(scorer.score_prompts(prompts[start : start + batch_size]))
             if progress:
-                print(f"  scored {len(records)}/{len(items)}", file=sys.stderr)
+                print(f"  scored {len(results)}/{len(prompts)}", file=sys.stderr)
     else:
-        for n, (item, prompt) in enumerate(zip(items, prompts), 1):
-            records.append(record_for(item, scorer.score_prompt(prompt)))
-            if progress and (n % 10 == 0 or n == len(items)):
-                print(f"  scored {n}/{len(items)}", file=sys.stderr)
+        for n, prompt in enumerate(prompts, 1):
+            results.append(scorer.score_prompt(prompt))
+            if progress and (n % 20 == 0 or n == len(prompts)):
+                print(f"  scored {n}/{len(prompts)}", file=sys.stderr)
+
+    by_item: dict[int, list[ScoreResult]] = {}
+    for (n, _rot, _order), res in zip(plan, results):
+        by_item.setdefault(n, []).append(res)
+
+    records: list[dict[str, Any]] = []
+    for n, item in enumerate(items):
+        got = by_item[n]
+        # The headline record is the FIRST rotation, so a run with rotations on
+        # and one with them off agree on the primary number; the average and the
+        # spread are reported alongside rather than silently replacing it.
+        rec = record_for(item, got[0])
+        rec["case_order"] = orders[n]
+        if option_rotations:
+            vals = [r.p_yes_3way for r in got]
+            spread = max(vals) - min(vals)
+            rec["rotation_p_yes_3way"] = vals
+            rec["rotation_labels"] = [list(r) for r in OPTION_ROTATIONS]
+            rec["p_yes_3way_rotation_mean"] = sum(vals) / len(vals)
+            rec["p_yes_3way_rotation_spread"] = spread
+            rec["rotation_spread_flagged"] = spread > rotation_spread_limit
+        records.append(rec)
     return records
 
 
@@ -550,6 +600,10 @@ def build_payload(
     options = getattr(scorer, "options", DEFAULT_OPTIONS)
     meta["prompts_hash"] = provenance.hash_prompts(
         render_prompt(i, options) for i in items
+    )
+    meta["prompts_hash_note"] = (
+        "digest of the UNPERMUTED prompts, so it identifies the item text "
+        "regardless of which surface controls were on"
     )
     mass = [r["mass_covered"] for r in records]
     meta["mass_covered_mean"] = sum(mass) / len(mass) if mass else 0.0
@@ -627,6 +681,21 @@ def add_common_args(ap: argparse.ArgumentParser) -> None:
     ap.add_argument("--mock", action="store_true", help="use the deterministic mock")
     ap.add_argument("--mock-scenario", default="known")
     ap.add_argument("--batch-size", type=int, default=1)
+    ap.add_argument(
+        "--shuffle-cases",
+        action="store_true",
+        help="permute each item's four case sentences with a fixed per-item "
+        "permutation, recorded on every record. Case order carries no "
+        "evidence, so a result that moves under it is measuring presentation.",
+    )
+    ap.add_argument("--case-seed", type=int, default=0)
+    ap.add_argument(
+        "--option-rotations",
+        action="store_true",
+        help="score every item under all three rotations of the option list "
+        "and report the spread in P(yes). Measures option position bias.",
+    )
+    ap.add_argument("--rotation-spread-limit", type=float, default=0.05)
     ap.add_argument(
         "--items", nargs="+", default=["items/draft", "items/seed"], help="directories"
     )
@@ -709,12 +778,38 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 2
 
-    records = score_items(scorer, items, batch_size=args.batch_size)
-    payload = build_payload(scorer, items, records, item_dirs=list(args.items))
+    records = score_items(
+        scorer,
+        items,
+        batch_size=args.batch_size,
+        shuffle_cases=args.shuffle_cases,
+        case_seed=args.case_seed,
+        option_rotations=args.option_rotations,
+        rotation_spread_limit=args.rotation_spread_limit,
+    )
+    payload = build_payload(
+        scorer,
+        items,
+        records,
+        item_dirs=list(args.items),
+        shuffle_cases=args.shuffle_cases,
+        case_seed=args.case_seed if args.shuffle_cases else None,
+        option_rotations=args.option_rotations,
+    )
 
     out = provenance.write_json(args.out, payload)
     m = payload["meta"]
     print(f"wrote {out}  ({len(records)} records)")
+    if args.option_rotations:
+        spreads = [r["p_yes_3way_rotation_spread"] for r in records]
+        flagged = [r["item_id"] for r in records if r["rotation_spread_flagged"]]
+        print(
+            f"option position bias: mean spread {sum(spreads) / len(spreads):.4f}, "
+            f"max {max(spreads):.4f}; {len(flagged)} item(s) over "
+            f"{args.rotation_spread_limit}"
+        )
+        for i in flagged[:10]:
+            print(f"  FLAGGED {i}")
     print(
         f"mean mass_covered = {m['mass_covered_mean']:.4f}  "
         f"min = {m['mass_covered_min']:.4f}"

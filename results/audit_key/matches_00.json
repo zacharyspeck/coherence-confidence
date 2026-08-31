@@ -2,17 +2,17 @@
   "011AA3:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names both reversed pairs exactly (3 Aug/20 June, 2 May/19 April) and confirms the other two run forward."
+    "note": "Names the exact two reversed cases and both date pairs."
   },
   "011AA3:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same two reversed cases identified; adds that the effect predates the treatment in half the cases."
+    "note": "Same two reversed cases, and correctly notes the other two run forward."
   },
   "036205:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Backpressure-vs-particulate substitution named, including the direction argument the key gives."
+    "note": "Identifies the missing quarter of scheduled runs; the throughput remark dismisses a confound rather than adding a defect."
   },
   "036205:1": {
     "verdict": "same_flaw",
@@ -21,7 +21,7 @@
   "04E6AE:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Lateness-vs-absence substitution named, with the same present-but-late reasoning."
+    "note": "Names the excluded leavers and the denominator effect."
   },
   "04E6AE:1": {
     "verdict": "same_flaw",
@@ -30,17 +30,17 @@
   "0899C1:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Quotes the loosened optical threshold and its reach over every run, which is the intended shared confound."
+    "note": "Names the pre-grading scrapped tenth as the excluded group."
   },
   "0899C1:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same confound framed as a measurement-instrument change; substance matches."
+    "note": "The optical-threshold aside is explicitly ruled out, not offered as a second defect."
   },
   "090602:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Coursework-submission-vs-exam-pass substitution named exactly."
+    "note": "Names the un-entered quarter of the roll; mechanism framed as entry selection rather than weakest-excluded, but same exclusion."
   },
   "090602:1": {
     "verdict": "same_flaw",

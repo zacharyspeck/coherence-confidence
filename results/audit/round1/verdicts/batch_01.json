@@ -14,9 +14,9 @@
       "code": "6175F5",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "In two of the four blocks the outcome is measured before the drip line was fitted: the maize block was fitted 3 August but the gain is dated 'by 18 June' within that same summer, and the barley block was fitted 2 May but its gain is dated 'by 17 March' within that same spring. The other two cases (8 Dec to 23 Feb, 7 Sep to 22 Nov) run forward about 2.5 months, so the two reversed windows cannot be explained as long next-year harvests.",
+      "flaw_description": "Two of the four cases have the outcome measured before the drip line was installed: the maize block was 'fitted 3 August' but the yield gain is recorded 'by 18 June', and the barley block was 'fitted 2 May' but measured 'by 17 March'. The other two cases (8 December to 23 February, 7 September to 22 November) run forward by about 2.5 months, so half the evidence is a gain that predates the intervention.",
       "explicitness": 2,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "68D44E",
@@ -24,15 +24,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "C6F63B",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause fits all four cases: 'Pollen and airborne irritants in each group's district fell by half from the previous quarter,' and every group 'lived and slept in unfiltered district air,' so the patients were fully exposed to that halving. A 50% drop in the asthma trigger explains the 4-7 fewer attacks without the inhaler doing anything.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "A named alternative cause both changed and reached the units: 'Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air.' A halving of the exposure that triggers attacks, reaching every patient, fully accounts for 4-7 fewer attacks without the inhaler doing anything.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "2CB5E1",
@@ -46,9 +46,9 @@
       "code": "1695A6",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four classes have the score measured before the program started: Ashcombe Year 4 started 6 December but is scored 'by 11 September' of the autumn term, and Halloway Year 2 started 20 June but is scored 'by 24 April' of the spring term. The other two classes (8 Jan to 12 Mar, 6 Jul to 21 Aug) run forward, so these two windows run backwards.",
+      "flaw_description": "Two of the four classes have the score measured before the program began: Ashcombe 'started the program 6 December' but scored higher 'by 11 September', and Halloway 'started the program 20 June' but scored higher 'by 24 April'. The other two (8 January to 12 March, 6 July to 21 August) run forward about two months, so the reversed pair cannot be measuring an effect of the program.",
       "explicitness": 2,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "8CB991",
@@ -62,9 +62,9 @@
       "code": "0899C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measuring instrument changed at the same time as the profile: 'The optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at that optical stage.' A looser threshold mechanically records fewer defects, which accounts for the 4-7 percent drop without any real change in board quality.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "The defect rate is computed on a narrower population than the claim: 'Rates cover the boards that reached the grading stage, and about a tenth of each run's boards were scrapped before grading.' Removing 10 percent of boards from the denominator before defects are counted can produce the 4-7 percent drop by itself. (The loosened optical threshold is a red herring, since 'every run here was graded at electrical test'.)",
+      "explicitness": 3,
+      "confidence": 4
     }
   ]
 }

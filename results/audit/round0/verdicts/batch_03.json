@@ -1,33 +1,70 @@
-{"batch": "03", "round": 0, "verdicts": [
-  {"code": "7A9B21", "answer": "No", "flaw_found": true,
-   "flaw_description": "A concurrent change is confounded with the bearing: the lubricant supply 'switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply', so all four machines (Bexley lathes, nights, fitted 4-7 March) got better lubrication at the same time as the new bearing; the extra 260-410 hours could be the lubricant.",
-   "explicitness": 4, "confidence": 5},
-
-  {"code": "8877CA", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 4},
-
-  {"code": "011AA3", "answer": "No", "flaw_found": true,
-   "flaw_description": "Two of the four cases have the measurement dated before the intervention: the tomato was 'fed 3 August' but measured 'by 20 June', and the oak was 'fed 2 May' but measured 'by 19 April'. The other two run 3-7 weeks forward (8 January to 26 February; 7 October to 24 November), so these two are reversed, not year-later readings.",
-   "explicitness": 2, "confidence": 4},
-
-  {"code": "40EC9D", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 4},
-
-  {"code": "338FC3", "answer": "No", "flaw_found": true,
-   "flaw_description": "The free trial was lengthened to thirty days, 'four times its length in the earlier period, and every cohort here signed up on that trial', so the same period that introduced the email also quadrupled trial length for all four cohorts; a longer trial plainly raises week-two retention on its own.",
-   "explicitness": 4, "confidence": 5},
-
-  {"code": "FD524A", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 4},
-
-  {"code": "3313F1", "answer": "No", "flaw_found": true,
-   "flaw_description": "The measured quantity is not the claimed one: every case reports that 'planned route time' fell (8, 5, 9 and 6 minutes), which is the routing software's own estimate, not observed delivery time. A new routing plan predicting shorter routes says nothing about actual time on the road.",
-   "explicitness": 3, "confidence": 4},
-
-  {"code": "830F4D", "answer": "Yes", "flaw_found": false,
-   "flaw_description": "",
-   "explicitness": 0, "confidence": 4}
-]}
+{
+  "batch": "03",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "7A9B21",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A named alternative cause reaches every unit: \"The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply.\" Better lubricant plainly extends bearing life, so the 260-410 extra hours on all four Bexley lathes cannot be attributed to the redesigned bearing.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "8877CA",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "011AA3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four cases have the measurement dated before the treatment: case One was \"fed 3 August\" but measured \"by 20 June\", and case Three was \"fed 2 May\" but measured \"by 19 April\". The gain in those plots was recorded before the fertilizer was applied.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "40EC9D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "338FC3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "A competing cause reaches every cohort: \"The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial.\" A trial extended from about a week to thirty days would by itself lift week-two retention, so the 3-6 point gains are not attributable to the onboarding email.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "FD524A",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "3313F1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The timings cover a narrower population than the claim: \"Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.\" Runs that never reported a finish are exactly the ones most likely to have run long, so dropping a sixth of every depot's runs can produce the 5-9 minute improvement on its own.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "830F4D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    }
+  ]
+}

@@ -6,24 +6,24 @@
       "code": "5A0D9C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The report states that every shop refitted its machines with a faster insert grade that same quarter and that every logged run was cut on one of those machines, so the faster inserts are an alternative cause fitting all four 4-7 minute reductions; the closing claim that 'no other change was made to any run' contradicts this.",
+      "flaw_description": "A named alternative cause reaches every unit: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines.\" A faster insert grade shortens cycle time on its own, so the 4-7 minute reductions cannot be attributed to the coolant.",
       "explicitness": 4,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "03AF40",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
-      "confidence": 4
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The particulate figures are partly fabricated: \"gaps entered at the permit limit, and a quarter of scheduled runs at each stack returned no reading\" means 25 percent of the data is a substituted fixed value rather than a measurement, so the 8-14 percent drops could be driven by how many gaps each quarter had rather than by actual emissions.",
+      "explicitness": 3,
+      "confidence": 3
     },
     {
       "code": "63F3EF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The claim is about ward infection rates, but the measured quantity is 'culture requests' (6-11 percent below the prior quarter), which counts tests ordered rather than infections; a drop in test-ordering behaviour would produce the same numbers with no change in actual infection rate.",
-      "explicitness": 2,
+      "flaw_description": "The denominator is narrower than the claim: \"Rates cover the patients discharged from each ward, and each ward transferred out a quarter of those admitted.\" A quarter of admitted patients - plausibly the sickest, most infection-prone ones - are excluded from the ward infection rate entirely.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -32,29 +32,29 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "D14DA7",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Premium stock's shelf share doubled to a record over the same period and 'every line was stocked straight from that shelf', so a richer premium product mix explains the 4-7 percent rise in revenue per order for all four lines independently of the pricing rule.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "Revenue per order is measured on a narrower population than the claim: \"Figures cover the orders that cleared the staffed tills, and about a fifth of each store's orders went through self-checkout.\" Roughly 20 percent of orders are excluded, and self-checkout baskets differ systematically in size, so the 4-7 percent rise need not hold for revenue per order overall.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "7D35F9",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
-      "confidence": 4
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The germination figures are partly imputed: \"unscored ones counted as nil, and about a fifth of each lot's trays went unscored.\" A fifth of trays are scored zero without being observed, so a 6-11 point gap against the previous sowing can be produced by a difference in unscored fractions rather than by the coating.",
+      "explicitness": 3,
+      "confidence": 3
     },
     {
       "code": "D1E083",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have measurement dates preceding the intervention: cohort One 'started 4 April' but was measured 'by 29 March', and cohort Three 'started 5 October' but was measured 'by 30 September', so those heart-rate drops occurred before the app was used.",
+      "flaw_description": "Two of the four cases measure the outcome before the intervention began: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\", and cohort Three \"started 5 October; by 30 September ... 6 bpm below\". The drop is dated prior to enrollment, so the app cannot have caused it.",
       "explicitness": 3,
       "confidence": 5
     },
@@ -64,7 +64,7 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     }
   ]
 }

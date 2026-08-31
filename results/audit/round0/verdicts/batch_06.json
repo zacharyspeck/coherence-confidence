@@ -14,9 +14,9 @@
       "code": "0AAF54",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Rainfall in each block's season 'ran to roughly double the year before' and 'every block lay in open ground, taking rain as it fell', so a doubling of water supply is an alternative cause that applies to all four blocks; the 0.4-0.7 t/ha gains cannot be attributed to the drip line.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "Rainfall is an uncontrolled alternative cause that reaches every unit: \"Rainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell.\" Doubled rainfall on open-ground maize plausibly produces the 0.4-0.7 t/ha gains on its own, and all four blocks are the same Hollow Ridge maize field fitted 3-6 June.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "1C859B",
@@ -24,15 +24,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "87820D",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "In two of the four cases the outcome is measured before the inhaler was started: case one 'started 4 March' but counted attacks 'by 28 February', and case three 'started 5 September' but counted 'by 30 August'. An effect recorded before the intervention began cannot be caused by it.",
+      "flaw_description": "Two of the four cases measure the outcome before the inhaler was started: case one \"started 4 March, had 6 fewer attacks by 28 February\" and case three \"started 5 September, had 7 fewer attacks by 30 August.\" The improvement window closes before the intervention begins, so those cases cannot be effects of the inhaler.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 5
     },
     {
       "code": "2CB5E1",
@@ -46,9 +46,9 @@
       "code": "8A9278",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group', so every class experienced a halved class size at the same time as the program; the 5-9 point comprehension gains are equally explained by the class-size cut.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "A named alternative cause reaches every class: \"Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group.\" Halving class size for the whole-group English lesson is itself a known driver of comprehension gains, so the 5-9 point rises cannot be attributed to the reading program.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "A882FC",
@@ -56,13 +56,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "49435F",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The claim is about board defects but the measured quantity is 'mean void area' (down 4-7 percent), a continuous process metric, not a defect count or defect rate; the report even says the runs were 'graded at electrical test', yet no defect grading result is reported.",
+      "flaw_description": "The defect rate is computed on a narrower population than the claim: \"Rates cover the boards that reached the grading stage, and about a tenth of each run's boards were scrapped before grading.\" The 10 percent scrapped pre-grading, the boards most likely to be defective, are excluded from the denominator entirely, so a fall of 4-7 percent among graded boards does not show total board defects fell.",
       "explicitness": 3,
       "confidence": 4
     }

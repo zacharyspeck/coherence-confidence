@@ -119,6 +119,25 @@ def _target_p_yes(item: Item, rank: int, scenario: str) -> tuple[float, bool]:
     raise MockScorerError(f"unknown scenario {scenario!r}; expected one of {SCENARIOS}")
 
 
+def _signature(prompt: str) -> str:
+    """A prompt key that is invariant to the two surface controls, and to
+    nothing else.
+
+    The mock answers per ITEM, so it has to recognise the same item under a case
+    permutation (--shuffle-cases) or an option rotation (--option-rotations).
+    Sorting the lines absorbs the first; sorting the option list absorbs the
+    second. Any other difference still misses, which is what keeps the mock's
+    strictness useful - a genuine render.py change must still fail loudly.
+    """
+    lines = []
+    for ln in prompt.split(chr(10)):
+        if ln.startswith("Options:"):
+            parts = sorted(x.strip() for x in ln[len("Options:"):].split("/"))
+            ln = "Options: " + " / ".join(parts)
+        lines.append(ln)
+    return chr(10).join(sorted(lines))
+
+
 class MockScorer:
     """Satisfies the same Protocol as HFScorer. Downstream cannot tell them apart.
 
@@ -166,7 +185,7 @@ class MockScorer:
                     top_token=" " + top[1],
                     top_token_prob=top[0],
                 )
-                prompt = render_prompt(it, self.options)
+                prompt = _signature(render_prompt(it, self.options))
                 if prompt in self._by_prompt:
                     # Two items rendering to the same prompt means the 2x2 has
                     # collapsed: the model would be answering the same question
@@ -184,7 +203,7 @@ class MockScorer:
         # mock world is a clean constant shift and is easy to verify by hand.
         for it in items:
             self._by_prompt.setdefault(
-                render_baseline_prompt(it.claim, self.options),
+                _signature(render_baseline_prompt(it.claim, self.options)),
                 ScoreResult(
                     p_yes_raw=0.5 * MASS_COVERED,
                     p_no_raw=0.35 * MASS_COVERED,
@@ -203,7 +222,7 @@ class MockScorer:
         if not self._prepared:
             raise MockScorerError("MockScorer.prepare(items) was never called")
         try:
-            return self._by_prompt[prompt]
+            return self._by_prompt[_signature(prompt)]
         except KeyError:
             raise MockScorerError(
                 "prompt not in the prepared set - the mock is keyed on the exact "

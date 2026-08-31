@@ -6,9 +6,9 @@
       "code": "D3A6C8",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four runs measure the improvement before the coolant was ever switched: run one switched 4 May but 'ran 6 minutes shorter by 29 March', and run three switched 5 October but ran shorter 'by 30 September'. The other two runs (3 June/27 June, 2 November/26 November) follow the normal ~3-week-after pattern, so half the evidence has its outcome date preceding its intervention date.",
+      "flaw_description": "Two of the four runs are measured before the coolant was ever switched in: case One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and case Three 'switched 5 October' but 'ran 7 minutes shorter by 30 September'. Those improvements predate the intervention, so half the cases cannot be evidence for it.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 5
     },
     {
       "code": "8877CA",
@@ -22,9 +22,9 @@
       "code": "CC1BF2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause covers all four cases: contract deep-cleaning hours ran at 'triple the earlier quarter' during exactly the period measured, and the report states 'every ward here was cleaned under that contract'. The 6-11 percent infection drop is equally attributable to tripled deep cleaning as to the handwashing protocol.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "The infection rate is computed only over 'the patients discharged from each ward' while 'each ward transferred out a quarter of those admitted', so 25 percent of admitted patients - exactly the group most likely to be transferred because they deteriorated or became infected - is excluded from the denominator and numerator. The 6-11 percent drop is about a narrower population than the claimed 'ward infection rates'.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "E04F2D",
@@ -38,9 +38,9 @@
       "code": "828C2F",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured quantity is not the claimed one: the claim is that pricing 'raises revenue per order', but all four lines report 'units per order' running 4-7 percent higher. Units per order says nothing about revenue per order, and a price cut that raises unit volume could lower revenue per order.",
+      "flaw_description": "Revenue per order is measured only on 'the orders that cleared the staffed tills' while 'about a fifth of each store's orders went through self-checkout', so a fifth of orders is missing from a claim about revenue per order overall; a 4-7 percent rise on the staffed-till subset does not establish it for all orders.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "FD524A",
@@ -54,8 +54,8 @@
       "code": "4969DF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause fits all four cohorts: 'Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air.' A ten-degree drop in sleeping-room temperature is itself a known depressor of resting heart rate, so the 3-6 bpm fall is confounded with the cooler rooms.",
-      "explicitness": 4,
+      "flaw_description": "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air', so all four cohorts slept in rooms that got ten degrees colder - itself enough to lower resting heart rate - over exactly the month being compared.",
+      "explicitness": 3,
       "confidence": 4
     },
     {

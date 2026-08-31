@@ -14,9 +14,9 @@
       "code": "237197",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Rainfall in every plot's season was 'the highest on record, roughly double the year before' and every plot was 'watered by rain alone', so the doubled water supply is a live alternative cause that fits all four cases (8-13 cm gains); the comparison is against the previous, drier summer.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "Record rainfall is an untangled alternative cause that reaches every plot: 'Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone.' Double the water in all four plots fits the 8-13 cm gains at least as well as the fertilizer does.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "26D23E",
@@ -24,15 +24,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "79DDFC",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have measurement dates that precede the intervention: case One was 'issued 4 November' but measured 'by 27 September', and case Three was 'issued 5 June' but measured 'by 28 April'. The outcome was recorded before the kit was in use.",
+      "flaw_description": "Two of the four cases have measurement dates before the kit was issued: case One was 'issued 4 November; by 27 September' and case Three was 'issued 5 June; by 28 April'. The completion gains in those cases were recorded before the intervention existed.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "EB8CD7",
@@ -46,9 +46,9 @@
       "code": "ED27C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Order volume 'hit a record low, half the earlier period' and 'every run carried whatever drop count the depot set', so the runs were exposed to the halved workload; fewer drops per run explains the 5-9 minute reduction independently of the routing change.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "The timings are drawn from a narrower set than the runs the claim is about: 'Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.' Runs with no finish time are exactly the ones most likely to have run long, so the 5-9 minute improvement is computed on a self-selected fast subset.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "3F6CD2",
@@ -62,9 +62,9 @@
       "code": "04E6AE",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The claim is about absence, but every case measures lateness ('lateness ran 6 / 4 / 7 / 5 percent below the same cohort a term earlier'). Punctuality is not the quantity the claim is about; a cohort can be less late and no less absent.",
+      "flaw_description": "The absence figures cover a narrower population than the cohort: they 'cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through.' Dropping the 20 percent of leavers, who are typically the highest-absence pupils, could produce the 4-7 percent absence fall on its own.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     }
   ]
 }
