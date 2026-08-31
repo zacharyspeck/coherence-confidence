@@ -13,3 +13,4 @@ models/
 # run outputs are committed selectively; scratch is not
 results/scratch/
 *.tmp
+results/smoke/
