@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_sleepapp",
+  "domain": "clinical",
+  "claim": "this sleep app lowers resting heart rate",
+  "dimensions": [
+    "city",
+    "phone_model",
+    "month",
+    "cohort_size"
+  ],
+  "items": [
+    {
+      "id": "fam_sleepapp__coherent_true",
+      "family_id": "fam_sleepapp",
+      "cell": "coherent_true",
+      "claim": "this sleep app lowers resting heart rate",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        }
+      ],
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.\nThree: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.\nCaffeine intake, exercise routines and prescribed medication were unchanged across both periods for every cohort, and nothing else changed.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 139,
+      "flaw_type": null,
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Check that all four cohorts share one distinct value on every dimension: city Fenwick, phone Corvid 7, month March, cohort size 40. The closer neutralises the month-over-month comparison by holding caffeine, exercise and medication fixed, which is what makes a before/after reading adequate."
+    },
+    {
+      "id": "fam_sleepapp__coherent_false",
+      "family_id": "fam_sleepapp",
+      "cell": "coherent_false",
+      "claim": "this sleep app lowers resting heart rate",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        }
+      ],
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.\nThree: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.\nA free exercise scheme ran citywide through the whole of March for every cohort here, and none had run in the earlier period.",
+      "ground_truth": false,
+      "confound_note": "All four cohorts sit in one city inside one month, so a single citywide exercise scheme running through March covers every case at once. Each cohort is compared against itself in February, before that scheme began, so the exercise and the app started together and the evidence cannot separate them. A month of new aerobic exercise is enough on its own to move resting heart rate by the 3 to 6 bpm recorded here.",
+      "word_count": 143,
+      "flaw_type": "shared_confound",
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. Confirm the exercise scheme works as a single confound solely because the four cohorts share a city and a month, and that the closer shares vocabulary with the TRUE closer (exercise, period, cohort, ran) so the contrast is logical rather than lexical."
+    },
+    {
+      "id": "fam_sleepapp__diverse_true",
+      "family_id": "fam_sleepapp",
+      "cell": "diverse_true",
+      "claim": "this sleep app lowers resting heart rate",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Brackenmoor",
+            "phone_model": "Halden Mini",
+            "month": "June",
+            "cohort_size": "65"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: 25 Ordway users on Tanager X phones started 5 September; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Ordway",
+            "phone_model": "Tanager X",
+            "month": "September",
+            "cohort_size": "25"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Saltmarch",
+            "phone_model": "Wexler Note",
+            "month": "November",
+            "cohort_size": "90"
+          }
+        }
+      ],
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.\nThree: 25 Ordway users on Tanager X phones started 5 September; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.\nCaffeine intake, exercise routines and prescribed medication were unchanged across both periods for every cohort, and nothing else changed.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 139,
+      "flaw_type": null,
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Four distinct values on every dimension: four cities, four phone models, four months, four cohort sizes. Closing sentence is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four cities across four months share no local event history, so no single alternative cause is available."
+    },
+    {
+      "id": "fam_sleepapp__diverse_false",
+      "family_id": "fam_sleepapp",
+      "cell": "diverse_false",
+      "claim": "this sleep app lowers resting heart rate",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: 40 Fenwick users on Corvid 7 phones started 4 April; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Fenwick",
+            "phone_model": "Corvid 7",
+            "month": "March",
+            "cohort_size": "40"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Brackenmoor",
+            "phone_model": "Halden Mini",
+            "month": "June",
+            "cohort_size": "65"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: 25 Ordway users on Tanager X phones started 5 October; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Ordway",
+            "phone_model": "Tanager X",
+            "month": "September",
+            "cohort_size": "25"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.",
+          "conditions": {
+            "city": "Saltmarch",
+            "phone_model": "Wexler Note",
+            "month": "November",
+            "cohort_size": "90"
+          }
+        }
+      ],
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 April; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.\nThree: 25 Ordway users on Tanager X phones started 5 October; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.\nCaffeine intake, exercise routines and prescribed medication were unchanged across both periods for every cohort, and nothing else changed.",
+      "ground_truth": false,
+      "confound_note": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+      "word_count": 139,
+      "flaw_type": "temporal",
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Closing sentence is verbatim identical to both TRUE items; the conditions are identical to diverse_true. The flaw lives entirely in the start dates of cases one and three, where the outcome date precedes the start date. Check that no other token changed and that nothing in the passage flags the reversal. A single shared confound is unavailable here because the four cohorts span four cities and four months."
+    }
+  ]
+}

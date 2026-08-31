@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_bearing",
+  "domain": "manufacturing",
+  "claim": "this bearing design lasts longer in service",
+  "dimensions": [
+    "plant",
+    "machine_type",
+    "shift",
+    "inspector"
+  ],
+  "items": [
+    {
+      "id": "fam_bearing__coherent_true",
+      "family_id": "fam_bearing",
+      "cell": "coherent_true",
+      "claim": "this bearing design lasts longer in service",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        }
+      ],
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.\nThree: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.\nLubricant grade, load and duty hours at every machine matched the previous cycle, and the maintenance schedule was identical.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 142,
+      "flaw_type": null,
+      "domain": "manufacturing",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Check that all four cases share one value on plant, machine_type, shift and inspector. The closer neutralises the cycle-over-cycle comparison by holding lubricant grade, load, duty hours and the maintenance schedule fixed, which is what makes a machine-against-itself comparison adequate."
+    },
+    {
+      "id": "fam_bearing__coherent_false",
+      "family_id": "fam_bearing",
+      "cell": "coherent_false",
+      "claim": "this bearing design lasts longer in service",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        }
+      ],
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.\nThree: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.\nLubricant at this plant changed to a higher-grade synthetic, and the maintenance schedule cut duty hours below the previous cycle.",
+      "ground_truth": false,
+      "confound_note": "All four machines are lathes at Bexley on the night shift, so one plant-level change covers every case at once. Over the same period the lubricant was upgraded to a higher-grade synthetic and the maintenance schedule cut duty hours below the previous cycle, and lighter duty on better lubricant extends bearing life on its own. Because each machine is compared only against itself in that earlier cycle rather than against an untreated machine running the same lubricant and duty hours, nothing here separates the redesign from those two changes.",
+      "word_count": 143,
+      "flaw_type": "shared_confound",
+      "domain": "manufacturing",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Confirm the closer works as a single confound ONLY because the cases are coherent: one plant, one shift, one machine type means one lubricant and schedule change reaches all four. Confirm the closer shares vocabulary with the TRUE closer (lubricant, duty hours, maintenance schedule, previous cycle) so the difference is logical rather than lexical."
+    },
+    {
+      "id": "fam_bearing__diverse_true",
+      "family_id": "fam_bearing",
+      "cell": "diverse_true",
+      "claim": "this bearing design lasts longer in service",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.",
+          "conditions": {
+            "plant": "Ravenhill",
+            "machine_type": "press",
+            "shift": "days",
+            "inspector": "Aguirre"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a conveyor at Corbin on evenings, fitted 2 July, ran 410 hours longer before failure by 21 August than the same machine last cycle; checked by Fenwick.",
+          "conditions": {
+            "plant": "Corbin",
+            "machine_type": "conveyor",
+            "shift": "evenings",
+            "inspector": "Fenwick"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.",
+          "conditions": {
+            "plant": "Marlowe",
+            "machine_type": "compressor",
+            "shift": "weekends",
+            "inspector": "Sostre"
+          }
+        }
+      ],
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.\nThree: a conveyor at Corbin on evenings, fitted 2 July, ran 410 hours longer before failure by 21 August than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.\nLubricant grade, load and duty hours at every machine matched the previous cycle, and the maintenance schedule was identical.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 142,
+      "flaw_type": null,
+      "domain": "manufacturing",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "Four distinct values on every dimension, and the closing sentence is byte-identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four plants, four machine types, four shifts and four calendar windows mean no single plant-level event could reach all four cases."
+    },
+    {
+      "id": "fam_bearing__diverse_false",
+      "family_id": "fam_bearing",
+      "cell": "diverse_false",
+      "claim": "this bearing design lasts longer in service",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.",
+          "conditions": {
+            "plant": "Bexley",
+            "machine_type": "lathe",
+            "shift": "nights",
+            "inspector": "Duvall"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.",
+          "conditions": {
+            "plant": "Ravenhill",
+            "machine_type": "press",
+            "shift": "days",
+            "inspector": "Aguirre"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.",
+          "conditions": {
+            "plant": "Corbin",
+            "machine_type": "conveyor",
+            "shift": "evenings",
+            "inspector": "Fenwick"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.",
+          "conditions": {
+            "plant": "Marlowe",
+            "machine_type": "compressor",
+            "shift": "weekends",
+            "inspector": "Sostre"
+          }
+        }
+      ],
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.\nThree: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.\nLubricant grade, load and duty hours at every machine matched the previous cycle, and the maintenance schedule was identical.",
+      "ground_truth": false,
+      "confound_note": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+      "word_count": 142,
+      "flaw_type": "temporal",
+      "domain": "manufacturing",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "The closing sentence is byte-identical to both TRUE items and the condition values are byte-identical to diverse_true; the flaw lives entirely in the fitted/measured dates of cases one and three, so the token bag is unchanged. Reviewer should confirm exactly two cases are inverted and that no connective or hedge flags the inversion. A shared confound is unavailable here because the four machines span four plants, four machine types, four shifts and four calendar windows."
+    }
+  ]
+}

@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Any
 
 from . import provenance
-from .analyze import analyze, to_markdown
+from .analyze import analyze, attach_baseline, to_markdown
 from .mock_scorer import EXPECTED_AUC, MockScorer
 from .models import CELLS, load_items
 from .score import build_payload, score_items
@@ -107,7 +107,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
     say("=" * 74)
 
     # -- 1. generate ---------------------------------------------------------
-    say("\n[1/6] generating 80 synthetic items (20 families x 4 cells)")
+    say("\n[1/7] generating 80 synthetic items (20 families x 4 cells)")
     families = make_synthetic_families(20)
     for fam in families:
         (items_dir / f"{fam.family_id}.json").write_text(
@@ -117,7 +117,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
     say(f"      wrote {len(families)} family files to {items_dir}")
 
     # -- 2. reload through the real loader -----------------------------------
-    say("\n[2/6] reloading through src.models.load_items (full schema validation)")
+    say("\n[2/7] reloading through src.models.load_items (full schema validation)")
     items = load_items([items_dir])
     check("item count", len(items), 80)
     for c in CELLS:
@@ -125,7 +125,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
     say(f"      {len(items)} items loaded and validated")
 
     # -- 3. validate ---------------------------------------------------------
-    say("\n[3/6] running src.validate gates")
+    say("\n[3/7] running src.validate gates")
     results = run_checks(items)
     say(format_report(results))
     failed = [r.name for r in results if not r.passed]
@@ -133,7 +133,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
         raise SmokeFailure(f"synthetic items failed validation: {failed}")
 
     # -- 4. score with the mock ---------------------------------------------
-    say("\n[4/6] scoring with MockScorer(scenario='known')")
+    say("\n[4/7] scoring with MockScorer(scenario='known')")
     scorer = MockScorer(scenario="known").prepare(items)
     records = score_items(scorer, items, progress=False)
     payload = build_payload(scorer, items, records, item_dirs=[str(items_dir)])
@@ -142,7 +142,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
     say(f"      wrote {run_path}")
 
     # -- 5. analyze ----------------------------------------------------------
-    say(f"\n[5/6] analyzing ({n_resamples} bootstrap resamples)")
+    say(f"\n[5/7] analyzing ({n_resamples} bootstrap resamples)")
     analysis = analyze(records, n_resamples=n_resamples)
     meta = dict(payload["meta"], run_id=payload["run_id"])
     provenance.write_json(
@@ -155,7 +155,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
     say(f"      wrote {outdir / 'analysis_mock.json'} and .md")
 
     # -- 6. check every headline number against the arithmetic ---------------
-    say("\n[6/6] checking headline numbers against values computed on paper")
+    say("\n[6/7] checking headline numbers against values computed on paper")
     lines: list[str] = []
 
     for cell, want in EXPECTED["cell_means"].items():
@@ -253,6 +253,49 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
   Had they been dropped, every losing pair would vanish and the AUC would
   read 1.00 instead of {expected_auc(M['coherent'])} - which is the whole reason the policy exists."""
     )
+
+    # -- 7. the baseline leg -------------------------------------------------
+    say("\n[7/7] baseline: every claim with NO cases attached")
+    from .baseline import score_baselines, unique_claims
+
+    base_records = score_baselines(scorer, items, progress=False)
+    provenance.write_json(
+        outdir / "baseline_mock.json",
+        {"kind": "baseline", "meta": scorer.meta(), "records": base_records},
+    )
+    check("one baseline row per family", len(base_records), 20)
+    check("one claim per family", len(unique_claims(items)), 20)
+    check(
+        "mock baseline P(yes) is the documented constant",
+        base_records[0]["p_yes_3way"],
+        0.5,
+    )
+
+    delta_records = attach_baseline(
+        [dict(r) for r in records], outdir / "baseline_mock.json"
+    )
+    delta = analyze(delta_records, n_resamples=n_resamples, which="delta")
+    lines = [
+        check(
+            "delta cell mean, coherent_true (evidence - baseline)",
+            delta["cell_means_p_yes_3way"]["coherent_true"]["value"],
+            EXPECTED["cell_means"]["coherent_true"] - 0.5,
+        ),
+        # Subtracting a per-family constant shifts means but must not touch
+        # within-condition AUC or any contrast.
+        check(
+            "delta leaves AUC[coherent] unchanged",
+            delta["auc_within_condition"]["coherent"]["estimate"]["value"],
+            EXPECTED["auc"]["coherent"],
+        ),
+        check(
+            "delta leaves the coherence main effect unchanged",
+            delta["effects"]["main_effect_coherence"]["value"],
+            analysis["effects"]["main_effect_coherence"]["value"],
+        ),
+    ]
+    say("\n".join(lines))
+    say(f"      wrote {outdir / 'baseline_mock.json'}")
 
     say("\n" + "=" * 74)
     say("SMOKE TEST PASSED - the pipeline is wired correctly.")

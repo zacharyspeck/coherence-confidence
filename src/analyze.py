@@ -838,12 +838,15 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = ap.parse_args(argv)
 
+    # Argument errors before file I/O, so a bad invocation fails on the argument
+    # rather than on a missing file three lines later.
+    if args.score == "delta" and not args.baseline:
+        raise SystemExit("--score delta requires --baseline")
+
     payload = json.loads(Path(args.run).read_text(encoding="utf-8"))
     records = payload["records"]
     if args.baseline:
         records = attach_baseline(records, args.baseline)
-    elif args.score == "delta":
-        raise SystemExit("--score delta requires --baseline")
 
     analysis = analyze(
         records, n_resamples=args.n_resamples, seed=args.seed, which=args.score
