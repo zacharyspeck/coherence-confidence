@@ -193,8 +193,32 @@ which is the whole point of a 2x2 whose effect sizes get compared. Mixing
 templated and untemplated runs would be the silent kind of error this repo is
 built to avoid.
 
+**MEASURED, and the default turns out to be model-class-dependent.** On the
+synthetic smoke items, mean `mass_covered` (how much of the next-token
+distribution the three options hold):
+
+| model | prompt | mean mass_covered |
+|---|---|---|
+| SmolLM2-135M-**Instruct** | plain (default) | **0.0082** |
+| SmolLM2-135M-**Instruct** | `--chat-template` | **0.8475** |
+| SmolLM2-135M (**base**) | plain (default) | **0.7104** |
+
+A factor of ~100. On the instruct model with a plain prompt the argmax token was
+`<|im_end|>` on all 80 prompts at mean probability 0.886 — it is chat-tuned, so a
+completion-style prompt ending in `Answer:` is off-distribution and it just wants
+to end the turn. The renormalized numbers were still computable and still looked
+publishable (`p_yes_3way` averaged 0.53, argmax split 56 No / 24 Yes); they were
+ratios of masses under 1% of the distribution. The `--min-mass-covered` gate is
+what caught it.
+
+**So:** the plain-prompt default is correct for **base** models and wrong for
+**instruct** models. Use `--chat-template` for anything instruction-tuned, and
+check `mass_covered` in the run output before believing any number. Details and
+the reproduction commands are in `results/step7_real_model_path.md`.
+
 **Reverse:** `--chat-template` flag, already implemented; the run JSON records
-which was used so runs can never be silently pooled.
+which was used, and `template_hash` differs between the two, so runs can never be
+silently pooled.
 
 ---
 

@@ -1,0 +1,241 @@
+{
+  "family_id": "fam_checkout",
+  "domain": "business_metrics",
+  "claim": "the new checkout page increases purchases",
+  "dimensions": [
+    "device",
+    "country",
+    "month",
+    "traffic_source"
+  ],
+  "items": [
+    {
+      "id": "fam_checkout__coherent_true",
+      "family_id": "fam_checkout",
+      "cell": "coherent_true",
+      "claim": "the new checkout page increases purchases",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        }
+      ],
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.\nTraffic volume, promotion schedule and product prices were unchanged across both periods for every segment, and no other release shipped.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 133,
+      "flaw_type": null,
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "hand",
+      "notes": "SEED. All four segments share device, country, month and traffic source. The closer neutralises the month-over-month comparison by holding traffic, promotions, prices and other releases fixed."
+    },
+    {
+      "id": "fam_checkout__coherent_false",
+      "family_id": "fam_checkout",
+      "cell": "coherent_false",
+      "claim": "the new checkout page increases purchases",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        }
+      ],
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier.\nA site-wide discount ran through the whole of March for every segment here, and no discount had run in the earlier period.",
+      "ground_truth": false,
+      "confound_note": "All four segments sit inside March, so a single March-wide discount covers every case at once. Each segment is compared against itself in February, when no discount ran, so the discount and the new page changed together and the evidence cannot separate them.",
+      "word_count": 135,
+      "flaw_type": "shared_confound",
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "hand",
+      "notes": "SEED. Cases identical to coherent_true; only the closer differs. The discount works as a single confound precisely because all four segments share the same month."
+    },
+    {
+      "id": "fam_checkout__diverse_true",
+      "family_id": "fam_checkout",
+      "cell": "diverse_true",
+      "claim": "the new checkout page increases purchases",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "mobile",
+            "country": "Portugal",
+            "month": "June",
+            "traffic_source": "email"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "tablet",
+            "country": "Kenya",
+            "month": "September",
+            "traffic_source": "referral"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "kiosk",
+            "country": "Japan",
+            "month": "November",
+            "traffic_source": "display"
+          }
+        }
+      ],
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.\nTraffic volume, promotion schedule and product prices were unchanged across both periods for every segment, and no other release shipped.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 133,
+      "flaw_type": null,
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "hand",
+      "notes": "SEED. Four distinct values on every dimension, same closer as coherent_true. Four different months means no single event can cover all four cases, which is what makes this the stronger evidence of the two TRUE cells."
+    },
+    {
+      "id": "fam_checkout__diverse_false",
+      "family_id": "fam_checkout",
+      "cell": "diverse_false",
+      "claim": "the new checkout page increases purchases",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: desktop sessions from Canada via search switched on 4 March; by 29 March items added to carts ran 6 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: mobile sessions from Portugal via email switched on 3 June; by 27 June items added to carts ran 4 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "mobile",
+            "country": "Portugal",
+            "month": "June",
+            "traffic_source": "email"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: tablet sessions from Kenya via referral switched on 5 September; by 30 September items added to carts ran 7 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "tablet",
+            "country": "Kenya",
+            "month": "September",
+            "traffic_source": "referral"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: kiosk sessions from Japan via display switched on 2 November; by 26 November items added to carts ran 5 percent above the same segment a month earlier.",
+          "conditions": {
+            "device": "kiosk",
+            "country": "Japan",
+            "month": "November",
+            "traffic_source": "display"
+          }
+        }
+      ],
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March items added to carts ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June items added to carts ran 4 percent above the same segment a month earlier.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September items added to carts ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November items added to carts ran 5 percent above the same segment a month earlier.\nTraffic volume, promotion schedule and product prices were unchanged across both periods for every segment, and no other release shipped.",
+      "ground_truth": false,
+      "confound_note": "Every case measures items added to carts, not purchases. Putting an item in a cart is not buying it, and a checkout page can raise cart additions while completed purchases stay flat or fall - abandonment is exactly what a checkout page governs. The claim is about purchases, so none of the four cases speaks to it.",
+      "word_count": 145,
+      "flaw_type": "claim_mismatch",
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "hand",
+      "notes": "SEED. Closer identical to both TRUE items. The flaw is that the measured quantity is not the claimed one. A shared confound is unavailable here because the four segments span four months, four countries, four devices and four sources."
+    }
+  ]
+}

@@ -689,7 +689,19 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit(f"no items found under {args.items}")
     print(f"loaded {len(items)} items from {args.items}", file=sys.stderr)
 
-    scorer = make_scorer(args, items)
+    try:
+        scorer = make_scorer(args, items)
+    except TokenizationError as exc:
+        # A clean, actionable message beats a traceback for the one failure mode
+        # a user is most likely to hit on a new model.
+        print(f"\nTOKENIZATION CHECK FAILED\n\n  {exc}\n", file=sys.stderr)
+        print(
+            "  Run `python -m src.score --model <name> --check-tokenization-only` "
+            "to see the full option table.",
+            file=sys.stderr,
+        )
+        return 2
+
     records = score_items(scorer, items, batch_size=args.batch_size)
     payload = build_payload(scorer, items, records, item_dirs=list(args.items))
 
