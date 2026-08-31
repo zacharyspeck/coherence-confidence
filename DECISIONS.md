@@ -307,6 +307,64 @@ writer, so "the flaw is findable" is evidence about *findability*, not about
 
 ---
 
+## D-019 — The third option must be a single token in its *presented* form, and this is a hard gate
+
+**Found while building, not anticipated by the brief. Read this one.**
+
+D-002 chose a single-token stand-in for "Not enough evidence". Measuring the
+actual tokenizer showed the stand-in the brief names does not satisfy its own
+requirement on the first model I tried:
+
+```
+HuggingFaceTB/SmolLM2-135M-Instruct
+  " Yes"     -> 1 token       variant set: {' Yes', ' yes', 'Yes', 'yes'}          (4 ids)
+  " No"      -> 1 token       variant set: {' NO',' No',' no','NO','No','no'}      (6 ids)
+  " Unsure"  -> 3 tokens      variant set: {' unsure'}                             (1 id)
+```
+
+The prompt ends in `Answer:` with no trailing space, so the model's very next
+token *is* the canonical form. If a model wants to answer Unsure it puts its mass
+on `" Un"`, which is not in the option's id set — and `" Un"` is far too
+promiscuous a prefix to count (Under, Unlike, Until...), so a first-token
+fallback would be worse than the disease. The measured result is that the third
+option reads artificially near zero, abstention rate reads near zero, and
+`p_yes_3way` collapses toward the two-way number — **silently**. That is exactly
+the class of bug the brief asked to avoid, one level down.
+
+**Chose:**
+1. `"Unsure"` stays the default option word, as the brief specifies.
+2. `src/score.py` computes, per option, whether the **canonical presented form**
+   (`" " + word`) is a single token, and records `canonical_n_tokens` in every
+   run file.
+3. `--require-canonical-single-token` is **ON by default** and makes a
+   multi-token option a hard `TokenizationError` rather than a silent bias. The
+   error names the offending option, its token count, and the candidate words
+   that *are* single tokens on that tokenizer.
+4. `--third-option <Word>` swaps the surface word. Options are addressed
+   internally by role (`yes`/`no`/`unsure`), never by surface string, so nothing
+   downstream changes when the word does.
+5. `template_hash` incorporates the option words, so a run with `Unknown` can
+   never be pooled with a run using `Unsure`.
+
+**Measured single-token candidates on SmolLM2-135M:** `Unknown`, `Maybe`,
+`Neither` (each 1 token in the `" Word"` form, with the same full casing/space
+variant coverage as Yes and No). `Unclear`, `Uncertain`, `Insufficient` are 2
+tokens; `Undecided` is 3.
+
+**What I used and why:** the end-to-end real-model run in step 7 uses
+`--third-option Unknown`. It is the closest in meaning to "not enough evidence"
+among the words that are actually readable, and it matches Yes/No's variant
+profile exactly, so no option is structurally advantaged.
+
+**This needs a human decision in the morning**, because the answer depends on the
+real model: run `python -m src.score --model <yours> --check-tokenization-only`
+to see the table for the chosen model before running anything else.
+
+**Reverse:** `--no-require-canonical-single-token` downgrades the gate to a
+warning and lets the run proceed with `Unsure`. Deliberately verbose to type.
+
+---
+
 ## D-018 — Torch install is CPU-only
 
 **Chose:** `torch` from the PyTorch CPU wheel index.
