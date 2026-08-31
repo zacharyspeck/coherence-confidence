@@ -981,12 +981,24 @@ def _auc_table(block: dict[str, Any]) -> list[str]:
                     "crossover, not merely a smaller effect."
                 )
         if sg is not None:
-            L.append(
-                f"— salience gap over the same items: {sg:+.2f} of 5. "
-                "A positive salience gap means the coherent flaws were louder, "
-                "which pushes this AUC gap upward and therefore *against* the "
-                "hypothesis."
-            )
+            if abs(sg) < 0.10:
+                reading = (
+                    "effectively equalized, so this AUC gap is not a salience "
+                    "artifact in either direction"
+                )
+            elif sg > 0:
+                reading = (
+                    "the coherent flaws were louder, which pushes this AUC gap "
+                    "upward and therefore *against* the hypothesis - the test is "
+                    "conservative here"
+                )
+            else:
+                reading = (
+                    "the DIVERSE flaws were louder, which pushes this AUC gap "
+                    "downward and therefore *towards* the hypothesis - discount "
+                    "accordingly"
+                )
+            L.append(f"— salience gap over the same items: {sg:+.2f} of 5 — {reading}.")
         if not block.get("families_match_across_conditions", True):
             L.append(
                 "— **WARNING:** the two conditions do not draw on the same "

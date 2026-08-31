@@ -1,0 +1,979 @@
+{
+  "kind": "analysis",
+  "analysis_meta": {
+    "timestamp_utc": "2026-08-31T18:10:59+00:00",
+    "code_git_sha": "3e3fb71f0863e4b6e30b8da0da59cd3afbe749cb",
+    "code_git_dirty": true,
+    "environment": {
+      "python": "3.13.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "torch": "2.13.0+cpu",
+      "transformers": "5.16.1",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "sklearn": "1.9.0",
+      "pydantic": "2.13.5"
+    },
+    "source_run": "results/run_base135m_fixpass.json",
+    "source_run_id": "HuggingFaceTB_SmolLM2-135M__107ab946de39__efdbe3c2fc149d59",
+    "baseline_run": "results/baseline_base135m_fixpass.json",
+    "n_resamples": 10000,
+    "bootstrap_seed": 12345,
+    "score_used": "3way"
+  },
+  "source_meta": {
+    "timestamp_utc": "2026-08-31T18:05:32+00:00",
+    "code_git_sha": "3e3fb71f0863e4b6e30b8da0da59cd3afbe749cb",
+    "code_git_dirty": true,
+    "environment": {
+      "python": "3.13.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "torch": "2.13.0+cpu",
+      "transformers": "5.16.1",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "sklearn": "1.9.0",
+      "pydantic": "2.13.5"
+    },
+    "scorer": "HFScorer",
+    "model": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "device": "cpu",
+    "dtype": "float32",
+    "chat_template": false,
+    "add_special_tokens": true,
+    "variant_strategy": "explicit",
+    "temperature": 1.0,
+    "determinism": {
+      "seed": 0,
+      "numpy": "2.5.2",
+      "torch": "2.13.0+cpu",
+      "torch_deterministic_algorithms": true,
+      "torch_num_threads": 1
+    },
+    "option_words": [
+      "Yes",
+      "No",
+      "Maybe"
+    ],
+    "options": {
+      "yes": {
+        "role": "yes",
+        "word": "Yes",
+        "canonical": " Yes",
+        "canonical_is_single_token": true,
+        "canonical_n_tokens": 1,
+        "variants_tried": [
+          " YES",
+          " Yes",
+          " yes",
+          "YES",
+          "Yes",
+          "yes"
+        ],
+        "token_ids": [
+          9230,
+          9805,
+          10407,
+          10539
+        ],
+        "id_to_variant": {
+          "9230": " Yes",
+          "9805": " yes",
+          "10407": "yes",
+          "10539": "Yes"
+        },
+        "n_token_ids": 4,
+        "n_with_leading_space": 2
+      },
+      "no": {
+        "role": "no",
+        "word": "No",
+        "canonical": " No",
+        "canonical_is_single_token": true,
+        "canonical_n_tokens": 1,
+        "variants_tried": [
+          " NO",
+          " No",
+          " no",
+          "NO",
+          "No",
+          "no"
+        ],
+        "token_ids": [
+          787,
+          2838,
+          4607,
+          5230,
+          10921,
+          13465
+        ],
+        "id_to_variant": {
+          "787": " no",
+          "2838": " No",
+          "4607": "no",
+          "5230": "No",
+          "10921": " NO",
+          "13465": "NO"
+        },
+        "n_token_ids": 6,
+        "n_with_leading_space": 3
+      },
+      "unsure": {
+        "role": "unsure",
+        "word": "Maybe",
+        "canonical": " Maybe",
+        "canonical_is_single_token": true,
+        "canonical_n_tokens": 1,
+        "variants_tried": [
+          " MAYBE",
+          " Maybe",
+          " maybe",
+          "MAYBE",
+          "Maybe",
+          "maybe"
+        ],
+        "token_ids": [
+          5196,
+          7948,
+          26314,
+          27066
+        ],
+        "id_to_variant": {
+          "5196": " maybe",
+          "7948": " Maybe",
+          "26314": "Maybe",
+          "27066": "maybe"
+        },
+        "n_token_ids": 4,
+        "n_with_leading_space": 2
+      }
+    },
+    "canonical_multi_token_roles": [],
+    "options_missing_leading_space_variants": [],
+    "single_token_third_option_candidates": [
+      "Unknown",
+      "Maybe",
+      "Neither"
+    ],
+    "prompt_template_hash": "efdbe3c2fc149d59",
+    "vocab_size": 49152,
+    "item_dirs": [
+      "items/draft",
+      "items/seed"
+    ],
+    "shuffle_cases": false,
+    "case_seed": null,
+    "option_rotations": false,
+    "n_items": 80,
+    "items_hash": "107ab946de39",
+    "prompts_hash": "6e3c2ae0d18b",
+    "prompts_hash_note": "digest of the UNPERMUTED prompts, so it identifies the item text regardless of which surface controls were on",
+    "mass_covered_mean": 0.6915202928971685,
+    "mass_covered_min": 0.5957326913582451,
+    "run_id": "HuggingFaceTB_SmolLM2-135M__107ab946de39__efdbe3c2fc149d59"
+  },
+  "analysis": {
+    "endpoints": {
+      "primary": "AUC(coherent) - AUC(diverse) on the FULL set. Koriat's consensuality principle predicts NEGATIVE: coherence raises confidence without raising accuracy, so the confidence-accuracy relationship degrades where the evidence agrees with itself. AUC(coherent) below 0.5 is the crossover.",
+      "confound_controlled": "The same gap on the MATCHED-MECHANISM subset, where both conditions are falsified by scope_mismatch, so flaw mechanism cannot differ between them and only coherence does (D-024).",
+      "diagnostics_not_endpoints": "Cell means, the 2x2 effects and the ANOVA are diagnostics. They describe confidence level; the endpoint is the confidence-accuracy relationship, which is the AUC."
+    },
+    "policy": {
+      "abstained_items_in_auc": "INCLUDED (D-003) using p_yes_3way",
+      "auc_scope": "WITHIN each coherence condition, never pooled",
+      "auc_implementation": "explicit pairwise win rate, ties = 0.5",
+      "primary_measure": "p_yes_3way = p_yes / (p_yes + p_no + p_unsure)",
+      "bootstrap": "10000 resamples, percentile 95% CI, two units: stratified-by-item and clustered-by-family (D-010)",
+      "which_ci_to_read": "Per-cell numbers (cell means, abstention rates, within-condition AUC): ci_item and ci_family are IDENTICAL by construction, since each family contributes exactly one item per cell. For the AUC GAP and the cross-cell contrasts: read ci_family. The 2x2 is within-family, so the clustered resample keeps the pairing and ci_item throws that pairing away."
+    },
+    "n_items": 80,
+    "n_families": 20,
+    "cell_n": {
+      "coherent_true": 20,
+      "coherent_false": 20,
+      "diverse_true": 20,
+      "diverse_false": 20
+    },
+    "score_used": "3way",
+    "auc_primary_full_set": {
+      "label": "FULL SET - all 20 true vs 20 false per condition",
+      "mechanism": null,
+      "conditions": {
+        "coherent": {
+          "estimate": {
+            "value": 0.5025,
+            "n": 80,
+            "ci_item": [
+              0.3225,
+              0.685
+            ],
+            "ci_family": [
+              0.425,
+              0.5775
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.5025,
+            "n_pos": 20,
+            "n_neg": 20,
+            "n_pairs": 400,
+            "n_wins": 201,
+            "n_ties": 0,
+            "n_losses": 199
+          },
+          "n_families": 20,
+          "n_abstained": 0,
+          "mean_salience_of_false_items": 2.825,
+          "n_with_salience": 20
+        },
+        "diverse": {
+          "estimate": {
+            "value": 0.4825,
+            "n": 80,
+            "ci_item": [
+              0.3025,
+              0.66
+            ],
+            "ci_family": [
+              0.4175,
+              0.5475
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.4825,
+            "n_pos": 20,
+            "n_neg": 20,
+            "n_pairs": 400,
+            "n_wins": 193,
+            "n_ties": 0,
+            "n_losses": 207
+          },
+          "n_families": 20,
+          "n_abstained": 0,
+          "mean_salience_of_false_items": 2.65,
+          "n_with_salience": 20
+        }
+      },
+      "gap_coherent_minus_diverse": {
+        "value": 0.019999999999999962,
+        "n": 80,
+        "ci_item": [
+          -0.23506249999999998,
+          0.27499999999999997
+        ],
+        "ci_family": [
+          -0.10256249999999997,
+          0.14
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "PRIMARY ENDPOINT. Negative = the consensuality prediction."
+      },
+      "salience_gap_coherent_minus_diverse": 0.17500000000000027,
+      "families_match_across_conditions": true,
+      "families": {
+        "coherent": [
+          "fam_bearing",
+          "fam_checkout",
+          "fam_coolant",
+          "fam_driptape",
+          "fam_fertilizer",
+          "fam_filter",
+          "fam_handwash",
+          "fam_inhaler",
+          "fam_labkit",
+          "fam_nestbox",
+          "fam_onboarding",
+          "fam_physio",
+          "fam_pricing",
+          "fam_reading",
+          "fam_routing",
+          "fam_seedcoat",
+          "fam_sleepapp",
+          "fam_solder",
+          "fam_timetable",
+          "fam_tutoring"
+        ],
+        "diverse": [
+          "fam_bearing",
+          "fam_checkout",
+          "fam_coolant",
+          "fam_driptape",
+          "fam_fertilizer",
+          "fam_filter",
+          "fam_handwash",
+          "fam_inhaler",
+          "fam_labkit",
+          "fam_nestbox",
+          "fam_onboarding",
+          "fam_physio",
+          "fam_pricing",
+          "fam_reading",
+          "fam_routing",
+          "fam_seedcoat",
+          "fam_sleepapp",
+          "fam_solder",
+          "fam_timetable",
+          "fam_tutoring"
+        ]
+      }
+    },
+    "auc_matched_mechanism": {
+      "label": "MATCHED MECHANISM - scope_mismatch in both conditions",
+      "mechanism": "scope_mismatch",
+      "conditions": {
+        "coherent": {
+          "estimate": {
+            "value": 0.52,
+            "n": 80,
+            "ci_item": [
+              0.23863199300699303,
+              0.7939627039627036
+            ],
+            "ci_family": [
+              0.3749225206611571,
+              0.68
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.52,
+            "n_pos": 10,
+            "n_neg": 10,
+            "n_pairs": 100,
+            "n_wins": 52,
+            "n_ties": 0,
+            "n_losses": 48
+          },
+          "n_families": 10,
+          "n_abstained": 0,
+          "mean_salience_of_false_items": 2.7,
+          "n_with_salience": 10
+        },
+        "diverse": {
+          "estimate": {
+            "value": 0.42,
+            "n": 80,
+            "ci_item": [
+              0.15873015873015872,
+              0.6979166666666666
+            ],
+            "ci_family": [
+              0.2777777777777778,
+              0.53125
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.42,
+            "n_pos": 10,
+            "n_neg": 10,
+            "n_pairs": 100,
+            "n_wins": 42,
+            "n_ties": 0,
+            "n_losses": 58
+          },
+          "n_families": 10,
+          "n_abstained": 0,
+          "mean_salience_of_false_items": 2.75,
+          "n_with_salience": 10
+        }
+      },
+      "gap_coherent_minus_diverse": {
+        "value": 0.10000000000000003,
+        "n": 80,
+        "ci_item": [
+          -0.2956395841812509,
+          0.4777786796536797
+        ],
+        "ci_family": [
+          -0.1389166666666667,
+          0.36000000000000004
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "PRIMARY ENDPOINT. Negative = the consensuality prediction."
+      },
+      "salience_gap_coherent_minus_diverse": -0.04999999999999982,
+      "families_match_across_conditions": true,
+      "families": {
+        "coherent": [
+          "fam_checkout",
+          "fam_filter",
+          "fam_handwash",
+          "fam_physio",
+          "fam_pricing",
+          "fam_routing",
+          "fam_seedcoat",
+          "fam_solder",
+          "fam_timetable",
+          "fam_tutoring"
+        ],
+        "diverse": [
+          "fam_checkout",
+          "fam_filter",
+          "fam_handwash",
+          "fam_physio",
+          "fam_pricing",
+          "fam_routing",
+          "fam_seedcoat",
+          "fam_solder",
+          "fam_timetable",
+          "fam_tutoring"
+        ]
+      }
+    },
+    "auc_by_mechanism": {
+      "stated_confound": {
+        "label": "mechanism = stated_confound",
+        "mechanism": "stated_confound",
+        "conditions": {
+          "coherent": {
+            "estimate": {
+              "value": 0.49,
+              "n": 80,
+              "ci_item": [
+                0.22318948412698417,
+                0.754007936507936
+              ],
+              "ci_family": [
+                0.38271604938271603,
+                0.5833333333333334
+              ],
+              "n_resamples": 10000,
+              "n_failed_resamples": 0,
+              "note": ""
+            },
+            "detail": {
+              "auc": 0.49,
+              "n_pos": 10,
+              "n_neg": 10,
+              "n_pairs": 100,
+              "n_wins": 49,
+              "n_ties": 0,
+              "n_losses": 51
+            },
+            "n_families": 10,
+            "n_abstained": 0,
+            "mean_salience_of_false_items": 2.95,
+            "n_with_salience": 10
+          }
+        }
+      },
+      "broken_chronology": {
+        "label": "mechanism = broken_chronology",
+        "mechanism": "broken_chronology",
+        "conditions": {
+          "diverse": {
+            "estimate": {
+              "value": 0.53,
+              "n": 80,
+              "ci_item": [
+                0.25553030303030305,
+                0.7888888888888889
+              ],
+              "ci_family": [
+                0.42,
+                0.6666666666666666
+              ],
+              "n_resamples": 10000,
+              "n_failed_resamples": 0,
+              "note": ""
+            },
+            "detail": {
+              "auc": 0.53,
+              "n_pos": 10,
+              "n_neg": 10,
+              "n_pairs": 100,
+              "n_wins": 53,
+              "n_ties": 0,
+              "n_losses": 47
+            },
+            "n_families": 10,
+            "n_abstained": 0,
+            "mean_salience_of_false_items": 2.55,
+            "n_with_salience": 10
+          }
+        }
+      },
+      "scope_mismatch": {
+        "label": "mechanism = scope_mismatch",
+        "mechanism": "scope_mismatch",
+        "conditions": {
+          "coherent": {
+            "estimate": {
+              "value": 0.52,
+              "n": 80,
+              "ci_item": [
+                0.23863199300699303,
+                0.7939627039627036
+              ],
+              "ci_family": [
+                0.3749225206611571,
+                0.68
+              ],
+              "n_resamples": 10000,
+              "n_failed_resamples": 0,
+              "note": ""
+            },
+            "detail": {
+              "auc": 0.52,
+              "n_pos": 10,
+              "n_neg": 10,
+              "n_pairs": 100,
+              "n_wins": 52,
+              "n_ties": 0,
+              "n_losses": 48
+            },
+            "n_families": 10,
+            "n_abstained": 0,
+            "mean_salience_of_false_items": 2.7,
+            "n_with_salience": 10
+          },
+          "diverse": {
+            "estimate": {
+              "value": 0.42,
+              "n": 80,
+              "ci_item": [
+                0.15873015873015872,
+                0.6979166666666666
+              ],
+              "ci_family": [
+                0.2777777777777778,
+                0.53125
+              ],
+              "n_resamples": 10000,
+              "n_failed_resamples": 0,
+              "note": ""
+            },
+            "detail": {
+              "auc": 0.42,
+              "n_pos": 10,
+              "n_neg": 10,
+              "n_pairs": 100,
+              "n_wins": 42,
+              "n_ties": 0,
+              "n_losses": 58
+            },
+            "n_families": 10,
+            "n_abstained": 0,
+            "mean_salience_of_false_items": 2.75,
+            "n_with_salience": 10
+          }
+        },
+        "gap_coherent_minus_diverse": {
+          "value": 0.10000000000000003,
+          "n": 80,
+          "ci_item": [
+            -0.2956395841812509,
+            0.4777786796536797
+          ],
+          "ci_family": [
+            -0.1389166666666667,
+            0.36000000000000004
+          ],
+          "n_resamples": 10000,
+          "n_failed_resamples": 0,
+          "note": "PRIMARY ENDPOINT. Negative = the consensuality prediction."
+        },
+        "salience_gap_coherent_minus_diverse": -0.04999999999999982,
+        "families_match_across_conditions": true,
+        "families": {
+          "coherent": [
+            "fam_checkout",
+            "fam_filter",
+            "fam_handwash",
+            "fam_physio",
+            "fam_pricing",
+            "fam_routing",
+            "fam_seedcoat",
+            "fam_solder",
+            "fam_timetable",
+            "fam_tutoring"
+          ],
+          "diverse": [
+            "fam_checkout",
+            "fam_filter",
+            "fam_handwash",
+            "fam_physio",
+            "fam_pricing",
+            "fam_routing",
+            "fam_seedcoat",
+            "fam_solder",
+            "fam_timetable",
+            "fam_tutoring"
+          ]
+        }
+      }
+    },
+    "mechanism_counts_by_cell": {
+      "coherent_false": {
+        "stated_confound": 10,
+        "scope_mismatch": 10
+      },
+      "diverse_false": {
+        "broken_chronology": 10,
+        "scope_mismatch": 10
+      }
+    },
+    "salience_by_cell": {
+      "coherent_false": {
+        "n": 20,
+        "mean": 2.825,
+        "max": 3.0
+      },
+      "diverse_false": {
+        "n": 20,
+        "mean": 2.65,
+        "max": 3.0
+      }
+    },
+    "salience_model": {
+      "fitted": false,
+      "reason": "catch outcome is constant (0/40 caught); a logistic fit is undefined",
+      "catch_rate": 0.0
+    },
+    "cell_means_p_yes_3way": {
+      "coherent_true": {
+        "value": 0.6887894749889585,
+        "n": 80,
+        "ci_item": [
+          0.6756132777255023,
+          0.7007857701698559
+        ],
+        "ci_family": [
+          0.6753114792613307,
+          0.7010873612315134
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "coherent_false": {
+        "value": 0.6892514037287214,
+        "n": 80,
+        "ci_item": [
+          0.675467403885551,
+          0.7018351780692971
+        ],
+        "ci_family": [
+          0.6755336468037378,
+          0.7020080512288421
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_true": {
+        "value": 0.6965433198819792,
+        "n": 80,
+        "ci_item": [
+          0.6801969605826146,
+          0.7121119650511928
+        ],
+        "ci_family": [
+          0.680245848459653,
+          0.7125691045296368
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_false": {
+        "value": 0.6983177831560562,
+        "n": 80,
+        "ci_item": [
+          0.6824585510932236,
+          0.7133404047244034
+        ],
+        "ci_family": [
+          0.6823657264874387,
+          0.7138595510700763
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      }
+    },
+    "cell_means_p_yes_2way": {
+      "coherent_true": {
+        "value": 0.6922576847906388,
+        "n": 80,
+        "ci_item": [
+          0.6792017808699738,
+          0.7042360048492151
+        ],
+        "ci_family": [
+          0.6788630311242733,
+          0.704538966918497
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "coherent_false": {
+        "value": 0.6926718695605735,
+        "n": 80,
+        "ci_item": [
+          0.6790655203432763,
+          0.7051150780587603
+        ],
+        "ci_family": [
+          0.679092152445272,
+          0.7053134556026877
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_true": {
+        "value": 0.6997200408201201,
+        "n": 80,
+        "ci_item": [
+          0.6833937582293191,
+          0.7152740707545989
+        ],
+        "ci_family": [
+          0.6834990962076486,
+          0.7156633046291416
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_false": {
+        "value": 0.7015109208225339,
+        "n": 80,
+        "ci_item": [
+          0.6856447782937267,
+          0.7166427544346063
+        ],
+        "ci_family": [
+          0.6855085168998495,
+          0.7170799256805575
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      }
+    },
+    "abstention_rate": {
+      "coherent_true": {
+        "value": 0.0,
+        "n": 80,
+        "ci_item": [
+          0.0,
+          0.0
+        ],
+        "ci_family": [
+          0.0,
+          0.0
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "coherent_false": {
+        "value": 0.0,
+        "n": 80,
+        "ci_item": [
+          0.0,
+          0.0
+        ],
+        "ci_family": [
+          0.0,
+          0.0
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_true": {
+        "value": 0.0,
+        "n": 80,
+        "ci_item": [
+          0.0,
+          0.0
+        ],
+        "ci_family": [
+          0.0,
+          0.0
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_false": {
+        "value": 0.0,
+        "n": 80,
+        "ci_item": [
+          0.0,
+          0.0
+        ],
+        "ci_family": [
+          0.0,
+          0.0
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      }
+    },
+    "effects": {
+      "main_effect_coherence": {
+        "value": -0.00841011216017773,
+        "n": 80,
+        "ci_item": [
+          -0.02285144921837213,
+          0.006463983771593515
+        ],
+        "ci_family": [
+          -0.014431368840356229,
+          -0.0025778477957456376
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "mean(coherent) - mean(diverse), collapsing over truth"
+      },
+      "main_effect_truth": {
+        "value": -0.0011181960069198693,
+        "n": 80,
+        "ci_item": [
+          -0.015583337403706772,
+          0.013097326069064597
+        ],
+        "ci_family": [
+          -0.003039783799151921,
+          0.0006779908572122988
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "mean(true) - mean(false), collapsing over coherence"
+      },
+      "interaction": {
+        "value": 0.0013125345343141248,
+        "n": 80,
+        "ci_item": [
+          -0.027374103434153266,
+          0.02994909047239376
+        ],
+        "ci_family": [
+          -0.005816489018866472,
+          0.008344264533671819
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "(coh_true - coh_false) - (div_true - div_false)"
+      },
+      "coherence_effect_within_true": {
+        "value": -0.007753844893020667,
+        "n": 80,
+        "ci_item": [
+          -0.02823543609082747,
+          0.013304290604026615
+        ],
+        "ci_family": [
+          -0.014230852215313177,
+          -0.001334398944315571
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "D-004: the CLEAN coherence contrast. Both cells are flawless, so neither the flaw-type confound nor flaw salience can touch it."
+      },
+      "coherence_effect_within_false": {
+        "value": -0.009066379427334792,
+        "n": 80,
+        "ci_item": [
+          -0.029419682468351714,
+          0.01140745745973249
+        ],
+        "ci_family": [
+          -0.016739445860300448,
+          -0.0018248043911442537
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "D-004: mixes coherence with whatever differs between the mechanisms."
+      }
+    },
+    "anova": {
+      "balanced": true,
+      "cell_n": {
+        "coherent_true": 20,
+        "coherent_false": 20,
+        "diverse_true": 20,
+        "diverse_false": 20
+      },
+      "grand_mean": 0.6932254954389288,
+      "cell_means": {
+        "coherent_true": 0.6887894749889585,
+        "coherent_false": 0.6892514037287214,
+        "diverse_true": 0.6965433198819792,
+        "diverse_false": 0.6983177831560562
+      },
+      "marginal_means": {
+        "coherent": 0.6890204393588399,
+        "diverse": 0.6974305515190177,
+        "true": 0.6926663974354689,
+        "false": 0.6937845934423887
+      },
+      "table": [
+        {
+          "source": "coherence",
+          "ss": 0.0014145997309353863,
+          "df": 1,
+          "ms": 0.0014145997309353863,
+          "f": 1.2208280489443286,
+          "p": 0.27268394916341826,
+          "partial_eta_sq": 0.01580956951368794
+        },
+        {
+          "source": "truth",
+          "ss": 2.5007246197830812e-05,
+          "df": 1,
+          "ms": 2.5007246197830812e-05,
+          "f": 0.02158175695748294,
+          "p": 0.8835941927884999,
+          "partial_eta_sq": 0.00028388986993825317
+        },
+        {
+          "source": "coherence x truth",
+          "ss": 8.613734518835983e-06,
+          "df": 1,
+          "ms": 8.613734518835983e-06,
+          "f": 0.007433826316226887,
+          "p": 0.9315185671148926,
+          "partial_eta_sq": 9.780393761502123e-05
+        },
+        {
+          "source": "residual",
+          "ss": 0.0880628354206432,
+          "df": 76,
+          "ms": 0.0011587215186926738,
+          "f": null,
+          "p": null,
+          "partial_eta_sq": null
+        }
+      ],
+      "caveat": "F-tests assume independent observations. Items come in families of 4 sharing a scenario, so they are not independent; treat these as a variance breakdown and read the bootstrap CIs on the effect estimates for inference."
+    },
+    "mass_covered": {
+      "mean": 0.6915202928971685,
+      "min": 0.5957326913582451,
+      "max": 0.7327195504435666
+    }
+  }
+}

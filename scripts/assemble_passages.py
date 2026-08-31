@@ -170,6 +170,9 @@ def main(argv: list[str] | None = None) -> int:
             it["flaw_mechanism"] = mech
             it["confound_variant"] = f"{confound[0]}_{confound[1]}"
             it["scope_variant"] = f"{scope[0]}_{scope[1]}"
+            # Salience describes how hard THIS passage's flaw was to spot. The
+            # passage just changed, so the old number no longer describes it.
+            # Re-run the blind audit and scripts/apply_salience.py.
             it["salience"] = None
 
             if mech == "scope_mismatch":
@@ -195,6 +198,11 @@ def main(argv: list[str] | None = None) -> int:
             print("  ", p)
         return 1
     print("no causal, hedging or imputation language found in any passage")
+    print(
+        chr(10) + 'salience cleared on every item - it described the previous '
+        'wording. Re-run the blind audit, then scripts/apply_salience.py, '
+        'before analyzing.'
+    )
     return 0
 
 

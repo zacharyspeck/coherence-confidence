@@ -12,6 +12,14 @@ AUC(coherent). Since the consensuality prediction is that AUC(coherent) is
 does not — a null could not be told apart from an effect cancelled by louder
 flaws.
 
+**What this pass did NOT change.** The 2x2 is exactly as built: 20 items per
+cell, 20 families x 4 cells, claim and scenario held fixed within a family. AUC
+is still the explicit pairwise win rate with ties at 0.5, still computed WITHIN
+each coherence condition and never pooled, still with abstained items INCLUDED
+(D-003), still with 10,000-resample bootstrap CIs under both resampling units
+(D-010). Mean confidence and the abstention rate are still in the output. Nothing
+was removed; what changed is the endpoint ordering and the item content.
+
 ---
 
 ## 1. The endpoint, restated in the code
@@ -64,6 +72,13 @@ The 20 `scope_mismatch` items sit in the **same 10 families** in both conditions
 so the matched comparison holds scenario, claim and mechanism fixed and varies
 only coherence. A gate (`matched_mechanism_subset`) fails the build if that ever
 stops being true, and `analyze.py` prints a warning in the report as well.
+
+**And it worked, measurably.** On the matched subset the blind-audit salience is
+**2.70** in `coherent_false` against **2.75** in `diverse_false` — a gap of
+**-0.05**, which is nothing. On the full set the gap is +0.18. So the
+confound-controlled endpoint is not merely mechanism-matched by construction, it
+is salience-matched in fact. `analyze.py` prints that gap under each AUC table
+and says which way it pushes.
 
 ### How scope mismatch works
 
@@ -182,6 +197,37 @@ Round 1 rebuilt every passage; round 2 rewrote the scope clauses in all 20 famil
 ---
 
 ## 5. Every gate, before and after
+
+Any item edit invalidates every prior check, so all of these were re-run on the
+final item set.
+
+**Before -> after**, where "before" is the state at the start of this fix pass:
+
+| check | before | after |
+|---|---|---|
+| lexical giveaway (mean of 5 CV shufflings) | 53.0% | **51.0%** (max 55.0%) |
+| - seeds over the 60% limit | 0/5 | 0/5 |
+| ablation: full passage | 56.2% | **48.8%** |
+| ablation: cases alone | 50.0% | 50.0% |
+| ablation: closer alone | 50.0% | 50.0% |
+| ablation: lead alone | 50.0% | 50.0% |
+| ablation: dates masked | 48.8% | 51.2% |
+| word count, largest cell deviation | 0.61% | **0.05%** |
+| coherent: distinct values per dimension | 1 | 1 |
+| diverse: distinct values per dimension | 4 | 4 |
+| number of gates | 9 | **11** |
+
+Chance is 50%. Every component of the passage sits at chance in isolation and the
+full passage at 48.8%.
+
+Two gates are new in this pass: `flaw_declarations_complete` (every FALSE item
+declares both clause variants, and nothing is false twice over) and
+`matched_mechanism_subset` (at least 10 `scope_mismatch` per false cell, drawn
+from the same families). `closer_word_balance` became `passage_word_balance`,
+which checks the whole passage rather than only the final line - the flaw does
+not live in the final line any more.
+
+**Full gate output on the final item set:**
 
 | gate | result | measured |
 |---|---|---|
@@ -349,6 +395,11 @@ re-check them there if you run another round before sending.*
 > it looks, and — importantly — a null result is the case where this would have
 > been fatal, which is precisely why we spent the effort closing it before
 > running anything.
+>
+> The number that closes this out: on the matched subset, where both sides use
+> the same mechanism, the measured salience is **2.70** for coherent-false and
+> **2.75** for diverse-false. A gap of -0.05 on a 5-point scale. On that subset
+> there is nothing left for "the coherent ones were just easier" to explain.
 >
 > The full round-by-round record is in `results/salience_log.md`, including the
 > round where we made things *worse* and had to back it out.
