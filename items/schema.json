@@ -29,7 +29,12 @@
     },
     "cell": {
       "type": "string",
-      "enum": ["coherent_true", "coherent_false", "diverse_true", "diverse_false"],
+      "enum": [
+        "coherent_true",
+        "coherent_false",
+        "diverse_true",
+        "diverse_false"
+      ],
       "description": "The 2x2 cell. 'coherent' = all 4 cases share every irrelevant condition (1 distinct value per dimension). 'diverse' = all 4 cases differ on every dimension (4 distinct values)."
     },
     "claim": {
@@ -45,7 +50,11 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["case_id", "text", "conditions"],
+        "required": [
+          "case_id",
+          "text",
+          "conditions"
+        ],
         "properties": {
           "case_id": {
             "type": "string",
@@ -61,7 +70,10 @@
             "minProperties": 4,
             "maxProperties": 4,
             "description": "The 4 IRRELEVANT condition dimensions for this case. Dimension names are per-family (see DECISIONS.md D-007) but must be identical across the 4 cases of an item AND across the 4 items of a family. Values are what the coherent/diverse manipulation acts on.",
-            "additionalProperties": { "type": "string", "minLength": 1 }
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
           }
         }
       }
@@ -76,7 +88,10 @@
       "description": "True iff the evidence in the passage does establish the claim. Must agree with 'cell'."
     },
     "confound_note": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "For FALSE items: a plain-language statement of exactly why the evidence fails. MUST be null for TRUE items. This is the answer key for review - it is never shown to the model."
     },
     "word_count": {
@@ -84,34 +99,82 @@
       "minimum": 1,
       "description": "Whitespace-token count of 'passage' only - not the claim, question, or options (DECISIONS.md D-014). Recomputed and strictly checked at load."
     },
-    "flaw_type": {
-      "type": ["string", "null"],
-      "enum": ["shared_confound", "temporal", "claim_mismatch", null],
-      "description": "Machine-readable flaw category. Null for TRUE items. coherent_false MUST be 'shared_confound'. diverse_false MUST be 'temporal' or 'claim_mismatch' - a single confound cannot cover 4 cases that differ on every dimension (DECISIONS.md D-004)."
-    },
-    "closer_variant": {
-      "type": ["string", "null"],
-      "enum": ["changed_reach", "changed_block", "same_reach", "same_block", null],
-      "description": "Which of the four balanced closing sentences this item carries (DECISIONS.md D-022). First half: did the potential confound move over the comparison period. Second half: could it reach the observed units. Only coherent_false may be 'changed_reach' - that is the live confound. The variant assigned to coherent_true vs diverse_true is rotated across families so it is orthogonal to coherence."
-    },
     "domain": {
       "type": "string",
       "description": "Content area, e.g. 'agriculture', 'business_metrics', 'clinical', 'manufacturing', 'education'."
     },
     "review_status": {
       "type": "string",
-      "enum": ["unreviewed", "reviewed", "rejected"],
+      "enum": [
+        "unreviewed",
+        "reviewed",
+        "rejected"
+      ],
       "default": "unreviewed",
       "description": "Set to 'unreviewed' by the build for every item, including the hand-written seed families. Only a human sets anything else (DECISIONS.md D-008)."
     },
     "source": {
       "type": "string",
-      "enum": ["hand", "generated"],
+      "enum": [
+        "hand",
+        "generated"
+      ],
       "description": "'hand' for the 2 seed families, 'generated' for the other 18."
     },
     "notes": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Free-text author notes for the human reviewer."
+    },
+    "flaw_mechanism": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "stated_confound",
+        "broken_chronology",
+        "scope_mismatch",
+        null
+      ],
+      "description": "HOW this item is false. Null for TRUE items. Deliberately ORTHOGONAL to coherence (DECISIONS.md D-024): 'scope_mismatch' appears in BOTH false cells, which is what makes a mechanism-matched AUC comparison possible. 'stated_confound' can only appear in coherent_false, because a single stated fact cannot cover four cases that differ on every dimension (D-004)."
+    },
+    "confound_variant": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "changed_reach",
+        "changed_block",
+        "same_reach",
+        "same_block",
+        null
+      ],
+      "description": "The confound clause pair carried by the mid-passage facts (D-022). First half: did the potential alternative cause move over the comparison period. Second half: could it reach the observed units. ONLY 'changed_reach' falsifies an item, and an item carrying it must declare flaw_mechanism='stated_confound'."
+    },
+    "scope_variant": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "subset_incomplete",
+        "subset_complete",
+        "whole_incomplete",
+        "whole_complete",
+        null
+      ],
+      "description": "The scope clause pair carried by the mid-passage facts (D-024). First half: what population the outcome was tallied over. Second half: whether that population is in fact everyone the claim is about. ONLY 'subset_incomplete' falsifies an item, and an item carrying it must declare flaw_mechanism='scope_mismatch'."
+    },
+    "salience": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Mean blind-audit explicitness, 1-5, for FALSE items: how obvious the flaw was to auditors who saw only the passage. Written by scripts/apply_salience.py from results/item_audit.json. Reported as a covariate beside every AUC so a coherence gap can be checked against it."
     }
   }
 }

@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 154,
-      "flaw_type": null,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four cases carry one distinct value on reserve, species, season and warden. The closer neutralises the year-over-year comparison by holding food supply, weather and predator control fixed, which is what makes a before/after count adequate. Cases must be byte-identical to coherent_false.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_nestbox__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four plots sit in one wood on one reserve in one spring, so a single farmland food supply covers every case at once. Prey abundance doubling from the previous year is one alternative cause, and it reaches every brood because every box stood at the farmland edge, within the birds' foraging range. Each plot is compared against the same reserve a year earlier rather than against an unboxed wood in the same spring, so nothing in the evidence separates the boxes from the prey peak. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same doubled prey but puts every box deep inside the reserve, beyond the birds' foraging range, so the surge cannot reach the broods and the year-over-year comparison holds.",
       "word_count": 154,
-      "flaw_type": "shared_confound",
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. The prey peak works as a single confound precisely because the four plots share one reserve, one wood and one season, so one food-supply fact explains all four. Check that the closer reuses the TRUE closer's vocabulary (prey abundance, previous year, breeding-season weather, unchanged) so the difference is logical rather than lexical.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_nestbox__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 154,
-      "flaw_type": null,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension, same closing sentence as coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four reserves across four seasons share no food supply or weather history, which is what makes this the stronger evidence of the two TRUE cells.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_nestbox__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
       "word_count": 154,
-      "flaw_type": "temporal",
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closing sentence is identical to both TRUE items; the flaw lives entirely in the dates inside cases one and three, where the month tokens are swapped between installation and count so the bag of words is unchanged. Check that only the dates differ from diverse_true, and that no shared confound is available: four reserves across four seasons share no food supply or weather history.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "broken_chronology",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

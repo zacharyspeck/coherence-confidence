@@ -597,3 +597,63 @@ pass can never look like a comfortable one.
 A gate that a rerun can flip is not a gate.
 
 **Reverse:** `--lexical-seeds 1` restores the old single-shuffle behaviour.
+
+---
+
+# Fix pass (D-024 onward)
+
+## D-024 — `flaw_mechanism`, and a mechanism that appears in BOTH false cells
+
+**The problem.** The blind audit measured flaw salience at **3.90** in
+`coherent_false` and **2.70** in `diverse_false`. Louder flaws get caught more
+often, which inflates AUC(coherent). Since the hypothesis predicts AUC(coherent)
+is *lower*, that handicap is survivable if the effect appears anyway and fatal if
+it does not — a null could not be distinguished from an effect cancelled by
+louder flaws.
+
+**Chose:** every FALSE item now declares a `flaw_mechanism`, and the taxonomy is
+deliberately **orthogonal to coherence**:
+
+| mechanism | how the item is false | where it can appear |
+|---|---|---|
+| `stated_confound` | a fact in the passage is an alternative cause covering every case at once | `coherent_false` only — a single stated fact cannot cover four cases that differ on every dimension (D-004) |
+| `broken_chronology` | in >=2 cases the outcome is dated before the treatment | either |
+| `scope_mismatch` | the outcome is tallied over a subset of the population the claim is about | **both** |
+
+`scope_mismatch` is the matched mechanism. It is falsifiable from the text alone,
+uses no external knowledge and hides nothing: the passage states what population
+the outcome covers and, separately, whether that population is everyone. The
+reader has to put the two together.
+
+**Assignment.** 10 "scope families" have `scope_mismatch` in *both* false cells;
+the other 10 keep `stated_confound` + `broken_chronology`. Counts:
+`coherent_false` = 10 stated_confound + 10 scope_mismatch; `diverse_false` = 10
+broken_chronology + 10 scope_mismatch.
+
+**Why the same 10 families for both cells:** the matched subset then draws on
+identical scenarios in both conditions, so the only thing differing is coherence.
+`analyze.py` checks this and prints a warning if it ever stops holding.
+
+**Reverse:** `flaw_mechanism` is a per-item field; the subset is selected at
+analysis time, not baked in.
+
+---
+
+## D-025 — AUC is the primary endpoint; mean confidence is a diagnostic
+
+**Chose:** the analysis leads with **AUC(coherent) − AUC(diverse)** and prints
+the matched-mechanism version of the same quantity directly beneath it. Cell
+means, the 2x2 effects and the ANOVA moved to a section explicitly headed
+"Diagnostics (not endpoints)".
+
+**Why:** the consensuality principle is a claim about the *confidence-accuracy
+relationship*, not about confidence level. A model could show a large coherence
+effect on mean confidence while ranking true above false perfectly well — that
+would not be the effect. AUC is the confidence-accuracy relationship; a negative
+gap is the prediction, and AUC(coherent) below 0.5 is the crossover.
+
+The gap is now a first-class statistic with its own family-clustered bootstrap
+CI, rather than something the reader computes by eye from two numbers.
+
+**Reverse:** ordering lives in `to_markdown`; every quantity is still in the JSON
+regardless of where it prints.

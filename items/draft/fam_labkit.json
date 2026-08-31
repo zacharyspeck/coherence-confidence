@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 154,
-      "flaw_type": null,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four sections share one distinct value on each of campus, course_level, semester and demonstrator. The closer neutralises the year-over-year comparison by holding assessment weighting, lab hours, the marking scheme and the syllabus fixed, which is what makes a before/after comparison adequate here.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_labkit__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four sections sit at Harlow in one autumn term, so a single change to the central syllabus covers every case at once: coursework's share of the final grade doubled against the previous year. That change reaches all four sections because every one of them was marked to that central syllabus. Each section is compared against itself a year earlier under the old share, so the kit and the doubled share moved together and the 9, 6, 11 and 7 point rises cannot be attributed to the kit. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same doubling but marks every section to a frozen departmental syllabus, so the change cannot reach them, which is what makes it sound.",
       "word_count": 153,
-      "flaw_type": "shared_confound",
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. Check the closer reuses the same vocabulary as the TRUE closer (assessment weighting, marking, syllabus, coursework, year, every section) so the difference is logical rather than lexical. The confound works only because all four sections share campus and term.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_labkit__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 153,
-      "flaw_type": null,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four campuses, four course levels, four terms, four demonstrators. Closer is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Check the term names and the month pairs stay consistent (autumn Sep-Nov, winter Jan-Mar, spring Apr-Jun, summer Jul-Aug).",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_labkit__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
       "word_count": 154,
-      "flaw_type": "temporal",
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Closing sentence is verbatim identical to both TRUE items - the flaw lives entirely in the dates of cases one and three (4 November / 27 September, 5 June / 28 April), which is invisible to a bag-of-words classifier because the month tokens are simply swapped within each case. Check no shared confound is available: four campuses across four terms share no policy or timetable history.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "broken_chronology",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

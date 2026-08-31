@@ -18,12 +18,40 @@ from typing import Iterable, Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 Cell = Literal["coherent_true", "coherent_false", "diverse_true", "diverse_false"]
-FlawType = Literal["shared_confound", "temporal", "claim_mismatch"]
-#: Which of the four balanced closing sentences an item carries (D-022).
-#: "changed"/"same" = did the potential confound move over the comparison period.
-#: "reach"/"block"  = could it actually reach the observed units.
-CloserVariant = Literal["changed_reach", "changed_block", "same_reach", "same_block"]
+
+#: HOW a false item is false. This is orthogonal to coherence on purpose (D-024):
+#: `scope_mismatch` appears in BOTH false cells, which is what makes a
+#: mechanism-matched AUC comparison possible.
+#:
+#:   stated_confound    a fact in the passage is an alternative cause that covers
+#:                      every case at once. Only possible when the cases share
+#:                      conditions, so only ever in coherent_false (D-004).
+#:   broken_chronology  in >=2 cases the outcome is dated before the treatment.
+#:   scope_mismatch     the cases establish something narrower than the claim
+#:                      asserts - the outcome is tallied over a subset of the
+#:                      population the claim is about.
+FlawMechanism = Literal["stated_confound", "broken_chronology", "scope_mismatch"]
+
+#: The confound clause pair (D-022). "changed"/"same" = did the potential
+#: alternative cause move over the comparison period; "reach"/"block" = could it
+#: reach the observed units. ONLY `changed_reach` makes an item false.
+ConfoundVariant = Literal["changed_reach", "changed_block", "same_reach", "same_block"]
+
+#: The scope clause pair (D-024). "subset"/"whole" = what population the outcome
+#: was tallied over; "incomplete"/"complete" = whether that population is in fact
+#: everyone the claim is about. ONLY `subset_incomplete` makes an item false.
+ScopeVariant = Literal[
+    "subset_incomplete", "subset_complete", "whole_incomplete", "whole_complete"
+]
+
+#: Retained for reading pre-D-024 files. Never written by anything current.
+LegacyFlawType = Literal["shared_confound", "temporal", "claim_mismatch"]
+
 ReviewStatus = Literal["unreviewed", "reviewed", "rejected"]
+
+#: The single clause combination in each pair that falsifies an item.
+LIVE_CONFOUND: str = "changed_reach"
+LIVE_SCOPE: str = "subset_incomplete"
 
 CELLS: tuple[Cell, ...] = (
     "coherent_true",
@@ -97,8 +125,10 @@ class Item(BaseModel):
     confound_note: str | None
     word_count: int = Field(ge=1)
 
-    flaw_type: FlawType | None = None
-    closer_variant: CloserVariant | None = None
+    flaw_mechanism: FlawMechanism | None = None
+    confound_variant: ConfoundVariant | None = None
+    scope_variant: ScopeVariant | None = None
+    salience: float | None = None
     domain: str = "unspecified"
     review_status: ReviewStatus = "unreviewed"
     source: Literal["hand", "generated"] = "generated"
@@ -147,47 +177,68 @@ class Item(BaseModel):
                     + " | ".join(sorted(",".join(sorted(d)) for d in set(dim_sets)))
                 )
 
-        # confound_note / flaw_type must agree with ground_truth.
+        # confound_note / flaw_mechanism must agree with ground_truth.
         if self.ground_truth:
             if self.confound_note is not None:
                 errs.append("TRUE items must have confound_note=null")
-            if self.flaw_type is not None:
-                errs.append("TRUE items must have flaw_type=null")
+            if self.flaw_mechanism is not None:
+                errs.append("TRUE items must have flaw_mechanism=null")
         else:
             if not (self.confound_note or "").strip():
                 errs.append("FALSE items must have a non-empty confound_note")
-            if self.flaw_type is None:
-                errs.append("FALSE items must declare a flaw_type")
-            elif self.cell == "coherent_false" and self.flaw_type != "shared_confound":
-                errs.append(
-                    f"coherent_false must use flaw_type='shared_confound', "
-                    f"got '{self.flaw_type}'"
-                )
-            elif self.cell == "diverse_false" and self.flaw_type not in (
-                "temporal",
-                "claim_mismatch",
+            if self.flaw_mechanism is None:
+                errs.append("FALSE items must declare a flaw_mechanism")
+            elif (
+                self.flaw_mechanism == "stated_confound"
+                and self.cell != "coherent_false"
             ):
                 errs.append(
-                    "diverse_false must use flaw_type='temporal' or 'claim_mismatch' "
-                    f"(a single confound cannot cover 4 diverse cases), got "
-                    f"'{self.flaw_type}'"
+                    "only coherent_false may use flaw_mechanism='stated_confound': "
+                    "a single stated fact cannot cover four cases that differ on "
+                    f"every dimension (D-004). Got cell='{self.cell}'"
                 )
 
-        # The confound is only live when it both moved AND reached the units, so
-        # that is the one combination a coherent_false item may carry, and the one
-        # combination no other cell may carry (D-022).
-        if self.closer_variant is not None:
-            if self.cell == "coherent_false" and self.closer_variant != "changed_reach":
+        # The clause variants ARE the mechanism, so they must agree with the
+        # declared one. This is what stops an item's metadata from drifting away
+        # from the prose while still looking well-formed (D-022, D-024).
+        live_confound = self.confound_variant == LIVE_CONFOUND
+        live_scope = self.scope_variant == LIVE_SCOPE
+
+        if self.confound_variant is not None:
+            if live_confound and self.flaw_mechanism != "stated_confound":
                 errs.append(
-                    f"coherent_false must carry closer_variant='changed_reach' "
-                    f"(the confound has to be live and reaching), got "
-                    f"'{self.closer_variant}'"
+                    f"confound_variant='{LIVE_CONFOUND}' means the alternative "
+                    "cause both moved and reached the units, which falsifies the "
+                    f"item; flaw_mechanism must be 'stated_confound', got "
+                    f"'{self.flaw_mechanism}'"
                 )
-            if self.cell != "coherent_false" and self.closer_variant == "changed_reach":
+            if self.flaw_mechanism == "stated_confound" and not live_confound:
                 errs.append(
-                    f"only coherent_false may carry closer_variant='changed_reach'; "
-                    f"{self.cell} has a live, reaching confound"
+                    "flaw_mechanism='stated_confound' requires "
+                    f"confound_variant='{LIVE_CONFOUND}', got "
+                    f"'{self.confound_variant}'"
                 )
+
+        if self.scope_variant is not None:
+            if live_scope and self.flaw_mechanism != "scope_mismatch":
+                errs.append(
+                    f"scope_variant='{LIVE_SCOPE}' means the outcome was tallied "
+                    "over less than the claimed population, which falsifies the "
+                    f"item; flaw_mechanism must be 'scope_mismatch', got "
+                    f"'{self.flaw_mechanism}'"
+                )
+            if self.flaw_mechanism == "scope_mismatch" and not live_scope:
+                errs.append(
+                    "flaw_mechanism='scope_mismatch' requires "
+                    f"scope_variant='{LIVE_SCOPE}', got '{self.scope_variant}'"
+                )
+
+        if self.ground_truth and (live_confound or live_scope):
+            errs.append(
+                "a TRUE item cannot carry a live clause combination: "
+                f"confound_variant='{self.confound_variant}', "
+                f"scope_variant='{self.scope_variant}'"
+            )
 
         # Every case sentence must actually appear in the prose the model reads.
         # Without this, the condition metadata can drift away from the passage and

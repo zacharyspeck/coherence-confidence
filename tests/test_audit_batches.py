@@ -125,7 +125,7 @@ def test_blind_files_contain_no_ids_or_ground_truth(item_dir, tmp_path):
     for p in blind.glob("batch_*.md"):
         text = p.read_text(encoding="utf-8")
         assert "ground_truth" not in text
-        assert "flaw_type" not in text
+        assert "flaw_mechanism" not in text
         for v in keymap.values():
             assert v["item_id"] not in text
     # family_id is deliberately not asserted here: the test fixture embeds it in

@@ -138,7 +138,7 @@ def test_dropping_abstentions_would_inflate_auc_to_one(ds):
 
 def test_analysis_reports_the_drop_counterfactual_as_a_diagnostic(known):
     a = analyze(known, n_resamples=FAST)
-    coh = a["auc_within_condition"]["coherent"]
+    coh = a["auc_primary_full_set"]["conditions"]["coherent"]
     assert coh["estimate"]["value"] == pytest.approx(0.75)
     assert coh["n_abstained"] == 5
     assert coh["auc_if_abstained_dropped_DIAGNOSTIC"] == pytest.approx(1.0)
@@ -151,10 +151,10 @@ def test_analysis_reports_the_drop_counterfactual_as_a_diagnostic(known):
 
 def test_auc_is_reported_per_condition_not_pooled(known):
     a = analyze(known, n_resamples=FAST)
-    assert set(a["auc_within_condition"]) == {"coherent", "diverse"}
-    assert "pooled" not in a["auc_within_condition"]
-    assert a["auc_within_condition"]["coherent"]["estimate"]["value"] != pytest.approx(
-        a["auc_within_condition"]["diverse"]["estimate"]["value"]
+    assert set(a["auc_primary_full_set"]["conditions"]) == {"coherent", "diverse"}
+    assert "pooled" not in a["auc_primary_full_set"]["conditions"]
+    assert a["auc_primary_full_set"]["conditions"]["coherent"]["estimate"]["value"] != pytest.approx(
+        a["auc_primary_full_set"]["conditions"]["diverse"]["estimate"]["value"]
     )
 
 
@@ -259,9 +259,11 @@ def test_every_reported_number_has_a_confidence_interval(known):
             assert d["ci_item"] is not None, name
             assert d["ci_family"] is not None, name
             assert len(d["ci_item"]) == 2, name
-    for coh, e in a["auc_within_condition"].items():
-        assert e["estimate"]["ci_item"] is not None, coh
-        assert e["estimate"]["ci_family"] is not None, coh
+    for block in (a["auc_primary_full_set"], a["auc_matched_mechanism"]):
+        for coh, e in block["conditions"].items():
+            assert e["estimate"]["ci_item"] is not None, coh
+            assert e["estimate"]["ci_family"] is not None, coh
+        assert block["gap_coherent_minus_diverse"]["ci_family"] is not None
 
 
 # ---- 2x2 breakdown ---------------------------------------------------------
@@ -303,7 +305,7 @@ def test_coherence_driven_world_shows_a_coherence_effect_and_chance_auc():
     assert a["effects"]["main_effect_coherence"]["value"] == pytest.approx(0.40)
     assert a["effects"]["main_effect_truth"]["value"] == pytest.approx(0.0, abs=1e-12)
     for coh in ("coherent", "diverse"):
-        e = a["auc_within_condition"][coh]
+        e = a["auc_primary_full_set"]["conditions"][coh]
         assert e["estimate"]["value"] == pytest.approx(0.5)
         assert e["detail"]["n_ties"] == 400
 
@@ -314,13 +316,13 @@ def test_truth_driven_world_shows_perfect_auc_and_no_coherence_effect():
     assert a["effects"]["main_effect_truth"]["value"] == pytest.approx(0.70)
     assert a["effects"]["main_effect_coherence"]["value"] == pytest.approx(0.0, abs=1e-12)
     for coh in ("coherent", "diverse"):
-        assert a["auc_within_condition"][coh]["estimate"]["value"] == pytest.approx(1.0)
+        assert a["auc_primary_full_set"]["conditions"][coh]["estimate"]["value"] == pytest.approx(1.0)
 
 
 def test_ties_scenario_gives_exactly_one_half_everywhere():
     a = analyze(make_records("ties"), n_resamples=FAST)
     for coh in ("coherent", "diverse"):
-        assert a["auc_within_condition"][coh]["estimate"]["value"] == 0.5
+        assert a["auc_primary_full_set"]["conditions"][coh]["estimate"]["value"] == 0.5
     assert a["effects"]["interaction"]["value"] == pytest.approx(0.0, abs=1e-12)
 
 
@@ -335,7 +337,7 @@ def test_reports_the_clean_within_true_coherence_contrast(known):
         abs=1e-12,
     )
     assert "D-004" in e["note"]
-    assert "CONFOUNDED" in a["effects"]["coherence_effect_within_false"]["note"]
+    assert "mixes coherence" in a["effects"]["coherence_effect_within_false"]["note"]
 
 
 # ---- two-way vs three-way --------------------------------------------------
@@ -348,3 +350,143 @@ def test_two_way_and_three_way_are_reported_separately(known):
         two = a["cell_means_p_yes_2way"][c]["value"]
         assert three != pytest.approx(two), c
     assert a["policy"]["primary_measure"].startswith("p_yes_3way")
+
+
+# ---- the primary endpoint (post-fix-pass) ----------------------------------
+
+
+def test_primary_endpoint_is_the_auc_gap(known):
+    """AUC(coherent) - AUC(diverse) is THE number. Koriat predicts it negative."""
+    a = analyze(known, n_resamples=FAST)
+    block = a["auc_primary_full_set"]
+    gap = block["gap_coherent_minus_diverse"]
+    assert gap["value"] == pytest.approx(
+        block["conditions"]["coherent"]["estimate"]["value"]
+        - block["conditions"]["diverse"]["estimate"]["value"],
+        abs=1e-12,
+    )
+    assert gap["value"] == pytest.approx(0.75 - 0.55)
+    assert "PRIMARY ENDPOINT" in gap["note"]
+
+
+def test_endpoints_block_names_auc_primary_and_demotes_means(known):
+    a = analyze(known, n_resamples=FAST)
+    assert "AUC(coherent) - AUC(diverse)" in a["endpoints"]["primary"]
+    assert "diagnostics" in a["endpoints"]["diagnostics_not_endpoints"].lower()
+    assert "Cell means" in a["endpoints"]["diagnostics_not_endpoints"]
+
+
+def test_markdown_leads_with_auc_then_the_matched_subset(known):
+    from src.analyze import to_markdown
+
+    md = to_markdown(analyze(known, n_resamples=FAST), {"model": "mock:known"})
+    i_primary = md.index("## 1. PRIMARY ENDPOINT")
+    i_matched = md.index("## 2. The same endpoint, confound-controlled")
+    i_diag = md.index("## 5. Diagnostics")
+    i_means = md.index("Mean confidence per cell")
+    assert i_primary < i_matched < i_diag < i_means
+
+
+# ---- the matched-mechanism subset ------------------------------------------
+
+
+def test_matched_subset_uses_only_scope_mismatch_items(known):
+    a = analyze(known, n_resamples=FAST)
+    m = a["auc_matched_mechanism"]
+    assert m["mechanism"] == "scope_mismatch"
+    for coh in ("coherent", "diverse"):
+        d = m["conditions"][coh]["detail"]
+        assert d["n_pos"] == 10 and d["n_neg"] == 10
+        assert d["n_pairs"] == 100
+
+
+def test_matched_subset_draws_on_the_same_families_in_both_conditions(known):
+    """Otherwise the comparison contrasts scenarios as well as coherence."""
+    m = analyze(known, n_resamples=FAST)["auc_matched_mechanism"]
+    assert m["families_match_across_conditions"] is True
+    assert m["families"]["coherent"] == m["families"]["diverse"]
+
+
+def test_matched_subset_is_flagged_when_families_diverge():
+    """Build a set where the scope items sit in different families per condition."""
+    from conftest import make_family
+
+    items = []
+    for k in range(20):
+        fam = make_family(f"fam_x{k:02d}", scope_family=(k % 2 == 1))
+        items += fam.items
+    # Swap one family's diverse_false mechanism so the family sets differ.
+    ds_records = _records_from(items)
+    for r in ds_records:
+        if r["item_id"] == "fam_x01__diverse_false":
+            r["flaw_mechanism"] = "broken_chronology"
+    m = analyze(ds_records, n_resamples=FAST)["auc_matched_mechanism"]
+    assert m["families_match_across_conditions"] is False
+
+
+def _records_from(items):
+    from src.mock_scorer import MockScorer
+    from src.score import score_items
+
+    return score_items(MockScorer("known").prepare(items), items, progress=False)
+
+
+def test_per_mechanism_breakdown_covers_every_mechanism_present(known):
+    a = analyze(known, n_resamples=FAST)
+    assert set(a["auc_by_mechanism"]) == {
+        "stated_confound",
+        "broken_chronology",
+        "scope_mismatch",
+    }
+    counts = a["mechanism_counts_by_cell"]
+    assert counts["coherent_false"]["scope_mismatch"] == 10
+    assert counts["diverse_false"]["scope_mismatch"] == 10
+    # D-004: a single stated fact cannot cover four diverse cases.
+    assert "stated_confound" not in counts.get("diverse_false", {})
+
+
+# ---- salience as a covariate -----------------------------------------------
+
+
+def test_salience_is_reported_per_cell():
+    a = analyze(make_records("known", with_salience=True), n_resamples=FAST)
+    sal = a["salience_by_cell"]
+    assert sal["coherent_false"]["n"] == 20
+    assert sal["coherent_false"]["mean"] == pytest.approx(3.35)
+    assert sal["diverse_false"]["mean"] == pytest.approx(2.70)
+
+
+def test_salience_appears_beside_each_auc():
+    a = analyze(make_records("known", with_salience=True), n_resamples=FAST)
+    block = a["auc_primary_full_set"]
+    assert block["conditions"]["coherent"]["mean_salience_of_false_items"] == pytest.approx(3.35)
+    assert block["salience_gap_coherent_minus_diverse"] == pytest.approx(0.65)
+
+
+def test_salience_model_declines_to_fit_a_constant_outcome():
+    """Honest refusal beats a meaningless coefficient."""
+    sm = analyze(make_records("known", with_salience=True), n_resamples=FAST)[
+        "salience_model"
+    ]
+    assert sm["fitted"] is False
+    assert "constant" in sm["reason"]
+
+
+def test_salience_model_fits_when_catch_rate_varies():
+    a = analyze(
+        make_records("coherence_driven", with_salience=True), n_resamples=FAST
+    )
+    sm = a["salience_model"]
+    assert sm["fitted"] is True
+    assert sm["n_false_items"] == 40
+    mod = sm["model_caught_on_salience_and_coherence"]
+    assert set(mod) >= {"intercept", "salience", "coherent", "ci_family"}
+    assert 0.0 < sm["catch_rate"] < 1.0
+
+
+def test_salience_model_reports_both_single_predictor_fits():
+    sm = analyze(
+        make_records("coherence_driven", with_salience=True), n_resamples=FAST
+    )["salience_model"]
+    assert "salience" in sm["model_caught_on_salience_only"]
+    assert "coherent" in sm["model_caught_on_coherence_only"]

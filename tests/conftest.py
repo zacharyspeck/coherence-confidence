@@ -28,6 +28,31 @@ _CLOSERS = {
 }
 
 
+# D-024: which mechanism falsifies each FALSE cell. `scope_family=True` mirrors
+# the 10 real families where BOTH false cells are scope_mismatch - that is the
+# matched-mechanism subset the primary endpoint is checked against.
+def mechanisms_for(scope_family: bool) -> dict[str, str]:
+    if scope_family:
+        return {"coherent_false": "scope_mismatch", "diverse_false": "scope_mismatch"}
+    return {"coherent_false": "stated_confound", "diverse_false": "broken_chronology"}
+
+
+VARIANTS = {
+    False: {  # confound family
+        "coherent_false": ("changed_reach", "subset_complete"),
+        "coherent_true": ("changed_block", "subset_complete"),
+        "diverse_true": ("same_reach", "whole_incomplete"),
+        "diverse_false": ("same_block", "whole_incomplete"),
+    },
+    True: {  # scope family
+        "coherent_false": ("changed_block", "subset_incomplete"),
+        "diverse_false": ("same_reach", "subset_incomplete"),
+        "coherent_true": ("same_reach", "subset_complete"),
+        "diverse_true": ("changed_block", "whole_incomplete"),
+    },
+}
+
+
 def make_item(
     family_id: str = "fam_test",
     cell: str = "coherent_true",
@@ -37,6 +62,8 @@ def make_item(
     coherent: bool | None = None,
     n_distinct: int | None = None,
     passage_extra_words: int = 0,
+    scope_family: bool = False,
+    salience: float | None = None,
 ) -> Item:
     """Build a structurally valid item.
 
@@ -76,25 +103,39 @@ def make_item(
         passage=passage,
         ground_truth=truth,
         confound_note=None if truth else "Synthetic flaw for testing.",
-        flaw_type=(
-            None
-            if truth
-            else ("shared_confound" if cell == "coherent_false" else "temporal")
-        ),
+        flaw_mechanism=None if truth else mechanisms_for(scope_family)[cell],
+        confound_variant=VARIANTS[scope_family][cell][0],
+        scope_variant=VARIANTS[scope_family][cell][1],
+        salience=salience,
         word_count=compute_word_count(passage),
         domain="synthetic",
         source="generated",
     )
 
 
-def make_family(family_id: str = "fam_test", dims: tuple[str, ...] = DIMS) -> Family:
+def make_family(
+    family_id: str = "fam_test",
+    dims: tuple[str, ...] = DIMS,
+    *,
+    scope_family: bool = False,
+    salience: dict[str, float] | None = None,
+) -> Family:
     cells = ("coherent_true", "coherent_false", "diverse_true", "diverse_false")
     return Family(
         family_id=family_id,
         domain="synthetic",
         claim="the treatment increases the measured outcome",
         dimensions=list(dims),
-        items=[make_item(family_id=family_id, cell=c, dims=dims) for c in cells],
+        items=[
+            make_item(
+                family_id=family_id,
+                cell=c,
+                dims=dims,
+                scope_family=scope_family,
+                salience=(salience or {}).get(c),
+            )
+            for c in cells
+        ],
     )
 
 
@@ -108,18 +149,30 @@ def family():
     return make_family()
 
 
-def make_item_set(n_families: int = 20):
-    """n families x 4 cells of structurally valid synthetic items."""
-    return [i for k in range(n_families) for i in make_family(f"fam_s{k:02d}").items]
+def make_item_set(n_families: int = 20, with_salience: bool = False):
+    """n families x 4 cells. Half are scope families, so the matched-mechanism
+    subset the primary endpoint depends on is always exercised."""
+    out = []
+    for k in range(n_families):
+        scope = k % 2 == 1
+        sal = None
+        if with_salience:
+            # Deliberately louder coherent flaws, so tests of the salience
+            # covariate have a gap to detect.
+            sal = {"coherent_false": 3.8 if not scope else 2.9,
+                   "diverse_false": 2.6 if not scope else 2.8}
+        out += make_family(f"fam_s{k:02d}", scope_family=scope, salience=sal).items
+    return out
 
 
-def make_records(scenario: str = "known", n_families: int = 20):
+def make_records(scenario: str = "known", n_families: int = 20,
+                 with_salience: bool = False):
     """Synthetic items run through the mock scorer -> the exact record shape
     src.analyze consumes. No model, no real items, fully deterministic."""
     from src.mock_scorer import MockScorer
     from src.score import score_items
 
-    items = make_item_set(n_families)
+    items = make_item_set(n_families, with_salience=with_salience)
     scorer = MockScorer(scenario=scenario).prepare(items)
     return score_items(scorer, items, progress=False)
 

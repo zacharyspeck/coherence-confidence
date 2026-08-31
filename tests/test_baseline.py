@@ -127,7 +127,7 @@ def test_delta_scores_are_evidence_minus_baseline(tmp_path):
         0.6220 - 0.5
     )
     # ...and leaves contrasts and AUC untouched.
-    assert a["auc_within_condition"]["coherent"]["estimate"]["value"] == pytest.approx(
+    assert a["auc_primary_full_set"]["conditions"]["coherent"]["estimate"]["value"] == pytest.approx(
         0.75
     )
     assert a["effects"]["main_effect_coherence"]["value"] == pytest.approx(0.075)

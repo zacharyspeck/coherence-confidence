@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 152,
-      "flaw_type": null,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "All four cohorts share college, subject, term and tutor - one distinct value per dimension. Check that the closing sentence genuinely neutralises the term-over-term comparison by holding exam difficulty, grading and class size fixed, which is what makes a before/after comparison adequate here.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_tutoring__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four cohorts sit at one college, in one subject, in one spring term, so a single change to the board's pass mark covers every case at once. The mark fell a full grade below the previous term's, and it reaches all four cohorts because every one of them sat the board's own paper under that same mark. Each cohort is compared against itself in the previous term, when the higher mark applied, so the easier standard and the tutoring blocks moved together and the 4 to 8 point gains cannot be attributed to the blocks. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same drop in the pass mark but has every cohort sit an in-house paper under a fixed internal mark, so the drop cannot reach them, which is what makes it sound.",
       "word_count": 153,
-      "flaw_type": "shared_confound",
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Check that the relaxed grading works as a single confound ONLY because the four cohorts share one college and one term, and that the closer reuses the same vocabulary (grading, standards, class sizes, previous term) as the TRUE closer.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_tutoring__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 153,
-      "flaw_type": null,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension, and the closing sentence is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Check that no single event could cover four colleges, four subjects, four terms and four tutors at once.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_tutoring__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "Every case measures coursework submission rates, not exam pass rates. Handing in coursework is not passing an exam: tutoring blocks can raise the share of students who submit their coursework by 4 to 8 points while the share who pass the exam stays flat or falls, since submission is a matter of turning work in and passing is a matter of graded performance. The claim is about exam pass rates, so none of the four cases bears on it.",
       "word_count": 152,
-      "flaw_type": "claim_mismatch",
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Closing sentence is verbatim identical to both TRUE items; the conditions are identical to diverse_true. The ONLY change is the measured-quantity phrase, 'exam pass rates' becoming 'coursework submission rates' in all four cases. Check that the substitute is genuinely non-equivalent to the claimed quantity and that its wording is unique to this family.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

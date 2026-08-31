@@ -104,7 +104,7 @@ def main(argv: list[str] | None = None) -> int:
                 "family_id": it.family_id,
                 "cell": it.cell,
                 "ground_truth": it.ground_truth,
-                "flaw_type": it.flaw_type,
+                "flaw_mechanism": it.flaw_mechanism,
                 "confound_note": it.confound_note,
                 "batch": b,
                 "round": args.round,

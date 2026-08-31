@@ -51,14 +51,30 @@ TAIL = "no other change was made to any unit."
 #: coherent_false is the only cell where the confound both moved AND reached the
 #: units. The variant given to coherent_true vs diverse_true is rotated by family
 #: index so it is orthogonal to coherence rather than confounded with it.
-CLOSER_ASSIGN = {
-    "coherent_false": ("changed", "reach"),
-    "diverse_false": ("same", "block"),
+#: Half the synthetic families are "scope families" where BOTH false cells are
+#: falsified by scope_mismatch (D-024). Without them the matched-mechanism
+#: subset - the confound-controlled primary endpoint - would never be exercised
+#: end to end before the real items exist, which is the point of step 6.
+CONFOUND_FAMILY_ASSIGN = {
+    "coherent_false": (("changed", "reach"), ("subset", "complete"), "stated_confound"),
+    "coherent_true": (("changed", "block"), ("subset", "complete"), None),
+    "diverse_true": (("same", "reach"), ("whole", "incomplete"), None),
+    "diverse_false": (("same", "block"), ("whole", "incomplete"), "broken_chronology"),
 }
-CLOSER_ASSIGN_TRUE = (
-    {"coherent_true": ("changed", "block"), "diverse_true": ("same", "reach")},
-    {"coherent_true": ("same", "reach"), "diverse_true": ("changed", "block")},
-)
+SCOPE_FAMILY_ASSIGN = {
+    "coherent_false": (("changed", "block"), ("subset", "incomplete"), "scope_mismatch"),
+    "diverse_false": (("same", "reach"), ("subset", "incomplete"), "scope_mismatch"),
+    "coherent_true": (("same", "reach"), ("subset", "complete"), None),
+    "diverse_true": (("changed", "block"), ("whole", "incomplete"), None),
+}
+POPULATION = {
+    "subset": "counts cover the units that reported",
+    "whole": "counts cover every unit on the list",
+}
+COMPLETENESS = {
+    "complete": "and every unit on the list reported",
+    "incomplete": "and three of the twelve listed units did not report",
+}
 
 CLAIM_TEMPLATE = "the {change} raises {subject}"
 CHANGES = [
@@ -109,9 +125,14 @@ def make_synthetic_family(index: int, seed: int = 0) -> Family:
             )
             cases.append(Case(case_id=f"c{c + 1}", text=text, conditions=conditions))
 
-        assign = {**CLOSER_ASSIGN, **CLOSER_ASSIGN_TRUE[index % 2]}
-        fact_key, scope_key = assign[cell]
-        closer = f"{FACT[fact_key]}, {SCOPE[scope_key]}; {TAIL}"
+        scope_family = index % 2 == 1
+        assign = SCOPE_FAMILY_ASSIGN if scope_family else CONFOUND_FAMILY_ASSIGN
+        (fact_key, scope_key), (pop_key, comp_key), mech = assign[cell]
+        midline = (
+            f"{FACT[fact_key]}, {SCOPE[scope_key]}. "
+            f"{POPULATION[pop_key]}, {COMPLETENESS[comp_key]}."
+        )
+        closer = TAIL
         lead = (
             f"Log {family_id[4:]}{CELLS.index(cell)} records four observations "
             f"of {subject} taken after the {change} was introduced."
@@ -134,16 +155,9 @@ def make_synthetic_family(index: int, seed: int = 0) -> Family:
                     else "SYNTHETIC placeholder. This item has no real flaw; it "
                     "exists only to exercise the pipeline."
                 ),
-                flaw_type=(
-                    None
-                    if truth
-                    else (
-                        "shared_confound"
-                        if cell == "coherent_false"
-                        else ("temporal" if index % 2 == 0 else "claim_mismatch")
-                    )
-                ),
-                closer_variant=f"{fact_key}_{scope_key}",
+                flaw_mechanism=mech,
+                confound_variant=f"{fact_key}_{scope_key}",
+                scope_variant=f"{pop_key}_{comp_key}",
                 word_count=compute_word_count(passage),
                 domain="synthetic",
                 source="generated",

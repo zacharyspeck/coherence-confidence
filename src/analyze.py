@@ -147,7 +147,19 @@ class Dataset:
         self.score_2way = np.array([float(r["p_yes_2way"]) for r in records])
         self.abstained = np.array([bool(r["abstained"]) for r in records])
         self.mass = np.array([float(r["mass_covered"]) for r in records])
-        self.baseline = np.array([r.get("baseline_p_yes_3way", np.nan) for r in records], dtype=float)
+        self.baseline = np.array(
+            [r.get("baseline_p_yes_3way", np.nan) for r in records], dtype=float
+        )
+        self.mechanism = np.array(
+            [r.get("flaw_mechanism") or "" for r in records], dtype=object
+        )
+        self.salience = np.array(
+            [
+                float(r["salience"]) if r.get("salience") is not None else np.nan
+                for r in records
+            ],
+            dtype=float,
+        )
 
         self.families = sorted(set(self.family_ids.tolist()))
         self.idx_by_cell = {
@@ -504,6 +516,262 @@ def two_way_anova(ds: Dataset, which: str = "3way") -> dict[str, Any]:
 # ---------------------------------------------------------------------------
 
 
+MECHANISMS = ("stated_confound", "broken_chronology", "scope_mismatch")
+
+
+def _subset_families(ds: "Dataset", coherence: str, mechanism: str | None) -> set[str]:
+    """Families whose FALSE item in this condition uses `mechanism`.
+
+    `None` means no restriction. Returned as a family set rather than an item
+    mask so the TRUE items come from exactly the same families - otherwise the
+    matched comparison would contrast different scenarios, not different
+    coherence.
+    """
+    if mechanism is None:
+        return set(ds.families)
+    cell = f"{coherence}_false"
+    return {
+        ds.family_ids[i]
+        for i in range(len(ds))
+        if ds.cells[i] == cell and ds.mechanism[i] == mechanism
+    }
+
+
+def stat_auc_subset(
+    ds: "Dataset", coherence: str, mechanism: str | None, which: str = "3way"
+) -> Callable:
+    """AUC within one coherence condition, restricted to the families whose
+    FALSE item in that condition uses `mechanism`."""
+    scores = ds.scores(which)
+    fams = _subset_families(ds, coherence, mechanism)
+    keep = np.array([f in fams for f in ds.family_ids])
+
+    def f(idx: np.ndarray) -> float:
+        sel = idx[(ds.coherence[idx] == coherence) & keep[idx]]
+        pos = scores[sel[ds.truth[sel]]]
+        neg = scores[sel[~ds.truth[sel]]]
+        if pos.size == 0 or neg.size == 0:
+            raise ValueError(
+                f"AUC within {coherence}/{mechanism} needs both classes; got "
+                f"{pos.size} true, {neg.size} false"
+            )
+        return _auc_fast(pos, neg)
+
+    return f
+
+
+def stat_auc_gap(ds: "Dataset", mechanism: str | None, which: str = "3way") -> Callable:
+    """THE PRIMARY ENDPOINT: AUC(coherent) - AUC(diverse).
+
+    Koriat's consensuality principle predicts this is NEGATIVE - agreement among
+    the retrieved considerations raises confidence without raising accuracy, so
+    the confidence-accuracy relationship degrades exactly where the evidence
+    agrees with itself. AUC(coherent) below 0.5 is the crossover: confidence
+    running backwards against truth.
+    """
+    coh = stat_auc_subset(ds, "coherent", mechanism, which)
+    div = stat_auc_subset(ds, "diverse", mechanism, which)
+
+    def f(idx: np.ndarray) -> float:
+        return coh(idx) - div(idx)
+
+    return f
+
+
+def _auc_block(
+    ds: "Dataset",
+    mechanism: str | None,
+    which: str,
+    boot: Callable,
+    label: str,
+) -> dict[str, Any]:
+    """One AUC comparison: both conditions, the gap, and the salience covariate."""
+    scores = ds.scores(which)
+    out: dict[str, Any] = {"label": label, "mechanism": mechanism, "conditions": {}}
+    fam_sets = {}
+
+    for coh in COHERENCE_LEVELS:
+        fams = _subset_families(ds, coh, mechanism)
+        fam_sets[coh] = fams
+        sel = np.array(
+            [
+                i
+                for i in range(len(ds))
+                if ds.coherence[i] == coh and ds.family_ids[i] in fams
+            ],
+            dtype=int,
+        )
+        if sel.size == 0:
+            continue
+        pos = scores[sel[ds.truth[sel]]]
+        neg = scores[sel[~ds.truth[sel]]]
+        if pos.size == 0 or neg.size == 0:
+            continue
+        detail = pairwise_auc_detail(pos.tolist(), neg.tolist())
+        est = boot(stat_auc_subset(ds, coh, mechanism, which))
+        false_idx = sel[~ds.truth[sel]]
+        sal = ds.salience[false_idx]
+        sal = sal[np.isfinite(sal)]
+        out["conditions"][coh] = {
+            "estimate": est.to_dict(),
+            "detail": asdict(detail),
+            "n_families": len(fams),
+            "n_abstained": int(np.count_nonzero(ds.abstained[sel])),
+            "mean_salience_of_false_items": float(np.mean(sal)) if sal.size else None,
+            "n_with_salience": int(sal.size),
+        }
+        # Diagnostic only: what the D-003 policy is protecting against.
+        n_abst = int(np.count_nonzero(ds.abstained[sel]))
+        if n_abst:
+            kept = sel[~ds.abstained[sel]]
+            p2 = scores[kept[ds.truth[kept]]]
+            n2 = scores[kept[~ds.truth[kept]]]
+            out["conditions"][coh]["auc_if_abstained_dropped_DIAGNOSTIC"] = (
+                _auc_fast(p2, n2) if p2.size and n2.size else None
+            )
+            out["conditions"][coh]["diagnostic_note"] = (
+                "NOT a reported result. It shows how far the AUC would move if "
+                "abstentions were discarded, which is why D-003 forbids it."
+            )
+
+    if len(out["conditions"]) == 2:
+        gap = boot(
+            stat_auc_gap(ds, mechanism, which),
+            note="PRIMARY ENDPOINT. Negative = the consensuality prediction.",
+        )
+        out["gap_coherent_minus_diverse"] = gap.to_dict()
+        s_coh = out["conditions"]["coherent"]["mean_salience_of_false_items"]
+        s_div = out["conditions"]["diverse"]["mean_salience_of_false_items"]
+        out["salience_gap_coherent_minus_diverse"] = (
+            None if s_coh is None or s_div is None else s_coh - s_div
+        )
+        out["families_match_across_conditions"] = (
+            fam_sets["coherent"] == fam_sets["diverse"]
+        )
+        out["families"] = {k: sorted(v) for k, v in fam_sets.items()}
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Salience as a covariate
+# ---------------------------------------------------------------------------
+
+
+def salience_model(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
+    """Logistic regression of catch-rate on salience and coherence.
+
+    "Caught" means the model did not endorse a false claim: p_yes below 0.5 on a
+    FALSE item. The question this answers is the one a sceptical reader asks
+    first - how much of any AUC gap could be explained by the coherent flaws
+    simply being louder? If the coherence coefficient survives conditioning on
+    salience, the gap is not a salience artifact.
+    """
+    false_idx = np.array(
+        [i for i in range(len(ds)) if not ds.truth[i] and np.isfinite(ds.salience[i])],
+        dtype=int,
+    )
+    if false_idx.size < 8:
+        return {
+            "fitted": False,
+            "reason": (
+                f"only {false_idx.size} FALSE items carry a salience value; run the "
+                "blind audit and scripts/apply_salience.py first"
+            ),
+        }
+
+    scores = ds.scores(which)
+    y = (scores[false_idx] < 0.5).astype(int)  # caught
+    sal = ds.salience[false_idx]
+    coh = (ds.coherence[false_idx] == "coherent").astype(float)
+
+    if len(set(y.tolist())) < 2:
+        return {
+            "fitted": False,
+            "reason": (
+                f"catch outcome is constant ({int(y.sum())}/{y.size} caught); a "
+                "logistic fit is undefined"
+            ),
+            "catch_rate": float(y.mean()),
+        }
+
+    from sklearn.linear_model import LogisticRegression
+
+    def fit(X: np.ndarray) -> list[float]:
+        m = LogisticRegression(max_iter=5000, C=np.inf)
+        m.fit(X, y)
+        return [float(m.intercept_[0]), *[float(c) for c in m.coef_[0]]]
+
+    X_both = np.column_stack([sal, coh])
+    coefs = fit(X_both)
+    coefs_sal_only = fit(sal.reshape(-1, 1))
+    coefs_coh_only = fit(coh.reshape(-1, 1))
+
+    # Bootstrap the coefficients by resampling families, matching the rest of the
+    # repo's inference (D-010).
+    rng = np.random.default_rng(BOOTSTRAP_SEED)
+    draws: list[list[float]] = []
+    fam_of = {f: k for k, f in enumerate(ds.families)}
+    by_fam: dict[int, list[int]] = {}
+    for j, i in enumerate(false_idx):
+        by_fam.setdefault(fam_of[ds.family_ids[i]], []).append(j)
+    fam_keys = sorted(by_fam)
+    for _ in range(2000):
+        pick = rng.choice(len(fam_keys), size=len(fam_keys), replace=True)
+        rows = [j for k in pick for j in by_fam[fam_keys[k]]]
+        yb = y[rows]
+        if len(set(yb.tolist())) < 2:
+            continue
+        try:
+            m = LogisticRegression(max_iter=5000, C=np.inf)
+            m.fit(X_both[rows], yb)
+            draws.append([float(m.intercept_[0]), *[float(c) for c in m.coef_[0]]])
+        except Exception:  # noqa: BLE001 - a degenerate resample is not an error
+            continue
+
+    arr = np.array(draws) if draws else np.zeros((0, 3))
+    ci = (
+        [list(map(float, np.percentile(arr[:, k], [2.5, 97.5]))) for k in range(3)]
+        if arr.shape[0] > 50
+        else [None, None, None]
+    )
+
+    return {
+        "fitted": True,
+        "n_false_items": int(false_idx.size),
+        "catch_rate": float(y.mean()),
+        "outcome": "caught = p_yes_3way < 0.5 on a FALSE item",
+        "salience_mean": float(sal.mean()),
+        "salience_range": [float(sal.min()), float(sal.max())],
+        "model_caught_on_salience_and_coherence": {
+            "intercept": coefs[0],
+            "salience": coefs[1],
+            "coherent": coefs[2],
+            "ci_family": {"intercept": ci[0], "salience": ci[1], "coherent": ci[2]},
+            "n_bootstrap_fits": int(arr.shape[0]),
+        },
+        "model_caught_on_salience_only": {
+            "intercept": coefs_sal_only[0],
+            "salience": coefs_sal_only[1],
+        },
+        "model_caught_on_coherence_only": {
+            "intercept": coefs_coh_only[0],
+            "coherent": coefs_coh_only[1],
+        },
+        "reading": (
+            "A positive salience coefficient means louder flaws get caught more "
+            "often, which is the artifact we are controlling for. The coherence "
+            "coefficient in the two-predictor model is the coherence effect AFTER "
+            "conditioning on salience: if it stays away from zero, the AUC gap is "
+            "not simply the coherent flaws being easier to see."
+        ),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Top-level analysis
+# ---------------------------------------------------------------------------
+
+
 def analyze(
     records: Sequence[dict[str, Any]],
     *,
@@ -512,10 +780,28 @@ def analyze(
     which: str = "3way",
 ) -> dict[str, Any]:
     ds = Dataset(records)
-    boot = lambda st, note="": bootstrap(  # noqa: E731 - local alias for density
-        ds, st, n_resamples=n_resamples, seed=seed, note=note
-    )
 
+    def boot(st, note=""):
+        return bootstrap(ds, st, n_resamples=n_resamples, seed=seed, note=note)
+
+    # ---- PRIMARY ENDPOINT ---------------------------------------------------
+    primary = _auc_block(
+        ds, None, which, boot, "FULL SET - all 20 true vs 20 false per condition"
+    )
+    matched = _auc_block(
+        ds,
+        "scope_mismatch",
+        which,
+        boot,
+        "MATCHED MECHANISM - scope_mismatch in both conditions",
+    )
+    by_mechanism = {}
+    for m in MECHANISMS:
+        block = _auc_block(ds, m, which, boot, f"mechanism = {m}")
+        if block["conditions"]:
+            by_mechanism[m] = block
+
+    # ---- diagnostics --------------------------------------------------------
     cell_means = {
         c: boot(stat_cell_mean(ds, c, which)).to_dict()
         for c in CELLS
@@ -531,43 +817,6 @@ def analyze(
         for c in CELLS
         if ds.idx_by_cell[c].size
     }
-
-    auc: dict[str, Any] = {}
-    for coh in COHERENCE_LEVELS:
-        sel = np.flatnonzero(ds.coherence == coh)
-        if sel.size == 0:
-            continue
-        pos = ds.scores(which)[sel[ds.truth[sel]]]
-        neg = ds.scores(which)[sel[~ds.truth[sel]]]
-        detail = pairwise_auc_detail(pos.tolist(), neg.tolist())
-        est = boot(
-            stat_auc(ds, coh, which),
-            note="abstained items INCLUDED, per DECISIONS.md D-003",
-        )
-        entry: dict[str, Any] = {
-            "estimate": est.to_dict(),
-            "detail": asdict(detail),
-        }
-        # Diagnostic only: what the abstention policy is protecting against.
-        n_abst = int(np.count_nonzero(ds.abstained[sel]))
-        if n_abst:
-            try:
-                dropped = stat_auc(ds, coh, which, drop_abstained=True)(
-                    np.arange(len(ds))
-                )
-            except ValueError as exc:
-                dropped = None
-                entry["auc_if_abstained_dropped_error"] = str(exc)
-            entry["auc_if_abstained_dropped_DIAGNOSTIC"] = dropped
-            entry["n_abstained"] = n_abst
-            entry["diagnostic_note"] = (
-                "auc_if_abstained_dropped is NOT a reported result. It shows how "
-                "much AUC would move if abstentions were discarded, which is why "
-                "D-003 forbids discarding them."
-            )
-        else:
-            entry["n_abstained"] = 0
-        auc[coh] = entry
 
     effects = {
         "main_effect_coherence": boot(
@@ -586,32 +835,52 @@ def analyze(
             stat_cell_contrast(ds, "coherent_true", "diverse_true", which),
             note=(
                 "D-004: the CLEAN coherence contrast. Both cells are flawless, so "
-                "the flaw-type confound between coherent_false and diverse_false "
-                "cannot touch this one."
+                "neither the flaw-type confound nor flaw salience can touch it."
             ),
         ).to_dict(),
         "coherence_effect_within_false": boot(
             stat_cell_contrast(ds, "coherent_false", "diverse_false", which),
-            note=(
-                "D-004: CONFOUNDED. coherent_false is broken by a shared confound "
-                "and diverse_false by bad dates or claim mismatch, so this mixes "
-                "coherence with flaw type."
-            ),
+            note="D-004: mixes coherence with whatever differs between the mechanisms.",
         ).to_dict(),
     }
 
-    flaw_breakdown: dict[str, Any] = {}
-    for flaw in ("temporal", "claim_mismatch"):
-        sel = [i for i, r in enumerate(records) if r.get("flaw_type") == flaw]
-        if sel:
-            arr = ds.scores(which)[np.array(sel)]
-            flaw_breakdown[flaw] = {
-                "n": len(sel),
-                "mean": float(np.mean(arr)),
-                "note": "D-004 split of diverse_false by how the item is broken",
-            }
+    mech_counts: dict[str, dict[str, int]] = {}
+    for i in range(len(ds)):
+        if ds.mechanism[i]:
+            mech_counts.setdefault(ds.cells[i], {}).setdefault(ds.mechanism[i], 0)
+            mech_counts[ds.cells[i]][ds.mechanism[i]] += 1
+
+    sal_by_cell: dict[str, Any] = {}
+    for c in ("coherent_false", "diverse_false"):
+        idx = ds.idx_by_cell[c]
+        v = ds.salience[idx]
+        v = v[np.isfinite(v)]
+        sal_by_cell[c] = {
+            "n": int(v.size),
+            "mean": float(np.mean(v)) if v.size else None,
+            "max": float(np.max(v)) if v.size else None,
+        }
 
     return {
+        "endpoints": {
+            "primary": (
+                "AUC(coherent) - AUC(diverse) on the FULL set. Koriat's "
+                "consensuality principle predicts NEGATIVE: coherence raises "
+                "confidence without raising accuracy, so the "
+                "confidence-accuracy relationship degrades where the evidence "
+                "agrees with itself. AUC(coherent) below 0.5 is the crossover."
+            ),
+            "confound_controlled": (
+                "The same gap on the MATCHED-MECHANISM subset, where both "
+                "conditions are falsified by scope_mismatch, so flaw mechanism "
+                "cannot differ between them and only coherence does (D-024)."
+            ),
+            "diagnostics_not_endpoints": (
+                "Cell means, the 2x2 effects and the ANOVA are diagnostics. They "
+                "describe confidence level; the endpoint is the "
+                "confidence-accuracy relationship, which is the AUC."
+            ),
+        },
         "policy": {
             "abstained_items_in_auc": "INCLUDED (D-003) using p_yes_3way",
             "auc_scope": "WITHIN each coherence condition, never pooled",
@@ -624,9 +893,8 @@ def analyze(
             "which_ci_to_read": (
                 "Per-cell numbers (cell means, abstention rates, within-condition "
                 "AUC): ci_item and ci_family are IDENTICAL by construction, since "
-                "each family contributes exactly one item per cell. For the "
-                "cross-cell contrasts (main_effect_coherence, interaction, "
-                "coherence_effect_within_*): read ci_family. The 2x2 is "
+                "each family contributes exactly one item per cell. For the AUC "
+                "GAP and the cross-cell contrasts: read ci_family. The 2x2 is "
                 "within-family, so the clustered resample keeps the pairing and "
                 "ci_item throws that pairing away."
             ),
@@ -635,13 +903,17 @@ def analyze(
         "n_families": len(ds.families),
         "cell_n": {c: int(ds.idx_by_cell[c].size) for c in CELLS},
         "score_used": which,
+        "auc_primary_full_set": primary,
+        "auc_matched_mechanism": matched,
+        "auc_by_mechanism": by_mechanism,
+        "mechanism_counts_by_cell": mech_counts,
+        "salience_by_cell": sal_by_cell,
+        "salience_model": salience_model(ds, which),
         "cell_means_p_yes_3way": cell_means,
         "cell_means_p_yes_2way": cell_means_2way,
         "abstention_rate": abstention,
-        "auc_within_condition": auc,
         "effects": effects,
         "anova": two_way_anova(ds, which),
-        "diverse_false_flaw_breakdown": flaw_breakdown,
         "mass_covered": {
             "mean": float(np.mean(ds.mass)),
             "min": float(np.min(ds.mass)),
@@ -655,15 +927,60 @@ def analyze(
 # ---------------------------------------------------------------------------
 
 
-def _est_line(d: dict[str, Any]) -> str:
-    lo, hi = d["ci_item"] or (float("nan"), float("nan"))
-    flo, fhi = d["ci_family"] or (float("nan"), float("nan"))
-    return f"{d['value']:.4f} | [{lo:.4f}, {hi:.4f}] | [{flo:.4f}, {fhi:.4f}]"
+def _fmt_ci(ci) -> str:
+    if not ci:
+        return "—"
+    return f"[{ci[0]:+.4f}, {ci[1]:+.4f}]"
+
+
+def _auc_table(block: dict[str, Any]) -> list[str]:
+    L: list[str] = []
+    L.append("| condition | AUC | 95% CI (family) | pairs | wins | ties | mean salience |")
+    L.append("|---|---|---|---|---|---|---|")
+    for coh in COHERENCE_LEVELS:
+        e = block["conditions"].get(coh)
+        if not e:
+            continue
+        est, det = e["estimate"], e["detail"]
+        sal = e["mean_salience_of_false_items"]
+        L.append(
+            f"| {coh} | **{est['value']:.4f}** | "
+            f"{_fmt_ci(est['ci_family'])} | {det['n_pairs']} | {det['n_wins']} | "
+            f"{det['n_ties']} | {'—' if sal is None else f'{sal:.2f}'} |"
+        )
+    gap = block.get("gap_coherent_minus_diverse")
+    if gap:
+        sg = block.get("salience_gap_coherent_minus_diverse")
+        L.append("")
+        L.append(
+            f"**AUC(coherent) − AUC(diverse) = {gap['value']:+.4f}**  "
+            f"95% CI (family) {_fmt_ci(gap['ci_family'])}"
+        )
+        direction = (
+            "consistent with the consensuality prediction"
+            if gap["value"] < 0
+            else "OPPOSITE to the consensuality prediction"
+        )
+        L.append(f"— sign is {direction}.")
+        if sg is not None:
+            L.append(
+                f"— salience gap over the same items: {sg:+.2f} of 5. "
+                "A positive salience gap means the coherent flaws were louder, "
+                "which pushes this AUC gap upward and therefore *against* the "
+                "hypothesis."
+            )
+        if not block.get("families_match_across_conditions", True):
+            L.append(
+                "— **WARNING:** the two conditions do not draw on the same "
+                "families here, so scenario content differs between them as well "
+                "as coherence."
+            )
+    return L
 
 
 def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
-    L: list[str] = []
     a = analysis
+    L: list[str] = []
     L.append("# coherence-confidence — analysis\n")
     L.append(f"- run: `{meta.get('run_id', '?')}`")
     L.append(f"- model: `{meta.get('model', '?')}` (revision `{meta.get('revision')}`)")
@@ -675,27 +992,106 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
         L.append("\n> **SYNTHETIC RUN.** These are fixtures, not measurements.\n")
     L.append("")
 
-    L.append("## Policy\n")
-    for k, v in a["policy"].items():
-        L.append(f"- **{k}**: {v}")
+    # ---- 1. PRIMARY ---------------------------------------------------------
+    L.append("## 1. PRIMARY ENDPOINT — AUC(coherent) vs AUC(diverse)\n")
+    L.append(f"> {a['endpoints']['primary']}\n")
+    L += _auc_table(a["auc_primary_full_set"])
     L.append("")
 
-    L.append("## Cell means — P(yes) three-way\n")
-    L.append("| cell | n | mean | 95% CI (item) | 95% CI (family) |")
-    L.append("|---|---|---|---|---|")
+    # ---- 2. CONFOUND-CONTROLLED --------------------------------------------
+    L.append("## 2. The same endpoint, confound-controlled\n")
+    L.append(f"> {a['endpoints']['confound_controlled']}\n")
+    m = a["auc_matched_mechanism"]
+    if m["conditions"]:
+        L += _auc_table(m)
+        L.append("")
+        L.append(
+            "Both conditions here are falsified by the *same* mechanism, so a gap "
+            "cannot be attributed to one cell's flaws being a different kind of "
+            "thing from the other's. This is the number to quote when asked "
+            "whether the coherent-false items are simply easier to catch."
+        )
+    else:
+        L.append(
+            "_No matched-mechanism subset available — no `scope_mismatch` items "
+            "in one or both conditions._"
+        )
+    L.append("")
+
+    # ---- 3. PER MECHANISM ---------------------------------------------------
+    L.append("## 3. Per-mechanism breakdown\n")
+    counts = a.get("mechanism_counts_by_cell", {})
+    if counts:
+        L.append("| cell | " + " | ".join(MECHANISMS) + " |")
+        L.append("|---" * (len(MECHANISMS) + 1) + "|")
+        for cell in ("coherent_false", "diverse_false"):
+            row = counts.get(cell, {})
+            L.append(
+                f"| `{cell}` | " + " | ".join(str(row.get(x, 0)) for x in MECHANISMS) + " |"
+            )
+        L.append("")
+    for mech, block in a["auc_by_mechanism"].items():
+        L.append(f"### `{mech}`\n")
+        L += _auc_table(block)
+        L.append("")
+
+    # ---- 4. SALIENCE --------------------------------------------------------
+    L.append("## 4. Salience, reported as a covariate\n")
+    sal = a["salience_by_cell"]
+    L.append("| cell | n with salience | mean | max |")
+    L.append("|---|---|---|---|")
+    for c, v in sal.items():
+        mv = "—" if v["mean"] is None else f"{v['mean']:.2f}"
+        xv = "—" if v["max"] is None else f"{v['max']:.2f}"
+        L.append(f"| `{c}` | {v['n']} | {mv} | {xv} |")
+    L.append("")
+    sm = a["salience_model"]
+    if not sm.get("fitted"):
+        L.append(f"_Logistic model not fitted: {sm.get('reason')}_\n")
+    else:
+        mod = sm["model_caught_on_salience_and_coherence"]
+        L.append(
+            f"Logistic model of **catch-rate** ({sm['outcome']}) over "
+            f"{sm['n_false_items']} FALSE items; overall catch rate "
+            f"{sm['catch_rate']:.1%}.\n"
+        )
+        L.append("| predictor | coefficient | 95% CI (family-clustered) |")
+        L.append("|---|---|---|")
+        L.append(
+            f"| salience | {mod['salience']:+.3f} | "
+            f"{_fmt_ci(mod['ci_family']['salience'])} |"
+        )
+        L.append(
+            f"| coherent (vs diverse) | {mod['coherent']:+.3f} | "
+            f"{_fmt_ci(mod['ci_family']['coherent'])} |"
+        )
+        L.append("")
+        L.append(
+            f"Salience alone: {sm['model_caught_on_salience_only']['salience']:+.3f}. "
+            f"Coherence alone: {sm['model_caught_on_coherence_only']['coherent']:+.3f}."
+        )
+        L.append("")
+        L.append(f"> {sm['reading']}")
+    L.append("")
+
+    # ---- 5. DIAGNOSTICS -----------------------------------------------------
+    L.append("## 5. Diagnostics (not endpoints)\n")
+    L.append(f"> {a['endpoints']['diagnostics_not_endpoints']}\n")
+
+    L.append("### Mean confidence per cell — P(yes) three-way\n")
+    L.append("| cell | n | mean | 95% CI (item) |")
+    L.append("|---|---|---|---|")
     for c in CELLS:
         d = a["cell_means_p_yes_3way"].get(c)
         if not d:
             continue
         lo, hi = d["ci_item"]
-        flo, fhi = d["ci_family"]
         L.append(
-            f"| `{c}` | {a['cell_n'][c]} | {d['value']:.4f} | "
-            f"[{lo:.4f}, {hi:.4f}] | [{flo:.4f}, {fhi:.4f}] |"
+            f"| `{c}` | {a['cell_n'][c]} | {d['value']:.4f} | [{lo:.4f}, {hi:.4f}] |"
         )
     L.append("")
 
-    L.append("## Cell means — P(yes) two-way (yes vs no only)\n")
+    L.append("### Mean confidence per cell — P(yes) two-way (yes vs no only)\n")
     L.append("| cell | mean | 95% CI (item) |")
     L.append("|---|---|---|")
     for c in CELLS:
@@ -706,32 +1102,7 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
         L.append(f"| `{c}` | {d['value']:.4f} | [{lo:.4f}, {hi:.4f}] |")
     L.append("")
 
-    L.append("## AUC within condition\n")
-    L.append("20 true vs 20 false per condition = 400 pairs. Never pooled.\n")
-    L.append("| condition | AUC | 95% CI (item) | 95% CI (family) | pairs | wins | ties |")
-    L.append("|---|---|---|---|---|---|---|")
-    for coh, e in a["auc_within_condition"].items():
-        est, det = e["estimate"], e["detail"]
-        lo, hi = est["ci_item"]
-        flo, fhi = est["ci_family"]
-        L.append(
-            f"| {coh} | {est['value']:.4f} | [{lo:.4f}, {hi:.4f}] | "
-            f"[{flo:.4f}, {fhi:.4f}] | {det['n_pairs']} | {det['n_wins']} | "
-            f"{det['n_ties']} |"
-        )
-    L.append("")
-    for coh, e in a["auc_within_condition"].items():
-        if e.get("n_abstained"):
-            drop = e.get("auc_if_abstained_dropped_DIAGNOSTIC")
-            drop_s = f"{drop:.4f}" if isinstance(drop, float) else str(drop)
-            L.append(
-                f"- `{coh}`: {e['n_abstained']} abstained, all INCLUDED above. "
-                f"If they were dropped the AUC would read **{drop_s}** — "
-                "which is exactly why D-003 forbids dropping them."
-            )
-    L.append("")
-
-    L.append("## Abstention rate per cell\n")
+    L.append("### Abstention rate per cell\n")
     L.append("Fraction of items where the third option has the highest probability.\n")
     L.append("| cell | rate | 95% CI (item) |")
     L.append("|---|---|---|")
@@ -742,22 +1113,30 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
         lo, hi = d["ci_item"]
         L.append(f"| `{c}` | {d['value']:.4f} | [{lo:.4f}, {hi:.4f}] |")
     L.append("")
+    for name, block in (
+        ("full set", a["auc_primary_full_set"]),
+        ("matched subset", a["auc_matched_mechanism"]),
+    ):
+        for coh, e in block.get("conditions", {}).items():
+            if e.get("n_abstained"):
+                L.append(
+                    f"- {name}, `{coh}`: {e['n_abstained']} abstained, all INCLUDED "
+                    "in the AUC above (D-003)."
+                )
+    L.append("")
 
-    L.append("## 2x2 effects\n")
+    L.append("### 2x2 effects on mean confidence\n")
     L.append(
-        "> **Read the family-clustered CI for these.** The 2x2 is within-family, "
-        "so clustering keeps the pairing; the item-level interval discards it "
-        "and comes out too wide. (For the per-cell tables above, the two CIs are "
-        "identical by construction.) See DECISIONS.md D-010.\n"
+        "> Read the family-clustered CI for these. The 2x2 is within-family, so "
+        "clustering keeps the pairing; the item-level interval discards it. "
+        "See DECISIONS.md D-010.\n"
     )
     L.append("| effect | estimate | 95% CI (item) | **95% CI (family)** |")
     L.append("|---|---|---|---|")
     for k, d in a["effects"].items():
-        lo, hi = d["ci_item"]
-        flo, fhi = d["ci_family"]
         L.append(
-            f"| {k} | {d['value']:+.4f} | [{lo:+.4f}, {hi:+.4f}] | "
-            f"[{flo:+.4f}, {fhi:+.4f}] |"
+            f"| {k} | {d['value']:+.4f} | {_fmt_ci(d['ci_item'])} | "
+            f"{_fmt_ci(d['ci_family'])} |"
         )
     L.append("")
     for k, d in a["effects"].items():
@@ -765,7 +1144,7 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
             L.append(f"- **{k}** — {d['note']}")
     L.append("")
 
-    L.append("## Two-way ANOVA-style breakdown\n")
+    L.append("### Two-way ANOVA-style breakdown\n")
     L.append("| source | SS | df | MS | F | p | partial eta^2 |")
     L.append("|---|---|---|---|---|---|---|")
     for r in a["anova"]["table"]:
@@ -778,30 +1157,17 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
         )
     L.append(f"\n> {a['anova']['caveat']}\n")
 
-    if a["diverse_false_flaw_breakdown"]:
-        L.append("## diverse_false, split by flaw type (D-004)\n")
-        L.append("| flaw_type | n | mean P(yes) |")
-        L.append("|---|---|---|")
-        for k, v in a["diverse_false_flaw_breakdown"].items():
-            L.append(f"| {k} | {v['n']} | {v['mean']:.4f} |")
-        L.append("")
-
-    m = a["mass_covered"]
-    L.append("## Coverage\n")
+    mm = a["mass_covered"]
+    L.append("### Coverage\n")
     L.append(
-        f"- option mass covered: mean {m['mean']:.4f}, min {m['min']:.4f}, "
-        f"max {m['max']:.4f}"
+        f"- option mass covered: mean {mm['mean']:.4f}, min {mm['min']:.4f}, "
+        f"max {mm['max']:.4f}"
     )
     L.append(
         "- low coverage means the three options hold little of the next-token "
         "distribution and the renormalized numbers are ratios of small numbers."
     )
     return "\n".join(L) + "\n"
-
-
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 
 def attach_baseline(

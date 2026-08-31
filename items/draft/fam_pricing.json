@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 154,
-      "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four lines share one value on every dimension: store Harlow Street, category coffee, month March, region lead Vasquez. Closer is CHANGED fact + BLOCK scope: the premium share of the shelf did move, but every line came from a fixed year-round range, so the mix shift cannot reach these lines and the tail rules out everything else.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_pricing__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four lines are coffee at the Harlow Street store inside the same month, so one shelf covers every case at once. Premium stock's share of that shelf hit a record, double the earlier period, and a dearer average item lifts revenue per order on its own. That shift reaches all four lines because every line was stocked straight from the shelf as it stood. Each line is compared against itself a month earlier, before the mix moved, so nothing here separates the new pricing rule from what was on the shelf. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same record premium share but stocks every line from a fixed year-round range, so the shift cannot reach the lines and the comparison holds.",
       "word_count": 153,
-      "flaw_type": "shared_confound",
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Closer is CHANGED fact + REACH scope. The assortment shift works as a single confound precisely because the four lines share one store, one category and one month - four coffee lines on one shelf in March cannot be told apart from that shelf. Across the family CHANGED appears once in a TRUE item and once in a FALSE item, and so does REACH, so no single clause is a label marker.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_pricing__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 153,
-      "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four stores, four categories, four months, four region leads. Closer is SAME fact + REACH scope: no assortment shift to worry about. Four separate months mean no single event could cover all four lines. The closer shares its scope clause with coherent_false and its fact clause with diverse_false, which is what keeps every clause balanced against the label.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_pricing__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "Every case measures units per order, not revenue per order. How many items go into a basket is not what the basket is worth: a repricing that lowers unit prices routinely lifts units per order while the money taken on each order holds flat or falls, and the two move in opposite directions whenever demand is elastic. The claim is about revenue per order, so none of the four lines, from 4 March at Harlow Street to 26 November at Tamsin Row, bears on it.",
       "word_count": 154,
-      "flaw_type": "claim_mismatch",
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Closer is SAME fact + BLOCK scope, so it names no live confound; the conditions are byte-identical to diverse_true and the only change from diverse_true is the measured-quantity phrase 'revenue per order' -> 'units per order' in all four cases. Reviewer should confirm units per order is genuinely non-equivalent to revenue per order and that this substitute is not reused by any other family. A shared confound is unavailable here because the four lines span four stores, four categories, four months and four region leads.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

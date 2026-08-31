@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 151,
-      "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Reviewer: confirm all four groups share depot, vehicle type, month and dispatcher (one distinct value per dimension). Closer is CHANGED fact + BLOCK scope: order volume really did fall, but every run still carried the same drop count, so the volume drop cannot reach the runs and the tail rules out road works, traffic and everything else. Cases must be byte-identical to coherent_false.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_routing__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four groups run out of Kettleby Wharf in February with the same vans and the same dispatcher, so one order book covers every case at once. Volume through that depot hit a record low, half the earlier period, and a lighter book means fewer drops on each run, which cuts the time a run takes on its own. That drop reaches all four groups because every run carried whatever drop count the depot set. Each group is compared against itself a month earlier, when the book was full, so nothing in the evidence separates the routing change from the thinner load. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same record low volume but holds every run to the same drop count as before, so the volume drop cannot reach the runs and the comparison holds.",
       "word_count": 151,
-      "flaw_type": "shared_confound",
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Reviewer: cases must be byte-identical to coherent_true; only the closer differs. Closer is CHANGED fact + REACH scope. Check it reads as a neutral log line with no hedging connective, and that the confound works ONLY because the four groups are coherent - one depot in one month means one shared order book. Across the family CHANGED appears once in a TRUE item and once in a FALSE item, and so does REACH, so no single clause is a label marker.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_routing__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 150,
-      "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Reviewer: four distinct values on every dimension - four depots, four vehicle types, four months, four dispatchers. Closer is SAME fact + REACH scope: order volume did not move, so there is no confound to worry about. Four separate months and depots mean no single local event could cover all four cases, which makes this the stronger of the two TRUE cells. The closer shares its scope clause with coherent_false and its fact clause with diverse_false, which keeps every clause balanced against the label.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_routing__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "Every case measures planned route time, the duration the routing software assigns to a run before it leaves, not the delivery time recorded on the road. The planner can lay out shorter itineraries while actual deliveries take as long or longer once loading, waiting at drops and congestion are counted, and a planner scored on its own estimate is not evidence about outcomes. The claim is about delivery time, so none of the four cases speaks to it.",
       "word_count": 154,
-      "flaw_type": "claim_mismatch",
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Reviewer: conditions are identical to diverse_true and the closer is SAME fact + BLOCK scope, so it names no live confound. The ONLY change from diverse_true is the measured-quantity phrase, 'delivery time' becoming 'planned route time' in all four cases. Confirm the substitute is genuinely non-equivalent (the routing tool's own scheduled duration is not realised delivery time) and that it is not reused by any other family. A shared confound is unavailable here because the four groups span four depots, four vehicle types, four months and four dispatchers.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

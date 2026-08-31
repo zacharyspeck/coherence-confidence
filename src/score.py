@@ -499,7 +499,10 @@ def record_for(item: Item, res: ScoreResult) -> dict[str, Any]:
         "coherence": item.coherence,
         "ground_truth": item.ground_truth,
         "domain": item.domain,
-        "flaw_type": item.flaw_type,
+        "flaw_mechanism": item.flaw_mechanism,
+        "confound_variant": item.confound_variant,
+        "scope_variant": item.scope_variant,
+        "salience": item.salience,
         "word_count": item.word_count,
         "review_status": item.review_status,
     }

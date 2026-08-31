@@ -109,8 +109,8 @@ def test_full_smoke_pipeline_runs_and_every_check_passes(tmp_path):
     analysis = json.loads((out / "analysis_mock.json").read_text(encoding="utf-8"))[
         "analysis"
     ]
-    assert analysis["auc_within_condition"]["coherent"]["estimate"]["value"] == 0.75
-    assert analysis["auc_within_condition"]["diverse"]["estimate"]["value"] == 0.55
+    assert analysis["auc_primary_full_set"]["conditions"]["coherent"]["estimate"]["value"] == 0.75
+    assert analysis["auc_primary_full_set"]["conditions"]["diverse"]["estimate"]["value"] == 0.55
 
 
 @pytest.mark.slow

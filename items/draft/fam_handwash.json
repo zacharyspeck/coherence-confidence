@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 149,
-      "flaw_type": null,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four entries share one value on ward, hospital, quarter and auditor. The closer neutralises the quarter-over-quarter comparison by holding admissions, case mix, cleaning and staffing fixed, which is what makes a before/after ward comparison adequate here.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_handwash__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four entries sit in one hospital on one surgical floor inside the same first quarter, so a single contract-level change covers every case at once. Contract deep-cleaning hours ran at triple the earlier quarter, and that extra cleaning reaches every entry here because every ward was cleaned under the contract. Deep cleaning lowers ward infections on its own, and each ward is compared only against itself a quarter earlier, before the hours were tripled, rather than against a ward cleaned to the same standard in the same quarter, so nothing in the evidence separates the handwashing protocol from the extra cleaning. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same tripled contract hours but has every ward cleaned by in-house staff, so the contractor's change cannot reach these wards, which is what makes it sound.",
       "word_count": 149,
-      "flaw_type": "shared_confound",
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Confirm the closer works as a single confound ONLY because the four entries share hospital, ward type and quarter, and that it reuses the same vocabulary as the true closer (cleaning schedules, staffing, earlier quarter).",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_handwash__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 148,
-      "flaw_type": null,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on ward, hospital, quarter and auditor. Closer is identical to coherent_true, so the only thing that varies between the two TRUE cells is the condition values. Four hospitals across four quarters means no single housekeeping or staffing event can cover all four cases.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_handwash__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "Every case measures culture requests, which counts how many specimens a ward sent to the laboratory, not how many patients were infected. Ordering fewer swabs lowers that count while the underlying infection rate is unchanged, and it can hide infections that are never cultured. The claim is about ward infection rates, so none of the four cases, from 27 March through 28 December, bears on it.",
       "word_count": 152,
-      "flaw_type": "claim_mismatch",
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Closer is reused verbatim from both TRUE items and the conditions are identical to diverse_true; the only change is the measured-quantity phrase, 'infections' becoming 'culture requests'. Reviewer should confirm culture requests (laboratory testing volume) is genuinely non-equivalent to infection rate, and that no shared confound is available across four hospitals in four quarters.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

@@ -167,7 +167,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
             )
         )
     for coh, want in EXPECTED["auc"].items():
-        e = analysis["auc_within_condition"][coh]
+        e = analysis["auc_primary_full_set"]["conditions"][coh]
         lines.append(check(f"AUC within {coh}", e["estimate"]["value"], want))
         lines.append(check(f"pairs in {coh}", e["detail"]["n_pairs"], 400))
         lines.append(
@@ -186,8 +186,33 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
         lines.append(
             check(
                 f"AUC[{coh}] IF abstentions were dropped",
-                analysis["auc_within_condition"][coh]["auc_if_abstained_dropped_DIAGNOSTIC"],
+                analysis["auc_primary_full_set"]["conditions"][coh][
+                    "auc_if_abstained_dropped_DIAGNOSTIC"
+                ],
                 want,
+            )
+        )
+
+    lines.append(
+        check(
+            "PRIMARY ENDPOINT: AUC(coherent) - AUC(diverse)",
+            analysis["auc_primary_full_set"]["gap_coherent_minus_diverse"]["value"],
+            EXPECTED["auc"]["coherent"] - EXPECTED["auc"]["diverse"],
+        )
+    )
+    lines.append(
+        check(
+            "matched-mechanism subset uses the same families in both conditions",
+            analysis["auc_matched_mechanism"]["families_match_across_conditions"],
+            True,
+        )
+    )
+    for coh in ("coherent", "diverse"):
+        lines.append(
+            check(
+                f"matched-subset pairs, {coh}",
+                analysis["auc_matched_mechanism"]["conditions"][coh]["detail"]["n_pairs"],
+                100,
             )
         )
 
@@ -285,7 +310,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
         # within-condition AUC or any contrast.
         check(
             "delta leaves AUC[coherent] unchanged",
-            delta["auc_within_condition"]["coherent"]["estimate"]["value"],
+            delta["auc_primary_full_set"]["conditions"]["coherent"]["estimate"]["value"],
             EXPECTED["auc"]["coherent"],
         ),
         check(

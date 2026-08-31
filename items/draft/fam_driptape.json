@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 152,
-      "flaw_type": null,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "All four blocks share farm, crop, season and agronomist - one distinct value per dimension. The closing sentence neutralises the season-over-season comparison by holding rainfall, mean temperature and seed variety fixed, which is what makes the before/after evidence adequate. Reviewer should check that the closer names the same causes (rainfall, mean temperature) as the coherent_false closer so the difference is logical rather than lexical.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_driptape__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four blocks sit on one farm in one summer, so a single rainfall record covers every case at once. Rain at roughly double the year before is one alternative cause, and it reaches every block because every block lay in open ground and took that rain as it fell. Each block is compared against itself a season earlier rather than against an undripped block in the same season, so nothing in the evidence separates the drip line from the rain. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same doubled rainfall but puts every block under a rain shelter fed only by metered water, so the rain cannot reach the crop and the season-over-season comparison holds.",
       "word_count": 152,
-      "flaw_type": "shared_confound",
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Reviewer should confirm the closer works as a single confound ONLY because the cases are coherent - four blocks on one farm in one summer share a rainfall record. Check that no hedging connective ('however', 'although') was introduced.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_driptape__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 153,
-      "flaw_type": null,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension - four farms, four crops, four seasons, four agronomists. The closing sentence is byte-identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Reviewer should confirm no farm, crop, season or surname repeats across the four cases.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_driptape__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
       "word_count": 153,
-      "flaw_type": "temporal",
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closing sentence is byte-identical to both TRUE items and the condition values are byte-identical to diverse_true; the flaw lives entirely in the fitting and measurement dates of cases one and three, which a bag-of-ngrams classifier cannot see because the tokens are merely reordered. Reviewer should verify exactly two cases are inverted and that cases two and four remain correctly ordered. A shared confound is unavailable here: four farms across four seasons share no weather history.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "broken_chronology",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

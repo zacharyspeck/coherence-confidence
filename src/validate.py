@@ -402,7 +402,7 @@ def check_no_answer_leakage(items: Sequence[Item]) -> CheckResult:
     and the passage must not name the cell or the flaw type."""
     failures: list[str] = []
     banned_words = ("ground_truth", "coherent_true", "coherent_false",
-                    "diverse_true", "diverse_false", "confound_note", "flaw_type")
+                    "diverse_true", "diverse_false", "confound_note", "flaw_mechanism")
     for it in items:
         p = normalize_ws(it.passage).lower()
         if it.confound_note:

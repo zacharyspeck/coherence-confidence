@@ -84,10 +84,10 @@ def build_clean_item(family_id: str, cell: str, k: int) -> Item:
         passage=passage,
         ground_truth=truth,
         confound_note=None if truth else "Held out from the passage on purpose.",
-        flaw_type=(
+        flaw_mechanism=(
             None
             if truth
-            else ("shared_confound" if cell == "coherent_false" else "temporal")
+            else ("stated_confound" if cell == "coherent_false" else "broken_chronology")
         ),
         word_count=compute_word_count(passage),
         domain="synthetic",

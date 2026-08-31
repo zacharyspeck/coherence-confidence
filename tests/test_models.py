@@ -121,23 +121,31 @@ def test_rejects_missing_confound_note_on_false_item():
         Item.model_validate(_mutate(it, confound_note="   "))
 
 
-def test_rejects_missing_flaw_type_on_false_item():
+def test_rejects_missing_flaw_mechanism_on_false_item():
     it = make_item(cell="coherent_false")
-    with pytest.raises(ValueError, match="must declare a flaw_type"):
-        Item.model_validate(_mutate(it, flaw_type=None))
+    with pytest.raises(ValueError, match="must declare a flaw_mechanism"):
+        Item.model_validate(_mutate(it, flaw_mechanism=None))
 
 
-def test_rejects_wrong_flaw_type_for_coherent_false():
-    it = make_item(cell="coherent_false")
-    with pytest.raises(ValueError, match="coherent_false must use"):
-        Item.model_validate(_mutate(it, flaw_type="temporal"))
+def test_stated_confound_is_confined_to_coherent_false():
+    """A single stated fact cannot cover four cases that differ on every
+    dimension, so this mechanism is only available under coherence (D-004)."""
+    for cell in ("diverse_false",):
+        it = make_item(cell=cell)
+        with pytest.raises(ValueError, match="only coherent_false may use"):
+            Item.model_validate(_mutate(it, flaw_mechanism="stated_confound"))
 
 
-def test_rejects_shared_confound_for_diverse_false():
-    """A single confound cannot cover 4 cases that differ on every dimension."""
-    it = make_item(cell="diverse_false")
-    with pytest.raises(ValueError, match="diverse_false must use"):
-        Item.model_validate(_mutate(it, flaw_type="shared_confound"))
+def test_scope_mismatch_is_allowed_in_both_false_cells():
+    """This is the point of D-024: the matched-mechanism comparison needs the
+    same mechanism present under both coherence conditions."""
+    for cell in ("coherent_false", "diverse_false"):
+        it = make_item(cell=cell)
+        ok = Item.model_validate(
+            _mutate(it, flaw_mechanism="scope_mismatch",
+                    scope_variant="subset_incomplete", confound_variant="changed_block")
+        )
+        assert ok.flaw_mechanism == "scope_mismatch"
 
 
 def test_rejects_case_text_not_in_passage(item):
@@ -254,42 +262,67 @@ def test_schema_json_is_valid_json_and_agrees_with_model():
     assert required <= model_fields
 
 
-# ---- closer_variant (D-022) ------------------------------------------------
+# ---- confound_variant (D-022) ------------------------------------------------
 
 
-def test_closer_variant_is_optional(item):
-    assert item.closer_variant is None
+def test_variants_are_optional_on_the_model():
+    """The model allows them to be absent; src/validate.py is what requires every
+    real FALSE item to declare the variant matching its mechanism."""
+    ref = make_item()
+    d = ref.model_dump()
+    d.pop("confound_variant")
+    d.pop("scope_variant")
+    it = Item.model_validate(d)
+    assert it.confound_variant is None and it.scope_variant is None
 
 
-def test_coherent_false_must_carry_the_live_confound_variant():
+def test_a_live_confound_requires_the_matching_mechanism():
+    """confound_variant='changed_reach' IS the falsification. An item carrying it
+    must say so, or its metadata is describing prose it does not have."""
     it = make_item(cell="coherent_false")
-    ok = Item.model_validate(_mutate(it, closer_variant="changed_reach"))
-    assert ok.closer_variant == "changed_reach"
-    with pytest.raises(ValueError, match="coherent_false must carry"):
-        Item.model_validate(_mutate(it, closer_variant="changed_block"))
+    ok = Item.model_validate(_mutate(it, confound_variant="changed_reach"))
+    assert ok.confound_variant == "changed_reach"
+
+    it = make_item(cell="diverse_false")  # declared broken_chronology
+    with pytest.raises(ValueError, match="must be 'stated_confound'"):
+        Item.model_validate(_mutate(it, confound_variant="changed_reach"))
+
+
+def test_a_live_scope_requires_the_matching_mechanism():
+    it = make_item(cell="coherent_false")  # declared stated_confound
+    with pytest.raises(ValueError, match="must be 'scope_mismatch'"):
+        Item.model_validate(_mutate(it, scope_variant="subset_incomplete"))
+
+
+def test_declared_mechanism_requires_its_live_variant():
+    it = make_item(cell="coherent_false")
+    with pytest.raises(ValueError, match="requires confound_variant='changed_reach'"):
+        Item.model_validate(_mutate(it, confound_variant="same_block"))
+
+
+@pytest.mark.parametrize("variant", ["changed_reach"])
+def test_true_items_may_never_carry_a_live_confound(variant, item):
+    with pytest.raises(ValueError, match="TRUE item cannot carry a live"):
+        Item.model_validate(_mutate(item, confound_variant=variant))
+
+
+@pytest.mark.parametrize("variant", ["subset_incomplete"])
+def test_true_items_may_never_carry_a_live_scope(variant, item):
+    with pytest.raises(ValueError, match="TRUE item cannot carry a live"):
+        Item.model_validate(_mutate(item, scope_variant=variant))
 
 
 @pytest.mark.parametrize(
-    "cell", ["coherent_true", "diverse_true", "diverse_false"]
-)
-def test_only_coherent_false_may_have_a_live_reaching_confound(cell):
-    """changed_reach means the confound moved AND reached the units. Any other
-    cell carrying it would be false for a reason its label does not admit."""
-    it = make_item(cell=cell)
-    with pytest.raises(ValueError, match="only coherent_false may carry"):
-        Item.model_validate(_mutate(it, closer_variant="changed_reach"))
-
-
-@pytest.mark.parametrize(
-    "cell,variant",
+    "confound,scope",
     [
-        ("coherent_true", "changed_block"),
-        ("coherent_true", "same_reach"),
-        ("diverse_true", "changed_block"),
-        ("diverse_true", "same_reach"),
-        ("diverse_false", "same_block"),
+        ("changed_block", "subset_complete"),
+        ("same_reach", "whole_incomplete"),
+        ("same_block", "whole_complete"),
     ],
 )
-def test_the_other_variants_are_accepted(cell, variant):
-    it = make_item(cell=cell)
-    assert Item.model_validate(_mutate(it, closer_variant=variant)).closer_variant == variant
+def test_true_items_accept_every_non_live_combination(confound, scope, item):
+    ok = Item.model_validate(
+        _mutate(item, confound_variant=confound, scope_variant=scope)
+    )
+    assert ok.confound_variant == confound
+    assert ok.scope_variant == scope

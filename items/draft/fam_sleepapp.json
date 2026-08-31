@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 153,
-      "flaw_type": null,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four cohorts share one distinct value on every dimension: city Fenwick, phone Corvid 7, month March, cohort size 40. The closer names the obvious rival cause (outdoor temperature falling ten degrees) and then blocks it: every cohort slept in rooms held at a fixed 20 degrees, so the month-over-month comparison still supports the claim.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_sleepapp__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, so a single weather history covers every case at once. Outdoor temperature in that city falling ten degrees from the month before is one alternative cause of a lower resting heart rate, and it reaches every cohort because every cohort slept in unconditioned rooms open to outside air. Each cohort is compared against itself in February, when the nights were warmer, rather than against an untracked cohort in the same month, so the cooling and the app arrived together and the evidence cannot separate them. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same ten-degree fall but has every cohort sleeping in rooms held at a fixed 20 degrees, so the outdoor change never reaches them and the month-over-month comparison holds.",
       "word_count": 152,
-      "flaw_type": "shared_confound",
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases must be byte-identical to coherent_true; only the closer differs, and only in its second clause. Confirm the temperature drop works as a single confound solely because the four cohorts share a city and a month. The fact clause is shared verbatim with coherent_true and the scope clause is shared verbatim with diverse_true, so no single clause marks the label.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_sleepapp__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 152,
-      "flaw_type": null,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four cities, four phone models, four months, four cohort sizes. The closer states that outdoor temperature matched the month before, so there is no rival cause to block. Four cities across four months share no local weather history, so no single alternative cause is available.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_sleepapp__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
       "word_count": 153,
-      "flaw_type": "temporal",
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closer states that outdoor temperature matched the month before and that every cohort slept in rooms held at a fixed 20 degrees, so it introduces no confound. The flaw lives entirely in the start dates of cases one and three, where the outcome date precedes the start date. Check that no other token changed from diverse_true and that nothing in the passage flags the reversal.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "broken_chronology",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

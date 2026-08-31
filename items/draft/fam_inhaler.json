@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 152,
-      "flaw_type": null,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four cases share one value on every dimension (Harrowfield, 12-17, winter quarter, Adeyemi) and that only the start days, attack counts and outcome days vary. The closer names the halving of district pollen and irritants but blocks it - every group lived and slept on filtered indoor air - so the quarter-over-quarter comparison still supports the claim.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_inhaler__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, so a single district air history covers every case at once. Pollen and airborne irritants in that district falling by half from the previous quarter is one alternative cause of fewer attacks, and it reaches every group because every group lived and slept in unfiltered district air. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, so nothing in the evidence separates the inhaler from the drop in irritants. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same halving of pollen and irritants but has every group living and sleeping on filtered indoor air, so the drop never reaches the patients and the quarter-over-quarter comparison holds.",
       "word_count": 153,
-      "flaw_type": "shared_confound",
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases must be byte-identical to coherent_true; only the closer differs, and only in its second clause. Check that the confound works ONLY because the cases are coherent: four groups at one clinic in one quarter breathe the same district air, so one exposure fact explains every case. The fact clause is shared verbatim with coherent_true and the scope clause is shared verbatim with diverse_true, so no single clause marks the label.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_inhaler__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 153,
-      "flaw_type": null,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four clinics, four age bands, four quarters, four nurses. The closer states that district pollen and irritants held level, so there is no rival cause to block. Check that no single event could span four clinics in four different quarters.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_inhaler__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
       "word_count": 152,
-      "flaw_type": "temporal",
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closer states that district pollen and irritants held level and that every group lived and slept on filtered indoor air, so it introduces no confound; the flaw lives entirely in the dates of cases one and three, where the outcome day precedes the start day. Check that conditions are unchanged from diverse_true and that only the two month names moved.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "broken_chronology",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 152,
-      "flaw_type": null,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four cases share one value on school, year_group, term and registrar. The closer neutralises the term-over-term comparison by holding term length, the reward scheme and illness rates fixed, which is what makes a before/after register comparison adequate.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_timetable__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four cases are one year group at one school inside a single autumn term, so they share one district and one attendance reward scheme. That scheme tripled its payment over the term, a single alternative cause, and it reaches every case because all four cohorts were on the district roll the scheme covered. Because each cohort is compared only against itself a term earlier, when the smaller payment applied, nothing in the register separates the reward from the timetable change. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same tripled payment but puts every cohort on an independent roll the scheme never covered, so the reward cannot reach them, which is what makes it sound.",
       "word_count": 151,
-      "flaw_type": "shared_confound",
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. Check that the reward scheme and illness rates work as a single cause only because all four cases sit in one school and one term. Same vocabulary as the true closer (reward scheme, illness rates, term, school) so the difference is logical, not lexical.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_timetable__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 151,
-      "flaw_type": null,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four schools, four year groups, four terms, four registrars. Closer is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four schools in four terms means no single event could cover all four cases.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_timetable__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "All four cases measure lateness, not absence. A lateness mark is entered against a pupil who turned up and was registered present for the session, so the register counts lateness and absence as separate quantities. Moving the start of the school day can cut lateness in every cohort while the number of sessions missed altogether holds flat or rises. The claim is about absence, so none of the four cases speaks to it.",
       "word_count": 152,
-      "flaw_type": "claim_mismatch",
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Closer is verbatim identical to both TRUE items; the only change from diverse_true is the measured-quantity word, absence to lateness, in all four cases. Check that lateness reads as genuinely non-equivalent to absence and that nothing in the passage flags the swap. A shared confound is unavailable here because the four cohorts span four schools, four year groups, four terms and four registrars.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

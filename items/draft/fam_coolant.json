@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 153,
-      "flaw_type": null,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four runs share one value on workshop, alloy, shift and machinist. The closer names the shop's insert refit and then blocks it: every logged run was cut on a machine hired from outside, so the refit cannot reach the runs, and the tail rules out anything else. That is what makes a quarter-over-quarter cycle-time comparison adequate here.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_coolant__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four runs sit in the same workshop on the same night shift inside one quarter, so a single retooling covers every case at once. The shop refitted its machines with a faster insert grade that quarter, and the retooling reaches every case because each logged run was cut on one of those refitted machines. Each run is compared against itself last quarter, when the older grade was still fitted, so nothing in the log separates the coolant from the inserts. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same refit but cuts every logged run on a machine hired from outside, so the refit cannot reach the runs, which is what makes it sound.",
       "word_count": 152,
-      "flaw_type": "shared_confound",
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. The insert refit works as a single confound ONLY because the four runs share workshop and shift, and it reaches them because every run was cut on one of the refitted machines. Both closer clauses are reused elsewhere in the family - the refit fact also appears in coherent_true and the scope clause also appears in diverse_true - so the contrast is a conjunction, not a vocabulary difference.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_coolant__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 153,
-      "flaw_type": null,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four workshops, four alloys, four shifts, four machinists, spread across four quarters. The closer states that the insert grade did not move between quarters and that the runs were cut on those same machines, so no alternative cause is live.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_coolant__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
       "word_count": 154,
-      "flaw_type": "temporal",
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closer shares its fact clause with diverse_true and its scope clause with coherent_true, so neither clause marks the label; the conditions are verbatim identical to diverse_true. The flaw lives only in the switch dates of cases one and three, which a bag-of-ngrams classifier cannot see because the month tokens are all still ordinary dates. A single shared confound is unavailable here: four workshops, four alloys, four shifts and four quarters share no common event.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "broken_chronology",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

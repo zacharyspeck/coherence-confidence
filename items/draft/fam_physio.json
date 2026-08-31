@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 148,
-      "flaw_type": null,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four intakes share hospital, injury type, season and therapist - one distinct value per dimension. The closer names the obvious rival cause (corticosteroid injections tripling) and then blocks it: every intake was medically barred from receiving them, so the ward-against-itself comparison still supports the claim.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_physio__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four intakes are rotator cuff cases on one Marbeck ward in one spring, so a single hospital-wide prescribing change covers every case at once. Corticosteroid injections tripling at that hospital from the earlier quarter is a genuine rival cause of restored shoulder abduction, and it reaches every intake because every intake was cleared to receive them. Each intake is measured against the same ward a quarter earlier, when injections ran at a third of the rate, so the injections and the protocol rose together and the register cannot separate them. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same tripling but has every intake medically barred from receiving the injections, so the rise cannot touch these patients and the quarter-over-quarter comparison holds.",
       "word_count": 147,
-      "flaw_type": "shared_confound",
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are identical to coherent_true; only the closer differs, and only in its second clause. Check that the corticosteroid rise is one cause covering all four records at once, and that it works only because every record is the same ward in the same spring. The fact clause is shared verbatim with coherent_true and the scope clause is shared verbatim with diverse_true, so no single clause marks the label.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_physio__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 148,
-      "flaw_type": null,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension. The closer states that corticosteroid injections held level, so there is no rival cause to block. Check that no single event could cover four hospitals, four injury types, four seasons and four therapists at once.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_physio__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "Every case reports a fall in shoulder pain scores, not a gain in shoulder range of motion: 14 points at Marbeck, 11 at Colvane, 16 at Drenholm and 9 at Pellamere are all movements on a pain scale. Pain and range of motion are different quantities, and a stiff shoulder can hurt much less while abduction stays exactly where it was. The claim is about restoring range of motion, so none of the four ward records speaks to it.",
       "word_count": 153,
-      "flaw_type": "claim_mismatch",
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closer states that corticosteroid injections held level and that every intake was barred from them, so it introduces no confound. The only change from diverse_true is the measured quantity - shoulder pain scores in points instead of shoulder abduction in degrees. Check that pain relief is genuinely not restored range of motion and that nothing in the passage flags the substitution.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

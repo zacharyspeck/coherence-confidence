@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 147,
-      "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. All four segments share device, country, month and traffic source. The closer neutralises the month-over-month comparison by holding traffic, promotions, prices and other releases fixed.",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_checkout__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four segments sit inside the same month, so one site-wide discount covers every case at once, and every segment browsed the general catalogue where that discount applied. Each segment is compared against itself a month earlier, before the discount ran, so the discount and the new page changed together and the evidence cannot separate them. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same discount but puts every segment on a fixed-price contract catalogue, which is what makes it sound.",
       "word_count": 149,
-      "flaw_type": "shared_confound",
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Cases identical to coherent_true; only the closer differs. The discount works as a single confound precisely because all four segments share the same month.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_checkout__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 150,
-      "flaw_type": null,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Four distinct values on every dimension, same closer as coherent_true. Four different months means no single event can cover all four cases, which is what makes this the stronger evidence of the two TRUE cells.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_checkout__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "Every case measures cart additions, not purchases. Putting an item in a cart is not buying it, and a checkout page can raise cart additions while completed purchases stay flat or fall - abandonment at checkout is exactly what this page governs. The claim is about purchases, so none of the four cases speaks to it.",
       "word_count": 152,
-      "flaw_type": "claim_mismatch",
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Closer identical to both TRUE items. The flaw is that the measured quantity is not the claimed one. A shared confound is unavailable here because the four segments span four months, four countries, four devices and four sources.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

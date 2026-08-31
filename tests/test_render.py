@@ -33,7 +33,7 @@ def test_prompt_never_leaks_the_answer_key():
     assert it.confound_note not in p
     assert it.cell not in p
     assert "ground_truth" not in p
-    assert (it.flaw_type or "") not in p
+    assert (it.flaw_mechanism or "") not in p
 
 
 def test_baseline_prompt_has_no_cases(item):

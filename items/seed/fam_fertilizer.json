@@ -60,12 +60,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 142,
-      "flaw_type": null,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Every case shares species, location, season and observer - one distinct value per dimension. The closing sentence neutralises the year-to-year comparison (weather matched, soil unchanged, nothing else altered), which is what makes the year-over-year evidence adequate.",
-      "closer_variant": "changed_block"
+      "flaw_mechanism": null,
+      "confound_variant": "changed_block",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_fertilizer__coherent_false",
@@ -118,12 +120,14 @@
       "ground_truth": false,
       "confound_note": "All four plots sit in the same backyard in the same summer, so one weather history covers them all. Rainfall roughly double the year before is a single alternative cause, and it reaches every plot because every plot stood in the open and was watered by rain alone. Each plot is compared against itself a year earlier rather than against an untreated plot in the same year, so nothing in the evidence separates the fertilizer from the rain. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same record rainfall but puts the plots under cover on a fixed watering schedule, which is what makes it sound.",
       "word_count": 142,
-      "flaw_type": "shared_confound",
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Cases are IDENTICAL to coherent_true; only the closing sentence differs. That closer is the shared confound. It only works because the cases are coherent: four plots in one backyard in one summer share a weather history, so one weather fact explains all four.",
-      "closer_variant": "changed_reach"
+      "flaw_mechanism": "stated_confound",
+      "confound_variant": "changed_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_fertilizer__diverse_true",
@@ -176,12 +180,14 @@
       "ground_truth": true,
       "confound_note": null,
       "word_count": 142,
-      "flaw_type": null,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Four distinct values on every dimension. Same closing sentence as coherent_true, so the ONLY thing that changes between the two TRUE cells is the condition values - which is what makes the coherence contrast within TRUE clean (D-004).",
-      "closer_variant": "same_reach"
+      "flaw_mechanism": null,
+      "confound_variant": "same_reach",
+      "scope_variant": null,
+      "salience": null
     },
     {
       "id": "fam_fertilizer__diverse_false",
@@ -234,12 +240,14 @@
       "ground_truth": false,
       "confound_note": "In cases one and three the height was recorded before the fertilizer was applied: 20 June precedes 3 August, and 19 April precedes 2 May. Half the evidence therefore describes growth that had already happened when the treatment was given, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
       "word_count": 142,
-      "flaw_type": "temporal",
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. The closing sentence is IDENTICAL to both TRUE items - the flaw lives entirely in the dates inside cases one and three, which is invisible to a bag-of-ngrams classifier because the tokens are unchanged. A single shared confound cannot be used here: four plants in four places across four seasons share no weather history.",
-      "closer_variant": "same_block"
+      "flaw_mechanism": "broken_chronology",
+      "confound_variant": "same_block",
+      "scope_variant": null,
+      "salience": null
     }
   ]
 }

@@ -212,7 +212,7 @@ def main(argv: list[str] | None = None) -> int:
     expl_by_cell: dict[str, list[float]] = defaultdict(list)
     for r in false_rows.values():
         if r.get("mean_explicitness") is not None:
-            expl_by_flaw[r["flaw_type"] or "?"].append(r["mean_explicitness"])
+            expl_by_flaw[r["flaw_mechanism"] or "?"].append(r["mean_explicitness"])
             expl_by_cell[r["cell"]].append(r["mean_explicitness"])
 
     if expl_by_cell.get("coherent_false") and expl_by_cell.get("diverse_false"):
@@ -222,7 +222,7 @@ def main(argv: list[str] | None = None) -> int:
         L.append("| group | n | mean explicitness (1-5) |")
         L.append("|---|---|---|")
         for flaw, vals in sorted(expl_by_flaw.items()):
-            L.append(f"| flaw_type `{flaw}` | {len(vals)} | {mean(vals):.2f} |")
+            L.append(f"| flaw_mechanism `{flaw}` | {len(vals)} | {mean(vals):.2f} |")
         L.append(
             f"| cell `coherent_false` | {len(expl_by_cell['coherent_false'])} "
             f"| **{cf:.2f}** |"
@@ -292,7 +292,7 @@ def main(argv: list[str] | None = None) -> int:
             continue
         L.append(why + "\n")
         for c, r in sorted(picked.items(), key=lambda kv: kv[1]["item_id"]):
-            L.append(f"### `{r['item_id']}`  ({r['flaw_type']})\n")
+            L.append(f"### `{r['item_id']}`  ({r['flaw_mechanism']})\n")
             L.append(f"- code `{c}`, {r['n_verdicts']} verdicts, "
                      f"answers {r['answers']}, matches {r['matches']}")
             if r["mean_explicitness"] is not None:
@@ -339,11 +339,11 @@ def main(argv: list[str] | None = None) -> int:
 
     # -- per flaw type -------------------------------------------------------
     L.append("## Detection by flaw type\n")
-    L.append("| flaw_type | n | found | missed | too easy |")
+    L.append("| flaw_mechanism | n | found | missed | too easy |")
     L.append("|---|---|---|---|---|")
     by_flaw: dict[str, list[dict]] = defaultdict(list)
     for r in false_rows.values():
-        by_flaw[r["flaw_type"] or "?"].append(r)
+        by_flaw[r["flaw_mechanism"] or "?"].append(r)
     for flaw, rs in sorted(by_flaw.items()):
         L.append(
             f"| {flaw} | {len(rs)} "
@@ -360,7 +360,7 @@ def main(argv: list[str] | None = None) -> int:
     for c, r in sorted(rows.items(), key=lambda kv: kv[1]["item_id"]):
         e = f"{r['mean_explicitness']:.1f}" if r.get("mean_explicitness") else ""
         L.append(
-            f"| `{r['item_id']}` | {r['cell']} | {r['flaw_type'] or ''} "
+            f"| `{r['item_id']}` | {r['cell']} | {r['flaw_mechanism'] or ''} "
             f"| {r['bucket']} | {','.join(str(a) for a in r.get('answers', []))} | {e} |"
         )
     L.append("")
