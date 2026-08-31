@@ -182,4 +182,49 @@ section 2 is the number to quote when challenged.
 
 ## 9. For your co-founder
 
-<!--COFOUNDER-->
+*Paste-able as written. Every number in it is from `results/salience_log.md`;
+re-check them there if you run another round before sending.*
+
+> **"How do we know the coherent-false items aren't just easier to catch than the
+> diverse-false ones?"**
+>
+> We don't assume it — we measured it, and at first it wasn't true. We show every
+> item to independent blind auditors who see only the passage, the claim and the
+> question, never the label or the answer key, and we ask them to rate how hard
+> the flaw was to spot on a 1–5 scale. On the first version the coherent-false
+> flaws came out at **3.90** and the diverse-false ones at **2.70** — a 1.2-point
+> gap, exactly the objection you're raising, and big enough to matter.
+>
+> So we fixed the cause rather than arguing about it, in three ways.
+>
+> **First, we changed where the flaw sits.** It used to be the last sentence of
+> the passage, right next to the question. It's now buried mid-passage with two
+> more cases and a closing line after it, stated as a neutral log fact with no
+> causal language. That alone took the coherent-false flaws from 3.90 to about
+> 3.1.
+>
+> **Second — and this is the part that actually answers you — we built a
+> falsification mechanism that works identically in both conditions.** Half the
+> false items in *each* cell are now falsified the same way: the numbers are
+> tallied over a narrower population than the claim is about. Same mechanism,
+> same 10 scenarios, same claims; the only thing that differs between the two
+> sides is coherence. We report the headline result on the full set and then
+> report it again on that matched subset directly underneath. If the two agree,
+> the effect isn't a mechanism artifact. If they disagree, we say so.
+>
+> **Third, we report salience as a covariate rather than hoping it went away.**
+> Every AUC in the output carries the mean salience of the false items that went
+> into it, and there's a logistic model of catch-rate on salience and coherence
+> so you can see how much of any gap salience could account for. If the coherence
+> effect survives conditioning on salience, that's stated explicitly.
+>
+> One thing worth knowing about the direction. A residual gap in this direction
+> works **against** us: an easier-to-catch coherent flaw makes the model look
+> *better* at ranking true above false under coherence, which is the opposite of
+> what we're predicting. So a positive finding despite the gap is stronger than
+> it looks, and — importantly — a null result is the case where this would have
+> been fatal, which is precisely why we spent the effort closing it before
+> running anything.
+>
+> The full round-by-round record is in `results/salience_log.md`, including the
+> round where we made things *worse* and had to back it out.
