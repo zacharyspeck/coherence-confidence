@@ -1,8 +1,8 @@
 {
   "kind": "validation",
   "meta": {
-    "timestamp_utc": "2026-08-31T07:56:31+00:00",
-    "code_git_sha": "c7ddb6719556223d5ed16c1830a40199b2fe50b5",
+    "timestamp_utc": "2026-08-31T17:34:23+00:00",
+    "code_git_sha": "9253e39b59e9b17ea0f4906af9f1407db3a6aa72",
     "code_git_dirty": true,
     "environment": {
       "python": "3.13.14",
@@ -29,41 +29,41 @@
     {
       "name": "word_count_parity",
       "passed": true,
-      "summary": "grand mean 151.2 words; largest cell deviation +0.61% (limit +/-10%)",
+      "summary": "grand mean 177.7 words; largest cell deviation +0.05% (limit +/-10%)",
       "required_by_brief": true,
       "n_failures": 0,
       "failures": [],
       "data": {
-        "grand_mean": 151.225,
+        "grand_mean": 177.713,
         "tolerance": 0.1,
         "by_cell": {
           "coherent_true": {
             "n": 20,
-            "mean": 151.0,
-            "min": 142,
-            "max": 154,
-            "deviation_from_grand": -0.00149
+            "mean": 177.7,
+            "min": 167,
+            "max": 185,
+            "deviation_from_grand": -7e-05
           },
           "coherent_false": {
             "n": 20,
-            "mean": 150.8,
-            "min": 142,
-            "max": 154,
-            "deviation_from_grand": -0.00281
+            "mean": 177.65,
+            "min": 166,
+            "max": 183,
+            "deviation_from_grand": -0.00035
           },
           "diverse_true": {
             "n": 20,
-            "mean": 150.95,
-            "min": 142,
-            "max": 154,
-            "deviation_from_grand": -0.00182
+            "mean": 177.8,
+            "min": 168,
+            "max": 183,
+            "deviation_from_grand": 0.00049
           },
           "diverse_false": {
             "n": 20,
-            "mean": 152.15,
-            "min": 142,
-            "max": 154,
-            "deviation_from_grand": 0.00612
+            "mean": 177.7,
+            "min": 166,
+            "max": 183,
+            "deviation_from_grand": -7e-05
           }
         }
       }
@@ -93,18 +93,18 @@
     {
       "name": "no_lexical_giveaway",
       "passed": true,
-      "summary": "grouped 5-fold CV accuracy 53.0% (mean of 5 shufflings; max 56.2%; 0/5 over limit) (limit 60%, chance 50%)",
+      "summary": "grouped 5-fold CV accuracy 50.5% (mean of 5 shufflings; max 53.8%; 0/5 over limit) (limit 60%, chance 50%)",
       "required_by_brief": true,
       "n_failures": 0,
       "failures": [],
       "data": {
         "cv": "grouped",
-        "accuracy": 0.53,
-        "accuracy_max": 0.5625,
+        "accuracy": 0.505,
+        "accuracy_max": 0.5375,
         "accuracy_per_seed": [
-          0.5625,
-          0.55,
-          0.5125,
+          0.5,
+          0.525,
+          0.475,
           0.5375,
           0.4875
         ],
@@ -112,216 +112,216 @@
         "n_seeds_over_threshold": 0,
         "fold_accuracies_last_seed": [
           0.5,
-          0.5625,
-          0.4375,
-          0.4375,
-          0.5
+          0.375,
+          0.5,
+          0.5,
+          0.5625
         ],
         "threshold": 0.6,
-        "n_features": 2743,
+        "n_features": 3308,
         "n_items": 80,
         "top_tokens_predicting_TRUE": [
           {
+            "token": "any",
+            "coef": 0.6088
+          },
+          {
+            "token": "and no",
+            "coef": 0.6088
+          },
+          {
+            "token": "no",
+            "coef": 0.6088
+          },
+          {
+            "token": "session",
+            "coef": 0.4909
+          },
+          {
+            "token": "in any",
+            "coef": 0.4656
+          },
+          {
+            "token": "pieces",
+            "coef": 0.4506
+          },
+          {
+            "token": "who",
+            "coef": 0.4009
+          },
+          {
+            "token": "board",
+            "coef": 0.3566
+          },
+          {
+            "token": "missed",
+            "coef": 0.3503
+          },
+          {
+            "token": "positions",
+            "coef": 0.3382
+          },
+          {
+            "token": "every tray",
+            "coef": 0.334
+          },
+          {
+            "token": "tray",
+            "coef": 0.334
+          },
+          {
+            "token": "pupil in",
+            "coef": 0.3279
+          },
+          {
+            "token": "every board",
+            "coef": 0.3137
+          },
+          {
+            "token": "board on",
+            "coef": 0.3137
+          },
+          {
+            "token": "session and",
+            "coef": 0.3128
+          },
+          {
+            "token": "it",
+            "coef": 0.309
+          },
+          {
+            "token": "any cohort",
+            "coef": 0.2981
+          },
+          {
+            "token": "session in",
+            "coef": 0.2972
+          },
+          {
             "token": "may than",
-            "coef": 0.5239
+            "coef": 0.2821
           },
           {
-            "token": "held",
-            "coef": 0.4476
+            "token": "no patient",
+            "coef": 0.2788
           },
           {
-            "token": "september by",
-            "coef": 0.4265
+            "token": "patient",
+            "coef": 0.2678
           },
           {
-            "token": "march ran",
-            "coef": 0.3749
+            "token": "third",
+            "coef": 0.2664
           },
           {
-            "token": "particulate",
-            "coef": 0.3737
+            "token": "whatever",
+            "coef": 0.2639
           },
           {
-            "token": "logged particulate",
-            "coef": 0.3737
-          },
-          {
-            "token": "revenue",
-            "coef": 0.37
-          },
-          {
-            "token": "revenue per",
-            "coef": 0.37
-          },
-          {
-            "token": "august had",
-            "coef": 0.3632
-          },
-          {
-            "token": "started august",
-            "coef": 0.3632
-          },
-          {
-            "token": "30 september",
-            "coef": 0.3601
-          },
-          {
-            "token": "absence ran",
-            "coef": 0.3568
-          },
-          {
-            "token": "absence",
-            "coef": 0.3568
-          },
-          {
-            "token": "matched the",
-            "coef": 0.3511
-          },
-          {
-            "token": "matched",
-            "coef": 0.3491
-          },
-          {
-            "token": "september",
-            "coef": 0.3458
-          },
-          {
-            "token": "fitted march",
-            "coef": 0.3373
-          },
-          {
-            "token": "delivery",
-            "coef": 0.3221
-          },
-          {
-            "token": "november than",
-            "coef": 0.3203
-          },
-          {
-            "token": "started february",
-            "coef": 0.3145
-          },
-          {
-            "token": "february had",
-            "coef": 0.3145
-          },
-          {
-            "token": "delivery time",
-            "coef": 0.3117
-          },
-          {
-            "token": "purchases ran",
-            "coef": 0.3087
-          },
-          {
-            "token": "purchases",
-            "coef": 0.3087
-          },
-          {
-            "token": "infections ran",
-            "coef": 0.2973
+            "token": "third of",
+            "coef": 0.2628
           }
         ],
         "top_tokens_predicting_FALSE": [
           {
-            "token": "that",
-            "coef": -0.574
+            "token": "every",
+            "coef": -0.7003
           },
           {
-            "token": "20 june",
-            "coef": -0.4759
+            "token": "the",
+            "coef": -0.5741
           },
           {
-            "token": "april than",
-            "coef": -0.4759
+            "token": "and every",
+            "coef": -0.4893
+          },
+          {
+            "token": "piece",
+            "coef": -0.475
+          },
+          {
+            "token": "runs",
+            "coef": -0.3797
           },
           {
             "token": "may ran",
-            "coef": -0.4452
+            "coef": -0.3747
           },
           {
-            "token": "27 march",
-            "coef": -0.4379
+            "token": "and quarter",
+            "coef": -0.3638
+          },
+          {
+            "token": "trays",
+            "coef": -0.3363
+          },
+          {
+            "token": "position",
+            "coef": -0.3358
+          },
+          {
+            "token": "position on",
+            "coef": -0.3358
+          },
+          {
+            "token": "up",
+            "coef": -0.3095
+          },
+          {
+            "token": "pupil on",
+            "coef": -0.302
+          },
+          {
+            "token": "in each",
+            "coef": -0.3018
+          },
+          {
+            "token": "given",
+            "coef": -0.2914
+          },
+          {
+            "token": "given the",
+            "coef": -0.2914
           },
           {
             "token": "october",
-            "coef": -0.4239
+            "coef": -0.2899
           },
           {
-            "token": "units",
-            "coef": -0.4174
+            "token": "user in",
+            "coef": -0.288
           },
           {
-            "token": "units per",
-            "coef": -0.4174
+            "token": "user",
+            "coef": -0.288
           },
           {
-            "token": "fitted may",
-            "coef": -0.4063
+            "token": "every enrolled",
+            "coef": -0.288
           },
           {
-            "token": "fitted august",
-            "coef": -0.4063
+            "token": "enrolled user",
+            "coef": -0.288
           },
           {
-            "token": "backpressure",
-            "coef": -0.3776
+            "token": "boards",
+            "coef": -0.2847
           },
           {
-            "token": "logged backpressure",
-            "coef": -0.3776
+            "token": "and about",
+            "coef": -0.2821
           },
           {
-            "token": "28 february",
-            "coef": -0.3565
+            "token": "orders",
+            "coef": -0.2727
           },
           {
-            "token": "september had",
-            "coef": -0.353
+            "token": "march than",
+            "coef": -0.2592
           },
           {
-            "token": "march had",
-            "coef": -0.353
-          },
-          {
-            "token": "lateness ran",
-            "coef": -0.3497
-          },
-          {
-            "token": "lateness",
-            "coef": -0.3497
-          },
-          {
-            "token": "started april",
-            "coef": -0.3393
-          },
-          {
-            "token": "30 august",
-            "coef": -0.3315
-          },
-          {
-            "token": "started october",
-            "coef": -0.329
-          },
-          {
-            "token": "cart additions",
-            "coef": -0.3222
-          },
-          {
-            "token": "additions",
-            "coef": -0.3222
-          },
-          {
-            "token": "additions ran",
-            "coef": -0.3222
-          },
-          {
-            "token": "cart",
-            "coef": -0.3222
-          },
-          {
-            "token": "may",
-            "coef": -0.3027
+            "token": "was cut",
+            "coef": -0.2568
           }
         ],
         "permutation_test": null,
@@ -367,35 +367,64 @@
       "data": {}
     },
     {
-      "name": "closer_word_balance",
+      "name": "passage_word_balance",
       "passed": true,
-      "summary": "20 families checked; worst per-word TRUE/FALSE imbalance in a family's closers = 0 (limit 0)",
+      "summary": "20 families; worst per-word TRUE/FALSE imbalance = 2 (limit 2; 1 is the floor when both false items share a mechanism, D-026)",
       "required_by_brief": false,
       "n_failures": 0,
       "failures": [],
       "data": {
-        "tolerance": 0,
+        "tolerance": 2,
         "imbalance_by_family": {
-          "fam_bearing": 0,
-          "fam_checkout": 0,
-          "fam_coolant": 0,
-          "fam_driptape": 0,
-          "fam_fertilizer": 0,
-          "fam_filter": 0,
-          "fam_handwash": 0,
-          "fam_inhaler": 0,
-          "fam_labkit": 0,
-          "fam_nestbox": 0,
-          "fam_onboarding": 0,
-          "fam_physio": 0,
-          "fam_pricing": 0,
-          "fam_reading": 0,
-          "fam_routing": 0,
-          "fam_seedcoat": 0,
-          "fam_sleepapp": 0,
-          "fam_solder": 0,
-          "fam_timetable": 0,
-          "fam_tutoring": 0
+          "fam_bearing": 2,
+          "fam_checkout": 2,
+          "fam_coolant": 2,
+          "fam_driptape": 2,
+          "fam_fertilizer": 2,
+          "fam_filter": 2,
+          "fam_handwash": 2,
+          "fam_inhaler": 2,
+          "fam_labkit": 2,
+          "fam_nestbox": 2,
+          "fam_onboarding": 2,
+          "fam_physio": 2,
+          "fam_pricing": 2,
+          "fam_reading": 2,
+          "fam_routing": 2,
+          "fam_seedcoat": 2,
+          "fam_sleepapp": 2,
+          "fam_solder": 2,
+          "fam_timetable": 2,
+          "fam_tutoring": 2
+        }
+      }
+    },
+    {
+      "name": "flaw_declarations_complete",
+      "passed": true,
+      "summary": "40 FALSE items checked",
+      "required_by_brief": false,
+      "n_failures": 0,
+      "failures": [],
+      "data": {}
+    },
+    {
+      "name": "matched_mechanism_subset",
+      "passed": true,
+      "summary": "scope_mismatch: 10 coherent_false, 10 diverse_false, over 10 shared families",
+      "required_by_brief": false,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "counts_by_cell": {
+          "coherent_false": {
+            "stated_confound": 10,
+            "scope_mismatch": 10
+          },
+          "diverse_false": {
+            "broken_chronology": 10,
+            "scope_mismatch": 10
+          }
         }
       }
     },

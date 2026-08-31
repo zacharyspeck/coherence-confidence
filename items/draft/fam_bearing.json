@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.\nThe lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here ran on a sealed charge. Hours cover the fitted bearings that ran to failure, and every one of those on each machine had failed.\nThree: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.\nThe lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here ran on a sealed charge. Hours cover the positions that ran the redesigned bearing throughout, and no position on any machine had spells on the old bearing.\nThree: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 174,
+      "word_count": 177,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.\nThe lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply. Hours cover every bearing fitted, survivors counted at hours to date, and every one of those on each machine had failed.\nThree: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.\nThe lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.\nThree: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": false,
       "confound_note": "All four machines are lathes at Bexley on the night shift, so a single change at that plant covers every case at once. The mid-passage line records that \"The lubricant supply switched to a higher-grade synthetic mid-cycle\" and that \"every machine here drew from that supply\", so the new lubricant reached the bearings in all four cases. A higher-grade lubricant extends bearing life on its own, and every machine is compared against its own previous cycle - run before the switch - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
-      "word_count": 175,
+      "word_count": 174,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.5
+      "salience": null
     },
     {
       "id": "fam_bearing__diverse_true",
@@ -176,10 +176,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.\nThe lubricant supply held to one grade throughout the cycle, and every machine here drew from that supply. Hours cover every bearing fitted, survivors counted at hours to date, and about a third of those on each machine had not failed.\nThree: a conveyor at Corbin on evenings, fitted 2 July, ran 410 hours longer before failure by 21 August than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.\nThe lubricant supply held to one grade throughout the cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\nThree: a conveyor at Corbin on evenings, fitted 2 July, ran 410 hours longer before failure by 21 August than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 178,
+      "word_count": 177,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.\nThe lubricant supply held to one grade throughout the cycle, and every machine here ran on a sealed charge. Hours cover every bearing fitted, survivors counted at hours to date, and every one of those on each machine had failed.\nThree: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.\nThe lubricant supply held to one grade throughout the cycle, and every machine here ran on a sealed charge. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.\nThree: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": false,
       "confound_note": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
-      "word_count": 177,
+      "word_count": 176,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }

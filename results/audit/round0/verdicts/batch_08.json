@@ -14,7 +14,7 @@
       "code": "FE036E",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The particulate figures 'cover the scheduled runs that returned a reading' while 'a quarter of scheduled runs at each stack returned no reading', so a quarter of runs are silently dropped and the measured population is narrower than the claim. The throughput halving is neutralised by the fixed duty cycle, but the missing quarter is not.",
+      "flaw_description": "The reported 8-14 percent reductions come from a hand-picked slice of runs: \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\" - so the 25 percent of post-upgrade runs with the filter out of circuit are dropped from the post figures while the earlier quarter's comparison presumably includes all runs. That is a narrower population than the claim, and it selects the runs most favourable to the upgrade.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -24,13 +24,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "B638C2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The outcome dates precede the installation dates in three of the four plots: Hollowmere was 'boxed 3 June' yet counted 'by 27 March' against 'the previous spring', Brackenfen was 'boxed 2 November' yet counted 'by 24 September' against 'the previous autumn', and Vanehead was 'boxed 5 December' yet counted 'by 21 February'. The extra fledglings were counted before, or in breeding seasons that closed before, the boxes went up.",
+      "flaw_description": "Two of the four cases have outcome dates that precede the intervention: plot One was \"boxed 3 June\" but fledging is counted \"by 27 March\", and plot Three was \"boxed 2 November\" but counted \"by 24 September\". The boxes cannot have raised counts measured months before they were installed, and the seasons quoted (spring, autumn) do not match the installation dates either.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -46,7 +46,7 @@
       "code": "A9D2D3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Germination 'rates cover the trays that reached the scoring date, and about a fifth of each lot's trays went unscored', so roughly 20 percent of trays per lot are excluded from the rate. Trays that fail early are exactly the ones likely to go unscored, so the surviving-tray population is narrower than the claim about the coating.",
+      "flaw_description": "The germination figures are restricted to a favourable subset: \"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed\" - so roughly 20 percent of each lot's trays are excluded from the post-coating scores while the previous spring sowing is scored whole. The 6-11 point gains therefore describe a narrower population than the lots the claim is about.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -62,7 +62,7 @@
       "code": "090602",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Pass rates cover the students entered for the exam, and about a quarter of each cohort's roll was not entered', so the rate is computed on a self-selected three quarters of each cohort. If the tutoring blocks changed who got entered, the pass-rate gain says nothing about the whole cohort the claim is about.",
+      "flaw_description": "\"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\" - so the 4-8 point gains are computed on only the full-attending three quarters of each cohort, compared against a previous term's whole-cohort pass rate. Perfect attenders are exactly the students most likely to pass anyway, so the comparison is between different populations.",
       "explicitness": 3,
       "confidence": 4
     }

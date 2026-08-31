@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that reported a finish time, and every run at each depot reported a finish.\nThree: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.\nFour: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
+      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that stayed on the issued route, and no run at any depot left the issued route.\nThree: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.\nFour: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 170,
+      "word_count": 172,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.\nThree: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.\nFour: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
+      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\nThree: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.\nFour: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
       "ground_truth": false,
-      "confound_note": "The mid-passage line states that timings cover the runs that reported a finish time, and that about a sixth of each depot's runs reported none. The minute figures are therefore tallied over roughly five sixths of the runs dispatched, while the claim is about delivery time on the runs the routing change was rolled out to, the non-reporting sixth included. Runs that come back without a finish time are not a random slice of the dispatch book, since late returns and rounds that were never closed out are exactly the runs most likely to have run long, so the 8, 5, 9 and 6 minute reductions recorded on the reporting subset are consistent with no reduction across all runs dispatched. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one reporting gap sits under all four groups at once.",
-      "word_count": 172,
+      "confound_note": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once.",
+      "word_count": 175,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     },
     {
       "id": "fam_routing__diverse_true",
@@ -176,7 +176,7 @@
           }
         }
       ],
-      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover every run dispatched, unreported ones timed at the depot, and about a sixth of each depot's runs reported none.\nThree: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.\nFour: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
+      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover every run dispatched, whatever route it drove, and about a sixth of each depot's runs left the issued route.\nThree: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.\nFour: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
       "ground_truth": true,
       "confound_note": null,
       "word_count": 174,
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.\nThree: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.\nFour: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
+      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\nThree: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.\nFour: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
       "ground_truth": false,
-      "confound_note": "The mid-passage line states that timings cover the runs that reported a finish time, and that about a sixth of each depot's runs reported none. The minute figures are therefore tallied over roughly five sixths of the runs dispatched, while the claim is about delivery time on the runs the routing change was rolled out to, the non-reporting sixth included. Runs that come back without a finish time are not a random slice of the dispatch book, since late returns and rounds that were never closed out are exactly the runs most likely to have run long, so the 8, 5, 9 and 6 minute reductions recorded on the reporting subset are consistent with no reduction across all runs dispatched. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth goes unreported at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
-      "word_count": 171,
+      "confound_note": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth drops out at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
+      "word_count": 174,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }

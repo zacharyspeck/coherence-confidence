@@ -14,7 +14,7 @@
 An analytics log records four session segments after the checkout page was replaced.
 One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.
 Two: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.
-A site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that signed in, and every session in each segment did sign in.
+A site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and no session in any segment dropped out before checkout.
 Three: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.
 Four: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.
 The log was exported to the reporting spreadsheet each Monday and signed by an analyst.
@@ -34,7 +34,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A gardener's notebook records four plots that were given the same fertilizer.
 One: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.
 Two: a tomato in the Ellis backyard, fed 4 June, stood 9 cm taller by 21 August than the previous summer; logged by Reyes.
-Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone. Heights cover every plant fed in each plot, with losses entered at zero gain, and every plant fed in each plot survived to that measure.
+Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
 Three: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.
 Four: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.
 Heights were entered in centimetres and copied into the notebook the same day.
@@ -54,10 +54,10 @@ Heights were entered in centimetres and copied into the notebook the same day.
 A nurse's log records four patient groups prescribed the same asthma inhaler.
 One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.
 Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.
-Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed in each group, with non-returners taken from clinic charts, and about a quarter of each group's patients returned no diary.
+Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and about a quarter of each group's patients skipped prescribed doses.
 Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.
 Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.
-Attack counts were entered as whole events and countersigned by the duty clinic supervisor.
+Attack counts were copied into the clinic file and countersigned by the duty supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -74,7 +74,7 @@ Attack counts were entered as whole events and countersigned by the duty clinic 
 A teaching office log records four sections given the same lab kit.
 One: an introductory section at Harlow, autumn term, issued 4 November; by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
 Two: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.
-The central syllabus left coursework's share of the final grade at the previous year's, and every section was marked to a frozen departmental syllabus. Completion rates cover every student registered in each section, with leavers entered as non-completions, and every student registered in each section stayed to that point.
+The central syllabus left coursework's share of the final grade at the previous year's, and every section was marked to a frozen departmental syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
 Three: an intermediate section at Kelvinside, spring term, issued 5 June; by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.
 Four: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.
 Rates were recorded to the nearest point and signed off by the teaching office.
@@ -94,7 +94,7 @@ Rates were recorded to the nearest point and signed off by the teaching office.
 A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
 One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.
 Two: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Okoye.
-Corticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who were reassessed at the follow-up clinic, and no patient in any intake missed the follow-up clinic.
+Corticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and no patient in any intake let the home exercises lapse.
 Three: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Brandt.
 Four: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Villareal.
 Measurements were entered in the register by a duty therapist and countersigned by a clerk.
@@ -114,7 +114,7 @@ Measurements were entered in the register by a duty therapist and countersigned 
 A dispatch log records four groups of delivery runs after the routing change was rolled out.
 One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.
 Two: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.
-Order volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.
+Order volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.
 Three: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.
 Four: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.
 Minutes were rounded to the nearest whole number and countersigned by the duty manager.
@@ -134,7 +134,7 @@ Minutes were rounded to the nearest whole number and countersigned by the duty m
 A plant log records four production runs switched to the same solder profile.
 One: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.
 Two: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.
-The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover every board built, scrapped ones counted as defects, and about a tenth of each run's boards were scrapped before grading.
+The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover every board on each run, whatever profile it took, and about a tenth of each run's boards took one pass on the old profile.
 Three: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.
 Four: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.
 Each run's figures were entered on the shift sheet and signed off by the supervisor.
@@ -154,7 +154,7 @@ Each run's figures were entered on the shift sheet and signed off by the supervi
 An attendance log records four cohorts that moved to the revised timetable.
 One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.
 Two: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.
-The attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through.
+The attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.
 Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.
 Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.
 Registers were transcribed weekly into the log file and countersigned by the school office.

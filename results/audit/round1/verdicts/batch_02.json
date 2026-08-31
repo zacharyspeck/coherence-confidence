@@ -14,7 +14,7 @@
       "code": "011AA3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four plants are measured before they were fed: the tomato was 'fed 3 August' but scored 'by 20 June', and the oak was 'fed 2 May' but scored 'by 19 April'. The other two cases (8 January to 26 February, 7 October to 24 November) run forward, so the outcome in half the cases precedes the intervention.",
+      "flaw_description": "In two of the four cases the measurement date precedes the feeding date: the tomato was 'fed 3 August' but measured 'by 20 June', and the oak was 'fed 2 May' but measured 'by 19 April'. The other two cases run ~7 weeks forward (8 January to 26 February; 7 October to 24 November), so cases one and three record the height gain before the fertilizer was applied.",
       "explicitness": 2,
       "confidence": 4
     },
@@ -30,7 +30,7 @@
       "code": "180003",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to that central syllabus' names an alternative cause that reaches all four sections in exactly the year-on-year window being compared; doubling coursework's weight is enough on its own to raise completion, so the lab kit is not isolated.",
+      "flaw_description": "A named alternative cause reaches every unit: 'The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to that central syllabus.' Doubling coursework's weight in the final grade would by itself raise coursework completion in all four sections, so the 6-11 point rises cannot be attributed to the lab kit.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -46,7 +46,7 @@
       "code": "3313F1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none' means the averages are computed on only five-sixths of the runs, excluding precisely the runs most likely to have gone wrong or run long; an 8- or 9-minute drop could come entirely from which runs fell out of the denominator.",
+      "flaw_description": "The timings cover a narrower population than the claim: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' Roughly 17 percent of runs at every depot are excluded from the averages, and route deviations are exactly the runs likely to be slow, so the 5-9 minute improvement is measured on a self-selected compliant subset rather than on delivery runs generally.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -62,7 +62,7 @@
       "code": "FAE756",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Absence figures cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through' means a fifth of each cohort is dropped from the figures, and part-way leavers are the pupils with the worst attendance; excluding them alone lowers measured absence by more than the 4-7 percent reported.",
+      "flaw_description": "The absence figures cover a narrower population than the cohort the claim is about: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' Roughly 20 percent of every cohort is dropped from the numbers, and pupils whose timetable lapsed are plausibly the higher-absence pupils, so the 4-7 percent reduction is measured on a filtered subgroup.",
       "explicitness": 3,
       "confidence": 4
     }

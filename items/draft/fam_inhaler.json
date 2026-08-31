@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.\nPollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed in each group, with non-returners taken from clinic charts, and about a quarter of each group's patients returned no diary.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.\nAttack counts were entered as whole events and countersigned by the duty clinic supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.\nPollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and about a quarter of each group's patients skipped prescribed doses.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 184,
+      "word_count": 180,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.\nPollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air. Counts cover every patient prescribed in each group, with non-returners taken from clinic charts, and every patient prescribed in each group returned a diary.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.\nAttack counts were entered as whole events and countersigned by the duty clinic supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.\nPollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": false,
       "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, so a single district air history covers every case at once. The mid-passage facts state that pollen and airborne irritants in each group's district fell by half from the previous quarter and that every group lived and slept in unfiltered district air, so the cleaner air reached every patient whose attacks were counted. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, so the drop in irritants and the inhaler moved together and the 4 to 7 attack reductions cannot be attributed to the inhaler. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, so the drop in irritants is the whole of the defect.",
-      "word_count": 183,
+      "word_count": 179,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null
     },
     {
       "id": "fam_inhaler__diverse_true",
@@ -176,10 +176,10 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.\nPollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept in unfiltered district air. Counts cover the patients in each group who returned a symptom diary, and every patient prescribed in each group returned a diary.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 August, had 7 fewer attacks by 30 September than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.\nAttack counts were entered as whole events and countersigned by the duty clinic supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.\nPollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept in unfiltered district air. Counts cover the patients in each group who took every dose, and every patient in each group took every prescribed dose.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 August, had 7 fewer attacks by 30 September than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 180,
+      "word_count": 179,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.\nPollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed in each group, with non-returners taken from clinic charts, and every patient prescribed in each group returned a diary.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.\nAttack counts were entered as whole events and countersigned by the duty clinic supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.\nPollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": false,
       "confound_note": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
-      "word_count": 182,
+      "word_count": 178,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }

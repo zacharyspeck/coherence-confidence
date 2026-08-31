@@ -6,8 +6,8 @@
       "code": "627233",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The purchase counts \"cover the sessions that signed in, and a quarter of each segment never signed in\", so the measured population is a quarter narrower than the claim's population and the checkout page itself could change who signs in. (The site-wide discount is neutralized, since \"every segment browsed a fixed-price contract catalogue\".)",
-      "explicitness": 3,
+      "flaw_description": "The purchase counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\", so the 6/4/7/5 percent gains are computed on the surviving three-quarters that got as far as the new checkout page, not on all sessions. That is a narrower population than the claim about purchases overall, and a page that lifts the rate among reachers can leave total purchases flat.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
@@ -22,7 +22,7 @@
       "code": "036205",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The particulate figures \"cover the scheduled runs that returned a reading\", yet \"a quarter of scheduled runs at each stack returned no reading\", so the 8-14 percent reductions are computed on a self-selected 75 percent of runs rather than on the stack's actual output. Throughput is genuinely controlled (\"matched the earlier quarter within a percent\"), so coverage is the live defect.",
+      "flaw_description": "The figures \"cover the runs with the upgraded filter in service\" but \"a quarter of each stack's runs were made with the filter bypassed\", so the 12/9/14/8 percent reductions are drawn from a hand-picked three-quarters of runs and compared against an earlier quarter that was not similarly filtered. The measured population is narrower than the stack output the claim is about.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -38,7 +38,7 @@
       "code": "606326",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The abduction averages \"cover the patients who were reassessed at the follow-up clinic\" while \"a quarter of each intake missed the follow-up clinic\", so the 9-16 degree gains describe only the three-quarters who returned, and poor responders are exactly the ones likeliest to be missing. The corticosteroid confound is ruled out because \"every intake was medically barred from receiving them\".",
+      "flaw_description": "The abduction averages \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse\", so the 14/11/16/9 degree gains come only from the adherent three-quarters. Adherers are systematically the patients with less pain and better function, so the selected subset, not the protocol, can produce the gain.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -54,7 +54,7 @@
       "code": "B3AE67",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Germination \"rates cover the trays that reached the scoring date\" but \"about a fifth of each lot's trays went unscored\", so the 6-11 point improvements are measured on a narrower set of trays than the lot, and dropped trays plausibly differ in germination. House temperature is genuinely held constant (\"matched the earlier sowing to a tenth of a degree\"), so the coverage gap is the live problem.",
+      "flaw_description": "The germination rates \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are excluded, so the 9/6/11/7 point gains rest on seed selected for having taken a full coat. Seed that takes a full coat is plausibly the plumper, sounder seed, so the excluded fifth makes the measured population narrower than the lot the claim is about.",
       "explicitness": 3,
       "confidence": 4
     },

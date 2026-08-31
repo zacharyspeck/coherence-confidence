@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.\nThe attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils enrolled for the whole term, and no pupil left any cohort part-way through the term.\nThree: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.\nFour: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
+      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.\nThe attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and no pupil in any cohort spent time on the old timetable.\nThree: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.\nFour: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 178,
+      "word_count": 180,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.\nThe attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on an independent roll that scheme never covered. Absence figures cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through.\nThree: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.\nFour: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
+      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.\nThe attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on an independent roll that scheme never covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\nThree: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.\nFour: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
       "ground_truth": false,
-      "confound_note": "The absence figures are tallied over \"the pupils enrolled for the whole term\", while the same line records that \"about a fifth of each cohort left part-way through\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who left; pupils who leave part-way carry the heaviest absence, and dropping them from the denominator lowers the recorded rate on its own. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another. The 4 to 7 percent falls are consistent with cohort absence not having moved at all.",
-      "word_count": 179,
+      "confound_note": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another.",
+      "word_count": 182,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     },
     {
       "id": "fam_timetable__diverse_true",
@@ -176,7 +176,7 @@
           }
         }
       ],
-      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.\nThe attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on an independent roll that scheme never covered. Absence figures cover every pupil enrolled at term start, leavers included, and about a fifth of each cohort left part-way through.\nThree: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.\nFour: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
+      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.\nThe attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on an independent roll that scheme never covered. Absence figures cover every pupil in each cohort, and about a fifth of each cohort spent weeks on the old timetable.\nThree: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.\nFour: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
       "ground_truth": true,
       "confound_note": null,
       "word_count": 180,
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.\nThe attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through.\nThree: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.\nFour: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
+      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.\nThe attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\nThree: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.\nFour: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
       "ground_truth": false,
-      "confound_note": "The absence figures are tallied over \"the pupils enrolled for the whole term\", while the same line records that \"about a fifth of each cohort left part-way through\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who left; pupils who leave part-way carry the heaviest absence, and dropping them from the denominator lowers the recorded rate on its own. The four cases span four schools, four year groups, four terms and four registrars, and the same exclusion applies at each, so the spread of settings does nothing to repair the gap. The 4 to 7 percent falls are consistent with cohort absence not having moved at all.",
-      "word_count": 178,
+      "confound_note": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. The four cases span four schools, four year groups, four terms and four registrars, and the same exclusion applies at each, so the spread of settings does nothing to repair the gap.",
+      "word_count": 181,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }

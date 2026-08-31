@@ -14,7 +14,7 @@
       "code": "237197",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Record rainfall is an untangled alternative cause that reaches every plot: 'Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone.' Double the water in all four plots fits the 8-13 cm gains at least as well as the fertilizer does.",
+      "flaw_description": "A named alternative cause reaches every unit: \"Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone.\" Record double rainfall on rain-only open plots explains the 8-13 cm gains against the previous summer just as well as the fertilizer does.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -24,14 +24,14 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "79DDFC",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have measurement dates before the kit was issued: case One was 'issued 4 November; by 27 September' and case Three was 'issued 5 June; by 28 April'. The completion gains in those cases were recorded before the intervention existed.",
-      "explicitness": 3,
+      "flaw_description": "Two of the four cases have the outcome measured before the kit was issued: case one was \"issued 4 November; by 27 September\" and case three was \"issued 5 June; by 28 April.\" Completion gains dated ahead of the intervention cannot have been caused by it.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
@@ -46,7 +46,7 @@
       "code": "ED27C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The timings are drawn from a narrower set than the runs the claim is about: 'Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.' Runs with no finish time are exactly the ones most likely to have run long, so the 5-9 minute improvement is computed on a self-selected fast subset.",
+      "flaw_description": "The outcome is measured on a self-selected subset: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The excluded sixth is exactly the set most likely to have run long, and it is compared against \"the same runs a month earlier,\" i.e. the full unfiltered population.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -62,7 +62,7 @@
       "code": "04E6AE",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The absence figures cover a narrower population than the cohort: they 'cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through.' Dropping the 20 percent of leavers, who are typically the highest-absence pupils, could produce the 4-7 percent absence fall on its own.",
+      "flaw_description": "The absence figures cover a filtered subgroup, not the cohort: \"Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\" A fifth of each cohort is dropped on a post-switch criterion, yet the comparison is to \"the same cohort a term earlier\" in full.",
       "explicitness": 3,
       "confidence": 4
     }

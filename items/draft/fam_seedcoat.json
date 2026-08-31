@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat on an open bench, taking the house air directly. Rates cover every tray sown, unscored ones counted as nil, and about a fifth of each lot's trays went unscored.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat on an open bench, taking the house air directly. Rates cover every tray sown from each lot, full coat or partial, and about a fifth of each lot's trays were sown from partly coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 175,
+      "word_count": 181,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nHouse air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays that reached the scoring date, and about a fifth of each lot's trays went unscored.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nHouse air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
       "ground_truth": false,
-      "confound_note": "The mid-passage line states that rates cover the trays that reached the scoring date, and that about a fifth of each lot's trays went unscored. The germination points are therefore tallied over four fifths of the trays sown from each lot, while the claim is about the germination of the coated lot, the unscored fifth included. Trays that do not survive to the scoring date are not a random fifth of a lot, since thin stands and failed trays are the ones cleared away early, so the 9, 6, 11 and 7 point gains recorded on the scored subset are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case.",
-      "word_count": 173,
+      "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case.",
+      "word_count": 180,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     },
     {
       "id": "fam_seedcoat__diverse_true",
@@ -176,10 +176,10 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nHouse air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays that reached the scoring date, and no tray in any lot went unscored.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nHouse air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 171,
+      "word_count": 178,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat on an open bench, taking the house air directly. Rates cover the trays that reached the scoring date, and about a fifth of each lot's trays went unscored.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat on an open bench, taking the house air directly. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
       "ground_truth": false,
-      "confound_note": "The mid-passage line states that rates cover the trays that reached the scoring date, and that about a fifth of each lot's trays went unscored. The germination points are therefore tallied over four fifths of the trays sown from each lot, while the claim is about the germination of the coated lot, the unscored fifth included. Trays that do not survive to the scoring date are not a random fifth of a lot, since thin stands and failed trays are the ones cleared away early, so the 9, 6, 11 and 7 point gains recorded on the scored subset are consistent with each lot's germination being unchanged. The four lots sit at Hollin Bank, Draycott Fields, Penllan Beds and Vantry Glasshouse across four seasons, and a fifth goes unscored in each lot, so the spread over nurseries, seed types and seasons does nothing to close the gap.",
-      "word_count": 174,
+      "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. The four lots sit at Hollin Bank, Draycott Fields, Penllan Beds and Vantry Glasshouse across four seasons, and a fifth of each lot's trays falls outside the tally at every one of them, so the spread over nurseries, seed types and seasons does nothing to close the gap.",
+      "word_count": 181,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }

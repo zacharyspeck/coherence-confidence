@@ -716,3 +716,97 @@ is the real test.
 `coherent_true` and `diverse_true` in half the families, so `scope_variant` is
 orthogonal to coherence rather than perfectly correlated with it. The swap keeps
 both items true and changes no count, so it is free.
+
+---
+
+## D-027 — No imputation in any passage, because it made TRUE items read as false
+
+**Found by the round-1 blind audit, and it is a worse bug than the one the fix
+pass was chartered to solve.**
+
+Round 1 hit every salience target — gap 0.32 against a 0.4 limit, no cell above
+3.5, all 40 FALSE items still findable. But false positives on the TRUE decoys
+went from **0/40 to 4/40**, and all four objected to the same thing:
+
+> "Pass rates cover every enrolled student, non-entrants counted as fails, and
+> about a quarter of each cohort's roll was not entered"
+> — *auditor: "25 percent scored as automatic fails, so the pass rate is partly
+> fabricated"*
+
+The auditor is right. And **all four were `coherent_true`**. A TRUE item that
+reads as false depresses confidence on exactly the cell the consensuality
+prediction says should be *inflated*, so it pushes AUC(coherent) down — **towards
+the hypothesis**. The salience gap it replaced pushed the other way and was
+therefore conservative. This one flatters. That makes it the more dangerous of
+the two, and it is why round 2 happened even though round 1 had passed.
+
+**Root cause.** The COMPLETENESS clause said units were missing *outcome data*,
+which forced the WHOLE population clause to invent values for them.
+
+**Chose:** the completeness clause now describes incomplete **participation in
+the intervention** — missed sessions, partial uptake, intermittent use — never
+missing measurements. Then nothing has to be imputed and all four combinations
+stand on their own:
+
+| combination | reading |
+|---|---|
+| SUBSET + INCOMPLETE | tally covers full participants only, and a quarter are not — **FALSE** |
+| SUBSET + COMPLETE | the qualification excludes nobody — TRUE |
+| WHOLE + INCOMPLETE | some took part patchily, outcome measured for all of them — TRUE |
+| WHOLE + COMPLETE | TRUE |
+
+**Enforced, not requested:** `scripts/assemble_passages.py` fails the build on
+`counted as`, `entered as`, `recorded as`, `treated as`, `scored as`, `imputed`,
+`substituted`, `as nil`, `as zero`, `as fails` anywhere in a passage.
+
+**General lesson worth keeping:** the decoys earn their place. Without 40 TRUE
+items in the audit there would have been no false-positive rate, and a bias
+pointing *at* the hypothesis would have shipped looking like a clean result.
+
+---
+
+## D-028 — The model gate refuses; it does not warn
+
+**Chose:** `src/model_gate.py` runs three pre-flight checks and raises
+`ModelGateError` on any miss, before any item is scored.
+
+1. The abstention option must be a single token **in the form the model would
+   actually emit** (`" Unsure"`, not `"Unsure"`). Candidates are tried in the
+   order `Unsure, Maybe, Unclear, Unknown` and every attempt is recorded with its
+   token count, so the fallback is auditable rather than silent.
+2. Yes and No must resolve to non-empty variant sets summed over casing and
+   leading space.
+3. `mass_covered` must exceed **0.5** on a probe sample. If a plain prompt fails,
+   the gate retries with the chat template and, if that fixes it, tells you the
+   model is instruction-tuned and to use `--chat-template`.
+
+Measured on SmolLM2-135M: `' Unsure'` 3 tokens, `' Maybe'` 1, `' Unclear'` 2,
+`' Unknown'` 1 → chose `Maybe`; Yes 4 ids, No 6 ids, Maybe 4 ids; coverage 0.7069.
+
+**Why refuse rather than warn:** every one of these has already produced a
+number in this project that looked publishable and was not. A warning is
+something a tired person scrolls past at 2am.
+
+**Reverse:** `--min-mass`, `--third-option` and `--n-probe` are all flags; the
+gate is a module, so a caller can catch `ModelGateError` if it genuinely wants to
+proceed.
+
+---
+
+## D-029 — Two surface-feature controls, off by default
+
+**Chose:** `--shuffle-cases` and `--option-rotations` on `src.score`, both off by
+default so the primary number is not silently a different quantity.
+
+- `--shuffle-cases` permutes each item's four case sentences with a fixed
+  per-item permutation (deterministic in `(item_id, seed)`) and records it on
+  every record. Case order carries no evidence; a result that moves under it is
+  measuring presentation.
+- `--option-rotations` scores every item under all three rotations of the option
+  list, reports the mean and the spread in P(yes), and flags spread > 0.05. The
+  **headline record stays the first rotation**, so a run with the control on and
+  one with it off agree on the primary number and the average is an addition
+  rather than a silent replacement.
+
+`prompts_hash` deliberately digests the **unpermuted** prompts, so it still
+identifies the item text regardless of which controls were on.

@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired in step with site output. The figures cover every scheduled run, gaps entered at the permit limit, and a quarter of scheduled runs at each stack returned no reading.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired in step with site output. The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 182,
+      "word_count": 180,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the scheduled runs that returned a reading, and a quarter of scheduled runs at each stack returned no reading.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": false,
-      "confound_note": "The mid-passage line tallies the percentages over the scheduled runs that returned a reading, and the clause beside it records that a quarter of scheduled runs at each stack returned no reading. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run and the log covers three quarters of them. Runs go missing when the analyser faults or the sample line blocks, and those conditions are not independent of what the stack was putting out, so the dropped quarter cannot be treated as a random slice of the period. All four kilns sit at Kestrel in Q1 and each carries the same quarter of missing runs, so no case in the log covers the runs the others dropped.",
-      "word_count": 180,
+      "confound_note": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out.",
+      "word_count": 182,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     },
     {
       "id": "fam_filter__diverse_true",
@@ -176,10 +176,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the scheduled runs that returned a reading, and every scheduled run at each stack returned a reading.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and no scheduled run at any stack was made with the filter bypassed.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 178,
+      "word_count": 182,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired in step with site output. The figures cover the scheduled runs that returned a reading, and a quarter of scheduled runs at each stack returned no reading.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired in step with site output. The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": false,
-      "confound_note": "The mid-passage line tallies the percentages over the scheduled runs that returned a reading, and the clause beside it records that a quarter of scheduled runs at each stack returned no reading. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run and the log covers three quarters of them. Runs go missing when the analyser faults or the sample line blocks, and those conditions are not independent of what the stack was putting out, so the dropped quarter cannot be treated as a random slice of the period. The four stacks span four sites, four stack types, four quarters and four technicians, and the missing quarter is stated at each stack, so the coverage gap repeats in every case rather than being filled by any of them.",
-      "word_count": 180,
+      "confound_note": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. The four stacks span four sites, four stack types, four quarters and four technicians, and the bypassed quarter is stated at each stack, so the same gap repeats in every case rather than being closed by any of them.",
+      "word_count": 182,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }

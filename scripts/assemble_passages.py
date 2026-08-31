@@ -79,6 +79,21 @@ CAUSAL_WORDS = (
 )
 HEDGE_WORDS = ("however", "although", "notably", "it should be noted", "surprisingly")
 
+#: Imputation language in the WHOLE population clause is what made four TRUE
+#: items read as false in the round-1 audit - an auditor reasonably objects that
+#: a quarter of the numbers were invented. A TRUE item that reads as false
+#: depresses confidence on the very cell the hypothesis says is inflated, which
+#: biases the headline result TOWARDS the hypothesis. Banned outright.
+#:
+#: Deliberately blunt. It will occasionally flag a harmless phrase in a neutral
+#: sentence and force a reword; that costs a minute. A missed imputation costs a
+#: result that points the wrong way and looks clean.
+IMPUTATION_WORDS = (
+    "counted as", "entered as", "recorded as", "treated as", "scored as",
+    "imputed", "substituted", "counted at", "entered at", "as nil",
+    "as zero", "as fails", "as failures",
+)
+
 
 def item_path(family_id: str) -> Path:
     for d in ("items/draft", "items/seed"):
@@ -138,9 +153,17 @@ def main(argv: list[str] | None = None) -> int:
                  cl["neutral_closer"]]
             )
 
+            low = passage.lower()
             for w in CAUSAL_WORDS + HEDGE_WORDS:
-                if w in passage.lower():
+                if w in low:
                     problems.append(f"{it['id']}: passage contains '{w.strip()}'")
+            for w in IMPUTATION_WORDS:
+                if w in low:
+                    problems.append(
+                        f"{it['id']}: imputation language '{w}' - a TRUE item that "
+                        "invents values reads as false, which biases the result "
+                        "toward the hypothesis"
+                    )
 
             it["passage"] = passage
             it["word_count"] = compute_word_count(passage)
@@ -171,7 +194,7 @@ def main(argv: list[str] | None = None) -> int:
         for p in problems[:30]:
             print("  ", p)
         return 1
-    print("no causal or hedging language found in any passage")
+    print("no causal, hedging or imputation language found in any passage")
     return 0
 
 

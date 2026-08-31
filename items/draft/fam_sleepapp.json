@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.\nOutdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in rooms held at a fixed 20 degrees. Readings cover the enrolled users whose devices synced, and every enrolled user's device synced in each cohort.\nThree: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.\nOutdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in rooms held at a fixed 20 degrees. Readings cover the enrolled users who used the app nightly, and every enrolled user in each cohort used the app nightly.\nThree: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 177,
+      "word_count": 181,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -116,7 +116,7 @@
           }
         }
       ],
-      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.\nOutdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air. Readings cover every enrolled user, unsynced ones held at baseline, and every enrolled user's device synced in each cohort.\nThree: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.\nOutdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.\nThree: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
       "ground_truth": false,
       "confound_note": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, so the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city fell ten degrees from the month before, which lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in unconditioned rooms open to outside air, so the cooling reaches every user whose heart rate was read. Each cohort is compared against itself in February, when the nights were warmer, rather than against an unenrolled cohort in the same month, so the cooling and the app arrived together and the 3 to 6 bpm drops cannot be attributed to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user, so nothing further is wrong with the item.",
       "word_count": 178,
@@ -127,7 +127,7 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.5
+      "salience": null
     },
     {
       "id": "fam_sleepapp__diverse_true",
@@ -176,10 +176,10 @@
           }
         }
       ],
-      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.\nOutdoor temperature in each cohort's city matched the month before within a degree, and every cohort slept in unconditioned rooms open to outside air. Readings cover every enrolled user, unsynced ones held at baseline, and a fifth of the enrolled devices in each cohort never synced.\nThree: 25 Ordway users on Tanager X phones started 5 September; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.\nOutdoor temperature in each cohort's city matched the month before within a degree, and every cohort slept in unconditioned rooms open to outside air. Readings cover every enrolled user in each cohort, and a fifth of each cohort used the app on some nights.\nThree: 25 Ordway users on Tanager X phones started 5 September; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 181,
+      "word_count": 179,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -236,7 +236,7 @@
           }
         }
       ],
-      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 April; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.\nOutdoor temperature in each cohort's city matched the month before within a degree, and every cohort slept in rooms held at a fixed 20 degrees. Readings cover every enrolled user, unsynced ones held at baseline, and every enrolled user's device synced in each cohort.\nThree: 25 Ordway users on Tanager X phones started 5 October; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 April; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.\nOutdoor temperature in each cohort's city matched the month before within a degree, and every cohort slept in rooms held at a fixed 20 degrees. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.\nThree: 25 Ordway users on Tanager X phones started 5 October; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
       "ground_truth": false,
       "confound_note": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
       "word_count": 179,
@@ -247,7 +247,7 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }

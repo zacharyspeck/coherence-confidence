@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.\nPremium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked straight from that shelf. Figures cover the orders that cleared the staffed tills, and every till in each store was a staffed one.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.\nPremium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked straight from that shelf. Figures cover the orders rung up at the new prices, and no order on any line was rung up at the old prices.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 175,
+      "word_count": 179,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.\nPremium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked from a fixed year-round range. Figures cover the orders that cleared the staffed tills, and about a fifth of each store's orders went through self-checkout.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.\nPremium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked from a fixed year-round range. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
       "ground_truth": false,
-      "confound_note": "The mid-passage line states that figures cover the orders that cleared the staffed tills, and that about a fifth of each store's orders went through self-checkout. The revenue-per-order numbers are therefore tallied over roughly four fifths of the orders on each line, while the claim is about revenue per order on the repriced lines as a whole, self-checkout baskets included. Self-checkout baskets are a systematically different set of purchases from staffed-till baskets, typically smaller and quicker, so the 6, 4, 7 and 5 percent gains recorded on the staffed-till subset are consistent with revenue per order across all orders holding flat or falling. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it.",
-      "word_count": 177,
+      "confound_note": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it.",
+      "word_count": 182,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     },
     {
       "id": "fam_pricing__diverse_true",
@@ -176,10 +176,10 @@
           }
         }
       ],
-      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: stationery at Pell Basin repriced 3 June; by 27 June revenue per order ran 4 percent above the same line a month earlier; lead Duplessis.\nPremium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked from a fixed year-round range. Figures cover every order on each line, whatever till took it, and about a fifth of each store's orders went through self-checkout.\nThree: footwear at Ordway Quay repriced 5 September; by 30 September revenue per order ran 7 percent above the same line a month earlier; lead Nkemelu.\nFour: cookware at Tamsin Row repriced 2 November; by 26 November revenue per order ran 5 percent above the same line a month earlier; lead Brandt.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: stationery at Pell Basin repriced 3 June; by 27 June revenue per order ran 4 percent above the same line a month earlier; lead Duplessis.\nPremium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked from a fixed year-round range. Figures cover every order on each line, new prices or old, and about a fifth of each line's orders were rung up at the old prices.\nThree: footwear at Ordway Quay repriced 5 September; by 30 September revenue per order ran 7 percent above the same line a month earlier; lead Nkemelu.\nFour: cookware at Tamsin Row repriced 2 November; by 26 November revenue per order ran 5 percent above the same line a month earlier; lead Brandt.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 179,
+      "word_count": 183,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: stationery at Pell Basin repriced 3 June; by 27 June revenue per order ran 4 percent above the same line a month earlier; lead Duplessis.\nPremium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked straight from that shelf. Figures cover the orders that cleared the staffed tills, and about a fifth of each store's orders went through self-checkout.\nThree: footwear at Ordway Quay repriced 5 September; by 30 September revenue per order ran 7 percent above the same line a month earlier; lead Nkemelu.\nFour: cookware at Tamsin Row repriced 2 November; by 26 November revenue per order ran 5 percent above the same line a month earlier; lead Brandt.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: stationery at Pell Basin repriced 3 June; by 27 June revenue per order ran 4 percent above the same line a month earlier; lead Duplessis.\nPremium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked straight from that shelf. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\nThree: footwear at Ordway Quay repriced 5 September; by 30 September revenue per order ran 7 percent above the same line a month earlier; lead Nkemelu.\nFour: cookware at Tamsin Row repriced 2 November; by 26 November revenue per order ran 5 percent above the same line a month earlier; lead Brandt.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
       "ground_truth": false,
-      "confound_note": "The mid-passage line states that figures cover the orders that cleared the staffed tills, and that about a fifth of each store's orders went through self-checkout. The revenue-per-order numbers are therefore tallied over roughly four fifths of the orders on each line, while the claim is about revenue per order on the repriced lines as a whole, self-checkout baskets included. Self-checkout baskets are a systematically different set of purchases from staffed-till baskets, typically smaller and quicker, so the 6, 4, 7 and 5 percent gains recorded on the staffed-till subset are consistent with revenue per order across all orders holding flat or falling. The four lines sit at Harlow Street, Pell Basin, Ordway Quay and Tamsin Row across four different months, and the same fifth is missing at each of them, so spreading the cases over stores, categories and months does nothing to close the gap.",
-      "word_count": 176,
+      "confound_note": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. The four lines sit at Harlow Street, Pell Basin, Ordway Quay and Tamsin Row across four different months, and the same fifth is left out at each of them, so spreading the cases over stores, categories and months does nothing to close the gap.",
+      "word_count": 181,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }

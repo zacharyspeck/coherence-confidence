@@ -56,7 +56,7 @@
           }
         }
       ],
-      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.\nRainfall in each block's season ran to roughly double the year before, and every block lay under a rain shelter, fed only by metered water. Yields cover every hectare in each block, with unharvested ground entered at zero, and about a quarter of each block's hectares went unharvested.\nThree: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.\nFour: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.\nTonnages were entered to one decimal place and countersigned by the recording agronomist.",
+      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.\nRainfall in each block's season ran to roughly double the year before, and every block lay under a rain shelter, fed only by metered water. Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.\nThree: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.\nFour: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.\nTonnages were entered to one decimal place and countersigned by the recording agronomist.",
       "ground_truth": true,
       "confound_note": null,
       "word_count": 179,
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.\nRainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell. Yields cover every hectare in each block, with unharvested ground entered at zero, and every hectare in each block was harvested.\nThree: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.\nFour: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.\nTonnages were entered to one decimal place and countersigned by the recording agronomist.",
+      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.\nRainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell. Yields cover every hectare in each block fitted with the line, and the line watered every hectare in each block all season.\nThree: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.\nFour: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.\nTonnages were entered to one decimal place and countersigned by the recording agronomist.",
       "ground_truth": false,
       "confound_note": "All four blocks sit on one farm in one summer, so a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each block's season ran to roughly double the year before and that every block lay in open ground, taking rain as it fell, so the extra water reached every block whose yield was measured. Each block is compared against itself a season earlier rather than against an undripped block in the same season, so the rain and the drip line moved together and the 0.4 to 0.7 tonne gains cannot be attributed to the line. The population and completeness clauses in the same line describe a tally with no gap between the ground measured and the ground the claim covers, so the rainfall is the whole of the defect.",
-      "word_count": 176,
+      "word_count": 177,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null
     },
     {
       "id": "fam_driptape__diverse_true",
@@ -176,10 +176,10 @@
           }
         }
       ],
-      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.\nRainfall in each block's season matched the year before to the millimetre, and every block lay in open ground, taking rain as it fell. Yields cover the hectares in each block that came to harvest, and every hectare in each block was harvested.\nThree: a barley block at Bellamy Flats, fitted 2 March, gave 0.7 tonnes per hectare more by 17 May than the previous spring; recorded by Halloran.\nFour: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.\nTonnages were entered to one decimal place and countersigned by the recording agronomist.",
+      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.\nTwo: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.\nRainfall in each block's season matched the year before to the millimetre, and every block lay in open ground, taking rain as it fell. Yields cover the hectares in each block watered all season by the line, and the line watered every hectare in each block all season.\nThree: a barley block at Bellamy Flats, fitted 2 March, gave 0.7 tonnes per hectare more by 17 May than the previous spring; recorded by Halloran.\nFour: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.\nTonnages were entered to one decimal place and countersigned by the recording agronomist.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 174,
+      "word_count": 179,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 August, gave 0.6 tonnes per hectare more by 18 June than the previous summer; recorded by Ferreira.\nTwo: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.\nRainfall in each block's season matched the year before to the millimetre, and every block lay under a rain shelter, fed only by metered water. Yields cover every hectare in each block, with unharvested ground entered at zero, and every hectare in each block was harvested.\nThree: a barley block at Bellamy Flats, fitted 2 May, gave 0.7 tonnes per hectare more by 17 March than the previous spring; recorded by Halloran.\nFour: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.\nTonnages were entered to one decimal place and countersigned by the recording agronomist.",
+      "passage": "An irrigation log records four blocks that were fitted with the same drip line.\nOne: a maize block at Hollow Ridge, fitted 3 August, gave 0.6 tonnes per hectare more by 18 June than the previous summer; recorded by Ferreira.\nTwo: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.\nRainfall in each block's season matched the year before to the millimetre, and every block lay under a rain shelter, fed only by metered water. Yields cover every hectare in each block fitted with the line, and the line watered every hectare in each block all season.\nThree: a barley block at Bellamy Flats, fitted 2 May, gave 0.7 tonnes per hectare more by 17 March than the previous spring; recorded by Halloran.\nFour: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.\nTonnages were entered to one decimal place and countersigned by the recording agronomist.",
       "ground_truth": false,
       "confound_note": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
-      "word_count": 177,
+      "word_count": 178,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 2.0
+      "salience": null
     }
   ]
 }

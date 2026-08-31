@@ -56,7 +56,7 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on a paid plan. Retention figures cover the signups who confirmed an address, and every signup in each cohort confirmed an address.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on a paid plan. Retention figures cover the signups who opened the email, and every signup in each cohort opened the email.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": true,
       "confound_note": null,
       "word_count": 174,
@@ -116,10 +116,10 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, unconfirmed ones counted as lost, and every signup in each cohort confirmed an address.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": false,
       "confound_note": "All four cohorts are starter signups from Norway via webinar inside one March window, so the trial fact stated mid-passage covers every case at once: the free trial ran thirty days, four times its length in the earlier period, and a thirty-day trial leaves users still inside their trial at week two. The scope clause beside that fact has every cohort here signed up on that trial, so the policy change reaches all four. Each cohort is compared against itself a month earlier, when the seven-day trial still applied, so the longer trial and the onboarding email moved together and the 3 to 6 point lifts cannot be attributed to the email. The population and completeness clauses in the same line leave the retention figures covering every signup, so the trial length is the whole of the defect.",
-      "word_count": 174,
+      "word_count": 173,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +127,7 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.5
+      "salience": null
     },
     {
       "id": "fam_onboarding__diverse_true",
@@ -176,10 +176,10 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on that trial. Retention figures cover every signup, unconfirmed ones counted as lost, and a third of each cohort's signups never confirmed an address.\nThree: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\nThree: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 176,
+      "word_count": 174,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -236,10 +236,10 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 24 March; by 9 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on a paid plan. Retention figures cover every signup, unconfirmed ones counted as lost, and every signup in each cohort confirmed an address.\nThree: enterprise signups from Vietnam via reseller were emailed 25 October; by 10 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 24 March; by 9 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on a paid plan. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.\nThree: enterprise signups from Vietnam via reseller were emailed 25 October; by 10 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": false,
       "confound_note": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
-      "word_count": 175,
+      "word_count": 174,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +247,7 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null
     }
   ]
 }
