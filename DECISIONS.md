@@ -421,3 +421,43 @@ model is 135M, and CPU wheels are ~200 MB vs multi-GB for CUDA.
 
 **Reverse:** reinstall torch from the CUDA index; `score.py` already does
 `--device auto` and will pick up `cuda` if present.
+
+---
+
+## D-020 — Three validation gates beyond the four the brief lists
+
+**Chose:** `src/validate.py` also fails on **cell balance** (20 per cell, all
+families complete), **duplicate passages**, and **answer-key leakage**
+(`confound_note` appearing in the passage, or a metadata token like
+`coherent_false` appearing in the prose). They are tagged
+`required_by_brief: false` in the report so the four gates the brief asked for
+are still distinguishable at a glance.
+
+**Why:** each catches a failure that otherwise produces a confident, meaningless
+number rather than an error.
+
+- Duplicate passages are the sharpest case. Two items with the same passage
+  render to the same prompt and cannot be told apart by *any* measurement — the
+  2x2 silently becomes one measurement repeated. This actually happened while
+  building: the test fixtures rendered all 80 synthetic passages identically and
+  every cell mean came back equal. Nothing failed; the numbers were just wrong.
+  `MockScorer.prepare` now raises on it too.
+- Answer-key leakage would let the model read the confound off the page, which
+  turns a reasoning item into a reading-comprehension item.
+- Cell imbalance breaks the "400 pairs" arithmetic and the balanced-ANOVA
+  formulas without any of them noticing.
+
+**Reverse:** `--skip <check_name>` disables any individual gate.
+
+---
+
+## D-021 — Lexical check uses the passage only, not the claim
+
+**Chose:** the unigram+bigram classifier sees `passage` and nothing else.
+
+**Why:** the claim is identical across all 4 cells of a family by construction,
+so it carries exactly zero true/false signal. Including it would add ~20 constant
+features per family that dilute the ones that matter, making the gate *less*
+sensitive to a real giveaway.
+
+**Reverse:** one line in `check_lexical_giveaway`.
