@@ -6,7 +6,7 @@
       "code": "BFC67E",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The hours figure is not a measure of the redesigned bearing: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" A third of the measured positions were running the old part during the cycle, so the extra 340/290/410/260 hours are an aggregate over mixed old-and-new positions and cannot be attributed to the redesign.",
+      "flaw_description": "The outcome measure covers units that were only partly on the new bearing: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" So roughly a third of the measured positions were running the old design for part of the cycle, and the 260-410 extra hours cannot be attributed to the redesigned bearing alone.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -14,9 +14,9 @@
       "code": "0AAF54",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every block: \"Rainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell.\" Doubled rainfall falling directly on all four open-ground maize blocks explains the 0.4-0.7 t/ha gain over the previous summer as well as the drip line does.",
+      "flaw_description": "A named alternative cause reaches every block: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover.\" A 20 percent wetter season on uncovered maize would raise yield by itself, so the 0.4-0.7 t/ha gains are not attributable to the drip line.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "1C859B",
@@ -30,25 +30,25 @@
       "code": "87820D",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four measurement windows run backwards: case One \"started 4 March, had 6 fewer attacks by 28 February\" and case Three \"started 5 September, had 7 fewer attacks by 30 August\" both close before the inhaler was started (and the labelled quarters, \"winter\"/\"summer\", do not match those start dates either).",
+      "flaw_description": "Two of the four cases have follow-up dates that precede the start date: case one \"started 4 March, had 6 fewer attacks by 28 February\" and case three \"started 5 September, had 7 fewer attacks by 30 August.\" The reductions are recorded before the inhaler was started, so those cases cannot be evidence of its effect (the quarter labels, e.g. \"winter quarter\" for a 4 March start, are likewise inconsistent).",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "2CB5E1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is not the exposed population: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\" A third of the people in the 5/3/6/4-point lift never received the treatment at all, so the aggregate rise does not show the email did anything.",
+      "flaw_description": "The measured population is broader than the treated one: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\" A third of each cohort was never actually exposed to the email, so the 3-6 point retention lift is measured on a population one-third of which received no treatment.",
       "explicitness": 3,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "8A9278",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every class: \"Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group.\" Halved class size applies to the very English lessons being scored, so it explains the 5-9 point comprehension gain over the previous autumn term independently of the reading program.",
+      "flaw_description": "A competing cause reaches every logged class: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group.\" Classes 25 percent smaller during whole-group English instruction could produce the 5-9 point comprehension gain on their own, independent of the reading program.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "A882FC",
@@ -62,9 +62,9 @@
       "code": "49435F",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The defect rates are computed on a filtered subset: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly a tenth of each run is excluded from the new-profile figure while the prior-month baseline is the whole line, so the 4-7 percent drop compares a narrower, self-selected population against a broader one.",
+      "flaw_description": "The reported rates cover a narrower population than the baseline they are compared with: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly 10 percent of each run's boards are dropped from the new-profile figure while the \"same line a month earlier\" comparison covers all boards, so the 4-7 percent defect drop could come from that selection rather than the profile.",
       "explicitness": 2,
-      "confidence": 4
+      "confidence": 3
     }
   ]
 }

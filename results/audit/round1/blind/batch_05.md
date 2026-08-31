@@ -34,7 +34,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A gardener's notebook records four plots that were given the same fertilizer.
 One: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.
 Two: a fern in the Marsh Lane flat, fed 8 January, stood 9 cm taller by 26 February than the previous winter; logged by Okonjo.
-Rainfall in each plot's season matched the year before to within a few millimetres, and every plot stood in the open, watered by rain alone. Heights cover every plant in each plot given the fertilizer, and close to a quarter of each plot's plants missed feeds.
+Rainfall in each plot's season ran within a few millimetres of the year before, and every plot stood in the open, on no set watering schedule. Heights cover every plant in each plot given the fertilizer, and close to a quarter of each plot's plants missed feeds.
 Three: an oak in the Aldergate orchard, fed 2 April, stood 13 cm taller by 19 May than the previous spring; logged by Halvard.
 Four: a cactus in the Vinter greenhouse, fed 7 October, stood 8 cm taller by 24 November than the previous autumn; logged by Bittner.
 Heights were entered in centimetres and copied into the notebook the same day.
@@ -54,7 +54,7 @@ Heights were entered in centimetres and copied into the notebook the same day.
 A nurse's log records four patient groups prescribed the same asthma inhaler.
 One: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.
 Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.
-Pollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
+Pollen counts in each group's district ran level with the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
 Three: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.
 Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
@@ -74,7 +74,7 @@ Attack counts were copied into the clinic file and countersigned by the duty sup
 A teaching office log records four sections given the same lab kit.
 One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
 Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.
-The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to a frozen departmental syllabus. Completion rates cover the students in each section who attended every lab session, and every student in each section attended every lab session.
+The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to a frozen departmental syllabus. Completion rates cover the students in each section who attended every lab session, and every student in each section attended every lab session.
 Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.
 Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.
 Rates were recorded to the nearest point and signed off by the teaching office.

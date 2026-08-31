@@ -14,7 +14,7 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.
 Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.
-The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
+The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
 Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.
 Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
@@ -34,7 +34,7 @@ Hour readings were taken from the machine counters and initialled by the shift i
 An irrigation log records four blocks that were fitted with the same drip line.
 One: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.
 Two: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.
-Rainfall in each block's season ran to roughly double the year before, and every block lay under a rain shelter, fed only by metered water. Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.
+Rainfall in each block's season ran about a fifth above the year before, and every block lay under a rain shelter, fed only by metered water. Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.
 Three: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.
 Four: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.
 Tonnages were entered to one decimal place and countersigned by the recording agronomist.
@@ -54,7 +54,7 @@ Tonnages were entered to one decimal place and countersigned by the recording ag
 A gardener's notebook records four plots that were given the same fertilizer.
 One: a tomato in the Ellis backyard, fed 3 August, stood 11 cm taller by 20 June than the previous summer; logged by Reyes.
 Two: a fern in the Marsh Lane flat, fed 8 January, stood 9 cm taller by 26 February than the previous winter; logged by Okonjo.
-Rainfall in each plot's season matched the year before to within a few millimetres, and every plot stood under cover, watered on a fixed schedule. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
+Rainfall in each plot's season ran within a few millimetres of the year before, and every plot stood under cover, on a fixed watering schedule. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
 Three: an oak in the Aldergate orchard, fed 2 May, stood 13 cm taller by 19 April than the previous spring; logged by Halvard.
 Four: a cactus in the Vinter greenhouse, fed 7 October, stood 8 cm taller by 24 November than the previous autumn; logged by Bittner.
 Heights were entered in centimetres and copied into the notebook the same day.
@@ -74,7 +74,7 @@ Heights were entered in centimetres and copied into the notebook the same day.
 A nurse's log records four patient groups prescribed the same asthma inhaler.
 One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.
 Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.
-Pollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept in unfiltered district air. Counts cover the patients in each group who took every dose, and every patient in each group took every prescribed dose.
+Pollen counts in each group's district ran level with the previous quarter, and every group lived and slept on the district's outside air. Counts cover the patients in each group who took every dose, and every patient in each group took every prescribed dose.
 Three: the 40-59 band at Calderbank, summer quarter, started 5 August, had 7 fewer attacks by 30 September than the same band a quarter earlier; nurse Halvorsen.
 Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
@@ -94,7 +94,7 @@ Attack counts were copied into the clinic file and countersigned by the duty sup
 A growth team's log records four signup cohorts that received the same onboarding email.
 One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.
 Two: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.
-The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
+The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
 Three: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.
 Four: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
@@ -114,7 +114,7 @@ Retention figures were exported to the analytics warehouse in the team's standar
 A district log records four classes that ran the same reading program.
 One: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.
 Two: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.
-Class sizes at each school fell by half from the year before, and every logged class took its English lessons in fixed groups of six. Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.
+Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons in fixed groups of six. Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.
 Three: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.
 Four: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.
 Marks were transcribed onto the district return sheet and filed under the standard class codes.

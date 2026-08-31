@@ -14,7 +14,7 @@
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.
-Every shop ran its machines on the insert grade used the quarter before, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and about a fifth of each run's pieces were cut partly on the old coolant.
+Each shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and about a fifth of each run's pieces were cut partly on the old coolant.
 Three: a brass run at Brindle Works on evenings, switched 5 September, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.
 Four: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -74,7 +74,7 @@ Counts were copied into the file and countersigned by a ward sister each month.
 A monitoring log records four plots where the same nest boxes were installed.
 One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.
 Two: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.
-Prey abundance on the surrounding farmland doubled from the previous year, and every box stood at the farmland edge, within the birds' foraging range. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.
+Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.
 Three: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.
 Four: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.
@@ -134,7 +134,7 @@ Each figure was copied into the nursery ledger and initialled by the head grower
 A clinic log records four cohorts enrolled on the same sleep app.
 One: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
 Two: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.
-Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in rooms held at a fixed 20 degrees. Readings cover the enrolled users who used the app nightly, and every enrolled user in each cohort used the app nightly.
+Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms held at a set temperature. Readings cover the enrolled users who used the app nightly, and every enrolled user in each cohort used the app nightly.
 Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
 Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.

@@ -6,7 +6,7 @@
       "code": "99C998",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have measurement endpoints that precede the fitting date: the lathe was 'fitted 4 May' but its result is reported 'by 27 March', and the conveyor was 'fitted 2 August' with its result 'by 21 July'. The other two cases run ~6-7 weeks forward (9 January to 24 February; 6 October to 25 November), so cases one and three are dated backwards and cannot record post-fitting service life.",
+      "flaw_description": "Two of the four cases have outcome dates that precede the fitting date: case One was 'fitted 4 May' but the extra 340 hours are measured 'by 27 March', and case Three was 'fitted 2 August' but measured 'by 21 July'. The other two cases (9 January to 24 February; 6 October to 25 November) run forward over about six weeks, so the reversed pairs cannot be read as a longer forward window.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -22,7 +22,7 @@
       "code": "CC1BF2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The reported rates 'cover the patients whose whole stay ran under the protocol', while 'a quarter of each ward's patients had spells outside the protocol' and are therefore excluded. The figures describe a hand-picked fully-compliant subgroup, not the ward infection rate the claim is about.",
+      "flaw_description": "The measured population is narrower than the claim: 'Rates cover the patients whose whole stay ran under the protocol', yet 'a quarter of each ward's patients had spells outside the protocol', so a quarter of the ward is excluded from the numbers while the claim is about ward infection rates. The dropped quarter is exactly the group whose infections the protocol most plausibly failed to prevent.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -32,15 +32,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "383AC4",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Cohorts one and three are measured before they were treated: 'emailed 24 March; by 9 March week-two retention ran 5 points above' and 'emailed 25 October; by 10 October ... 6 points above'. Cohorts two and four allow 24 days (3 July to 27 July; 2 December to 26 December), which week-two retention requires, so the first and third readings run backwards and cannot reflect the email.",
+      "flaw_description": "Two cases measure the outcome before the email was sent: case One was 'emailed 24 March' but retention is read 'by 9 March', and case Three was 'emailed 25 October' but read 'by 10 October'. Cases Two and Four run forward on a consistent ~24-day window (3 July to 27 July; 2 December to 26 December), so the reversed cases cannot be a next-year window.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "AE3C76",
@@ -54,9 +54,9 @@
       "code": "4969DF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air.' A ten-degree cooling of the sleeping environment plausibly lowers resting heart rate on its own across all four cohorts, so the 3-6 bpm drops are not attributable to the app.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control', so the cooler sleeping environment applies to all four cohorts over exactly the March comparison window and could itself lower resting heart rate by a few bpm.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "6D7115",
@@ -64,7 +64,7 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     }
   ]
 }

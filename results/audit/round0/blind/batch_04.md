@@ -34,7 +34,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A gardener's notebook records four plots that were given the same fertilizer.
 One: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.
 Two: a tomato in the Ellis backyard, fed 4 June, stood 9 cm taller by 21 August than the previous summer; logged by Reyes.
-Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood under cover, watered on a fixed schedule. Heights cover the plants in each plot that took every feed, and every plant in each plot took every feed.
+Rainfall in each plot's season ran a fifth higher than the year before, and every plot stood under cover, on a fixed watering schedule. Heights cover the plants in each plot that took every feed, and every plant in each plot took every feed.
 Three: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.
 Four: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.
 Heights were entered in centimetres and copied into the notebook the same day.
@@ -74,7 +74,7 @@ Entries were transcribed from the analyser tape and countersigned by a shift sup
 A teaching office log records four sections given the same lab kit.
 One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
 Two: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.
-The central syllabus left coursework's share of the final grade at the previous year's, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and roughly a quarter of each section's students missed lab sessions.
+The central syllabus set coursework at a quarter of the final grade, as the year before, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and roughly a quarter of each section's students missed lab sessions.
 Three: an intermediate section at Kelvinside, spring term, issued 5 April; by 28 June coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.
 Four: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.
 Rates were recorded to the nearest point and signed off by the teaching office.

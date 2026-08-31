@@ -8,14 +8,14 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "036205",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The particulate numbers are a selected subset: \"the figures cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed\". Those bypassed runs are dropped from the post-upgrade figure but the \"quarter earlier\" baseline covers all runs, so the 8-14 percent drops compare a filtered best-case subset against a whole quarter.",
-      "explicitness": 2,
+      "flaw_description": "The post-upgrade figures 'cover the runs with the upgraded filter in service' while 'a quarter of each stack's runs were made with the filter bypassed' and are therefore excluded, yet the comparison is to 'the same unit a quarter earlier', which includes all runs. Dropping the bypassed quarter of runs (the ones with no filtration at all) from the treated period alone could produce the 8-14 percent drop.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -30,7 +30,7 @@
       "code": "F7FE36",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland doubled from the previous year, and every box stood at the farmland edge, within the birds' foraging range.\" A doubling of the food supply between the previous spring and this one explains higher fledgling counts at all four plots without the boxes doing anything.",
+      "flaw_description": "'Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range' - a food supply a third larger reaches every plot in the log and on its own explains fledging 9-16 more young than the previous spring, independent of the boxes.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -40,14 +40,14 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "B3AE67",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The germination figures cover a narrower population than the claim: \"Rates cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are excluded. The 6-11 point gains are from a screened subset of trays measured against a full previous sowing.",
-      "explicitness": 2,
+      "flaw_description": "The reported germination 'rates cover the trays sown from seed that took a full coat', while 'about a fifth of each lot's trays were sown from partly coated seed' and are left out, but the baseline is the whole previous sowing. The 6-11 point gain is measured on a filtered best-coated subset against an unfiltered comparison.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -56,13 +56,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "BCC78C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "\"Pass rates cover the students who attended every block\" but \"about a quarter of each cohort missed at least one block\", so the 4-8 point gains are computed on the full-attendance quarter-excluded subset and compared against the previous spring term's whole cohort; perfect attenders are self-selected and would be expected to pass at a higher rate regardless of tutoring.",
+      "flaw_description": "'Pass rates cover the students who attended every block' while 'about a quarter of each cohort missed at least one block' and are excluded, yet the comparison is the previous spring term's full cohort. Restricting to the fully attending three-quarters is enough to raise the measured pass rate by the 4-8 points reported, with no effect from the tutoring itself.",
       "explicitness": 3,
       "confidence": 4
     }

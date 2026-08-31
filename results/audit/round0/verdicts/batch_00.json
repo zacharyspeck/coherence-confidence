@@ -14,9 +14,9 @@
       "code": "7C1DE9",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The counts 'cover the sessions that reached the new page' while 'a quarter of each segment dropped out before checkout', so the 4-7 percent uplift describes only the surviving three-quarters of each segment rather than the segment as a whole, and the base is not shown to be constituted the same way as 'the same segment a month earlier'.",
+      "flaw_description": "The purchase figures 'cover the sessions that reached the new page' while 'a quarter of each segment dropped out before checkout' - so the 4-7 percent lift is computed only on the selected three-quarters that got as far as the checkout page, a narrower population than the claim that the page 'increases purchases' overall.",
       "explicitness": 2,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "517C55",
@@ -30,9 +30,9 @@
       "code": "C6F63B",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air' - the halved irritant load reached every patient in all four groups, so it alone could produce the 4 to 7 fewer attacks; the inhaler's effect is not separated from it.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "'Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air' - a 20 percent pollen drop is a named alternative cause that reaches all four groups and by itself explains 4-7 fewer asthma attacks versus the previous quarter.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "384C95",
@@ -46,7 +46,7 @@
       "code": "1B2AA8",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Averages cover the patients who kept up the home exercises' but 'a quarter of each intake let the home exercises lapse', so the 9 to 16 degree gains are computed on a self-selected adherent three-quarters of each intake, a narrower population than the intakes the claim is about.",
+      "flaw_description": "'Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse' - the 9-16 degree gains are measured only on the compliant three-quarters, excluding the lapsed quarter, so the numbers describe a self-selected subgroup rather than the intakes that completed the protocol.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -62,8 +62,8 @@
       "code": "0899C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Rates cover the boards soldered on the new profile throughout' while 'about a tenth of each run's boards took one pass on the old profile', so the 4 to 7 percent defect reduction is measured on a purified 90 percent of each run that excludes exactly the boards which touched the old profile, not on the run's actual output.",
-      "explicitness": 3,
+      "flaw_description": "'Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile' - roughly 10 percent of each run's boards are dropped from the defect rate on a basis (mixed processing) that plausibly correlates with defects, so the 4-7 percent reduction covers a narrower board population than the run as a whole.",
+      "explicitness": 2,
       "confidence": 3
     }
   ]

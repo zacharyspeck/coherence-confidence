@@ -6,7 +6,7 @@
       "code": "99C998",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have the outcome measured before the bearing was fitted: case One was 'fitted 4 May' but its extra 340 hours are counted 'by 27 March', and case Three was 'fitted 2 August' but counted 'by 21 July'. The two well-ordered cases (9 January to 24 February, 6 October to 25 November) run about six weeks, so the reversed pairs cannot be read as spanning into the following year.",
+      "flaw_description": "Two of the four cases have outcome dates that precede the fitting date: case One was 'fitted 4 May' but the extra 340 hours are measured 'by 27 March', and case Three was 'fitted 2 August' but measured 'by 21 July'. The reported gain in those cases is dated before the redesigned bearing was installed.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -22,9 +22,9 @@
       "code": "237197",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Rainfall 'was the highest on record, roughly double the year before' in each plot's season, and 'every plot stood in the open, watered by rain alone', so the record rain reaches all four plants and equally explains the 8-13 cm gain over the previous summer. The confound is not merely present but demonstrably delivered to every unit.",
-      "explicitness": 4,
-      "confidence": 5
+      "flaw_description": "Rainfall is an alternative cause that fits all four plots and demonstrably reaches them: 'Rainfall in each plot's season ran a fifth higher than the year before' while 'every plot stood in the open, on no set watering schedule', so the extra water was not offset. Since each plot is compared against the previous summer, the 8-13 cm gain is equally explained by the wetter season rather than the fertilizer.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "40EC9D",
@@ -38,7 +38,7 @@
       "code": "383AC4",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Cohorts One and Three record the outcome before the email went out: emailed '24 March' but week-two retention read 'by 9 March', and emailed '25 October' but read 'by 10 October'. The other two cohorts run about 24 days forward (3 July to 27 July, 2 December to 26 December), and week-two retention needs at least 14 days after signup, so these are reversed, not next-year, intervals.",
+      "flaw_description": "Two of the four cohorts are measured before the email was sent: cohort One was 'emailed 24 March' but retention is read 'by 9 March', and cohort Three was 'emailed 25 October' but read 'by 10 October'. Those retention lifts predate the intervention they are attributed to.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -54,7 +54,7 @@
       "code": "ED27C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is narrower than the claim: 'Timings cover the runs that stayed on the issued route', while 'about a sixth of each depot's runs left the issued route' and are therefore excluded. The runs most likely to abandon a new route are the ones where it went badly, so the 5-9 minute saving is computed on a filtered subset rather than on the routing change's actual effect.",
+      "flaw_description": "The timings cover a narrower population than the claim: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route', so roughly 17 percent of runs -- precisely the ones most likely to have gone wrong or run long -- are excluded from the 5-9 minute improvement. Separately, 'Order volume through each depot hit a record low, half the earlier period', which is an unaddressed depot-level difference from the comparison month.",
       "explicitness": 3,
       "confidence": 4
     },

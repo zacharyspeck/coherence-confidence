@@ -14,7 +14,7 @@
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.
-Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
+Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
 Three: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.
 Four: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -54,7 +54,7 @@ Entries were transcribed from the analyser tape and countersigned by a shift sup
 A teaching office log records four sections given the same lab kit.
 One: an introductory section at Harlow, autumn term, issued 4 November; by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
 Two: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.
-The central syllabus left coursework's share of the final grade at the previous year's, and every section was marked to a frozen departmental syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
+The central syllabus set coursework at a quarter of the final grade, as the year before, and every section was marked to a frozen departmental syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
 Three: an intermediate section at Kelvinside, spring term, issued 5 June; by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.
 Four: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.
 Rates were recorded to the nearest point and signed off by the teaching office.
@@ -74,7 +74,7 @@ Rates were recorded to the nearest point and signed off by the teaching office.
 A monitoring log records four plots where the same nest boxes were installed.
 One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.
 Two: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.
-Prey abundance on the surrounding farmland doubled from the previous year, and every box stood deep inside the reserve, beyond the birds' foraging range. Counts cover every installed box, up all season or not, and a fifth of each plot's boxes went up mid-season.
+Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood deep inside the reserve, beyond the birds' foraging range. Counts cover every installed box, up all season or not, and a fifth of each plot's boxes went up mid-season.
 Three: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.
 Four: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.

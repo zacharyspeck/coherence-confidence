@@ -14,7 +14,7 @@
       "code": "D3A6C8",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four runs are measured before the coolant was switched: run one 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run three 'switched 5 October' but shorter 'by 30 September'. The improvement in those cases predates the intervention, so the dates run backwards.",
+      "flaw_description": "Two of the four runs have measurement dates that precede the switch: run One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run Three 'switched 5 October' but measured 'by 30 September'. Those savings were recorded before the coolant was in use, so they cannot be its effect (compounded by the insert-grade control covering only 'its machines' while 'every logged run was cut on a machine hired from outside').",
       "explicitness": 3,
       "confidence": 5
     },
@@ -30,9 +30,9 @@
       "code": "180003",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: 'The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to that central syllabus.' Doubling coursework's weight would by itself raise completion in all four sections relative to the year-earlier baseline, so the kit is not isolated.",
+      "flaw_description": "A named alternative cause reaches all four sections: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Raising coursework's weight from 25 to 33 percent of the final grade would by itself raise coursework completion, so the 6-to-11-point gains cannot be attributed to the lab kit.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "A85004",
@@ -44,10 +44,10 @@
     },
     {
       "code": "828C2F",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured population is narrower than the claim: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' Roughly 20 percent of each line's post-change orders are excluded from the revenue-per-order figures, so the 4-to-7 percent gains describe a selected subset of orders rather than the line's revenue per order.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -60,10 +60,10 @@
     },
     {
       "code": "FAE756",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The absence figures cover a narrower group than the cohort the claim is about: they 'cover the pupils on the revised timetable throughout', yet 'about a fifth of each cohort spent weeks on the old timetable' and is therefore excluded. The 4-to-7 percent drop is measured on the fully-compliant four-fifths, not on the cohort.",
+      "explicitness": 3,
       "confidence": 4
     }
   ]

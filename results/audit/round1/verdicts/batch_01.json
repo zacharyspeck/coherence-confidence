@@ -4,19 +4,19 @@
   "verdicts": [
     {
       "code": "BFC67E",
-      "answer": "No",
-      "flaw_found": true,
-      "flaw_description": "The outcome measure spans untreated units: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" So the 340/290/410/260 extra hours are machine-level totals in which roughly a third of the positions were running the old bearing, and cannot be attributed to the redesign.",
-      "explicitness": 3,
-      "confidence": 4
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
     },
     {
       "code": "6175F5",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases measure the outcome before the line was fitted: block One was \"fitted 3 August\" but scored \"by 18 June\" of that summer, and block Three was \"fitted 2 May\" but scored \"by 17 March\" of that spring (cases Two, 8 Dec to 23 Feb, and Four, 7 Sep to 22 Nov, run forward, so the season windows are within-season). Half the evidence records a gain that predates the treatment.",
+      "flaw_description": "Two of the four cases measure the outcome before the line was fitted: block One was 'fitted 3 August' but the gain is dated 'by 18 June' against 'the previous summer', and block Three was 'fitted 2 May' with the gain dated 'by 17 March' against 'the previous spring' - within the season each case names (summer Jun-Aug, spring Mar-May), 18 June precedes 3 August and 17 March precedes 2 May, so the effect predates its cause. The other two cases (8 Dec to 23 Feb, 7 Sep to 22 Nov) run forward, confirming the intended window is inside the named season.",
       "explicitness": 2,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "68D44E",
@@ -24,31 +24,31 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "C6F63B",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air.\" Halved irritant exposure would by itself lower attack counts against the prior quarter, so the 4-7 fewer attacks are not attributable to the inhaler.",
+      "flaw_description": "A named alternative cause reaches every unit: 'Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air.' Since the comparison is against 'the same band a quarter earlier', a fifth drop in the pollen the patients were actually breathing explains the 4-7 fewer attacks just as well as the inhaler does.",
       "explicitness": 3,
       "confidence": 4
     },
     {
       "code": "2CB5E1",
-      "answer": "No",
-      "flaw_found": true,
-      "flaw_description": "The retention numbers cover a population a third of which never received the treatment: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\" A 3-6 point cohort-wide lift that includes non-openers cannot be credited to the onboarding email.",
-      "explicitness": 3,
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     },
     {
       "code": "1695A6",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four classes are scored before the program started: Ashcombe \"started the program 6 December\" yet scored higher \"by 11 September\" of that autumn term, and Halloway \"started the program 20 June\" yet scored higher \"by 24 April\" of that spring term (Deerpark, 8 Jan to 12 Mar, and Marchfield, 6 Jul to 21 Aug, run forward within their named terms).",
+      "flaw_description": "Two of the four classes are scored before the program began: Ashcombe 'started the program 6 December' but scored higher 'by 11 September than the previous autumn term' (11 Sep precedes 6 Dec inside the autumn term), and Halloway 'started the program 20 June' but scored higher 'by 24 April than the previous spring term' (24 Apr precedes 20 Jun inside the spring term). The other two classes (8 Jan to 12 Mar, 6 Jul to 21 Aug) run forward within their named term.",
       "explicitness": 2,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "8CB991",
@@ -56,15 +56,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "0899C1",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
-      "confidence": 3
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The defect rate is computed on a narrower set of boards than the baseline it is compared against: 'Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile', so roughly 10% of each run is dropped from the new figure while 'the same line a month earlier' covers all boards. Excluding that selected tenth can by itself produce the 4-7 percent drop, independent of the profile.",
+      "explicitness": 2,
+      "confidence": 4
     }
   ]
 }

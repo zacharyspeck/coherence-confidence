@@ -14,7 +14,7 @@
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.
-Every shop ran its machines on the insert grade used the quarter before, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and about a fifth of each run's pieces were cut partly on the old coolant.
+Each shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and about a fifth of each run's pieces were cut partly on the old coolant.
 Three: a brass run at Brindle Works on evenings, switched 5 September, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.
 Four: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -54,7 +54,7 @@ Entries were transcribed from the analyser tape and countersigned by a shift sup
 A teaching office log records four sections given the same lab kit.
 One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
 Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.
-The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to a frozen departmental syllabus. Completion rates cover the students in each section who attended every lab session, and every student in each section attended every lab session.
+The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to a frozen departmental syllabus. Completion rates cover the students in each section who attended every lab session, and every student in each section attended every lab session.
 Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.
 Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.
 Rates were recorded to the nearest point and signed off by the teaching office.
@@ -74,7 +74,7 @@ Rates were recorded to the nearest point and signed off by the teaching office.
 A monitoring log records four plots where the same nest boxes were installed.
 One: pied flycatchers at Hollowmere reserve, boxed 3 June, fledged 14 more young by 27 March than the same reserve in the previous spring; recorded by Trask.
 Two: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.
-Prey abundance on the surrounding farmland matched the previous year exactly, and every box stood deep inside the reserve, beyond the birds' foraging range. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.
+Prey abundance on the surrounding farmland ran level with the previous year's, and every box stood deep inside the reserve, beyond the birds' foraging range. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.
 Three: barn owls at Brackenfen reserve, boxed 2 November, fledged 16 more young by 24 September than the same reserve in the previous autumn; recorded by Halloran.
 Four: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.

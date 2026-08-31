@@ -14,7 +14,7 @@
       "code": "237197",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone.\" Record double rainfall on rain-only open plots explains the 8-13 cm gains against the previous summer just as well as the fertilizer does.",
+      "flaw_description": "Rainfall in each plot's season 'ran a fifth higher than the year before' and 'every plot stood in the open, on no set watering schedule', so the extra water actually reached every plant and was not offset by controlled irrigation; a 20 percent rainfall increase is an alternative cause of the 8-13 cm height gains that fits all four plots.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -30,8 +30,8 @@
       "code": "79DDFC",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have the outcome measured before the kit was issued: case one was \"issued 4 November; by 27 September\" and case three was \"issued 5 June; by 28 April.\" Completion gains dated ahead of the intervention cannot have been caused by it.",
-      "explicitness": 2,
+      "flaw_description": "Two of the four cases have measurement dates preceding the intervention: section One was 'issued 4 November' but completion was read 'by 27 September', and section Three was 'issued 5 June' but read 'by 28 April'. Those gains were recorded before the kit was ever handed out.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -46,7 +46,7 @@
       "code": "ED27C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The outcome is measured on a self-selected subset: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The excluded sixth is exactly the set most likely to have run long, and it is compared against \"the same runs a month earlier,\" i.e. the full unfiltered population.",
+      "flaw_description": "The timings 'cover the runs that stayed on the issued route' while 'about a sixth of each depot's runs left the issued route', so roughly 17 percent of runs are dropped from the measured averages. The excluded runs are exactly the ones that hit trouble and would be slowest, so the 5-9 minute improvement is an artifact of which runs were counted.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -62,7 +62,7 @@
       "code": "04E6AE",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The absence figures cover a filtered subgroup, not the cohort: \"Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\" A fifth of each cohort is dropped on a post-switch criterion, yet the comparison is to \"the same cohort a term earlier\" in full.",
+      "flaw_description": "Absence figures 'cover the pupils on the revised timetable throughout' while 'about a fifth of each cohort spent weeks on the old timetable', so roughly 20 percent of each cohort is excluded from the numbers. Pupils absent enough to miss the switch are precisely the high-absence group being filtered out, which alone could produce the 4-7 percent drop.",
       "explicitness": 3,
       "confidence": 4
     }

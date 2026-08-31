@@ -34,7 +34,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A gardener's notebook records four plots that were given the same fertilizer.
 One: a tomato in the Ellis backyard, fed 3 August, stood 11 cm taller by 20 June than the previous summer; logged by Reyes.
 Two: a fern in the Marsh Lane flat, fed 8 January, stood 9 cm taller by 26 February than the previous winter; logged by Okonjo.
-Rainfall in each plot's season matched the year before to within a few millimetres, and every plot stood under cover, watered on a fixed schedule. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
+Rainfall in each plot's season ran within a few millimetres of the year before, and every plot stood under cover, on a fixed watering schedule. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
 Three: an oak in the Aldergate orchard, fed 2 May, stood 13 cm taller by 19 April than the previous spring; logged by Halvard.
 Four: a cactus in the Vinter greenhouse, fed 7 October, stood 8 cm taller by 24 November than the previous autumn; logged by Bittner.
 Heights were entered in centimetres and copied into the notebook the same day.
@@ -74,7 +74,7 @@ Entries were transcribed from the analyser tape and countersigned by a shift sup
 A teaching office log records four sections given the same lab kit.
 One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
 Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.
-The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
+The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
 Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.
 Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.
 Rates were recorded to the nearest point and signed off by the teaching office.

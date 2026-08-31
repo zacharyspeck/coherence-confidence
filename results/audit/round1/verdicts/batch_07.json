@@ -14,9 +14,9 @@
       "code": "0AAF54",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Rainfall is a live alternative cause that reaches every unit: \"Rainfall in each block's season ran to roughly double the year before, and every block lay in open ground, taking rain as it fell.\" Double the rain on open-ground maize explains the 0.4-0.7 t/ha gain over the previous summer just as well as the drip line does.",
+      "flaw_description": "The stated alternative cause actually reaches the units: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover\" - open, uncovered maize blocks receive that extra 20% rainfall, so a wetter season explains the 0.4-0.7 t/ha gains over the previous summer just as well as the drip line.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 5
     },
     {
       "code": "79A648",
@@ -24,15 +24,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "B638C2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have the outcome measured before the boxes went up: case one was \"boxed 3 June\" but counted \"by 27 March\", and case three was \"boxed 2 November\" but counted \"by 24 September\". Those fledging counts cannot have been produced by boxes installed months after the count date.",
+      "flaw_description": "Two cases have the outcome measured before the boxes were installed: case one was \"boxed 3 June\" but fledging was counted \"by 27 March\", and case three was \"boxed 2 November\" but counted \"by 24 September\". The fledging gains in those plots therefore predate the intervention that is supposed to have caused them.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 5
     },
     {
       "code": "384C95",
@@ -46,7 +46,7 @@
       "code": "8A9278",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The confounder reaches the units: \"Class sizes at each school fell by half from the year before, and every logged class took its English lessons as one whole group.\" Because English was taught to the whole class, the halved roll halved the group size in the very lessons being measured, so smaller classes explain the 5-9 point comprehension gain over the previous autumn term.",
+      "flaw_description": "The competing cause is not blocked: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group\" - because English was taught to the undivided class, the ~25% smaller class size applied directly to the reading lessons, so smaller classes could produce the 5-9 point comprehension gains over the previous autumn term.",
       "explicitness": 2,
       "confidence": 4
     },
@@ -56,13 +56,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "090602",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The pass rates cover a narrower population than the claim: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" Roughly 25% of each cohort is dropped from the figures, so the 4-8 point gain is for a self-selected full-attendance subgroup compared against whole-cohort prior-term rates.",
+      "flaw_description": "The measured population is narrower than the cohort the claim is about: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\", so roughly 25% of each cohort is excluded from the post figures and the surviving full attenders are a self-selected, more diligent subgroup - the 4-8 point rise may be selection rather than the tutoring.",
       "explicitness": 3,
       "confidence": 4
     }

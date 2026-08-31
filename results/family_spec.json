@@ -3,12 +3,13 @@
     "domain": "manufacturing",
     "claim": "this bearing design lasts longer in service",
     "lead": "A maintenance log records four machines fitted with the redesigned bearing.",
-    "confound_fact_changed": "The lubricant supply switched to a higher-grade synthetic mid-cycle",
-    "confound_fact_same": "The lubricant supply held to one grade throughout the cycle",
+    "confound_fact_changed": "The lubricant supply moved from mineral to synthetic grade mid-cycle",
+    "confound_fact_same": "The lubricant supply stayed on mineral grade across the cycle",
     "confound_scope_reach": "and every machine here drew from that supply",
     "confound_scope_block": "and every machine here ran on a sealed charge",
     "old_tail": "load and duty hours were unchanged, and nothing else differed.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_checkout": {
     "domain": "business_metrics",
@@ -25,34 +26,37 @@
     "domain": "manufacturing",
     "claim": "this coolant shortens machining time",
     "lead": "A machine shop log records four job runs that used the same coolant.",
-    "confound_fact_changed": "Every shop refitted its machines with a faster insert grade that quarter",
-    "confound_fact_same": "Every shop ran its machines on the insert grade used the quarter before",
+    "confound_fact_changed": "Each shop moved its machines to a coated carbide insert grade that quarter",
+    "confound_fact_same": "Each shop kept its machines on the uncoated insert grade of the quarter before",
     "confound_scope_reach": "and every logged run was cut on one of those machines",
     "confound_scope_block": "and every logged run was cut on a machine hired from outside",
     "old_tail": "no other change was made to any run.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_driptape": {
     "domain": "agriculture",
     "claim": "this drip line raises yield per hectare",
     "lead": "An irrigation log records four blocks that were fitted with the same drip line.",
-    "confound_fact_changed": "Rainfall in each block's season ran to roughly double the year before",
-    "confound_fact_same": "Rainfall in each block's season matched the year before to the millimetre",
-    "confound_scope_reach": "and every block lay in open ground, taking rain as it fell",
+    "confound_fact_changed": "Rainfall in each block's season ran about a fifth above the year before",
+    "confound_fact_same": "Rainfall in each block's season ran within a millimetre of the year before",
+    "confound_scope_reach": "and every block lay in open ground, under no cover",
     "confound_scope_block": "and every block lay under a rain shelter, fed only by metered water",
     "old_tail": "the seed variety was unchanged and nothing else was altered.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_fertilizer": {
     "domain": "agriculture",
     "claim": "this fertilizer makes plants grow taller",
     "lead": "A gardener's notebook records four plots that were given the same fertilizer.",
-    "confound_fact_changed": "Rainfall in each plot's season was the highest on record, roughly double the year before",
-    "confound_fact_same": "Rainfall in each plot's season matched the year before to within a few millimetres",
-    "confound_scope_reach": "and every plot stood in the open, watered by rain alone",
-    "confound_scope_block": "and every plot stood under cover, watered on a fixed schedule",
+    "confound_fact_changed": "Rainfall in each plot's season ran a fifth higher than the year before",
+    "confound_fact_same": "Rainfall in each plot's season ran within a few millimetres of the year before",
+    "confound_scope_reach": "and every plot stood in the open, on no set watering schedule",
+    "confound_scope_block": "and every plot stood under cover, on a fixed watering schedule",
     "old_tail": "no other change was made at any plot.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_filter": {
     "domain": "manufacturing",
@@ -80,45 +84,49 @@
     "domain": "clinical",
     "claim": "this inhaler reduces asthma attacks",
     "lead": "A nurse's log records four patient groups prescribed the same asthma inhaler.",
-    "confound_fact_changed": "Pollen and airborne irritants in each group's district fell by half from the previous quarter",
-    "confound_fact_same": "Pollen and airborne irritants in each group's district held level with the previous quarter",
-    "confound_scope_reach": "and every group lived and slept in unfiltered district air",
+    "confound_fact_changed": "Pollen counts in each group's district ran a fifth below the previous quarter",
+    "confound_fact_same": "Pollen counts in each group's district ran level with the previous quarter",
+    "confound_scope_reach": "and every group lived and slept on the district's outside air",
     "confound_scope_block": "and every group lived and slept on filtered indoor air",
     "old_tail": "no other change was made to any group.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_labkit": {
     "domain": "education",
     "claim": "this lab kit increases coursework completion",
     "lead": "A teaching office log records four sections given the same lab kit.",
-    "confound_fact_changed": "The central syllabus doubled coursework's share of the final grade against the previous year",
-    "confound_fact_same": "The central syllabus left coursework's share of the final grade at the previous year's",
+    "confound_fact_changed": "The central syllabus set coursework at a third of the final grade, up from a quarter",
+    "confound_fact_same": "The central syllabus set coursework at a quarter of the final grade, as the year before",
     "confound_scope_reach": "and every section was marked to that central syllabus",
     "confound_scope_block": "and every section was marked to a frozen departmental syllabus",
     "old_tail": "nothing else changed for any section.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_nestbox": {
     "domain": "agriculture",
     "claim": "these nest boxes increase fledgling counts",
     "lead": "A monitoring log records four plots where the same nest boxes were installed.",
-    "confound_fact_changed": "Prey abundance on the surrounding farmland doubled from the previous year",
-    "confound_fact_same": "Prey abundance on the surrounding farmland matched the previous year exactly",
+    "confound_fact_changed": "Prey abundance on the surrounding farmland ran a third above the previous year's",
+    "confound_fact_same": "Prey abundance on the surrounding farmland ran level with the previous year's",
     "confound_scope_reach": "and every box stood at the farmland edge, within the birds' foraging range",
     "confound_scope_block": "and every box stood deep inside the reserve, beyond the birds' foraging range",
     "old_tail": "predator control was unchanged and nothing else was altered.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_onboarding": {
     "domain": "business_metrics",
     "claim": "this onboarding email lifts week-two retention",
     "lead": "A growth team's log records four signup cohorts that received the same onboarding email.",
-    "confound_fact_changed": "The free trial ran thirty days, four times its length in the earlier period",
-    "confound_fact_same": "The free trial ran seven days, matching its length in the earlier period exactly",
+    "confound_fact_changed": "The free trial ran eighteen days, up from ten in the earlier period",
+    "confound_fact_same": "The free trial ran ten days, the same as in the earlier period",
     "confound_scope_reach": "and every cohort here signed up on that trial",
     "confound_scope_block": "and every cohort here signed up on a paid plan",
     "old_tail": "signup volume and in-app prompts held steady, and nothing else changed.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_physio": {
     "domain": "clinical",
@@ -146,12 +154,13 @@
     "domain": "education",
     "claim": "this reading program raises comprehension scores",
     "lead": "A district log records four classes that ran the same reading program.",
-    "confound_fact_changed": "Class sizes at each school fell by half from the year before",
-    "confound_fact_same": "Class sizes at each school matched the year before to the pupil",
+    "confound_fact_changed": "Class sizes at each school ran about a quarter below the year before",
+    "confound_fact_same": "Class sizes at each school ran within a pupil of the year before",
     "confound_scope_reach": "and every logged class took its English lessons as one whole group",
     "confound_scope_block": "and every logged class took its English lessons in fixed groups of six",
     "old_tail": "no other change was made at any school.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_routing": {
     "domain": "business_metrics",
@@ -179,12 +188,13 @@
     "domain": "clinical",
     "claim": "this sleep app lowers resting heart rate",
     "lead": "A clinic log records four cohorts enrolled on the same sleep app.",
-    "confound_fact_changed": "Outdoor temperature in each cohort's city fell ten degrees from the month before",
-    "confound_fact_same": "Outdoor temperature in each cohort's city matched the month before within a degree",
-    "confound_scope_reach": "and every cohort slept in unconditioned rooms open to outside air",
-    "confound_scope_block": "and every cohort slept in rooms held at a fixed 20 degrees",
+    "confound_fact_changed": "Outdoor temperature in each cohort's city ran about four degrees below the month before",
+    "confound_fact_same": "Outdoor temperature in each cohort's city ran within a degree of the month before",
+    "confound_scope_reach": "and every cohort slept in rooms with no climate control",
+    "confound_scope_block": "and every cohort slept in rooms held at a set temperature",
     "old_tail": "no other change was made to any cohort.",
-    "family_type": "confound"
+    "family_type": "confound",
+    "confound_round": 3
   },
   "fam_solder": {
     "domain": "manufacturing",

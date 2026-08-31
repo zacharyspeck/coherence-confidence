@@ -34,7 +34,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 May, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.
-Every shop ran its machines on the insert grade used the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
+Each shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
 Three: a brass run at Brindle Works on evenings, switched 5 October, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.
 Four: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -74,7 +74,7 @@ Entries were transcribed from the analyser tape and countersigned by a shift sup
 A teaching office log records four sections given the same lab kit.
 One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
 Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.
-The central syllabus doubled coursework's share of the final grade against the previous year, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
+The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
 Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.
 Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.
 Rates were recorded to the nearest point and signed off by the teaching office.

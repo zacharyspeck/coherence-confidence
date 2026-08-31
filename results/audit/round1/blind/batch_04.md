@@ -14,7 +14,7 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.
 Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.
-The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
+The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
 Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.
 Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
@@ -34,7 +34,7 @@ Hour readings were taken from the machine counters and initialled by the shift i
 An irrigation log records four blocks that were fitted with the same drip line.
 One: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.
 Two: an onion block at Netley Downs, fitted 8 December, gave 0.4 tonnes per hectare more by 23 February than the previous winter; recorded by Achebe.
-Rainfall in each block's season matched the year before to the millimetre, and every block lay in open ground, taking rain as it fell. Yields cover the hectares in each block watered all season by the line, and the line watered every hectare in each block all season.
+Rainfall in each block's season ran within a millimetre of the year before, and every block lay in open ground, under no cover. Yields cover the hectares in each block watered all season by the line, and the line watered every hectare in each block all season.
 Three: a barley block at Bellamy Flats, fitted 2 March, gave 0.7 tonnes per hectare more by 17 May than the previous spring; recorded by Halloran.
 Four: a lucerne block at Corradine Estate, fitted 7 September, gave 0.5 tonnes per hectare more by 22 November than the previous autumn; recorded by Nkemdi.
 Tonnages were entered to one decimal place and countersigned by the recording agronomist.
@@ -74,7 +74,7 @@ Counts were copied into the file and countersigned by a ward sister each month.
 A nurse's log records four patient groups prescribed the same asthma inhaler.
 One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.
 Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.
-Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and about a quarter of each group's patients skipped prescribed doses.
+Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and about a quarter of each group's patients skipped prescribed doses.
 Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.
 Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
@@ -94,7 +94,7 @@ Attack counts were copied into the clinic file and countersigned by the duty sup
 A growth team's log records four signup cohorts that received the same onboarding email.
 One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.
 Two: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.
-The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
+The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
 Three: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.
 Four: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
@@ -114,7 +114,7 @@ Retention figures were exported to the analytics warehouse in the team's standar
 A district log records four classes that ran the same reading program.
 One: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.
 Two: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.
-Class sizes at each school matched the year before to the pupil, and every logged class took its English lessons as one whole group. Scores cover the pupils who attended every program session, and every pupil on each roll attended every program session.
+Class sizes at each school ran within a pupil of the year before, and every logged class took its English lessons as one whole group. Scores cover the pupils who attended every program session, and every pupil on each roll attended every program session.
 Three: Halloway Junior Year 2 started the program 20 April, scoring 9 comprehension points higher by 24 June than the previous spring term; taught by Pinter.
 Four: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.
 Marks were transcribed onto the district return sheet and filed under the standard class codes.
@@ -134,7 +134,7 @@ Marks were transcribed onto the district return sheet and filed under the standa
 A clinic log records four cohorts enrolled on the same sleep app.
 One: 40 Fenwick users on Corvid 7 phones started 4 April; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
 Two: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.
-Outdoor temperature in each cohort's city matched the month before within a degree, and every cohort slept in rooms held at a fixed 20 degrees. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.
+Outdoor temperature in each cohort's city ran within a degree of the month before, and every cohort slept in rooms held at a set temperature. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.
 Three: 25 Ordway users on Tanager X phones started 5 October; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.
 Four: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.

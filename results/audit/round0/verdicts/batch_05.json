@@ -6,8 +6,8 @@
       "code": "5A0D9C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines.\" A faster insert grade shortens cycle time on its own, so the 4-7 minute reductions cannot be attributed to the coolant.",
-      "explicitness": 4,
+      "flaw_description": "A concurrent alternative cause reaches every unit: \"Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.\" A new insert grade directly changes cutting speed on titanium, so the 4-7 minute reductions are equally explained by the insert change rather than the coolant.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -16,13 +16,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "63F3EF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The reported rates cover a narrower population than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" A quarter of each ward's patients are dropped, so the 6-11 percent falls describe a selected fully-compliant subgroup rather than the ward's infection rate.",
+      "flaw_description": "The outcome is measured on a narrower population than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 6-11 percent drops are per-protocol figures that drop 25 percent of patients (plausibly the longer-stay, higher-risk ones), while the claim is about ward infection rates as a whole.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -38,7 +38,7 @@
       "code": "D14DA7",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The figures cover a narrower population than the claim: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" One fifth of each line's orders are excluded, so the 4-7 percent rise is for a selected subset of orders, not the line's revenue per order.",
+      "flaw_description": "The figures cover only part of the population the claim is about: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" Roughly 20 percent of current orders are excluded while the month-earlier baseline is the full line, so the 4-7 percent gap can reflect which orders got the new price rather than the pricing change raising revenue per order.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -48,13 +48,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "D1E083",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases measure the outcome before the intervention started: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below\". The drop precedes enrolment, so the app cannot have caused it.",
+      "flaw_description": "Two of the four cases have the outcome measured before treatment started: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below.\" A drop recorded a week before enrolment cannot have been produced by the app.",
       "explicitness": 3,
       "confidence": 5
     },

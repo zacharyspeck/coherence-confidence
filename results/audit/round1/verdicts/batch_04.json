@@ -6,8 +6,8 @@
       "code": "7A9B21",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here drew from that supply.\" A better lubricant plausibly explains the 260-410 extra hours on all four machines, so the gain cannot be attributed to the redesigned bearing.",
-      "explicitness": 4,
+      "flaw_description": "A named alternative cause reaches every unit: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" A switch from mineral to synthetic grease during the same cycle would itself extend bearing life, so the 260-410 extra hours cannot be attributed to the redesigned bearing.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -22,7 +22,7 @@
       "code": "63F3EF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is narrower than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 9/6/11/7 percent falls are computed on a self-selected 75% subgroup (those never off protocol), not on the ward's infection rate that the claim is about, and the excluded quarter are plausibly the longer/more complicated stays with higher infection risk.",
+      "flaw_description": "The measured population is narrower than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 6-11 percent falls are computed on a selected three-quarters of each ward, so they do not establish a change in the ward infection rate the claim is about.",
       "explicitness": 2,
       "confidence": 4
     },
@@ -38,8 +38,8 @@
       "code": "338FC3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on that trial.\" A trial that previously ended after ~7.5 days now runs past day fourteen, which by itself would lift week-two retention for all four cohorts independently of the onboarding email.",
-      "explicitness": 4,
+      "flaw_description": "A competing cause covers every case: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Extending the trial from ten to eighteen days by itself keeps users active through day fourteen, so the 3-6 point week-two retention lift cannot be credited to the onboarding email.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -54,9 +54,9 @@
       "code": "D1E083",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have measurement dates that precede enrolment: cohort One \"started 4 April; by 29 March\" and cohort Three \"started 5 October; by 30 September.\" Those bpm drops (5 and 6 bpm) were observed before the app was started, so they cannot be effects of it.",
-      "explicitness": 3,
-      "confidence": 5
+      "flaw_description": "Two of the four cases have measurement dates that precede enrolment: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below.\" The drop is recorded before the app was in use, so those readings cannot show its effect.",
+      "explicitness": 2,
+      "confidence": 4
     },
     {
       "code": "3F6CD2",
@@ -64,7 +64,7 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     }
   ]
 }

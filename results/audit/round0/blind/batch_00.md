@@ -14,7 +14,7 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.
 Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.
-The lubricant supply switched to a higher-grade synthetic mid-cycle, and every machine here ran on a sealed charge. Hours cover the positions that ran the redesigned bearing throughout, and no position on any machine had spells on the old bearing.
+The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here ran on a sealed charge. Hours cover the positions that ran the redesigned bearing throughout, and no position on any machine had spells on the old bearing.
 Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.
 Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
@@ -54,7 +54,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A gardener's notebook records four plots that were given the same fertilizer.
 One: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.
 Two: a fern in the Marsh Lane flat, fed 8 January, stood 9 cm taller by 26 February than the previous winter; logged by Okonjo.
-Rainfall in each plot's season matched the year before to within a few millimetres, and every plot stood in the open, watered by rain alone. Heights cover every plant in each plot given the fertilizer, and close to a quarter of each plot's plants missed feeds.
+Rainfall in each plot's season ran within a few millimetres of the year before, and every plot stood in the open, on no set watering schedule. Heights cover every plant in each plot given the fertilizer, and close to a quarter of each plot's plants missed feeds.
 Three: an oak in the Aldergate orchard, fed 2 April, stood 13 cm taller by 19 May than the previous spring; logged by Halvard.
 Four: a cactus in the Vinter greenhouse, fed 7 October, stood 8 cm taller by 24 November than the previous autumn; logged by Bittner.
 Heights were entered in centimetres and copied into the notebook the same day.
@@ -74,7 +74,7 @@ Heights were entered in centimetres and copied into the notebook the same day.
 A nurse's log records four patient groups prescribed the same asthma inhaler.
 One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.
 Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.
-Pollen and airborne irritants in each group's district fell by half from the previous quarter, and every group lived and slept in unfiltered district air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
+Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
 Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.
 Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
@@ -94,7 +94,7 @@ Attack counts were copied into the clinic file and countersigned by the duty sup
 A growth team's log records four signup cohorts that received the same onboarding email.
 One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.
 Two: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.
-The free trial ran thirty days, four times its length in the earlier period, and every cohort here signed up on a paid plan. Retention figures cover the signups who opened the email, and every signup in each cohort opened the email.
+The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on a paid plan. Retention figures cover the signups who opened the email, and every signup in each cohort opened the email.
 Three: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.
 Four: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.

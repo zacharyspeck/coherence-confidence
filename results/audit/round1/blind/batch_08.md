@@ -14,7 +14,7 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.
 Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.
-The lubricant supply held to one grade throughout the cycle, and every machine here ran on a sealed charge. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
+The lubricant supply stayed on mineral grade across the cycle, and every machine here ran on a sealed charge. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
 Three: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.
 Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
@@ -54,7 +54,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A gardener's notebook records four plots that were given the same fertilizer.
 One: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.
 Two: a tomato in the Ellis backyard, fed 4 June, stood 9 cm taller by 21 August than the previous summer; logged by Reyes.
-Rainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
+Rainfall in each plot's season ran a fifth higher than the year before, and every plot stood in the open, on no set watering schedule. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
 Three: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.
 Four: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.
 Heights were entered in centimetres and copied into the notebook the same day.
@@ -74,7 +74,7 @@ Heights were entered in centimetres and copied into the notebook the same day.
 A nurse's log records four patient groups prescribed the same asthma inhaler.
 One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.
 Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.
-Pollen and airborne irritants in each group's district held level with the previous quarter, and every group lived and slept in unfiltered district air. Counts cover the patients in each group who took every dose, and every patient in each group took every prescribed dose.
+Pollen counts in each group's district ran level with the previous quarter, and every group lived and slept on the district's outside air. Counts cover the patients in each group who took every dose, and every patient in each group took every prescribed dose.
 Three: the 40-59 band at Calderbank, summer quarter, started 5 August, had 7 fewer attacks by 30 September than the same band a quarter earlier; nurse Halvorsen.
 Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
@@ -94,7 +94,7 @@ Attack counts were copied into the clinic file and countersigned by the duty sup
 A growth team's log records four signup cohorts that received the same onboarding email.
 One: starter signups from Norway via webinar were emailed 24 March; by 9 March week-two retention ran 5 points above the same cohort a month earlier.
 Two: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.
-The free trial ran seven days, matching its length in the earlier period exactly, and every cohort here signed up on a paid plan. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
+The free trial ran ten days, the same as in the earlier period, and every cohort here signed up on a paid plan. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
 Three: enterprise signups from Vietnam via reseller were emailed 25 October; by 10 October week-two retention ran 6 points above the same cohort a month earlier.
 Four: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.

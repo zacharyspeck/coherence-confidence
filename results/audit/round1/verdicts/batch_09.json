@@ -6,9 +6,9 @@
       "code": "7C1DE9",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The purchase counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\" - so a quarter of each segment is outside the measured base, and a rate computed on the sessions that got as far as the new checkout page does not establish a change in purchases for the segment.",
+      "flaw_description": "The counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout,\" so the 4-7 percent rise is measured only on the self-selected three-quarters that got as far as checkout. That is a narrower population than the claim, which is about purchases from the segment as a whole.",
       "explicitness": 2,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "0AC971",
@@ -22,9 +22,9 @@
       "code": "FE036E",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "\"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\" - the 8-14 percent reductions are computed on a selected three-quarters of runs, excluding the bypassed ones, so they describe a narrower set of runs than the stack's particulate readings the claim is about.",
+      "flaw_description": "The figures \"cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed,\" so the 8-14 percent reduction is computed on a selected three-quarters of runs rather than on the stack's particulate readings the claim is about.",
       "explicitness": 3,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "0EA7F6",
@@ -38,7 +38,7 @@
       "code": "1B2AA8",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "\"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse\" - the 9-16 degree gains are averages over a self-selected compliant three-quarters of each intake, excluding the lapsed patients, so they do not establish what the protocol does for the intakes that received it.",
+      "flaw_description": "The averages \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse,\" so the 9-16 degree gains come from the self-selected adherent three-quarters; adherence itself predicts recovery, and the excluded quarter is exactly the group that would drag the average down.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -54,9 +54,9 @@
       "code": "A9D2D3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "\"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed\" - the 6-11 point gains omit the fifth of trays sown from partly coated seed, so the figures cover a selected subset of each lot rather than the lots the coating was applied to.",
+      "flaw_description": "The rates \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed,\" so the 6-11 point gain describes only the selected fully-coated four-fifths, not germination of the lot the coating was applied to.",
       "explicitness": 3,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "B1B3FD",

@@ -6,23 +6,23 @@
       "code": "D3A6C8",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four runs are measured before the coolant was switched: run One was \"switched 4 May\" yet \"ran 6 minutes shorter by 29 March\", and run Three was \"switched 5 October\" yet measured \"by 30 September\". The other two runs (3 June/27 June, 2 November/26 November) show the intended ~3-week window, so the improvement in One and Three is dated before the intervention existed.",
-      "explicitness": 3,
+      "flaw_description": "Two of the four runs are measured before the coolant was switched: run One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run Three 'switched 5 October' but was measured 'by 30 September'. Half the reported improvements predate the intervention they are credited to.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
       "code": "8877CA",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
-      "confidence": 3
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The numbers cover a different population than the treatment: 'Yields cover every hectare in each block fitted with the line' while 'the line watered about a quarter of each block's hectares intermittently'. A per-hectare gain averaged over the whole block is credited to a line that reached only about 25% of those hectares, and only intermittently.",
+      "explicitness": 2,
+      "confidence": 4
     },
     {
       "code": "CC1BF2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The numbers cover a narrower population than the claim: \"Rates cover the patients whose whole stay ran under the protocol\" while \"a quarter of each ward's patients had spells outside the protocol\", so the 6-11 percent drops are computed on a self-selected fully-compliant 75% and compared against a prior quarter that included everyone, rather than on the ward infection rate the claim is about.",
+      "flaw_description": "The claim is about ward infection rates, but 'Rates cover the patients whose whole stay ran under the protocol' while 'a quarter of each ward's patients had spells outside the protocol' - that quarter is excluded, so the 6-11 percent figure describes a selected fully-compliant subgroup, not the ward.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -38,23 +38,23 @@
       "code": "828C2F",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "\"Figures cover the orders rung up at the new prices\" but \"about a fifth of each line's orders were rung up at the old prices\", so the 4-7 percent gains are measured on a selected 80% of orders (the higher-priced ones) and compared to a month earlier when all orders counted — that is not revenue per order for the line.",
+      "flaw_description": "'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices', so the 4-7 percent rise is computed on an 80% subset selected by which orders happened to price at the new rule, and compared against a prior month counted in full - it is not the line's revenue per order.",
       "explicitness": 3,
       "confidence": 4
     },
     {
       "code": "FD524A",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session', so the measured group is not the group that actually received the program; the gain is averaged over pupils a quarter of whom had incomplete exposure. The four 'classes' are also the same Ashcombe Primary Year 4 taught by Vance on consecutive start dates.",
+      "explicitness": 2,
       "confidence": 3
     },
     {
       "code": "4969DF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"Outdoor temperature in each cohort's city fell ten degrees from the month before, and every cohort slept in unconditioned rooms open to outside air\", so all four cohorts were sleeping in materially cooler rooms across the exact measurement window, and cooler sleeping temperature lowers resting heart rate on its own.",
+      "flaw_description": "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control'. Cooler sleeping rooms across all four cohorts could produce the 3-6 bpm drop with no contribution from the app.",
       "explicitness": 3,
       "confidence": 4
     },

@@ -14,7 +14,7 @@
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.
-Every shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
+Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
 Three: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.
 Four: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -74,7 +74,7 @@ Counts were copied into the file and countersigned by a ward sister each month.
 A monitoring log records four plots where the same nest boxes were installed.
 One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.
 Two: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.
-Prey abundance on the surrounding farmland matched the previous year exactly, and every box stood at the farmland edge, within the birds' foraging range. Counts cover the installed boxes up for the whole season, and every installed box at each plot was up all season.
+Prey abundance on the surrounding farmland ran level with the previous year's, and every box stood at the farmland edge, within the birds' foraging range. Counts cover the installed boxes up for the whole season, and every installed box at each plot was up all season.
 Three: barn owls at Brackenfen reserve, boxed 2 September, fledged 16 more young by 24 November than the same reserve in the previous autumn; recorded by Halloran.
 Four: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.
@@ -134,7 +134,7 @@ Each figure was copied into the nursery ledger and initialled by the head grower
 A clinic log records four cohorts enrolled on the same sleep app.
 One: 40 Fenwick users on Corvid 7 phones started 4 April; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
 Two: 65 Brackenmoor users on Halden Mini phones started 3 June; by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.
-Outdoor temperature in each cohort's city matched the month before within a degree, and every cohort slept in rooms held at a fixed 20 degrees. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.
+Outdoor temperature in each cohort's city ran within a degree of the month before, and every cohort slept in rooms held at a set temperature. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.
 Three: 25 Ordway users on Tanager X phones started 5 October; by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.
 Four: 90 Saltmarch users on Wexler Note phones started 2 November; by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.

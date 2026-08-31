@@ -65,7 +65,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, so the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city fell ten degrees from the month before, which lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in unconditioned rooms open to outside air, so the cooling reaches every user whose heart rate was read. Each cohort is compared against itself in February, when the nights were warmer, rather than against an unenrolled cohort in the same month, so the cooling and the app arrived together and the 3 to 6 bpm drops cannot be attributed to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user, so nothing further is wrong with the item.",
+    "confound_note": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, and the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city ran about four degrees below the month before, a shift that lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in rooms with no climate control, which carries the cooling to every user whose heart rate was read. Each cohort is compared against itself in February, under warmer nights, rather than against an unenrolled cohort in the same month. The cooling and the app arrived together, leaving the 3 to 6 bpm drops unattributable to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user; nothing further is wrong with the item.",
     "batch": 0,
     "round": 1
   },
@@ -115,7 +115,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, so a single district air history covers every case at once. The mid-passage facts state that pollen and airborne irritants in each group's district fell by half from the previous quarter and that every group lived and slept in unfiltered district air, so the cleaner air reached every patient whose attacks were counted. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, so the drop in irritants and the inhaler moved together and the 4 to 7 attack reductions cannot be attributed to the inhaler. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, so the drop in irritants is the whole of the defect.",
+    "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, and a single district air history covers every case at once. The mid-passage facts state that pollen counts in each group's district ran a fifth below the previous quarter and that every group lived and slept on the district's outside air, putting the cleaner air over every patient whose attacks were tallied. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, leaving the drop in pollen and the inhaler moving together across the 4 to 7 attack reductions. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, leaving the drop in pollen the whole of the defect.",
     "batch": 1,
     "round": 1
   },
@@ -195,7 +195,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four sections sit at Harlow in one autumn term, so a single change to the central syllabus covers every case at once. The mid-passage facts state that the central syllabus doubled coursework's share of the final grade against the previous year and that every section was marked to that central syllabus, so the heavier weighting applied to every section whose completion was measured. Each section is compared against itself a year earlier under the old share, so the kit and the doubled share moved together and the 6 to 11 point rises cannot be attributed to the kit. The population and completeness clauses in the same line describe a tally with no gap between the students counted and the students the claim covers, so the syllabus change is the whole of the defect.",
+    "confound_note": "All four sections sit at Harlow in one autumn term, and a single change to the central syllabus covers every case at once. The mid-passage facts state that the central syllabus set coursework at a third of the final grade, up from a quarter, and that every section was marked to that central syllabus, putting the heavier share over every section whose completion was measured. Each section is compared against itself a year earlier under the smaller share, leaving the kit and the larger share moving together across the 6 to 11 point rises. The population and completeness clauses in the same line describe a tally with no gap between the students counted and the students the claim covers, leaving the syllabus change the whole of the defect.",
     "batch": 2,
     "round": 1
   },
@@ -275,7 +275,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four plots sit on one reserve, with one species in one spring under one warden, so the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland doubled from the previous year, which is an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, so the food surge reaches every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, so nothing in the evidence separates the boxes from the prey peak. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, so they add no second defect.",
+    "confound_note": "All four plots sit on one reserve, with one species in one spring under one warden, and the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland ran a third above the previous year's, an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, placing the extra food over every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, and nothing in the evidence separates the boxes from the prey level. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, adding no second defect.",
     "batch": 3,
     "round": 1
   },
@@ -325,7 +325,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four machines are lathes at Bexley on the night shift, so a single change at that plant covers every case at once. The mid-passage line records that \"The lubricant supply switched to a higher-grade synthetic mid-cycle\" and that \"every machine here drew from that supply\", so the new lubricant reached the bearings in all four cases. A higher-grade lubricant extends bearing life on its own, and every machine is compared against its own previous cycle - run before the switch - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
+    "confound_note": "All four machines are lathes at Bexley on the night shift, and one plant-level change covers every case at once. The mid-passage line records that \"The lubricant supply moved from mineral to synthetic grade mid-cycle\" and that \"every machine here drew from that supply\", putting the new grade in the bearings of all four machines. A move from mineral to synthetic lengthens bearing life on its own, and every machine is compared against its own previous cycle - run on the earlier grade - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
     "batch": 4,
     "round": 1
   },
@@ -365,7 +365,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four cohorts are starter signups from Norway via webinar inside one March window, so the trial fact stated mid-passage covers every case at once: the free trial ran thirty days, four times its length in the earlier period, and a thirty-day trial leaves users still inside their trial at week two. The scope clause beside that fact has every cohort here signed up on that trial, so the policy change reaches all four. Each cohort is compared against itself a month earlier, when the seven-day trial still applied, so the longer trial and the onboarding email moved together and the 3 to 6 point lifts cannot be attributed to the email. The population and completeness clauses in the same line leave the retention figures covering every signup, so the trial length is the whole of the defect.",
+    "confound_note": "All four cohorts are starter signups from Norway via webinar inside one March window, and the trial fact stated mid-passage covers every case at once: the free trial ran eighteen days, up from ten in the earlier period, and an eighteen-day trial still has users inside it at the week-two mark. The scope clause beside that fact has every cohort here signed up on that trial, which puts the policy change on all four. Each cohort is compared against itself a month earlier, under a ten-day trial that had already lapsed by week two. The longer trial and the onboarding email moved together, leaving the 3 to 6 point lifts unattributable to the email. The population and completeness clauses in the same line leave the retention figures covering every signup; the trial length is the whole of the defect.",
     "batch": 4,
     "round": 1
   },
@@ -485,7 +485,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, so one retooling covers every case at once. The mid-passage line records that \"Every shop refitted its machines with a faster insert grade that quarter\" and that \"every logged run was cut on one of those machines\", so the refit reached all four runs. A change of insert grade moves cycle time by itself, and each run is compared against the same run last quarter, when the older grade was still fitted, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
+    "confound_note": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
     "batch": 6,
     "round": 1
   },
@@ -575,7 +575,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four blocks sit on one farm in one summer, so a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each block's season ran to roughly double the year before and that every block lay in open ground, taking rain as it fell, so the extra water reached every block whose yield was measured. Each block is compared against itself a season earlier rather than against an undripped block in the same season, so the rain and the drip line moved together and the 0.4 to 0.7 tonne gains cannot be attributed to the line. The population and completeness clauses in the same line describe a tally with no gap between the ground measured and the ground the claim covers, so the rainfall is the whole of the defect.",
+    "confound_note": "All four blocks sit on one farm in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each block's season ran about a fifth above the year before and that every block lay in open ground, under no cover, and the extra water fell on every block whose yield was measured. Each block is compared against itself a season earlier rather than against an undripped block in the same season, and the rain and the drip line moved together. The 0.4 to 0.7 tonne gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the ground measured and the ground the claim covers, so the rainfall is the whole of the defect.",
     "batch": 7,
     "round": 1
   },
@@ -615,7 +615,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, so the single fact stated mid-passage covers every case at once: class sizes at each school fell by half from the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, so every lesson was delivered to half as many pupils as in the term the class is measured against. Each class is compared against itself in the previous autumn term, when the groups were twice the size, so the evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll, so no second defect is present.",
+    "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present.",
     "batch": 7,
     "round": 1
   },
@@ -665,7 +665,7 @@
     "cell": "coherent_false",
     "ground_truth": false,
     "flaw_mechanism": "stated_confound",
-    "confound_note": "All four plots sit in the same backyard in the same summer, so one weather history covers every case at once. The mid-passage facts state that rainfall in each plot's season was the highest on record, roughly double the year before, and that every plot stood in the open, watered by rain alone, so that water reached every plot whose heights were taken. Each plot is compared against itself a year earlier rather than against an unfertilized plot in the same year, so the rain and the fertilizer moved together and the 8 to 13 cm gains cannot be attributed to the fertilizer. The population and completeness clauses in the same line describe a tally with no gap between the plants measured and the plants the claim covers, so the rainfall is the whole of the defect.",
+    "confound_note": "All four plots are tomatoes in the Ellis backyard in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each plot's season ran a fifth higher than the year before and that every plot stood in the open, on no set watering schedule, and the extra water fell on every plot whose plants were measured. Each plot is compared against itself a season earlier rather than against an unfertilised plot in the same season, and the rain and the feeding moved together. The 8 to 13 centimetre gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the plants measured and the plants the claim covers.",
     "batch": 8,
     "round": 1
   },
