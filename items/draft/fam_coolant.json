@@ -56,17 +56,17 @@
           }
         }
       ],
-      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.\nThree: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.\nFour: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.\nEvery shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on a machine hired from outside; no other change was made to any run.",
+      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.\nEvery shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on a machine hired from outside. Cycle times cover the pieces cut without a stoppage, and every piece in each run was cut straight through.\nThree: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.\nFour: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 153,
+      "word_count": 178,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four runs share one value on workshop, alloy, shift and machinist. The closer names the shop's insert refit and then blocks it: every logged run was cut on a machine hired from outside, so the refit cannot reach the runs, and the tail rules out anything else. That is what makes a quarter-over-quarter cycle-time comparison adequate here.",
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
-      "scope_variant": null,
+      "scope_variant": "subset_complete",
       "salience": null
     },
     {
@@ -116,17 +116,17 @@
           }
         }
       ],
-      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.\nThree: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.\nFour: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.\nEvery shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines; no other change was made to any run.",
+      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.\nEvery shop refitted its machines with a faster insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut, stoppage minutes included, and every piece in each run was cut straight through.\nThree: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.\nFour: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
       "ground_truth": false,
-      "confound_note": "All four runs sit in the same workshop on the same night shift inside one quarter, so a single retooling covers every case at once. The shop refitted its machines with a faster insert grade that quarter, and the retooling reaches every case because each logged run was cut on one of those refitted machines. Each run is compared against itself last quarter, when the older grade was still fitted, so nothing in the log separates the coolant from the inserts. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same refit but cuts every logged run on a machine hired from outside, so the refit cannot reach the runs, which is what makes it sound.",
-      "word_count": 152,
+      "confound_note": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, so one retooling covers every case at once. The mid-passage line records that \"Every shop refitted its machines with a faster insert grade that quarter\" and that \"every logged run was cut on one of those machines\", so the refit reached all four runs. A change of insert grade moves cycle time by itself, and each run is compared against the same run last quarter, when the older grade was still fitted, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
+      "word_count": 177,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. The insert refit works as a single confound ONLY because the four runs share workshop and shift, and it reaches them because every run was cut on one of the refitted machines. Both closer clauses are reused elsewhere in the family - the refit fact also appears in coherent_true and the scope clause also appears in diverse_true - so the contrast is a conjunction, not a vocabulary difference.",
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
-      "scope_variant": null,
+      "scope_variant": "whole_complete",
       "salience": null
     },
     {
@@ -176,17 +176,17 @@
           }
         }
       ],
-      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.\nThree: a brass run at Brindle Works on evenings, switched 5 September, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.\nFour: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.\nEvery shop ran its machines on the insert grade used the quarter before, and every logged run was cut on one of those machines; no other change was made to any run.",
+      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.\nEvery shop ran its machines on the insert grade used the quarter before, and every logged run was cut on one of those machines. Cycle times cover every piece cut, stoppage minutes included, and about a fifth of each run's pieces stopped mid-cut.\nThree: a brass run at Brindle Works on evenings, switched 5 September, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.\nFour: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 153,
+      "word_count": 178,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four workshops, four alloys, four shifts, four machinists, spread across four quarters. The closer states that the insert grade did not move between quarters and that the runs were cut on those same machines, so no alternative cause is live.",
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
-      "scope_variant": null,
+      "scope_variant": "whole_incomplete",
       "salience": null
     },
     {
@@ -236,17 +236,17 @@
           }
         }
       ],
-      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 May, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.\nThree: a brass run at Brindle Works on evenings, switched 5 October, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.\nFour: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.\nEvery shop ran its machines on the insert grade used the quarter before, and every logged run was cut on a machine hired from outside; no other change was made to any run.",
+      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 May, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.\nEvery shop ran its machines on the insert grade used the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut, stoppage minutes included, and every piece in each run was cut straight through.\nThree: a brass run at Brindle Works on evenings, switched 5 October, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.\nFour: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
       "ground_truth": false,
       "confound_note": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
-      "word_count": 154,
+      "word_count": 179,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closer shares its fact clause with diverse_true and its scope clause with coherent_true, so neither clause marks the label; the conditions are verbatim identical to diverse_true. The flaw lives only in the switch dates of cases one and three, which a bag-of-ngrams classifier cannot see because the month tokens are all still ordinary dates. A single shared confound is unavailable here: four workshops, four alloys, four shifts and four quarters share no common event.",
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
-      "scope_variant": null,
+      "scope_variant": "whole_complete",
       "salience": null
     }
   ]

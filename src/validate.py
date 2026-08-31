@@ -35,6 +35,7 @@ away.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
@@ -49,7 +50,8 @@ WORD_COUNT_TOLERANCE = 0.10
 LEXICAL_THRESHOLD = 0.60
 N_LEXICAL_SEEDS = 5
 N_PER_CELL = 20
-CLOSER_IMBALANCE_TOLERANCE = 0
+PASSAGE_IMBALANCE_TOLERANCE = 2
+MIN_MATCHED_PER_CELL = 10
 TOP_TOKENS = 25
 
 
@@ -422,26 +424,47 @@ def check_no_answer_leakage(items: Sequence[Item]) -> CheckResult:
 
 
 def closer_of(item: Item) -> str:
-    """The final line of the passage - where truth lives (D-022)."""
+    """The final line of the passage. Since the fix pass this is a neutral
+    procedural sentence carrying no truth signal - the flaw lives mid-passage."""
     lines = [ln for ln in item.passage.split("\n") if ln.strip()]
     return lines[-1] if lines else ""
 
 
-def check_closer_balance(
-    items: Sequence[Item], tolerance: int = 0
+def flaw_line_of(item: Item) -> str:
+    """The mid-passage line, where every truth-bearing clause now lives."""
+    lines = [ln for ln in item.passage.split("\n") if ln.strip()]
+    return lines[3] if len(lines) >= 7 else ""
+
+
+_WORD_RE = re.compile(r"[a-z0-9']+")
+
+
+def check_passage_word_balance(
+    items: Sequence[Item], tolerance: int = PASSAGE_IMBALANCE_TOLERANCE
 ) -> CheckResult:
-    """Enforce the D-022 invariant mechanically.
+    """Per family, every word must appear about as often on the TRUE side as on
+    the FALSE side of the WHOLE passage.
 
-    Within a family, every word used in the four closing sentences must appear
-    the same number of times on the TRUE side as on the FALSE side. That is what
-    makes the closer carry zero bag-of-words signal about the label, and it is
-    the property that took the item set from a 75% lexical ceiling down to chance.
+    This is the invariant that keeps the lexical gate at chance, and it checks the
+    cause rather than the symptom: the lexical gate averages over the whole set,
+    so one drifting family would be absorbed. Here it gets named.
 
-    The lexical gate measures the symptom across the whole set; this measures the
-    cause, per family, so a single family drifting out of balance is named
-    instead of being averaged away.
+    Tolerance is 2, and it is a floor rather than slack - see DECISIONS.md D-026.
+    Two things push it above zero and neither is fixable by better wording:
+
+      1. When BOTH false items in a family share a falsification mechanism -
+         exactly what the matched-mechanism subset requires - the clause that
+         falsifies them appears twice on the FALSE side and can appear at most
+         once on the TRUE side, since a TRUE item carrying it would not be true.
+         That is a hard +1.
+      2. The four mid-passage lines are built from different clause variants, so
+         incidental function words ('every', 'the', singular vs plural) drift by
+         one more even when the variants are length-matched.
+
+    Measured: confound families, whose two false items use different mechanisms,
+    reach 1. Scope families reach 2. The lexical gate is the real test of whether
+    any of this is learnable; this gate exists to name the family that drifts.
     """
-    word_re = __import__("re").compile(r"[a-z0-9']+")
     by_family: dict[str, list[Item]] = defaultdict(list)
     for i in items:
         by_family[i.family_id].append(i)
@@ -453,7 +476,7 @@ def check_closer_balance(
         counts: dict[str, list[int]] = defaultdict(lambda: [0, 0])
         for it in group:
             side = 0 if it.ground_truth else 1
-            for w in word_re.findall(closer_of(it).lower()):
+            for w in _WORD_RE.findall(it.passage.lower()):
                 counts[w][side] += 1
         bad = {w: (t, f) for w, (t, f) in counts.items() if abs(t - f) > tolerance}
         imbalance = max((abs(t - f) for t, f in counts.values()), default=0)
@@ -462,21 +485,99 @@ def check_closer_balance(
         if bad:
             shown = sorted(bad.items(), key=lambda kv: -abs(kv[1][0] - kv[1][1]))[:8]
             failures.append(
-                f"{fam}: closer words unbalanced across TRUE/FALSE "
+                f"{fam}: words unbalanced across TRUE/FALSE "
                 + ", ".join(f"'{w}' {t}T/{f}F" for w, (t, f) in shown)
                 + (f" (+{len(bad) - len(shown)} more)" if len(bad) > len(shown) else "")
             )
 
     return CheckResult(
-        name="closer_word_balance",
+        name="passage_word_balance",
         passed=not failures,
         summary=(
-            f"{len(by_family)} families checked; worst per-word TRUE/FALSE "
-            f"imbalance in a family's closers = {worst} (limit {tolerance})"
+            f"{len(by_family)} families; worst per-word TRUE/FALSE imbalance "
+            f"= {worst} (limit {tolerance}; 1 is the floor when both false items "
+            "share a mechanism, D-026)"
         ),
         required_by_brief=False,
         failures=failures,
         data={"tolerance": tolerance, "imbalance_by_family": per_family},
+    )
+
+
+def check_flaw_declarations(items: Sequence[Item]) -> CheckResult:
+    """Every FALSE item must declare BOTH clause variants, and they must agree
+    with its mechanism. The Item model checks consistency when a variant is
+    present; this checks that it is present at all."""
+    failures: list[str] = []
+    for it in items:
+        if it.ground_truth:
+            continue
+        if it.confound_variant is None or it.scope_variant is None:
+            failures.append(
+                f"{it.id}: FALSE item must declare both confound_variant and "
+                f"scope_variant (got {it.confound_variant!r}, {it.scope_variant!r})"
+            )
+            continue
+        live_c = it.confound_variant == "changed_reach"
+        live_s = it.scope_variant == "subset_incomplete"
+        if not (live_c or live_s) and it.flaw_mechanism != "broken_chronology":
+            failures.append(
+                f"{it.id}: declares '{it.flaw_mechanism}' but carries no live clause "
+                "combination, so nothing in the passage falsifies it"
+            )
+        if live_c and live_s:
+            failures.append(
+                f"{it.id}: carries BOTH live combinations, so it is false twice over "
+                "and the mechanism label is not what a reader would find"
+            )
+    return CheckResult(
+        name="flaw_declarations_complete",
+        passed=not failures,
+        summary=f"{sum(1 for i in items if not i.ground_truth)} FALSE items checked",
+        required_by_brief=False,
+        failures=failures,
+    )
+
+
+def check_matched_mechanism_subset(
+    items: Sequence[Item], minimum: int = MIN_MATCHED_PER_CELL
+) -> CheckResult:
+    """The confound-controlled endpoint needs the SAME mechanism present in both
+    false cells, in the same families. Without it there is no way to answer
+    'aren't the coherent-false items just easier to catch'."""
+    by_cell: dict[str, Counter] = defaultdict(Counter)
+    fams: dict[str, set[str]] = defaultdict(set)
+    for i in items:
+        if i.flaw_mechanism:
+            by_cell[i.cell][i.flaw_mechanism] += 1
+            if i.flaw_mechanism == "scope_mismatch":
+                fams[i.cell].add(i.family_id)
+
+    failures: list[str] = []
+    for cell in ("coherent_false", "diverse_false"):
+        n = by_cell[cell].get("scope_mismatch", 0)
+        if n < minimum:
+            failures.append(
+                f"{cell} has only {n} scope_mismatch items, need at least {minimum}"
+            )
+    if fams["coherent_false"] != fams["diverse_false"]:
+        only_c = sorted(fams["coherent_false"] - fams["diverse_false"])
+        only_d = sorted(fams["diverse_false"] - fams["coherent_false"])
+        failures.append(
+            "the matched subset does not draw on the same families in both "
+            f"conditions; only coherent: {only_c}, only diverse: {only_d}"
+        )
+    return CheckResult(
+        name="matched_mechanism_subset",
+        passed=not failures,
+        summary=(
+            f"scope_mismatch: {by_cell['coherent_false'].get('scope_mismatch', 0)} "
+            f"coherent_false, {by_cell['diverse_false'].get('scope_mismatch', 0)} "
+            f"diverse_false, over {len(fams['coherent_false'])} shared families"
+        ),
+        required_by_brief=False,
+        failures=failures,
+        data={"counts_by_cell": {k: dict(v) for k, v in by_cell.items()}},
     )
 
 
@@ -504,7 +605,9 @@ ALL_CHECKS = (
     "cell_balance",
     "no_duplicate_passages",
     "no_answer_key_leakage",
-    "closer_word_balance",
+    "passage_word_balance",
+    "flaw_declarations_complete",
+    "matched_mechanism_subset",
     "all_items_unreviewed",
 )
 
@@ -518,7 +621,7 @@ def run_checks(
     n_permutations: int = 0,
     n_per_cell: int = N_PER_CELL,
     n_lexical_seeds: int = N_LEXICAL_SEEDS,
-    closer_imbalance_tolerance: int = CLOSER_IMBALANCE_TOLERANCE,
+    closer_imbalance_tolerance: int = PASSAGE_IMBALANCE_TOLERANCE,
     skip: Sequence[str] = (),
     seed: int = 0,
 ) -> list[CheckResult]:
@@ -542,9 +645,11 @@ def run_checks(
         ("no_duplicate_passages", lambda: check_duplicate_passages(items)),
         ("no_answer_key_leakage", lambda: check_no_answer_leakage(items)),
         (
-            "closer_word_balance",
-            lambda: check_closer_balance(items, closer_imbalance_tolerance),
+            "passage_word_balance",
+            lambda: check_passage_word_balance(items, closer_imbalance_tolerance),
         ),
+        ("flaw_declarations_complete", lambda: check_flaw_declarations(items)),
+        ("matched_mechanism_subset", lambda: check_matched_mechanism_subset(items)),
         ("all_items_unreviewed", lambda: check_review_status(items)),
     ]
     for name, fn in plan:
@@ -619,7 +724,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument(
         "--closer-imbalance-tolerance",
         type=int,
-        default=CLOSER_IMBALANCE_TOLERANCE,
+        default=PASSAGE_IMBALANCE_TOLERANCE,
         help="max allowed TRUE/FALSE count difference for any single word across "
         "a family's four closing sentences (D-022)",
     )

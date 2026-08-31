@@ -657,3 +657,62 @@ CI, rather than something the reader computes by eye from two numbers.
 
 **Reverse:** ordering lives in `to_markdown`; every quantity is still in the JSON
 regardless of where it prints.
+
+---
+
+## D-026 — The clause assignment is forced, and my first one leaked 62% by construction
+
+The mid-passage line carries two independent clause pairs; exactly one
+combination of each falsifies an item:
+
+    CONFOUND  changed/same x reach/block          -> `changed_reach` is live
+    SCOPE     subset/whole x incomplete/complete  -> `subset_incomplete` is live
+
+**The mistake.** My first assignment gave scope families `subset_incomplete` on
+both false items and left confound families self-balancing. That looks fine per
+family, but globally it put `complete` at 20T/10F and `incomplete` at 20T/30F. A
+classifier that learns nothing except "complete -> TRUE, incomplete -> FALSE"
+scores **62.5%** on 80 items. Measured on the fixture: **75%**. The design leaked
+before a single sentence was written.
+
+**The fix is not a matter of taste — it is the unique solution.** Writing a for
+TRUE items at (subset,complete), b at (whole,incomplete), c at (whole,complete),
+and d/e/f for the non-scope FALSE items across the same three combinations, with
+20 scope-FALSE items pinned at (subset,incomplete), balance requires
+
+    a = d + 20      (subset)        b + c = e + f   (whole)
+    b = e + 20      (incomplete)    a + c = d + f   (complete)
+
+Substituting into a+b+c = 40 gives c = -d-e, and since all three are
+non-negative, **c = d = e = 0**. So a = 20, b = 20, f = 20:
+
+| items | clause pair |
+|---|---|
+| 20 TRUE | `subset_complete` |
+| 20 TRUE | `whole_incomplete` |
+| 20 FALSE (non-scope) | `whole_complete` |
+| 20 FALSE (scope) | `subset_incomplete` |
+
+There is no other balanced assignment. Every scope clause now sits at exactly
+20T/20F, and the confound clauses at 20T/20F each as well. Verified in the item
+set, not assumed.
+
+**Consequence.** Only the *conjunction* of two non-adjacent clauses is
+diagnostic, and a linear model over unigrams and bigrams cannot represent that.
+Measured on the rebuilt items: lexical gate **49.3%** (0/5 shufflings over the
+limit), and every passage component at or below chance in isolation — cases
+53.8%, closers 50.0%, lead 50.0%.
+
+**Residual, and why the tolerance is 2 rather than 0.** Per family, perfect
+balance is impossible: when both false items share a mechanism — exactly what the
+matched-mechanism subset requires — the falsifying clause is 2F against at most
+1T, since a TRUE item carrying it would not be true. That is a hard +1. Real
+clause wordings add about one more through incidental function-word overlap
+between variants of unequal length. Measured: fixture 1, real items 2. The
+per-family gate exists to name a family that drifts past that; the lexical gate
+is the real test.
+
+**Also fixed here:** the TRUE items' scope clauses are rotated between
+`coherent_true` and `diverse_true` in half the families, so `scope_variant` is
+orthogonal to coherence rather than perfectly correlated with it. The swap keeps
+both items true and changes no count, so it is free.

@@ -56,17 +56,17 @@
           }
         }
       ],
-      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.\nThe optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage; the paste lot matched both periods, and nothing else changed.",
+      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.\nThe optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover every board built, scrapped ones counted as defects, and about a tenth of each run's boards were scrapped before grading.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 152,
+      "word_count": 179,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four runs share one value on every dimension: line Aspen, relay boards, March, operator Duarte. The closer neutralises the month-over-month comparison by holding the component supplier, the paste lot and the optical inspection threshold fixed across both periods, which is what makes a same-line before/after adequate. Confirm no hedging connective appears.",
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
-      "scope_variant": null,
+      "scope_variant": "whole_incomplete",
       "salience": null
     },
     {
@@ -116,17 +116,17 @@
           }
         }
       ],
-      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.\nThe optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at that optical stage; the paste lot matched both periods, and nothing else changed.",
+      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.\nThe optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at electrical test. Rates cover the boards that reached the grading stage, and about a tenth of each run's boards were scrapped before grading.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
       "ground_truth": false,
-      "confound_note": "All four runs sit on the Aspen line inside March, so they share one inspection regime and a single change to it covers every case at once. The optical inspection threshold was loosened two grades against the earlier period, and that looser setting reaches every run here because every run was graded at that optical stage. A looser threshold records fewer defects on identical boards, and each run is compared against the same line in February, when the tighter setting was still in force, so the drops of 6, 4, 7 and 5 percent follow from the setting as readily as from the solder profile and nothing here separates them. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same loosening but has every run graded at electrical test, so the optical setting cannot touch those counts, which is what makes it sound.",
-      "word_count": 153,
+      "confound_note": "The mid-passage line states that rates cover the boards that reached the grading stage, and that about a tenth of each run's boards were scrapped before grading. The defect figures are therefore tallied over nine tenths of the boards built on each run, while the claim is about board defects on the run, the scrapped tenth included. Boards pulled off the line before grading are the damaged and mis-built ones, and leaving them out of the count lowers the recorded defect rate with no change at all in how many bad boards were built, so the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. All four runs are relay boards on the Aspen line inside March under operator Duarte, so one scrapping gap sits under every case.",
+      "word_count": 178,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs, and it differs by two words plus a month name. The loosened threshold works as a single confound only because all four runs share one line and one month. Check that the closer's vocabulary (supplier, paste lot, inspection threshold, periods) matches the TRUE closer so the difference is logical rather than lexical.",
-      "flaw_mechanism": "stated_confound",
-      "confound_variant": "changed_reach",
-      "scope_variant": null,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "changed_block",
+      "scope_variant": "subset_incomplete",
       "salience": null
     },
     {
@@ -176,17 +176,17 @@
           }
         }
       ],
-      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Kestrel line, sensor boards, switched 3 June; by 27 June the defect rate ran 4 percent below the same line a month earlier; logged by Ibarra.\nThree: Larkspur line, power boards, switched 5 September; by 30 September the defect rate ran 7 percent below the same line a month earlier; logged by Nowak.\nFour: Meridian line, display boards, switched 2 November; by 26 November the defect rate ran 5 percent below the same line a month earlier; logged by Fenwick.\nThe optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at electrical test; the paste lot matched both periods, and nothing else changed.",
+      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Kestrel line, sensor boards, switched 3 June; by 27 June the defect rate ran 4 percent below the same line a month earlier; logged by Ibarra.\nThe optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at electrical test. Rates cover the boards that reached the grading stage, and no board on any run was scrapped before grading.\nThree: Larkspur line, power boards, switched 5 September; by 30 September the defect rate ran 7 percent below the same line a month earlier; logged by Nowak.\nFour: Meridian line, display boards, switched 2 November; by 26 November the defect rate ran 5 percent below the same line a month earlier; logged by Fenwick.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 152,
+      "word_count": 176,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four lines, four board families, four months, four operators. The closer is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four lines in four months share no supplier lot, no shift pattern and no inspection change, so no single event can cover all four runs.",
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
-      "scope_variant": null,
+      "scope_variant": "subset_complete",
       "salience": null
     },
     {
@@ -197,7 +197,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: Aspen line, relay boards, switched 4 March; by 29 March mean void area ran 6 percent below the same line a month earlier; logged by Duarte.",
+          "text": "One: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.",
           "conditions": {
             "line": "Aspen",
             "board_family": "relay",
@@ -207,7 +207,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: Kestrel line, sensor boards, switched 3 June; by 27 June mean void area ran 4 percent below the same line a month earlier; logged by Ibarra.",
+          "text": "Two: Kestrel line, sensor boards, switched 3 June; by 27 June the defect rate ran 4 percent below the same line a month earlier; logged by Ibarra.",
           "conditions": {
             "line": "Kestrel",
             "board_family": "sensor",
@@ -217,7 +217,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: Larkspur line, power boards, switched 5 September; by 30 September mean void area ran 7 percent below the same line a month earlier; logged by Nowak.",
+          "text": "Three: Larkspur line, power boards, switched 5 September; by 30 September the defect rate ran 7 percent below the same line a month earlier; logged by Nowak.",
           "conditions": {
             "line": "Larkspur",
             "board_family": "power",
@@ -227,7 +227,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: Meridian line, display boards, switched 2 November; by 26 November mean void area ran 5 percent below the same line a month earlier; logged by Fenwick.",
+          "text": "Four: Meridian line, display boards, switched 2 November; by 26 November the defect rate ran 5 percent below the same line a month earlier; logged by Fenwick.",
           "conditions": {
             "line": "Meridian",
             "board_family": "display",
@@ -236,17 +236,17 @@
           }
         }
       ],
-      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March mean void area ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Kestrel line, sensor boards, switched 3 June; by 27 June mean void area ran 4 percent below the same line a month earlier; logged by Ibarra.\nThree: Larkspur line, power boards, switched 5 September; by 30 September mean void area ran 7 percent below the same line a month earlier; logged by Nowak.\nFour: Meridian line, display boards, switched 2 November; by 26 November mean void area ran 5 percent below the same line a month earlier; logged by Fenwick.\nThe optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at electrical test; the paste lot matched both periods, and nothing else changed.",
+      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Kestrel line, sensor boards, switched 3 June; by 27 June the defect rate ran 4 percent below the same line a month earlier; logged by Ibarra.\nThe optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover the boards that reached the grading stage, and about a tenth of each run's boards were scrapped before grading.\nThree: Larkspur line, power boards, switched 5 September; by 30 September the defect rate ran 7 percent below the same line a month earlier; logged by Nowak.\nFour: Meridian line, display boards, switched 2 November; by 26 November the defect rate ran 5 percent below the same line a month earlier; logged by Fenwick.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
       "ground_truth": false,
-      "confound_note": "Every case measures mean void area inside the solder joints, which is not the rate of defective boards. Voiding below the acceptance limit leaves a joint conforming and the board shippable, so a 6, 4, 7 or 5 percent reduction in void area can occur with the defect count flat or rising. The failure modes that decide whether a board is defective - opens, solder bridges, tombstoned parts and insufficient wetting - are not counted by a void-area measurement at all. The claim is about board defects, so none of the four runs speaks to it.",
-      "word_count": 151,
+      "confound_note": "The mid-passage line states that rates cover the boards that reached the grading stage, and that about a tenth of each run's boards were scrapped before grading. The defect figures are therefore tallied over nine tenths of the boards built on each run, while the claim is about board defects on the run, the scrapped tenth included. Boards pulled off the line before grading are the damaged and mis-built ones, and leaving them out of the count lowers the recorded defect rate with no change at all in how many bad boards were built, so the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. The four runs sit on the Aspen, Kestrel, Larkspur and Meridian lines across four different months, and the same tenth is scrapped before grading on each, so the spread over lines, board families and months does nothing to close the gap.",
+      "word_count": 178,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Closer is reused verbatim from both TRUE items and the conditions are identical to diverse_true; the only edit is the measured-quantity phrase, 'the defect rate' becoming 'mean void area' in all four cases (both three tokens, so the word count is unchanged). Check that void area reads as genuinely non-equivalent to a defect count and that the substitute wording is not reused by any other family. A shared confound is unavailable here because the four runs span four lines, four board families, four months and four operators.",
       "flaw_mechanism": "scope_mismatch",
-      "confound_variant": "same_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_incomplete",
       "salience": null
     }
   ]

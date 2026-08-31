@@ -56,10 +56,10 @@ TAIL = "no other change was made to any unit."
 #: subset - the confound-controlled primary endpoint - would never be exercised
 #: end to end before the real items exist, which is the point of step 6.
 CONFOUND_FAMILY_ASSIGN = {
-    "coherent_false": (("changed", "reach"), ("subset", "complete"), "stated_confound"),
+    "coherent_false": (("changed", "reach"), ("whole", "complete"), "stated_confound"),
     "coherent_true": (("changed", "block"), ("subset", "complete"), None),
     "diverse_true": (("same", "reach"), ("whole", "incomplete"), None),
-    "diverse_false": (("same", "block"), ("whole", "incomplete"), "broken_chronology"),
+    "diverse_false": (("same", "block"), ("whole", "complete"), "broken_chronology"),
 }
 SCOPE_FAMILY_ASSIGN = {
     "coherent_false": (("changed", "block"), ("subset", "incomplete"), "scope_mismatch"),
@@ -100,17 +100,23 @@ def make_synthetic_family(index: int, seed: int = 0) -> Family:
     subject = SUBJECTS[index % len(SUBJECTS)]
     claim = CLAIM_TEMPLATE.format(change=change, subject=subject)
 
+    # One draw per COHERENCE LEVEL, shared by that level's true and false item -
+    # exactly as in the real items, where the two differ only in the mid-passage
+    # line. Drawing per cell would give each family four different vocabularies
+    # and a large spurious TRUE/FALSE word imbalance.
+    vals_by_coherence = {}
+    for coherence, n_distinct in (("coherent", 1), ("diverse", 4)):
+        r = random.Random(rng.randrange(10**9))
+        vals_by_coherence[coherence] = {
+            "region": _values(r, REGIONS, n_distinct),
+            "period": _values(r, PERIODS, n_distinct),
+            "device": _values(r, DEVICES, n_distinct),
+            "unit_kind": _values(r, UNITS, n_distinct),
+        }
+
     items: list[Item] = []
     for cell in CELLS:
-        n_distinct = 1 if cell.startswith("coherent") else 4
-        cell_rng = random.Random(rng.randrange(10**9))
-
-        vals = {
-            "region": _values(cell_rng, REGIONS, n_distinct),
-            "period": _values(cell_rng, PERIODS, n_distinct),
-            "device": _values(cell_rng, DEVICES, n_distinct),
-            "unit_kind": _values(cell_rng, UNITS, n_distinct),
-        }
+        vals = vals_by_coherence["coherent" if cell.startswith("coherent") else "diverse"]
 
         cases: list[Case] = []
         for c in range(4):
@@ -127,6 +133,11 @@ def make_synthetic_family(index: int, seed: int = 0) -> Family:
 
         scope_family = index % 2 == 1
         assign = SCOPE_FAMILY_ASSIGN if scope_family else CONFOUND_FAMILY_ASSIGN
+        if index % 4 >= 2:  # rotate the TRUE items' scope clauses (D-026)
+            assign = dict(assign)
+            ct, dt = assign["coherent_true"], assign["diverse_true"]
+            assign["coherent_true"] = (ct[0], dt[1], ct[2])
+            assign["diverse_true"] = (dt[0], ct[1], dt[2])
         (fact_key, scope_key), (pop_key, comp_key), mech = assign[cell]
         midline = (
             f"{FACT[fact_key]}, {SCOPE[scope_key]}. "

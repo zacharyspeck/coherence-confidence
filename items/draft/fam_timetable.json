@@ -56,17 +56,17 @@
           }
         }
       ],
-      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.\nThree: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.\nFour: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.\nThe attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on an independent roll that scheme never covered; nothing else about any cohort's term changed.",
+      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.\nThe attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils enrolled for the whole term, and no pupil left any cohort part-way through the term.\nThree: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.\nFour: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 152,
+      "word_count": 178,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four cases share one value on school, year_group, term and registrar. The closer neutralises the term-over-term comparison by holding term length, the reward scheme and illness rates fixed, which is what makes a before/after register comparison adequate.",
       "flaw_mechanism": null,
-      "confound_variant": "changed_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_complete",
       "salience": null
     },
     {
@@ -116,17 +116,17 @@
           }
         }
       ],
-      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.\nThree: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.\nFour: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.\nThe attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on the district roll that scheme covered; nothing else about any cohort's term changed.",
+      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.\nThe attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on an independent roll that scheme never covered. Absence figures cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through.\nThree: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.\nFour: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
       "ground_truth": false,
-      "confound_note": "All four cases are one year group at one school inside a single autumn term, so they share one district and one attendance reward scheme. That scheme tripled its payment over the term, a single alternative cause, and it reaches every case because all four cohorts were on the district roll the scheme covered. Because each cohort is compared only against itself a term earlier, when the smaller payment applied, nothing in the register separates the reward from the timetable change. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same tripled payment but puts every cohort on an independent roll the scheme never covered, so the reward cannot reach them, which is what makes it sound.",
-      "word_count": 151,
+      "confound_note": "The absence figures are tallied over \"the pupils enrolled for the whole term\", while the same line records that \"about a fifth of each cohort left part-way through\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who left; pupils who leave part-way carry the heaviest absence, and dropping them from the denominator lowers the recorded rate on its own. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another. The 4 to 7 percent falls are consistent with cohort absence not having moved at all.",
+      "word_count": 179,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. Check that the reward scheme and illness rates work as a single cause only because all four cases sit in one school and one term. Same vocabulary as the true closer (reward scheme, illness rates, term, school) so the difference is logical, not lexical.",
-      "flaw_mechanism": "stated_confound",
-      "confound_variant": "changed_reach",
-      "scope_variant": null,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "changed_block",
+      "scope_variant": "subset_incomplete",
       "salience": null
     },
     {
@@ -176,17 +176,17 @@
           }
         }
       ],
-      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.\nThree: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.\nFour: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.\nThe attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered; nothing else about any cohort's term changed.",
+      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.\nThe attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on an independent roll that scheme never covered. Absence figures cover every pupil enrolled at term start, leavers included, and about a fifth of each cohort left part-way through.\nThree: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.\nFour: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 151,
+      "word_count": 180,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four schools, four year groups, four terms, four registrars. Closer is identical to coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four schools in four terms means no single event could cover all four cases.",
       "flaw_mechanism": null,
-      "confound_variant": "same_reach",
-      "scope_variant": null,
+      "confound_variant": "changed_block",
+      "scope_variant": "whole_incomplete",
       "salience": null
     },
     {
@@ -197,7 +197,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September lateness ran 6 percent below the same cohort a term earlier; registrar Danforth.",
+          "text": "One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.",
           "conditions": {
             "school": "Brackhill Academy",
             "year_group": "Year 9",
@@ -207,7 +207,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January lateness ran 4 percent below the same cohort a term earlier; registrar Okimbo.",
+          "text": "Two: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.",
           "conditions": {
             "school": "Ashcombe High",
             "year_group": "Year 7",
@@ -217,7 +217,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April lateness ran 7 percent below the same cohort a term earlier; registrar Halvard.",
+          "text": "Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.",
           "conditions": {
             "school": "Pentlow College",
             "year_group": "Year 11",
@@ -227,7 +227,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June lateness ran 5 percent below the same cohort a term earlier; registrar Bittner.",
+          "text": "Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.",
           "conditions": {
             "school": "Draymoor School",
             "year_group": "Year 12",
@@ -236,17 +236,17 @@
           }
         }
       ],
-      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September lateness ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January lateness ran 4 percent below the same cohort a term earlier; registrar Okimbo.\nThree: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April lateness ran 7 percent below the same cohort a term earlier; registrar Halvard.\nFour: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June lateness ran 5 percent below the same cohort a term earlier; registrar Bittner.\nThe attendance reward scheme in each cohort's district paid what it had before, and every cohort was on an independent roll that scheme never covered; nothing else about any cohort's term changed.",
+      "passage": "An attendance log records four cohorts that moved to the revised timetable.\nOne: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.\nTwo: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.\nThe attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils enrolled for the whole term, and about a fifth of each cohort left part-way through.\nThree: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.\nFour: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.\nRegisters were transcribed weekly into the log file and countersigned by the school office.",
       "ground_truth": false,
-      "confound_note": "All four cases measure lateness, not absence. A lateness mark is entered against a pupil who turned up and was registered present for the session, so the register counts lateness and absence as separate quantities. Moving the start of the school day can cut lateness in every cohort while the number of sessions missed altogether holds flat or rises. The claim is about absence, so none of the four cases speaks to it.",
-      "word_count": 152,
+      "confound_note": "The absence figures are tallied over \"the pupils enrolled for the whole term\", while the same line records that \"about a fifth of each cohort left part-way through\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who left; pupils who leave part-way carry the heaviest absence, and dropping them from the denominator lowers the recorded rate on its own. The four cases span four schools, four year groups, four terms and four registrars, and the same exclusion applies at each, so the spread of settings does nothing to repair the gap. The 4 to 7 percent falls are consistent with cohort absence not having moved at all.",
+      "word_count": 178,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Closer is verbatim identical to both TRUE items; the only change from diverse_true is the measured-quantity word, absence to lateness, in all four cases. Check that lateness reads as genuinely non-equivalent to absence and that nothing in the passage flags the swap. A shared confound is unavailable here because the four cohorts span four schools, four year groups, four terms and four registrars.",
       "flaw_mechanism": "scope_mismatch",
-      "confound_variant": "same_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_incomplete",
       "salience": null
     }
   ]

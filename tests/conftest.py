@@ -39,10 +39,10 @@ def mechanisms_for(scope_family: bool) -> dict[str, str]:
 
 VARIANTS = {
     False: {  # confound family
-        "coherent_false": ("changed_reach", "subset_complete"),
+        "coherent_false": ("changed_reach", "whole_complete"),
         "coherent_true": ("changed_block", "subset_complete"),
         "diverse_true": ("same_reach", "whole_incomplete"),
-        "diverse_false": ("same_block", "whole_incomplete"),
+        "diverse_false": ("same_block", "whole_complete"),
     },
     True: {  # scope family
         "coherent_false": ("changed_block", "subset_incomplete"),

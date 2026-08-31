@@ -13,8 +13,11 @@ from src.models import CELLS, Case, Item, compute_word_count
 from src.validate import (
     ALL_CHECKS,
     check_cell_balance,
-    check_closer_balance,
+    check_flaw_declarations,
+    check_matched_mechanism_subset,
+    check_passage_word_balance,
     closer_of,
+    flaw_line_of,
     check_coherent_structure,
     check_diverse_structure,
     check_duplicate_passages,
@@ -38,15 +41,46 @@ SCOPE = {
 }
 TAIL = "no other adjustment was made to any unit."
 
-CLOSER_ASSIGN = {
-    "coherent_false": ("changed", "reach"),
-    "coherent_true": ("changed", "block"),
-    "diverse_true": ("same", "reach"),
-    "diverse_false": ("same", "block"),
+# Per-family vocabulary, because the real item set has one domain per family.
+# A single generic wording repeated across all 20 families is learnable across a
+# grouped-CV fold boundary in a way the real set is not, and a fixture that is
+# easier to crack than the thing it stands in for tests nothing.
+POPULATION_SETS = [
+    ("Counts cover the units that reported", "Counts cover the units on the roll"),
+    ("Totals span the sites that filed", "Totals span the sites on the register"),
+    ("Figures include the lines that answered", "Figures include the lines in the index"),
+    ("Readings take in the cells that responded", "Readings take in the cells on record"),
+    ("Tallies run over the plots that returned", "Tallies run over the plots in the plan"),
+]
+COMPLETENESS_SETS = [
+    ("and each listed unit reported", "and a quarter of listed units stayed silent"),
+    ("and each named site filed", "and a quarter of named sites stayed silent"),
+    ("and each indexed line answered", "and a quarter of indexed lines stayed silent"),
+    ("and each recorded cell responded", "and a quarter of recorded cells stayed silent"),
+    ("and each planned plot returned", "and a quarter of planned plots stayed silent"),
+]
+
+# D-024: half the families are scope families, where BOTH false items are
+# falsified by scope_mismatch. That is the matched-mechanism subset.
+ASSIGN = {
+    False: {
+        "coherent_false": (("changed", "reach"), ("whole", "complete"), "stated_confound"),
+        "coherent_true": (("changed", "block"), ("subset", "complete"), None),
+        "diverse_true": (("same", "reach"), ("whole", "incomplete"), None),
+        "diverse_false": (("same", "block"), ("whole", "complete"), "broken_chronology"),
+    },
+    True: {
+        "coherent_false": (("changed", "block"), ("subset", "incomplete"), "scope_mismatch"),
+        "diverse_false": (("same", "reach"), ("subset", "incomplete"), "scope_mismatch"),
+        "coherent_true": (("same", "reach"), ("subset", "complete"), None),
+        "diverse_true": (("changed", "block"), ("whole", "incomplete"), None),
+    },
 }
 
 
-def build_clean_item(family_id: str, cell: str, k: int) -> Item:
+def build_clean_item(
+    family_id: str, cell: str, k: int, scope_family: bool = False
+) -> Item:
     """An item whose only cell-dependent text is a closer drawn from a shared,
     truth-independent pool."""
     coherent = cell.startswith("coherent")
@@ -66,13 +100,26 @@ def build_clean_item(family_id: str, cell: str, k: int) -> Item:
     # per-item vocabulary at all and even an in-sample fit lands at chance, which
     # would make the grouped-vs-in-sample comparison vacuous.
     ref = f"ref{k:02d}{CELLS.index(cell)}"
-    fact_key, scope_key = CLOSER_ASSIGN[cell]
-    closer = f"{FACT[fact_key]}, {SCOPE[scope_key]}; {TAIL}"
+    assign = dict(ASSIGN[scope_family])
+    if k % 4 >= 2:  # rotate the TRUE items' scope clauses (D-026)
+        ct, dt = assign['coherent_true'], assign['diverse_true']
+        assign['coherent_true'] = (ct[0], dt[1], ct[2])
+        assign['diverse_true'] = (dt[0], ct[1], dt[2])
+    (fact_key, scope_key), (pop_key, comp_key), _mech = assign[cell]
+    pop = POPULATION_SETS[k % len(POPULATION_SETS)][0 if pop_key == "subset" else 1]
+    comp = COMPLETENESS_SETS[k % len(COMPLETENESS_SETS)][
+        0 if comp_key == "complete" else 1
+    ]
+    midline = f"{FACT[fact_key]}, {SCOPE[scope_key]}. {pop}, {comp}."
     lead = (
         f"Report {family_id} filed as {ref} covers four observed units under "
         "one protocol."
     )
-    passage = "\n".join([lead] + [c.text for c in cases] + [closer])
+    # 7-line layout: the flaw sits mid-passage with two cases after it.
+    passage = "\n".join(
+        [lead, cases[0].text, cases[1].text, midline,
+         cases[2].text, cases[3].text, TAIL]
+    )
 
     truth = cell.endswith("_true")
     return Item(
@@ -84,11 +131,9 @@ def build_clean_item(family_id: str, cell: str, k: int) -> Item:
         passage=passage,
         ground_truth=truth,
         confound_note=None if truth else "Held out from the passage on purpose.",
-        flaw_mechanism=(
-            None
-            if truth
-            else ("stated_confound" if cell == "coherent_false" else "broken_chronology")
-        ),
+        flaw_mechanism=ASSIGN[scope_family][cell][2],
+        confound_variant="_".join(ASSIGN[scope_family][cell][0]),
+        scope_variant="_".join(ASSIGN[scope_family][cell][1]),
         word_count=compute_word_count(passage),
         domain="synthetic",
     )
@@ -97,7 +142,7 @@ def build_clean_item(family_id: str, cell: str, k: int) -> Item:
 @pytest.fixture(scope="module")
 def clean_items():
     return [
-        build_clean_item(f"fam_c{k:02d}", cell, k)
+        build_clean_item(f"fam_c{k:02d}", cell, k, scope_family=(k % 2 == 1))
         for k in range(20)
         for cell in CELLS
     ]
@@ -385,52 +430,64 @@ def test_check_results_serialize(clean_items):
         assert set(d) >= {"name", "passed", "summary", "failures", "data"}
 
 
-# ---- the closer-balance gate (D-022) ---------------------------------------
+# ---- the passage-balance gate (D-022, D-026) -------------------------------
 
 
-def test_closer_of_returns_the_last_line(clean_items):
+def test_closer_is_the_last_line_and_flaw_line_is_the_middle(clean_items):
     it = clean_items[0]
     assert closer_of(it) == it.passage.splitlines()[-1]
-    assert TAIL in closer_of(it)
+    assert closer_of(it) == TAIL
+    assert flaw_line_of(it) == it.passage.splitlines()[3]
+    # The flaw is buried: two cases and a closer come after it.
+    assert len(it.passage.splitlines()) == 7
 
 
-def test_balanced_closers_pass(clean_items):
-    """Every word in a family's four closers appears equally often on the TRUE
-    and FALSE sides. That is the property that took the lexical accuracy on the
-    real item set from 62.8% down to 51.5%."""
-    r = check_closer_balance(clean_items)
+def test_balanced_passages_pass(clean_items):
+    """Every word appears about as often on the TRUE side as the FALSE side."""
+    r = check_passage_word_balance(clean_items)
     assert r.passed, r.failures
-    assert max(r.data["imbalance_by_family"].values()) == 0
 
 
-def test_the_original_one_odd_closer_design_fails_the_gate():
-    """Three items sharing a TRUE closer and one carrying a distinct confound
-    closer is exactly the shape that gave the first draft a 75% lexical ceiling."""
-    items = make_item_set(20)  # conftest fixture: one fixed closer per cell
-    r = check_closer_balance(items)
+def test_neither_family_type_can_reach_perfect_balance(clean_items):
+    """D-026, measured rather than assumed.
+
+    Both types bottom out at 1 and neither reaches 0. For a scope family the
+    reason is structural: its two false items share a mechanism, so the
+    falsifying clause is 2F against at most 1T. For a confound family the
+    residual here is only the per-item unique reference token, which is
+    label-independent by construction. The gate's tolerance is 2 because the real
+    items, whose clause variants carry more incidental word overlap than this
+    fixture's, measure 2."""
+    for label, sel in (("confound", 0), ("scope", 1)):
+        grp = [i for i in clean_items if int(i.family_id[-2:]) % 2 == sel]
+        assert check_passage_word_balance(grp, tolerance=1).passed, label
+        assert not check_passage_word_balance(grp, tolerance=0).passed, label
+
+
+def test_gate_catches_a_word_planted_on_one_side():
+    """The failure mode this exists for: a word that only ever appears in FALSE
+    items. That is what a lexical giveaway looks like at the family level."""
+    items = []
+    for cell in CELLS:
+        it = build_clean_item("fam_q0", cell, 0)
+        if not it.ground_truth:
+            d = it.model_dump()
+            d["passage"] = it.passage + " Contaminant contaminant contaminant."
+            d["word_count"] = compute_word_count(d["passage"])
+            it = Item.model_validate(d)
+        items.append(it)
+    r = check_passage_word_balance(items)
     assert not r.passed
-    assert len(r.failures) == 20
-
-
-def test_gate_names_the_offending_family_and_word():
-    items = make_item_set(2)
-    r = check_closer_balance(items)
-    assert "fam_s00" in r.failures[0]
+    assert "fam_q0" in r.failures[0]
+    assert "contaminant" in r.failures[0]
     assert "T/" in r.failures[0] and "F" in r.failures[0]
 
 
-def test_tolerance_is_configurable(clean_items):
-    items = make_item_set(20)
-    assert check_closer_balance(items, tolerance=0).passed is False
-    assert check_closer_balance(items, tolerance=99).passed is True
-
-
 def test_balance_is_checked_per_family_not_across_the_set():
-    """Two families whose imbalances cancel out globally must still both fail -
-    a per-family invariant averaged across the set is not an invariant."""
+    """Two families whose imbalances cancel globally must still both fail."""
     a = [build_clean_item("fam_p0", c, 0) for c in CELLS]
     b = [build_clean_item("fam_p1", c, 1) for c in CELLS]
-    # Break both families in opposite directions.
+
     def bend(items, cell, extra):
         out = []
         for it in items:
@@ -443,8 +500,68 @@ def test_balance_is_checked_per_family_not_across_the_set():
                 out.append(it)
         return out
 
-    a = bend(a, "coherent_true", "Marker marker marker.")
-    b = bend(b, "coherent_false", "Marker marker marker.")
-    r = check_closer_balance(a + b)
+    a = bend(a, "coherent_true", "Marker marker marker marker.")
+    b = bend(b, "coherent_false", "Marker marker marker marker.")
+    r = check_passage_word_balance(a + b)
     assert not r.passed
     assert len(r.failures) == 2
+
+
+# ---- flaw declarations -----------------------------------------------------
+
+
+def test_flaw_declarations_pass_on_a_complete_set(clean_items):
+    assert check_flaw_declarations(clean_items).passed
+
+
+def test_missing_variant_is_caught():
+    it = build_clean_item("fam_z", "coherent_false", 0)
+    d = it.model_dump()
+    d["scope_variant"] = None
+    r = check_flaw_declarations([Item.model_validate(d)])
+    assert not r.passed
+    assert "must declare both" in r.failures[0]
+
+
+def test_an_item_false_twice_over_is_caught():
+    """Both live combinations at once means the mechanism label is not what a
+    reader would actually find."""
+    it = build_clean_item("fam_z", "coherent_false", 0, scope_family=True)
+    d = it.model_dump()
+    d["confound_variant"] = "changed_reach"
+    d["flaw_mechanism"] = "scope_mismatch"
+    # bypass the model's own cross-check to exercise the gate
+    broken = Item.model_construct(**d)
+    r = check_flaw_declarations([broken])
+    assert not r.passed
+    assert "false twice over" in r.failures[0]
+
+
+# ---- the matched-mechanism subset ------------------------------------------
+
+
+def test_matched_subset_gate_passes_at_ten_per_cell(clean_items):
+    r = check_matched_mechanism_subset(clean_items)
+    assert r.passed, r.failures
+    assert r.data["counts_by_cell"]["coherent_false"]["scope_mismatch"] == 10
+    assert r.data["counts_by_cell"]["diverse_false"]["scope_mismatch"] == 10
+
+
+def test_matched_subset_gate_fails_below_the_minimum(clean_items):
+    assert not check_matched_mechanism_subset(clean_items, minimum=11).passed
+
+
+def test_matched_subset_gate_fails_when_families_diverge(clean_items):
+    """Different families per condition would contrast scenarios, not coherence."""
+    out = []
+    for it in clean_items:
+        if it.id == "fam_c01__diverse_false":
+            d = it.model_dump()
+            d["flaw_mechanism"] = "broken_chronology"
+            d["scope_variant"] = "whole_incomplete"
+            out.append(Item.model_validate(d))
+        else:
+            out.append(it)
+    r = check_matched_mechanism_subset(out)
+    assert not r.passed
+    assert "same families" in r.failures[-1]

@@ -56,17 +56,17 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired in step with site output; no other change was made at any stack.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired in step with site output. The figures cover every scheduled run, gaps entered at the permit limit, and a quarter of scheduled runs at each stack returned no reading.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 153,
+      "word_count": 182,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four cases carry one distinct value per dimension (Kestrel, kiln, Q1, Duarte) and that every outcome date falls after its upgrade date. The closer names the halved throughput and then blocks it: every stack fired on a fixed duty cycle, so site output cannot reach the readings, and the tail rules out anything else. That is what makes the quarter-over-quarter reading adequate.",
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
-      "scope_variant": null,
+      "scope_variant": "whole_incomplete",
       "salience": null
     },
     {
@@ -116,17 +116,17 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired in step with site output; no other change was made at any stack.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the scheduled runs that returned a reading, and a quarter of scheduled runs at each stack returned no reading.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": false,
-      "confound_note": "All four kilns sit at Kestrel inside Q1, so one production history covers every case at once. Throughput fell by half against the earlier quarter, and the slowdown reaches every case because each stack fired in step with site output; burning half as much material lowers particulate on its own. Because each unit is compared against itself a quarter earlier rather than against an unupgraded unit in the same quarter, nothing in the log separates the filter upgrade from the slowdown. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same halved throughput but has every stack firing on a fixed duty cycle, so the slowdown cannot reach the readings, which is what makes it sound.",
-      "word_count": 153,
+      "confound_note": "The mid-passage line tallies the percentages over the scheduled runs that returned a reading, and the clause beside it records that a quarter of scheduled runs at each stack returned no reading. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run and the log covers three quarters of them. Runs go missing when the analyser faults or the sample line blocks, and those conditions are not independent of what the stack was putting out, so the dropped quarter cannot be treated as a random slice of the period. All four kilns sit at Kestrel in Q1 and each carries the same quarter of missing runs, so no case in the log covers the runs the others dropped.",
+      "word_count": 180,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. The slowdown works as a single cause covering all four cases at once, which it does only because all four kilns share site and quarter, and it reaches them because every stack fired in step with site output. Both closer clauses are reused elsewhere in the family - the throughput fact also appears in coherent_true and the scope clause also appears in diverse_true - so the contrast is a conjunction, not a vocabulary difference.",
-      "flaw_mechanism": "stated_confound",
-      "confound_variant": "changed_reach",
-      "scope_variant": null,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "changed_block",
+      "scope_variant": "subset_incomplete",
       "salience": null
     },
     {
@@ -176,17 +176,17 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle; no other change was made at any stack.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the scheduled runs that returned a reading, and every scheduled run at each stack returned a reading.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 153,
+      "word_count": 178,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension: four sites, four stack types, four quarters, four technicians. The closer states that throughput did not move against the earlier quarter, so no alternative cause is live even though the stacks fired in step with site output. Check that no single site or quarter event could cover all four cases.",
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
-      "scope_variant": null,
+      "scope_variant": "subset_complete",
       "salience": null
     },
     {
@@ -197,7 +197,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: a kiln at Kestrel, upgraded 4 February in Q1, logged backpressure 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.",
+          "text": "One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.",
           "conditions": {
             "site": "Kestrel",
             "stack_type": "kiln",
@@ -207,7 +207,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: a dryer at Halloway, upgraded 6 May in Q2, logged backpressure 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.",
+          "text": "Two: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.",
           "conditions": {
             "site": "Halloway",
             "stack_type": "dryer",
@@ -217,7 +217,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: a calciner at Pindar, upgraded 5 August in Q3, logged backpressure 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.",
+          "text": "Three: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.",
           "conditions": {
             "site": "Pindar",
             "stack_type": "calciner",
@@ -227,7 +227,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: a furnace at Ostwick, upgraded 3 November in Q4, logged backpressure 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.",
+          "text": "Four: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.",
           "conditions": {
             "site": "Ostwick",
             "stack_type": "furnace",
@@ -236,17 +236,17 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged backpressure 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged backpressure 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged backpressure 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged backpressure 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired on a fixed duty cycle; no other change was made at any stack.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired in step with site output. The figures cover the scheduled runs that returned a reading, and a quarter of scheduled runs at each stack returned no reading.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": false,
-      "confound_note": "Every case measures backpressure across the filter housing, not particulate at the stack outlet. Backpressure records how loaded the media is, and freshly fitted media reads lower by construction; a split bag or a bypassing seal reads lower still while letting more particulate through. The claim is about particulate readings, so the four measurements taken on 26 February, 28 May, 27 August and 25 November do not bear on it.",
-      "word_count": 153,
+      "confound_note": "The mid-passage line tallies the percentages over the scheduled runs that returned a reading, and the clause beside it records that a quarter of scheduled runs at each stack returned no reading. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run and the log covers three quarters of them. Runs go missing when the analyser faults or the sample line blocks, and those conditions are not independent of what the stack was putting out, so the dropped quarter cannot be treated as a random slice of the period. The four stacks span four sites, four stack types, four quarters and four technicians, and the missing quarter is stated at each stack, so the coverage gap repeats in every case rather than being filled by any of them.",
+      "word_count": 180,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closer shares its fact clause with diverse_true and its scope clause with coherent_true, so neither clause marks the label; the conditions and dates are verbatim identical to diverse_true. The only change is the measured-quantity word: particulate becomes backpressure. Check that backpressure is genuinely non-equivalent to a particulate reading (low backpressure can accompany higher emissions when media is torn or bypassed) and that this substitute wording is not reused by another family.",
       "flaw_mechanism": "scope_mismatch",
-      "confound_variant": "same_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_incomplete",
       "salience": null
     }
   ]

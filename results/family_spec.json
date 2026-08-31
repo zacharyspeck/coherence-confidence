@@ -1,0 +1,222 @@
+{
+  "fam_bearing": {
+    "domain": "manufacturing",
+    "claim": "this bearing design lasts longer in service",
+    "lead": "A maintenance log records four machines fitted with the redesigned bearing.",
+    "confound_fact_changed": "The lubricant supply switched to a higher-grade synthetic mid-cycle",
+    "confound_fact_same": "The lubricant supply held to one grade throughout the cycle",
+    "confound_scope_reach": "and every machine here drew from that supply",
+    "confound_scope_block": "and every machine here ran on a sealed charge",
+    "old_tail": "load and duty hours were unchanged, and nothing else differed.",
+    "family_type": "confound"
+  },
+  "fam_checkout": {
+    "domain": "business_metrics",
+    "claim": "the new checkout page increases purchases",
+    "lead": "An analytics log records four session segments after the checkout page was replaced.",
+    "confound_fact_changed": "A site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period",
+    "confound_fact_same": "Prices held steady through each segment's month, matching the earlier period to the nearest cent",
+    "confound_scope_reach": "and every segment browsed the general catalogue",
+    "confound_scope_block": "and every segment browsed a fixed-price contract catalogue",
+    "old_tail": "traffic volume and product range were unchanged, and no other release shipped.",
+    "family_type": "scope"
+  },
+  "fam_coolant": {
+    "domain": "manufacturing",
+    "claim": "this coolant shortens machining time",
+    "lead": "A machine shop log records four job runs that used the same coolant.",
+    "confound_fact_changed": "Every shop refitted its machines with a faster insert grade that quarter",
+    "confound_fact_same": "Every shop ran its machines on the insert grade used the quarter before",
+    "confound_scope_reach": "and every logged run was cut on one of those machines",
+    "confound_scope_block": "and every logged run was cut on a machine hired from outside",
+    "old_tail": "no other change was made to any run.",
+    "family_type": "confound"
+  },
+  "fam_driptape": {
+    "domain": "agriculture",
+    "claim": "this drip line raises yield per hectare",
+    "lead": "An irrigation log records four blocks that were fitted with the same drip line.",
+    "confound_fact_changed": "Rainfall in each block's season ran to roughly double the year before",
+    "confound_fact_same": "Rainfall in each block's season matched the year before to the millimetre",
+    "confound_scope_reach": "and every block lay in open ground, taking rain as it fell",
+    "confound_scope_block": "and every block lay under a rain shelter, fed only by metered water",
+    "old_tail": "the seed variety was unchanged and nothing else was altered.",
+    "family_type": "confound"
+  },
+  "fam_fertilizer": {
+    "domain": "agriculture",
+    "claim": "this fertilizer makes plants grow taller",
+    "lead": "A gardener's notebook records four plots that were given the same fertilizer.",
+    "confound_fact_changed": "Rainfall in each plot's season was the highest on record, roughly double the year before",
+    "confound_fact_same": "Rainfall in each plot's season matched the year before to within a few millimetres",
+    "confound_scope_reach": "and every plot stood in the open, watered by rain alone",
+    "confound_scope_block": "and every plot stood under cover, watered on a fixed schedule",
+    "old_tail": "no other change was made at any plot.",
+    "family_type": "confound"
+  },
+  "fam_filter": {
+    "domain": "manufacturing",
+    "claim": "this filter upgrade lowers particulate readings",
+    "lead": "A maintenance log records four stacks given the same filter upgrade.",
+    "confound_fact_changed": "Throughput at each site fell by half against the earlier quarter",
+    "confound_fact_same": "Throughput at each site matched the earlier quarter within a percent",
+    "confound_scope_reach": "and every stack logged here fired in step with site output",
+    "confound_scope_block": "and every stack logged here fired on a fixed duty cycle",
+    "old_tail": "no other change was made at any stack.",
+    "family_type": "scope"
+  },
+  "fam_handwash": {
+    "domain": "clinical",
+    "claim": "this handwashing protocol lowers ward infection rates",
+    "lead": "An infection-control file records four wards placed on the same handwashing protocol.",
+    "confound_fact_changed": "Contract deep-cleaning hours across the hospital group ran at triple the earlier quarter",
+    "confound_fact_same": "Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly",
+    "confound_scope_reach": "and every ward here was cleaned under that contract",
+    "confound_scope_block": "and every ward here was cleaned by in-house staff",
+    "old_tail": "admission volume and case mix held steady, and nothing else changed.",
+    "family_type": "scope"
+  },
+  "fam_inhaler": {
+    "domain": "clinical",
+    "claim": "this inhaler reduces asthma attacks",
+    "lead": "A nurse's log records four patient groups prescribed the same asthma inhaler.",
+    "confound_fact_changed": "Pollen and airborne irritants in each group's district fell by half from the previous quarter",
+    "confound_fact_same": "Pollen and airborne irritants in each group's district held level with the previous quarter",
+    "confound_scope_reach": "and every group lived and slept in unfiltered district air",
+    "confound_scope_block": "and every group lived and slept on filtered indoor air",
+    "old_tail": "no other change was made to any group.",
+    "family_type": "confound"
+  },
+  "fam_labkit": {
+    "domain": "education",
+    "claim": "this lab kit increases coursework completion",
+    "lead": "A teaching office log records four sections given the same lab kit.",
+    "confound_fact_changed": "The central syllabus doubled coursework's share of the final grade against the previous year",
+    "confound_fact_same": "The central syllabus left coursework's share of the final grade at the previous year's",
+    "confound_scope_reach": "and every section was marked to that central syllabus",
+    "confound_scope_block": "and every section was marked to a frozen departmental syllabus",
+    "old_tail": "nothing else changed for any section.",
+    "family_type": "confound"
+  },
+  "fam_nestbox": {
+    "domain": "agriculture",
+    "claim": "these nest boxes increase fledgling counts",
+    "lead": "A monitoring log records four plots where the same nest boxes were installed.",
+    "confound_fact_changed": "Prey abundance on the surrounding farmland doubled from the previous year",
+    "confound_fact_same": "Prey abundance on the surrounding farmland matched the previous year exactly",
+    "confound_scope_reach": "and every box stood at the farmland edge, within the birds' foraging range",
+    "confound_scope_block": "and every box stood deep inside the reserve, beyond the birds' foraging range",
+    "old_tail": "predator control was unchanged and nothing else was altered.",
+    "family_type": "confound"
+  },
+  "fam_onboarding": {
+    "domain": "business_metrics",
+    "claim": "this onboarding email lifts week-two retention",
+    "lead": "A growth team's log records four signup cohorts that received the same onboarding email.",
+    "confound_fact_changed": "The free trial ran thirty days, four times its length in the earlier period",
+    "confound_fact_same": "The free trial ran seven days, matching its length in the earlier period exactly",
+    "confound_scope_reach": "and every cohort here signed up on that trial",
+    "confound_scope_block": "and every cohort here signed up on a paid plan",
+    "old_tail": "signup volume and in-app prompts held steady, and nothing else changed.",
+    "family_type": "confound"
+  },
+  "fam_physio": {
+    "domain": "clinical",
+    "claim": "this physiotherapy protocol restores shoulder range of motion",
+    "lead": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.",
+    "confound_fact_changed": "Corticosteroid injections at each hospital tripled from the earlier quarter",
+    "confound_fact_same": "Corticosteroid injections at each hospital held level with the earlier quarter",
+    "confound_scope_reach": "and every intake was cleared to receive them",
+    "confound_scope_block": "and every intake was medically barred from receiving them",
+    "old_tail": "no other change was made at any ward.",
+    "family_type": "scope"
+  },
+  "fam_pricing": {
+    "domain": "business_metrics",
+    "claim": "this pricing change raises revenue per order",
+    "lead": "A retail log records four product lines after a new pricing rule took effect.",
+    "confound_fact_changed": "Premium stock's share of each store's shelf hit a record, double the earlier period",
+    "confound_fact_same": "Premium stock's share of each store's shelf held level, matching the earlier period exactly",
+    "confound_scope_reach": "and every line was stocked straight from that shelf",
+    "confound_scope_block": "and every line was stocked from a fixed year-round range",
+    "old_tail": "footfall and promotion depth matched the month before, and nothing else changed.",
+    "family_type": "scope"
+  },
+  "fam_reading": {
+    "domain": "education",
+    "claim": "this reading program raises comprehension scores",
+    "lead": "A district log records four classes that ran the same reading program.",
+    "confound_fact_changed": "Class sizes at each school fell by half from the year before",
+    "confound_fact_same": "Class sizes at each school matched the year before to the pupil",
+    "confound_scope_reach": "and every logged class took its English lessons as one whole group",
+    "confound_scope_block": "and every logged class took its English lessons in fixed groups of six",
+    "old_tail": "no other change was made at any school.",
+    "family_type": "confound"
+  },
+  "fam_routing": {
+    "domain": "business_metrics",
+    "claim": "this routing change cuts delivery time",
+    "lead": "A dispatch log records four groups of delivery runs after the routing change was rolled out.",
+    "confound_fact_changed": "Order volume through each depot hit a record low, half the earlier period",
+    "confound_fact_same": "Order volume through each depot held level, matching the earlier period exactly",
+    "confound_scope_reach": "and every run carried whatever drop count the depot set",
+    "confound_scope_block": "and every run carried the same drop count as before",
+    "old_tail": "road works and traffic matched the month before, and nothing else changed.",
+    "family_type": "scope"
+  },
+  "fam_seedcoat": {
+    "domain": "agriculture",
+    "claim": "this seed coating improves germination",
+    "lead": "A nursery logbook records four seed lots given the same coating.",
+    "confound_fact_changed": "House air temperature ran a full four degrees above the earlier sowing",
+    "confound_fact_same": "House air temperature matched the earlier sowing to a tenth of a degree",
+    "confound_scope_reach": "and every lot sat on an open bench, taking the house air directly",
+    "confound_scope_block": "and every lot sat in a sealed cabinet, held at a set temperature",
+    "old_tail": "the seed batch was unchanged and nothing else differed.",
+    "family_type": "scope"
+  },
+  "fam_sleepapp": {
+    "domain": "clinical",
+    "claim": "this sleep app lowers resting heart rate",
+    "lead": "A clinic log records four cohorts enrolled on the same sleep app.",
+    "confound_fact_changed": "Outdoor temperature in each cohort's city fell ten degrees from the month before",
+    "confound_fact_same": "Outdoor temperature in each cohort's city matched the month before within a degree",
+    "confound_scope_reach": "and every cohort slept in unconditioned rooms open to outside air",
+    "confound_scope_block": "and every cohort slept in rooms held at a fixed 20 degrees",
+    "old_tail": "no other change was made to any cohort.",
+    "family_type": "confound"
+  },
+  "fam_solder": {
+    "domain": "manufacturing",
+    "claim": "this solder profile reduces board defects",
+    "lead": "A plant log records four production runs switched to the same solder profile.",
+    "confound_fact_changed": "The optical inspection threshold was loosened two grades against the earlier period",
+    "confound_fact_same": "The optical inspection threshold held to the earlier period's setting exactly",
+    "confound_scope_reach": "and every run here was graded at that optical stage",
+    "confound_scope_block": "and every run here was graded at electrical test",
+    "old_tail": "the paste lot matched both periods, and nothing else changed.",
+    "family_type": "scope"
+  },
+  "fam_timetable": {
+    "domain": "education",
+    "claim": "this timetable change reduces absence",
+    "lead": "An attendance log records four cohorts that moved to the revised timetable.",
+    "confound_fact_changed": "The attendance reward scheme in each cohort's district tripled its payment that term",
+    "confound_fact_same": "The attendance reward scheme in each cohort's district paid what it had before",
+    "confound_scope_reach": "and every cohort was on the district roll that scheme covered",
+    "confound_scope_block": "and every cohort was on an independent roll that scheme never covered",
+    "old_tail": "nothing else about any cohort's term changed.",
+    "family_type": "scope"
+  },
+  "fam_tutoring": {
+    "domain": "education",
+    "claim": "these tutoring blocks improve exam pass rates",
+    "lead": "A faculty log records four cohorts given the same tutoring blocks.",
+    "confound_fact_changed": "The board's pass mark fell a full grade below the previous term's",
+    "confound_fact_same": "The board's pass mark held exactly level with the previous term's",
+    "confound_scope_reach": "and every cohort sat the board's own paper under that same mark",
+    "confound_scope_block": "and every cohort sat an in-house paper under a fixed internal mark",
+    "old_tail": "nothing else changed for any cohort.",
+    "family_type": "scope"
+  }
+}

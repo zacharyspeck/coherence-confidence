@@ -56,17 +56,17 @@
           }
         }
       ],
-      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.\nThree: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.\nFour: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.\nOrder volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before; road works and traffic matched the month before, and nothing else changed.",
+      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that reported a finish time, and every run at each depot reported a finish.\nThree: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.\nFour: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 151,
+      "word_count": 170,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Reviewer: confirm all four groups share depot, vehicle type, month and dispatcher (one distinct value per dimension). Closer is CHANGED fact + BLOCK scope: order volume really did fall, but every run still carried the same drop count, so the volume drop cannot reach the runs and the tail rules out road works, traffic and everything else. Cases must be byte-identical to coherent_false.",
       "flaw_mechanism": null,
-      "confound_variant": "changed_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_complete",
       "salience": null
     },
     {
@@ -116,17 +116,17 @@
           }
         }
       ],
-      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.\nThree: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.\nFour: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.\nOrder volume through each depot hit a record low, half the earlier period, and every run carried whatever drop count the depot set; road works and traffic matched the month before, and nothing else changed.",
+      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.\nThree: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.\nFour: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
       "ground_truth": false,
-      "confound_note": "All four groups run out of Kettleby Wharf in February with the same vans and the same dispatcher, so one order book covers every case at once. Volume through that depot hit a record low, half the earlier period, and a lighter book means fewer drops on each run, which cuts the time a run takes on its own. That drop reaches all four groups because every run carried whatever drop count the depot set. Each group is compared against itself a month earlier, when the book was full, so nothing in the evidence separates the routing change from the thinner load. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) names the same record low volume but holds every run to the same drop count as before, so the volume drop cannot reach the runs and the comparison holds.",
-      "word_count": 151,
+      "confound_note": "The mid-passage line states that timings cover the runs that reported a finish time, and that about a sixth of each depot's runs reported none. The minute figures are therefore tallied over roughly five sixths of the runs dispatched, while the claim is about delivery time on the runs the routing change was rolled out to, the non-reporting sixth included. Runs that come back without a finish time are not a random slice of the dispatch book, since late returns and rounds that were never closed out are exactly the runs most likely to have run long, so the 8, 5, 9 and 6 minute reductions recorded on the reporting subset are consistent with no reduction across all runs dispatched. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one reporting gap sits under all four groups at once.",
+      "word_count": 172,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Reviewer: cases must be byte-identical to coherent_true; only the closer differs. Closer is CHANGED fact + REACH scope. Check it reads as a neutral log line with no hedging connective, and that the confound works ONLY because the four groups are coherent - one depot in one month means one shared order book. Across the family CHANGED appears once in a TRUE item and once in a FALSE item, and so does REACH, so no single clause is a label marker.",
-      "flaw_mechanism": "stated_confound",
-      "confound_variant": "changed_reach",
-      "scope_variant": null,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "changed_block",
+      "scope_variant": "subset_incomplete",
       "salience": null
     },
     {
@@ -176,17 +176,17 @@
           }
         }
       ],
-      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.\nThree: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.\nFour: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.\nOrder volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set; road works and traffic matched the month before, and nothing else changed.",
+      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover every run dispatched, unreported ones timed at the depot, and about a sixth of each depot's runs reported none.\nThree: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.\nFour: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 150,
+      "word_count": 174,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Reviewer: four distinct values on every dimension - four depots, four vehicle types, four months, four dispatchers. Closer is SAME fact + REACH scope: order volume did not move, so there is no confound to worry about. Four separate months and depots mean no single local event could cover all four cases, which makes this the stronger of the two TRUE cells. The closer shares its scope clause with coherent_false and its fact clause with diverse_false, which keeps every clause balanced against the label.",
       "flaw_mechanism": null,
-      "confound_variant": "same_reach",
-      "scope_variant": null,
+      "confound_variant": "changed_block",
+      "scope_variant": "whole_incomplete",
       "salience": null
     },
     {
@@ -197,7 +197,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February planned route time ran 8 minutes below the same runs a month earlier.",
+          "text": "One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.",
           "conditions": {
             "depot": "Kettleby Wharf",
             "vehicle_type": "vans",
@@ -207,7 +207,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May planned route time ran 5 minutes below the same runs a month earlier.",
+          "text": "Two: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.",
           "conditions": {
             "depot": "Stanmoor Yard",
             "vehicle_type": "lorries",
@@ -217,7 +217,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August planned route time ran 9 minutes below the same runs a month earlier.",
+          "text": "Three: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.",
           "conditions": {
             "depot": "Devening Cross",
             "vehicle_type": "scooters",
@@ -227,7 +227,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November planned route time ran 6 minutes below the same runs a month earlier.",
+          "text": "Four: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.",
           "conditions": {
             "depot": "Harkaway Point",
             "vehicle_type": "flatbeds",
@@ -236,17 +236,17 @@
           }
         }
       ],
-      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February planned route time ran 8 minutes below the same runs a month earlier.\nTwo: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May planned route time ran 5 minutes below the same runs a month earlier.\nThree: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August planned route time ran 9 minutes below the same runs a month earlier.\nFour: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November planned route time ran 6 minutes below the same runs a month earlier.\nOrder volume through each depot held level, matching the earlier period exactly, and every run carried the same drop count as before; road works and traffic matched the month before, and nothing else changed.",
+      "passage": "A dispatch log records four groups of delivery runs after the routing change was rolled out.\nOne: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.\nTwo: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.\nOrder volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that reported a finish time, and about a sixth of each depot's runs reported none.\nThree: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.\nFour: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.\nMinutes were rounded to the nearest whole number and countersigned by the duty manager.",
       "ground_truth": false,
-      "confound_note": "Every case measures planned route time, the duration the routing software assigns to a run before it leaves, not the delivery time recorded on the road. The planner can lay out shorter itineraries while actual deliveries take as long or longer once loading, waiting at drops and congestion are counted, and a planner scored on its own estimate is not evidence about outcomes. The claim is about delivery time, so none of the four cases speaks to it.",
-      "word_count": 154,
+      "confound_note": "The mid-passage line states that timings cover the runs that reported a finish time, and that about a sixth of each depot's runs reported none. The minute figures are therefore tallied over roughly five sixths of the runs dispatched, while the claim is about delivery time on the runs the routing change was rolled out to, the non-reporting sixth included. Runs that come back without a finish time are not a random slice of the dispatch book, since late returns and rounds that were never closed out are exactly the runs most likely to have run long, so the 8, 5, 9 and 6 minute reductions recorded on the reporting subset are consistent with no reduction across all runs dispatched. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth goes unreported at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
+      "word_count": 171,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Reviewer: conditions are identical to diverse_true and the closer is SAME fact + BLOCK scope, so it names no live confound. The ONLY change from diverse_true is the measured-quantity phrase, 'delivery time' becoming 'planned route time' in all four cases. Confirm the substitute is genuinely non-equivalent (the routing tool's own scheduled duration is not realised delivery time) and that it is not reused by any other family. A shared confound is unavailable here because the four groups span four depots, four vehicle types, four months and four dispatchers.",
       "flaw_mechanism": "scope_mismatch",
-      "confound_variant": "same_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_incomplete",
       "salience": null
     }
   ]

@@ -56,17 +56,17 @@
           }
         }
       ],
-      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor.\nContract deep-cleaning hours across the hospital group ran at triple the earlier quarter, and every ward here was cleaned by in-house staff; admission volume and case mix held steady, and nothing else changed.",
+      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor.\nContract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned under that contract. Rates cover the patients discharged from each ward, and each ward discharged every patient it admitted.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor.\nCounts were copied into the file and countersigned by a ward sister each month.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 149,
+      "word_count": 167,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four entries share one value on ward, hospital, quarter and auditor. The closer neutralises the quarter-over-quarter comparison by holding admissions, case mix, cleaning and staffing fixed, which is what makes a before/after ward comparison adequate here.",
       "flaw_mechanism": null,
-      "confound_variant": "changed_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_complete",
       "salience": null
     },
     {
@@ -116,17 +116,17 @@
           }
         }
       ],
-      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor.\nContract deep-cleaning hours across the hospital group ran at triple the earlier quarter, and every ward here was cleaned under that contract; admission volume and case mix held steady, and nothing else changed.",
+      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor.\nContract deep-cleaning hours across the hospital group ran at triple the earlier quarter, and every ward here was cleaned by in-house staff. Rates cover the patients discharged from each ward, and each ward transferred out a quarter of those admitted.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor.\nCounts were copied into the file and countersigned by a ward sister each month.",
       "ground_truth": false,
-      "confound_note": "All four entries sit in one hospital on one surgical floor inside the same first quarter, so a single contract-level change covers every case at once. Contract deep-cleaning hours ran at triple the earlier quarter, and that extra cleaning reaches every entry here because every ward was cleaned under the contract. Deep cleaning lowers ward infections on its own, and each ward is compared only against itself a quarter earlier, before the hours were tripled, rather than against a ward cleaned to the same standard in the same quarter, so nothing in the evidence separates the handwashing protocol from the extra cleaning. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same tripled contract hours but has every ward cleaned by in-house staff, so the contractor's change cannot reach these wards, which is what makes it sound.",
-      "word_count": 149,
+      "confound_note": "The mid-passage line tallies the infection rates over the patients discharged from each ward, and the clause beside it records that each ward transferred out a quarter of those admitted. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. Patients who deteriorate are the ones moved to intensive care or to another hospital, and infection is a common reason for that move, so the excluded quarter is precisely where infections would concentrate and the reported drop is measured over the patients who did well enough to leave by the front door. All four entries are Ashgrove General's surgical ward in the first quarter and each drops the same quarter, so nothing in the file recovers the transferred patients.",
+      "word_count": 170,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases are byte-identical to coherent_true; only the closing sentence differs. Confirm the closer works as a single confound ONLY because the four entries share hospital, ward type and quarter, and that it reuses the same vocabulary as the true closer (cleaning schedules, staffing, earlier quarter).",
-      "flaw_mechanism": "stated_confound",
-      "confound_variant": "changed_reach",
-      "scope_variant": null,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "changed_block",
+      "scope_variant": "subset_incomplete",
       "salience": null
     },
     {
@@ -176,17 +176,17 @@
           }
         }
       ],
-      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June infections ran 6 percent below the same ward a quarter earlier; auditor Okafor.\nThree: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September infections ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.\nFour: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December infections ran 7 percent below the same ward a quarter earlier; auditor Vasquez.\nContract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned under that contract; admission volume and case mix held steady, and nothing else changed.",
+      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June infections ran 6 percent below the same ward a quarter earlier; auditor Okafor.\nContract deep-cleaning hours across the hospital group ran at triple the earlier quarter, and every ward here was cleaned by in-house staff. Rates cover every patient admitted to each ward, transfers included, and each ward transferred out a quarter of those admitted.\nThree: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September infections ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.\nFour: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December infections ran 7 percent below the same ward a quarter earlier; auditor Vasquez.\nCounts were copied into the file and countersigned by a ward sister each month.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 148,
+      "word_count": 172,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on ward, hospital, quarter and auditor. Closer is identical to coherent_true, so the only thing that varies between the two TRUE cells is the condition values. Four hospitals across four quarters means no single housekeeping or staffing event can cover all four cases.",
       "flaw_mechanism": null,
-      "confound_variant": "same_reach",
-      "scope_variant": null,
+      "confound_variant": "changed_block",
+      "scope_variant": "whole_incomplete",
       "salience": null
     },
     {
@@ -197,7 +197,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March culture requests ran 9 percent below the same ward a quarter earlier; auditor Naylor.",
+          "text": "One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.",
           "conditions": {
             "ward": "surgical",
             "hospital": "Ashgrove General",
@@ -207,7 +207,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June culture requests ran 6 percent below the same ward a quarter earlier; auditor Okafor.",
+          "text": "Two: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June infections ran 6 percent below the same ward a quarter earlier; auditor Okafor.",
           "conditions": {
             "ward": "maternity",
             "hospital": "Brookhaven Infirmary",
@@ -217,7 +217,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September culture requests ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.",
+          "text": "Three: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September infections ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.",
           "conditions": {
             "ward": "paediatric",
             "hospital": "Calderwood Royal",
@@ -227,7 +227,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December culture requests ran 7 percent below the same ward a quarter earlier; auditor Vasquez.",
+          "text": "Four: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December infections ran 7 percent below the same ward a quarter earlier; auditor Vasquez.",
           "conditions": {
             "ward": "geriatric",
             "hospital": "Dunmore Memorial",
@@ -236,17 +236,17 @@
           }
         }
       ],
-      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March culture requests ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June culture requests ran 6 percent below the same ward a quarter earlier; auditor Okafor.\nThree: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September culture requests ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.\nFour: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December culture requests ran 7 percent below the same ward a quarter earlier; auditor Vasquez.\nContract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned by in-house staff; admission volume and case mix held steady, and nothing else changed.",
+      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June infections ran 6 percent below the same ward a quarter earlier; auditor Okafor.\nContract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned under that contract. Rates cover the patients discharged from each ward, and each ward transferred out a quarter of those admitted.\nThree: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September infections ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.\nFour: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December infections ran 7 percent below the same ward a quarter earlier; auditor Vasquez.\nCounts were copied into the file and countersigned by a ward sister each month.",
       "ground_truth": false,
-      "confound_note": "Every case measures culture requests, which counts how many specimens a ward sent to the laboratory, not how many patients were infected. Ordering fewer swabs lowers that count while the underlying infection rate is unchanged, and it can hide infections that are never cultured. The claim is about ward infection rates, so none of the four cases, from 27 March through 28 December, bears on it.",
-      "word_count": 152,
+      "confound_note": "The mid-passage line tallies the infection rates over the patients discharged from each ward, and the clause beside it records that each ward transferred out a quarter of those admitted. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. Patients who deteriorate are the ones moved to intensive care or to another hospital, and infection is a common reason for that move, so the excluded quarter is precisely where infections would concentrate and the reported drop is measured over the patients who did well enough to leave by the front door. The four entries span four hospitals, four ward types, four quarters and four auditors, and the transfer-out clause applies at each ward, so every case is missing the same quarter of its own population.",
+      "word_count": 169,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Closer is reused verbatim from both TRUE items and the conditions are identical to diverse_true; the only change is the measured-quantity phrase, 'infections' becoming 'culture requests'. Reviewer should confirm culture requests (laboratory testing volume) is genuinely non-equivalent to infection rate, and that no shared confound is available across four hospitals in four quarters.",
       "flaw_mechanism": "scope_mismatch",
-      "confound_variant": "same_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_incomplete",
       "salience": null
     }
   ]

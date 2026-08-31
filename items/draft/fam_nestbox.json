@@ -56,17 +56,17 @@
           }
         }
       ],
-      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.\nThree: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.\nFour: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.\nPrey abundance on the surrounding farmland matched the previous year exactly, and every box stood at the farmland edge, within the birds' foraging range; predator control was unchanged and nothing else was altered.",
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.\nPrey abundance on the surrounding farmland doubled from the previous year, and every box stood deep inside the reserve, beyond the birds' foraging range. Counts cover every installed box, uninspected ones entered as zero, and a fifth of the installed boxes at each plot went uninspected.\nThree: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.\nFour: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.\nRing numbers and box references were filed with the monitoring register under standard warden codes.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 154,
+      "word_count": 182,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Check that all four cases carry one distinct value on reserve, species, season and warden. The closer neutralises the year-over-year comparison by holding food supply, weather and predator control fixed, which is what makes a before/after count adequate. Cases must be byte-identical to coherent_false.",
       "flaw_mechanism": null,
-      "confound_variant": "same_reach",
-      "scope_variant": null,
+      "confound_variant": "changed_block",
+      "scope_variant": "whole_incomplete",
       "salience": null
     },
     {
@@ -116,17 +116,17 @@
           }
         }
       ],
-      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.\nThree: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.\nFour: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.\nPrey abundance on the surrounding farmland doubled from the previous year, and every box stood at the farmland edge, within the birds' foraging range; predator control was unchanged and nothing else was altered.",
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.\nPrey abundance on the surrounding farmland doubled from the previous year, and every box stood at the farmland edge, within the birds' foraging range. Counts cover every installed box, uninspected ones entered as zero, and every installed box at each plot was inspected.\nThree: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.\nFour: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.\nRing numbers and box references were filed with the monitoring register under standard warden codes.",
       "ground_truth": false,
-      "confound_note": "All four plots sit in one wood on one reserve in one spring, so a single farmland food supply covers every case at once. Prey abundance doubling from the previous year is one alternative cause, and it reaches every brood because every box stood at the farmland edge, within the birds' foraging range. Each plot is compared against the same reserve a year earlier rather than against an unboxed wood in the same spring, so nothing in the evidence separates the boxes from the prey peak. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same doubled prey but puts every box deep inside the reserve, beyond the birds' foraging range, so the surge cannot reach the broods and the year-over-year comparison holds.",
-      "word_count": 154,
+      "confound_note": "All four plots sit on one reserve, with one species in one spring under one warden, so the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland doubled from the previous year, which is an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, so the food surge reaches every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, so nothing in the evidence separates the boxes from the prey peak. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, so they add no second defect.",
+      "word_count": 179,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Cases must be byte-identical to coherent_true; only the closing sentence differs. The prey peak works as a single confound precisely because the four plots share one reserve, one wood and one season, so one food-supply fact explains all four. Check that the closer reuses the TRUE closer's vocabulary (prey abundance, previous year, breeding-season weather, unchanged) so the difference is logical rather than lexical.",
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
-      "scope_variant": null,
+      "scope_variant": "whole_complete",
       "salience": null
     },
     {
@@ -176,17 +176,17 @@
           }
         }
       ],
-      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.\nThree: barn owls at Brackenfen reserve, boxed 2 September, fledged 16 more young by 24 November than the same reserve in the previous autumn; recorded by Halloran.\nFour: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.\nPrey abundance on the surrounding farmland doubled from the previous year, and every box stood deep inside the reserve, beyond the birds' foraging range; predator control was unchanged and nothing else was altered.",
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.\nTwo: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.\nPrey abundance on the surrounding farmland matched the previous year exactly, and every box stood at the farmland edge, within the birds' foraging range. Counts cover the installed boxes that were inspected, and every installed box at each plot was inspected.\nThree: barn owls at Brackenfen reserve, boxed 2 September, fledged 16 more young by 24 November than the same reserve in the previous autumn; recorded by Halloran.\nFour: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.\nRing numbers and box references were filed with the monitoring register under standard warden codes.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 154,
+      "word_count": 177,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "Four distinct values on every dimension, same closing sentence as coherent_true, so the only thing that changes between the two TRUE cells is the condition values. Four reserves across four seasons share no food supply or weather history, which is what makes this the stronger evidence of the two TRUE cells.",
       "flaw_mechanism": null,
-      "confound_variant": "changed_block",
-      "scope_variant": null,
+      "confound_variant": "same_reach",
+      "scope_variant": "subset_complete",
       "salience": null
     },
     {
@@ -236,17 +236,17 @@
           }
         }
       ],
-      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 June, fledged 14 more young by 27 March than the same reserve in the previous spring; recorded by Trask.\nTwo: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.\nThree: barn owls at Brackenfen reserve, boxed 2 November, fledged 16 more young by 24 September than the same reserve in the previous autumn; recorded by Halloran.\nFour: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.\nPrey abundance on the surrounding farmland matched the previous year exactly, and every box stood deep inside the reserve, beyond the birds' foraging range; predator control was unchanged and nothing else was altered.",
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 June, fledged 14 more young by 27 March than the same reserve in the previous spring; recorded by Trask.\nTwo: great tits at Cransley reserve, boxed 4 June, fledged 11 more young by 26 August than the same reserve in the previous summer; recorded by Okarie.\nPrey abundance on the surrounding farmland matched the previous year exactly, and every box stood deep inside the reserve, beyond the birds' foraging range. Counts cover every installed box, uninspected ones entered as zero, and every installed box at each plot was inspected.\nThree: barn owls at Brackenfen reserve, boxed 2 November, fledged 16 more young by 24 September than the same reserve in the previous autumn; recorded by Halloran.\nFour: tawny owls at Vanehead reserve, boxed 5 December, fledged 9 more young by 21 February than the same reserve in the previous winter; recorded by Merrow.\nRing numbers and box references were filed with the monitoring register under standard warden codes.",
       "ground_truth": false,
       "confound_note": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
-      "word_count": 154,
+      "word_count": 179,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
       "notes": "The closing sentence is identical to both TRUE items; the flaw lives entirely in the dates inside cases one and three, where the month tokens are swapped between installation and count so the bag of words is unchanged. Check that only the dates differ from diverse_true, and that no shared confound is available: four reserves across four seasons share no food supply or weather history.",
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
-      "scope_variant": null,
+      "scope_variant": "whole_complete",
       "salience": null
     }
   ]

@@ -56,17 +56,17 @@
           }
         }
       ],
-      "passage": "A gardener's notebook records four plots that were given the same fertilizer.\nOne: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.\nTwo: a tomato in the Ellis backyard, fed 4 June, stood 9 cm taller by 21 August than the previous summer; logged by Reyes.\nThree: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.\nFour: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.\nRainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood under cover, watered on a fixed schedule; no other change was made at any plot.",
+      "passage": "A gardener's notebook records four plots that were given the same fertilizer.\nOne: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.\nTwo: a tomato in the Ellis backyard, fed 4 June, stood 9 cm taller by 21 August than the previous summer; logged by Reyes.\nRainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood under cover, watered on a fixed schedule. Heights cover the plants in each plot that survived to the final measure, and every plant fed in each plot survived to that measure.\nThree: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.\nFour: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.\nHeights were entered in centimetres and copied into the notebook the same day.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 142,
+      "word_count": 171,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Every case shares species, location, season and observer - one distinct value per dimension. The closing sentence neutralises the year-to-year comparison (weather matched, soil unchanged, nothing else altered), which is what makes the year-over-year evidence adequate.",
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
-      "scope_variant": null,
+      "scope_variant": "subset_complete",
       "salience": null
     },
     {
@@ -116,17 +116,17 @@
           }
         }
       ],
-      "passage": "A gardener's notebook records four plots that were given the same fertilizer.\nOne: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.\nTwo: a tomato in the Ellis backyard, fed 4 June, stood 9 cm taller by 21 August than the previous summer; logged by Reyes.\nThree: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.\nFour: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.\nRainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone; no other change was made at any plot.",
+      "passage": "A gardener's notebook records four plots that were given the same fertilizer.\nOne: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.\nTwo: a tomato in the Ellis backyard, fed 4 June, stood 9 cm taller by 21 August than the previous summer; logged by Reyes.\nRainfall in each plot's season was the highest on record, roughly double the year before, and every plot stood in the open, watered by rain alone. Heights cover every plant fed in each plot, with losses entered at zero gain, and every plant fed in each plot survived to that measure.\nThree: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.\nFour: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.\nHeights were entered in centimetres and copied into the notebook the same day.",
       "ground_truth": false,
-      "confound_note": "All four plots sit in the same backyard in the same summer, so one weather history covers them all. Rainfall roughly double the year before is a single alternative cause, and it reaches every plot because every plot stood in the open and was watered by rain alone. Each plot is compared against itself a year earlier rather than against an untreated plot in the same year, so nothing in the evidence separates the fertilizer from the rain. The TRUE item in this family carrying closer_variant 'changed_block' (coherent_true in half the families and diverse_true in the other half, see D-022) states the same record rainfall but puts the plots under cover on a fixed watering schedule, which is what makes it sound.",
-      "word_count": 142,
+      "confound_note": "All four plots sit in the same backyard in the same summer, so one weather history covers every case at once. The mid-passage facts state that rainfall in each plot's season was the highest on record, roughly double the year before, and that every plot stood in the open, watered by rain alone, so that water reached every plot whose heights were taken. Each plot is compared against itself a year earlier rather than against an unfertilized plot in the same year, so the rain and the fertilizer moved together and the 8 to 13 cm gains cannot be attributed to the fertilizer. The population and completeness clauses in the same line describe a tally with no gap between the plants measured and the plants the claim covers, so the rainfall is the whole of the defect.",
+      "word_count": 172,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Cases are IDENTICAL to coherent_true; only the closing sentence differs. That closer is the shared confound. It only works because the cases are coherent: four plots in one backyard in one summer share a weather history, so one weather fact explains all four.",
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
-      "scope_variant": null,
+      "scope_variant": "whole_complete",
       "salience": null
     },
     {
@@ -176,17 +176,17 @@
           }
         }
       ],
-      "passage": "A gardener's notebook records four plots that were given the same fertilizer.\nOne: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.\nTwo: a fern in the Marsh Lane flat, fed 8 January, stood 9 cm taller by 26 February than the previous winter; logged by Okonjo.\nThree: an oak in the Aldergate orchard, fed 2 April, stood 13 cm taller by 19 May than the previous spring; logged by Halvard.\nFour: a cactus in the Vinter greenhouse, fed 7 October, stood 8 cm taller by 24 November than the previous autumn; logged by Bittner.\nRainfall in each plot's season matched the year before to within a few millimetres, and every plot stood in the open, watered by rain alone; no other change was made at any plot.",
+      "passage": "A gardener's notebook records four plots that were given the same fertilizer.\nOne: a tomato in the Ellis backyard, fed 3 June, stood 11 cm taller by 20 August than the previous summer; logged by Reyes.\nTwo: a fern in the Marsh Lane flat, fed 8 January, stood 9 cm taller by 26 February than the previous winter; logged by Okonjo.\nRainfall in each plot's season matched the year before to within a few millimetres, and every plot stood in the open, watered by rain alone. Heights cover every plant fed in each plot, with losses entered at zero gain, and close to a quarter of each plot's fed plants did not survive.\nThree: an oak in the Aldergate orchard, fed 2 April, stood 13 cm taller by 19 May than the previous spring; logged by Halvard.\nFour: a cactus in the Vinter greenhouse, fed 7 October, stood 8 cm taller by 24 November than the previous autumn; logged by Bittner.\nHeights were entered in centimetres and copied into the notebook the same day.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 142,
+      "word_count": 174,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. Four distinct values on every dimension. Same closing sentence as coherent_true, so the ONLY thing that changes between the two TRUE cells is the condition values - which is what makes the coherence contrast within TRUE clean (D-004).",
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
-      "scope_variant": null,
+      "scope_variant": "whole_incomplete",
       "salience": null
     },
     {
@@ -236,17 +236,17 @@
           }
         }
       ],
-      "passage": "A gardener's notebook records four plots that were given the same fertilizer.\nOne: a tomato in the Ellis backyard, fed 3 August, stood 11 cm taller by 20 June than the previous summer; logged by Reyes.\nTwo: a fern in the Marsh Lane flat, fed 8 January, stood 9 cm taller by 26 February than the previous winter; logged by Okonjo.\nThree: an oak in the Aldergate orchard, fed 2 May, stood 13 cm taller by 19 April than the previous spring; logged by Halvard.\nFour: a cactus in the Vinter greenhouse, fed 7 October, stood 8 cm taller by 24 November than the previous autumn; logged by Bittner.\nRainfall in each plot's season matched the year before to within a few millimetres, and every plot stood under cover, watered on a fixed schedule; no other change was made at any plot.",
+      "passage": "A gardener's notebook records four plots that were given the same fertilizer.\nOne: a tomato in the Ellis backyard, fed 3 August, stood 11 cm taller by 20 June than the previous summer; logged by Reyes.\nTwo: a fern in the Marsh Lane flat, fed 8 January, stood 9 cm taller by 26 February than the previous winter; logged by Okonjo.\nRainfall in each plot's season matched the year before to within a few millimetres, and every plot stood under cover, watered on a fixed schedule. Heights cover every plant fed in each plot, with losses entered at zero gain, and every plant fed in each plot survived to that measure.\nThree: an oak in the Aldergate orchard, fed 2 May, stood 13 cm taller by 19 April than the previous spring; logged by Halvard.\nFour: a cactus in the Vinter greenhouse, fed 7 October, stood 8 cm taller by 24 November than the previous autumn; logged by Bittner.\nHeights were entered in centimetres and copied into the notebook the same day.",
       "ground_truth": false,
       "confound_note": "In cases one and three the height was recorded before the fertilizer was applied: 20 June precedes 3 August, and 19 April precedes 2 May. Half the evidence therefore describes growth that had already happened when the treatment was given, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
-      "word_count": 142,
+      "word_count": 172,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "hand",
       "notes": "SEED. The closing sentence is IDENTICAL to both TRUE items - the flaw lives entirely in the dates inside cases one and three, which is invisible to a bag-of-ngrams classifier because the tokens are unchanged. A single shared confound cannot be used here: four plants in four places across four seasons share no weather history.",
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
-      "scope_variant": null,
+      "scope_variant": "whole_complete",
       "salience": null
     }
   ]
