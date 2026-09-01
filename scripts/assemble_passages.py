@@ -125,6 +125,7 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit(f"no authored clauses for: {missing}")
 
     problems: list[str] = []
+    rebuilt: list[str] = []
     changed = 0
     for family_id, sp in sorted(spec.items()):
         cl = clauses[family_id]
@@ -168,6 +169,7 @@ def main(argv: list[str] | None = None) -> int:
                         "toward the hypothesis"
                     )
 
+            passage_changed = it.get("passage") != passage
             it["passage"] = passage
             it["word_count"] = compute_word_count(passage)
             # Refreshed here rather than in a later step: the Item model checks
@@ -181,10 +183,17 @@ def main(argv: list[str] | None = None) -> int:
             it["flaw_mechanism"] = mech
             it["confound_variant"] = f"{confound[0]}_{confound[1]}"
             it["scope_variant"] = f"{scope[0]}_{scope[1]}"
-            # Salience describes how hard THIS passage's flaw was to spot. The
-            # passage just changed, so the old number no longer describes it.
-            # Re-run the blind audit and scripts/apply_salience.py.
-            it["salience"] = None
+            # Salience and reader_catch_rate describe how hard THIS passage's
+            # flaw was to spot, so they survive exactly as long as the passage
+            # does. Clearing them unconditionally meant that rebuilding one
+            # family threw away the audit for the other nineteen; clearing them
+            # on change keeps the invalidation honest and no wider than it has
+            # to be.
+            if passage_changed:
+                it["salience"] = None
+                it["reader_catch_rate"] = None
+                it["reader_false_positive_rate"] = None
+                rebuilt.append(it["id"])
 
             if mech == "scope_mismatch":
                 key = "note_scope_coherent" if cell == "coherent_false" else "note_scope_diverse"
@@ -203,17 +212,20 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"{'checked' if args.check else 'rebuilt'} {changed} passages "
           f"across {len(spec)} families")
+    print(f"{len(rebuilt)} passages actually CHANGED; their salience and reader "
+          f"rates were cleared" + (f": {rebuilt[:6]}" if rebuilt else ""))
     if problems:
         print(f"\n{len(problems)} wording problems:")
         for p in problems[:30]:
             print("  ", p)
         return 1
     print("no causal, hedging or imputation language found in any passage")
-    print(
-        chr(10) + 'salience cleared on every item - it described the previous '
-        'wording. Re-run the blind audit, then scripts/apply_salience.py, '
-        'before analyzing.'
-    )
+    if rebuilt:
+        print(
+            chr(10) + f'salience and reader rates cleared on {len(rebuilt)} changed '
+            'items. Re-run the hunter audit and the reader audit for those, '
+            'then apply_salience.py / apply_reader_rates.py, before analyzing.'
+        )
     return 0
 
 

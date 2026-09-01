@@ -456,7 +456,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
         "n_tokens": 190,
         "n_distinct_tokens": 99,

@@ -39,6 +39,7 @@ import re
 import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
+from itertools import combinations
 from typing import Any, Sequence
 
 import numpy as np
@@ -784,6 +785,85 @@ def check_matched_mechanism_subset(
     )
 
 
+#: Two FALSE items may not be falsified by the same words. Above this
+#: similarity (1.0 - normalized edit distance) the phrasing is a recurrence.
+FLAW_SIMILARITY_LIMIT = 0.70
+FLAW_NGRAM = 8
+
+
+def check_duplicate_flaw_phrasing(
+    items: Sequence[Item],
+    limit: float = FLAW_SIMILARITY_LIMIT,
+    n: int = FLAW_NGRAM,
+) -> CheckResult:
+    """No two FALSE items in DIFFERENT families may share flaw phrasing.
+
+    A recurring falsifying sentence is a template. It gives the lexical
+    classifier something to learn, and it lets a reader who has met one item
+    recognise the next by shape rather than by reading it.
+
+    **Within a family the sharing is deliberate and is exempted here.** The
+    matched-mechanism endpoint (D-024) compares coherent_false against
+    diverse_false inside the ten scope families, and it holds by making the
+    falsifying sentence *identical* across those cells so that only coherence
+    differs. Breaking that identity would put phrasing back into the one
+    endpoint built to have nothing in it but coherence. Cross-family recurrence
+    has no such justification, so that is what this fails on. See D-032.
+    """
+    from src.flaws import flaw_sentence, shared_ngrams, similarity
+
+    false_items = [i for i in items if not i.ground_truth]
+    spans = {i.id: flaw_sentence(i.passage, i.flaw_mechanism) for i in false_items}
+    fam = {i.id: i.family_id for i in false_items}
+    mech = {i.id: i.flaw_mechanism for i in false_items}
+
+    failures: list[str] = []
+    worst = 0.0
+    worst_pair = ("", "")
+    n_within = 0
+    for a, b in combinations(sorted(spans), 2):
+        if fam[a] == fam[b]:
+            n_within += 1
+            continue
+        r = similarity(spans[a], spans[b])
+        if r > worst:
+            worst, worst_pair = r, (a, b)
+        shared = shared_ngrams(spans[a], spans[b], n)
+        if r > limit:
+            failures.append(
+                f"{a} and {b} are falsified by near-identical wording "
+                f"(similarity {r:.2f} > {limit}); they are in different families, "
+                "so nothing requires them to match"
+            )
+        elif shared:
+            failures.append(
+                f"{a} and {b} share a {n}-gram in their falsifying text: "
+                f"{sorted(shared)[0]!r}"
+            )
+
+    by_mech = Counter(mech.values())
+    return CheckResult(
+        name="no_duplicate_flaw_phrasing",
+        passed=not failures,
+        summary=(
+            f"{len(false_items)} FALSE items, "
+            f"{len(spans) * (len(spans) - 1) // 2 - n_within} cross-family pairs; "
+            f"worst similarity {worst:.2f} (limit {limit}), no shared {n}-grams; "
+            f"{n_within} within-family pairs exempt (matched mechanism, D-024)"
+        ),
+        required_by_brief=False,
+        failures=failures,
+        data={
+            "limit": limit,
+            "ngram": n,
+            "worst_similarity": round(worst, 4),
+            "worst_pair": list(worst_pair),
+            "n_within_family_exempt": n_within,
+            "by_mechanism": dict(by_mech),
+        },
+    )
+
+
 def check_review_status(items: Sequence[Item]) -> CheckResult:
     """Informational: nothing may be pre-marked reviewed by the build (D-008)."""
     bad = [i.id for i in items if i.review_status != "unreviewed"]
@@ -854,6 +934,7 @@ def run_checks(
         ),
         ("flaw_declarations_complete", lambda: check_flaw_declarations(items)),
         ("matched_mechanism_subset", lambda: check_matched_mechanism_subset(items)),
+        ("no_duplicate_flaw_phrasing", lambda: check_duplicate_flaw_phrasing(items)),
         ("control_surface_match", lambda: check_control_surface_match(items)),
         ("all_items_unreviewed", lambda: check_review_status(items)),
     ]

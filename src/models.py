@@ -184,7 +184,16 @@ class Item(BaseModel):
     flaw_mechanism: FlawMechanism | None = None
     confound_variant: ConfoundVariant | None = None
     scope_variant: ScopeVariant | None = None
+    #: HUNTER salience, 1-5. What an auditor TOLD to find the flaw rated its
+    #: explicitness. Conditional on having found it, so it says nothing about
+    #: how often it is found. Kept as a diagnostic; not the covariate (D-032).
     salience: float | None = None
+    #: READER rates. Fraction of plain readers - shown only the scored prompt,
+    #: never told a flaw might exist - who answered No. On a FALSE item that is
+    #: the catch rate; on a TRUE item it is the false-positive rate. This is the
+    #: covariate, because it is the thing that actually varies (D-032).
+    reader_catch_rate: float | None = Field(default=None, ge=0.0, le=1.0)
+    reader_false_positive_rate: float | None = Field(default=None, ge=0.0, le=1.0)
     #: Recomputed and checked at load, exactly like word_count - it is a pure
     #: function of the passage, so a stale value means a stale edit (D-030).
     surface_complexity: dict[str, float] | None = None

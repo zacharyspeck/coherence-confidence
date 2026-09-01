@@ -920,3 +920,112 @@ four clauses carrying it.
 Verified both ways: the gate fails on the pre-fix wording and passes on the
 current items with **0 words flagged**, worst qualifying split 17%. The lexical
 gate — still the authority — reads **48.4%**.
+
+---
+
+## D-032 - The reader audit: measuring what a reader answers, not what a hunter finds
+
+**The number that forced this.** A 10-item human spot-check caught **1 of 5**
+flaws and read one TRUE item as FALSE. The blind audit reports **94%** per
+auditor over the 50 FALSE items. Those two cannot both describe the same
+quantity.
+
+They do not. The existing audit hands the auditor this instruction:
+
+> For each one, answer the question and say whether you can identify a specific
+> reason the evidence fails to establish the claim. Some of these items have
+> nothing wrong with them.
+
+That is a **hunter**. It announces that flaws exist, asks for one, and gives a
+field to write it in. Near-ceiling performance is what it is built to produce.
+Two consequences:
+
+1. `salience` is rated *conditional on having found the flaw*. It measures how
+   explicit a flaw looks to someone already looking at it, which is not how
+   loud it is.
+2. As a covariate the range is nearly empty - the whole 100-item set spans 2.0
+   to 3.0 - so conditioning on it can barely move a coefficient.
+
+**Chose:** a second audit, `src/audit_reader.py`, alongside the first rather
+than replacing it. A reader there sees **exactly `render_prompt(item)`** - the
+same instruction, claim, passage and three options the scored model gets - and
+nothing else. No mention that a flaw might exist, no request for a description,
+no explicitness field, because the scored model has nowhere to put one either.
+The only thing recorded is which of Yes / No / Unsure it picks.
+
+Three independent runs per item, regrouped each run, give a rate rather than a
+bit:
+
+| measure | definition |
+|---|---|
+| `reader_catch_rate` | fraction answering **No** on a FALSE item |
+| `reader_false_positive_rate` | fraction answering **No** on a TRUE item |
+| `abstention_rate` | fraction answering **Unsure** |
+
+Blindness works as in the hunter audit and for the same reasons: opaque codes,
+TRUE items mixed throughout, the key in a separate tree, and **no two items from
+one family in a batch**. The batch builder also refuses to emit a file
+containing a cell name or any of the hunter's cue words, so the reader cannot be
+accidentally told to look.
+
+**`reader_catch_rate` replaces `salience` as the covariate** in `analyze.py`.
+Hunter salience stays in the output, labelled as what it is.
+
+**Reverse:** additive. The hunter audit, its files and its salience column are
+untouched; deleting `results/reader_audit*` restores the previous behaviour.
+
+**Known staleness at the time of writing:** the four `fam_driptape` items were
+reworded (below) after the baseline reader batches were generated, so their
+baseline rates describe the previous wording. They are re-measured in the final
+round; the baseline is used only for triage.
+
+---
+
+## D-033 - Duplicate flaw phrasing: the recurrence found was the control, not a defect
+
+**The instruction.** Items 2, 6 and 10 of the blind review share a 21-word
+identical falsifying sentence; scan all 50 FALSE items and rewrite so that no
+two share flaw phrasing.
+
+**What the scan found.** `src/flaws.py` isolates the falsifying span of each
+FALSE item - first sentence of the mid-passage line for `stated_confound`,
+second for `scope_mismatch`, the case lines for `broken_chronology` - and
+compares all 1225 pairs on normalized edit distance and shared 8-grams:
+
+| | pairs above 0.70 similarity | shared 8-grams |
+|---|---|---|
+| within a family | 30 | many |
+| across families | **1** (0.705) | **0** |
+
+Every one of the 30 within-family pairs is a scope family's
+`coherent_false` / `diverse_false` / `decorative_false` trio. Items 2, 6 and 10
+are exactly that trio for `fam_checkout`.
+
+**That identity is the matched-mechanism endpoint (D-024).** Section 2 of the
+analysis - the number quoted when someone asks whether the coherent-false items
+are simply easier to catch - compares those cells inside the ten scope families
+and holds by making the falsifying sentence *identical* so that nothing but
+coherence differs. Varying the phrasing would put wording back into the one
+endpoint constructed to have nothing in it but coherence.
+
+**Chose:** enforce the rule **across** families, exempt it **within** a family,
+and say so in the gate's own docstring. The single cross-family pair - two
+agricultural families that had both landed on rainfall as their stated confound
+- was real and is fixed: `fam_driptape` now uses a seed-variety confound, which
+drops the worst cross-family similarity to well under the limit.
+
+`no_duplicate_flaw_phrasing` fails the build on either a cross-family pair above
+0.70 similarity or a single shared 8-gram.
+
+**This is a deliberate deviation from the instruction as written** and the
+report says so plainly, because the alternative reading - literally no two items
+share phrasing - would silently cost the confound-controlled endpoint. If that
+trade is wanted anyway, the exemption is one condition in
+`check_duplicate_flaw_phrasing` and the gate is already written to fail without
+it.
+
+**Also changed:** `scripts/assemble_passages.py` cleared `salience` on all 80
+items every run, so rebuilding one family threw away the audit for the other
+nineteen. It now clears salience and the reader rates only on items whose
+passage actually changed. Rewording `fam_driptape` invalidated 4 items instead
+of 80.
