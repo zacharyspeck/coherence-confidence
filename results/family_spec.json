@@ -212,7 +212,7 @@
     "claim": "this timetable change reduces absence",
     "lead": "An attendance log records four cohorts that moved to the revised timetable.",
     "confound_fact_changed": "The attendance reward scheme in each cohort's district tripled its payment that term",
-    "confound_fact_same": "The attendance reward scheme in each cohort's district paid what it had before",
+    "confound_fact_same": "The attendance reward scheme in each cohort's district paid the same rate as before",
     "confound_scope_reach": "and every cohort was on the district roll that scheme covered",
     "confound_scope_block": "and every cohort was on an independent roll that scheme never covered",
     "old_tail": "nothing else about any cohort's term changed.",

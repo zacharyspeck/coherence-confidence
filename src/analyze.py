@@ -39,7 +39,7 @@ from typing import Any, Callable, Iterable, Sequence
 import numpy as np
 
 from . import provenance
-from .models import CELLS
+from .models import CELLS, CORE_CELLS
 
 N_RESAMPLES = 10_000
 ALPHA = 0.05
@@ -414,7 +414,11 @@ class AnovaRow:
 
 
 def two_way_anova(ds: Dataset, which: str = "3way") -> dict[str, Any]:
-    """Coherence x Truth on the item scores.
+    """Coherence x Truth on the item scores, over the FOUR CORE CELLS only.
+
+    The decorative control is a third level of coherence, so including it would
+    make this a 3x2 and change what the "main effect of coherence" means. The
+    control is reported as its own comparison instead (D-030).
 
     Balanced-design formulas, written out rather than pulled from a library, for
     the same auditability reason as the AUC. Reported as a *breakdown*, not as a
@@ -423,34 +427,36 @@ def two_way_anova(ds: Dataset, which: str = "3way") -> dict[str, Any]:
     bootstrap CIs on the effect estimates are the number to trust.
     """
     scores = ds.scores(which)
-    coh = ds.coherence == "coherent"
+    core = np.array([c in CORE_CELLS for c in ds.cells])
+    coh = (ds.coherence == "coherent") & core
+    div = (ds.coherence == "diverse") & core
 
-    cell_ns = {c: ds.idx_by_cell[c].size for c in CELLS}
+    cell_ns = {c: ds.idx_by_cell[c].size for c in CORE_CELLS}
     balanced = len(set(cell_ns.values())) == 1 and all(cell_ns.values())
     n = min(cell_ns.values())
 
-    grand = float(np.mean(scores))
-    means = {c: float(np.mean(scores[ds.idx_by_cell[c]])) for c in CELLS}
+    grand = float(np.mean(scores[core]))
+    means = {c: float(np.mean(scores[ds.idx_by_cell[c]])) for c in CORE_CELLS}
     m_coh = {
         "coherent": float(np.mean(scores[coh])),
-        "diverse": float(np.mean(scores[~coh])),
+        "diverse": float(np.mean(scores[div])),
     }
     m_truth = {
-        True: float(np.mean(scores[ds.truth])),
-        False: float(np.mean(scores[~ds.truth])),
+        True: float(np.mean(scores[ds.truth & core])),
+        False: float(np.mean(scores[~ds.truth & core])),
     }
 
     ss_coh = n * 2 * sum((m - grand) ** 2 for m in m_coh.values())
     ss_truth = n * 2 * sum((m - grand) ** 2 for m in m_truth.values())
     ss_inter = 0.0
-    for c in CELLS:
+    for c in CORE_CELLS:
         ci = "coherent" if c.startswith("coherent") else "diverse"
         ti = c.endswith("_true")
         ss_inter += n * (means[c] - m_coh[ci] - m_truth[ti] + grand) ** 2
     ss_within = float(
         sum(
             float(np.sum((scores[ds.idx_by_cell[c]] - means[c]) ** 2))
-            for c in CELLS
+            for c in CORE_CELLS
         )
     )
 
@@ -502,6 +508,7 @@ def two_way_anova(ds: Dataset, which: str = "3way") -> dict[str, Any]:
             "false": m_truth[False],
         },
         "table": [asdict(r) for r in rows],
+        "scope": "the four core cells only; the decorative control is not in this table",
         "caveat": (
             "F-tests assume independent observations. Items come in families of "
             "4 sharing a scenario, so they are not independent; treat these as a "

@@ -14,7 +14,7 @@ from pathlib import Path
 import pytest
 from conftest import make_family
 
-from src.models import CELLS
+from src.models import CELLS, CORE_CELLS
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -106,7 +106,7 @@ def test_blind_files_contain_no_cell_labels(item_dir, tmp_path):
     blind, _ = build(item_dir, tmp_path / "audit")
     for p in blind.glob("batch_*.md"):
         text = p.read_text(encoding="utf-8")
-        for cell in CELLS:
+        for cell in CORE_CELLS:
             assert cell not in text
 
 

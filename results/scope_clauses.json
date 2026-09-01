@@ -80,7 +80,7 @@
     "scope_population_subset": "Retention figures cover the signups who opened the email",
     "scope_population_whole": "Retention figures cover every signup, email opened or not",
     "scope_completeness_complete": "and every signup in each cohort opened the email",
-    "scope_completeness_incomplete": "and a third of each cohort's signups never opened it",
+    "scope_completeness_incomplete": "and a third of each cohort's signups never opened the email",
     "neutral_closer": "Retention figures were exported to the analytics warehouse in the team's standard reporting schema.",
     "four_combinations_read_ok": true,
     "note_scope_coherent": "The retention figures are tallied over the signups who opened the onboarding email, while the same line records that a third of each cohort's signups never opened it. The claim is about the cohorts that received the email, so the population is every signup in the cohort, not the openers alone. Signups who open an onboarding email are the more engaged part of a cohort and would come back at week two at a higher rate whatever the email said, so the 3 to 6 point lifts recorded on the opener subset are consistent with cohort retention not having moved at all. All four cohorts are starter signups from Norway via webinar inside one March window, so the same third sits outside every case and no case in the log covers it.",
@@ -124,7 +124,7 @@
     "family_type": "scope",
     "scope_population_subset": "Absence figures cover the pupils on the revised timetable throughout",
     "scope_population_whole": "Absence figures cover every pupil in each cohort",
-    "scope_completeness_complete": "and no pupil in any cohort spent time on the old timetable",
+    "scope_completeness_complete": "and the cohorts were on the new timetable for the full term",
     "scope_completeness_incomplete": "and about a fifth of each cohort spent weeks on the old timetable",
     "neutral_closer": "Registers were transcribed weekly into the log file and countersigned by the school office.",
     "note_scope_coherent": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another.",
@@ -132,14 +132,15 @@
     "note_stated_confound": "",
     "four_combinations_read_ok": true,
     "concerns": "Existing confound clauses are clean of causal and hedging language. Two notes on the spec I did not change: (1) the fact clause is distributive (\"in each cohort's district\"), so it reaches four districts as readily as one - coherence is not what makes the reward scheme a live alternative in this family, the scope clause is doing all the reaching, which weakens the intended coherent/diverse asymmetry. (2) \"roll\" appears in both confound scope variants (\"district roll\" / \"independent roll\"), so I deliberately kept \"roll\" out of the population and completeness clauses; \"left part-way through\" cannot then be misread as leaving the scheme's roll.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_tutoring": {
     "family_id": "fam_tutoring",
     "family_type": "scope",
     "scope_population_subset": "Pass rates cover the students who attended every block",
     "scope_population_whole": "Pass rates cover every student in each cohort",
-    "scope_completeness_complete": "and no student in any cohort missed a single block",
+    "scope_completeness_complete": "and each cohort attended the blocks in full",
     "scope_completeness_incomplete": "and about a quarter of each cohort missed at least one block",
     "neutral_closer": "Results were transcribed into the faculty file and countersigned by the examinations office each week.",
     "note_scope_coherent": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. All four cohorts are algebra at Brantwood College in one spring term, so the same attendance restriction applies across the four cases and none of them corrects the others.",
@@ -147,14 +148,15 @@
     "note_stated_confound": "",
     "four_combinations_read_ok": true,
     "concerns": "Existing confound clauses are clean of causal and hedging language. The confound scope clause is cohort-level (\"every cohort sat the board's own paper\") while the completeness clause is student-level (\"about a quarter of each cohort's roll was not entered\"); the two do not contradict, but I used \"entered for the exam\" rather than the more obvious \"sat the paper\" in the population clause so the two levels stay visibly distinct and a reader cannot read a direct clash. \"Pass\" recurs from \"pass mark\" into \"Pass rates\"; that reads as ordinary domain vocabulary rather than an echo, but flagging it since the confound-fact variant turns on the word \"mark\".",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_bearing": {
     "family_id": "fam_bearing",
     "family_type": "confound",
     "scope_population_subset": "Hours cover the positions that ran the redesigned bearing throughout",
     "scope_population_whole": "Hours cover every bearing position on each machine",
-    "scope_completeness_complete": "and no position on any machine had spells on the old bearing",
+    "scope_completeness_complete": "and every position on the machines ran the new bearing throughout",
     "scope_completeness_incomplete": "and about a third of each machine's positions had spells on the old bearing",
     "neutral_closer": "Hour readings were taken from the machine counters and initialled by the shift inspector.",
     "note_scope_coherent": "",
@@ -162,14 +164,15 @@
     "note_stated_confound": "All four machines are lathes at Bexley on the night shift, and one plant-level change covers every case at once. The mid-passage line records that \"The lubricant supply moved from mineral to synthetic grade mid-cycle\" and that \"every machine here drew from that supply\", putting the new grade in the bearings of all four machines. A move from mineral to synthetic lengthens bearing life on its own, and every machine is compared against its own previous cycle - run on the earlier grade - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
     "four_combinations_read_ok": true,
     "concerns": "Existing confound clauses are clean of causal and hedging language, but \"higher-grade synthetic\" carries a quality judgement that does part of the inferential work for the reader; if flaw loudness is being equalised across cells, that adjective is worth measuring. Separately, the population unit had to move from machines to the bearings fitted on each machine: a fraction stated across machines would sit at the same level as the four logged cases and would fight the lead sentence (\"records four machines fitted with the redesigned bearing\"), whereas a within-machine fraction parallels the cohort example cleanly and stays consistent with the four cases shown.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_coolant": {
     "family_id": "fam_coolant",
     "family_type": "confound",
     "scope_population_subset": "Cycle times cover the pieces cut on the new coolant throughout",
     "scope_population_whole": "Cycle times cover every piece cut in each run",
-    "scope_completeness_complete": "and no piece in any run was cut partly on the old coolant",
+    "scope_completeness_complete": "and the whole of each run was cut on the new coolant",
     "scope_completeness_incomplete": "and about a fifth of each run's pieces were cut partly on the old coolant",
     "neutral_closer": "Entries were made in the shop ledger in minutes and initialled by the foreman.",
     "note_scope_coherent": "",
@@ -177,14 +180,15 @@
     "note_stated_confound": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
     "four_combinations_read_ok": true,
     "concerns": "Two notes on clauses I did not rewrite. (1) \"a faster insert grade\" states the effect inside the fact clause itself, which makes the alternative cause markedly more legible than, say, fam_bearing's \"higher-grade synthetic\" or fam_timetable's tripled payment; if the 1.2-point loudness gap is being closed, this phrasing is a likely contributor and a neutral descriptor (a different insert grade, a changed insert grade) would flatten it. (2) \"Every shop refitted its machines\" is pitched at the industry level, so it would reach four different workshops as easily as one - coherence is not what makes the confound live here, the scope clause is. No causal or hedging language in either confound variant. Population units are the pieces cut within each run, since the four runs themselves are the logged cases and a fraction stated across runs would collide with them.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_pricing": {
     "family_id": "fam_pricing",
     "family_type": "scope",
     "scope_population_subset": "Figures cover the orders rung up at the new prices",
     "scope_population_whole": "Figures cover every order on each line, new prices or old",
-    "scope_completeness_complete": "and no order on any line was rung up at the old prices",
+    "scope_completeness_complete": "and the new prices applied to all orders on the lines",
     "scope_completeness_incomplete": "and about a fifth of each line's orders were rung up at the old prices",
     "neutral_closer": "Each entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
     "four_combinations_read_ok": true,
@@ -192,14 +196,15 @@
     "note_scope_diverse": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. The four lines sit at Harlow Street, Pell Basin, Ordway Quay and Tamsin Row across four different months, and the same fifth is left out at each of them, so spreading the cases over stores, categories and months does nothing to close the gap.",
     "note_stated_confound": "",
     "concerns": "No causal or hedging language in the existing confound clauses for this family; 'Premium stock's share of each store's shelf hit a record, double the earlier period' / 'held level, matching the earlier period exactly' and 'every line was stocked straight from that shelf' / 'from a fixed year-round range' are all clean, so nothing to report there. Two integration points for the assembly script, both outside my remit but material to the 1.2-point salience gap the fix targets: (1) the current draft gives coherent_false confound_variant 'changed_reach', a LIVE confound, while diverse_false gets the inert 'same_block'; if that pairing survives, coherent_false carries two independent flaws to diverse_false's one and will read louder all over again, so both FALSE items need an inert confound pairing (same_reach, same_block or changed_block) now that the scope pair carries falsity. (2) diverse_false currently swaps the measured quantity to 'units per order'; that should revert to 'revenue per order' for the same reason, otherwise the scope mechanism is not in fact the sole and identical falsifier. Note also that my population clause deliberately names tills and orders while the confound clause names the shelf and the stocked range, so the two truth-bearing halves of the mid-passage line stay lexically disjoint and neither can be read as a restatement of the other. WHOLE+COMPLETE is vacuous by construction ('every till in each store was a staffed one' after 'whatever till took it'), matching the shape of the worked example; it reads as ordinary log redundancy rather than as a flag. Word budget: the scope sentence plus the neutral closer add roughly 25 words per item against the current drafts, so all four cells should be re-balanced together.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_routing": {
     "family_id": "fam_routing",
     "family_type": "scope",
     "scope_population_subset": "Timings cover the runs that stayed on the issued route",
-    "scope_population_whole": "Timings cover every run dispatched, whatever route it drove",
-    "scope_completeness_complete": "and no run at any depot left the issued route",
+    "scope_population_whole": "Timings cover every run dispatched, whatever route the van drove",
+    "scope_completeness_complete": "and the issued route was followed on all depot runs",
     "scope_completeness_incomplete": "and about a sixth of each depot's runs left the issued route",
     "neutral_closer": "Minutes were rounded to the nearest whole number and countersigned by the duty manager.",
     "four_combinations_read_ok": true,
@@ -207,7 +212,8 @@
     "note_scope_diverse": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth drops out at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
     "note_stated_confound": "",
     "concerns": "No causal or hedging language in this family's confound clauses; 'Order volume through each depot hit a record low, half the earlier period' / 'held level, matching the earlier period exactly' and 'every run carried whatever drop count the depot set' / 'the same drop count as before' are all clean. One wording interaction I steered around deliberately: my first draft narrowed the population to runs that finished their round, which sits badly beside the confound scope clause 'every run carried whatever drop count the depot set' (a run that turned back did not carry the count it was set), so the population axis was moved onto reporting rather than completion of the round and the two clauses no longer touch. Same two integration points as elsewhere: coherent_false currently carries confound_variant 'changed_reach', a live confound, against diverse_false's inert 'same_block', which would reinstate the loudness gap unless both FALSE items get an inert pairing; and diverse_false's measured-quantity swap to 'planned route time' should revert to 'delivery time' so the scope pair is the only falsifier in both conditions. The neutral closer speaks only to rounding and sign-off, and avoids the words log, report and finish so it cannot be mistaken for a gloss on the population clause.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_seedcoat": {
     "family_id": "fam_seedcoat",
@@ -228,7 +234,7 @@
     "family_id": "fam_solder",
     "family_type": "scope",
     "scope_population_subset": "Rates cover the boards soldered on the new profile throughout",
-    "scope_population_whole": "Rates cover every board on each run, whatever profile it took",
+    "scope_population_whole": "Rates cover every board on each run, whatever profile the board took",
     "scope_completeness_complete": "and every board on each run was soldered on the new profile throughout",
     "scope_completeness_incomplete": "and about a tenth of each run's boards took one pass on the old profile",
     "neutral_closer": "Each run's figures were entered on the shift sheet and signed off by the supervisor.",
@@ -244,7 +250,7 @@
     "family_type": "scope",
     "scope_population_subset": "The counts cover the sessions that reached the new page",
     "scope_population_whole": "The counts cover every session in each segment",
-    "scope_completeness_complete": "and no session in any segment dropped out before checkout",
+    "scope_completeness_complete": "and each segment's sessions all reached checkout",
     "scope_completeness_incomplete": "and a quarter of each segment dropped out before checkout",
     "neutral_closer": "The log was exported to the reporting spreadsheet each Monday and signed by an analyst.",
     "four_combinations_read_ok": true,
@@ -252,14 +258,15 @@
     "note_scope_diverse": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. The four segments span four devices, four countries, four months and four traffic sources, and the drop-out clause is stated per segment, so the same three-quarters coverage sits in every case rather than being filled by any of them.",
     "note_stated_confound": "",
     "concerns": "1) Mechanism stacking: this family is family_type scope, so both false cells must now fail on SUBSET+INCOMPLETE alone. The existing diverse_false swaps the measured quantity from 'purchases' to 'cart additions' (scope_mismatch by substitution) and the existing coherent_false leans on the discount (stated_confound). Both need reverting when the new layout is assembled, or the false items carry two flaws each and the matched-mechanism design breaks. 2) Rule 5 flag in a clause I did NOT edit: confound_fact_changed reads 'cutting prices by a fifth against the earlier period'. The participle 'cutting' is causal in force, and confound_fact_same ('matching the earlier period to the nearest cent') has no equivalent causal participle, so the changed variant reads slightly more like an explanation than a log fact. Reported, not edited. 3) Residual salience asymmetry, also not edited: 'a fixed-price contract catalogue' is a more marked, more obviously blocking phrase than 'the general catalogue'; a blind rater will find the block variant easier to spot. 4) I chose the neutral subject 'The counts' over 'Purchase counts' so the population clause still reads correctly whatever the case-level outcome wording ends up being. 5) Word totals for POPULATION+COMPLETENESS: S+I 17, S+C 17, W+I 18, W+C 18. Assigning one TRUE item to S+C and the other to W+I keeps the false cell within half a word of the true mean.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_filter": {
     "family_id": "fam_filter",
     "family_type": "scope",
     "scope_population_subset": "The figures cover the runs with the upgraded filter in service",
     "scope_population_whole": "The figures cover every scheduled run at each stack",
-    "scope_completeness_complete": "and no scheduled run at any stack was made with the filter bypassed",
+    "scope_completeness_complete": "and the filter stayed in service for every scheduled run",
     "scope_completeness_incomplete": "and a quarter of each stack's runs were made with the filter bypassed",
     "neutral_closer": "Entries were transcribed from the analyser tape and countersigned by a shift supervisor.",
     "four_combinations_read_ok": true,
@@ -267,14 +274,15 @@
     "note_scope_diverse": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. The four stacks span four sites, four stack types, four quarters and four technicians, and the bypassed quarter is stated at each stack, so the same gap repeats in every case rather than being closed by any of them.",
     "note_stated_confound": "",
     "concerns": "1) Mechanism stacking: the existing diverse_false swaps the measured quantity from 'particulate' to 'backpressure'. Under the new scope layout that substitution must be reverted so the SUBSET+INCOMPLETE pair is the sole falsifier in both false cells, otherwise diverse_false carries two independent flaws and is louder than coherent_false, which is the exact asymmetry this rewrite is meant to remove. 2) New vocabulary: my WHOLE clause introduces 'the permit limit', a regulatory entity that appears nowhere else in the family. It is neutral and it is what makes WHOLE+INCOMPLETE genuinely sound (missed runs are entered at the worst-case value, so a reported drop still stands), but it is a term the assembly script has not seen before in this family. 3) I checked the four confound clauses I was told not to edit; confound_fact_changed, confound_fact_same, confound_scope_reach and confound_scope_block are all free of causal connectives and of hedging or flagging words, and the two fact variants are the same length. Nothing to report there. 4) I used the neutral subject 'The figures' rather than naming particulate, so the clause survives any change to case-level outcome wording. 5) Word totals for POPULATION+COMPLETENESS: S+I 22, S+C 20, W+I 24, W+C 22. Assigning one TRUE item to S+C and the other to W+I makes the true mean exactly 22, matching the false cell.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_handwash": {
     "family_id": "fam_handwash",
     "family_type": "scope",
     "scope_population_subset": "Rates cover the patients whose whole stay ran under the protocol",
     "scope_population_whole": "Rates cover every patient admitted to each ward",
-    "scope_completeness_complete": "and no patient in any ward had a spell outside the protocol",
+    "scope_completeness_complete": "and each ward's patients were under the protocol start to finish",
     "scope_completeness_incomplete": "and a quarter of each ward's patients had spells outside the protocol",
     "neutral_closer": "Counts were copied into the file and countersigned by a ward sister each month.",
     "four_combinations_read_ok": true,
@@ -282,14 +290,15 @@
     "note_scope_diverse": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. The four entries span four hospitals, four ward types, four quarters and four auditors, and the spells-outside clause applies at each ward, so every case is missing the same quarter of its own population.",
     "note_stated_confound": "",
     "concerns": "1) Mechanism stacking: the existing diverse_false swaps the measured quantity from 'infections' to 'culture requests'. That substitution must be reverted when the new layout is assembled, or diverse_false is false twice over and the matched-mechanism comparison is contaminated. 2) I checked the four confound clauses I was told not to edit. confound_fact_changed, confound_fact_same, confound_scope_reach and confound_scope_block contain no causal connectives and no hedging or flagging words, and the reach and block scope variants are the same length ('cleaned under that contract' against 'cleaned by in-house staff'). This family's confound clauses are the cleanest of the four I was assigned. 3) New vocabulary: 'discharged' and 'transferred out' do not appear elsewhere in the family, but they are ordinary ward-register terms and sit naturally beside the existing 'admission volume and case mix' phrasing in the old_tail. 4) The WHOLE variant leans on 'transfers included' to make WHOLE+INCOMPLETE sound; if a reviewer wants that spelled out further it would need to grow to something like 'transfers followed up and counted', which would push it past the 3-word parity budget against SUBSET. 5) Word totals for POPULATION+COMPLETENESS: S+I 18, S+C 16, W+I 20, W+C 18. Assigning one TRUE item to S+C and the other to W+I makes the true mean exactly 18, matching the false cell.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   },
   "fam_physio": {
     "family_id": "fam_physio",
     "family_type": "scope",
     "scope_population_subset": "Averages cover the patients who kept up the home exercises",
     "scope_population_whole": "Averages cover every patient put on the protocol",
-    "scope_completeness_complete": "and no patient in any intake let the home exercises lapse",
+    "scope_completeness_complete": "and every intake kept the home exercises going",
     "scope_completeness_incomplete": "and a quarter of each intake let the home exercises lapse",
     "neutral_closer": "Measurements were entered in the register by a duty therapist and countersigned by a clerk.",
     "four_combinations_read_ok": true,
@@ -297,6 +306,7 @@
     "note_scope_diverse": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported figures are an average over the patients who were already doing well. The four intakes span four hospitals, four injury types, four seasons and four therapists, and the lapsed quarter applies to each intake, so the same quarter is absent from every case rather than being covered by any of them.",
     "note_stated_confound": "",
     "concerns": "1) Rule 5 and salience flag in clauses I did NOT edit: confound_scope_block reads 'and every intake was medically barred from receiving them' against confound_scope_reach 'and every intake was cleared to receive them'. 'Medically barred' is a markedly heavier phrase than 'cleared to', so the block variant is the louder of the two and a blind rater will notice it first. Reported, not edited. 2) Also not edited: 'cleared to receive them' asserts eligibility, not receipt. The reach variant therefore never states that any intake actually got a corticosteroid injection, which weakens the confound's reach in the cells that use it. 3) Lead-sentence tension, and the reason for my wording choice: the lead says the register records 'four ward intakes that completed the same physiotherapy protocol'. A subset built on course completion ('the patients who finished the course') would read as a direct contradiction of the lead, so I anchored the subset on a post-treatment follow-up clinic instead. Missing a follow-up clinic is compatible with having completed the protocol, and the combinations stay clean. 4) Mechanism stacking: the existing diverse_false swaps 'shoulder abduction ... degrees' for 'shoulder pain scores ... points'. That substitution must be reverted or diverse_false carries two flaws. My clauses use 'last values carried forward' rather than 'last angle carried forward' so the population clause survives either outcome wording. 5) Word totals for POPULATION+COMPLETENESS are 21 in all four combinations, so this family carries no word-count signal at all whichever two combinations the TRUE items draw.",
-    "round": 2
+    "round": 2,
+    "complete_clause_round": 4
   }
 }

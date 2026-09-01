@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.\nEach shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on a machine hired from outside. Cycle times cover the pieces cut on the new coolant throughout, and no piece in any run was cut partly on the old coolant.\nThree: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.\nFour: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
+      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.\nEach shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on a machine hired from outside. Cycle times cover the pieces cut on the new coolant throughout, and the whole of each run was cut on the new coolant.\nThree: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.\nFour: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 184,
+      "word_count": 183,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 183,
+        "n_distinct_tokens": 74,
+        "type_token_ratio": 0.40437,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 12,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_coolant__coherent_false",
@@ -116,10 +125,10 @@
           }
         }
       ],
-      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.\nEach shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.\nThree: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.\nFour: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
+      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.\nEach shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and the whole of each run was cut on the new coolant.\nThree: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.\nFour: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
       "ground_truth": false,
       "confound_note": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
-      "word_count": 181,
+      "word_count": 180,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 180,
+        "n_distinct_tokens": 71,
+        "type_token_ratio": 0.39444,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 12,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_coolant__diverse_true",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 184,
+        "n_distinct_tokens": 92,
+        "type_token_ratio": 0.5,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 23,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_coolant__diverse_false",
@@ -236,10 +263,10 @@
           }
         }
       ],
-      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 May, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.\nEach shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.\nThree: a brass run at Brindle Works on evenings, switched 5 October, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.\nFour: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
+      "passage": "A machine shop log records four job runs that used the same coolant.\nOne: a titanium run at Kestrel Works on nights, switched 4 May, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.\nTwo: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.\nEach shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut in each run, and the whole of each run was cut on the new coolant.\nThree: a brass run at Brindle Works on evenings, switched 5 October, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.\nFour: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.\nEntries were made in the shop ledger in minutes and initialled by the foreman.",
       "ground_truth": false,
       "confound_note": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
-      "word_count": 183,
+      "word_count": 182,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -247,7 +274,16 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 2.5
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 182,
+        "n_distinct_tokens": 92,
+        "type_token_ratio": 0.50549,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 25,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     }
   ]
 }

@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 180,
+        "n_distinct_tokens": 75,
+        "type_token_ratio": 0.41667,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 16,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_filter__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 2.5
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 182,
+        "n_distinct_tokens": 77,
+        "type_token_ratio": 0.42308,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 16,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_filter__diverse_true",
@@ -176,10 +194,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and no scheduled run at any stack was made with the filter bypassed.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.\nTwo: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.\nThroughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and the filter stayed in service for every scheduled run.\nThree: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.\nFour: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 182,
+      "word_count": 179,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 179,
+        "n_distinct_tokens": 92,
+        "type_token_ratio": 0.51397,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 28,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_filter__diverse_false",
@@ -247,7 +274,208 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 182,
+        "n_distinct_tokens": 89,
+        "type_token_ratio": 0.48901,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 28,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
+    },
+    {
+      "id": "fam_filter__decorative_true",
+      "family_id": "fam_filter",
+      "cell": "decorative_true",
+      "claim": "this filter upgrade lowers particulate readings",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte; R-3320, 0916, T7, north.",
+          "conditions": {
+            "site": "Kestrel",
+            "stack_type": "kiln",
+            "quarter": "Q1",
+            "technician": "Duarte"
+          },
+          "decorations": {
+            "log_serial": "R-3320",
+            "clock_time": "0916",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte; R-3321, 1041, T8, south.",
+          "conditions": {
+            "site": "Kestrel",
+            "stack_type": "kiln",
+            "quarter": "Q1",
+            "technician": "Duarte"
+          },
+          "decorations": {
+            "log_serial": "R-3321",
+            "clock_time": "1041",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte; R-3322, 1326, T9, east.",
+          "conditions": {
+            "site": "Kestrel",
+            "stack_type": "kiln",
+            "quarter": "Q1",
+            "technician": "Duarte"
+          },
+          "decorations": {
+            "log_serial": "R-3322",
+            "clock_time": "1326",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte; R-3323, 1551, T10, west.",
+          "conditions": {
+            "site": "Kestrel",
+            "stack_type": "kiln",
+            "quarter": "Q1",
+            "technician": "Duarte"
+          },
+          "decorations": {
+            "log_serial": "R-3323",
+            "clock_time": "1551",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte; R-3320, 0916, T7, north.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte; R-3321, 1041, T8, south.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired on a fixed duty cycle. The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte; R-3322, 1326, T9, east.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte; R-3323, 1551, T10, west.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 196,
+      "flaw_mechanism": null,
+      "confound_variant": "same_block",
+      "scope_variant": "whole_incomplete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 196,
+        "n_distinct_tokens": 93,
+        "type_token_ratio": 0.47449,
+        "n_entity_tokens": 44,
+        "n_distinct_entities": 28,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "manufacturing",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+    },
+    {
+      "id": "fam_filter__decorative_false",
+      "family_id": "fam_filter",
+      "cell": "decorative_false",
+      "claim": "this filter upgrade lowers particulate readings",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte; R-3320, 0916, T7, north.",
+          "conditions": {
+            "site": "Kestrel",
+            "stack_type": "kiln",
+            "quarter": "Q1",
+            "technician": "Duarte"
+          },
+          "decorations": {
+            "log_serial": "R-3320",
+            "clock_time": "0916",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte; R-3321, 1041, T8, south.",
+          "conditions": {
+            "site": "Kestrel",
+            "stack_type": "kiln",
+            "quarter": "Q1",
+            "technician": "Duarte"
+          },
+          "decorations": {
+            "log_serial": "R-3321",
+            "clock_time": "1041",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte; R-3322, 1326, T9, east.",
+          "conditions": {
+            "site": "Kestrel",
+            "stack_type": "kiln",
+            "quarter": "Q1",
+            "technician": "Duarte"
+          },
+          "decorations": {
+            "log_serial": "R-3322",
+            "clock_time": "1326",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte; R-3323, 1551, T10, west.",
+          "conditions": {
+            "site": "Kestrel",
+            "stack_type": "kiln",
+            "quarter": "Q1",
+            "technician": "Duarte"
+          },
+          "decorations": {
+            "log_serial": "R-3323",
+            "clock_time": "1551",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "A maintenance log records four stacks given the same filter upgrade.\nOne: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte; R-3320, 0916, T7, north.\nTwo: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte; R-3321, 1041, T8, south.\nThroughput at each site matched the earlier quarter within a percent, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.\nThree: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte; R-3322, 1326, T9, east.\nFour: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte; R-3323, 1551, T10, west.\nEntries were transcribed from the analyser tape and countersigned by a shift supervisor.",
+      "ground_truth": false,
+      "confound_note": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+      "word_count": 198,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": "subset_incomplete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 198,
+        "n_distinct_tokens": 92,
+        "type_token_ratio": 0.46465,
+        "n_entity_tokens": 44,
+        "n_distinct_entities": 28,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "manufacturing",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
     }
+  ],
+  "decoration_dimensions": [
+    "log_serial",
+    "clock_time",
+    "terminal",
+    "desk"
   ]
 }

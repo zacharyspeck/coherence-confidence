@@ -21,7 +21,7 @@ from __future__ import annotations
 import random
 from typing import Sequence
 
-from .models import CELLS, Case, Family, Item, compute_word_count
+from .models import CORE_CELLS, Case, Family, Item, compute_word_count
 
 REGIONS = ["ashfield", "brentmoor", "calderon", "dunwich", "eastvale", "fenwick"]
 PERIODS = ["january", "february", "march", "april", "august", "november"]
@@ -115,7 +115,7 @@ def make_synthetic_family(index: int, seed: int = 0) -> Family:
         }
 
     items: list[Item] = []
-    for cell in CELLS:
+    for cell in CORE_CELLS:
         vals = vals_by_coherence["coherent" if cell.startswith("coherent") else "diverse"]
 
         cases: list[Case] = []
@@ -145,7 +145,7 @@ def make_synthetic_family(index: int, seed: int = 0) -> Family:
         )
         closer = TAIL
         lead = (
-            f"Log {family_id[4:]}{CELLS.index(cell)} records four observations "
+            f"Log {family_id[4:]}{CORE_CELLS.index(cell)} records four observations "
             f"of {subject} taken after the {change} was introduced."
         )
         passage = "\n".join([lead] + [c.text for c in cases] + [closer])

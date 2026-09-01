@@ -11,7 +11,7 @@ import json
 
 import pytest
 
-from src.models import CELLS, load_items
+from src.models import CORE_CELLS, load_items
 from src.smoke import EXPECTED, expected_auc, expected_false_mean, expected_true_mean
 from src.smoke import run as run_smoke
 from src.synth import DIMENSIONS, make_synthetic_families, make_synthetic_items
@@ -24,7 +24,7 @@ from src.validate import run_checks
 def test_generates_eighty_items_twenty_per_cell():
     items = make_synthetic_items(20)
     assert len(items) == 80
-    for c in CELLS:
+    for c in CORE_CELLS:
         assert sum(1 for i in items if i.cell == c) == 20
 
 

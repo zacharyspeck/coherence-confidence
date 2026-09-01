@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 187,
+        "n_distinct_tokens": 77,
+        "type_token_ratio": 0.41176,
+        "n_entity_tokens": 28,
+        "n_distinct_entities": 14,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_labkit__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 184,
+        "n_distinct_tokens": 74,
+        "type_token_ratio": 0.40217,
+        "n_entity_tokens": 28,
+        "n_distinct_entities": 14,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_labkit__diverse_true",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 185,
+        "n_distinct_tokens": 96,
+        "type_token_ratio": 0.51892,
+        "n_entity_tokens": 28,
+        "n_distinct_entities": 28,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_labkit__diverse_false",
@@ -247,7 +274,16 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 185,
+        "n_distinct_tokens": 94,
+        "type_token_ratio": 0.50811,
+        "n_entity_tokens": 28,
+        "n_distinct_entities": 28,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     }
   ]
 }

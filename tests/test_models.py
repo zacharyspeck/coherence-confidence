@@ -10,6 +10,7 @@ from conftest import DIMS, make_family, make_item
 
 from src.models import (
     CELLS,
+    CORE_CELLS,
     Case,
     Family,
     Item,
@@ -37,7 +38,7 @@ def test_valid_item_builds(item):
 
 
 def test_valid_family_builds(family):
-    assert sorted(i.cell for i in family.items) == sorted(CELLS)
+    assert sorted(i.cell for i in family.items) == sorted(CORE_CELLS)
 
 
 def test_derived_properties(item):
@@ -202,7 +203,7 @@ def test_rejects_unknown_field(item):
 def test_family_rejects_missing_cell(family):
     d = family.model_dump()
     d["items"] = d["items"][:3]
-    with pytest.raises(ValueError, match="exactly the 4 cells"):
+    with pytest.raises(ValueError, match="all 4 cells of the 2x2"):
         Family.model_validate(d)
 
 

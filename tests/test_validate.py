@@ -9,7 +9,7 @@ from __future__ import annotations
 import pytest
 from conftest import DIMS, make_item, make_item_set
 
-from src.models import CELLS, Case, Item, compute_word_count
+from src.models import CORE_CELLS, Case, Item, compute_word_count
 from src.validate import (
     ALL_CHECKS,
     check_cell_balance,
@@ -99,7 +99,7 @@ def build_clean_item(
     # incidental wording every real passage carries. Without it the fixture has no
     # per-item vocabulary at all and even an in-sample fit lands at chance, which
     # would make the grouped-vs-in-sample comparison vacuous.
-    ref = f"ref{k:02d}{CELLS.index(cell)}"
+    ref = f"ref{k:02d}{CORE_CELLS.index(cell)}"
     assign = dict(ASSIGN[scope_family])
     if k % 4 >= 2:  # rotate the TRUE items' scope clauses (D-026)
         ct, dt = assign['coherent_true'], assign['diverse_true']
@@ -144,7 +144,7 @@ def clean_items():
     return [
         build_clean_item(f"fam_c{k:02d}", cell, k, scope_family=(k % 2 == 1))
         for k in range(20)
-        for cell in CELLS
+        for cell in CORE_CELLS
     ]
 
 
@@ -162,7 +162,7 @@ def test_word_counts_fail_when_one_cell_runs_long():
     this gate exists to stop (D-005)."""
     items = []
     for k in range(20):
-        for cell in CELLS:
+        for cell in CORE_CELLS:
             pad = 40 if cell == "coherent_false" else 0
             items.append(make_item(f"fam_w{k:02d}", cell, passage_extra_words=pad))
     r = check_word_counts(items)
@@ -174,7 +174,7 @@ def test_word_counts_fail_when_one_cell_runs_long():
 def test_word_count_tolerance_is_configurable():
     items = []
     for k in range(20):
-        for cell in CELLS:
+        for cell in CORE_CELLS:
             pad = 4 if cell == "diverse_true" else 0
             items.append(make_item(f"fam_t{k:02d}", cell, passage_extra_words=pad))
     assert check_word_counts(items, tolerance=0.001).passed is False
@@ -448,63 +448,68 @@ def test_balanced_passages_pass(clean_items):
     assert r.passed, r.failures
 
 
-def test_neither_family_type_can_reach_perfect_balance(clean_items):
-    """D-026, measured rather than assumed.
-
-    Both types bottom out at 1 and neither reaches 0. For a scope family the
-    reason is structural: its two false items share a mechanism, so the
-    falsifying clause is 2F against at most 1T. For a confound family the
-    residual here is only the per-item unique reference token, which is
-    label-independent by construction. The gate's tolerance is 2 because the real
-    items, whose clause variants carry more incidental word overlap than this
-    fixture's, measure 2."""
-    for label, sel in (("confound", 0), ("scope", 1)):
-        grp = [i for i in clean_items if int(i.family_id[-2:]) % 2 == sel]
-        assert check_passage_word_balance(grp, tolerance=1).passed, label
-        assert not check_passage_word_balance(grp, tolerance=0).passed, label
+def test_global_balance_passes_on_a_clean_set(clean_items):
+    """The gate is global because that is what a family-grouped classifier can
+    exploit: a word leaning TRUE in one family and FALSE in another cancels."""
+    r = check_passage_word_balance(clean_items)
+    assert r.passed, r.failures
+    assert r.data["n_flagged"] == 0
 
 
-def test_gate_catches_a_word_planted_on_one_side():
-    """The failure mode this exists for: a word that only ever appears in FALSE
-    items. That is what a lexical giveaway looks like at the family level."""
+def test_a_word_planted_on_one_side_across_families_is_caught():
+    """The failure this gate exists for: a word that leans the same way in
+    family after family, which is exactly what crosses a fold boundary."""
     items = []
-    for cell in CELLS:
-        it = build_clean_item("fam_q0", cell, 0)
-        if not it.ground_truth:
-            d = it.model_dump()
-            d["passage"] = it.passage + " Contaminant contaminant contaminant."
-            d["word_count"] = compute_word_count(d["passage"])
-            it = Item.model_validate(d)
-        items.append(it)
+    # Mixed family types, as the real set has: an all-confound set would make the
+    # scope clauses lopsided on their own and mask what the test is checking.
+    for k in range(20):
+        for cell in CORE_CELLS:
+            it = build_clean_item(f"fam_q{k:02d}", cell, k, scope_family=(k % 2 == 1))
+            if not it.ground_truth:
+                d = it.model_dump()
+                d["passage"] = it.passage + " Contaminant contaminant contaminant."
+                d["word_count"] = compute_word_count(d["passage"])
+                it = Item.model_validate(d)
+            items.append(it)
     r = check_passage_word_balance(items)
     assert not r.passed
-    assert "fam_q0" in r.failures[0]
-    assert "contaminant" in r.failures[0]
-    assert "T/" in r.failures[0] and "F" in r.failures[0]
+    assert any("contaminant" in f for f in r.failures)
+    assert r.data["flagged"][0]["word"] == "contaminant"
 
 
-def test_balance_is_checked_per_family_not_across_the_set():
-    """Two families whose imbalances cancel globally must still both fail."""
-    a = [build_clean_item("fam_p0", c, 0) for c in CELLS]
-    b = [build_clean_item("fam_p1", c, 1) for c in CELLS]
-
-    def bend(items, cell, extra):
-        out = []
-        for it in items:
-            if it.cell == cell:
+def test_a_word_confined_to_one_family_is_not_flagged():
+    """It cannot be learned across a grouped fold no matter how lopsided: the
+    classifier either has that family in training and never at test, or vice
+    versa."""
+    items = []
+    for k in range(20):
+        for cell in CORE_CELLS:
+            it = build_clean_item(f"fam_r{k:02d}", cell, k, scope_family=(k % 2 == 1))
+            if k == 0 and not it.ground_truth:
                 d = it.model_dump()
-                d["passage"] = it.passage + " " + extra
+                d["passage"] = it.passage + " Zygote zygote zygote zygote zygote."
                 d["word_count"] = compute_word_count(d["passage"])
-                out.append(Item.model_validate(d))
-            else:
-                out.append(it)
-        return out
+                it = Item.model_validate(d)
+            items.append(it)
+    r = check_passage_word_balance(items)
+    assert r.passed, r.failures
 
-    a = bend(a, "coherent_true", "Marker marker marker marker.")
-    b = bend(b, "coherent_false", "Marker marker marker marker.")
-    r = check_passage_word_balance(a + b)
-    assert not r.passed
-    assert len(r.failures) == 2
+
+def test_high_frequency_drift_is_not_flagged(clean_items):
+    """'the' differing by a few counts because one passage runs longer is length
+    drift, not signal. The relative test is what keeps it out."""
+    r = check_passage_word_balance(clean_items)
+    flagged = {f["word"] for f in r.data["flagged"]}
+    assert "the" not in flagged
+    assert "and" not in flagged
+
+
+def test_thresholds_are_reported(clean_items):
+    d = check_passage_word_balance(clean_items).data
+    assert d["abs_tolerance"] >= 1
+    assert 0 < d["ratio_tolerance"] < 1
+    assert d["min_families"] >= 2
+    assert "worst_ratio_by_family" in d
 
 
 # ---- flaw declarations -----------------------------------------------------

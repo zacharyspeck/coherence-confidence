@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 181,
+        "n_distinct_tokens": 73,
+        "type_token_ratio": 0.40331,
+        "n_entity_tokens": 36,
+        "n_distinct_entities": 13,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_sleepapp__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 178,
+        "n_distinct_tokens": 73,
+        "type_token_ratio": 0.41011,
+        "n_entity_tokens": 36,
+        "n_distinct_entities": 13,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_sleepapp__diverse_true",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 179,
+        "n_distinct_tokens": 92,
+        "type_token_ratio": 0.51397,
+        "n_entity_tokens": 36,
+        "n_distinct_entities": 29,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_sleepapp__diverse_false",
@@ -247,7 +274,16 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 2.5
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 179,
+        "n_distinct_tokens": 91,
+        "type_token_ratio": 0.50838,
+        "n_entity_tokens": 36,
+        "n_distinct_entities": 31,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     }
   ]
 }

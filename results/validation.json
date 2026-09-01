@@ -1,8 +1,8 @@
 {
   "kind": "validation",
   "meta": {
-    "timestamp_utc": "2026-08-31T17:56:33+00:00",
-    "code_git_sha": "35e68ea421812d1189bb04b1279ee2f275957767",
+    "timestamp_utc": "2026-09-01T03:18:35+00:00",
+    "code_git_sha": "b5f4ac538c779111f5ec4a539c44576bf46af898",
     "code_git_dirty": true,
     "environment": {
       "python": "3.13.14",
@@ -19,7 +19,7 @@
       "items/draft",
       "items/seed"
     ],
-    "n_items": 80,
+    "n_items": 100,
     "tolerance": 0.1,
     "lexical_threshold": 0.6,
     "lexical_cv": "grouped"
@@ -29,41 +29,55 @@
     {
       "name": "word_count_parity",
       "passed": true,
-      "summary": "grand mean 177.9 words; largest cell deviation +0.05% (limit +/-10%)",
+      "summary": "grand mean 180.9 words; largest cell deviation +7.61% (limit +/-10%)",
       "required_by_brief": true,
       "n_failures": 0,
       "failures": [],
       "data": {
-        "grand_mean": 177.863,
+        "grand_mean": 180.94,
         "tolerance": 0.1,
         "by_cell": {
           "coherent_true": {
             "n": 20,
-            "mean": 177.85,
+            "mean": 177.7,
             "min": 165,
             "max": 187,
-            "deviation_from_grand": -7e-05
+            "deviation_from_grand": -0.01791
           },
           "coherent_false": {
             "n": 20,
-            "mean": 177.8,
+            "mean": 177.7,
             "min": 165,
             "max": 184,
-            "deviation_from_grand": -0.00035
+            "deviation_from_grand": -0.01791
           },
           "diverse_true": {
             "n": 20,
-            "mean": 177.95,
+            "mean": 177.5,
             "min": 169,
             "max": 185,
-            "deviation_from_grand": 0.00049
+            "deviation_from_grand": -0.01901
           },
           "diverse_false": {
             "n": 20,
-            "mean": 177.85,
+            "mean": 177.8,
             "min": 166,
             "max": 185,
-            "deviation_from_grand": -7e-05
+            "deviation_from_grand": -0.01735
+          },
+          "decorative_true": {
+            "n": 10,
+            "mean": 193.3,
+            "min": 184,
+            "max": 199,
+            "deviation_from_grand": 0.06831
+          },
+          "decorative_false": {
+            "n": 10,
+            "mean": 194.7,
+            "min": 187,
+            "max": 199,
+            "deviation_from_grand": 0.07605
           }
         }
       }
@@ -71,12 +85,12 @@
     {
       "name": "coherent_one_value_per_dimension",
       "passed": true,
-      "summary": "40 coherent items checked across their dimensions",
+      "summary": "60 coherent + decorative items checked across their condition dimensions",
       "required_by_brief": true,
       "n_failures": 0,
       "failures": [],
       "data": {
-        "n_checked": 40
+        "n_checked": 60
       }
     },
     {
@@ -93,235 +107,235 @@
     {
       "name": "no_lexical_giveaway",
       "passed": true,
-      "summary": "grouped 5-fold CV accuracy 51.0% (mean of 5 shufflings; max 55.0%; 0/5 over limit) (limit 60%, chance 50%)",
+      "summary": "grouped 5-fold CV accuracy 48.4% (mean of 5 shufflings; max 49.7%; 0/5 over limit) (limit 60%, chance 50%)",
       "required_by_brief": true,
       "n_failures": 0,
       "failures": [],
       "data": {
         "cv": "grouped",
-        "accuracy": 0.51,
-        "accuracy_max": 0.55,
+        "accuracy": 0.4844,
+        "accuracy_max": 0.4966,
         "accuracy_per_seed": [
-          0.4875,
-          0.525,
-          0.4875,
-          0.55,
-          0.5
+          0.488,
+          0.4841,
+          0.4634,
+          0.49,
+          0.4966
         ],
         "n_seeds": 5,
         "n_seeds_over_threshold": 0,
         "fold_accuracies_last_seed": [
           0.5,
-          0.4375,
           0.5,
+          0.5455,
           0.5,
-          0.5625
+          0.4375
         ],
         "threshold": 0.6,
-        "n_features": 3288,
-        "n_items": 80,
+        "n_features": 3534,
+        "n_items": 100,
         "top_tokens_predicting_TRUE": [
           {
-            "token": "any",
-            "coef": 0.6188
-          },
-          {
-            "token": "and no",
-            "coef": 0.6188
-          },
-          {
-            "token": "session",
-            "coef": 0.4861
-          },
-          {
-            "token": "no",
-            "coef": 0.4779
-          },
-          {
-            "token": "in any",
-            "coef": 0.4704
-          },
-          {
-            "token": "pieces",
-            "coef": 0.4497
-          },
-          {
-            "token": "who",
-            "coef": 0.4152
+            "token": "and each",
+            "coef": 0.5291
           },
           {
             "token": "board",
-            "coef": 0.3539
+            "coef": 0.5258
           },
           {
-            "token": "missed",
-            "coef": 0.3529
+            "token": "to",
+            "coef": 0.4787
           },
           {
-            "token": "positions",
-            "coef": 0.3378
+            "token": "pieces",
+            "coef": 0.4111
           },
           {
-            "token": "tray",
-            "coef": 0.3337
-          },
-          {
-            "token": "every tray",
-            "coef": 0.3337
-          },
-          {
-            "token": "pupil in",
-            "coef": 0.3285
-          },
-          {
-            "token": "it",
-            "coef": 0.3239
-          },
-          {
-            "token": "board on",
-            "coef": 0.3117
-          },
-          {
-            "token": "every board",
-            "coef": 0.3117
-          },
-          {
-            "token": "session and",
-            "coef": 0.3092
-          },
-          {
-            "token": "session in",
-            "coef": 0.2996
-          },
-          {
-            "token": "any cohort",
-            "coef": 0.2995
-          },
-          {
-            "token": "no patient",
-            "coef": 0.2837
-          },
-          {
-            "token": "patient",
-            "coef": 0.2772
-          },
-          {
-            "token": "may than",
-            "coef": 0.2714
+            "token": "for",
+            "coef": 0.3954
           },
           {
             "token": "whatever",
-            "coef": 0.2671
+            "coef": 0.385
+          },
+          {
+            "token": "session",
+            "coef": 0.3722
+          },
+          {
+            "token": "tray",
+            "coef": 0.3623
+          },
+          {
+            "token": "every tray",
+            "coef": 0.3623
+          },
+          {
+            "token": "session and",
+            "coef": 0.3545
+          },
+          {
+            "token": "cohort and",
+            "coef": 0.3534
+          },
+          {
+            "token": "every board",
+            "coef": 0.323
+          },
+          {
+            "token": "board on",
+            "coef": 0.323
+          },
+          {
+            "token": "and the",
+            "coef": 0.3096
+          },
+          {
+            "token": "for the",
+            "coef": 0.303
+          },
+          {
+            "token": "run",
+            "coef": 0.303
+          },
+          {
+            "token": "positions",
+            "coef": 0.2959
+          },
+          {
+            "token": "full",
+            "coef": 0.2854
+          },
+          {
+            "token": "hectares",
+            "coef": 0.2744
+          },
+          {
+            "token": "may than",
+            "coef": 0.2723
           },
           {
             "token": "signups",
-            "coef": 0.2647
+            "coef": 0.2717
           },
           {
-            "token": "run at",
-            "coef": 0.26
+            "token": "scheduled",
+            "coef": 0.2705
+          },
+          {
+            "token": "scheduled run",
+            "coef": 0.2705
+          },
+          {
+            "token": "every scheduled",
+            "coef": 0.2705
+          },
+          {
+            "token": "missed",
+            "coef": 0.2641
           }
         ],
         "top_tokens_predicting_FALSE": [
           {
             "token": "every",
-            "coef": -0.6697
-          },
-          {
-            "token": "the",
-            "coef": -0.5761
+            "coef": -0.6121
           },
           {
             "token": "and every",
-            "coef": -0.4792
-          },
-          {
-            "token": "piece",
-            "coef": -0.4759
-          },
-          {
-            "token": "runs",
-            "coef": -0.3881
-          },
-          {
-            "token": "may ran",
-            "coef": -0.3728
-          },
-          {
-            "token": "and quarter",
-            "coef": -0.3669
-          },
-          {
-            "token": "trays",
-            "coef": -0.3358
-          },
-          {
-            "token": "position",
-            "coef": -0.3336
-          },
-          {
-            "token": "position on",
-            "coef": -0.3336
+            "coef": -0.5448
           },
           {
             "token": "up",
-            "coef": -0.3202
+            "coef": -0.4871
           },
           {
-            "token": "pupil on",
-            "coef": -0.3044
+            "token": "and quarter",
+            "coef": -0.4767
           },
           {
-            "token": "given",
-            "coef": -0.299
-          },
-          {
-            "token": "given the",
-            "coef": -0.299
-          },
-          {
-            "token": "in each",
-            "coef": -0.2969
+            "token": "block",
+            "coef": -0.4486
           },
           {
             "token": "and about",
-            "coef": -0.2943
+            "coef": -0.4361
           },
           {
-            "token": "enrolled user",
-            "coef": -0.292
+            "token": "runs",
+            "coef": -0.3813
           },
           {
-            "token": "user in",
-            "coef": -0.292
+            "token": "trays",
+            "coef": -0.3661
           },
           {
-            "token": "every enrolled",
-            "coef": -0.292
+            "token": "of each",
+            "coef": -0.3568
           },
           {
-            "token": "user",
-            "coef": -0.292
+            "token": "pupil on",
+            "coef": -0.3565
+          },
+          {
+            "token": "that",
+            "coef": -0.3557
+          },
+          {
+            "token": "block and",
+            "coef": -0.3554
+          },
+          {
+            "token": "students who",
+            "coef": -0.3554
+          },
+          {
+            "token": "about fifth",
+            "coef": -0.3529
+          },
+          {
+            "token": "every block",
+            "coef": -0.3475
+          },
+          {
+            "token": "the runs",
+            "coef": -0.3447
+          },
+          {
+            "token": "with",
+            "coef": -0.3441
+          },
+          {
+            "token": "given the",
+            "coef": -0.3266
+          },
+          {
+            "token": "given",
+            "coef": -0.3266
+          },
+          {
+            "token": "with the",
+            "coef": -0.3248
+          },
+          {
+            "token": "attended every",
+            "coef": -0.3225
           },
           {
             "token": "boards",
-            "coef": -0.286
+            "coef": -0.3222
           },
           {
-            "token": "october",
-            "coef": -0.279
+            "token": "user in",
+            "coef": -0.3172
           },
           {
-            "token": "orders",
-            "coef": -0.2747
+            "token": "user",
+            "coef": -0.3172
           },
           {
-            "token": "was cut",
-            "coef": -0.2597
-          },
-          {
-            "token": "march than",
-            "coef": -0.2552
+            "token": "every enrolled",
+            "coef": -0.3172
           }
         ],
         "permutation_test": null,
@@ -331,7 +345,7 @@
     {
       "name": "cell_balance",
       "passed": true,
-      "summary": "80 items, 20 families, per-cell {'coherent_false': 20, 'coherent_true': 20, 'diverse_false': 20, 'diverse_true': 20}",
+      "summary": "100 items, 20 families (10 with a control arm), per-cell {'coherent_false': 20, 'coherent_true': 20, 'diverse_false': 20, 'diverse_true': 20, 'decorative_false': 10, 'decorative_true': 10}",
       "required_by_brief": false,
       "n_failures": 0,
       "failures": [],
@@ -340,27 +354,30 @@
           "coherent_false": 20,
           "coherent_true": 20,
           "diverse_false": 20,
-          "diverse_true": 20
+          "diverse_true": 20,
+          "decorative_false": 10,
+          "decorative_true": 10
         },
-        "n_families": 20
+        "n_families": 20,
+        "n_control_families": 10
       }
     },
     {
       "name": "no_duplicate_passages",
       "passed": true,
-      "summary": "80 distinct passages across 80 items",
+      "summary": "100 distinct passages across 100 items",
       "required_by_brief": false,
       "n_failures": 0,
       "failures": [],
       "data": {
-        "n_distinct": 80,
+        "n_distinct": 100,
         "n_duplicate_groups": 0
       }
     },
     {
       "name": "no_answer_key_leakage",
       "passed": true,
-      "summary": "80 passages scanned for answer-key leakage",
+      "summary": "100 passages scanned for answer-key leakage",
       "required_by_brief": false,
       "n_failures": 0,
       "failures": [],
@@ -369,40 +386,44 @@
     {
       "name": "passage_word_balance",
       "passed": true,
-      "summary": "20 families; worst per-word TRUE/FALSE imbalance = 2 (limit 2; 1 is the floor when both false items share a mechanism, D-026)",
+      "summary": "986 distinct words; flagged when |T-F| > 4, the split exceeds 40%, and the word spans >= 3 families. 0 flagged; worst qualifying split 17%",
       "required_by_brief": false,
       "n_failures": 0,
       "failures": [],
       "data": {
-        "tolerance": 2,
-        "imbalance_by_family": {
-          "fam_bearing": 2,
-          "fam_checkout": 2,
-          "fam_coolant": 2,
-          "fam_driptape": 2,
-          "fam_fertilizer": 2,
-          "fam_filter": 2,
-          "fam_handwash": 2,
-          "fam_inhaler": 2,
-          "fam_labkit": 2,
-          "fam_nestbox": 2,
-          "fam_onboarding": 2,
-          "fam_physio": 2,
-          "fam_pricing": 2,
-          "fam_reading": 2,
-          "fam_routing": 2,
-          "fam_seedcoat": 2,
-          "fam_sleepapp": 2,
-          "fam_solder": 2,
-          "fam_timetable": 2,
-          "fam_tutoring": 2
+        "abs_tolerance": 4,
+        "ratio_tolerance": 0.4,
+        "min_families": 3,
+        "n_flagged": 0,
+        "flagged": [],
+        "worst_ratio_by_family": {
+          "fam_bearing": 0.0,
+          "fam_checkout": 0.0,
+          "fam_coolant": 0.0,
+          "fam_driptape": 0.0,
+          "fam_fertilizer": 0.0,
+          "fam_filter": 0.0,
+          "fam_handwash": 0.0,
+          "fam_inhaler": 0.0,
+          "fam_labkit": 0.0,
+          "fam_nestbox": 0.0,
+          "fam_onboarding": 0.0,
+          "fam_physio": 0.0,
+          "fam_pricing": 0.0,
+          "fam_reading": 0.0,
+          "fam_routing": 0.0,
+          "fam_seedcoat": 0.0,
+          "fam_sleepapp": 0.0,
+          "fam_solder": 1.0,
+          "fam_timetable": 0.0,
+          "fam_tutoring": 0.0
         }
       }
     },
     {
       "name": "flaw_declarations_complete",
       "passed": true,
-      "summary": "40 FALSE items checked",
+      "summary": "50 FALSE items checked",
       "required_by_brief": false,
       "n_failures": 0,
       "failures": [],
@@ -424,14 +445,44 @@
           "diverse_false": {
             "broken_chronology": 10,
             "scope_mismatch": 10
+          },
+          "decorative_false": {
+            "scope_mismatch": 10
           }
+        }
+      }
+    },
+    {
+      "name": "control_surface_match",
+      "passed": true,
+      "summary": "20 decorative items; largest surface gap vs diverse +3.3% (limit +/-10%); condition values 4.0 vs coherent 4.0, diverse 16.0",
+      "required_by_brief": false,
+      "n_failures": 0,
+      "failures": [],
+      "data": {
+        "n_distinct_tokens": {
+          "decorative": 95.1,
+          "diverse": 94.925,
+          "coherent": 76.95,
+          "decorative_vs_diverse": 0.00184
+        },
+        "n_distinct_entities": {
+          "decorative": 25.2,
+          "diverse": 26.05,
+          "coherent": 13.7,
+          "decorative_vs_diverse": -0.03263
+        },
+        "n_distinct_condition_values": {
+          "decorative": 4.0,
+          "diverse": 16.0,
+          "coherent": 4.0
         }
       }
     },
     {
       "name": "all_items_unreviewed",
       "passed": true,
-      "summary": "80/80 items are 'unreviewed'",
+      "summary": "100/100 items are 'unreviewed'",
       "required_by_brief": false,
       "n_failures": 0,
       "failures": [],

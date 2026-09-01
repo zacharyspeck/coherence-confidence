@@ -17,7 +17,23 @@ from typing import Iterable, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-Cell = Literal["coherent_true", "coherent_false", "diverse_true", "diverse_false"]
+#: The 2x2 plus the surface-complexity control (D-030).
+#:
+#: `decorative_*` cells carry as many distinct entities as a diverse item - four
+#: operators, four serial numbers, four clock times, four ticket ids - while
+#: holding every dimension that bears on the claim IDENTICAL across the four
+#: cases, exactly as a coherent item does. Surface busyness matches diverse;
+#: evidential structure matches coherent. Whichever of those two the model's
+#: confidence follows is the answer to "is the effect about evidential
+#: independence, or about how much there is to parse?"
+Cell = Literal[
+    "coherent_true",
+    "coherent_false",
+    "diverse_true",
+    "diverse_false",
+    "decorative_true",
+    "decorative_false",
+]
 
 #: HOW a false item is false. This is orthogonal to coherence on purpose (D-024):
 #: `scope_mismatch` appears in BOTH false cells, which is what makes a
@@ -53,15 +69,27 @@ ReviewStatus = Literal["unreviewed", "reviewed", "rejected"]
 LIVE_CONFOUND: str = "changed_reach"
 LIVE_SCOPE: str = "subset_incomplete"
 
-CELLS: tuple[Cell, ...] = (
+#: The four cells of the 2x2. The primary endpoint and the ANOVA use only these.
+CORE_CELLS: tuple[Cell, ...] = (
     "coherent_true",
     "coherent_false",
     "diverse_true",
     "diverse_false",
 )
 
+#: The control arm. Present in the 10 scope_mismatch families only, so it is
+#: directly comparable to the matched subset.
+CONTROL_CELLS: tuple[Cell, ...] = ("decorative_true", "decorative_false")
+
+#: Every cell that can exist. Per-cell reporting iterates this; the 2x2 does not.
+CELLS: tuple[Cell, ...] = CORE_CELLS + CONTROL_CELLS
+
+COHERENCE_LEVELS: tuple[str, ...] = ("coherent", "diverse", "decorative")
+
 N_CASES = 4
 N_DIMENSIONS = 4
+#: Decoration dimensions per case, for items that carry them.
+N_DECORATIONS = 4
 
 _WS = re.compile(r"\s+")
 
@@ -76,8 +104,13 @@ def compute_word_count(passage: str) -> int:
     return len(normalize_ws(passage).split())
 
 
-def coherence_of(cell: str) -> Literal["coherent", "diverse"]:
-    return "coherent" if cell.startswith("coherent") else "diverse"
+def coherence_of(cell: str) -> Literal["coherent", "diverse", "decorative"]:
+    return cell.rsplit("_", 1)[0]  # type: ignore[return-value]
+
+
+def is_core(cell: str) -> bool:
+    """True for the four cells of the 2x2, false for the control arm."""
+    return cell in CORE_CELLS
 
 
 def truth_of(cell: str) -> bool:
@@ -91,22 +124,45 @@ class Case(BaseModel):
 
     case_id: str = Field(pattern=r"^c[1-4]$")
     text: str = Field(min_length=10)
+
+    #: Dimensions whose VARIATION makes the evidence more independent - region,
+    #: season, device, population. Varying these is the diverse manipulation.
     conditions: dict[str, str]
+
+    #: Dimensions whose variation is pure surface: who logged it, which serial
+    #: number, what time of day, which ticket. Varying these adds entities to
+    #: track and adds nothing evidential. Empty except in decorative items (D-030).
+    decorations: dict[str, str] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def _check_conditions(self) -> "Case":
-        if len(self.conditions) != N_DIMENSIONS:
-            raise ValueError(
-                f"case {self.case_id}: expected exactly {N_DIMENSIONS} condition "
-                f"dimensions, got {len(self.conditions)}: {sorted(self.conditions)}"
-            )
-        for k, v in self.conditions.items():
-            if not k or not k.strip():
-                raise ValueError(f"case {self.case_id}: empty condition dimension name")
-            if not v or not v.strip():
+        for name, d, n in (
+            ("condition", self.conditions, N_DIMENSIONS),
+            ("decoration", self.decorations, N_DECORATIONS),
+        ):
+            if name == "decoration" and not d:
+                continue  # decorations are optional; conditions are not
+            if len(d) != n:
                 raise ValueError(
-                    f"case {self.case_id}: condition '{k}' has an empty value"
+                    f"case {self.case_id}: expected exactly {n} {name} dimensions, "
+                    f"got {len(d)}: {sorted(d)}"
                 )
+            for k, v in d.items():
+                if not k or not k.strip():
+                    raise ValueError(
+                        f"case {self.case_id}: empty {name} dimension name"
+                    )
+                if not v or not v.strip():
+                    raise ValueError(
+                        f"case {self.case_id}: {name} '{k}' has an empty value"
+                    )
+        overlap = set(self.conditions) & set(self.decorations)
+        if overlap:
+            raise ValueError(
+                f"case {self.case_id}: {sorted(overlap)} is declared as both a "
+                "condition and a decoration. The whole point of the control is "
+                "that those two are different kinds of thing."
+            )
         return self
 
 
@@ -129,6 +185,9 @@ class Item(BaseModel):
     confound_variant: ConfoundVariant | None = None
     scope_variant: ScopeVariant | None = None
     salience: float | None = None
+    #: Recomputed and checked at load, exactly like word_count - it is a pure
+    #: function of the passage, so a stale value means a stale edit (D-030).
+    surface_complexity: dict[str, float] | None = None
     domain: str = "unspecified"
     review_status: ReviewStatus = "unreviewed"
     source: Literal["hand", "generated"] = "generated"
@@ -137,15 +196,27 @@ class Item(BaseModel):
     # ---- derived -----------------------------------------------------------
 
     @property
-    def coherence(self) -> Literal["coherent", "diverse"]:
+    def coherence(self) -> Literal["coherent", "diverse", "decorative"]:
         return coherence_of(self.cell)
+
+    @property
+    def is_core(self) -> bool:
+        """In the 2x2, as opposed to the surface-complexity control arm."""
+        return is_core(self.cell)
 
     @property
     def dimensions(self) -> list[str]:
         return sorted(self.cases[0].conditions)
 
+    @property
+    def decoration_dimensions(self) -> list[str]:
+        return sorted(self.cases[0].decorations)
+
     def distinct_values(self, dimension: str) -> set[str]:
         return {c.conditions[dimension] for c in self.cases}
+
+    def distinct_decoration_values(self, dimension: str) -> set[str]:
+        return {c.decorations[dimension] for c in self.cases}
 
     # ---- validation --------------------------------------------------------
 
@@ -175,6 +246,48 @@ class Item(BaseModel):
                 errs.append(
                     "all 4 cases must carry identical condition dimension keys; got "
                     + " | ".join(sorted(",".join(sorted(d)) for d in set(dim_sets)))
+                )
+
+            dec_sets = [frozenset(c.decorations) for c in self.cases]
+            if len(set(dec_sets)) != 1:
+                errs.append(
+                    "all 4 cases must carry identical decoration dimension keys; got "
+                    + " | ".join(sorted(",".join(sorted(d)) for d in set(dec_sets)))
+                )
+
+            # Decorations exist to make ONE cell surface-busy without making it
+            # evidentially diverse. If any other cell carried them, the control
+            # would not isolate anything (D-030).
+            has_dec = any(c.decorations for c in self.cases)
+            if self.coherence == "decorative":
+                if not has_dec:
+                    errs.append(
+                        "a decorative item must carry decoration dimensions; that "
+                        "is the entire manipulation"
+                    )
+                else:
+                    for dim in self.decoration_dimensions:
+                        n = len(self.distinct_decoration_values(dim))
+                        if n != N_CASES:
+                            errs.append(
+                                f"decorative item has {n} distinct values on "
+                                f"decoration '{dim}'; must be {N_CASES}, or the "
+                                "surface variety does not match a diverse item"
+                            )
+                    for dim in self.dimensions:
+                        n = len(self.distinct_values(dim))
+                        if n != 1:
+                            errs.append(
+                                f"decorative item has {n} distinct values on "
+                                f"CONDITION '{dim}'; must be exactly 1. Conditions "
+                                "bear on the claim, so varying them would make this "
+                                "a diverse item wearing a decorative label"
+                            )
+            elif has_dec:
+                errs.append(
+                    f"{self.cell} carries decorations; only decorative_* cells may. "
+                    "Decorating another cell destroys the contrast the control "
+                    "exists to draw"
                 )
 
         # confound_note / flaw_mechanism must agree with ground_truth.
@@ -251,6 +364,23 @@ class Item(BaseModel):
                     f"{c.text[:60]!r}"
                 )
 
+        if self.surface_complexity is not None:
+            from .complexity import for_item
+
+            want = for_item(self)
+            drift = {
+                k: (self.surface_complexity.get(k), v)
+                for k, v in want.items()
+                if abs(float(self.surface_complexity.get(k, -1)) - float(v)) > 1e-6
+            }
+            if drift:
+                errs.append(
+                    "surface_complexity is stale: "
+                    + ", ".join(f"{k} stored {a} but passage gives {b}"
+                                for k, (a, b) in sorted(drift.items()))
+                    + " (fix with scripts/apply_complexity.py)"
+                )
+
         actual_wc = compute_word_count(self.passage)
         if self.word_count != actual_wc:
             errs.append(
@@ -273,7 +403,12 @@ class Item(BaseModel):
 
 
 class Family(BaseModel):
-    """The 4 items of one family, as stored in a single JSON file (D-013)."""
+    """One family per JSON file (D-013).
+
+    Always the 4 cells of the 2x2. The 10 scope_mismatch families additionally
+    carry the 2 decorative cells, so the surface-complexity control is drawn from
+    the same scenarios and claims as the matched-mechanism subset (D-030).
+    """
 
     model_config = ConfigDict(extra="forbid")
 
@@ -281,15 +416,50 @@ class Family(BaseModel):
     domain: str
     claim: str
     dimensions: list[str]
+    decoration_dimensions: list[str] = Field(default_factory=list)
     items: list[Item]
+
+    @property
+    def has_control_arm(self) -> bool:
+        return any(i.cell in CONTROL_CELLS for i in self.items)
 
     @model_validator(mode="after")
     def _check_family(self) -> "Family":
         errs: list[str] = []
 
-        cells = [i.cell for i in self.items]
-        if sorted(cells) != sorted(CELLS):
-            errs.append(f"family must contain exactly the 4 cells, got {cells}")
+        cells = sorted(i.cell for i in self.items)
+        core = sorted(c for c in cells if c in CORE_CELLS)
+        control = sorted(c for c in cells if c in CONTROL_CELLS)
+        if core != sorted(CORE_CELLS):
+            errs.append(f"family must contain all 4 cells of the 2x2, got {cells}")
+        if control and control != sorted(CONTROL_CELLS):
+            errs.append(
+                f"the control arm must be both decorative cells or neither, got "
+                f"{control}. One alone gives nothing to compare"
+            )
+        if len(cells) != len(set(cells)):
+            errs.append(f"duplicate cells in family: {cells}")
+
+        if control:
+            if len(set(self.decoration_dimensions)) != N_DECORATIONS:
+                errs.append(
+                    f"a family with a control arm must declare exactly "
+                    f"{N_DECORATIONS} distinct decoration dimensions, got "
+                    f"{self.decoration_dimensions}"
+                )
+            for i in self.items:
+                if i.cell in CONTROL_CELLS and i.decoration_dimensions != sorted(
+                    self.decoration_dimensions
+                ):
+                    errs.append(
+                        f"item {i.id} decoration dimensions "
+                        f"{i.decoration_dimensions} != family "
+                        f"{sorted(self.decoration_dimensions)}"
+                    )
+        elif self.decoration_dimensions:
+            errs.append(
+                "family declares decoration dimensions but has no decorative cells"
+            )
 
         for i in self.items:
             if i.family_id != self.family_id:
@@ -297,7 +467,8 @@ class Family(BaseModel):
             if normalize_ws(i.claim) != normalize_ws(self.claim):
                 errs.append(
                     f"item {i.id} claim differs from the family claim; the claim must "
-                    "be identical across all 4 cells or the 2x2 is not within-family"
+                    "be identical across every cell or neither the 2x2 nor the control is "
+                    "within-family"
                 )
             if i.dimensions != sorted(self.dimensions):
                 errs.append(

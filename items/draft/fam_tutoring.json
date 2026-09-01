@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 181,
+        "n_distinct_tokens": 79,
+        "type_token_ratio": 0.43646,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 14,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_tutoring__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 183,
+        "n_distinct_tokens": 81,
+        "type_token_ratio": 0.44262,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 14,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_tutoring__diverse_true",
@@ -176,10 +194,10 @@
           }
         }
       ],
-      "passage": "A faculty log records four cohorts given the same tutoring blocks.\nOne: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth.\nTwo: a phonetics cohort at Calderhill College, tutored from 8 October, showed exam pass rates 5 points higher by 11 December than the previous autumn term; tutor Nwachukwu.\nThe board's pass mark fell a full grade below the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and no student in any cohort missed a single block.\nThree: a metallurgy cohort at Redfern College, tutored from 2 June, showed exam pass rates 8 points higher by 19 July than the previous summer term; tutor Vasquez.\nFour: a cartography cohort at Ilsworth College, tutored from 9 January, showed exam pass rates 4 points higher by 6 March than the previous winter term; tutor Baumann.\nResults were transcribed into the faculty file and countersigned by the examinations office each week.",
+      "passage": "A faculty log records four cohorts given the same tutoring blocks.\nOne: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth.\nTwo: a phonetics cohort at Calderhill College, tutored from 8 October, showed exam pass rates 5 points higher by 11 December than the previous autumn term; tutor Nwachukwu.\nThe board's pass mark fell a full grade below the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and each cohort attended the blocks in full.\nThree: a metallurgy cohort at Redfern College, tutored from 2 June, showed exam pass rates 8 points higher by 19 July than the previous summer term; tutor Vasquez.\nFour: a cartography cohort at Ilsworth College, tutored from 9 January, showed exam pass rates 4 points higher by 6 March than the previous winter term; tutor Baumann.\nResults were transcribed into the faculty file and countersigned by the examinations office each week.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 181,
+      "word_count": 179,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 179,
+        "n_distinct_tokens": 96,
+        "type_token_ratio": 0.53631,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 27,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_tutoring__diverse_false",
@@ -247,7 +274,208 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 182,
+        "n_distinct_tokens": 99,
+        "type_token_ratio": 0.54396,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 27,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
+    },
+    {
+      "id": "fam_tutoring__decorative_true",
+      "family_id": "fam_tutoring",
+      "cell": "decorative_true",
+      "claim": "these tutoring blocks improve exam pass rates",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.",
+          "conditions": {
+            "college": "Brantwood College",
+            "subject": "algebra",
+            "term": "spring",
+            "tutor": "Ashworth"
+          },
+          "decorations": {
+            "log_serial": "W-3400",
+            "clock_time": "0924",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.",
+          "conditions": {
+            "college": "Brantwood College",
+            "subject": "algebra",
+            "term": "spring",
+            "tutor": "Ashworth"
+          },
+          "decorations": {
+            "log_serial": "W-3401",
+            "clock_time": "1049",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.",
+          "conditions": {
+            "college": "Brantwood College",
+            "subject": "algebra",
+            "term": "spring",
+            "tutor": "Ashworth"
+          },
+          "decorations": {
+            "log_serial": "W-3402",
+            "clock_time": "1334",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.",
+          "conditions": {
+            "college": "Brantwood College",
+            "subject": "algebra",
+            "term": "spring",
+            "tutor": "Ashworth"
+          },
+          "decorations": {
+            "log_serial": "W-3403",
+            "clock_time": "1559",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "A faculty log records four cohorts given the same tutoring blocks.\nOne: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.\nTwo: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.\nThe board's pass mark held exactly level with the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover every student in each cohort, and about a quarter of each cohort missed at least one block.\nThree: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.\nFour: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.\nResults were transcribed into the faculty file and countersigned by the examinations office each week.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 197,
+      "flaw_mechanism": null,
+      "confound_variant": "same_block",
+      "scope_variant": "whole_incomplete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 197,
+        "n_distinct_tokens": 96,
+        "type_token_ratio": 0.48731,
+        "n_entity_tokens": 44,
+        "n_distinct_entities": 26,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "education",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+    },
+    {
+      "id": "fam_tutoring__decorative_false",
+      "family_id": "fam_tutoring",
+      "cell": "decorative_false",
+      "claim": "these tutoring blocks improve exam pass rates",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.",
+          "conditions": {
+            "college": "Brantwood College",
+            "subject": "algebra",
+            "term": "spring",
+            "tutor": "Ashworth"
+          },
+          "decorations": {
+            "log_serial": "W-3400",
+            "clock_time": "0924",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.",
+          "conditions": {
+            "college": "Brantwood College",
+            "subject": "algebra",
+            "term": "spring",
+            "tutor": "Ashworth"
+          },
+          "decorations": {
+            "log_serial": "W-3401",
+            "clock_time": "1049",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.",
+          "conditions": {
+            "college": "Brantwood College",
+            "subject": "algebra",
+            "term": "spring",
+            "tutor": "Ashworth"
+          },
+          "decorations": {
+            "log_serial": "W-3402",
+            "clock_time": "1334",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.",
+          "conditions": {
+            "college": "Brantwood College",
+            "subject": "algebra",
+            "term": "spring",
+            "tutor": "Ashworth"
+          },
+          "decorations": {
+            "log_serial": "W-3403",
+            "clock_time": "1559",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "A faculty log records four cohorts given the same tutoring blocks.\nOne: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.\nTwo: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.\nThe board's pass mark held exactly level with the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\nThree: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.\nFour: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.\nResults were transcribed into the faculty file and countersigned by the examinations office each week.",
+      "ground_truth": false,
+      "confound_note": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. All four cohorts are algebra at Brantwood College in one spring term, so the same attendance restriction applies across the four cases and none of them corrects the others. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+      "word_count": 198,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": "subset_incomplete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 198,
+        "n_distinct_tokens": 97,
+        "type_token_ratio": 0.4899,
+        "n_entity_tokens": 44,
+        "n_distinct_entities": 26,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "education",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
     }
+  ],
+  "decoration_dimensions": [
+    "log_serial",
+    "clock_time",
+    "terminal",
+    "desk"
   ]
 }

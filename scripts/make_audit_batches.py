@@ -36,7 +36,8 @@ from src.render import DEFAULT_OPTIONS, render_prompt  # noqa: E402
 
 N_BATCHES = 10
 #: One multiplier per round, each coprime to N_BATCHES so every family is spread
-#: across four different batches, and different between rounds so the groupings
+#: across as many different batches as it has cells - four, or six where the
+#: control arm is present - and different between rounds so the groupings
 #: genuinely differ rather than merely rotating.
 MULTIPLIERS = (3, 7, 9)
 OFFSETS = (0, 7, 4)

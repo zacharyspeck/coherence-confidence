@@ -25,7 +25,7 @@ from src.analyze import (
     two_way_anova,
 )
 from src.mock_scorer import EXPECTED_AUC
-from src.models import CELLS
+from src.models import CORE_CELLS
 
 # Derived by hand from the `known` construction. See src/mock_scorer.py.
 #   coherent_true = (5*0.050 + 0.001*(0+1+2+3+4) + 15*0.800 + 0.001*(5+..+19)) / 20
@@ -65,7 +65,7 @@ def ds(known):
 def test_eighty_items_twenty_per_cell(ds):
     assert len(ds) == 80
     assert len(ds.families) == 20
-    for c in CELLS:
+    for c in CORE_CELLS:
         assert ds.idx_by_cell[c].size == 20
 
 
@@ -230,7 +230,7 @@ def test_resample_items_preserves_cell_sizes(ds):
     rng = np.random.default_rng(0)
     idx = ds.resample_items(rng)
     assert idx.size == len(ds)
-    for c in CELLS:
+    for c in CORE_CELLS:
         assert np.count_nonzero(ds.cells[idx] == c) == 20
 
 
@@ -345,7 +345,7 @@ def test_reports_the_clean_within_true_coherence_contrast(known):
 
 def test_two_way_and_three_way_are_reported_separately(known):
     a = analyze(known, n_resamples=FAST)
-    for c in CELLS:
+    for c in CORE_CELLS:
         three = a["cell_means_p_yes_3way"][c]["value"]
         two = a["cell_means_p_yes_2way"][c]["value"]
         assert three != pytest.approx(two), c

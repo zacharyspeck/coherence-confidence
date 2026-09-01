@@ -12,7 +12,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.models import Case, Family, Item, compute_word_count  # noqa: E402
+from src.models import CORE_CELLS, Case, Family, Item, compute_word_count  # noqa: E402
 
 DIMS = ("region", "period", "device", "unit_type")
 
@@ -120,7 +120,7 @@ def make_family(
     scope_family: bool = False,
     salience: dict[str, float] | None = None,
 ) -> Family:
-    cells = ("coherent_true", "coherent_false", "diverse_true", "diverse_false")
+    cells = CORE_CELLS
     return Family(
         family_id=family_id,
         domain="synthetic",

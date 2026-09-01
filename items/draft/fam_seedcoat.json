@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 181,
+        "n_distinct_tokens": 85,
+        "type_token_ratio": 0.46961,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 14,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_seedcoat__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 2.5
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 180,
+        "n_distinct_tokens": 81,
+        "type_token_ratio": 0.45,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 14,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_seedcoat__diverse_true",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 178,
+        "n_distinct_tokens": 96,
+        "type_token_ratio": 0.53933,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 27,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_seedcoat__diverse_false",
@@ -247,7 +274,208 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 181,
+        "n_distinct_tokens": 103,
+        "type_token_ratio": 0.56906,
+        "n_entity_tokens": 32,
+        "n_distinct_entities": 27,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
+    },
+    {
+      "id": "fam_seedcoat__decorative_true",
+      "family_id": "fam_seedcoat",
+      "cell": "decorative_true",
+      "claim": "this seed coating improves germination",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.",
+          "conditions": {
+            "nursery": "Hollin Bank",
+            "seed_type": "fescue",
+            "season": "spring",
+            "grower": "Marek"
+          },
+          "decorations": {
+            "log_serial": "G-3370",
+            "clock_time": "0921",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.",
+          "conditions": {
+            "nursery": "Hollin Bank",
+            "seed_type": "fescue",
+            "season": "spring",
+            "grower": "Marek"
+          },
+          "decorations": {
+            "log_serial": "G-3371",
+            "clock_time": "1046",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.",
+          "conditions": {
+            "nursery": "Hollin Bank",
+            "seed_type": "fescue",
+            "season": "spring",
+            "grower": "Marek"
+          },
+          "decorations": {
+            "log_serial": "G-3372",
+            "clock_time": "1331",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.",
+          "conditions": {
+            "nursery": "Hollin Bank",
+            "seed_type": "fescue",
+            "season": "spring",
+            "grower": "Marek"
+          },
+          "decorations": {
+            "log_serial": "G-3373",
+            "clock_time": "1556",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 195,
+      "flaw_mechanism": null,
+      "confound_variant": "same_block",
+      "scope_variant": "subset_complete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 195,
+        "n_distinct_tokens": 96,
+        "type_token_ratio": 0.49231,
+        "n_entity_tokens": 44,
+        "n_distinct_entities": 26,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+    },
+    {
+      "id": "fam_seedcoat__decorative_false",
+      "family_id": "fam_seedcoat",
+      "cell": "decorative_false",
+      "claim": "this seed coating improves germination",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.",
+          "conditions": {
+            "nursery": "Hollin Bank",
+            "seed_type": "fescue",
+            "season": "spring",
+            "grower": "Marek"
+          },
+          "decorations": {
+            "log_serial": "G-3370",
+            "clock_time": "0921",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.",
+          "conditions": {
+            "nursery": "Hollin Bank",
+            "seed_type": "fescue",
+            "season": "spring",
+            "grower": "Marek"
+          },
+          "decorations": {
+            "log_serial": "G-3371",
+            "clock_time": "1046",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.",
+          "conditions": {
+            "nursery": "Hollin Bank",
+            "seed_type": "fescue",
+            "season": "spring",
+            "grower": "Marek"
+          },
+          "decorations": {
+            "log_serial": "G-3372",
+            "clock_time": "1331",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.",
+          "conditions": {
+            "nursery": "Hollin Bank",
+            "seed_type": "fescue",
+            "season": "spring",
+            "grower": "Marek"
+          },
+          "decorations": {
+            "log_serial": "G-3373",
+            "clock_time": "1556",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "ground_truth": false,
+      "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+      "word_count": 197,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": "subset_incomplete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 197,
+        "n_distinct_tokens": 99,
+        "type_token_ratio": 0.50254,
+        "n_entity_tokens": 44,
+        "n_distinct_entities": 26,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "agriculture",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
     }
+  ],
+  "decoration_dimensions": [
+    "log_serial",
+    "clock_time",
+    "terminal",
+    "desk"
   ]
 }

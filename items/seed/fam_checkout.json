@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 168,
+        "n_distinct_tokens": 73,
+        "type_token_ratio": 0.43452,
+        "n_entity_tokens": 25,
+        "n_distinct_entities": 11,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_checkout__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 2.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 173,
+        "n_distinct_tokens": 76,
+        "type_token_ratio": 0.43931,
+        "n_entity_tokens": 25,
+        "n_distinct_entities": 11,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_checkout__diverse_true",
@@ -176,10 +194,10 @@
           }
         }
       ],
-      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.\nA site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and no session in any segment dropped out before checkout.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.\nThe log was exported to the reporting spreadsheet each Monday and signed by an analyst.",
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.\nTwo: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.\nA site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and each segment's sessions all reached checkout.\nThree: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.\nFour: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.\nThe log was exported to the reporting spreadsheet each Monday and signed by an analyst.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 173,
+      "word_count": 170,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "hand",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 170,
+        "n_distinct_tokens": 86,
+        "type_token_ratio": 0.50588,
+        "n_entity_tokens": 25,
+        "n_distinct_entities": 19,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_checkout__diverse_false",
@@ -247,7 +274,208 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 2.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 170,
+        "n_distinct_tokens": 89,
+        "type_token_ratio": 0.52353,
+        "n_entity_tokens": 25,
+        "n_distinct_entities": 19,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
+    },
+    {
+      "id": "fam_checkout__decorative_true",
+      "family_id": "fam_checkout",
+      "cell": "decorative_true",
+      "claim": "the new checkout page increases purchases",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          },
+          "decorations": {
+            "log_serial": "K-3310",
+            "clock_time": "0915",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          },
+          "decorations": {
+            "log_serial": "K-3311",
+            "clock_time": "1040",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          },
+          "decorations": {
+            "log_serial": "K-3312",
+            "clock_time": "1325",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          },
+          "decorations": {
+            "log_serial": "K-3313",
+            "clock_time": "1550",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.\nPrices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and each segment's sessions all reached checkout.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.\nThe log was exported to the reporting spreadsheet each Monday and signed by an analyst.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 184,
+      "flaw_mechanism": null,
+      "confound_variant": "same_block",
+      "scope_variant": "subset_complete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 184,
+        "n_distinct_tokens": 88,
+        "type_token_ratio": 0.47826,
+        "n_entity_tokens": 37,
+        "n_distinct_entities": 23,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+    },
+    {
+      "id": "fam_checkout__decorative_false",
+      "family_id": "fam_checkout",
+      "cell": "decorative_false",
+      "claim": "the new checkout page increases purchases",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          },
+          "decorations": {
+            "log_serial": "K-3310",
+            "clock_time": "0915",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          },
+          "decorations": {
+            "log_serial": "K-3311",
+            "clock_time": "1040",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          },
+          "decorations": {
+            "log_serial": "K-3312",
+            "clock_time": "1325",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.",
+          "conditions": {
+            "device": "desktop",
+            "country": "Canada",
+            "month": "March",
+            "traffic_source": "search"
+          },
+          "decorations": {
+            "log_serial": "K-3313",
+            "clock_time": "1550",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "An analytics log records four session segments after the checkout page was replaced.\nOne: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.\nTwo: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.\nPrices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.\nThree: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.\nFour: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.\nThe log was exported to the reporting spreadsheet each Monday and signed by an analyst.",
+      "ground_truth": false,
+      "confound_note": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. All four segments are desktop sessions from Canada via search inside March and the same quarter drops out of each, so no case in the log supplies what the others leave out. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+      "word_count": 187,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": "subset_incomplete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 187,
+        "n_distinct_tokens": 92,
+        "type_token_ratio": 0.49198,
+        "n_entity_tokens": 37,
+        "n_distinct_entities": 23,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "business_metrics",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
     }
+  ],
+  "decoration_dimensions": [
+    "log_serial",
+    "clock_time",
+    "terminal",
+    "desk"
   ]
 }

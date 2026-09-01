@@ -24,7 +24,7 @@ from typing import Any
 from . import provenance
 from .analyze import analyze, attach_baseline, to_markdown
 from .mock_scorer import EXPECTED_AUC, MockScorer
-from .models import CELLS, load_items
+from .models import CORE_CELLS, load_items
 from .score import build_payload, score_items
 from .synth import make_synthetic_families
 from .validate import format_report, run_checks
@@ -120,7 +120,7 @@ def run(outdir: Path, n_resamples: int, keep: bool, quiet: bool = False) -> int:
     say("\n[2/7] reloading through src.models.load_items (full schema validation)")
     items = load_items([items_dir])
     check("item count", len(items), 80)
-    for c in CELLS:
+    for c in CORE_CELLS:
         check(f"items in {c}", sum(1 for i in items if i.cell == c), 20)
     say(f"      {len(items)} items loaded and validated")
 

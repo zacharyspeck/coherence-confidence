@@ -33,9 +33,11 @@
         "coherent_true",
         "coherent_false",
         "diverse_true",
-        "diverse_false"
+        "diverse_false",
+        "decorative_true",
+        "decorative_false"
       ],
-      "description": "The 2x2 cell. 'coherent' = all 4 cases share every irrelevant condition (1 distinct value per dimension). 'diverse' = all 4 cases differ on every dimension (4 distinct values)."
+      "description": "The 2x2 plus the surface-complexity control (DECISIONS.md D-030). 'coherent' = all 4 cases share every condition (1 distinct value per dimension). 'diverse' = all 4 cases differ on every condition (4 distinct values). 'decorative' = conditions identical like a coherent item, but each case carries 4 distinct DECORATIONS, so entity count and surface busyness match the diverse cells while evidential structure matches the coherent ones."
     },
     "claim": {
       "type": "string",
@@ -69,7 +71,17 @@
             "type": "object",
             "minProperties": 4,
             "maxProperties": 4,
-            "description": "The 4 IRRELEVANT condition dimensions for this case. Dimension names are per-family (see DECISIONS.md D-007) but must be identical across the 4 cases of an item AND across the 4 items of a family. Values are what the coherent/diverse manipulation acts on.",
+            "description": "The 4 condition dimensions, whose VARIATION is what makes evidence evidentially independent - region, season, device, population. Varying them is the diverse manipulation. Dimension names are per-family (D-007) but must be identical across the 4 cases of an item and the items of a family.",
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "decorations": {
+            "type": "object",
+            "minProperties": 4,
+            "maxProperties": 4,
+            "description": "Surface-only dimensions whose variation confers NO evidential independence - a log serial, a clock time inside the same day, a terminal, a desk. Present ONLY in decorative_* items, where all four cases carry 4 distinct values each; empty everywhere else, because decorating any other cell would destroy the contrast the control draws (D-030). A key may never be both a condition and a decoration.",
             "additionalProperties": {
               "type": "string",
               "minLength": 1
@@ -175,6 +187,16 @@
         "null"
       ],
       "description": "Mean blind-audit explicitness, 1-5, for FALSE items: how obvious the flaw was to auditors who saw only the passage. Written by scripts/apply_salience.py from results/item_audit.json. Reported as a covariate beside every AUC so a coherence gap can be checked against it."
+    },
+    "surface_complexity": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "How much there is to parse, independent of what it means: token count, distinct tokens, type-token ratio, entity counts, and distinct condition and decoration values. A pure function of the passage, recomputed and checked at load exactly like word_count, so it cannot drift. Reported as a covariate beside every AUC and used to condition the coherence effect (D-030). Refresh with scripts/apply_complexity.py.",
+      "additionalProperties": {
+        "type": "number"
+      }
     }
   }
 }

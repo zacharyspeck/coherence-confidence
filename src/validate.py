@@ -44,14 +44,38 @@ from typing import Any, Sequence
 import numpy as np
 
 from . import provenance
-from .models import CELLS, Item, load_items, normalize_ws
+from .complexity import SURFACE_MATCH_KEYS, for_item
+from .models import (
+    CELLS,
+    CONTROL_CELLS,
+    CORE_CELLS,
+    Item,
+    load_items,
+    normalize_ws,
+)
 
 WORD_COUNT_TOLERANCE = 0.10
 LEXICAL_THRESHOLD = 0.60
 N_LEXICAL_SEEDS = 5
 N_PER_CELL = 20
-PASSAGE_IMBALANCE_TOLERANCE = 2
+#: Global TRUE/FALSE word balance. Thresholds are set from the failure this
+#: gate actually caught: 'any' at 14T/4F across 10 families and 'no' at
+#: 17T/7F across 13, both introduced when the control arm made the COMPLETE
+#: clause TRUE-leaning. Anything at that level must fail.
+PASSAGE_IMBALANCE_TOLERANCE = 4
+#: A word is only flagged if it is BOTH absolutely and relatively lopsided.
+#: Without the relative test, high-frequency function words trip the gate on
+#: pure length drift - 'the' at 29T/33F is a 4-count difference and no signal
+#: whatsoever.
+PASSAGE_IMBALANCE_RATIO = 0.40
+#: A word confined to one family cannot be learned under family-grouped CV -
+#: it is either in the held-out fold or in training, never usefully in both.
+#: So a one-sided word only counts against us if it spans families.
+PASSAGE_MIN_FAMILIES = 3
 MIN_MATCHED_PER_CELL = 10
+#: The control arm must match the diverse cells this closely on surface
+#: complexity, or it is not controlling for the thing it claims to.
+SURFACE_MATCH_TOLERANCE = 0.10
 TOP_TOKENS = 25
 
 
@@ -129,24 +153,33 @@ def check_word_counts(
 
 
 def check_coherent_structure(items: Sequence[Item]) -> CheckResult:
-    """Coherent = all 4 cases share EVERY irrelevant condition."""
+    """Coherent = all 4 cases share EVERY condition dimension.
+
+    Decorative items are held to the same rule, and that is the point: their
+    surface variety is decorations, never conditions. If a condition ever varied
+    in a decorative item it would be a diverse item wearing a control label, and
+    the control would silently stop controlling.
+    """
     failures: list[str] = []
     checked = 0
     for it in items:
-        if it.coherence != "coherent":
+        if it.coherence not in ("coherent", "decorative"):
             continue
         checked += 1
         for dim in it.dimensions:
             vals = it.distinct_values(dim)
             if len(vals) > 1:
                 failures.append(
-                    f"{it.id}: coherent item has {len(vals)} distinct values on "
-                    f"'{dim}' ({sorted(vals)}); must be exactly 1"
+                    f"{it.id}: {it.coherence} item has {len(vals)} distinct values "
+                    f"on condition '{dim}' ({sorted(vals)}); must be exactly 1"
                 )
     return CheckResult(
         name="coherent_one_value_per_dimension",
         passed=not failures,
-        summary=f"{checked} coherent items checked across their dimensions",
+        summary=(
+            f"{checked} coherent + decorative items checked across their "
+            "condition dimensions"
+        ),
         failures=failures,
         data={"n_checked": checked},
     )
@@ -358,24 +391,153 @@ def check_lexical_giveaway(
 def check_cell_balance(
     items: Sequence[Item], n_per_cell: int = N_PER_CELL
 ) -> CheckResult:
+    """The 2x2 must be balanced; the control arm must be balanced with itself.
+
+    The control arm is deliberately half the size - it exists in the 10
+    scope_mismatch families only, so it is drawn from the same scenarios as the
+    matched-mechanism subset. What matters is that its two cells are equal, so
+    its AUC has as many true as false items.
+    """
     counts = Counter(i.cell for i in items)
     failures = [
-        f"cell '{c}' has {counts.get(c, 0)} items, expected {n_per_cell}"
-        for c in CELLS
+        f"core cell '{c}' has {counts.get(c, 0)} items, expected {n_per_cell}"
+        for c in CORE_CELLS
         if counts.get(c, 0) != n_per_cell
     ]
+
+    control = [counts.get(c, 0) for c in CONTROL_CELLS]
+    if any(control) and len(set(control)) != 1:
+        failures.append(
+            f"control arm is unbalanced: {dict(zip(CONTROL_CELLS, control))}. "
+            "Its AUC needs as many true items as false ones"
+        )
+
     fams = defaultdict(set)
     for i in items:
         fams[i.family_id].add(i.cell)
-    incomplete = sorted(f for f, cs in fams.items() if len(cs) != 4)
-    failures += [f"family '{f}' does not have all 4 cells" for f in incomplete]
+    incomplete = sorted(
+        f for f, cs in fams.items() if not set(CORE_CELLS).issubset(cs)
+    )
+    failures += [f"family '{f}' does not have all 4 cells of the 2x2" for f in incomplete]
+    half = sorted(
+        f
+        for f, cs in fams.items()
+        if len(cs & set(CONTROL_CELLS)) == 1
+    )
+    failures += [
+        f"family '{f}' has half a control arm; it must have both cells or neither"
+        for f in half
+    ]
+    n_control_fams = sum(1 for cs in fams.values() if set(CONTROL_CELLS) <= cs)
     return CheckResult(
         name="cell_balance",
         passed=not failures,
-        summary=f"{len(items)} items, {len(fams)} families, per-cell {dict(counts)}",
+        summary=(
+            f"{len(items)} items, {len(fams)} families "
+            f"({n_control_fams} with a control arm), per-cell {dict(counts)}"
+        ),
         required_by_brief=False,
         failures=failures,
-        data={"counts": dict(counts), "n_families": len(fams)},
+        data={
+            "counts": dict(counts),
+            "n_families": len(fams),
+            "n_control_families": n_control_fams,
+        },
+    )
+
+
+def check_control_surface_match(
+    items: Sequence[Item], tolerance: float = SURFACE_MATCH_TOLERANCE
+) -> CheckResult:
+    """The control arm must match the DIVERSE cells on surface complexity.
+
+    This is the gate that makes the control mean anything. A decorative item is
+    supposed to be as busy to read as a diverse one - as many distinct tokens, as
+    many named entities - while carrying a coherent item's evidential structure.
+    If the surface match drifts, a decorative-vs-diverse difference stops being
+    attributable to evidential independence and the control answers nothing.
+
+    It also asserts the other half: condition variety must match COHERENT. Both
+    halves have to hold at once or the item is not a control, it is just a third
+    condition.
+    """
+    by_level: dict[str, list[Item]] = defaultdict(list)
+    for i in items:
+        by_level[i.coherence].append(i)
+
+    dec, div, coh = (
+        by_level.get("decorative", []),
+        by_level.get("diverse", []),
+        by_level.get("coherent", []),
+    )
+    if not dec:
+        return CheckResult(
+            name="control_surface_match",
+            passed=True,
+            summary="no control arm present; nothing to match",
+            required_by_brief=False,
+        )
+    if not div or not coh:
+        return CheckResult(
+            name="control_surface_match",
+            passed=False,
+            summary="cannot check the control arm without both other levels",
+            required_by_brief=False,
+            failures=["diverse or coherent cells missing"],
+        )
+
+    def mean(group: Sequence[Item], key: str) -> float:
+        return sum(for_item(i)[key] for i in group) / len(group)
+
+    failures: list[str] = []
+    rows: dict[str, Any] = {}
+    for key in SURFACE_MATCH_KEYS:
+        d, v, c = mean(dec, key), mean(div, key), mean(coh, key)
+        rel = (d - v) / v if v else float("inf")
+        rows[key] = {
+            "decorative": round(d, 3),
+            "diverse": round(v, 3),
+            "coherent": round(c, 3),
+            "decorative_vs_diverse": round(rel, 5),
+        }
+        if abs(rel) > tolerance:
+            failures.append(
+                f"{key}: decorative {d:.1f} vs diverse {v:.1f} is {rel:+.1%}, "
+                f"outside +/-{tolerance:.0%}. The control no longer matches the "
+                "surface complexity it exists to hold fixed"
+            )
+
+    key = "n_distinct_condition_values"
+    d, v, c = mean(dec, key), mean(div, key), mean(coh, key)
+    rows[key] = {
+        "decorative": round(d, 3),
+        "diverse": round(v, 3),
+        "coherent": round(c, 3),
+    }
+    if abs(d - c) > 1e-6:
+        failures.append(
+            f"{key}: decorative {d:.1f} must equal coherent {c:.1f}. The control's "
+            "evidential structure has to match the coherent cells exactly"
+        )
+    if d >= v:
+        failures.append(
+            f"{key}: decorative {d:.1f} is not below diverse {v:.1f}, so the "
+            "control is not separating surface variety from evidential variety"
+        )
+
+    worst = max(abs(rows[k]["decorative_vs_diverse"]) for k in SURFACE_MATCH_KEYS)
+    return CheckResult(
+        name="control_surface_match",
+        passed=not failures,
+        summary=(
+            f"{len(dec)} decorative items; largest surface gap vs diverse "
+            f"{worst:+.1%} (limit +/-{tolerance:.0%}); condition values "
+            f"{rows[key]['decorative']:.1f} vs coherent "
+            f"{rows[key]['coherent']:.1f}, diverse {rows[key]['diverse']:.1f}"
+        ),
+        required_by_brief=False,
+        failures=failures,
+        data=rows,
     )
 
 
@@ -440,67 +602,108 @@ _WORD_RE = re.compile(r"[a-z0-9']+")
 
 
 def check_passage_word_balance(
-    items: Sequence[Item], tolerance: int = PASSAGE_IMBALANCE_TOLERANCE
+    items: Sequence[Item],
+    tolerance: int = PASSAGE_IMBALANCE_TOLERANCE,
+    ratio: float = PASSAGE_IMBALANCE_RATIO,
+    min_families: int = PASSAGE_MIN_FAMILIES,
 ) -> CheckResult:
-    """Per family, every word must appear about as often on the TRUE side as on
-    the FALSE side of the WHOLE passage.
+    """No word may lean TRUE or FALSE across the whole set.
 
-    This is the invariant that keeps the lexical gate at chance, and it checks the
-    cause rather than the symptom: the lexical gate averages over the whole set,
-    so one drifting family would be absorbed. Here it gets named.
+    A word is flagged only when all three hold:
 
-    Tolerance is 2, and it is a floor rather than slack - see DECISIONS.md D-026.
-    Two things push it above zero and neither is fixable by better wording:
+      absolute    |T - F| > tolerance
+      relative    |T - F| / (T + F) > ratio
+      learnable   it appears in at least `min_families` families
 
-      1. When BOTH false items in a family share a falsification mechanism -
-         exactly what the matched-mechanism subset requires - the clause that
-         falsifies them appears twice on the FALSE side and can appear at most
-         once on the TRUE side, since a TRUE item carrying it would not be true.
-         That is a hard +1.
-      2. The four mid-passage lines are built from different clause variants, so
-         incidental function words ('every', 'the', singular vs plural) drift by
-         one more even when the variants are length-matched.
+    **Why global and not per-family.** This gate is a proxy for
+    `no_lexical_giveaway`, which trains on 16 families and tests on 4. What such
+    a classifier can exploit is a GLOBAL association between a word and the
+    label. A word that leans TRUE inside one family and FALSE inside another
+    cancels and is invisible to it. Checking per family flagged 'in' at 3T/0F in
+    one family while it sat at 100T/97F globally - a 1.5% split and no signal at
+    all. Per-family lopsidedness is also arithmetically forced here: when both
+    FALSE items of a family share a mechanism the falsifying clause is 2F against
+    at most 1T, and 3F against at most 2T in the families carrying the control
+    arm (D-026, D-030). Demanding per-family balance meant demanding the
+    impossible and then reporting noise.
 
-    Measured: confound families, whose two false items use different mechanisms,
-    reach 1. Scope families reach 2. The lexical gate is the real test of whether
-    any of this is learnable; this gate exists to name the family that drifts.
+    The three conditions each rule out a different false alarm: the absolute test
+    stops high-frequency function words tripping on length drift, the relative
+    test stops words appearing once or twice, and the family test stops words
+    confined to a single family, which cannot cross a grouped fold boundary in
+    either direction.
+
+    `no_lexical_giveaway` remains the authority. This names the specific words
+    behind a failure there, which that gate cannot.
     """
+    counts: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+    families_with: dict[str, set[str]] = defaultdict(set)
+    for it in items:
+        side = 0 if it.ground_truth else 1
+        words = _WORD_RE.findall(it.passage.lower())
+        for w in words:
+            counts[w][side] += 1
+        for w in set(words):
+            families_with[w].add(it.family_id)
+
+    flagged: list[tuple[float, str, int, int, int]] = []
+    worst = 0.0
+    for w, (t, f) in counts.items():
+        diff, total = abs(t - f), t + f
+        rel = diff / total if total else 0.0
+        n_fam = len(families_with[w])
+        if diff > tolerance and n_fam >= min_families:
+            worst = max(worst, rel)
+        if diff > tolerance and rel > ratio and n_fam >= min_families:
+            flagged.append((rel, w, t, f, n_fam))
+
+    flagged.sort(reverse=True)
+    failures = [
+        f"'{w}' is {t}T/{f}F across {n} families - a {r:.0%} split. A classifier "
+        "trained on other families can carry that straight across a fold boundary"
+        for r, w, t, f, n in flagged[:12]
+    ]
+    if len(flagged) > 12:
+        failures.append(f"... and {len(flagged) - 12} more")
+
+    # Per-family worst is kept as data: it is not a pass/fail criterion, but a
+    # family drifting far from the rest is still worth a look by eye.
+    per_family: dict[str, float] = {}
     by_family: dict[str, list[Item]] = defaultdict(list)
     for i in items:
         by_family[i.family_id].append(i)
-
-    failures: list[str] = []
-    worst = 0
-    per_family: dict[str, int] = {}
-    for fam, group in sorted(by_family.items()):
-        counts: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+    for fam, group in by_family.items():
+        c: dict[str, list[int]] = defaultdict(lambda: [0, 0])
         for it in group:
             side = 0 if it.ground_truth else 1
             for w in _WORD_RE.findall(it.passage.lower()):
-                counts[w][side] += 1
-        bad = {w: (t, f) for w, (t, f) in counts.items() if abs(t - f) > tolerance}
-        imbalance = max((abs(t - f) for t, f in counts.values()), default=0)
-        per_family[fam] = imbalance
-        worst = max(worst, imbalance)
-        if bad:
-            shown = sorted(bad.items(), key=lambda kv: -abs(kv[1][0] - kv[1][1]))[:8]
-            failures.append(
-                f"{fam}: words unbalanced across TRUE/FALSE "
-                + ", ".join(f"'{w}' {t}T/{f}F" for w, (t, f) in shown)
-                + (f" (+{len(bad) - len(shown)} more)" if len(bad) > len(shown) else "")
-            )
+                c[w][side] += 1
+        per_family[fam] = max(
+            (abs(t - f) / (t + f) for t, f in c.values() if abs(t - f) > tolerance),
+            default=0.0,
+        )
 
     return CheckResult(
         name="passage_word_balance",
-        passed=not failures,
+        passed=not flagged,
         summary=(
-            f"{len(by_family)} families; worst per-word TRUE/FALSE imbalance "
-            f"= {worst} (limit {tolerance}; 1 is the floor when both false items "
-            "share a mechanism, D-026)"
+            f"{len(counts)} distinct words; flagged when |T-F| > {tolerance}, the "
+            f"split exceeds {ratio:.0%}, and the word spans >= {min_families} "
+            f"families. {len(flagged)} flagged; worst qualifying split {worst:.0%}"
         ),
         required_by_brief=False,
         failures=failures,
-        data={"tolerance": tolerance, "imbalance_by_family": per_family},
+        data={
+            "abs_tolerance": tolerance,
+            "ratio_tolerance": ratio,
+            "min_families": min_families,
+            "n_flagged": len(flagged),
+            "flagged": [
+                {"word": w, "true": t, "false": f, "families": n, "split": round(r, 4)}
+                for r, w, t, f, n in flagged[:20]
+            ],
+            "worst_ratio_by_family": {k: round(v, 4) for k, v in per_family.items()},
+        },
     )
 
 
@@ -608,6 +811,7 @@ ALL_CHECKS = (
     "passage_word_balance",
     "flaw_declarations_complete",
     "matched_mechanism_subset",
+    "control_surface_match",
     "all_items_unreviewed",
 )
 
@@ -650,6 +854,7 @@ def run_checks(
         ),
         ("flaw_declarations_complete", lambda: check_flaw_declarations(items)),
         ("matched_mechanism_subset", lambda: check_matched_mechanism_subset(items)),
+        ("control_surface_match", lambda: check_control_surface_match(items)),
         ("all_items_unreviewed", lambda: check_review_status(items)),
     ]
     for name, fn in plan:

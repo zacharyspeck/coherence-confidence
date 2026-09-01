@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 174,
+        "n_distinct_tokens": 78,
+        "type_token_ratio": 0.44828,
+        "n_entity_tokens": 24,
+        "n_distinct_entities": 14,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_physio__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 176,
+        "n_distinct_tokens": 78,
+        "type_token_ratio": 0.44318,
+        "n_entity_tokens": 24,
+        "n_distinct_entities": 14,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_physio__diverse_true",
@@ -176,10 +194,10 @@
           }
         }
       ],
-      "passage": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.\nOne: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.\nTwo: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Okoye.\nCorticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and no patient in any intake let the home exercises lapse.\nThree: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Brandt.\nFour: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Villareal.\nMeasurements were entered in the register by a duty therapist and countersigned by a clerk.",
+      "passage": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.\nOne: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.\nTwo: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Okoye.\nCorticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and every intake kept the home exercises going.\nThree: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Brandt.\nFour: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Villareal.\nMeasurements were entered in the register by a duty therapist and countersigned by a clerk.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 176,
+      "word_count": 173,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 173,
+        "n_distinct_tokens": 92,
+        "type_token_ratio": 0.53179,
+        "n_entity_tokens": 24,
+        "n_distinct_entities": 19,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_physio__diverse_false",
@@ -247,7 +274,208 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 176,
+        "n_distinct_tokens": 95,
+        "type_token_ratio": 0.53977,
+        "n_entity_tokens": 24,
+        "n_distinct_entities": 19,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
+    },
+    {
+      "id": "fam_physio__decorative_true",
+      "family_id": "fam_physio",
+      "cell": "decorative_true",
+      "claim": "this physiotherapy protocol restores shoulder range of motion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand; M-3340, 0918, T7, north.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          },
+          "decorations": {
+            "log_serial": "M-3340",
+            "clock_time": "0918",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand; M-3341, 1043, T8, south.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          },
+          "decorations": {
+            "log_serial": "M-3341",
+            "clock_time": "1043",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand; M-3342, 1328, T9, east.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          },
+          "decorations": {
+            "log_serial": "M-3342",
+            "clock_time": "1328",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand; M-3343, 1553, T10, west.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          },
+          "decorations": {
+            "log_serial": "M-3343",
+            "clock_time": "1553",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.\nOne: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand; M-3340, 0918, T7, north.\nTwo: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand; M-3341, 1043, T8, south.\nCorticosteroid injections at each hospital held level with the earlier quarter, and every intake was medically barred from receiving them. Averages cover every patient put on the protocol, and a quarter of each intake let the home exercises lapse.\nThree: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand; M-3342, 1328, T9, east.\nFour: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand; M-3343, 1553, T10, west.\nMeasurements were entered in the register by a duty therapist and countersigned by a clerk.",
+      "ground_truth": true,
+      "confound_note": null,
+      "word_count": 191,
+      "flaw_mechanism": null,
+      "confound_variant": "same_block",
+      "scope_variant": "whole_incomplete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 191,
+        "n_distinct_tokens": 95,
+        "type_token_ratio": 0.49738,
+        "n_entity_tokens": 36,
+        "n_distinct_entities": 26,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+    },
+    {
+      "id": "fam_physio__decorative_false",
+      "family_id": "fam_physio",
+      "cell": "decorative_false",
+      "claim": "this physiotherapy protocol restores shoulder range of motion",
+      "cases": [
+        {
+          "case_id": "c1",
+          "text": "One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand; M-3340, 0918, T7, north.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          },
+          "decorations": {
+            "log_serial": "M-3340",
+            "clock_time": "0918",
+            "terminal": "T7",
+            "desk": "north"
+          }
+        },
+        {
+          "case_id": "c2",
+          "text": "Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand; M-3341, 1043, T8, south.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          },
+          "decorations": {
+            "log_serial": "M-3341",
+            "clock_time": "1043",
+            "terminal": "T8",
+            "desk": "south"
+          }
+        },
+        {
+          "case_id": "c3",
+          "text": "Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand; M-3342, 1328, T9, east.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          },
+          "decorations": {
+            "log_serial": "M-3342",
+            "clock_time": "1328",
+            "terminal": "T9",
+            "desk": "east"
+          }
+        },
+        {
+          "case_id": "c4",
+          "text": "Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand; M-3343, 1553, T10, west.",
+          "conditions": {
+            "hospital": "Marbeck",
+            "injury_type": "rotator cuff",
+            "season": "spring",
+            "therapist": "Ferrand"
+          },
+          "decorations": {
+            "log_serial": "M-3343",
+            "clock_time": "1553",
+            "terminal": "T10",
+            "desk": "west"
+          }
+        }
+      ],
+      "passage": "A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.\nOne: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand; M-3340, 0918, T7, north.\nTwo: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand; M-3341, 1043, T8, south.\nCorticosteroid injections at each hospital held level with the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\nThree: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand; M-3342, 1328, T9, east.\nFour: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand; M-3343, 1553, T10, west.\nMeasurements were entered in the register by a duty therapist and countersigned by a clerk.",
+      "ground_truth": false,
+      "confound_note": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+      "word_count": 193,
+      "flaw_mechanism": "scope_mismatch",
+      "confound_variant": "same_block",
+      "scope_variant": "subset_incomplete",
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 193,
+        "n_distinct_tokens": 96,
+        "type_token_ratio": 0.49741,
+        "n_entity_tokens": 36,
+        "n_distinct_entities": 26,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 16
+      },
+      "domain": "clinical",
+      "review_status": "unreviewed",
+      "source": "generated",
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
     }
+  ],
+  "decoration_dimensions": [
+    "log_serial",
+    "clock_time",
+    "terminal",
+    "desk"
   ]
 }

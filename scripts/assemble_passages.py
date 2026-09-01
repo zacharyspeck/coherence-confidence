@@ -43,7 +43,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.models import CELLS, compute_word_count  # noqa: E402
+from src.complexity import surface_complexity
+from src.models import CORE_CELLS, compute_word_count  # noqa: E402
 
 SPEC = Path("results/family_spec.json")
 CLAUSES = Path("results/scope_clauses.json")
@@ -143,7 +144,9 @@ def main(argv: list[str] | None = None) -> int:
                 json.dumps(by_cell["diverse_true"]["cases"])
             )
 
-        for cell in CELLS:
+        # Only the 2x2. The control arm is built by scripts/build_decorative.py,
+        # which reads coherent_true AFTER this has run, so run them in that order.
+        for cell in CORE_CELLS:
             it = by_cell[cell]
             confound, scope, mech = assign[cell]
             midline = build_midline(sp, cl, confound, scope)
@@ -167,6 +170,14 @@ def main(argv: list[str] | None = None) -> int:
 
             it["passage"] = passage
             it["word_count"] = compute_word_count(passage)
+            # Refreshed here rather than in a later step: the Item model checks
+            # it against the passage, so leaving it stale would stop the next
+            # script in the chain from loading the items at all.
+            it["surface_complexity"] = surface_complexity(
+                passage,
+                [c["conditions"] for c in it["cases"]],
+                [c.get("decorations", {}) for c in it["cases"]],
+            )
             it["flaw_mechanism"] = mech
             it["confound_variant"] = f"{confound[0]}_{confound[1]}"
             it["scope_variant"] = f"{scope[0]}_{scope[1]}"

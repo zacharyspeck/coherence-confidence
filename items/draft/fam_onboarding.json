@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 173,
+        "n_distinct_tokens": 71,
+        "type_token_ratio": 0.4104,
+        "n_entity_tokens": 24,
+        "n_distinct_entities": 11,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_onboarding__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 172,
+        "n_distinct_tokens": 70,
+        "type_token_ratio": 0.40698,
+        "n_entity_tokens": 24,
+        "n_distinct_entities": 11,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_onboarding__diverse_true",
@@ -176,10 +194,10 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran ten days, the same as in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\nThree: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran ten days, the same as in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened the email.\nThree: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 173,
+      "word_count": 174,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 174,
+        "n_distinct_tokens": 86,
+        "type_token_ratio": 0.49425,
+        "n_entity_tokens": 24,
+        "n_distinct_entities": 17,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_onboarding__diverse_false",
@@ -247,7 +274,16 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 173,
+        "n_distinct_tokens": 86,
+        "type_token_ratio": 0.49711,
+        "n_entity_tokens": 24,
+        "n_distinct_entities": 19,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     }
   ]
 }

@@ -67,7 +67,16 @@
       "flaw_mechanism": null,
       "confound_variant": "changed_block",
       "scope_variant": "subset_complete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 165,
+        "n_distinct_tokens": 71,
+        "type_token_ratio": 0.4303,
+        "n_entity_tokens": 28,
+        "n_distinct_entities": 16,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_fertilizer__coherent_false",
@@ -127,7 +136,16 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 165,
+        "n_distinct_tokens": 71,
+        "type_token_ratio": 0.4303,
+        "n_entity_tokens": 28,
+        "n_distinct_entities": 16,
+        "n_distinct_condition_values": 4,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_fertilizer__diverse_true",
@@ -187,7 +205,16 @@
       "flaw_mechanism": null,
       "confound_variant": "same_reach",
       "scope_variant": "whole_incomplete",
-      "salience": null
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 169,
+        "n_distinct_tokens": 99,
+        "type_token_ratio": 0.5858,
+        "n_entity_tokens": 29,
+        "n_distinct_entities": 28,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     },
     {
       "id": "fam_fertilizer__diverse_false",
@@ -247,7 +274,16 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 2.0
+      "salience": null,
+      "surface_complexity": {
+        "n_tokens": 166,
+        "n_distinct_tokens": 94,
+        "type_token_ratio": 0.56627,
+        "n_entity_tokens": 29,
+        "n_distinct_entities": 28,
+        "n_distinct_condition_values": 16,
+        "n_distinct_decoration_values": 0
+      }
     }
   ]
 }
