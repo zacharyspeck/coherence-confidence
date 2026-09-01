@@ -1,0 +1,37 @@
+{"batch": "08", "round": 1, "verdicts": [
+  {"code": "99C998", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measurement dates precede the installation dates in three of the four cases: 'a lathe at Bexley on nights, fitted 4 May, measured by 27 March', 'a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July', and 'a compressor at Marlowe on weekends, fitted 25 November, measured by 6 October'. A run-to-failure improvement cannot be observed in a window that closes before the redesigned bearing was fitted, so only case Two (fitted 9 January, measured by 24 February) is even temporally coherent. Everything else in the report is clean (lubricant both unchanged and sealed off, full coverage of every bearing position, diverse machines), but the timeline breaks the causal link.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "E2D8B7", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "237197", "answer": "No", "flaw_found": true,
+   "flaw_description": "An uncontrolled confounder moved with the treatment: 'Rainfall in each plot's season ran a fifth higher than the year before, and every plot stood in the open, on no set watering schedule.' The comparison is against the previous summer, and the plots were fully exposed to the extra 20 percent rainfall with no watering regime to buffer it, so the extra 8-13 cm of height is equally explained by the wetter season as by the fertilizer. (Contrast the other clean elements: full coverage of every plant, every plant took every feed, dates in order.)",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "7D04AD", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection on the outcome-relevant subgroup: 'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.' A quarter of each ward's patients are dropped from the rate precisely because their exposure was incomplete, and those spells-outside patients are the ones most likely to have acquired infections. The reported 6-11 percent decline is therefore a per-protocol figure on a filtered denominator, not the ward's infection rate.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "40EC9D", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "383AC4", "answer": "No", "flaw_found": true,
+   "flaw_description": "The retention measurement dates fall before the email was sent in three of the four cohorts: 'emailed 24 March, measured by 9 March', 'emailed 25 October, measured by 10 October', and 'emailed 26 December, measured by 2 December'. Week-two retention also requires a further two weeks to elapse, so these windows close before the onboarding email could have had any effect; only cohort Two (emailed 3 July, measured by 27 July) is temporally possible.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "A85004", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "ED27C1", "answer": "No", "flaw_found": true,
+   "flaw_description": "The timing set excludes exactly the runs where the intervention failed: 'Only runs completed end to end on the issued route entered the timing set, and drivers at each depot abandoned the issued route on roughly one run in six.' Roughly 17 percent of runs are dropped, and drivers plausibly abandon the issued route when it is going badly (traffic, a bad drop order), so the surviving runs are a favourable subset. The 5-9 minute saving describes a self-selected surviving five-sixths of runs, not the routing change.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "830F4D", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4}
+]}

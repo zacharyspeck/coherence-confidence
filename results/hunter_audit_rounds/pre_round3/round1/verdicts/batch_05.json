@@ -1,0 +1,33 @@
+{"batch": "05", "round": 1, "verdicts": [
+  {"code": "627233", "answer": "No", "flaw_found": true,
+   "flaw_description": "Outcome is measured on a post-exposure survivor subgroup: \"The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.\" A quarter of each segment is excluded from the purchase counts, and those droppers are exactly the sessions least likely to buy, so the purchase rate is computed on a favourably selected remainder rather than on all sessions. (The discount confound is neutralised by the fixed-price catalogue, and the dates are coherent, so this exclusion is the load-bearing defect.)",
+   "explicitness": 3, "confidence": 3},
+
+  {"code": "517C55", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "87820D", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measurement windows precede the intervention in three of four groups: \"started 4 March, measured by 28 February\", \"started 5 September, measured by 30 August\", and \"started 26 November, measured by 2 October\". A reduction in attacks observed before the inhaler was started cannot have been produced by the inhaler, so three of the four supporting cases are temporally impossible and only group Two (3 May to 27 June) is even eligible as evidence.",
+   "explicitness": 3, "confidence": 5},
+
+  {"code": "F22CEF", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "606326", "answer": "No", "flaw_found": true,
+   "flaw_description": "Per-protocol selection on a post-treatment variable: \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" The abduction averages are taken only from compliers while a quarter of every intake is dropped, and lapsing patients are plausibly the ones recovering worst, so the reported 9-16 degree gains reflect who was kept in the average as much as the protocol itself.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "DC4223", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "49435F", "answer": "No", "flaw_found": true,
+   "flaw_description": "The defect rates exclude the non-conforming boards: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly ten percent of each run is dropped from the numerator and denominator, and boards that got an old-profile pass are precisely the ones most likely to be reworked or defective, so the measured rate is a filtered subset rather than the run's defect rate.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "C1B249", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4}
+]}

@@ -1,0 +1,72 @@
+[
+  {
+    "key": "49435F:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. The four runs sit on the Aspen, Kestrel, Larkspur and Meridian lines across four different months, and the same tenth falls outside the tally on each, so the spread over lines, board families and months does nothing to close the gap.",
+    "reported": "The defect rates are computed on a filtered subset of each run: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile,\" so roughly 10 percent of every run is excluded from the count it is compared against. A 4-7 percent drop measured on the surviving 90 percent does not establish the profile reduces defects in the run."
+  },
+  {
+    "key": "49435F:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. The four runs sit on the Aspen, Kestrel, Larkspur and Meridian lines across four different months, and the same tenth falls outside the tally on each, so the spread over lines, board families and months does nothing to close the gap.",
+    "reported": "The defect rates \"cover the boards soldered on the new profile throughout\" while \"about a tenth of each run's boards took one pass on the old profile\", so roughly ten percent of each run - plausibly the reworked or problem boards - is dropped from the numerator and denominator, which alone could produce the 4-7 percent apparent reduction."
+  },
+  {
+    "key": "4969DF:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, and the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city ran about four degrees below the month before, a shift that lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in rooms with no climate control, which carries the cooling to every user whose heart rate was read. Each cohort is compared against itself in February, under warmer nights, rather than against an unenrolled cohort in the same month. The cooling and the app arrived together, leaving the 3 to 6 bpm drops unattributable to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user; nothing further is wrong with the item.",
+    "reported": "A named alternative cause reaches every cohort: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control', so the colder sleeping environment applied to all four cohorts over exactly the comparison window and could itself account for the 3-6 bpm drop."
+  },
+  {
+    "key": "4969DF:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, and the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city ran about four degrees below the month before, a shift that lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in rooms with no climate control, which carries the cooling to every user whose heart rate was read. Each cohort is compared against itself in February, under warmer nights, rather than against an unenrolled cohort in the same month. The cooling and the app arrived together, leaving the 3 to 6 bpm drops unattributable to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user; nothing further is wrong with the item.",
+    "reported": "'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control' - with no climate control the outdoor drop reaches the sleeping rooms, so a colder sleeping environment is a named alternative cause of the 3-6 bpm fall that applies to all four cohorts."
+  },
+  {
+    "key": "4F1D6C:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. All four segments are desktop sessions from Canada via search inside March and the same quarter drops out of each, so no case in the log supplies what the others leave out. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The purchase figures are measured on a narrower population than the claim: \"The counts cover the sessions that reached the new page,\" while \"a quarter of each segment dropped out before checkout\" and so never entered the counts. A 4-7 percent rise among the three quarters that reached the new checkout page does not establish that purchases overall increased."
+  },
+  {
+    "key": "4F1D6C:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. All four segments are desktop sessions from Canada via search inside March and the same quarter drops out of each, so no case in the log supplies what the others leave out. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": ""
+  },
+  {
+    "key": "5A0D9C:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
+    "reported": "A second change hit every unit at the same time: 'Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.' The new insert grade reaches all four runs (all switched 4-7 March), so the 4-7 minute savings are equally explained by the inserts rather than the coolant."
+  },
+  {
+    "key": "5A0D9C:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
+    "reported": "A rival cause reaches every unit: 'Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.' A new insert grade shortens cycle time on its own, so the 4-7 minute reductions cannot be attributed to the coolant."
+  },
+  {
+    "key": "606326:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss.",
+    "reported": "\"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse\" - the 9-16 degree gains are averaged over only the adherent three quarters of each intake, selecting on post-treatment behaviour, so they do not show what the protocol did for the intake as a whole."
+  },
+  {
+    "key": "606326:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss.",
+    "reported": "Per-protocol selection: \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse\", so the 9-16 degree gains are computed only on the adherent three-quarters, who would be expected to recover better anyway. (The corticosteroid rise is neutralised, since every intake was barred from injections.)"
+  }
+]

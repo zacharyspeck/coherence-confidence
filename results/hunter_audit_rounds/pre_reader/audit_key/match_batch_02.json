@@ -1,0 +1,72 @@
+[
+  {
+    "key": "237197:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four plots are tomatoes in the Ellis backyard in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each plot's season ran a fifth higher than the year before and that every plot stood in the open, on no set watering schedule, and the extra water fell on every plot whose plants were measured. Each plot is compared against itself a season earlier rather than against an unfertilised plot in the same season, and the rain and the feeding moved together. The 8 to 13 centimetre gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the plants measured and the plants the claim covers.",
+    "reported": "Rainfall is an uncontrolled alternative cause that reaches all four plots: 'Rainfall in each plot's season ran a fifth higher than the year before, and every plot stood in the open, on no set watering schedule.' Since the comparison is to the previous summer and nothing offsets the extra rain, the 8-13 cm height gains could be water, not fertilizer."
+  },
+  {
+    "key": "237197:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four plots are tomatoes in the Ellis backyard in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each plot's season ran a fifth higher than the year before and that every plot stood in the open, on no set watering schedule, and the extra water fell on every plot whose plants were measured. Each plot is compared against itself a season earlier rather than against an unfertilised plot in the same season, and the rain and the feeding moved together. The 8 to 13 centimetre gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the plants measured and the plants the claim covers.",
+    "reported": "The comparison is against 'the previous summer', and the report states 'Rainfall in each plot's season ran a fifth higher than the year before' while 'every plot stood in the open, on no set watering schedule' - so the extra rain reached every plot and is an alternative cause of the 8-13 cm height gains that fits all four cases."
+  },
+  {
+    "key": "3313F1:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth drops out at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
+    "reported": "The timings are measured on a self-selected subset: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The excluded sixth are exactly the runs where the new route was abandoned (plausibly the slow, problem runs), so the 5-9 minute saving is not the effect of the routing change on deliveries generally."
+  },
+  {
+    "key": "3313F1:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth drops out at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
+    "reported": "The timings cover a narrower population than the claim: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' Roughly one run in six is dropped from the average, and those deviating runs are exactly the ones likely to be slow, so the 5 to 9 minute improvement is measured only on a self-selected compliant subset rather than on delivery runs generally."
+  },
+  {
+    "key": "338FC3:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four cohorts are starter signups from Norway via webinar inside one March window, and the trial fact stated mid-passage covers every case at once: the free trial ran eighteen days, up from ten in the earlier period, and an eighteen-day trial still has users inside it at the week-two mark. The scope clause beside that fact has every cohort here signed up on that trial, which puts the policy change on all four. Each cohort is compared against itself a month earlier, under a ten-day trial that had already lapsed by week two. The longer trial and the onboarding email moved together, leaving the 3 to 6 point lifts unattributable to the email. The population and completeness clauses in the same line leave the retention figures covering every signup; the trial length is the whole of the defect.",
+    "reported": "A change that hits the exact outcome measure reached every cohort: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Week-two (day 14) retention falls inside an 18-day trial but outside a 10-day one, so the 3-6 point lift is explained by the longer trial."
+  },
+  {
+    "key": "338FC3:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four cohorts are starter signups from Norway via webinar inside one March window, and the trial fact stated mid-passage covers every case at once: the free trial ran eighteen days, up from ten in the earlier period, and an eighteen-day trial still has users inside it at the week-two mark. The scope clause beside that fact has every cohort here signed up on that trial, which puts the policy change on all four. Each cohort is compared against itself a month earlier, under a ten-day trial that had already lapsed by week two. The longer trial and the onboarding email moved together, leaving the 3 to 6 point lifts unattributable to the email. The population and completeness clauses in the same line leave the retention figures covering every signup; the trial length is the whole of the defect.",
+    "reported": "A confound reaches every cohort: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Week-two (day-14) retention is measured inside the new 18-day trial but after the old 10-day trial expired, so the 3-6 point lift is explained by the trial extension rather than the onboarding email."
+  },
+  {
+    "key": "383AC4:0",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "reported": "Two cohorts are measured before the email went out: cohort one was 'emailed 24 March' yet retention was read 'by 9 March', and cohort three was 'emailed 25 October' yet read 'by 10 October'. The outcome window precedes the intervention in half the cases."
+  },
+  {
+    "key": "383AC4:1",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "reported": "Two cohorts have the outcome measured before the email was sent: cohort one was 'emailed 24 March' yet week-two retention is read 'by 9 March', and cohort three was 'emailed 25 October' with retention read 'by 10 October'. Cohorts two and four use a ~24-day forward window, so the reversed pair cannot reflect the onboarding email at all."
+  },
+  {
+    "key": "408294:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The reported gain is computed on a selected subset: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' A fifth of each line's orders are dropped from the post-period average and compared against a prior month that included all orders, so the 4-7 percent figures cover a narrower population than the claim about revenue per order."
+  },
+  {
+    "key": "408294:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The figures cover a narrower population than the claim: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" One order in five is excluded from the measurement, so the 4-7 percent lift is for a selected subset of orders, not revenue per order for the line after the pricing change."
+  }
+]

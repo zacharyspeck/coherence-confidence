@@ -1,0 +1,45 @@
+{"batch": "06", "round": 0, "verdicts": [
+  {"code": "BFC67E", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" The hours-to-failure figures are machine-level totals that include positions running the OLD bearing for part of the cycle, so the reported 260-410 extra hours are not attributable to the redesigned bearing alone; the gain could sit entirely in the untreated third, and there is no control machine to separate them.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "4F1D6C", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.\" Purchases are computed only over the filtered subset that reached the new page while a quarter of each segment is excluded, so the 4-7 percent lift is a rate over survivors of an earlier funnel step rather than over the segment; a shift in who reaches checkout would produce the same numbers with no increase in purchases.",
+   "explicitness": 3, "confidence": 3},
+
+  {"code": "0AAF54", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"A higher-yielding maize variety replaced the previous one across the estate that season, and every block was sown from the estate's general seed stock.\" A yield-raising change was introduced estate-wide in the same season as the drip line and applied to every measured block, so the 0.4-0.7 t/ha gain over the previous summer is fully confounded with the variety switch and cannot be credited to the drip line.",
+   "explicitness": 5, "confidence": 5},
+
+  {"code": "1C859B", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "87820D", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measurement windows close before the inhaler was started in three of the four groups: \"started 4 March, measured by 28 February\", \"started 5 September, measured by 30 August\", and \"started 26 November, measured by 2 October\". The reported reductions in attacks predate the intervention, so they cannot have been caused by it (the stated quarters, e.g. \"winter quarter, started 4 March\", are also inconsistent with the dates).",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "2CB5E1", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened the email.\" A third of the measured population never received the intervention, yet their retention is folded into the 3-6 point lift; with only a month-earlier baseline and no control, the entire lift could come from the unexposed third and reflect some other change.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "DEDE27", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" The abduction averages are taken only over the compliant subgroup, dropping a quarter of each intake; patients who keep up home exercises differ systematically (motivation, pain, baseline function), so the 9-16 degree gain reflects selection on a post-treatment behaviour rather than the protocol itself.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "8A9278", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group.\" Class size fell roughly 25 percent in the same term the program ran, and it applied to every measured class, so the 5-9 point comprehension gain over the previous autumn is confounded with the smaller classes and cannot be attributed to the reading program.",
+   "explicitness": 4, "confidence": 5},
+
+  {"code": "F9A01A", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Timings cover every run dispatched, whatever route the van drove, and drivers at each depot abandoned the issued route on roughly one run in six.\" Roughly a sixth of the timed runs did not follow the new routing at all yet are counted in the 5-9 minute improvement, so the measured drop mixes treated and untreated runs and, with only a month-earlier baseline, cannot be attributed to the routing change.",
+   "explicitness": 4, "confidence": 3},
+
+  {"code": "A882FC", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "49435F", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" The defect rate is computed on a filtered subset that excludes about a tenth of each run, and boards needing a pass on the old profile are plausibly the problem boards, so the 4-7 percent reduction is at least partly an artefact of which boards were counted rather than of the profile.",
+   "explicitness": 3, "confidence": 3}
+]}

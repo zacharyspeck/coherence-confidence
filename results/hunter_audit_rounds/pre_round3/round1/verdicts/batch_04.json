@@ -1,0 +1,86 @@
+{
+  "batch": "04",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "7A9B21",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "\"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" A co-occurring change that affects bearing life was applied to all four machines at the same time as the redesigned bearing, so the extra 260-410 hours cannot be attributed to the bearing rather than the switch to synthetic grease. The confound is universal (no machine ran the new bearing on the old lubricant), so nothing in the log separates the two.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "E7A3F5",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "\"The same maize variety was sown across the estate that season as in the year before, and every block was sown from the estate's general seed stock.\" The only control offered against a varietal/seed-stock confound is scoped to maize on one estate, but the four blocks are maize (Hollow Ridge), onion (Netley Downs), barley (Bellamy Flats) and lucerne (Corradine Estate) - four crops at four different sites. For three of the four blocks the seed-variety confound is left entirely unaddressed, so year-on-year yield gains of 0.4-0.7 t/ha could reflect a variety change rather than the drip line.",
+      "explicitness": 2,
+      "confidence": 3
+    },
+    {
+      "code": "63F3EF",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "\"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The measured population is restricted to the fully-exposed subset while a quarter of patients are dropped, yet the comparison is against the whole ward a quarter earlier. Patients with spells off-protocol (transfers, longer or more complex stays) are plausibly the higher-infection-risk group, so the 6-11 percent drop can be produced by the selection itself rather than by the handwashing protocol.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "26D23E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "338FC3",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "\"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" The trial length changed from ten to eighteen days at the same time as the email, and week-two retention is exactly what a trial extending past day fourteen would mechanically raise. Every cohort was on the longer trial, so the 3-6 point lift cannot be separated from the pricing/trial change.",
+      "explicitness": 5,
+      "confidence": 5
+    },
+    {
+      "code": "408294",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "\"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" The after-period figure is computed on a selected fifth-excluded subset of orders, while the month-earlier baseline covers all orders of the line. Excluding the old-price orders (plausibly discounted, promotional or smaller baskets) mechanically raises measured revenue per order regardless of whether the pricing rule improved the line's overall revenue per order.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "AE3C76",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "D1E083",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The records are internally impossible: \"started 4 April, measured by 29 March\" and \"started 5 October, measured by 30 September\" both place the measurement before the app was started, and entry four reads \"2 November users on Wexler Note phones started 90 Saltmarch, measured by 26 November\" - a cohort size that is a date and a start date that is not a real date. Three of the four entries are corrupted, so the log does not record a before/after comparison that could support the claim.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "3F6CD2",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "4C8896",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    }
+  ]
+}

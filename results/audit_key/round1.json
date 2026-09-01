@@ -5,7 +5,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "confound_note": "In cases one, three and four the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Three quarters of the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The one remaining case is not enough by itself.",
     "batch": 0,
     "round": 1
   },
@@ -125,7 +125,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
+    "confound_note": "In cases one, three and four the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Three quarters of the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
     "batch": 1,
     "round": 1
   },
@@ -175,7 +175,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
+    "confound_note": "In cases one, three and four the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Three quarters of the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
     "batch": 1,
     "round": 1
   },
@@ -225,7 +225,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the height was recorded before the fertilizer was applied: 20 June precedes 3 August, and 19 April precedes 2 May. Half the evidence therefore describes growth that had already happened when the treatment was given, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "confound_note": "In cases one, three and four the height was recorded before the fertilizer was applied: 20 June precedes 3 August, and 19 April precedes 2 May. Three quarters of the evidence therefore describes growth that had already happened when the treatment was given, so it cannot be evidence for the treatment. The one remaining case is not enough by itself.",
     "batch": 2,
     "round": 1
   },
@@ -485,7 +485,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "confound_note": "In cases one, three and four the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Three quarters of the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
     "batch": 4,
     "round": 1
   },
@@ -535,7 +535,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "confound_note": "In cases one, three and four the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Three quarters of the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
     "batch": 5,
     "round": 1
   },
@@ -625,7 +625,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+    "confound_note": "In cases one, three and four the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Three quarters of the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
     "batch": 6,
     "round": 1
   },
@@ -745,7 +745,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+    "confound_note": "In cases one, three and four the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Three quarters of the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
     "batch": 7,
     "round": 1
   },
@@ -815,7 +815,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "confound_note": "In cases one, three and four the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Three quarters of the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves case two alone, which is not enough by itself.",
     "batch": 8,
     "round": 1
   },
@@ -865,7 +865,7 @@
     "cell": "diverse_false",
     "ground_truth": false,
     "flaw_mechanism": "broken_chronology",
-    "confound_note": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "confound_note": "In cases one, three and four the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Three quarters of the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
     "batch": 8,
     "round": 1
   },

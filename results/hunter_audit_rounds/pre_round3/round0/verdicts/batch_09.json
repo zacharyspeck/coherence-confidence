@@ -1,0 +1,41 @@
+{"batch": "09", "round": 0, "verdicts": [
+  {"code": "99C998", "answer": "No", "flaw_found": true,
+   "flaw_description": "The outcome is measured before the bearing is installed in three of the four machines: 'a lathe at Bexley on nights, fitted 4 May, measured by 27 March', 'a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July', and 'a compressor at Marlowe on weekends, fitted 25 November, measured by 6 October'. A run-to-failure hour count closed out before the new bearing was fitted cannot be an effect of the redesign, so three of the four data points cannot support the claim. (The one internally consistent entry, the Ravenhill press fitted 9 January and measured by 24 February, also gives a wildly different observation window, so the entries are not even measuring comparable spans.) The confounder control (sealed lubricant charge, supply unchanged) and the coverage statement (all bearing positions, all running the new bearing) are otherwise sound - the defect is purely the impossible measurement timing.",
+   "explicitness": 3, "confidence": 3},
+
+  {"code": "E7A3F5", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "CC1BF2", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection bias in the denominator, stated outright: 'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.' A quarter of patients are excluded from the rate precisely because their care deviated from the protocol, and patients who leave the ward mid-stay (theatre, ICU, transfers) are exactly the ones most exposed to infection. The measured drop can be produced entirely by dropping that 25% rather than by the handwashing. Compounding this, the 'four wards' are all the same unit - every entry is 'Ashgrove General's surgical ward, first quarter ... auditor Naylor' - so there is no independent replication and one auditor's single ward is being counted four times.",
+   "explicitness": 5, "confidence": 5},
+
+  {"code": "949A3C", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "383AC4", "answer": "No", "flaw_found": true,
+   "flaw_description": "The retention outcome predates the intervention in three of the four cohorts: 'starter signups from Norway via webinar were emailed 24 March, measured by 9 March', 'enterprise signups from Vietnam via reseller were emailed 25 October, measured by 10 October', and 'basic signups from Ireland via podcast were emailed 26 December, measured by 2 December'. Week-two retention read off two to three weeks before the onboarding email was ever sent cannot have been lifted by that email. The confounder control (paid plans with no trial; trial length unchanged) and the coverage statement (every signup counted, all opened the email) are fine; the timing is what breaks the causal link.",
+   "explicitness": 3, "confidence": 3},
+
+  {"code": "AE3C76", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "A889DA", "answer": "No", "flaw_found": true,
+   "flaw_description": "The timing set is filtered on an outcome-correlated variable: 'Only runs completed end to end on the issued route entered the timing set, and drivers at each depot abandoned the issued route on roughly one run in six.' Drivers abandon a route when it is going badly - traffic, a bad drop sequence, a route that does not work - so the one-in-six worst runs are systematically removed from the after period. The surviving sample is a best-case subset, and the 5-9 minute improvement can be an artifact of that exclusion rather than of the routing change. Note also that all four 'groups' are the same depot and dispatcher ('vans from Kettleby Wharf, dispatcher Verhoeven') on four consecutive days, so there is no independent replication either.",
+   "explicitness": 5, "confidence": 5},
+
+  {"code": "4969DF", "answer": "No", "flaw_found": true,
+   "flaw_description": "An uncontrolled confounder is described and then explicitly connected to the subjects: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control.' Cooler sleeping conditions lower resting heart rate on their own, and because the rooms have no climate control the four-degree drop passes straight through to every subject. The before/after comparison therefore confounds the app with a seasonal temperature drop, and the 3-6 bpm decline cannot be attributed to the app. (All four 'cohorts' are also the same 40 Fenwick users on Corvid 7 phones on consecutive start days, so there is no independent replication to break the confound.)",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "2F6C29", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "6D7115", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3}
+]}

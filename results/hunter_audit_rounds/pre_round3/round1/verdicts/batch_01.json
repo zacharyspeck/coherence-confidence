@@ -1,0 +1,41 @@
+{"batch": "01", "round": 1, "verdicts": [
+  {"code": "BFC67E", "answer": "No", "flaw_found": true,
+   "flaw_description": "Exposure contamination in the measured units: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" The hour totals credited to the redesigned bearing are drawn from positions that were, for roughly a third of the machine, running the OLD bearing during the same cycle. The longer run-to-failure hours therefore cannot be attributed to the redesign, since a substantial share of the measured service was not on the redesigned part. (The lubricant sentence is a properly neutralized confounder - mineral grade held constant - so the defect is the coverage/compliance mismatch, not lubrication.)",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "6175F5", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "68D44E", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "692F52", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "C6F63B", "answer": "No", "flaw_found": true,
+   "flaw_description": "Unneutralized confounder: \"Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air.\" Pollen is a primary trigger of asthma attacks, it fell 20 percent over exactly the comparison window, and the report explicitly confirms the patients were exposed to that outside air rather than shielded from it. The drop of 4-7 attacks versus the prior quarter is therefore equally well explained by the lower pollen load as by the inhaler.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "2CB5E1", "answer": "No", "flaw_found": true,
+   "flaw_description": "The outcome is measured over a population a third of which never received the treatment: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened the email.\" The 3-6 point retention lift is computed across signups who demonstrably never saw the onboarding email, so the aggregate movement cannot be attributed to the email - it shows some cohort-wide change affecting exposed and unexposed alike. No opened-vs-unopened breakout is given that would isolate the email's contribution.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "1695A6", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "8CB991", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "0899C1", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selective denominator: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly ten percent of each run's boards are dropped from the defect rate precisely because they touched the old profile - and boards that take an extra/old-profile pass are exactly the rework-prone population most likely to be defective. The post-change rate is thus computed on a filtered subset while the \"same line a month earlier\" baseline was not, so the 4-7 percent reduction can be an artifact of the exclusion. (The optical-threshold loosening is properly neutralized by grading at electrical test.)",
+   "explicitness": 3, "confidence": 3},
+
+  {"code": "9B04F1", "answer": "No", "flaw_found": true,
+   "flaw_description": "Completer/per-protocol selection bias: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" A quarter of each cohort is excluded from the reported pass rate on the basis of attendance, leaving only full attenders - a group selected for the motivation and prior standing that independently predict passing. Compared against a previous-spring baseline that was not similarly filtered, the 4-8 point gain can be produced entirely by the exclusion rather than by the tutoring.",
+   "explicitness": 4, "confidence": 4}
+]}

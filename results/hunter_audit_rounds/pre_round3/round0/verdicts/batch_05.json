@@ -1,0 +1,33 @@
+{"batch": "05", "round": 0, "verdicts": [
+  {"code": "5A0D9C", "answer": "No", "flaw_found": true,
+   "flaw_description": "Uncontrolled co-intervention. 'Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.' A new insert grade was adopted in the same quarter as the coolant switch and applied to every logged run, so the 4-7 minute cycle-time reductions cannot be attributed to the coolant rather than the new inserts. Nothing separates the two changes. (Aggravating: all four 'runs' are the same titanium job at Kestrel Works on nights with machinist Draska on consecutive days, so they are one setting repeated, not four independent cases.)",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "03AF40", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measured figures do not correspond to the intervention being tested. 'The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.' A quarter of the runs contributing to the post-upgrade particulate numbers were run with the filter out of circuit, so the logged readings are a mixture of filtered and unfiltered operation and do not isolate the upgrade's effect. (Also, all four 'stacks' are kilns at Kestrel checked by Duarte on consecutive days, so there is no independent replication.)",
+   "explicitness": 4, "confidence": 3},
+
+  {"code": "63F3EF", "answer": "No", "flaw_found": true,
+   "flaw_description": "Per-protocol selection against an all-patient baseline. 'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.' The post-adoption rate is computed only on the fully covered quarter-excluded subset, while the comparison figure is the whole ward a quarter earlier. The excluded 25 percent (transfers, long or interrupted stays) are exactly the patients at highest infection risk, so the 6-11 percent drop can be produced by the exclusion alone.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "E04F2D", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "D14DA7", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measured and baseline order populations differ. 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' Roughly 20 percent of orders - the ones still charged at the lower old prices - are dropped from the post-change average but were included in the 'same line a month earlier' baseline, which mechanically raises revenue per order regardless of whether the pricing rule helped. All four lines are also the same coffee line at Harlow Street under lead Vasquez on consecutive days, so this is one line, not four.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "7D35F9", "answer": "No", "flaw_found": true,
+   "flaw_description": "Exposure is mixed into the outcome measure. 'Rates cover every tray sown from each lot, full coat or partial, and about a fifth of each lot's trays were sown from partly coated seed.' The reported germination rates pool fully coated and only partly coated trays, so they do not measure the coating as applied; and all four 'lots' are the same fescue at Hollin Bank logged by Marek on consecutive days, so there is one setting rather than four independent lots.",
+   "explicitness": 4, "confidence": 3},
+
+  {"code": "D1E083", "answer": "No", "flaw_found": true,
+   "flaw_description": "The outcome is measured before the intervention starts, and one record is corrupt. Cohort one 'started 4 April, measured by 29 March'; cohort three 'started 5 October, measured by 30 September' - in both cases the heart-rate reading predates enrolment, so the drop cannot have been caused by the app. Cohort four reads '2 November users on Wexler Note phones started 90 Saltmarch', a nonexistent date and a cohort size replaced by a date, showing the log fields are unreliable.",
+   "explicitness": 4, "confidence": 5},
+
+  {"code": "17EE84", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3}
+]}

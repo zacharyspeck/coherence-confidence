@@ -1,0 +1,72 @@
+[
+  {
+    "key": "7C1DE9:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. The four segments span four devices, four countries, four months and four traffic sources, and the drop-out clause is stated per segment, so the same three-quarters coverage sits in every case rather than being filled by any of them.",
+    "reported": "The purchase counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\", so the 4-7 percent lift is measured only on the surviving three-quarters of each segment rather than on the segment the claim is about."
+  },
+  {
+    "key": "7C1DE9:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. The four segments span four devices, four countries, four months and four traffic sources, and the drop-out clause is stated per segment, so the same three-quarters coverage sits in every case rather than being filled by any of them.",
+    "reported": ""
+  },
+  {
+    "key": "7D04AD:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The rates 'cover the patients whose whole stay ran under the protocol', while 'a quarter of each ward's patients had spells outside the protocol' and are therefore excluded; the figures describe a self-selected fully-compliant 75 percent, not the ward infection rate the claim is about."
+  },
+  {
+    "key": "7D04AD:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The claim is about ward infection rates, but 'Rates cover the patients whose whole stay ran under the protocol' while 'a quarter of each ward's patients had spells outside the protocol' - so the 6-11 percent drops are computed on a selected three-quarters of the ward, excluding exactly the patients whose exposure was broken."
+  },
+  {
+    "key": "828C2F:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. The four lines sit at Harlow Street, Pell Basin, Ordway Quay and Tamsin Row across four different months, and the same fifth is left out at each of them, so spreading the cases over stores, categories and months does nothing to close the gap.",
+    "reported": "The figures 'cover the orders rung up at the new prices' while 'about a fifth of each line's orders were rung up at the old prices' and are dropped; the measured population is a selected 80 percent of orders rather than the line's orders as a whole, which is what revenue per order under the pricing change means."
+  },
+  {
+    "key": "828C2F:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. The four lines sit at Harlow Street, Pell Basin, Ordway Quay and Tamsin Row across four different months, and the same fifth is left out at each of them, so spreading the cases over stores, categories and months does nothing to close the gap.",
+    "reported": "The figures 'cover the orders rung up at the new prices' while 'about a fifth of each line's orders were rung up at the old prices', so a fifth of each line is excluded from the after-figure and compared against a prior month that included all orders. The 4-7 percent rise describes a selected slice of orders, not the line's revenue per order."
+  },
+  {
+    "key": "8723A1:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "\"Rates cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\", so the 6-11 point germination gains exclude a fifth of each lot and describe a narrower population than the coated lots the claim is about."
+  },
+  {
+    "key": "8723A1:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The germination figures are drawn from a filtered subset: \"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed\" - dropping the 20 percent of trays whose seed only partly took the coating selects the better seed, so the 6-11 point gain over the previous spring sowing may be that selection rather than the coating."
+  },
+  {
+    "key": "87820D:0",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "reported": "Two of the four cases have outcome windows that close before the inhaler was started: case One \"started 4 March, had 6 fewer attacks by 28 February,\" and case Three \"started 5 September, had 7 fewer attacks by 30 August.\" Reductions dated before treatment began cannot be attributed to the inhaler."
+  },
+  {
+    "key": "87820D:1",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "reported": "Two of the four cases have the outcome measured before the inhaler was started: group One \"started 4 March, had 6 fewer attacks by 28 February\" and group Three \"started 5 September, had 7 fewer attacks by 30 August\". The dates run backwards, so those reductions cannot be effects of the inhaler."
+  }
+]

@@ -1,0 +1,41 @@
+{"batch": "04", "round": 0, "verdicts": [
+  {"code": "627233", "answer": "No", "flaw_found": true,
+   "flaw_description": "Outcome-conditioned sample. \"The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.\" A quarter of sessions are excluded from the measured base, and they are excluded on the basis of how far they got through the new checkout flow - exactly the sessions the new page could have driven away. Purchases among the survivors are then compared against a prior month that was not filtered the same way, so the 4-7 percent lift can be produced entirely by dropping the non-completers. (The discount confounder is properly neutralised by the fixed-price catalogue, so this selection step is the live problem.)",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "68D44E", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "036205", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selective inclusion of treated runs. \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.\" A quarter of each stack's runs are dropped from the post-upgrade figures, while the comparison quarter is the whole of the same unit's earlier output. Bypass is not random - filters are typically bypassed during the dirtiest, highest-load or upset conditions - so removing that quarter mechanically lowers the post-upgrade average regardless of what the filter does. The throughput-matching sentence controls for output volume but does nothing about this filtered denominator.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "0EA7F6", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "606326", "answer": "No", "flaw_found": true,
+   "flaw_description": "Per-protocol (adherer-only) analysis. \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" The reported abduction gains are computed only on the compliant three-quarters; the quarter who lapsed - the group most likely to be doing worst - is dropped, while the earlier-quarter ward baseline is unfiltered. Adherence is a proxy for recovery, so the 9-16 degree gap can be an artefact of who stayed in the average rather than an effect of the protocol. The corticosteroid confounder is correctly ruled out (intakes were medically barred), which leaves this attrition as the defect.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "F79999", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "8CB991", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "B3AE67", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection on treatment quality. \"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\" A fifth of each lot's trays are excluded from the germination rates, and they are excluded for a reason plausibly tied to seed condition - poorly coated seed is often the smaller, damaged or dusty fraction that germinates worse anyway. The prior-season comparison sowings were not screened this way, so the 6-11 point gain may just be the difference between a hand-picked subset and a whole lot. The temperature-matching sentence neutralises the climate confounder but not this.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "B1B3FD", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "9B04F1", "answer": "No", "flaw_found": true,
+   "flaw_description": "Attendance-conditioned pass rates. \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" Only full attenders are counted, so a quarter of each cohort - disproportionately the weaker or less engaged students - is removed from the post-intervention figure, while the previous spring term's rate covers the whole cohort. Selecting on attendance selects on the very traits that drive passing, so the 4-8 point gain is consistent with no tutoring effect at all. The exam-standard confounder is already ruled out (fixed internal mark, board mark level), leaving this as the failure.",
+   "explicitness": 4, "confidence": 4}
+]}

@@ -1,0 +1,72 @@
+[
+  {
+    "key": "011AA3:0",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the height was recorded before the fertilizer was applied: 20 June precedes 3 August, and 19 April precedes 2 May. Half the evidence therefore describes growth that had already happened when the treatment was given, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "reported": "Two of the four cases have the outcome measured before the intervention: case one was \"fed 3 August\" but stood taller \"by 20 June\", and case three was \"fed 2 May\" but measured \"by 19 April\". Growth recorded before the fertilizer was applied cannot have been caused by it."
+  },
+  {
+    "key": "011AA3:1",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the height was recorded before the fertilizer was applied: 20 June precedes 3 August, and 19 April precedes 2 May. Half the evidence therefore describes growth that had already happened when the treatment was given, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "reported": "In two of the four plots the outcome is dated before the intervention: the tomato was 'fed 3 August' but measured 'by 20 June', and the oak was 'fed 2 May' but measured 'by 19 April', while the other two plots (8 January to 26 February, 7 October to 24 November) run forward. Half the cases therefore record the height gain before the fertilizer was applied."
+  },
+  {
+    "key": "036205:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. The four stacks span four sites, four stack types, four quarters and four technicians, and the bypassed quarter is stated at each stack, so the same gap repeats in every case rather than being closed by any of them.",
+    "reported": "\"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\" - so the 8-14 percent reductions are measured on only three quarters of each stack's runs, a narrower set than the earlier-quarter baseline they are compared against, and narrower than the stack-level readings the claim concerns."
+  },
+  {
+    "key": "036205:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. The four stacks span four sites, four stack types, four quarters and four technicians, and the bypassed quarter is stated at each stack, so the same gap repeats in every case rather than being closed by any of them.",
+    "reported": "The figures 'cover the runs with the upgraded filter in service' while 'a quarter of each stack's runs were made with the filter bypassed' - so a quarter of post-upgrade runs are dropped from the numbers while the 'same unit a quarter earlier' baseline is the unit's whole output. The 8-14 percent reductions are a filtered subset, not the stack's actual particulate."
+  },
+  {
+    "key": "04E6AE:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. The four cases span four schools, four year groups, four terms and four registrars, and the same exclusion applies at each, so the spread of settings does nothing to repair the gap.",
+    "reported": "The absence numbers exclude a fifth of each cohort: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' The 4-7 percent drops therefore describe a selected 4/5 of each cohort rather than the cohort the claim is about, and the excluded pupils are plausibly the higher-absence ones."
+  },
+  {
+    "key": "04E6AE:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. The four cases span four schools, four year groups, four terms and four registrars, and the same exclusion applies at each, so the spread of settings does nothing to repair the gap.",
+    "reported": "The absence figures drop part of the cohort: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' Excluding the fifth who came off the timetable (plausibly the more absent pupils) while comparing to the full cohort a term earlier cannot establish an absence reduction for the cohort."
+  },
+  {
+    "key": "0899C1:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. All four runs are relay boards on the Aspen line inside March under operator Duarte, so one and the same exclusion sits under every case.",
+    "reported": "\"Rates cover the boards soldered on the new profile throughout\" while \"about a tenth of each run's boards took one pass on the old profile\", so the 4-7 percent defect reductions are measured on a selected subset of each run rather than on the run's output as a whole."
+  },
+  {
+    "key": "0899C1:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. All four runs are relay boards on the Aspen line inside March under operator Duarte, so one and the same exclusion sits under every case.",
+    "reported": "The rate is computed on a narrower population than the comparison: \"Rates cover the boards soldered on the new profile throughout\" while \"about a tenth of each run's boards took one pass on the old profile,\" so the tenth that touched the old profile is dropped from the new-profile figure while the earlier month's baseline included every board."
+  },
+  {
+    "key": "090602:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. The four cohorts span four colleges, four subjects, four terms and four tutors, and the same attendance restriction applies at each, so the spread of settings does not close the gap.",
+    "reported": "\"Pass rates cover the students who attended every block\" while \"about a quarter of each cohort missed at least one block\", so the post-tutoring figure is computed on perfect attenders only and compared against the previous term's full cohort. Students who attend every session are already the more diligent quarter-to-three-quarters of the cohort, so the 4-8 point gain is a selection effect rather than a demonstrated effect of the blocks."
+  },
+  {
+    "key": "090602:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. The four cohorts span four colleges, four subjects, four terms and four tutors, and the same attendance restriction applies at each, so the spread of settings does not close the gap.",
+    "reported": "The outcome covers only the fully compliant students: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\" - restricting to perfect attenders while comparing against the whole previous term's cohort means the 4-8 point pass-rate gain could reflect who was kept in the count, not the tutoring."
+  }
+]

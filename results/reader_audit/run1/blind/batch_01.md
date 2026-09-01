@@ -354,7 +354,7 @@ Report:
 An irrigation log records four blocks that were fitted with the same drip line.
 One: a maize block at Hollow Ridge, fitted 3 June, measured by 18 August, gave 0.6 tonnes per hectare more than the previous summer; recorded by Ferreira.
 Two: an onion block at Netley Downs, fitted 8 December, measured by 23 February, gave 0.4 tonnes per hectare more than the previous winter; recorded by Achebe.
-The same maize variety was sown across the estate that season as in the year before, and every block was sown from the estate's general seed stock. Yields cover the hectares in each block watered all season by the line, and the line watered every hectare in each block all season.
+The same seed lines were sown across the estate that season as in the year before, and every block was sown from the estate's general seed stock. Yields cover the hectares in each block watered all season by the line, and the line watered every hectare in each block all season.
 Three: a barley block at Bellamy Flats, fitted 2 March, measured by 17 May, gave 0.7 tonnes per hectare more than the previous spring; recorded by Halloran.
 Four: a lucerne block at Corradine Estate, fitted 7 September, measured by 22 November, gave 0.5 tonnes per hectare more than the previous autumn; recorded by Nkemdi.
 Tonnages were entered to one decimal place and countersigned by the recording agronomist.

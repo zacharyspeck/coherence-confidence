@@ -1,0 +1,94 @@
+{
+  "batch": "00",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "D3A6C8",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "In three of the four runs the measurement date precedes the coolant switch: 'a titanium run at Kestrel Works on nights, switched 4 May, measured by 29 March', 'switched 5 October, measured by 30 September', and 'switched 26 November, measured by 2 November'. The shorter cycle times were therefore recorded before the coolant was in use, so they cannot have been produced by it. Only run Two (switched 3 June, measured by 27 June) is in the right order, leaving a single usable case.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "8877CA",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.' The yield-per-hectare figure is averaged over the whole block while only about a quarter of the hectares were actually drip-irrigated, and even those only intermittently. A whole-block average rising when three quarters of the area was untreated points to some block-wide cause rather than the drip line, so treatment scope and measurement scope do not match.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "934027",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.' The particulate figures pool treated and untreated runs, so a quarter of the measured output was produced with the upgraded filter out of circuit. The reported drop is therefore not a measurement of the upgraded configuration, and the untreated share showing the same decline would indicate another cause.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "CC1BF2",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "E04F2D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "828C2F",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "FD524A",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.' The comprehension gain is computed over the full roll even though a quarter of the pupils were not fully exposed to the program, so the measured population is not the treated population and the gain cannot be attributed to the program as delivered.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "BB644B",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "4969DF",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control.' An uncontrolled competing cause changed over exactly the comparison window and the cohorts were fully exposed to it: sleeping rooms four degrees cooler than the baseline month plausibly lowers resting heart rate on their own. Unlike the other environmental clauses in these reports, nothing here holds the confounder constant or shields the cohorts from it.",
+      "explicitness": 4,
+      "confidence": 5
+    },
+    {
+      "code": "BC18CB",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "17EE84",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

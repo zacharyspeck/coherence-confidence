@@ -1,0 +1,40 @@
+{"batch": "07", "round": 1, "verdicts": [
+  {"code": "AA62A6", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+
+  {"code": "0AAF54", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"A higher-yielding maize variety replaced the previous one across the estate that season, and every block was sown from the estate's general seed stock.\" The blocks drew on the general stock, so they got the new higher-yielding variety at the same time as the drip line. The 0.4-0.7 t/ha gains over the previous summer are fully explained by the variety change; nothing separates line from seed.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "105D87", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.\" The particulate figures are computed on a selected subset - only the filter-in-service runs - while a quarter of runs are excluded. The comparison quarter presumably includes all runs, so the reduction is a selection artefact rather than a demonstrated effect of the upgrade.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "79A648", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+
+  {"code": "B638C2", "answer": "No", "flaw_found": true,
+   "flaw_description": "The outcome windows predate the intervention in two of the four plots: \"pied flycatchers ... boxed 3 June, measured by 27 March, fledged 14 more young than the same reserve in the previous spring\" and \"barn owls ... boxed 2 November, measured by 24 September\". The fledging counts are scored on a season that ended before the boxes went up (June install credited with a spring measured 27 March; November install credited with a count taken 24 September), so the boxes cannot have caused the counts attributed to them. The install-to-measurement intervals are also wildly inconsistent across plots (2.5 months to ~10 months).",
+   "explicitness": 2, "confidence": 3},
+
+  {"code": "384C95", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+
+  {"code": "F79999", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+
+  {"code": "8A9278", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group.\" Class size fell by a quarter at the same time the program started, and because English was taught to the whole class the smaller sizes applied directly to the measured lessons. The 5-9 point comprehension gain over the previous autumn term is confounded with the smaller classes.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "8723A1", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\" Germination is scored only on the fully coated trays while roughly a fifth of each lot - the partly coated trays - is dropped from the numerator. That is exactly the subset most likely to germinate poorly, so the 6-11 point gain reflects selective measurement, not the coating's effect on the lot.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "089BF4", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+
+  {"code": "090602", "answer": "No", "flaw_found": true,
+   "flaw_description": "\"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" The pass rate is measured only on perfect attenders, excluding the roughly quarter of each cohort who missed a block, whereas the previous term's baseline is a whole-cohort rate. Attendance selects for the more diligent students, so the 4-8 point rise can come from who was counted rather than from the tutoring.",
+   "explicitness": 4, "confidence": 4}
+]}

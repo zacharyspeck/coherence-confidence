@@ -1,0 +1,72 @@
+[
+  {
+    "key": "8A9278:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present.",
+    "reported": "An alternative cause covers all four classes: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group.\" Classes a quarter smaller, taught undivided, is a well-known driver of comprehension gains and could account for the 5-9 point rises without the reading program."
+  },
+  {
+    "key": "8A9278:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present.",
+    "reported": "A named alternative cause reaches every class: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group\" - since English was taught to the whole (now 25 percent smaller) class, the smaller classes themselves could produce the 5-9 point comprehension gains over the previous autumn term."
+  },
+  {
+    "key": "99C998:0",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "reported": "Two of the four measurement dates precede the fitting dates: case one was 'fitted 4 May' but measured 'by 27 March', and case three was 'fitted 2 August' but measured 'by 21 July', while cases two and four span only ~1.5 months (9 January to 24 February; 6 October to 25 November). The outcome windows for one and three cannot follow their installs on any consistent timeline."
+  },
+  {
+    "key": "99C998:1",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "reported": "Two of the four machines have outcome dates preceding the fitting date: case one was 'fitted 4 May' but the extra 340 hours are recorded 'by 27 March', and case three was 'fitted 2 August' with the gain recorded 'by 21 July'. Cases two (9 January to 24 February) and four (6 October to 25 November) use a ~7-week forward window, so on the report's own convention the reversed pair measure a period before the redesigned bearing was installed."
+  },
+  {
+    "key": "9B04F1:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. All four cohorts are algebra at Brantwood College in one spring term, so the same attendance restriction applies across the four cases and none of them corrects the others. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "\"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\" - the 4-8 point gains are computed only on full attenders, dropping about a quarter of each cohort, so the comparison against the previous spring term is against a differently constituted (and self-selected) group."
+  },
+  {
+    "key": "9B04F1:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. All four cohorts are algebra at Brantwood College in one spring term, so the same attendance restriction applies across the four cases and none of them corrects the others. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "\"Pass rates cover the students who attended every block,\" but \"about a quarter of each cohort missed at least one block,\" so a self-selected full-attendance subset (a quarter of each cohort removed) is being compared against the whole previous spring term cohort - the 4-8 point gain can come from who was counted rather than from the tutoring."
+  },
+  {
+    "key": "A889DA:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The timings are restricted to compliant runs: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route', so roughly a sixth of runs are dropped from the measured population, and the 5-9 minute gains describe only self-selected on-route runs rather than delivery time under the routing change."
+  },
+  {
+    "key": "A889DA:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The timings exclude the runs most likely to be slow: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' That compliant subset is compared to all runs a month earlier, so the 5-9 minute saving is a selection artefact as much as a routing effect."
+  },
+  {
+    "key": "A9D2D3:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case.",
+    "reported": "The reported rates are a filtered subset: they \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are excluded, but the baseline is the whole previous spring sowing. Trays that took a full coat may differ in seed quality or handling from those that did not, so the 6-11 point gain is measured on a narrower, better-selected population than the baseline it is compared with."
+  },
+  {
+    "key": "A9D2D3:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case.",
+    "reported": ""
+  }
+]

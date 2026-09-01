@@ -12,11 +12,11 @@
 
 ```
 A maintenance log records four machines fitted with the redesigned bearing.
-One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.
-Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.
+One: a lathe at Bexley on nights, fitted 4 March, measured by 27 May, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.
+Two: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.
 The lubricant supply stayed on mineral grade across the cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.
-Three: a conveyor at Corbin on evenings, fitted 2 July, ran 410 hours longer before failure by 21 August than the same machine last cycle; checked by Fenwick.
-Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.
+Three: a conveyor at Corbin on evenings, fitted 2 July, measured by 21 August, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.
+Four: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
 ```
 
@@ -34,7 +34,7 @@ Hour readings were taken from the machine counters and initialled by the shift i
 An analytics log records four session segments after the checkout page was replaced.
 One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.
 Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.
-Prices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.
+Every segment browsed a fixed-price contract catalogue, where no discount applies. Prices held steady through each segment's month, matching the earlier period to the nearest cent. The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.
 Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.
 Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.
 The log was exported to the reporting spreadsheet each Monday and signed by an analyst.
@@ -52,11 +52,11 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 
 ```
 An irrigation log records four blocks that were fitted with the same drip line.
-One: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.
-Two: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.
-Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover. Yields cover every hectare in each block fitted with the line, and the line watered every hectare in each block all season.
-Three: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.
-Four: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.
+One: a maize block at Hollow Ridge, fitted 3 June, measured by 18 August, gave 0.6 tonnes per hectare more than the previous summer; recorded by Ferreira.
+Two: a maize block at Hollow Ridge, fitted 4 June, measured by 19 August, gave 0.4 tonnes per hectare more than the previous summer; recorded by Ferreira.
+A higher-yielding seed line replaced the previous one across the estate that season, and every block was sown from the estate's general seed stock. Yields cover every hectare in each block fitted with the line, and the line watered every hectare in each block all season.
+Three: a maize block at Hollow Ridge, fitted 5 June, measured by 20 August, gave 0.7 tonnes per hectare more than the previous summer; recorded by Ferreira.
+Four: a maize block at Hollow Ridge, fitted 6 June, measured by 21 August, gave 0.5 tonnes per hectare more than the previous summer; recorded by Ferreira.
 Tonnages were entered to one decimal place and countersigned by the recording agronomist.
 ```
 
@@ -92,11 +92,11 @@ Counts were copied into the file and countersigned by a ward sister each month.
 
 ```
 A nurse's log records four patient groups prescribed the same asthma inhaler.
-One: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.
-Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.
-Pollen counts in each group's district ran level with the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
-Three: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.
-Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.
+One: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by 28 February, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.
+Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.
+Every group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran level with the previous quarter. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
+Three: the 40-59 band at Calderbank, summer quarter, started 5 September, measured by 30 August, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.
+Four: the 60-74 band at Dunmorrow, autumn quarter, started 26 November, measured by 2 October, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
 ```
 
@@ -112,11 +112,11 @@ Attack counts were copied into the clinic file and countersigned by the duty sup
 
 ```
 A growth team's log records four signup cohorts that received the same onboarding email.
-One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.
-Two: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.
+One: starter signups from Norway via webinar were emailed 4 March, measured by 29 March week-two retention ran 5 points above the same cohort a month earlier.
+Two: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.
 The free trial ran ten days, the same as in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened the email.
-Three: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.
-Four: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.
+Three: enterprise signups from Vietnam via reseller were emailed 5 October, measured by 30 October week-two retention ran 6 points above the same cohort a month earlier.
+Four: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
 ```
 
@@ -134,7 +134,7 @@ Retention figures were exported to the analytics warehouse in the team's standar
 A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
 One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand; M-3340, 0918, T7, north.
 Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand; M-3341, 1043, T8, south.
-Corticosteroid injections at each hospital held level with the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.
+Every intake was medically barred from receiving corticosteroid injections. Corticosteroid injections at each hospital held level with the earlier quarter. Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.
 Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand; M-3342, 1328, T9, east.
 Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand; M-3343, 1553, T10, west.
 Measurements were entered in the register by a duty therapist and countersigned by a clerk.
@@ -152,11 +152,11 @@ Measurements were entered in the register by a duty therapist and countersigned 
 
 ```
 A district log records four classes that ran the same reading program.
-One: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.
-Two: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.
+One: Ashcombe Primary Year 4 started the program 6 September, measured by 11 December, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.
+Two: Ashcombe Primary Year 4 started the program 7 September, measured by 12 December, scoring 5 comprehension points higher than the previous autumn term; taught by Vance.
 Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.
-Three: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.
-Four: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.
+Three: Ashcombe Primary Year 4 started the program 8 September, measured by 13 December, scoring 9 comprehension points higher than the previous autumn term; taught by Vance.
+Four: Ashcombe Primary Year 4 started the program 9 September, measured by 14 December, scoring 6 comprehension points higher than the previous autumn term; taught by Vance.
 Marks were transcribed onto the district return sheet and filed under the standard class codes.
 ```
 
@@ -174,7 +174,7 @@ Marks were transcribed onto the district return sheet and filed under the standa
 A dispatch log records four groups of delivery runs after the routing change was rolled out.
 One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier; D-3360, 0920, T7, north.
 Two: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier; D-3361, 1045, T8, south.
-Order volume through each depot held level, matching the earlier period exactly, and every run carried the same drop count as before. Timings cover every run dispatched, whatever route the van drove, and about a sixth of each depot's runs left the issued route.
+Every run carried the same drop count as before, unchanged by the depot's volume. Order volume through each depot held level, matching the earlier period exactly. Timings cover every run dispatched, whatever route the van drove, and drivers at each depot abandoned the issued route on roughly one run in six.
 Three: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier; D-3362, 1330, T9, east.
 Four: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier; D-3363, 1555, T10, west.
 Minutes were rounded to the nearest whole number and countersigned by the duty manager.
@@ -192,11 +192,11 @@ Minutes were rounded to the nearest whole number and countersigned by the duty m
 
 ```
 A clinic log records four cohorts enrolled on the same sleep app.
-One: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
-Two: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.
-Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms held at a set temperature. Readings cover the enrolled users who used the app nightly, and every enrolled user in each cohort used the app nightly.
-Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
-Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
+One: 40 Fenwick users on Corvid 7 phones started 4 March, measured by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
+Two: 40 Fenwick users on Corvid 7 phones started 5 March, measured by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.
+Every cohort slept in rooms held at a set temperature, apart from the weather outside. Outdoor temperature in each cohort's city ran about four degrees below the month before. Readings cover the enrolled users who used the app nightly, and every enrolled user in each cohort used the app nightly.
+Three: 40 Fenwick users on Corvid 7 phones started 6 March, measured by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
+Four: 40 Fenwick users on Corvid 7 phones started 7 March, measured by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.
 ```
 

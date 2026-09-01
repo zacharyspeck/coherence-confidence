@@ -402,7 +402,7 @@ Report:
 An irrigation log records four blocks that were fitted with the same drip line.
 One: a maize block at Hollow Ridge, fitted 3 June, measured by 18 August, gave 0.6 tonnes per hectare more than the previous summer; recorded by Ferreira.
 Two: a maize block at Hollow Ridge, fitted 4 June, measured by 19 August, gave 0.4 tonnes per hectare more than the previous summer; recorded by Ferreira.
-A higher-yielding maize variety replaced the previous one across the estate that season, and every block was sown from the estate's general seed stock. Yields cover every hectare in each block fitted with the line, and the line watered every hectare in each block all season.
+A higher-yielding seed line replaced the previous one across the estate that season, and every block was sown from the estate's general seed stock. Yields cover every hectare in each block fitted with the line, and the line watered every hectare in each block all season.
 Three: a maize block at Hollow Ridge, fitted 5 June, measured by 20 August, gave 0.7 tonnes per hectare more than the previous summer; recorded by Ferreira.
 Four: a maize block at Hollow Ridge, fitted 6 June, measured by 21 August, gave 0.5 tonnes per hectare more than the previous summer; recorded by Ferreira.
 Tonnages were entered to one decimal place and countersigned by the recording agronomist.

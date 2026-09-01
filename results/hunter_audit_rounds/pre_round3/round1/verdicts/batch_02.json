@@ -1,0 +1,37 @@
+{"batch": "02", "round": 1, "verdicts": [
+  {"code": "31DBCF", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "011AA3", "answer": "No", "flaw_found": true,
+   "flaw_description": "The outcome is dated before the intervention in three of the four plots. 'One: a tomato in the Ellis backyard, fed 3 August, measured by 20 June'; 'Three: an oak in the Aldergate orchard, fed 2 May, measured by 19 April'; 'Four: a cactus in the Vinter greenhouse, fed 24 November, measured by 7 October.' A height recorded in June cannot register the effect of a feed given the following August, so the recorded gains cannot be attributed to the fertilizer.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "03AF40", "answer": "No", "flaw_found": true,
+   "flaw_description": "'The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.' The measured population is not the treated population: a quarter of the runs averaged into the post-upgrade figure had the upgraded filter out of circuit, so the reported 8-14 percent reduction is not a measurement of the upgraded condition and cannot be attributed to the filter.",
+   "explicitness": 4, "confidence": 3},
+
+  {"code": "180003", "answer": "No", "flaw_found": true,
+   "flaw_description": "'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' A concurrent, universally applied change raised the stakes of coursework between the comparison year and the measured year. Every section was exposed to it, so it is fully confounded with the lab kit and on its own predicts higher completion.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "EB8CD7", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "3313F1", "answer": "No", "flaw_found": true,
+   "flaw_description": "'Only runs completed end to end on the issued route entered the timing set, and drivers at each depot abandoned the issued route on roughly one run in six.' Roughly 17 percent of runs are dropped, and they are exactly the runs that went wrong (traffic, blocked drops, driver override) and would have been slowest. Conditioning the timing set on successful completion of the new route makes the post-change average faster by construction, so the 5-9 minute gap does not establish the routing change cut delivery time.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "7D35F9", "answer": "No", "flaw_found": true,
+   "flaw_description": "'Rates cover every tray sown from each lot, full coat or partial, and about a fifth of each lot's trays were sown from partly coated seed.' The germination rates aggregate trays that did not actually receive the coating as specified, so the reported figure is not a measure of coated seed and the improvement cannot be cleanly attributed to the coating.",
+   "explicitness": 4, "confidence": 3},
+
+  {"code": "2F6C29", "answer": "No", "flaw_found": true,
+   "flaw_description": "'Rates cover every board on each run, whatever profile the board took, and about a tenth of each run's boards took one pass on the old profile.' The defect rate credited to the new profile is computed over a mixed population that includes boards run on the old profile, so the measured group is not the treated group and the 4-7 percent gap is not a clean estimate of the new profile's effect.",
+   "explicitness": 4, "confidence": 3},
+
+  {"code": "FAE756", "answer": "No", "flaw_found": true,
+   "flaw_description": "'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' A fifth of each cohort is excluded from the figures, and the exclusion criterion is tied to the outcome: pupils who were absent are the ones most likely to have fallen off the revised timetable. Restricting to full-adherence pupils drives absence down independently of the timetable change.",
+   "explicitness": 4, "confidence": 4}
+]}

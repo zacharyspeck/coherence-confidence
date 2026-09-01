@@ -1,0 +1,45 @@
+{"batch": "03", "round": 1, "verdicts": [
+  {"code": "4F1D6C", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection on the outcome path: \"The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.\" The new page IS the checkout page, so the quarter that dropped out before checkout never entered the counts. Purchases are therefore measured only over a self-selected, already-committed subset of sessions, and any shift in who survives to the checkout page moves the figure independently of whether the page itself causes more purchases. Confounders (discounts, prices) are properly neutralised, but this coverage restriction is not.",
+   "explicitness": 3, "confidence": 3},
+
+  {"code": "EFFF42", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "036205", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection effect in the measured runs: \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.\" A quarter of runs are dropped from the post-upgrade figures, and bypass is not random — filters get bypassed during exactly the dirty/high-load conditions that produce the highest particulate readings. The retained runs are compared against a baseline quarter with no such exclusion, so the 8-14 percent drop can be produced by which runs were counted rather than by the filter.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "1C859B", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "F7FE36", "answer": "No", "flaw_found": true,
+   "flaw_description": "Live confounder left uncontrolled: \"Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range.\" The comparison is to the previous spring at the same reserve, and food supply — the dominant driver of fledging success in pied flycatchers — was a third higher in the boxed year, with every box sited so the birds were exposed to it. The extra 9-16 fledglings are equally well explained by the prey surge as by the boxes.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "DEDE27", "answer": "No", "flaw_found": true,
+   "flaw_description": "Adherence-based selection: \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" A quarter of each intake is excluded from the averages, and adherence to home exercise is strongly associated with recovery (motivation, pain level, baseline function). The surviving adherent quarter is compared against a whole-ward baseline, so the 9-16 degree gain measures the adherers, not the protocol. The corticosteroid confounder is neutralised, but this one is not.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "38B726", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "B3AE67", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection on seed quality: \"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\" A fifth of trays are excluded, and whether seed takes a full coat is a property of the seed (size, plumpness, integrity of the coat) that independently predicts germination. The retained best-seed subset is compared to an unfiltered previous sowing, so the 6-11 point gain can come from the screening rather than the coating.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "A882FC", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "8EA56F", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "BCC78C", "answer": "No", "flaw_found": true,
+   "flaw_description": "Attendance-based selection: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" A quarter of each cohort is dropped, and full attendance is itself a marker of the diligent, higher-attaining students. Their pass rate is compared against a previous-term rate covering the whole cohort, so the 4-8 point gain can be pure composition. The board pass-mark drop is properly neutralised by the fixed in-house mark, but this exclusion is not.",
+   "explicitness": 4, "confidence": 4}
+]}

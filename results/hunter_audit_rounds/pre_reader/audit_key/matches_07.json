@@ -1,0 +1,52 @@
+{
+  "AEB0FA:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded tenth of boards that took an old-profile pass and ties it to the 4-7 percent drops; the baseline remark is part of the same scope argument, not a separate defect."
+  },
+  "AEB0FA:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  },
+  "B3AE67:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded fifth of partly coated trays and the quality difference that makes the remaining subset non-representative."
+  },
+  "B3AE67:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same exclusion identified, with the selected-subset-vs-whole-prior-sowing comparison."
+  },
+  "B638C2:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names cases One and Three with the exact installation and count dates intended."
+  },
+  "B638C2:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two cases and same dates as the answer key."
+  },
+  "BC18CB:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the fifth of each cohort back on the old timetable as excluded from the absence figures."
+  },
+  "BC18CB:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same exclusion, correctly framed as a partial-cohort after-figure against a full-cohort baseline."
+  },
+  "BCC78C:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the quarter of each cohort who missed a block as excluded and the attendance selection that yields the 4-8 point gain."
+  },
+  "BCC78C:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Perfect-attenders-only tally identified against the full prior cohort."
+  }
+}

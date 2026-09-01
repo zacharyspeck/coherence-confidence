@@ -1,0 +1,1002 @@
+{
+  "AA62A6": {
+    "item_id": "fam_bearing__coherent_true",
+    "family_id": "fam_bearing",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "7C1DE9": {
+    "item_id": "fam_checkout__diverse_false",
+    "family_id": "fam_checkout",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. The four segments span four devices, four countries, four months and four traffic sources, and the drop-out clause is stated per segment, so the same three-quarters coverage sits in every case rather than being filled by any of them.",
+    "batch": 0,
+    "round": 0
+  },
+  "517C55": {
+    "item_id": "fam_fertilizer__diverse_true",
+    "family_id": "fam_fertilizer",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "105D87": {
+    "item_id": "fam_filter__decorative_false",
+    "family_id": "fam_filter",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 0,
+    "round": 0
+  },
+  "C6F63B": {
+    "item_id": "fam_inhaler__coherent_false",
+    "family_id": "fam_inhaler",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, and a single district air history covers every case at once. The mid-passage facts state that pollen counts in each group's district ran a fifth below the previous quarter and that every group lived and slept on the district's outside air, putting the cleaner air over every patient whose attacks were tallied. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, leaving the drop in pollen and the inhaler moving together across the 4 to 7 attack reductions. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, leaving the drop in pollen the whole of the defect.",
+    "batch": 0,
+    "round": 0
+  },
+  "384C95": {
+    "item_id": "fam_onboarding__coherent_true",
+    "family_id": "fam_onboarding",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "1B2AA8": {
+    "item_id": "fam_physio__diverse_false",
+    "family_id": "fam_physio",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported figures are an average over the patients who were already doing well. The four intakes span four hospitals, four injury types, four seasons and four therapists, and the lapsed quarter applies to each intake, so the same quarter is absent from every case rather than being covered by any of them.",
+    "batch": 0,
+    "round": 0
+  },
+  "DC4223": {
+    "item_id": "fam_routing__diverse_true",
+    "family_id": "fam_routing",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "8723A1": {
+    "item_id": "fam_seedcoat__decorative_false",
+    "family_id": "fam_seedcoat",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 0,
+    "round": 0
+  },
+  "0899C1": {
+    "item_id": "fam_solder__coherent_false",
+    "family_id": "fam_solder",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. All four runs are relay boards on the Aspen line inside March under operator Duarte, so one and the same exclusion sits under every case.",
+    "batch": 0,
+    "round": 0
+  },
+  "8EA56F": {
+    "item_id": "fam_timetable__decorative_true",
+    "family_id": "fam_timetable",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 0,
+    "round": 0
+  },
+  "E2D8B7": {
+    "item_id": "fam_checkout__coherent_true",
+    "family_id": "fam_checkout",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "D3A6C8": {
+    "item_id": "fam_coolant__diverse_false",
+    "family_id": "fam_coolant",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "batch": 1,
+    "round": 0
+  },
+  "E6F72E": {
+    "item_id": "fam_filter__diverse_true",
+    "family_id": "fam_filter",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "7D04AD": {
+    "item_id": "fam_handwash__decorative_false",
+    "family_id": "fam_handwash",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 1,
+    "round": 0
+  },
+  "180003": {
+    "item_id": "fam_labkit__coherent_false",
+    "family_id": "fam_labkit",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four sections sit at Harlow in one autumn term, and a single change to the central syllabus covers every case at once. The mid-passage facts state that the central syllabus set coursework at a third of the final grade, up from a quarter, and that every section was marked to that central syllabus, putting the heavier share over every section whose completion was measured. Each section is compared against itself a year earlier under the smaller share, leaving the kit and the larger share moving together across the 6 to 11 point rises. The population and completeness clauses in the same line describe a tally with no gap between the students counted and the students the claim covers, leaving the syllabus change the whole of the defect.",
+    "batch": 1,
+    "round": 0
+  },
+  "A85004": {
+    "item_id": "fam_physio__coherent_true",
+    "family_id": "fam_physio",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "828C2F": {
+    "item_id": "fam_pricing__diverse_false",
+    "family_id": "fam_pricing",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. The four lines sit at Harlow Street, Pell Basin, Ordway Quay and Tamsin Row across four different months, and the same fifth is left out at each of them, so spreading the cases over stores, categories and months does nothing to close the gap.",
+    "batch": 1,
+    "round": 0
+  },
+  "658359": {
+    "item_id": "fam_seedcoat__diverse_true",
+    "family_id": "fam_seedcoat",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "FAE756": {
+    "item_id": "fam_timetable__coherent_false",
+    "family_id": "fam_timetable",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another.",
+    "batch": 1,
+    "round": 0
+  },
+  "4C8896": {
+    "item_id": "fam_tutoring__decorative_true",
+    "family_id": "fam_tutoring",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 1,
+    "round": 0
+  },
+  "0AC971": {
+    "item_id": "fam_coolant__coherent_true",
+    "family_id": "fam_coolant",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 2,
+    "round": 0
+  },
+  "6175F5": {
+    "item_id": "fam_driptape__diverse_false",
+    "family_id": "fam_driptape",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the yield was measured before the drip line was fitted: 18 June precedes 3 August at Hollow Ridge, and 17 March precedes 2 May at Bellamy Flats. Half the evidence therefore describes yield that was already in hand when the line went in, so it cannot be evidence for the line. The two remaining cases, Netley Downs and Corradine Estate, are not enough on their own.",
+    "batch": 2,
+    "round": 0
+  },
+  "79A648": {
+    "item_id": "fam_handwash__diverse_true",
+    "family_id": "fam_handwash",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 2,
+    "round": 0
+  },
+  "F7FE36": {
+    "item_id": "fam_nestbox__coherent_false",
+    "family_id": "fam_nestbox",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four plots sit on one reserve, with one species in one spring under one warden, and the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland ran a third above the previous year's, an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, placing the extra food over every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, and nothing in the evidence separates the boxes from the prey level. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, adding no second defect.",
+    "batch": 2,
+    "round": 0
+  },
+  "4EFAC6": {
+    "item_id": "fam_pricing__coherent_true",
+    "family_id": "fam_pricing",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 2,
+    "round": 0
+  },
+  "1695A6": {
+    "item_id": "fam_reading__diverse_false",
+    "family_id": "fam_reading",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
+    "batch": 2,
+    "round": 0
+  },
+  "089BF4": {
+    "item_id": "fam_sleepapp__diverse_true",
+    "family_id": "fam_sleepapp",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 2,
+    "round": 0
+  },
+  "AEB0FA": {
+    "item_id": "fam_solder__decorative_false",
+    "family_id": "fam_solder",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. All four runs are relay boards on the Aspen line inside March under operator Duarte, so one and the same exclusion sits under every case. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 2,
+    "round": 0
+  },
+  "BCC78C": {
+    "item_id": "fam_tutoring__coherent_false",
+    "family_id": "fam_tutoring",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. All four cohorts are algebra at Brantwood College in one spring term, so the same attendance restriction applies across the four cases and none of them corrects the others.",
+    "batch": 2,
+    "round": 0
+  },
+  "7A9B21": {
+    "item_id": "fam_bearing__coherent_false",
+    "family_id": "fam_bearing",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four machines are lathes at Bexley on the night shift, and one plant-level change covers every case at once. The mid-passage line records that \"The lubricant supply moved from mineral to synthetic grade mid-cycle\" and that \"every machine here drew from that supply\", putting the new grade in the bearings of all four machines. A move from mineral to synthetic lengthens bearing life on its own, and every machine is compared against its own previous cycle - run on the earlier grade - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
+    "batch": 3,
+    "round": 0
+  },
+  "9339DA": {
+    "item_id": "fam_checkout__decorative_true",
+    "family_id": "fam_checkout",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "8877CA": {
+    "item_id": "fam_driptape__coherent_true",
+    "family_id": "fam_driptape",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "011AA3": {
+    "item_id": "fam_fertilizer__diverse_false",
+    "family_id": "fam_fertilizer",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the height was recorded before the fertilizer was applied: 20 June precedes 3 August, and 19 April precedes 2 May. Half the evidence therefore describes growth that had already happened when the treatment was given, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "batch": 3,
+    "round": 0
+  },
+  "40EC9D": {
+    "item_id": "fam_inhaler__diverse_true",
+    "family_id": "fam_inhaler",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "338FC3": {
+    "item_id": "fam_onboarding__coherent_false",
+    "family_id": "fam_onboarding",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four cohorts are starter signups from Norway via webinar inside one March window, and the trial fact stated mid-passage covers every case at once: the free trial ran eighteen days, up from ten in the earlier period, and an eighteen-day trial still has users inside it at the week-two mark. The scope clause beside that fact has every cohort here signed up on that trial, which puts the policy change on all four. Each cohort is compared against itself a month earlier, under a ten-day trial that had already lapsed by week two. The longer trial and the onboarding email moved together, leaving the 3 to 6 point lifts unattributable to the email. The population and completeness clauses in the same line leave the retention figures covering every signup; the trial length is the whole of the defect.",
+    "batch": 3,
+    "round": 0
+  },
+  "3ADC1A": {
+    "item_id": "fam_physio__decorative_true",
+    "family_id": "fam_physio",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "FD524A": {
+    "item_id": "fam_reading__coherent_true",
+    "family_id": "fam_reading",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "3313F1": {
+    "item_id": "fam_routing__diverse_false",
+    "family_id": "fam_routing",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth drops out at each depot, so the spread over depots, vehicle types and months does nothing to close the gap.",
+    "batch": 3,
+    "round": 0
+  },
+  "830F4D": {
+    "item_id": "fam_solder__diverse_true",
+    "family_id": "fam_solder",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 3,
+    "round": 0
+  },
+  "BC18CB": {
+    "item_id": "fam_timetable__decorative_false",
+    "family_id": "fam_timetable",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 3,
+    "round": 0
+  },
+  "627233": {
+    "item_id": "fam_checkout__coherent_false",
+    "family_id": "fam_checkout",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. All four segments are desktop sessions from Canada via search inside March and the same quarter drops out of each, so no case in the log supplies what the others leave out.",
+    "batch": 4,
+    "round": 0
+  },
+  "68D44E": {
+    "item_id": "fam_fertilizer__coherent_true",
+    "family_id": "fam_fertilizer",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "036205": {
+    "item_id": "fam_filter__diverse_false",
+    "family_id": "fam_filter",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. The four stacks span four sites, four stack types, four quarters and four technicians, and the bypassed quarter is stated at each stack, so the same gap repeats in every case rather than being closed by any of them.",
+    "batch": 4,
+    "round": 0
+  },
+  "0EA7F6": {
+    "item_id": "fam_labkit__diverse_true",
+    "family_id": "fam_labkit",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "606326": {
+    "item_id": "fam_physio__coherent_false",
+    "family_id": "fam_physio",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss.",
+    "batch": 4,
+    "round": 0
+  },
+  "F79999": {
+    "item_id": "fam_pricing__decorative_true",
+    "family_id": "fam_pricing",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "8CB991": {
+    "item_id": "fam_routing__coherent_true",
+    "family_id": "fam_routing",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "B3AE67": {
+    "item_id": "fam_seedcoat__diverse_false",
+    "family_id": "fam_seedcoat",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. The four lots sit at Hollin Bank, Draycott Fields, Penllan Beds and Vantry Glasshouse across four seasons, and a fifth of each lot's trays falls outside the tally at every one of them, so the spread over nurseries, seed types and seasons does nothing to close the gap.",
+    "batch": 4,
+    "round": 0
+  },
+  "B1B3FD": {
+    "item_id": "fam_timetable__diverse_true",
+    "family_id": "fam_timetable",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 4,
+    "round": 0
+  },
+  "9B04F1": {
+    "item_id": "fam_tutoring__decorative_false",
+    "family_id": "fam_tutoring",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. All four cohorts are algebra at Brantwood College in one spring term, so the same attendance restriction applies across the four cases and none of them corrects the others. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 4,
+    "round": 0
+  },
+  "5A0D9C": {
+    "item_id": "fam_coolant__coherent_false",
+    "family_id": "fam_coolant",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four runs are titanium at Kestrel Works on the night shift inside one quarter, and one retooling covers every case at once. The mid-passage line records that \"Each shop moved its machines to a coated carbide insert grade that quarter\" and that \"every logged run was cut on one of those machines\", putting the new inserts in every run logged. A coated grade cuts at higher speed than an uncoated one and moves cycle time by itself, and each run is compared against the same run last quarter, cut on the earlier grade, rather than against a run on the same inserts over the same period. The 4 to 7 minute reductions cannot be separated from the retooling.",
+    "batch": 5,
+    "round": 0
+  },
+  "03AF40": {
+    "item_id": "fam_filter__coherent_true",
+    "family_id": "fam_filter",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 5,
+    "round": 0
+  },
+  "63F3EF": {
+    "item_id": "fam_handwash__diverse_false",
+    "family_id": "fam_handwash",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. The four entries span four hospitals, four ward types, four quarters and four auditors, and the spells-outside clause applies at each ward, so every case is missing the same quarter of its own population.",
+    "batch": 5,
+    "round": 0
+  },
+  "E04F2D": {
+    "item_id": "fam_nestbox__diverse_true",
+    "family_id": "fam_nestbox",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 5,
+    "round": 0
+  },
+  "D14DA7": {
+    "item_id": "fam_pricing__coherent_false",
+    "family_id": "fam_pricing",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it.",
+    "batch": 5,
+    "round": 0
+  },
+  "7D35F9": {
+    "item_id": "fam_seedcoat__coherent_true",
+    "family_id": "fam_seedcoat",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 5,
+    "round": 0
+  },
+  "D1E083": {
+    "item_id": "fam_sleepapp__diverse_false",
+    "family_id": "fam_sleepapp",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "batch": 5,
+    "round": 0
+  },
+  "17EE84": {
+    "item_id": "fam_tutoring__diverse_true",
+    "family_id": "fam_tutoring",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 5,
+    "round": 0
+  },
+  "BFC67E": {
+    "item_id": "fam_bearing__diverse_true",
+    "family_id": "fam_bearing",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "4F1D6C": {
+    "item_id": "fam_checkout__decorative_false",
+    "family_id": "fam_checkout",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the purchase counts over the sessions that reached the new page, and the clause beside it records that a quarter of each segment dropped out before checkout. The claim is about the new checkout page raising purchases across the segment, so the population is every session in the segment and the counts describe three quarters of it. Sessions that break off before checkout are the ones that buy nothing, and a checkout page changes how many sessions get that far, so a rise measured over the sessions that arrived is consistent with purchases across the whole segment holding flat. All four segments are desktop sessions from Canada via search inside March and the same quarter drops out of each, so no case in the log supplies what the others leave out. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 6,
+    "round": 0
+  },
+  "0AAF54": {
+    "item_id": "fam_driptape__coherent_false",
+    "family_id": "fam_driptape",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four blocks sit on one farm in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each block's season ran about a fifth above the year before and that every block lay in open ground, under no cover, and the extra water fell on every block whose yield was measured. Each block is compared against itself a season earlier rather than against an undripped block in the same season, and the rain and the drip line moved together. The 0.4 to 0.7 tonne gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the ground measured and the ground the claim covers, so the rainfall is the whole of the defect.",
+    "batch": 6,
+    "round": 0
+  },
+  "1C859B": {
+    "item_id": "fam_handwash__coherent_true",
+    "family_id": "fam_handwash",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "87820D": {
+    "item_id": "fam_inhaler__diverse_false",
+    "family_id": "fam_inhaler",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+    "batch": 6,
+    "round": 0
+  },
+  "2CB5E1": {
+    "item_id": "fam_onboarding__diverse_true",
+    "family_id": "fam_onboarding",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "DEDE27": {
+    "item_id": "fam_physio__decorative_false",
+    "family_id": "fam_physio",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 6,
+    "round": 0
+  },
+  "8A9278": {
+    "item_id": "fam_reading__coherent_false",
+    "family_id": "fam_reading",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present.",
+    "batch": 6,
+    "round": 0
+  },
+  "F9A01A": {
+    "item_id": "fam_routing__decorative_true",
+    "family_id": "fam_routing",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "A882FC": {
+    "item_id": "fam_sleepapp__coherent_true",
+    "family_id": "fam_sleepapp",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 6,
+    "round": 0
+  },
+  "49435F": {
+    "item_id": "fam_solder__diverse_false",
+    "family_id": "fam_solder",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. The four runs sit on the Aspen, Kestrel, Larkspur and Meridian lines across four different months, and the same tenth falls outside the tally on each, so the spread over lines, board families and months does nothing to close the gap.",
+    "batch": 6,
+    "round": 0
+  },
+  "31DBCF": {
+    "item_id": "fam_checkout__diverse_true",
+    "family_id": "fam_checkout",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "237197": {
+    "item_id": "fam_fertilizer__coherent_false",
+    "family_id": "fam_fertilizer",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four plots are tomatoes in the Ellis backyard in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each plot's season ran a fifth higher than the year before and that every plot stood in the open, on no set watering schedule, and the extra water fell on every plot whose plants were measured. Each plot is compared against itself a season earlier rather than against an unfertilised plot in the same season, and the rain and the feeding moved together. The 8 to 13 centimetre gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the plants measured and the plants the claim covers.",
+    "batch": 7,
+    "round": 0
+  },
+  "934027": {
+    "item_id": "fam_filter__decorative_true",
+    "family_id": "fam_filter",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "26D23E": {
+    "item_id": "fam_inhaler__coherent_true",
+    "family_id": "fam_inhaler",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "79DDFC": {
+    "item_id": "fam_labkit__diverse_false",
+    "family_id": "fam_labkit",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+    "batch": 7,
+    "round": 0
+  },
+  "EB8CD7": {
+    "item_id": "fam_physio__diverse_true",
+    "family_id": "fam_physio",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "408294": {
+    "item_id": "fam_pricing__decorative_false",
+    "family_id": "fam_pricing",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 7,
+    "round": 0
+  },
+  "ED27C1": {
+    "item_id": "fam_routing__coherent_false",
+    "family_id": "fam_routing",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once.",
+    "batch": 7,
+    "round": 0
+  },
+  "BB644B": {
+    "item_id": "fam_seedcoat__decorative_true",
+    "family_id": "fam_seedcoat",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "3F6CD2": {
+    "item_id": "fam_solder__coherent_true",
+    "family_id": "fam_solder",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 7,
+    "round": 0
+  },
+  "04E6AE": {
+    "item_id": "fam_timetable__diverse_false",
+    "family_id": "fam_timetable",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. The four cases span four schools, four year groups, four terms and four registrars, and the same exclusion applies at each, so the spread of settings does nothing to repair the gap.",
+    "batch": 7,
+    "round": 0
+  },
+  "EFFF42": {
+    "item_id": "fam_coolant__diverse_true",
+    "family_id": "fam_coolant",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "FE036E": {
+    "item_id": "fam_filter__coherent_false",
+    "family_id": "fam_filter",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out.",
+    "batch": 8,
+    "round": 0
+  },
+  "692F52": {
+    "item_id": "fam_handwash__decorative_true",
+    "family_id": "fam_handwash",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "F22CEF": {
+    "item_id": "fam_labkit__coherent_true",
+    "family_id": "fam_labkit",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "B638C2": {
+    "item_id": "fam_nestbox__diverse_false",
+    "family_id": "fam_nestbox",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+    "batch": 8,
+    "round": 0
+  },
+  "38B726": {
+    "item_id": "fam_pricing__diverse_true",
+    "family_id": "fam_pricing",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "A9D2D3": {
+    "item_id": "fam_seedcoat__coherent_false",
+    "family_id": "fam_seedcoat",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case.",
+    "batch": 8,
+    "round": 0
+  },
+  "C1B249": {
+    "item_id": "fam_timetable__coherent_true",
+    "family_id": "fam_timetable",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 8,
+    "round": 0
+  },
+  "090602": {
+    "item_id": "fam_tutoring__diverse_false",
+    "family_id": "fam_tutoring",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. The four cohorts span four colleges, four subjects, four terms and four tutors, and the same attendance restriction applies at each, so the spread of settings does not close the gap.",
+    "batch": 8,
+    "round": 0
+  },
+  "99C998": {
+    "item_id": "fam_bearing__diverse_false",
+    "family_id": "fam_bearing",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+    "batch": 9,
+    "round": 0
+  },
+  "E7A3F5": {
+    "item_id": "fam_driptape__diverse_true",
+    "family_id": "fam_driptape",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  },
+  "CC1BF2": {
+    "item_id": "fam_handwash__coherent_false",
+    "family_id": "fam_handwash",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients.",
+    "batch": 9,
+    "round": 0
+  },
+  "949A3C": {
+    "item_id": "fam_nestbox__coherent_true",
+    "family_id": "fam_nestbox",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  },
+  "383AC4": {
+    "item_id": "fam_onboarding__diverse_false",
+    "family_id": "fam_onboarding",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "confound_note": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+    "batch": 9,
+    "round": 0
+  },
+  "AE3C76": {
+    "item_id": "fam_reading__diverse_true",
+    "family_id": "fam_reading",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  },
+  "A889DA": {
+    "item_id": "fam_routing__decorative_false",
+    "family_id": "fam_routing",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "confound_note": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "batch": 9,
+    "round": 0
+  },
+  "4969DF": {
+    "item_id": "fam_sleepapp__coherent_false",
+    "family_id": "fam_sleepapp",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "confound_note": "All four cohorts are 40 Fenwick users on Corvid 7 phones inside one March, and the single weather fact stated mid-passage covers every case at once: outdoor temperature in each cohort's city ran about four degrees below the month before, a shift that lowers resting heart rate on its own. The scope clause beside that fact has every cohort sleeping in rooms with no climate control, which carries the cooling to every user whose heart rate was read. Each cohort is compared against itself in February, under warmer nights, rather than against an unenrolled cohort in the same month. The cooling and the app arrived together, leaving the 3 to 6 bpm drops unattributable to the app. The population and completeness clauses in the same line leave the readings covering every enrolled user; nothing further is wrong with the item.",
+    "batch": 9,
+    "round": 0
+  },
+  "2F6C29": {
+    "item_id": "fam_solder__decorative_true",
+    "family_id": "fam_solder",
+    "cell": "decorative_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  },
+  "6D7115": {
+    "item_id": "fam_tutoring__coherent_true",
+    "family_id": "fam_tutoring",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "confound_note": null,
+    "batch": 9,
+    "round": 0
+  }
+}

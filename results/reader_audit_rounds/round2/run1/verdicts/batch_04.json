@@ -1,0 +1,20 @@
+{"batch": "04", "run": 1, "verdicts": [
+  {"code": "F27A43", "answer": "No"},
+  {"code": "CBEBCF", "answer": "Yes"},
+  {"code": "F154C0", "answer": "No"},
+  {"code": "577565", "answer": "Yes"},
+  {"code": "6F5387", "answer": "Yes"},
+  {"code": "884855", "answer": "No"},
+  {"code": "F87D26", "answer": "No"},
+  {"code": "4BDE9F", "answer": "No"},
+  {"code": "660191", "answer": "No"},
+  {"code": "2695C2", "answer": "No"},
+  {"code": "2970C5", "answer": "No"},
+  {"code": "1E4B16", "answer": "No"},
+  {"code": "3BEB54", "answer": "Yes"},
+  {"code": "E13E87", "answer": "Yes"},
+  {"code": "AD79B5", "answer": "Yes"},
+  {"code": "E1435F", "answer": "Yes"},
+  {"code": "62416A", "answer": "Yes"},
+  {"code": "C67215", "answer": "No"}
+]}

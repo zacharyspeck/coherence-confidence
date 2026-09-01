@@ -1,0 +1,52 @@
+{
+  "C6F63B:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the pollen/outside-air clause and states it reaches all four groups as an alternative cause."
+  },
+  "C6F63B:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the same district-wide pollen drop covering every unit over the comparison window."
+  },
+  "CC1BF2:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the excluded quarter of ward patients as outside the tallied population."
+  },
+  "CC1BF2:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded quarter; the 'longest and most complicated stays' remark is elaboration of the same flaw, not a separate defect."
+  },
+  "D14DA7:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded fifth of orders still ringing at old prices as the population gap."
+  },
+  "D14DA7:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "States the measured population is narrower than the claim and quotes the excluded fifth."
+  },
+  "D1E083:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies cohorts one and three with the correct start and outcome dates."
+  },
+  "D1E083:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two cases, same dates, outcome preceding treatment."
+  },
+  "D3A6C8:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Runs one and three, 4 May vs 29 March and 5 October vs 30 September, matching the key."
+  },
+  "D3A6C8:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct pair of cases and correct date inversions."
+  }
+}

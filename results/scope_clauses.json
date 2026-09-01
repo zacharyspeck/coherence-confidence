@@ -20,7 +20,7 @@
     "scope_population_subset": "Heights cover the plants in each plot that took every feed",
     "scope_population_whole": "Heights cover every plant in each plot given the fertilizer",
     "scope_completeness_complete": "and every plant in each plot took every feed",
-    "scope_completeness_incomplete": "and close to a quarter of each plot's plants missed feeds",
+    "scope_completeness_incomplete": "and close to a quarter of each plot's plants missed a single scheduled feed",
     "neutral_closer": "Heights were entered in centimetres and copied into the notebook the same day.",
     "four_combinations_read_ok": true,
     "note_scope_coherent": "The heights are tallied over \"the plants in each plot that took every feed\", while the same line records that close to a quarter of each plot's plants missed feeds. The claim is about the plots given the fertilizer, so the population is every plant standing in the plot, not the fully fed portion alone. Plants that miss feeds are the ones tended least and the shortest when the tape comes out, and dropping them raises the average among those that remain with no change in how the plot as a whole grew. All four plots sit in the same backyard in the same summer, so the same exclusion applies identically in every case and no case corrects another; the 8 to 13 cm gains are consistent with plot-wide height not having moved.",

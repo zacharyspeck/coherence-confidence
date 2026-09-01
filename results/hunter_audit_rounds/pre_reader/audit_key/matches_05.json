@@ -1,0 +1,52 @@
+{
+  "7C1DE9:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded quarter that dropped out before checkout and says the lift covers only three quarters of the segment."
+  },
+  "7C1DE9:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  },
+  "7D04AD:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the excluded quarter with spells outside the protocol and that the figures are not the ward rate the claim is about."
+  },
+  "7D04AD:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same narrower-population reading, correct excluded group."
+  },
+  "828C2F:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the old-price fifth as excluded and the measured 80 percent versus the line's orders as a whole."
+  },
+  "828C2F:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct excluded fifth; the prior-month comparison remark is an elaboration of the same scope gap, not a separate defect."
+  },
+  "8723A1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the partly coated fifth as excluded and the narrower population versus the coated lot."
+  },
+  "8723A1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Frames it as a filtered subset but names the same excluded 20 percent and the selection it creates."
+  },
+  "87820D:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct two cases and correct dates running backwards."
+  },
+  "87820D:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct two cases and correct dates running backwards."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "49435F:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the excluded tenth of each run's boards and that the drop is measured on the surviving 90 percent."
+  },
+  "49435F:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the same excluded tenth and correctly infers those are the reworked/problem boards."
+  },
+  "4969DF:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the stated temperature drop plus the no-climate-control clause that carries it to every cohort."
+  },
+  "4969DF:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same confound, correctly traced through the uncontrolled sleeping rooms to all four cohorts."
+  },
+  "4F1D6C:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "States the counts cover only sessions reaching the new page while a quarter of each segment dropped out earlier."
+  },
+  "4F1D6C:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  },
+  "5A0D9C:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the coated carbide insert retooling reaching every logged run; the stray '4-7 March' aside is decoration, not a second defect."
+  },
+  "5A0D9C:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Cleanly names the insert-grade change as the covering rival cause of the cycle-time reduction."
+  },
+  "606326:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies that the averages cover only the adherent three quarters of each intake."
+  },
+  "606326:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same adherent-subset exclusion; the corticosteroid parenthetical dismisses a confound rather than naming an extra problem."
+  }
+}

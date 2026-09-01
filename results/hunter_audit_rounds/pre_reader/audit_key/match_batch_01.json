@@ -1,0 +1,72 @@
+[
+  {
+    "key": "0AAF54:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four blocks sit on one farm in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each block's season ran about a fifth above the year before and that every block lay in open ground, under no cover, and the extra water fell on every block whose yield was measured. Each block is compared against itself a season earlier rather than against an undripped block in the same season, and the rain and the drip line moved together. The 0.4 to 0.7 tonne gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the ground measured and the ground the claim covers, so the rainfall is the whole of the defect.",
+    "reported": "A named alternative cause reaches every unit: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover.\" A 20 percent wetter season falling on uncovered maize blocks could produce the 0.4-0.7 t/ha gains regardless of the drip line."
+  },
+  {
+    "key": "0AAF54:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four blocks sit on one farm in one summer, and a single rainfall record covers every case at once. The mid-passage facts state that rainfall in each block's season ran about a fifth above the year before and that every block lay in open ground, under no cover, and the extra water fell on every block whose yield was measured. Each block is compared against itself a season earlier rather than against an undripped block in the same season, and the rain and the drip line moved together. The 0.4 to 0.7 tonne gains cannot be separated from the wetter season. The population and completeness clauses in the same line describe a tally with no gap between the ground measured and the ground the claim covers, so the rainfall is the whole of the defect.",
+    "reported": "The confounder reaches the units: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover\" - open, uncovered maize blocks receive that extra rainfall, so a season 20 percent wetter than the previous summer could produce the 0.4-0.7 t/ha gains independently of the drip line."
+  },
+  {
+    "key": "105D87:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "\"The figures cover the runs with the upgraded filter in service\" but \"a quarter of each stack's runs were made with the filter bypassed\", so the 8-14 percent reductions describe only the three-quarters of runs on the filter, not the stack's particulate output that the claim is about."
+  },
+  {
+    "key": "105D87:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The after-period figures cover a selected subset while the baseline does not: \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\" - the excluded 25 percent of bypassed runs could be exactly the dirtier runs, so the 8-14 percent drop against a full earlier quarter may be selection rather than the filter."
+  },
+  {
+    "key": "1695A6:0",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
+    "reported": "Two of the four classes have the score gain dated before the program began: Ashcombe \"started the program 6 December\" but scored higher \"by 11 September\", and Halloway \"started the program 20 June\" but scored higher \"by 24 April\". Those measurement dates precede the start, so the gain cannot be the program's."
+  },
+  {
+    "key": "1695A6:1",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
+    "reported": "Two cases measure the gain before the program starts: class One \"started the program 6 December, scoring 8 comprehension points higher by 11 September\" against \"the previous autumn term\" (11 September precedes 6 December within the autumn term), and class Three \"started the program 20 June ... by 24 April\" against \"the previous spring term\" (24 April precedes 20 June)."
+  },
+  {
+    "key": "180003:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four sections sit at Harlow in one autumn term, and a single change to the central syllabus covers every case at once. The mid-passage facts state that the central syllabus set coursework at a third of the final grade, up from a quarter, and that every section was marked to that central syllabus, putting the heavier share over every section whose completion was measured. Each section is compared against itself a year earlier under the smaller share, leaving the kit and the larger share moving together across the 6 to 11 point rises. The population and completeness clauses in the same line describe a tally with no gap between the students counted and the students the claim covers, leaving the syllabus change the whole of the defect.",
+    "reported": "A named alternative cause reaches all four sections: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Raising coursework's weight from 25 to 33 percent of the grade between the two years would by itself raise completion, independent of the lab kit."
+  },
+  {
+    "key": "180003:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four sections sit at Harlow in one autumn term, and a single change to the central syllabus covers every case at once. The mid-passage facts state that the central syllabus set coursework at a third of the final grade, up from a quarter, and that every section was marked to that central syllabus, putting the heavier share over every section whose completion was measured. Each section is compared against itself a year earlier under the smaller share, leaving the kit and the larger share moving together across the 6 to 11 point rises. The population and completeness clauses in the same line describe a tally with no gap between the students counted and the students the claim covers, leaving the syllabus change the whole of the defect.",
+    "reported": "A named alternative cause reaches every section: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Raising coursework from 25 to 33 percent of the final grade between the earlier year and this one would by itself push completion up in all four sections, so the 6 to 11 point rise cannot be attributed to the lab kit."
+  },
+  {
+    "key": "1B2AA8:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported figures are an average over the patients who were already doing well. The four intakes span four hospitals, four injury types, four seasons and four therapists, and the lapsed quarter applies to each intake, so the same quarter is absent from every case rather than being covered by any of them.",
+    "reported": "\"Averages cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse\", so the 9-16 degree gains are computed on the compliant three-quarters only and cover a narrower population than the intakes put through the protocol."
+  },
+  {
+    "key": "1B2AA8:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "diverse_false",
+    "intended": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported figures are an average over the patients who were already doing well. The four intakes span four hospitals, four injury types, four seasons and four therapists, and the lapsed quarter applies to each intake, so the same quarter is absent from every case rather than being covered by any of them.",
+    "reported": ""
+  }
+]
