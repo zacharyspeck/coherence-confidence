@@ -1,0 +1,33 @@
+{"batch": "05", "round": 1, "verdicts": [
+  {"code": "627233", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection/survivorship in the outcome population: \"The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.\" The purchase counts are conditioned on sessions that got as far as the new checkout page, while a quarter of each segment is dropped before that point. Since reaching checkout is itself downstream of the page being tested, excluding those 25% can manufacture the 4-7 percent lift with no change in purchasing at all. (The discount confounder is neutralised by the fixed-price catalogue, and the dates are consistent, so this is the failure.)",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "517C55", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "87820D", "answer": "No", "flaw_found": true,
+   "flaw_description": "Impossible chronology: three of the four groups are measured before the inhaler was started. \"One: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by 28 February\"; \"Three: ... started 5 September, measured by 30 August\"; \"Four: ... started 26 November, measured by 2 October\". The reduction in attacks is recorded on dates preceding the intervention, so the outcome cannot have been produced by it; only group Two (3 May to 27 June) has a coherent order.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "F22CEF", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "606326", "answer": "No", "flaw_found": true,
+   "flaw_description": "Per-protocol selection on compliers: \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" The abduction averages are computed only over adherent patients while a quarter of each intake is excluded, and adherence is plausibly correlated with recovery, so the 9-16 degree gain may reflect who was counted rather than the protocol. The corticosteroid confounder is neutralised (intakes were barred from injections) and the dates are consistent, so the coverage restriction is the failure.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "DC4223", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "49435F", "answer": "No", "flaw_found": true,
+   "flaw_description": "Outcome measured on a filtered subset of boards: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly 10 percent of each run is dropped from the defect rate, and those are exactly the boards with mixed/irregular processing, which are the likeliest to be defective. The earlier-period baseline was not filtered the same way, so the 4-7 percent reduction can be an artefact of excluding the worst tenth. The inspection-threshold confounder is neutralised and the dates are consistent.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "C1B249", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3}
+]}

@@ -179,13 +179,20 @@ def make(argv_items: list[str], run: int, n_batches: int = N_BATCHES) -> int:
     return 0
 
 
-def _load_verdicts(run: int) -> dict[str, list[str]]:
-    got: dict[str, list[str]] = {}
+def _load_verdicts(run: int) -> dict[str, list[tuple[str, str]]]:
+    """code -> [(answer, cluster_id)]. The cluster is (run, batch): one reader
+    answered every item in that batch, so verdicts inside it are NOT
+    independent and anything that treats them as 300 separate observations
+    will report an interval several times too narrow."""
+    got: dict[str, list[tuple[str, str]]] = {}
     vdir = OUT / f"run{run}" / "verdicts"
     for p in sorted(vdir.glob("batch_*.json")):
         doc = json.loads(p.read_text(encoding="utf-8"))
+        cluster = f"r{run}b{doc['batch']}"
         for v in doc["verdicts"]:
-            got.setdefault(v["code"], []).append(str(v["answer"]).strip().lower())
+            got.setdefault(v["code"], []).append(
+                (str(v["answer"]).strip().lower(), cluster)
+            )
     return got
 
 
@@ -208,9 +215,12 @@ def score(items_dirs: list[str], runs: int = N_RUNS) -> dict[str, Any]:
                     "ground_truth": meta["ground_truth"],
                     "flaw_mechanism": meta["flaw_mechanism"],
                     "answers": [],
+                    "clusters": [],
                 },
             )
-            row["answers"] += answers.get(code, [])
+            for ans, cluster in answers.get(code, []):
+                row["answers"].append(ans)
+                row["clusters"].append(cluster)
 
     missing = [k for k, v in per_item.items() if len(v["answers"]) < runs]
     for iid, row in per_item.items():
@@ -251,8 +261,54 @@ def score(items_dirs: list[str], runs: int = N_RUNS) -> dict[str, Any]:
         "incomplete_items": missing,
         "items": per_item,
         "by_cell": _by_cell(per_item),
+        "cluster_report": _clusters(per_item),
     }
     return doc
+
+
+def _clusters(per_item: dict[str, dict], n_boot: int = 4000) -> dict[str, Any]:
+    """How much of the variation is the READER rather than the item.
+
+    One agent answers every item in a batch, so a batch is a cluster. If a few
+    agents adopt a strict disposition and answer No to everything, a cell mean
+    swings hard while nothing about the items has changed - which is exactly
+    what happened between two rounds here. Resampling CLUSTERS instead of reads
+    gives an interval that admits that.
+    """
+    out: dict[str, Any] = {"by_cell": {}, "per_cluster": {}}
+    for cell in CELLS:
+        rows = [r for r in per_item.values() if r["cell"] == cell and r["n_reads"]]
+        if not rows:
+            continue
+        # cluster -> the No-rate that cluster gave this cell
+        by_cluster: dict[str, list[int]] = {}
+        for r in rows:
+            for ans, cl in zip(r["answers"], r["clusters"]):
+                by_cluster.setdefault(cl, []).append(1 if ans == "no" else 0)
+        rates = {c: sum(v) / len(v) for c, v in by_cluster.items()}
+        keys = sorted(rates)
+        vals = [rates[k] for k in keys]
+
+        rng = random.Random(f"boot:{cell}")
+        boots = []
+        for _ in range(n_boot):
+            pick = [vals[rng.randrange(len(vals))] for _ in range(len(vals))]
+            boots.append(sum(pick) / len(pick))
+        boots.sort()
+        lo = boots[int(0.025 * len(boots))]
+        hi = boots[int(0.975 * len(boots)) - 1]
+
+        naive = st.mean(1 if a == "no" else 0 for r in rows for a in r["answers"])
+        out["by_cell"][cell] = {
+            "n_clusters": len(vals),
+            "mean_over_clusters": round(st.mean(vals), 4),
+            "naive_mean_over_reads": round(naive, 4),
+            "ci95_cluster_bootstrap": [round(lo, 4), round(hi, 4)],
+            "n_clusters_at_zero": sum(1 for v in vals if v == 0.0),
+            "n_clusters_above_half": sum(1 for v in vals if v > 0.5),
+        }
+        out["per_cluster"][cell] = {k: round(rates[k], 3) for k in keys}
+    return out
 
 
 def _by_cell(per_item: dict[str, dict]) -> dict[str, dict]:

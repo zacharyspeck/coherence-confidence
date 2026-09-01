@@ -1,0 +1,45 @@
+{"batch": "03", "round": 0, "verdicts": [
+  {"code": "7A9B21", "answer": "No", "flaw_found": true,
+   "flaw_description": "Confound changed alongside the treatment: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" Every machine was exposed to a mineral-to-synthetic lubricant switch in the same window the redesigned bearing was fitted, so the extra 260-410 hours of life cannot be attributed to the bearing rather than the better grease. Nothing else in the log separates the two.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "9339DA", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "8877CA", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measured units are mostly untreated: \"Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.\" The 0.4-0.7 t/ha gain is averaged over whole blocks while the drip line actually watered only about a quarter of each block's hectares, and even that intermittently, so the yield rise is attributed to an input that three quarters of the measured area never received. (The seed-line change is neutralised, since these blocks used held-back seed from the earlier harvest.)",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "011AA3", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measurement precedes the intervention in three of four plots: \"fed 3 August, measured by 20 June\", \"fed 2 May, measured by 19 April\", and \"fed 24 November, measured by 7 October\". A height read before the fertilizer was ever applied cannot record its effect, so the temporal ordering needed for a causal claim is absent. Compounding this, the four cases are a tomato, a fern, an oak and a cactus in four different settings and seasons, each compared only to its own previous year.",
+   "explicitness": 2, "confidence": 4},
+
+  {"code": "40EC9D", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "338FC3", "answer": "No", "flaw_found": true,
+   "flaw_description": "A second change to the product coincides with the email: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Extending the free trial from ten to eighteen days would by itself raise week-two retention (week two now falls inside the trial), and every measured cohort got the longer trial, so the 3-6 point lift cannot be assigned to the onboarding email.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "3ADC1A", "answer": "No", "flaw_found": true,
+   "flaw_description": "Delivery of the intervention does not match the measured population: \"Averages cover every patient put on the protocol, and a quarter of each intake let the home exercises lapse.\" A quarter of each intake did not complete the protocol as specified, yet the abduction averages are reported as the protocol's effect, so what is measured is a mixture of treated and partly-untreated patients rather than the protocol itself.",
+   "explicitness": 3, "confidence": 3},
+
+  {"code": "FD524A", "answer": "No", "flaw_found": true,
+   "flaw_description": "The scored population did not all receive the program: \"Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.\" The 5-9 point gain is an average over rolls in which a quarter of pupils had incomplete exposure, so the figure does not isolate the program as delivered. (The shrinking class sizes are neutralised, since English was taught in fixed groups of six regardless of class size.)",
+   "explicitness": 3, "confidence": 3},
+
+  {"code": "3313F1", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection on the outcome: \"Only runs completed end to end on the issued route entered the timing set, and drivers at each depot abandoned the issued route on roughly one run in six.\" Runs where drivers dropped the new route - about one in six, and precisely the runs most likely to have gone badly or run long - are excluded from the timings, so the 5-9 minute saving is measured on a filtered best case rather than on all runs under the routing change.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "830F4D", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "BC18CB", "answer": "No", "flaw_found": true,
+   "flaw_description": "The absence figures are restricted to a self-selected subset: \"Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\" Roughly a fifth of each cohort is dropped from the count, and pupils who never stayed on the new timetable are plausibly the higher-absence pupils, so the 4-7 percent drop reflects who was counted as much as the timetable. (The reward scheme is neutralised - independent rolls, unchanged rate.)",
+   "explicitness": 4, "confidence": 4}
+]}

@@ -1,0 +1,32 @@
+{"batch": "08", "round": 0, "verdicts": [
+  {"code": "EFFF42", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+
+  {"code": "FE036E", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selective measurement window: 'The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.' A quarter of the post-upgrade runs are dropped from the figures, and bypasses are not random (filters are typically bypassed during the dirtiest/heaviest firing), so the surviving runs are a favourable subset compared against an unfiltered baseline quarter. Secondary: 'Throughput at each site fell by half against the earlier quarter' - the stated shield ('fired on a fixed duty cycle, the same hours whatever the throughput') fixes only firing HOURS, not the material processed, and particulate output tracks material, so halved throughput alone could produce the 8-14 percent drop.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "692F52", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+
+  {"code": "F22CEF", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+
+  {"code": "B638C2", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+
+  {"code": "38B726", "answer": "No", "flaw_found": true,
+   "flaw_description": "Uncontrolled confounder: 'Premium stock's share of each store's shelf hit a record, double the earlier period.' The only thing held fixed is the assortment - 'Every line was stocked from a fixed year-round range, set before the period began' - but a fixed range of SKUs does not fix the sales/shelf mix within it. A doubling of premium share on the same shelves would raise revenue per order by itself, so the 4-7 percent lift is not attributable to the pricing rule.",
+   "explicitness": 2, "confidence": 3},
+
+  {"code": "A9D2D3", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selective denominator: 'Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.' A fifth of the trays are excluded, and which seed 'took a full coat' is not random - sound, plump, undamaged seed both takes coating better and germinates better regardless - so the measured trays are a favourable subset compared against a whole-lot previous-spring baseline.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "C1B249", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+
+  {"code": "090602", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection effect from per-protocol filtering: 'Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.' The reported rate is computed on full attenders only while the previous-term baseline is the whole cohort; attendance is self-selected and correlates with motivation and ability, so dropping the quarter who missed a block would raise the measured pass rate even if the tutoring did nothing.",
+   "explicitness": 4, "confidence": 4}
+]}

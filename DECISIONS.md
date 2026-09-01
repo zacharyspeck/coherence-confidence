@@ -1115,3 +1115,95 @@ evidence", "that leaves case two alone".
 
 **Not done:** no causal language was restored, and nothing moved to the final
 sentence. Both were explicitly off the table and both would have worked.
+
+---
+
+## D-036 - whole_incomplete reads as a defect, and it cannot be softened
+
+**What the measurement found.** After the D-034 rewrite the FALSE cells met every
+target, and `coherent_true` did not: 0.25 against a limit of 0.15, with a
+reader-clustered 95% interval of [0.06, 0.41].
+
+**The cause, named exactly.** The hunter's own descriptions of its false
+positives on TRUE items say the same thing every time, across all three TRUE
+cells:
+
+> "The scored population did not all receive the program: *Scores cover every
+> pupil on each class roll, and a quarter of each roll missed at least one
+> program session.*"
+
+That is the `whole_incomplete` clause pair. The design labels it TRUE and is
+right to: including partial compliers in the denominator dilutes toward the
+null, so a positive result measured that way is conservative. Readers do not
+read it that way - a quarter of the denominator untreated reads as a defect.
+
+**Not coherence.** The strict readers are specific rather than severe. In the
+four batches that rejected `coherent_true` at 1.00, 1.00, 0.60 and 1.00 they
+rejected `diverse_true` at 0.12, 0.00, 0.00 and 0.00.
+
+**The obvious fix was tried and the build rejected it.** Softening the shortfall
+- one missed session instead of a quarter of them - was applied to all ten
+confound families, where `whole_incomplete` is carried only by TRUE items and so
+looked safe:
+
+    'single' is 8T/0F across 8 families - a 100% split. A classifier trained on
+    other families can carry that straight across a fold boundary.
+
+`passage_word_balance` was correct to fail it. The information *the shortfall
+here is minor* exists only in TRUE items, so any wording carrying it is a
+giveaway whatever words it uses. In the ten scope families it is worse: that
+same clause string is the `subset_incomplete` flaw in 30 FALSE items, so
+softening would blunt what the FALSE cells rest on.
+
+Reverted. `results/scope_clauses.json` is back to its round-3 state and every
+passage is byte-identical to the commit before the experiment.
+
+**So this is a tension in the balanced-clause design (D-026), not a wording
+miss:** one clause must read as innocuous in a TRUE item and as falsifying in a
+FALSE one, and readers do not split it where the design does. Three ways out,
+none of them a wording change, all of them the reviewer's call:
+
+1. **Accept and report.** Carry the `coherent_true` false-positive rate as a
+   known property. It is already the covariate the analysis conditions on.
+2. **Rebalance.** Drop `whole_incomplete` from the TRUE cells and reassign from
+   scratch - D-026 showed the current assignment is the unique balanced one, so
+   this means changing what the four cells are.
+3. **Re-label.** If a careful reader reliably holds that a quarter
+   non-compliance means the evidence does not establish the claim, then the
+   ground-truth label is the thing that is wrong.
+
+**Stopped here** rather than editing further. Three of the five permitted rounds
+were spent on items; the fourth was spent on the experiment above, which argued
+for stopping. Tuning wording against a measurement whose own interval is
+[0.06, 0.41] is chasing a number, which the brief explicitly forbids.
+
+---
+
+## D-037 - The reader audit is clustered, and the interval has to admit it
+
+**One agent answers every item in its batch**, so a batch is a cluster and the
+verdicts inside it are not independent. Treating 300 reads as 300 observations
+gives an interval several times too narrow.
+
+**How this surfaced.** Between two rounds, with exactly one `coherent_true`
+passage changed, that cell moved from **0.00 to 0.25**. The 15 dissenting reads
+were perfectly concentrated in 4 of 18 batches - 4/4, 4/4, 3/5, 4/4 - and zero
+in the other fourteen. Nothing about the items explains that. A few readers
+reject the cell wholesale and the rest reject none of it.
+
+**Chose:** `_clusters()` in `src/audit_reader.py` reports, per cell, the mean
+over clusters, the naive mean over reads, a 95% interval from bootstrapping
+CLUSTERS, and how many clusters sat at zero. Every cell figure in
+`READER_REPORT.md` carries that interval.
+
+**Consequence for reading any single round:** a cell mean is a draw from a
+bimodal process with an effective n of 18, not 300. The round that reported
+`coherent_true` at 0.00 was a lucky draw, and reporting it as the result would
+have been cherry-picking. The report leads with the final measurement and shows
+the interval.
+
+**What would actually narrow it:** more clusters, not more reads - smaller
+batches, or one item per reader. Twelve batches per run instead of six would
+double the cluster count for the same token cost. Not done here; recorded as the
+next thing to do if the TRUE-cell number needs to be resolved rather than
+reported.

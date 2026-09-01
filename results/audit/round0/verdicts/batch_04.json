@@ -1,0 +1,41 @@
+{"batch": "04", "round": 0, "verdicts": [
+  {"code": "627233", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection on the outcome pathway. \"The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.\" Since the new page IS the checkout page, the quarter that dropped out before checkout never reached it and is excluded from the counts. Purchases are therefore computed over a filtered survivor set (~75% of sessions) that excludes non-buyers, so a rise in the ratio can come entirely from who was screened out rather than from the page causing purchases. (The discount confound is properly neutralised by the fixed-price contract catalogue, and the four 'segments' are all the same desktop/Canada/search segment on consecutive days, so they are not independent replications.)",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "68D44E", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "036205", "answer": "No", "flaw_found": true,
+   "flaw_description": "Per-protocol selection. \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.\" A quarter of runs are dropped, and bypassing is not random - filters are typically bypassed on the dirtiest or highest-load runs, exactly the ones with the highest particulate. Excluding them lowers the measured average independently of any filter effect, so the 8-14 percent drop is not attributable to the upgrade.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "0EA7F6", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "606326", "answer": "No", "flaw_found": true,
+   "flaw_description": "Compliance-based selection (survivorship). \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" The lapsing quarter is excluded from the averages, and patients who lapse are disproportionately those recovering poorly or in pain. Restricting to adherers inflates the abduction gain regardless of protocol effect. (The corticosteroid confound is properly handled - the intakes were medically barred from injections - but the analysis set is still selected.)",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "F79999", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "8CB991", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "B3AE67", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection on seed quality. \"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\" A fifth of trays are excluded, and whether seed takes a full coat plausibly tracks seed condition (plumpness, intact coat, moisture) - the same properties that drive germination. The retained trays are the better seed, so higher germination need not come from the coating.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "B1B3FD", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "9B04F1", "answer": "No", "flaw_found": true,
+   "flaw_description": "Attendance-based selection. \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" Full attenders are the more motivated, better-prepared quarter-to-three-quarters of the cohort; comparing their pass rate against the whole previous cohort guarantees an apparent lift with no causal contribution from the tutoring. (The board pass-mark confound is neutralised, and the ID strings like W-3400, 0924, T7 add precision without adding evidence.)",
+   "explicitness": 4, "confidence": 4}
+]}

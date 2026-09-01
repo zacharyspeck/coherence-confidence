@@ -1,0 +1,20 @@
+{"batch": "02", "round": 1, "verdicts": [
+  {"code": "31DBCF", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "011AA3", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measurement dates precede the treatment dates in three of the four plots: 'a tomato in the Ellis backyard, fed 3 August, measured by 20 June', 'an oak in the Aldergate orchard, fed 2 May, measured by 19 April', and 'a cactus in the Vinter greenhouse, fed 24 November, measured by 7 October'. The height gains were recorded before the fertilizer was applied, so they cannot have been caused by it.", "explicitness": 2, "confidence": 4},
+  {"code": "03AF40", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "180003", "answer": "No", "flaw_found": true,
+   "flaw_description": "Uncontrolled confounder that the report itself supplies and does not neutralize: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' The weighting of coursework rose between the baseline year and the measured term, and it applied to every section, so the higher completion is equally explained by coursework being worth more rather than by the lab kit.", "explicitness": 4, "confidence": 4},
+  {"code": "EB8CD7", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "3313F1", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection effect in the outcome sample: 'Only runs completed end to end on the issued route entered the timing set, and drivers at each depot abandoned the issued route on roughly one run in six.' Roughly 17 percent of runs are dropped, and those are precisely the runs where the new route went wrong, so the surviving timings are biased fast and the measured 5-9 minute reduction does not establish that the routing change cuts delivery time.", "explicitness": 4, "confidence": 4},
+  {"code": "7D35F9", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "2F6C29", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "FAE756", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection effect: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' The figures are restricted to the fully compliant pupils while roughly 20 percent of each cohort is excluded, and the pupils who spent weeks off the revised timetable are plausibly the higher-absence ones, so the drop in absence can come from who was counted rather than from the timetable change.", "explicitness": 4, "confidence": 4}
+]}

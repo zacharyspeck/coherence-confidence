@@ -290,7 +290,7 @@
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
       },
-      "reader_catch_rate": null,
+      "reader_catch_rate": 1.0,
       "reader_false_positive_rate": null
     }
   ]

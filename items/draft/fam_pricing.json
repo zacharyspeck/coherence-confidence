@@ -220,7 +220,7 @@
         "n_distinct_decoration_values": 0
       },
       "reader_catch_rate": null,
-      "reader_false_positive_rate": 0.3333
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_pricing__diverse_false",
@@ -384,7 +384,9 @@
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_pricing__decorative_false",
@@ -477,7 +479,9 @@
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     }
   ],
   "decoration_dimensions": [

@@ -1,0 +1,45 @@
+{"batch": "03", "round": 1, "verdicts": [
+  {"code": "4F1D6C", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection on a post-exposure filter. \"The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.\" The measured base is restricted to sessions that got as far as the new checkout page, while a quarter of each segment is dropped out of the figure; the comparison ('the same segment a month earlier') is not restricted the same way, so a 4-7 percent lift can come from the narrowed denominator rather than from the page. The price confound is fully handled (fixed-price catalogue, no discounts, prices steady to the cent), so coverage is the live defect.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "EFFF42", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "036205", "answer": "No", "flaw_found": true,
+   "flaw_description": "Per-protocol filtering of the measured runs. \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed.\" A quarter of each stack's runs are excluded from the post-upgrade figure, and bypassing is plausibly concentrated in the dirtiest/highest-load runs; the baseline quarter is the whole unit's output. The retained subset is therefore not comparable to the earlier-quarter comparison, so the 8-14 percent drops need not be the filter. Throughput is genuinely controlled (matched within a percent, stacks fired in step with output), so the coverage clause is the defect.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "1C859B", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "F7FE36", "answer": "No", "flaw_found": true,
+   "flaw_description": "Uncontrolled confound that the boxes were fully exposed to. \"Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range.\" Food supply rose a third over the comparison year and the second clause confirms the birds were feeding in exactly that area, so higher fledgling counts (9-16 more young) are explained by the food year as well as by the boxes. Coverage is clean here (every installed box counted, all up all season), so the confound is the failure.",
+   "explicitness": 5, "confidence": 5},
+
+  {"code": "DEDE27", "answer": "No", "flaw_found": true,
+   "flaw_description": "Adherence-based selection of the measured patients. \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" The reported abduction gains are averaged only over compliers while a quarter of each intake is dropped; adherence correlates with motivation, pain level and baseline function, so the 9-16 degree gains over a whole earlier intake may be a compliant-subgroup effect rather than the protocol. The steroid confound is doubly handled (intakes medically barred from injections, injection rates level), so coverage is the defect.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "38B726", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "B3AE67", "answer": "No", "flaw_found": true,
+   "flaw_description": "The scored trays are filtered on coating uptake. \"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\" A fifth of each lot's trays are excluded on a criterion (how well the seed took the coat) that plausibly tracks seed size, fill and vigour, i.e. the very thing that drives germination. The previous-season comparison is not filtered the same way, so the 6-11 point gains can be seed quality selection rather than the coating. Temperature is properly controlled (matched to a tenth of a degree, lots on open benches taking house air).",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "A882FC", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "8EA56F", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "BCC78C", "answer": "No", "flaw_found": true,
+   "flaw_description": "Pass rates are computed over attenders only. \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" A quarter of each cohort is excluded from the figure on an attendance criterion that is itself a proxy for engagement and prior ability, while the comparison is the whole previous spring term cohort, so the 4-8 point gains may be the selected subgroup rather than the tutoring. The exam-standard confound is blocked (in-house paper, fixed internal mark set without reference to the board), so coverage is the defect."
+   , "explicitness": 4, "confidence": 4}
+]}

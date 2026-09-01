@@ -1,0 +1,45 @@
+{"batch": "00", "round": 1, "verdicts": [
+  {"code": "D3A6C8", "answer": "No", "flaw_found": true,
+   "flaw_description": "Three of the four runs are measured before the coolant was ever switched in. 'One: a titanium run at Kestrel Works on nights, switched 4 May, measured by 29 March'; 'Three: ... switched 5 October, measured by 30 September'; 'Four: ... switched 26 November, measured by 2 November.' The measurement date precedes the switch date, so those shortened cycle times cannot have been produced by the new coolant. Only run Two (switched 3 June, measured 27 June) is temporally coherent, leaving a single uncontrolled before/after case.",
+   "explicitness": 3, "confidence": 5},
+
+  {"code": "8877CA", "answer": "No", "flaw_found": true,
+   "flaw_description": "The outcome is measured over ground the treatment never touched: 'Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.' Roughly three quarters of the hectares in the reported tonnage were not irrigated by the drip line at all, and the quarter that was got water only intermittently, so a per-hectare gain averaged across the whole block cannot be attributed to the line. (The seed-line confound is genuinely defused, since the blocks were sown from held-back seed, 'the same stock as before'.)",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "934027", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measured runs include runs with no filtration: 'The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.' The reported 8-14 percent particulate reductions are averages over a population a quarter of which was untreated, so the figures do not isolate the upgrade's effect. (Throughput is properly controlled - it 'matched the earlier quarter within a percent' - so the defect is coverage, not confounding.)",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "CC1BF2", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "E04F2D", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4},
+
+  {"code": "828C2F", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "FD524A", "answer": "No", "flaw_found": true,
+   "flaw_description": "The score population is broader than the treated population: 'Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.' A quarter of the pupils contributing to the comprehension gain did not receive the program in full, so the reported 5-9 point gains are diluted/unattributable at the pupil level. (The class-size drop of 'about a quarter below the year before' is legitimately neutralised, since English was taught 'in fixed groups of six, whatever the school's class size'.)",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "BB644B", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "4969DF", "answer": "No", "flaw_found": true,
+   "flaw_description": "An uncontrolled confound is stated and explicitly reaches the subjects: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control.' Because the rooms are unconditioned, the four-degree drop passes straight into the sleeping environment, and a cooler sleeping room independently lowers resting heart rate. The 3-6 bpm fall versus 'the same cohort a month earlier' is therefore equally explained by the weather as by the app - the second clause establishes exposure rather than insulation.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "BC18CB", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "17EE84", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3}
+]}

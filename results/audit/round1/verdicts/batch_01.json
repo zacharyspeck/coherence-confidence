@@ -1,0 +1,86 @@
+{
+  "batch": "01",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "BFC67E",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Measured population does not match the treated population: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" The reported hours-to-failure gain is computed over all bearing positions, but roughly a third of those positions were running the old bearing for part of the cycle, so the machine-level gain cannot be attributed to the redesigned bearing.",
+      "explicitness": 4,
+      "confidence": 3
+    },
+    {
+      "code": "6175F5",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The outcome is measured before the intervention in three of the four blocks: \"fitted 3 August, measured by 18 June\", \"fitted 2 May, measured by 17 March\", \"fitted 22 November, measured by 7 September\". The yield figures pre-date the installation of the drip line, so they cannot reflect its effect. (Only the Netley Downs entry, fitted 8 December and measured 23 February, has a coherent order.)",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "68D44E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "692F52",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "C6F63B",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "An uncontrolled confounder moving in the same direction as the claimed effect: \"Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air.\" Pollen, a known asthma trigger, fell by 20 percent over exactly the comparison window and the patients were fully exposed to that air, so the drop in attacks is equally explained by the milder pollen season rather than the inhaler.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "2CB5E1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The outcome is measured on a population that largely did not receive the treatment: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened the email.\" The retention lift is a whole-cohort figure that includes a third who were never exposed to the onboarding email, so the change cannot be attributed to the email rather than to whatever else moved cohort-wide retention.",
+      "explicitness": 4,
+      "confidence": 3
+    },
+    {
+      "code": "1695A6",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measurement dates precede the program start in three of the four classes: \"started the program 6 December, measured by 11 September\", \"started the program 20 June, measured by 24 April\", \"started the program 21 August, measured by 6 July\". Scores recorded before the program began cannot demonstrate a gain caused by it. (Only the Deerpark entry, started 8 January and measured 12 March, runs in the right order.)",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "8CB991",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "0899C1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Non-random exclusion from the outcome measure: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly ten percent of each run's boards are dropped from the defect rate on the basis of their processing history, so the reported rate is a filtered subset, not the run's defect rate, and the drop against the earlier period is not a like-for-like comparison.",
+      "explicitness": 4,
+      "confidence": 3
+    },
+    {
+      "code": "9B04F1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Per-protocol selection bias: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" The reported pass rate is computed only on full attenders while a quarter of each cohort is dropped; attendance is self-selected and correlates with ability and motivation, so the gain over the previous term may reflect who was counted rather than the tutoring.",
+      "explicitness": 4,
+      "confidence": 4
+    }
+  ]
+}

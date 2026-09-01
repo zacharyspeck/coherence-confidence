@@ -1,0 +1,86 @@
+{
+  "batch": "01",
+  "round": 0,
+  "verdicts": [
+    {
+      "code": "E2D8B7",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "D3A6C8",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measurement dates precede the coolant switch in three of the four runs: 'a titanium run ... switched 4 May, measured by 29 March', 'a brass run ... switched 5 October, measured by 30 September', and 'a steel run ... switched 26 November, measured by 2 November'. A time saving observed before the coolant was in use cannot be caused by the coolant, so three of the four data points are temporally impossible and only run Two (switched 3 June, measured 27 June) is even in the right order.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "E6F72E",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Throughput at each site fell by half against the earlier quarter.' Halving the material processed would by itself lower particulate output, so the drop is confounded with the throughput collapse. The offered immunity, 'Every stack logged here fired on a fixed duty cycle, the same hours whatever the throughput', only fixes running hours; it does not make emissions independent of how much material is put through, which is what drives particulate readings.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "7D04AD",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.' A quarter of patients are excluded from the infection rates, and they are excluded on a basis correlated with the outcome (patients with spells off the protocol tend to be the longer-staying, more complicated, higher-infection-risk cases). The earlier-quarter baseline is the whole ward, so a selected three-quarters is being compared against an unselected whole.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "180003",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' The weight of coursework in the final grade rose between the baseline year and the measured year, and this change applied to every section in the log. A higher stake on coursework is an obvious independent cause of higher completion, so the kit and the grading change are perfectly confounded.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "A85004",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "828C2F",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' The reported revenue per order is computed on a selected subset (only the higher-priced orders) while the 'same line a month earlier' comparison is the full line, so roughly a fifth of orders are dropped precisely because they carry the lower prices. That selection alone can produce the 4-7 percent lift.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "658359",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "FAE756",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' About a fifth of each cohort is dropped from the absence figures, and the pupils excluded are those whose attendance pattern kept them off the new timetable for weeks - exactly the group most likely to be absent. Comparing that filtered remainder with the whole cohort a term earlier can generate the reported fall on its own.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "4C8896",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    }
+  ]
+}

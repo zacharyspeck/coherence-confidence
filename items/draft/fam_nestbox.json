@@ -78,7 +78,7 @@
         "n_distinct_decoration_values": 0
       },
       "reader_catch_rate": null,
-      "reader_false_positive_rate": 0.3333
+      "reader_false_positive_rate": 0.6667
     },
     {
       "id": "fam_nestbox__coherent_false",
@@ -290,7 +290,7 @@
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
       },
-      "reader_catch_rate": null,
+      "reader_catch_rate": 0.6667,
       "reader_false_positive_rate": null
     }
   ]

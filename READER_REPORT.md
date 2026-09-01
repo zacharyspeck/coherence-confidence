@@ -68,14 +68,71 @@ salience stays in the output, labelled as what it is.
 ### Hunter against reader, on the same items
 
 <!--HUNTER_VS_READER-->
+| cell | n | hunter per-auditor | reader catch (baseline) | reader catch (now) | 95% CI, clustered by reader |
+|---|---|---|---|---|---|
+| `coherent_false` | 20 | 39/40 = 98% | 1.00 | **0.98** | [0.98, 1.00] |
+| `diverse_false` | 20 | 36/40 = 90% | 0.78 | **0.90** | [0.82, 1.00] |
+| `decorative_false` | 10 | 19/20 = 95% | 1.00 | **1.00** | [1.00, 1.00] |
+
+| cell | n | reader false-positive (baseline) | now | 95% CI, clustered by reader | readers giving 0 |
+|---|---|---|---|---|---|
+| `coherent_true` | 20 | 0.22 | **0.25** | [0.06, 0.41] | 13/17 |
+| `diverse_true` | 20 | 0.07 | **0.03** | [0.00, 0.05] | 16/18 |
+| `decorative_true` | 10 | 0.10 | **0.03** | [0.00, 0.19] | 15/16 |
 <!--/HUNTER_VS_READER-->
 
-The gap between the last two columns of the first table is the whole point of
-this pass.
+Read the **hunter per-auditor** column against **reader catch (baseline)**. That
+gap is the whole point of this pass: the hunter was near ceiling on items a plain
+reader was walking past. The **reader catch (now)** column is what the rewrites
+in section 4 bought — the two columns have converged, which is the result rather
+than the premise.
+
+The hunter numbers here were re-measured on the *current* items, not carried
+over. The figures on disk described passages that fifty items no longer have,
+and putting a stale hunter beside a fresh reader would have measured method and
+content at the same time. A hunter report counts as a find only if it **quoted
+the falsifying span** — a shared 5-gram with `flaws.flaw_sentence` — rather than
+merely asserting something was wrong. That deterministic rule reproduces the
+earlier judged figure exactly at 94/100, and reported and matched are identical,
+so every flaw the hunter reported was the right one.
+
+### The intervals are clustered by reader, and that matters
+
+One reader agent answers every item in a batch, so **a batch is a cluster and
+verdicts inside it are not independent**. Treating 300 reads as 300 observations
+would give an interval several times too narrow. The CI column resamples
+clusters.
+
+This is not a technicality. Between two rounds, on items where exactly one
+`coherent_true` passage had changed, that cell went from **0.00 to 0.25** — and
+the 15 dissenting reads were perfectly concentrated in 4 of 18 batches, at 4/4,
+4/4, 3/5 and 4/4, with zero everywhere else. A handful of readers reject the
+whole cell; the rest reject none of it. `n = 300 reads` is really `n = 18
+readers`, and any single round's cell mean is a draw from a bimodal process.
+
+The strict readers are **not** simply strict: in the same batches they rejected
+`coherent_true` at 1.00, 1.00, 0.60 and 1.00 while rejecting `diverse_true` at
+0.12, 0.00, 0.00 and 0.00. Something specific to `coherent_true` is what flips.
+Section 4 says what it is.
 
 ## 3. Triage, before and after
 
 <!--TRIAGE-->
+| cell | metric | before | after | invisible / reads-as-false |
+|---|---|---|---|---|
+| `coherent_true` | false-positive rate | 0.22 | **0.25** | 0 -> 3 |
+| `coherent_false` | catch rate | 1.00 | **0.98** | 0 -> 0 |
+| `diverse_true` | false-positive rate | 0.07 | **0.03** | 1 -> 1 |
+| `diverse_false` | catch rate | 0.78 | **0.90** | 1 -> 0 |
+| `decorative_true` | false-positive rate | 0.10 | **0.03** | 0 -> 0 |
+| `decorative_false` | catch rate | 1.00 | **1.00** | 0 -> 0 |
+
+| target | before | after | met |
+|---|---|---|---|
+| every TRUE cell false-positive <= 0.15 | 0.22 | **0.25** | **NO** |
+| coherent_true - diverse_true gap <= 0.10 | 0.15 | **0.22** | **NO** |
+| every FALSE item catch >= 0.5 | 0.00 | **0.67** | YES |
+| FALSE cell means within 0.10 | 0.22 | **0.10** | YES |
 <!--/TRIAGE-->
 
 ## 4. What the rewrite changed
@@ -132,7 +189,70 @@ No causal language was restored and nothing moved to the final sentence. Both
 were off the table and both would have worked.
 
 <!--MECHANISM-->
+| mechanism | n | catch before | catch after |
+|---|---|---|---|
+| `broken_chronology` | 10 | 0.57 | **0.80** |
+| `scope_mismatch` | 30 | 1.00 | **0.99** |
+| `stated_confound` | 10 | 1.00 | **1.00** |
 <!--/MECHANISM-->
+
+### What is still not fixed, and why (D-036)
+
+**The FALSE-item targets are met. The TRUE-item targets are not.** The triage
+table says so. This section says why, because the reason is structural rather
+than a wording miss.
+
+The hunter's descriptions name the objection precisely, and it is the same one
+every time, in every TRUE cell:
+
+> "The scored population did not all receive the program: *Scores cover every
+> pupil on each class roll, and a quarter of each roll missed at least one
+> program session.*"
+
+> "The outcome is measured on a population that largely did not receive the
+> treatment: *Retention figures cover every signup, email opened or not, and a
+> third of each cohort's signups never opened it.*"
+
+That is the `whole_incomplete` clause pair — measure everyone, including
+partial compliers. The design labels it TRUE, and on the merits that is
+defensible: including non-compliers dilutes toward the null, so a positive
+result measured that way is *conservative*, not inflated. Readers do not read it
+that way. They read a quarter of the denominator not getting the treatment as a
+defect, and say No.
+
+**It cannot be softened, and this was tested rather than assumed.** The obvious
+fix is to make the shortfall minor — one session rather than a quarter of them.
+In the ten confound families `whole_incomplete` is carried only by TRUE items,
+so softening there looked safe. It was applied to all ten and the build failed:
+
+> `'single'` is 8T/0F across 8 families — a 100% split. A classifier trained on
+> other families can carry that straight across a fold boundary.
+
+Which is the gate being right. The information "the shortfall here is minor"
+appears *only* in TRUE items, so any wording that conveys it is a giveaway,
+whatever words it uses. In the ten scope families it is worse: the same clause
+string carries the `subset_incomplete` flaw in 30 FALSE items, so softening it
+would blunt the flaw the FALSE cells depend on. The experiment was reverted;
+`results/scope_clauses.json` is back to its round-3 state and the passages are
+byte-identical to the commit before it.
+
+So this is a real tension in the balanced-clause design (D-026), not a typo:
+**the same clause has to serve as innocuous in a TRUE item and as falsifying in a
+FALSE one, and readers do not split it where the design does.** Three ways out,
+none of them a wording change, all of them the reviewer's call:
+
+1. Accept it and report `coherent_true` false-positive rate as a known
+   property, carrying it into the analysis as the covariate it already is.
+2. Drop `whole_incomplete` from the TRUE cells and rebalance the clause
+   assignment from scratch — D-026 showed the current solution is the unique
+   balanced one, so this means changing what the four cells are.
+3. Re-label. If a careful reader reliably says a quarter non-compliance means
+   the evidence does not establish the claim, the ground-truth label is the
+   thing that is wrong.
+
+Editing wording further would be chasing a number across a measurement whose
+own interval is [0.06, 0.41]. Three of five rounds were used; the fourth was
+spent on the experiment above, and it argued for stopping.
 
 ### Duplicate flaw phrasing (D-033)
 
@@ -156,6 +276,33 @@ one condition in the check and the gate is already written to fail without it.
 ## 5. Every gate
 
 <!--GATES-->
+| gate | before (`8315d9d`) | after | measured now |
+|---|---|---|---|
+| `word_count_parity` | PASS | PASS | grand mean 185.1 words; largest cell deviation +7.51% (limit +/-10%) |
+| `coherent_one_value_per_dimension` | PASS | PASS | 60 coherent + decorative items checked across their condition dimensions |
+| `diverse_four_values_per_dimension` | PASS | PASS | 40 diverse items checked across their dimensions |
+| `no_lexical_giveaway` | PASS | PASS | grouped 5-fold CV accuracy 48.5% (mean of 5 shufflings; max 50.1%; 0/5 over limit) (limit 60%, chance 50%) |
+| `cell_balance` | PASS | PASS | 100 items, 20 families (10 with a control arm), per-cell {'coherent_false': 20, 'coherent_true': 20, 'diverse_false': 20, 'diverse_true': 20, 'decorative_false': 10, 'decorative_true': 10} |
+| `no_duplicate_passages` | PASS | PASS | 100 distinct passages across 100 items |
+| `no_answer_key_leakage` | PASS | PASS | 100 passages scanned for answer-key leakage |
+| `passage_word_balance` | PASS | PASS | 1011 distinct words; flagged when \|T-F\| > 4, the split exceeds 40%, and the word spans >= 3 families. 0 flagged; worst qualifying split 17% |
+| `flaw_declarations_complete` | PASS | PASS | 50 FALSE items checked |
+| `matched_mechanism_subset` | PASS | PASS | scope_mismatch: 10 coherent_false, 10 diverse_false, over 10 shared families |
+| `no_duplicate_flaw_phrasing` | — *(new)* | PASS | 50 FALSE items, 1185 cross-family pairs; worst similarity 0.62 (limit 0.7), no shared 8-grams; 40 within-family pairs exempt (matched mechanism, D-024) |
+| `control_surface_match` | PASS | PASS | 20 decorative items; largest surface gap vs diverse +3.3% (limit +/-10%); condition values 4.0 vs coherent 4.0, diverse 16.0 |
+| `all_items_unreviewed` | PASS | PASS | 100/100 items are 'unreviewed' |
+
+**Component ablation** — grouped 5-fold CV accuracy at telling TRUE from FALSE on each part of the passage. Chance is 50%.
+
+| passage part | accuracy |
+|---|---|
+| `full` | 47.0% |
+| `lead` | 50.0% |
+| `cases` | 50.8% |
+| `closer` | 50.0% |
+| `no_closer` | 48.9% |
+| `no_dates` | 46.6% |
+| `no_dates_no_numbers` | 45.5% |
 <!--/GATES-->
 
 ### Two bugs the gates caught
@@ -196,18 +343,35 @@ The fixture in `tests/test_validate.py` had the same problem and the same fix.
 > reader walked straight past was the same mechanism — a date inversion buried
 > inside a case line — and the hunter had scored all of them "found". And our
 > TRUE items had a false-positive rate of 0.22 in the coherent cells against
-> 0.07 in the diverse ones, because we were stating a confound and then
-> disarming it in a subordinate clause the reader never got to. Both are fixed:
-> the protective fact now leads its own sentence, and the date inversion sits
-> adjacent instead of ten words away, with a third case inverted as a second cue.
+> 0.07 in the diverse ones.
 >
-> Where that leaves us is in the tables above — measured, not asserted, with
-> before-and-after on every cell and a gate that fails the build on regression.
-> Two things I want to flag rather than bury. **The readers are language models,
-> not people**; they are a far better proxy than a hunter but they are still a
-> proxy, and the one human sample we have is n=10. **And the FALSE cells are not
-> yet at parity** — the number and the gap are in section 3, and we stopped at
-> the round limit rather than editing items until the number looked right.
+> **On the FALSE items, that is fixed and the answer to your question is yes.** A
+> plain reader now catches 0.98, 0.90 and 1.00 across the three false cells,
+> against a hunter that gets 0.94 — the reader has essentially caught up with
+> the auditor who was told where to look. Every individual item is above 0.5 and
+> the three cells sit within 0.10 of each other, which was the target.
+>
+> **On the TRUE items the answer is: not yet, and I can tell you exactly why.**
+> `coherent_true` sits at 0.25 against a target of 0.15. The cause is not the
+> coherence — it is one clause. Several of our TRUE items measure an outcome
+> over everyone, including a fraction who did not fully take the treatment. That
+> is deliberate and it is conservative, because including non-compliers biases
+> toward finding nothing. Readers do not buy it; they see a quarter of the
+> denominator untreated and call the evidence broken. We tried the obvious fix,
+> making the shortfall small, and our own lexical gate rejected it: the phrase
+> would then appear only in TRUE items and become a giveaway a classifier could
+> learn. So it is a real design tension, not a typo, and section 4 lays out the
+> three ways out. It is your call which.
+>
+> Two more things I want to flag rather than bury. **The readers are language
+> models, not people** — a far better proxy than a hunter, but a proxy, and the
+> one human sample we have is n=10. **And the measurement is noisier than it
+> looks**: one reader answers a whole batch, so 300 reads is really 18 readers.
+> Between rounds that cell went 0.00 to 0.25 with one item changed, because four
+> readers reject the cell wholesale and the other fourteen reject none of it. We
+> report the interval clustered by reader — [0.06, 0.41] — rather than the
+> flattering round. We stopped editing at that point instead of tuning items
+> until a noisy number came out under the line.
 
 ## 7. Re-review set
 

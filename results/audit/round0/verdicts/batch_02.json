@@ -1,0 +1,23 @@
+{"batch": "02", "round": 0, "verdicts": [
+  {"code": "0AC971", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "6175F5", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+  {"code": "79A648", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "F7FE36", "answer": "No", "flaw_found": true,
+   "flaw_description": "Unshielded confounder that is stated to apply: 'Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range.' A third more prey in the foraging range of every box is an alternative explanation for the extra fledglings; the second clause confirms the birds were exposed to it rather than ruling it out. Compounded by all four 'plots' being the same reserve, same season, same recorder (Trask), so the food-supply confound covers every case at once.",
+   "explicitness": 4, "confidence": 4},
+  {"code": "4EFAC6", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "1695A6", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 4},
+  {"code": "089BF4", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "", "explicitness": 0, "confidence": 3},
+  {"code": "AEB0FA", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selective coverage of the outcome: 'Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.' The post-change defect rate is computed only on boards run entirely on the new profile, dropping roughly a tenth of each run - and the dropped boards are exactly the mixed/reworked ones most likely to be defective - while the earlier-period comparison is the whole line. The exclusion is selected on exposure and biases the comparison toward the claim.",
+   "explicitness": 3, "confidence": 4},
+  {"code": "BCC78C", "answer": "No", "flaw_found": true,
+   "flaw_description": "Completer-only outcome: 'Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.' The reported pass rate is measured only on full attenders while a quarter of each cohort is excluded, and the previous-spring baseline is the whole cohort. Students who attend every session differ systematically (motivation, ability, absence), so the 4-8 point gain is explainable by that selection rather than by the tutoring.",
+   "explicitness": 4, "confidence": 4}
+]}

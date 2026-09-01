@@ -1,0 +1,78 @@
+{
+  "batch": "08",
+  "round": 1,
+  "verdicts": [
+    {
+      "code": "99C998",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Three of the four measurement windows run backwards: 'a lathe at Bexley on nights, fitted 4 May, measured by 27 March', 'a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July', and 'a compressor at Marlowe on weekends, fitted 25 November, measured by 6 October'. The outcome is recorded before the redesigned bearing was fitted, so those readings cannot reflect the new bearing at all. Case Two (fitted 9 January, measured by 24 February) shows the intended window is roughly six weeks, which rules out a benign year-boundary reading. Only one of four cases survives, which cannot support the claim.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "E2D8B7",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "237197",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The confounder is live and explicitly not controlled: 'Rainfall in each plot's season ran a fifth higher than the year before, and every plot stood in the open, on no set watering schedule.' The comparison is to the previous summer, so a 20 percent increase in rainfall over the comparison period, acting on unsheltered and unwatered plots, is an uncontrolled alternative cause of the extra 8-13 cm of height. Nothing insulates the plants from the changed water supply, so the height gain cannot be attributed to the fertilizer.",
+      "explicitness": 5,
+      "confidence": 4
+    },
+    {
+      "code": "7D04AD",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Per-protocol selection: 'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.' A quarter of the patients are dropped from the denominator, and they are dropped precisely on an exposure-related criterion. Patients whose whole stay stayed under the protocol are plausibly the shorter, less complicated, lower-risk stays, so the 6-11 percent drop can be produced by the exclusion rather than by the handwashing protocol. The comparison quarter presumably had no such filter, making the two figures non-comparable.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "40EC9D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "383AC4",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Three of the four cohorts are measured before the email was sent: 'were emailed 24 March, measured by 9 March week-two retention', 'emailed 25 October, measured by 10 October', and 'emailed 26 December, measured by 2 December'. The retention figure predates the intervention by roughly two weeks, and week-two retention additionally requires at least fourteen days after the cohort is touched, so these readings cannot register any effect of the onboarding email. Only cohort Two (emailed 3 July, measured by 27 July) is coherently ordered.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "A85004",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "ED27C1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Outcome-correlated exclusion: 'Only runs completed end to end on the issued route entered the timing set, and drivers at each depot abandoned the issued route on roughly one run in six.' The runs excluded are exactly the ones where the new route failed in practice - drivers abandon a route when it is going badly - so the roughly 17 percent of worst-case runs are removed from the timing set while the earlier-month comparison includes everything. The 5-9 minute saving can be an artefact of that filter rather than an effect of the routing change.",
+      "explicitness": 4,
+      "confidence": 4
+    },
+    {
+      "code": "830F4D",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    }
+  ]
+}

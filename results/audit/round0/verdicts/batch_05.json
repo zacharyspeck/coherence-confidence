@@ -1,0 +1,33 @@
+{"batch": "05", "round": 0, "verdicts": [
+  {"code": "5A0D9C", "answer": "No", "flaw_found": true,
+   "flaw_description": "Uncontrolled co-intervention. 'Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.' A new insert grade is an obvious independent cause of shorter cycle times, it changed in the same quarter as the coolant switch, and every measured run was exposed to it, so the 4-7 minute reductions cannot be attributed to the coolant. Nothing in the report separates the two changes (contrast the other controls in the batch, which state a candidate cause was held constant or could not reach the outcome).",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "03AF40", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "63F3EF", "answer": "No", "flaw_found": true,
+   "flaw_description": "Per-protocol selection bias in the outcome denominator. 'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.' A quarter of each ward's patients are dropped from the rate, and they are dropped on a criterion (full protocol exposure) that is plausibly correlated with infection risk - transferred, longer-stay or sicker patients are exactly those with spells outside. The 6-11 percent drops are computed on a favourably selected subgroup and compared against a prior-quarter baseline that had no such filtering, so the comparison is not like-for-like.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "E04F2D", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "D14DA7", "answer": "No", "flaw_found": true,
+   "flaw_description": "The measured population is filtered in the direction of the claim. 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' Roughly 20 percent of post-change orders are excluded precisely because they carried the lower old prices, so the 4-7 percent lift in revenue per order is partly an artefact of dropping the cheapest fifth of orders while the 'month earlier' baseline includes all orders. Compounding this, 'Premium stock's share of each store's shelf hit a record, double the earlier period' is an unaddressed mix shift that would raise revenue per order on its own.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "7D35F9", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "D1E083", "answer": "No", "flaw_found": true,
+   "flaw_description": "The records are internally impossible, so the outcomes cannot post-date the treatment. Cohort one 'started 4 April, measured by 29 March' and cohort three 'started 5 October, measured by 30 September' both report the resting heart rate measurement before the app was started. Cohort four is garbled outright: '2 November users on Wexler Note phones started 90 Saltmarch' gives a nonexistent date and a cohort size that is actually a date. Half the entries measure the outcome before the intervention and one has no usable enrolment data at all, so the log cannot support a before/after inference.",
+   "explicitness": 4, "confidence": 5},
+
+  {"code": "17EE84", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 4}
+]}

@@ -1,0 +1,41 @@
+{"batch": "04", "round": 1, "verdicts": [
+  {"code": "7A9B21", "answer": "No", "flaw_found": true,
+   "flaw_description": "Uncontrolled confound running with the treatment: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" Every comparison is the same machine's previous cycle versus this one, so the switch from mineral to synthetic grease is perfectly confounded with the new bearing. Synthetic lubricant alone can extend bearing life, and nothing in the log separates the two changes. The coverage statement is clean (all positions, all on the new bearing), so the lubricant change is the sole and sufficient reason the evidence fails.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "E7A3F5", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "63F3EF", "answer": "No", "flaw_found": true,
+   "flaw_description": "Selection/coverage gap: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" A quarter of each ward's patients are dropped from the measured rate, and the excluded group is exactly the non-random slice most likely to differ (transfers, longer or more complicated stays, higher-risk patients). The 6-11 percent drop is therefore a per-protocol subgroup figure, not the ward's infection rate, so it cannot support a claim about ward rates. The deep-cleaning confound is properly neutralised (\"matched the earlier quarter exactly\"), so the coverage restriction is the defect.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "26D23E", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "338FC3", "answer": "No", "flaw_found": true,
+   "flaw_description": "Uncontrolled confound: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" The trial was lengthened from ten to eighteen days between the baseline month and the measured month, and it applied to every cohort. A trial that now covers week two rather than expiring inside it would by itself raise week-two retention, so the 3-6 point lift cannot be attributed to the onboarding email. Coverage is clean (all signups counted, all opened the email), so the trial-length change is the specific failure.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "408294", "answer": "No", "flaw_found": true,
+   "flaw_description": "Outcome measured on a filtered subset that is selected on the treatment: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" Roughly 20 percent of orders are excluded precisely because they transacted at the old price, so the reported revenue per order is computed only over new-price orders and is compared against a prior period that included all orders. That is a mechanical, self-fulfilling comparison rather than a measure of the line's revenue per order. The stock-range and premium-shelf-share confounds are explicitly held level, so the coverage restriction is the defect.",
+   "explicitness": 4, "confidence": 4},
+
+  {"code": "AE3C76", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "D1E083", "answer": "No", "flaw_found": true,
+   "flaw_description": "The record is internally impossible, so the measurements cannot be trusted. Cohort one \"started 4 April, measured by 29 March\" and cohort three \"started 5 October, measured by 30 September\" both report an endpoint measured before the app was started, meaning the reported 5 bpm and 6 bpm reductions predate the intervention. Cohort four is garbled outright: \"Four: 2 November users on Wexler Note phones started 90 Saltmarch\" gives a nonexistent date and a cohort size that is a date. Three of the four data points are corrupt or backwards, so no before/after inference survives.",
+   "explicitness": 3, "confidence": 4},
+
+  {"code": "3F6CD2", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3},
+
+  {"code": "4C8896", "answer": "Yes", "flaw_found": false,
+   "flaw_description": "",
+   "explicitness": 0, "confidence": 3}
+]}
