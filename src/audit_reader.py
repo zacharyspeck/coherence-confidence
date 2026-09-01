@@ -222,15 +222,26 @@ def score(items_dirs: list[str], runs: int = N_RUNS) -> dict[str, Any]:
         row["n_unsure"] = a.count("unsure")
         row["abstention_rate"] = round(row["n_unsure"] / n, 4) if n else None
         rate = round(row["n_no"] / n, 4) if n else None
+        # Compare COUNTS, not rounded rates. With three reads the quantisation is
+        # 0, 1/3, 2/3, 1, and 1/3 rounds to 0.3333 - which is "above 0.33" as a
+        # float and lands exactly ON a one-third threshold as a fraction. Testing
+        # 3*n_no > n keeps the boundary case out, so a single dissenting reader
+        # does not condemn an item. The 1-of-3 group is reported separately
+        # because it is informative rather than disqualifying.
         if row["ground_truth"]:
             row["reader_false_positive_rate"] = rate
             row["reader_catch_rate"] = None
-            row["reads_as_false"] = bool(rate is not None and rate > READS_FALSE_AT)
+            row["reads_as_false"] = bool(n and 3 * row["n_no"] > n)
+            row["one_dissenter"] = bool(n and row["n_no"] * 3 == n)
             row["invisible"] = False
+            row["below_target"] = False
         else:
             row["reader_catch_rate"] = rate
             row["reader_false_positive_rate"] = None
-            row["invisible"] = bool(rate is not None and rate < INVISIBLE_AT)
+            row["invisible"] = bool(n and 3 * row["n_no"] < n)
+            row["one_dissenter"] = False
+            # The actionable line for step 5 is 0.5, not the triage line.
+            row["below_target"] = bool(n and 2 * row["n_no"] < n)
             row["reads_as_false"] = False
 
     doc = {
@@ -264,7 +275,9 @@ def _by_cell(per_item: dict[str, dict]) -> dict[str, dict]:
                 st.mean([r["abstention_rate"] for r in rows]), 4
             ),
             "n_invisible": sum(1 for r in rows if r["invisible"]),
+            "n_below_target": sum(1 for r in rows if r["below_target"]),
             "n_reads_as_false": sum(1 for r in rows if r["reads_as_false"]),
+            "n_one_dissenter": sum(1 for r in rows if r["one_dissenter"]),
         }
     return out
 
@@ -293,13 +306,17 @@ def main(argv: list[str] | None = None) -> int:
     if doc["incomplete_items"]:
         print(f"  INCOMPLETE: {len(doc['incomplete_items'])} items short of {doc['runs']} reads")
     print()
-    print(f"  {'cell':<18} {'metric':<28} {'mean':>6} {'abst':>6} {'bad':>4}")
+    print(f"  {'cell':<18} {'mean':>6} {'abst':>6} {'broken':>7} {'watch':>6}")
     for cell, c in doc["by_cell"].items():
-        bad = c["n_invisible"] + c["n_reads_as_false"]
+        broken = c["n_invisible"] + c["n_reads_as_false"]
+        watch = c["n_below_target"] + c["n_one_dissenter"]
         print(
-            f"  {cell:<18} {c['metric']:<28} {c['mean']:>6.2f} "
-            f"{c['mean_abstention']:>6.2f} {bad:>4}"
+            f"  {cell:<18} {c['mean']:>6.2f} {c['mean_abstention']:>6.2f} "
+            f"{broken:>7} {watch:>6}"
         )
+    print()
+    print("  broken = invisible (catch < 1/3) or reads-as-false (FP > 1/3)")
+    print("  watch  = FALSE below the 0.5 target, or TRUE with one dissenter of three")
     print(f"\n  wrote {args.out}")
     return 0
 
