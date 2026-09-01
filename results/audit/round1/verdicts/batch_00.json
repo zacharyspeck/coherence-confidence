@@ -6,24 +6,32 @@
       "code": "D3A6C8",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four runs are measured before the coolant was switched: run One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run Three 'switched 5 October' but was measured 'by 30 September'. Half the reported improvements predate the intervention they are credited to.",
-      "explicitness": 2,
-      "confidence": 4
+      "flaw_description": "Two of the four runs record the improvement before the coolant was ever used: case One was 'switched 4 May' but ran shorter 'by 29 March', and case Three was 'switched 5 October' but ran shorter 'by 30 September'. The outcome dates precede the switch dates, so those cases cannot be effects of the coolant.",
+      "explicitness": 3,
+      "confidence": 5
     },
     {
       "code": "8877CA",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The numbers cover a different population than the treatment: 'Yields cover every hectare in each block fitted with the line' while 'the line watered about a quarter of each block's hectares intermittently'. A per-hectare gain averaged over the whole block is credited to a line that reached only about 25% of those hectares, and only intermittently.",
+      "flaw_description": "The yield figures 'cover every hectare in each block', yet 'the line watered about a quarter of each block's hectares intermittently' - so roughly three quarters of the measured hectares never received the drip line, and the 0.4-0.7 t/ha gain is credited to a treatment that reached only a minority of the measured area.",
       "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "934027",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The particulate figures 'cover every scheduled run at each stack' while 'a quarter of each stack's runs were made with the filter bypassed'. The 8-14 percent drop is therefore measured over a population that includes untreated runs, so the number is not a measure of the upgrade's effect.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
       "code": "CC1BF2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The claim is about ward infection rates, but 'Rates cover the patients whose whole stay ran under the protocol' while 'a quarter of each ward's patients had spells outside the protocol' - that quarter is excluded, so the 6-11 percent figure describes a selected fully-compliant subgroup, not the ward.",
-      "explicitness": 3,
+      "flaw_description": "The rates 'cover the patients whose whole stay ran under the protocol' while 'a quarter of each ward's patients had spells outside the protocol' - i.e. a quarter of the ward is dropped from the count. The claim is about ward infection rates, but the number describes only a self-selected fully-compliant subset, which plausibly excludes the longest and most complicated stays.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
@@ -38,24 +46,40 @@
       "code": "828C2F",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices', so the 4-7 percent rise is computed on an 80% subset selected by which orders happened to price at the new rule, and compared against a prior month counted in full - it is not the line's revenue per order.",
-      "explicitness": 3,
+      "flaw_description": "The figures 'cover the orders rung up at the new prices' while 'about a fifth of each line's orders were rung up at the old prices', so a fifth of each line is excluded from the after-figure and compared against a prior month that included all orders. The 4-7 percent rise describes a selected slice of orders, not the line's revenue per order.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
       "code": "FD524A",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session', so the measured group is not the group that actually received the program; the gain is averaged over pupils a quarter of whom had incomplete exposure. The four 'classes' are also the same Ashcombe Primary Year 4 taught by Vance on consecutive start dates.",
+      "flaw_description": "The scores 'cover every pupil on each class roll' while 'a quarter of each roll missed at least one program session', so the 5-9 point gain is measured across pupils a quarter of whom were not fully exposed to the program being credited.",
       "explicitness": 2,
-      "confidence": 3
+      "confidence": 4
+    },
+    {
+      "code": "BB644B",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
     },
     {
       "code": "4969DF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control'. Cooler sleeping rooms across all four cohorts could produce the 3-6 bpm drop with no contribution from the app.",
-      "explicitness": 3,
+      "flaw_description": "'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control' - with no climate control the outdoor drop reaches the sleeping rooms, so a colder sleeping environment is a named alternative cause of the 3-6 bpm fall that applies to all four cohorts.",
+      "explicitness": 2,
+      "confidence": 4
+    },
+    {
+      "code": "BC18CB",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The absence figures 'cover the pupils on the revised timetable throughout' while 'about a fifth of each cohort spent weeks on the old timetable', so a fifth of each cohort is excluded from the after-figure and compared against a full-cohort term earlier. The 4-7 percent drop describes only the pupils who stayed on the new timetable, a group that may be the better-attending fifth by construction.",
+      "explicitness": 2,
       "confidence": 4
     },
     {

@@ -1,46 +1,52 @@
 {
-  "8A9278:0": {
+  "7C1DE9:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the ~25% smaller classes plus the whole-group English clause that lets it reach every case."
+    "note": "Names the excluded quarter that dropped out before checkout and says the lift covers only three quarters of the segment."
   },
-  "8A9278:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false
+  "7C1DE9:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
   },
-  "99C998:0": {
+  "7D04AD:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Correct pair of cases and dates; the remark about the two forward cases is supporting reasoning, not a second defect."
+    "note": "Identifies the excluded quarter with spells outside the protocol and that the figures are not the ward rate the claim is about."
   },
-  "99C998:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false
-  },
-  "A9D2D3:0": {
+  "7D04AD:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the excluded partly coated fifth and the subset-vs-whole comparison."
+    "note": "Same narrower-population reading, correct excluded group."
   },
-  "A9D2D3:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false
-  },
-  "B3AE67:0": {
-    "verdict": "same_flaw",
-    "reported_extra": false
-  },
-  "B3AE67:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false
-  },
-  "B638C2:0": {
+  "828C2F:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Correct cases one and three with the right installation and count dates."
+    "note": "Names the old-price fifth as excluded and the measured 80 percent versus the line's orders as a whole."
   },
-  "B638C2:1": {
+  "828C2F:1": {
     "verdict": "same_flaw",
-    "reported_extra": false
+    "reported_extra": false,
+    "note": "Correct excluded fifth; the prior-month comparison remark is an elaboration of the same scope gap, not a separate defect."
+  },
+  "8723A1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the partly coated fifth as excluded and the narrower population versus the coated lot."
+  },
+  "8723A1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Frames it as a filtered subset but names the same excluded 20 percent and the selection it creates."
+  },
+  "87820D:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct two cases and correct dates running backwards."
+  },
+  "87820D:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Correct two cases and correct dates running backwards."
   }
 }

@@ -23,3 +23,7 @@ rather than editing items until the number lands.
 
 <sub>by mechanism: broken_chronology 2.55 (n=10), scope_mismatch 2.73 (n=20), stated_confound 2.95 (n=10)</sub>
 
+| R4 - decorative control arm added | 2.83 | 2.55 | 2.65 | 0.28 | 2.83 | YES | YES | YES | 5/50 |
+
+<sub>by mechanism: broken_chronology 2.50 (n=10), scope_mismatch 2.65 (n=30), stated_confound 2.95 (n=10)</sub>
+

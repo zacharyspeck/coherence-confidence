@@ -114,7 +114,7 @@ Measurements were entered in the register by a duty therapist and countersigned 
 A dispatch log records four groups of delivery runs after the routing change was rolled out.
 One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.
 Two: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.
-Order volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover every run dispatched, whatever route it drove, and about a sixth of each depot's runs left the issued route.
+Order volume through each depot hit a record low, half the earlier period, and every run carried the same drop count as before. Timings cover every run dispatched, whatever route the van drove, and about a sixth of each depot's runs left the issued route.
 Three: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.
 Four: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.
 Minutes were rounded to the nearest whole number and countersigned by the duty manager.
@@ -154,7 +154,7 @@ Each run's figures were entered on the shift sheet and signed off by the supervi
 An attendance log records four cohorts that moved to the revised timetable.
 One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.
 Two: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.
-The attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and no pupil in any cohort spent time on the old timetable.
+The attendance reward scheme in each cohort's district paid the same rate as before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and the cohorts were on the new timetable for the full term.
 Three: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.
 Four: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.
 Registers were transcribed weekly into the log file and countersigned by the school office.

@@ -1,50 +1,52 @@
 {
-  "BCC78C:0": {
+  "8A9278:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Quotes the full-attendance restriction and names the excluded quarter."
+    "note": "Names the class-size reduction as the alternative cause reaching all four classes."
   },
-  "BCC78C:1": {
+  "8A9278:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same exclusion; the baseline-asymmetry point is part of the same scope defect, not a separate one."
+    "note": "Same confound identified, with the whole-group English clause tying it to every case."
   },
-  "C6F63B:0": {
+  "99C998:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the pollen drop as the shared alternative cause reaching all four groups."
+    "note": "Correct pair of cases and correct dates (4 May vs 27 March; 2 August vs 21 July)."
   },
-  "C6F63B:1": {
+  "99C998:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same pollen confound, including that the patients breathed the district air."
+    "note": "Correct reversed pair, and reads the forward convention off cases two and four."
   },
-  "CC1BF2:0": {
+  "9B04F1:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies the excluded quarter with spells outside the protocol."
+    "note": "Identifies the full-attendance restriction and the excluded quarter of each cohort."
   },
-  "CC1BF2:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false
-  },
-  "D14DA7:0": {
+  "9B04F1:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the fifth of orders rung at old prices as the excluded group."
+    "note": "Names the excluded quarter and the mismatch against the whole prior cohort."
   },
-  "D14DA7:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false
-  },
-  "D1E083:0": {
+  "A889DA:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Correct cases (one and three) and correct dates: 29 Mar before 4 Apr, 30 Sep before 5 Oct."
+    "note": "Identifies the on-route restriction and the excluded sixth of dispatched runs."
   },
-  "D1E083:1": {
+  "A889DA:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same two cases and dates as intended."
+    "note": "Same exclusion named, with the correct point that the dropped runs are the slow ones."
+  },
+  "A9D2D3:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the fully-coated-tray restriction and the excluded fifth of each lot."
+  },
+  "A9D2D3:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
   }
 }

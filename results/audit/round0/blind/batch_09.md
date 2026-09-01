@@ -1,6 +1,6 @@
 # Blind audit batch 09 (round 0)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+10 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -14,7 +14,7 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.
 Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.
-The lubricant supply stayed on mineral grade across the cycle, and every machine here ran on a sealed charge. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
+The lubricant supply stayed on mineral grade across the cycle, and every machine here ran on a sealed charge. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.
 Three: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.
 Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
@@ -124,6 +124,26 @@ Marks were transcribed onto the district return sheet and filed under the standa
 
 ---
 
+## ITEM A889DA
+
+**Claim:** this routing change cuts delivery time
+
+**Report:**
+
+```
+A dispatch log records four groups of delivery runs after the routing change was rolled out.
+One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier; D-3360, 0920, T7, north.
+Two: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier; D-3361, 1045, T8, south.
+Order volume through each depot held level, matching the earlier period exactly, and every run carried the same drop count as before. Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.
+Three: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier; D-3362, 1330, T9, east.
+Four: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier; D-3363, 1555, T10, west.
+Minutes were rounded to the nearest whole number and countersigned by the duty manager.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM 4969DF
 
 **Claim:** this sleep app lowers resting heart rate
@@ -138,6 +158,26 @@ Outdoor temperature in each cohort's city ran about four degrees below the month
 Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
 Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 2F6C29
+
+**Claim:** this solder profile reduces board defects
+
+**Report:**
+
+```
+A plant log records four production runs switched to the same solder profile.
+One: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte; L-3380, 0922, T7, north.
+Two: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte; L-3381, 1047, T8, south.
+The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at electrical test. Rates cover every board on each run, whatever profile the board took, and about a tenth of each run's boards took one pass on the old profile.
+Three: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte; L-3382, 1332, T9, east.
+Four: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte; L-3383, 1557, T10, west.
+Each run's figures were entered on the shift sheet and signed off by the supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

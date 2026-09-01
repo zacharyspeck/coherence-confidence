@@ -1,52 +1,52 @@
 {
+  "237197:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the rainfall fact, its reach to all four plots, and the same-plot prior-summer comparison."
+  },
+  "237197:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the rainfall confound and ties it to all four cases and the 8-13 cm gains."
+  },
   "3313F1:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the excluded sixth (runs that left the issued route) and why it biases the timings."
+    "note": "Names the excluded sixth that left the issued route and why its absence biases the average."
   },
   "3313F1:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same excluded group and same direction of bias as intended."
+    "note": "States the narrower measured population explicitly and identifies the dropped deviating runs."
   },
   "338FC3:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Quotes the eighteen-day trial fact and its all-cohort reach."
+    "note": "Identifies the 18-vs-10-day trial as the confound and the day-14 straddle that makes it bite."
   },
   "338FC3:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies the trial-length change as the competing cause covering every cohort."
+    "note": "Same trial-extension confound, correctly stated as reaching every cohort."
   },
   "383AC4:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Correct cases (One and Three) and correct dates; the Two/Four remark is supporting reasoning, not a second defect."
+    "note": "Correct cases (one and three) and correct dates in both directions."
   },
   "383AC4:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Correct reversed cases and dates."
+    "note": "Correct reversed pair; the remark about cohorts two and four is supporting detail, not a second defect."
   },
-  "49435F:0": {
+  "408294:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the excluded tenth (old-profile-pass boards) and the narrower tally population."
+    "note": "Names the excluded fifth rung at old prices; the decorative serial/terminal variation is not mistaken for the flaw."
   },
-  "49435F:1": {
+  "408294:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same excluded group, correct bias direction."
-  },
-  "4969DF:0": {
-    "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Names the temperature drop plus the no-climate-control clause that carries it to every unit."
-  },
-  "4969DF:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Same confound, correctly scoped to all four cohorts."
+    "note": "States the narrower population and the one-in-five exclusion directly."
   }
 }

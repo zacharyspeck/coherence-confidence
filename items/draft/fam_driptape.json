@@ -136,7 +136,7 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": null,
+      "salience": 3.0,
       "surface_complexity": {
         "n_tokens": 180,
         "n_distinct_tokens": 76,
@@ -274,7 +274,7 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": null,
+      "salience": 2.0,
       "surface_complexity": {
         "n_tokens": 183,
         "n_distinct_tokens": 102,

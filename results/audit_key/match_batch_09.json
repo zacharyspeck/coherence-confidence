@@ -1,0 +1,72 @@
+[
+  {
+    "key": "DEDE27:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "The measured population is a self-selected subset of the treated one: \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" The 9-16 degree gains are averages over compliers only, with the lapsed quarter of each intake dropped, so they do not establish what the protocol does for the intakes it was given to."
+  },
+  {
+    "key": "DEDE27:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "decorative_false",
+    "intended": "The mid-passage line tallies the averages over the patients who kept up the home exercises, and the clause beside it records that a quarter of each intake let those exercises lapse. The claim is about the protocol restoring shoulder range of motion for the patients put on it, so the population is the whole intake and the averages describe three quarters of it. Patients whose shoulders stay stiff and painful are the ones who let the exercises go, so the quarter held out of the average is where the flat and negative results sit and the reported degrees are an average over the patients who were already doing well. All four intakes are rotator cuff cases on the Marbeck ward in one spring and each leaves out the same quarter, so no case in the register covers the patients the others miss. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
+    "reported": "'Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse' - the 9-16 degree gains are computed on a compliers-only subset of each intake and compared against a whole-ward average a quarter earlier."
+  },
+  {
+    "key": "ED27C1:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once.",
+    "reported": "Timings exclude precisely the runs most likely to be slow: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' The 5-9 minute improvements are measured on a favourable 5/6 of runs, not on delivery runs generally, which is what the claim is about."
+  },
+  {
+    "key": "ED27C1:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once.",
+    "reported": "'Timings cover the runs that stayed on the issued route' while 'about a sixth of each depot's runs left the issued route', so the 5-9 minute gains are measured on a filtered subset that drops precisely the runs that deviated (and would likely have run long). Compounding this, 'Order volume through each depot hit a record low, half the earlier period' against the month it is compared with."
+  },
+  {
+    "key": "F7FE36:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four plots sit on one reserve, with one species in one spring under one warden, and the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland ran a third above the previous year's, an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, placing the extra food over every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, and nothing in the evidence separates the boxes from the prey level. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, adding no second defect.",
+    "reported": "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range.\" A third more food within foraging range of all four plots would itself raise fledgling counts versus the previous spring, so the boxes are not isolated as the cause."
+  },
+  {
+    "key": "F7FE36:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four plots sit on one reserve, with one species in one spring under one warden, and the single fact stated mid-passage covers every case at once: prey abundance on the surrounding farmland ran a third above the previous year's, an alternative cause of higher fledgling counts. The scope clause beside that fact puts every box at the farmland edge, within the birds' foraging range, placing the extra food over every brood that was counted. Each plot is measured against the same reserve a year earlier rather than against an unboxed wood in the same spring, and nothing in the evidence separates the boxes from the prey level. The population and completeness clauses in the same line leave the tally covering the whole set of installed boxes, adding no second defect.",
+    "reported": "'Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range' - a food supply a third higher reaches every plot in the comparison and is a sufficient alternative cause for the 9-16 extra fledglings versus the previous spring."
+  },
+  {
+    "key": "FAE756:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another.",
+    "reported": "The absence figures 'cover the pupils on the revised timetable throughout', yet 'about a fifth of each cohort spent weeks on the old timetable' and are excluded; the comparison is against the whole cohort a term earlier, so it measures a selected four-fifths, a narrower population than the cohort absence the claim is about."
+  },
+  {
+    "key": "FAE756:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another.",
+    "reported": "The absence figures cover a narrower group than the cohorts the claim is about: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' A fifth of each cohort is excluded from the count, and pupils who were off the revised timetable for weeks plausibly include the poorest attenders, so the 4 to 7 percent drop reflects a filtered subset rather than the cohort."
+  },
+  {
+    "key": "FE036E:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out.",
+    "reported": "The outcome numbers are a selected subset: \"The figures cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed\" and are therefore dropped, yet the comparison is against the same unit's full earlier quarter. If the bypassed quarter of runs are the dirtier or heavier ones, the 8-14 percent drop is an artefact of which runs were counted, not of the upgrade."
+  },
+  {
+    "key": "FE036E:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the particulate figures over the runs with the upgraded filter in service, and the clause beside it records that a quarter of each stack's runs were made with the filter bypassed. The claim is about the upgrade lowering particulate at the stack across its monitored period, so the population is every scheduled run at that stack and the figures describe three quarters of them. Bypass goes in under heavy load and upset conditions, which are the runs carrying the dirtiest gas, so a stack can post a lower figure over its in-service runs with its particulate across the period unchanged. All four kilns sit at Kestrel in Q1 and the same quarter of runs sits outside the figures at each, so no case in the log covers the runs the others leave out.",
+    "reported": ""
+  }
+]

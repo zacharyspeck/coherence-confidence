@@ -14,8 +14,16 @@
       "code": "237197",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Rainfall in each plot's season 'ran a fifth higher than the year before' and 'every plot stood in the open, on no set watering schedule', so the extra water actually reached every plant and was not offset by controlled irrigation; a 20 percent rainfall increase is an alternative cause of the 8-13 cm height gains that fits all four plots.",
+      "flaw_description": "Rainfall is an uncontrolled alternative cause that reaches all four plots: 'Rainfall in each plot's season ran a fifth higher than the year before, and every plot stood in the open, on no set watering schedule.' Since the comparison is to the previous summer and nothing offsets the extra rain, the 8-13 cm height gains could be water, not fertilizer.",
       "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "934027",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     },
     {
@@ -30,9 +38,9 @@
       "code": "79DDFC",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have measurement dates preceding the intervention: section One was 'issued 4 November' but completion was read 'by 27 September', and section Three was 'issued 5 June' but read 'by 28 April'. Those gains were recorded before the kit was ever handed out.",
+      "flaw_description": "Two of the four cases have the outcome measured before the kit was issued: case one was 'issued 4 November; by 27 September coursework completion ran 9 points above' and case three was 'issued 5 June; by 28 April ... 11 points above'. A gain recorded weeks before the intervention cannot have been caused by it.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 5
     },
     {
       "code": "EB8CD7",
@@ -43,11 +51,27 @@
       "confidence": 4
     },
     {
+      "code": "408294",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The reported gain is computed on a selected subset: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' A fifth of each line's orders are dropped from the post-period average and compared against a prior month that included all orders, so the 4-7 percent figures cover a narrower population than the claim about revenue per order.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
       "code": "ED27C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The timings 'cover the runs that stayed on the issued route' while 'about a sixth of each depot's runs left the issued route', so roughly 17 percent of runs are dropped from the measured averages. The excluded runs are exactly the ones that hit trouble and would be slowest, so the 5-9 minute improvement is an artifact of which runs were counted.",
+      "flaw_description": "Timings exclude precisely the runs most likely to be slow: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' The 5-9 minute improvements are measured on a favourable 5/6 of runs, not on delivery runs generally, which is what the claim is about.",
       "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "BB644B",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     },
     {
@@ -62,7 +86,7 @@
       "code": "04E6AE",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Absence figures 'cover the pupils on the revised timetable throughout' while 'about a fifth of each cohort spent weeks on the old timetable', so roughly 20 percent of each cohort is excluded from the numbers. Pupils absent enough to miss the switch are precisely the high-absence group being filtered out, which alone could produce the 4-7 percent drop.",
+      "flaw_description": "The absence numbers exclude a fifth of each cohort: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' The 4-7 percent drops therefore describe a selected 4/5 of each cohort rather than the cohort the claim is about, and the excluded pupils are plausibly the higher-absence ones.",
       "explicitness": 3,
       "confidence": 4
     }

@@ -1,0 +1,72 @@
+[
+  {
+    "key": "C6F63B:0",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, and a single district air history covers every case at once. The mid-passage facts state that pollen counts in each group's district ran a fifth below the previous quarter and that every group lived and slept on the district's outside air, putting the cleaner air over every patient whose attacks were tallied. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, leaving the drop in pollen and the inhaler moving together across the 4 to 7 attack reductions. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, leaving the drop in pollen the whole of the defect.",
+    "reported": "\"Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air\" - a 20 percent drop in pollen exposure reaching all four groups is an alternative cause of the 4-7 fewer attacks that fits every case."
+  },
+  {
+    "key": "C6F63B:1",
+    "flaw_mechanism": "stated_confound",
+    "cell": "coherent_false",
+    "intended": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, and a single district air history covers every case at once. The mid-passage facts state that pollen counts in each group's district ran a fifth below the previous quarter and that every group lived and slept on the district's outside air, putting the cleaner air over every patient whose attacks were tallied. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, leaving the drop in pollen and the inhaler moving together across the 4 to 7 attack reductions. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, leaving the drop in pollen the whole of the defect.",
+    "reported": "A named alternative cause reaches every unit: \"Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air.\" A 20 percent fall in pollen exposure over exactly the comparison window accounts for 4-7 fewer attacks in all four groups without the inhaler doing anything."
+  },
+  {
+    "key": "CC1BF2:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients.",
+    "reported": "The infection numbers are drawn from a narrower population than the claim: 'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol', so a quarter of each ward's patients are excluded from the very figures used to argue that ward infection rates fell."
+  },
+  {
+    "key": "CC1BF2:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients.",
+    "reported": "The rates 'cover the patients whose whole stay ran under the protocol' while 'a quarter of each ward's patients had spells outside the protocol' - i.e. a quarter of the ward is dropped from the count. The claim is about ward infection rates, but the number describes only a self-selected fully-compliant subset, which plausibly excludes the longest and most complicated stays."
+  },
+  {
+    "key": "D14DA7:0",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it.",
+    "reported": "The 'after' figures are a selected subset: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' The 4-7 percent rise is measured on the 80 percent of orders that happened to ring at the new price and compared to the whole line a month earlier, so the gap may reflect which orders fell into that subset rather than the pricing rule."
+  },
+  {
+    "key": "D14DA7:1",
+    "flaw_mechanism": "scope_mismatch",
+    "cell": "coherent_false",
+    "intended": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it.",
+    "reported": "The measured population is narrower than the claim: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' A self-selected 80% of current orders is compared against the whole line a month earlier, so the 4-7 percent gain need not hold for revenue per order overall."
+  },
+  {
+    "key": "D1E083:0",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "reported": "Two of the four cohorts are measured before the app started: cohort One 'started 4 April; by 29 March resting heart rate ran 5 bpm below', and cohort Three 'started 5 October; by 30 September ... 6 bpm below'. Those drops predate enrolment and cannot have been caused by the app."
+  },
+  {
+    "key": "D1E083:1",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+    "reported": "Two of the four cases have outcome dates before the start date: cohort one \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort three \"started 5 October; by 30 September ... ran 6 bpm below.\" Those drops were recorded before the app was enrolled, so they cannot be effects of it."
+  },
+  {
+    "key": "D3A6C8:0",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "reported": "Two of the four runs are measured before the coolant was switched: run one 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run three 'switched 5 October' but 'ran 7 minutes shorter by 30 September'. Those improvements predate the change and cannot have been caused by it."
+  },
+  {
+    "key": "D3A6C8:1",
+    "flaw_mechanism": "broken_chronology",
+    "cell": "diverse_false",
+    "intended": "In cases one and three the shorter cycle time was recorded before the coolant was switched: 29 March precedes 4 May, and 30 September precedes 5 October. Half the evidence therefore describes runs that had already sped up when the treatment was introduced, so it cannot be evidence for the treatment. The two remaining cases are not enough on their own.",
+    "reported": "Two of the four runs record the improvement before the coolant was ever used: case One was 'switched 4 May' but ran shorter 'by 29 March', and case Three was 'switched 5 October' but ran shorter 'by 30 September'. The outcome dates precede the switch dates, so those cases cannot be effects of the coolant."
+  }
+]

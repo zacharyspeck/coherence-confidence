@@ -6,9 +6,9 @@
       "code": "99C998",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have outcome dates that precede the fitting date: case One was 'fitted 4 May' but the extra 340 hours are measured 'by 27 March', and case Three was 'fitted 2 August' but measured 'by 21 July'. The other two cases (9 January to 24 February; 6 October to 25 November) run forward over about six weeks, so the reversed pairs cannot be read as a longer forward window.",
-      "explicitness": 3,
-      "confidence": 4
+      "flaw_description": "Two of the four measurement dates precede the fitting dates: case one was 'fitted 4 May' but measured 'by 27 March', and case three was 'fitted 2 August' but measured 'by 21 July', while cases two and four span only ~1.5 months (9 January to 24 February; 6 October to 25 November). The outcome windows for one and three cannot follow their installs on any consistent timeline.",
+      "explicitness": 2,
+      "confidence": 3
     },
     {
       "code": "E7A3F5",
@@ -22,7 +22,7 @@
       "code": "CC1BF2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is narrower than the claim: 'Rates cover the patients whose whole stay ran under the protocol', yet 'a quarter of each ward's patients had spells outside the protocol', so a quarter of the ward is excluded from the numbers while the claim is about ward infection rates. The dropped quarter is exactly the group whose infections the protocol most plausibly failed to prevent.",
+      "flaw_description": "The infection numbers are drawn from a narrower population than the claim: 'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol', so a quarter of each ward's patients are excluded from the very figures used to argue that ward infection rates fell.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -38,7 +38,7 @@
       "code": "383AC4",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two cases measure the outcome before the email was sent: case One was 'emailed 24 March' but retention is read 'by 9 March', and case Three was 'emailed 25 October' but read 'by 10 October'. Cases Two and Four run forward on a consistent ~24-day window (3 July to 27 July; 2 December to 26 December), so the reversed cases cannot be a next-year window.",
+      "flaw_description": "Two cohorts are measured before the email went out: cohort one was 'emailed 24 March' yet retention was read 'by 9 March', and cohort three was 'emailed 25 October' yet read 'by 10 October'. The outcome window precedes the intervention in half the cases.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -51,11 +51,27 @@
       "confidence": 4
     },
     {
+      "code": "A889DA",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The timings are restricted to compliant runs: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route', so roughly a sixth of runs are dropped from the measured population, and the 5-9 minute gains describe only self-selected on-route runs rather than delivery time under the routing change.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
       "code": "4969DF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control', so the cooler sleeping environment applies to all four cohorts over exactly the March comparison window and could itself lower resting heart rate by a few bpm.",
+      "flaw_description": "A named alternative cause reaches every cohort: 'Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control', so the colder sleeping environment applied to all four cohorts over exactly the comparison window and could itself account for the 3-6 bpm drop.",
       "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "2F6C29",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     },
     {

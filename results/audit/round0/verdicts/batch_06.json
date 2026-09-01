@@ -4,17 +4,25 @@
   "verdicts": [
     {
       "code": "BFC67E",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "4F1D6C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The outcome measure covers units that were only partly on the new bearing: \"Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\" So roughly a third of the measured positions were running the old design for part of the cycle, and the 260-410 extra hours cannot be attributed to the redesigned bearing alone.",
-      "explicitness": 3,
-      "confidence": 4
+      "flaw_description": "The purchase figures are measured on a narrower population than the claim: \"The counts cover the sessions that reached the new page,\" while \"a quarter of each segment dropped out before checkout\" and so never entered the counts. A 4-7 percent rise among the three quarters that reached the new checkout page does not establish that purchases overall increased.",
+      "explicitness": 2,
+      "confidence": 3
     },
     {
       "code": "0AAF54",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every block: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover.\" A 20 percent wetter season on uncovered maize would raise yield by itself, so the 0.4-0.7 t/ha gains are not attributable to the drip line.",
+      "flaw_description": "A named alternative cause reaches every unit: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover.\" A 20 percent wetter season falling on uncovered maize blocks could produce the 0.4-0.7 t/ha gains regardless of the drip line.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -30,15 +38,23 @@
       "code": "87820D",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have follow-up dates that precede the start date: case one \"started 4 March, had 6 fewer attacks by 28 February\" and case three \"started 5 September, had 7 fewer attacks by 30 August.\" The reductions are recorded before the inhaler was started, so those cases cannot be evidence of its effect (the quarter labels, e.g. \"winter quarter\" for a 4 March start, are likewise inconsistent).",
+      "flaw_description": "Two of the four cases have outcome windows that close before the inhaler was started: case One \"started 4 March, had 6 fewer attacks by 28 February,\" and case Three \"started 5 September, had 7 fewer attacks by 30 August.\" Reductions dated before treatment began cannot be attributed to the inhaler.",
       "explicitness": 3,
       "confidence": 4
     },
     {
       "code": "2CB5E1",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "DEDE27",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is broader than the treated one: \"Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.\" A third of each cohort was never actually exposed to the email, so the 3-6 point retention lift is measured on a population one-third of which received no treatment.",
+      "flaw_description": "The measured population is a self-selected subset of the treated one: \"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.\" The 9-16 degree gains are averages over compliers only, with the lapsed quarter of each intake dropped, so they do not establish what the protocol does for the intakes it was given to.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -46,8 +62,16 @@
       "code": "8A9278",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A competing cause reaches every logged class: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group.\" Classes 25 percent smaller during whole-group English instruction could produce the 5-9 point comprehension gain on their own, independent of the reading program.",
+      "flaw_description": "An alternative cause covers all four classes: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group.\" Classes a quarter smaller, taught undivided, is a well-known driver of comprehension gains and could account for the 5-9 point rises without the reading program.",
       "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "F9A01A",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     },
     {
@@ -62,9 +86,9 @@
       "code": "49435F",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The reported rates cover a narrower population than the baseline they are compared with: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\" Roughly 10 percent of each run's boards are dropped from the new-profile figure while the \"same line a month earlier\" comparison covers all boards, so the 4-7 percent defect drop could come from that selection rather than the profile.",
-      "explicitness": 2,
-      "confidence": 3
+      "flaw_description": "The defect rates are computed on a filtered subset of each run: \"Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile,\" so roughly 10 percent of every run is excluded from the count it is compared against. A 4-7 percent drop measured on the surviving 90 percent does not establish the profile reduces defects in the run.",
+      "explicitness": 3,
+      "confidence": 4
     }
   ]
 }

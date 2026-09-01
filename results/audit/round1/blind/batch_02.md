@@ -1,6 +1,6 @@
 # Blind audit batch 02 (round 1)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+9 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -14,7 +14,7 @@
 An analytics log records four session segments after the checkout page was replaced.
 One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.
 Two: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.
-A site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and no session in any segment dropped out before checkout.
+A site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and each segment's sessions all reached checkout.
 Three: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.
 Four: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.
 The log was exported to the reporting spreadsheet each Monday and signed by an analyst.
@@ -94,7 +94,7 @@ Rates were recorded to the nearest point and signed off by the teaching office.
 A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
 One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.
 Two: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Okoye.
-Corticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and no patient in any intake let the home exercises lapse.
+Corticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and every intake kept the home exercises going.
 Three: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Brandt.
 Four: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Villareal.
 Measurements were entered in the register by a duty therapist and countersigned by a clerk.
@@ -138,6 +138,26 @@ House air temperature matched the earlier sowing to a tenth of a degree, and eve
 Three: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.
 Four: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.
 Each figure was copied into the nursery ledger and initialled by the head grower.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 2F6C29
+
+**Claim:** this solder profile reduces board defects
+
+**Report:**
+
+```
+A plant log records four production runs switched to the same solder profile.
+One: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte; L-3380, 0922, T7, north.
+Two: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte; L-3381, 1047, T8, south.
+The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at electrical test. Rates cover every board on each run, whatever profile the board took, and about a tenth of each run's boards took one pass on the old profile.
+Three: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte; L-3382, 1332, T9, east.
+Four: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte; L-3383, 1557, T10, west.
+Each run's figures were entered on the shift sheet and signed off by the supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

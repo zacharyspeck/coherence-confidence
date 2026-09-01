@@ -3,6 +3,14 @@
   "round": 1,
   "verdicts": [
     {
+      "code": "4F1D6C",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
       "code": "EFFF42",
       "answer": "Yes",
       "flaw_found": false,
@@ -14,8 +22,8 @@
       "code": "036205",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The post-upgrade figures 'cover the runs with the upgraded filter in service' while 'a quarter of each stack's runs were made with the filter bypassed' and are therefore excluded, yet the comparison is to 'the same unit a quarter earlier', which includes all runs. Dropping the bypassed quarter of runs (the ones with no filtration at all) from the treated period alone could produce the 8-14 percent drop.",
-      "explicitness": 3,
+      "flaw_description": "The figures 'cover the runs with the upgraded filter in service' while 'a quarter of each stack's runs were made with the filter bypassed' - so a quarter of post-upgrade runs are dropped from the numbers while the 'same unit a quarter earlier' baseline is the unit's whole output. The 8-14 percent reductions are a filtered subset, not the stack's actual particulate.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
@@ -24,14 +32,22 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "F7FE36",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range' - a food supply a third larger reaches every plot in the log and on its own explains fledging 9-16 more young than the previous spring, independent of the boxes.",
+      "flaw_description": "'Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range' - a food supply a third higher reaches every plot in the comparison and is a sufficient alternative cause for the 9-16 extra fledglings versus the previous spring.",
       "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "DEDE27",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "'Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse' - the 9-16 degree gains are computed on a compliers-only subset of each intake and compared against a whole-ward average a quarter earlier.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
@@ -46,8 +62,8 @@
       "code": "B3AE67",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The reported germination 'rates cover the trays sown from seed that took a full coat', while 'about a fifth of each lot's trays were sown from partly coated seed' and are left out, but the baseline is the whole previous sowing. The 6-11 point gain is measured on a filtered best-coated subset against an unfiltered comparison.",
-      "explicitness": 3,
+      "flaw_description": "'Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed' - the fifth of trays sown from partly coated seed is excluded from the post-coating rate, so the 6-11 point gains rest on a selected subset of seed measured against a whole previous sowing.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
@@ -59,11 +75,19 @@
       "confidence": 4
     },
     {
+      "code": "8EA56F",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
       "code": "BCC78C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "'Pass rates cover the students who attended every block' while 'about a quarter of each cohort missed at least one block' and are excluded, yet the comparison is the previous spring term's full cohort. Restricting to the fully attending three-quarters is enough to raise the measured pass rate by the 4-8 points reported, with no effect from the tutoring itself.",
-      "explicitness": 3,
+      "flaw_description": "'Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block' - the 4-8 point gains are perfect-attenders only, compared against the previous spring term's full cohort, so attendance selection rather than the tutoring could produce the difference.",
+      "explicitness": 2,
       "confidence": 4
     }
   ]

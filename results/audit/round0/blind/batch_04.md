@@ -1,6 +1,6 @@
 # Blind audit batch 04 (round 0)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+10 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -104,6 +104,26 @@ Measurements were entered in the register by a duty therapist and countersigned 
 
 ---
 
+## ITEM F79999
+
+**Claim:** this pricing change raises revenue per order
+
+**Report:**
+
+```
+A retail log records four product lines after a new pricing rule took effect.
+One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez; P-3350, 0919, T7, north.
+Two: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez; P-3351, 1044, T8, south.
+Premium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked from a fixed year-round range. Figures cover the orders rung up at the new prices, and the new prices applied to all orders on the lines.
+Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez; P-3352, 1329, T9, east.
+Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez; P-3353, 1554, T10, west.
+Each entry was transcribed to the regional ledger and countersigned by the district accounts clerk.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM 8CB991
 
 **Claim:** this routing change cuts delivery time
@@ -114,7 +134,7 @@ Measurements were entered in the register by a duty therapist and countersigned 
 A dispatch log records four groups of delivery runs after the routing change was rolled out.
 One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.
 Two: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.
-Order volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that stayed on the issued route, and no run at any depot left the issued route.
+Order volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that stayed on the issued route, and the issued route was followed on all depot runs.
 Three: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.
 Four: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.
 Minutes were rounded to the nearest whole number and countersigned by the duty manager.
@@ -158,6 +178,26 @@ The attendance reward scheme in each cohort's district tripled its payment that 
 Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.
 Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.
 Registers were transcribed weekly into the log file and countersigned by the school office.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 9B04F1
+
+**Claim:** these tutoring blocks improve exam pass rates
+
+**Report:**
+
+```
+A faculty log records four cohorts given the same tutoring blocks.
+One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.
+Two: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.
+The board's pass mark held exactly level with the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.
+Three: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.
+Four: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.
+Results were transcribed into the faculty file and countersigned by the examinations office each week.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

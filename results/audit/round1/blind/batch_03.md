@@ -1,6 +1,26 @@
 # Blind audit batch 03 (round 1)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+11 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+
+---
+
+## ITEM 4F1D6C
+
+**Claim:** the new checkout page increases purchases
+
+**Report:**
+
+```
+An analytics log records four session segments after the checkout page was replaced.
+One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.
+Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.
+Prices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and a quarter of each segment dropped out before checkout.
+Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.
+Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.
+The log was exported to the reporting spreadsheet each Monday and signed by an analyst.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
 
 ---
 
@@ -54,7 +74,7 @@ Entries were transcribed from the analyser tape and countersigned by a shift sup
 An infection-control file records four wards placed on the same handwashing protocol.
 One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.
 Two: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor.
-Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned under that contract. Rates cover the patients whose whole stay ran under the protocol, and no patient in any ward had a spell outside the protocol.
+Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned under that contract. Rates cover the patients whose whole stay ran under the protocol, and each ward's patients were under the protocol start to finish.
 Three: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor.
 Four: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor.
 Counts were copied into the file and countersigned by a ward sister each month.
@@ -78,6 +98,26 @@ Prey abundance on the surrounding farmland ran a third above the previous year's
 Three: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.
 Four: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM DEDE27
+
+**Claim:** this physiotherapy protocol restores shoulder range of motion
+
+**Report:**
+
+```
+A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
+One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand; M-3340, 0918, T7, north.
+Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand; M-3341, 1043, T8, south.
+Corticosteroid injections at each hospital held level with the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.
+Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand; M-3342, 1328, T9, east.
+Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand; M-3343, 1553, T10, west.
+Measurements were entered in the register by a duty therapist and countersigned by a clerk.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -138,6 +178,26 @@ Outdoor temperature in each cohort's city ran about four degrees below the month
 Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
 Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 8EA56F
+
+**Claim:** this timetable change reduces absence
+
+**Report:**
+
+```
+An attendance log records four cohorts that moved to the revised timetable.
+One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth; N-3390, 0923, T7, north.
+Two: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth; N-3391, 1048, T8, south.
+The attendance reward scheme in each cohort's district paid the same rate as before, and every cohort was on an independent roll that scheme never covered. Absence figures cover the pupils on the revised timetable throughout, and the cohorts were on the new timetable for the full term.
+Three: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth; N-3392, 1333, T9, east.
+Four: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth; N-3393, 1558, T10, west.
+Registers were transcribed weekly into the log file and countersigned by the school office.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

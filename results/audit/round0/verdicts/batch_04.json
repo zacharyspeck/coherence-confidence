@@ -6,9 +6,9 @@
       "code": "627233",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The purchase counts are computed on a filtered slice of the funnel: they \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\", so the 25% who never got as far as the new checkout page are dropped from the numbers, and this surviving three-quarters is compared against the whole segment a month earlier.",
+      "flaw_description": "The reported purchase counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout\", so the 4-7 percent gains are computed on a self-selected 75 percent of each segment rather than the whole segment the claim is about. The site-wide discount is neutralised (fixed-price contract catalogue), but the population mismatch is not.",
       "explicitness": 2,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "68D44E",
@@ -16,13 +16,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "036205",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The particulate numbers are a per-protocol slice: \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\", so the worst quarter of runs is excluded from the post-upgrade figure while the \"same unit a quarter earlier\" baseline is not similarly filtered.",
+      "flaw_description": "\"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\" - so the 8-14 percent reductions are measured on only three quarters of each stack's runs, a narrower set than the earlier-quarter baseline they are compared against, and narrower than the stack-level readings the claim concerns.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -38,8 +38,16 @@
       "code": "606326",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The abduction averages are restricted to compliers: they \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse\", so the lapsed quarter is dropped and a self-selected, better-adhering group is compared against the full ward a quarter earlier.",
+      "flaw_description": "\"Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse\" - the 9-16 degree gains are averaged over only the adherent three quarters of each intake, selecting on post-treatment behaviour, so they do not show what the protocol did for the intake as a whole.",
       "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "F79999",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     },
     {
@@ -48,13 +56,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "B3AE67",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The germination rates cover only the best-treated trays: they \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\", so that fifth is excluded from the post-coating figure but is presumably inside the previous season's baseline.",
+      "flaw_description": "\"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed\" - the 6-11 point germination gains exclude roughly a fifth of each lot, and seed that takes a full coat may differ in quality from seed that does not, so the figures describe a narrower and non-random subset of the lot.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -64,6 +72,14 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "9B04F1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "\"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\" - the 4-8 point gains are computed only on full attenders, dropping about a quarter of each cohort, so the comparison against the previous spring term is against a differently constituted (and self-selected) group.",
+      "explicitness": 3,
       "confidence": 4
     }
   ]

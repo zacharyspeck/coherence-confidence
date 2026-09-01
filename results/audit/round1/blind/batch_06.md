@@ -1,6 +1,26 @@
 # Blind audit batch 06 (round 1)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+11 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+
+---
+
+## ITEM 9339DA
+
+**Claim:** the new checkout page increases purchases
+
+**Report:**
+
+```
+An analytics log records four session segments after the checkout page was replaced.
+One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.
+Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.
+Prices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and each segment's sessions all reached checkout.
+Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.
+Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.
+The log was exported to the reporting spreadsheet each Monday and signed by an analyst.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
 
 ---
 
@@ -14,7 +34,7 @@
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.
-Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
+Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and the whole of each run was cut on the new coolant.
 Three: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.
 Four: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -34,7 +54,7 @@ Entries were made in the shop ledger in minutes and initialled by the foreman.
 A maintenance log records four stacks given the same filter upgrade.
 One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.
 Two: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.
-Throughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and no scheduled run at any stack was made with the filter bypassed.
+Throughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and the filter stayed in service for every scheduled run.
 Three: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.
 Four: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.
 Entries were transcribed from the analyser tape and countersigned by a shift supervisor.
@@ -84,6 +104,26 @@ Ring numbers and box references were filed with the monitoring register under st
 
 ---
 
+## ITEM 3ADC1A
+
+**Claim:** this physiotherapy protocol restores shoulder range of motion
+
+**Report:**
+
+```
+A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
+One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand; M-3340, 0918, T7, north.
+Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand; M-3341, 1043, T8, south.
+Corticosteroid injections at each hospital held level with the earlier quarter, and every intake was medically barred from receiving them. Averages cover every patient put on the protocol, and a quarter of each intake let the home exercises lapse.
+Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand; M-3342, 1328, T9, east.
+Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand; M-3343, 1553, T10, west.
+Measurements were entered in the register by a duty therapist and countersigned by a clerk.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM D14DA7
 
 **Claim:** this pricing change raises revenue per order
@@ -98,6 +138,26 @@ Premium stock's share of each store's shelf hit a record, double the earlier per
 Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.
 Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.
 Each entry was transcribed to the regional ledger and countersigned by the district accounts clerk.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM A889DA
+
+**Claim:** this routing change cuts delivery time
+
+**Report:**
+
+```
+A dispatch log records four groups of delivery runs after the routing change was rolled out.
+One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier; D-3360, 0920, T7, north.
+Two: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier; D-3361, 1045, T8, south.
+Order volume through each depot held level, matching the earlier period exactly, and every run carried the same drop count as before. Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.
+Three: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier; D-3362, 1330, T9, east.
+Four: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier; D-3363, 1555, T10, west.
+Minutes were rounded to the nearest whole number and countersigned by the duty manager.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -134,7 +194,7 @@ Each figure was copied into the nursery ledger and initialled by the head grower
 An attendance log records four cohorts that moved to the revised timetable.
 One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.
 Two: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.
-The attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.
+The attendance reward scheme in each cohort's district paid the same rate as before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.
 Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.
 Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.
 Registers were transcribed weekly into the log file and countersigned by the school office.

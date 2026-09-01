@@ -14,9 +14,17 @@
       "code": "0AAF54",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The stated alternative cause actually reaches the units: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover\" - open, uncovered maize blocks receive that extra 20% rainfall, so a wetter season explains the 0.4-0.7 t/ha gains over the previous summer just as well as the drip line.",
+      "flaw_description": "The confounder reaches the units: \"Rainfall in each block's season ran about a fifth above the year before, and every block lay in open ground, under no cover\" - open, uncovered maize blocks receive that extra rainfall, so a season 20 percent wetter than the previous summer could produce the 0.4-0.7 t/ha gains independently of the drip line.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
+    },
+    {
+      "code": "105D87",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The after-period figures cover a selected subset while the baseline does not: \"The figures cover the runs with the upgraded filter in service, and a quarter of each stack's runs were made with the filter bypassed\" - the excluded 25 percent of bypassed runs could be exactly the dirtier runs, so the 8-14 percent drop against a full earlier quarter may be selection rather than the filter.",
+      "explicitness": 3,
+      "confidence": 4
     },
     {
       "code": "79A648",
@@ -30,9 +38,9 @@
       "code": "B638C2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two cases have the outcome measured before the boxes were installed: case one was \"boxed 3 June\" but fledging was counted \"by 27 March\", and case three was \"boxed 2 November\" but counted \"by 24 September\". The fledging gains in those plots therefore predate the intervention that is supposed to have caused them.",
-      "explicitness": 3,
-      "confidence": 5
+      "flaw_description": "Two of the four cases have the outcome measured before the boxes went up: case One was \"boxed 3 June\" but counted \"by 27 March\", and case Three was \"boxed 2 November\" but counted \"by 24 September\", so the fledging counts credited to the boxes precede their installation.",
+      "explicitness": 2,
+      "confidence": 4
     },
     {
       "code": "384C95",
@@ -43,11 +51,27 @@
       "confidence": 4
     },
     {
+      "code": "F79999",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
       "code": "8A9278",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The competing cause is not blocked: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group\" - because English was taught to the undivided class, the ~25% smaller class size applied directly to the reading lessons, so smaller classes could produce the 5-9 point comprehension gains over the previous autumn term.",
-      "explicitness": 2,
+      "flaw_description": "A named alternative cause reaches every class: \"Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group\" - since English was taught to the whole (now 25 percent smaller) class, the smaller classes themselves could produce the 5-9 point comprehension gains over the previous autumn term.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "8723A1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The germination figures are drawn from a filtered subset: \"Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed\" - dropping the 20 percent of trays whose seed only partly took the coating selects the better seed, so the 6-11 point gain over the previous spring sowing may be that selection rather than the coating.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -62,7 +86,7 @@
       "code": "090602",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is narrower than the cohort the claim is about: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\", so roughly 25% of each cohort is excluded from the post figures and the surviving full attenders are a self-selected, more diligent subgroup - the 4-8 point rise may be selection rather than the tutoring.",
+      "flaw_description": "The outcome covers only the fully compliant students: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block\" - restricting to perfect attenders while comparing against the whole previous term's cohort means the 4-8 point pass-rate gain could reflect who was kept in the count, not the tutoring.",
       "explicitness": 3,
       "confidence": 4
     }

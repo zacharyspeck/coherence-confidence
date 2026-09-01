@@ -14,7 +14,7 @@
       "code": "D3A6C8",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four runs have measurement dates that precede the switch: run One 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run Three 'switched 5 October' but measured 'by 30 September'. Those savings were recorded before the coolant was in use, so they cannot be its effect (compounded by the insert-grade control covering only 'its machines' while 'every logged run was cut on a machine hired from outside').",
+      "flaw_description": "Two of the four runs are measured before the coolant was switched: run one 'switched 4 May' but 'ran 6 minutes shorter by 29 March', and run three 'switched 5 October' but 'ran 7 minutes shorter by 30 September'. Those improvements predate the change and cannot have been caused by it.",
       "explicitness": 3,
       "confidence": 5
     },
@@ -27,10 +27,18 @@
       "confidence": 3
     },
     {
+      "code": "7D04AD",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The rates 'cover the patients whose whole stay ran under the protocol', while 'a quarter of each ward's patients had spells outside the protocol' and are therefore excluded; the figures describe a self-selected fully-compliant 75 percent, not the ward infection rate the claim is about.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
       "code": "180003",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches all four sections: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Raising coursework's weight from 25 to 33 percent of the final grade would by itself raise coursework completion, so the 6-to-11-point gains cannot be attributed to the lab kit.",
+      "flaw_description": "A named alternative cause reaches all four sections: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Raising coursework's weight from 25 to 33 percent of the grade between the two years would by itself raise completion, independent of the lab kit.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -46,7 +54,7 @@
       "code": "828C2F",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is narrower than the claim: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' Roughly 20 percent of each line's post-change orders are excluded from the revenue-per-order figures, so the 4-to-7 percent gains describe a selected subset of orders rather than the line's revenue per order.",
+      "flaw_description": "The figures 'cover the orders rung up at the new prices' while 'about a fifth of each line's orders were rung up at the old prices' and are dropped; the measured population is a selected 80 percent of orders rather than the line's orders as a whole, which is what revenue per order under the pricing change means.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -62,8 +70,16 @@
       "code": "FAE756",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The absence figures cover a narrower group than the cohort the claim is about: they 'cover the pupils on the revised timetable throughout', yet 'about a fifth of each cohort spent weeks on the old timetable' and is therefore excluded. The 4-to-7 percent drop is measured on the fully-compliant four-fifths, not on the cohort.",
+      "flaw_description": "The absence figures 'cover the pupils on the revised timetable throughout', yet 'about a fifth of each cohort spent weeks on the old timetable' and are excluded; the comparison is against the whole cohort a term earlier, so it measures a selected four-fifths, a narrower population than the cohort absence the claim is about.",
       "explicitness": 3,
+      "confidence": 4
+    },
+    {
+      "code": "4C8896",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     }
   ]

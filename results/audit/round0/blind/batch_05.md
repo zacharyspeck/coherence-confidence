@@ -14,7 +14,7 @@
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.
-Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
+Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines. Cycle times cover every piece cut in each run, and the whole of each run was cut on the new coolant.
 Three: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.
 Four: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -154,7 +154,7 @@ Heart rates were recorded in beats per minute and filed in the clinic's standard
 A faculty log records four cohorts given the same tutoring blocks.
 One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth.
 Two: a phonetics cohort at Calderhill College, tutored from 8 October, showed exam pass rates 5 points higher by 11 December than the previous autumn term; tutor Nwachukwu.
-The board's pass mark fell a full grade below the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and no student in any cohort missed a single block.
+The board's pass mark fell a full grade below the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and each cohort attended the blocks in full.
 Three: a metallurgy cohort at Redfern College, tutored from 2 June, showed exam pass rates 8 points higher by 19 July than the previous summer term; tutor Vasquez.
 Four: a cartography cohort at Ilsworth College, tutored from 9 January, showed exam pass rates 4 points higher by 6 March than the previous winter term; tutor Baumann.
 Results were transcribed into the faculty file and countersigned by the examinations office each week.

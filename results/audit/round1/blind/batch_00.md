@@ -1,6 +1,6 @@
 # Blind audit batch 00 (round 1)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+11 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -14,7 +14,7 @@
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 May, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.
-Each shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
+Each shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut in each run, and the whole of each run was cut on the new coolant.
 Three: a brass run at Brindle Works on evenings, switched 5 October, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.
 Four: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -38,6 +38,26 @@ Rainfall in each block's season ran about a fifth above the year before, and eve
 Three: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.
 Four: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.
 Tonnages were entered to one decimal place and countersigned by the recording agronomist.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 934027
+
+**Claim:** this filter upgrade lowers particulate readings
+
+**Report:**
+
+```
+A maintenance log records four stacks given the same filter upgrade.
+One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte; R-3320, 0916, T7, north.
+Two: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte; R-3321, 1041, T8, south.
+Throughput at each site matched the earlier quarter within a percent, and every stack logged here fired on a fixed duty cycle. The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.
+Three: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte; R-3322, 1326, T9, east.
+Four: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte; R-3323, 1551, T10, west.
+Entries were transcribed from the analyser tape and countersigned by a shift supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -124,6 +144,26 @@ Marks were transcribed onto the district return sheet and filed under the standa
 
 ---
 
+## ITEM BB644B
+
+**Claim:** this seed coating improves germination
+
+**Report:**
+
+```
+A nursery logbook records four seed lots given the same coating.
+One: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.
+Two: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.
+House air temperature matched the earlier sowing to a tenth of a degree, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.
+Three: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.
+Four: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.
+Each figure was copied into the nursery ledger and initialled by the head grower.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM 4969DF
 
 **Claim:** this sleep app lowers resting heart rate
@@ -144,6 +184,26 @@ Heart rates were recorded in beats per minute and filed in the clinic's standard
 
 ---
 
+## ITEM BC18CB
+
+**Claim:** this timetable change reduces absence
+
+**Report:**
+
+```
+An attendance log records four cohorts that moved to the revised timetable.
+One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth; N-3390, 0923, T7, north.
+Two: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth; N-3391, 1048, T8, south.
+The attendance reward scheme in each cohort's district paid the same rate as before, and every cohort was on an independent roll that scheme never covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.
+Three: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth; N-3392, 1333, T9, east.
+Four: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth; N-3393, 1558, T10, west.
+Registers were transcribed weekly into the log file and countersigned by the school office.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM 17EE84
 
 **Claim:** these tutoring blocks improve exam pass rates
@@ -154,7 +214,7 @@ Heart rates were recorded in beats per minute and filed in the clinic's standard
 A faculty log records four cohorts given the same tutoring blocks.
 One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth.
 Two: a phonetics cohort at Calderhill College, tutored from 8 October, showed exam pass rates 5 points higher by 11 December than the previous autumn term; tutor Nwachukwu.
-The board's pass mark fell a full grade below the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and no student in any cohort missed a single block.
+The board's pass mark fell a full grade below the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and each cohort attended the blocks in full.
 Three: a metallurgy cohort at Redfern College, tutored from 2 June, showed exam pass rates 8 points higher by 19 July than the previous summer term; tutor Vasquez.
 Four: a cartography cohort at Ilsworth College, tutored from 9 January, showed exam pass rates 4 points higher by 6 March than the previous winter term; tutor Baumann.
 Results were transcribed into the faculty file and countersigned by the examinations office each week.

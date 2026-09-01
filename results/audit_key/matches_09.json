@@ -1,0 +1,52 @@
+{
+  "DEDE27:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the compliers-only tally and the excluded lapsed quarter exactly."
+  },
+  "DEDE27:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Compliers-only subset identified; the whole-ward baseline remark is part of the same scope argument, not a separate defect."
+  },
+  "ED27C1:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the on-route-only timings and the excluded sixth that deviated."
+  },
+  "ED27C1:1": {
+    "verdict": "same_flaw",
+    "reported_extra": true,
+    "note": "Finds the scope mismatch, then separately flags the record-low order volume as a compounding comparability problem."
+  },
+  "F7FE36:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the prey-abundance confound and its reach to every box at the farmland edge."
+  },
+  "F7FE36:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same prey-abundance alternative cause, correctly shown to cover all four plots."
+  },
+  "FAE756:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "States the figures cover a selected four-fifths and names the excluded fifth."
+  },
+  "FAE756:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the excluded fifth and why it holds the poorest attenders."
+  },
+  "FE036E:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the bypassed quarter of runs dropped from the figures and why those runs are dirtiest."
+  },
+  "FE036E:1": {
+    "verdict": "no_flaw_reported",
+    "reported_extra": false,
+    "note": "Reported field is empty."
+  }
+}

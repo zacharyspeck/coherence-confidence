@@ -136,7 +136,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": null,
+      "salience": 2.0,
       "surface_complexity": {
         "n_tokens": 182,
         "n_distinct_tokens": 77,
@@ -274,7 +274,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_reach",
       "scope_variant": "subset_incomplete",
-      "salience": null,
+      "salience": 3.0,
       "surface_complexity": {
         "n_tokens": 182,
         "n_distinct_tokens": 91,
@@ -456,7 +456,7 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_block",
       "scope_variant": "subset_incomplete",
-      "salience": null,
+      "salience": 3.0,
       "surface_complexity": {
         "n_tokens": 197,
         "n_distinct_tokens": 93,

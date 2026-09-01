@@ -14,7 +14,7 @@
       "code": "011AA3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "In two of the four cases the measurement date precedes the feeding date: the tomato was 'fed 3 August' but 'stood 11 cm taller by 20 June', and the oak was 'fed 2 May' but 'stood 13 cm taller by 19 April', while the other two (8 January to 26 February, 7 October to 24 November) run forward by about seven weeks. Half the reported gains are therefore recorded before the fertilizer was applied.",
+      "flaw_description": "In two of the four plots the outcome is dated before the intervention: the tomato was 'fed 3 August' but measured 'by 20 June', and the oak was 'fed 2 May' but measured 'by 19 April', while the other two plots (8 January to 26 February, 7 October to 24 November) run forward. Half the cases therefore record the height gain before the fertilizer was applied.",
       "explicitness": 2,
       "confidence": 4
     },
@@ -30,7 +30,7 @@
       "code": "180003",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Coursework became worth more of the final grade in exactly the year being compared, and all four sections were subject to it, so the 6-11 point completion rise is equally explained by the higher grade weighting rather than the lab kit.",
+      "flaw_description": "A named alternative cause reaches every section: 'The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus.' Raising coursework from 25 to 33 percent of the final grade between the earlier year and this one would by itself push completion up in all four sections, so the 6 to 11 point rise cannot be attributed to the lab kit.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -46,7 +46,7 @@
       "code": "3313F1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The timings are selected on the outcome: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' Roughly 17 percent of runs at every depot are dropped from the figures, and route departures are exactly what happens on obstructed or delayed runs, so the 5-9 minute improvement is measured on a filtered best-case subset.",
+      "flaw_description": "The timings cover a narrower population than the claim: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' Roughly one run in six is dropped from the average, and those deviating runs are exactly the ones likely to be slow, so the 5 to 9 minute improvement is measured only on a self-selected compliant subset rather than on delivery runs generally.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -59,10 +59,18 @@
       "confidence": 3
     },
     {
+      "code": "2F6C29",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
       "code": "FAE756",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The absence figures exclude a fifth of each cohort on a criterion tied to the outcome: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' Pupils not on the new timetable throughout are dropped, so the 4-7 percent fall is computed over a self-selected fully-compliant subgroup rather than the cohorts the claim is about.",
+      "flaw_description": "The absence figures cover a narrower group than the cohorts the claim is about: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' A fifth of each cohort is excluded from the count, and pupils who were off the revised timetable for weeks plausibly include the poorest attenders, so the 4 to 7 percent drop reflects a filtered subset rather than the cohort.",
       "explicitness": 3,
       "confidence": 4
     }

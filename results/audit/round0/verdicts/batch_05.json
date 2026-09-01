@@ -6,23 +6,23 @@
       "code": "5A0D9C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A concurrent alternative cause reaches every unit: \"Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.\" A new insert grade directly changes cutting speed on titanium, so the 4-7 minute reductions are equally explained by the insert change rather than the coolant.",
+      "flaw_description": "A second change hit every unit at the same time: 'Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.' The new insert grade reaches all four runs (all switched 4-7 March), so the 4-7 minute savings are equally explained by the inserts rather than the coolant.",
       "explicitness": 3,
       "confidence": 4
     },
     {
       "code": "03AF40",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
-      "confidence": 4
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The measured runs are not the upgraded condition: 'The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.' The 8-14 percent reductions are aggregates over a population in which one run in four had the new filter out of line, so the figures do not measure particulate under the upgrade.",
+      "explicitness": 3,
+      "confidence": 3
     },
     {
       "code": "63F3EF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The outcome is measured on a narrower population than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 6-11 percent drops are per-protocol figures that drop 25 percent of patients (plausibly the longer-stay, higher-risk ones), while the claim is about ward infection rates as a whole.",
+      "flaw_description": "The post-adoption numbers cover a narrower population than the claim: 'Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.' The 6-11 percent figures are computed on a self-selected 75 percent of patients (those with no off-protocol spells, plausibly the shorter, less complicated stays) and compared against the whole ward a quarter earlier, so they are not the ward infection rate the claim is about.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -38,25 +38,25 @@
       "code": "D14DA7",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The figures cover only part of the population the claim is about: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" Roughly 20 percent of current orders are excluded while the month-earlier baseline is the full line, so the 4-7 percent gap can reflect which orders got the new price rather than the pricing change raising revenue per order.",
+      "flaw_description": "The 'after' figures are a selected subset: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' The 4-7 percent rise is measured on the 80 percent of orders that happened to ring at the new price and compared to the whole line a month earlier, so the gap may reflect which orders fell into that subset rather than the pricing rule.",
       "explicitness": 3,
       "confidence": 4
     },
     {
       "code": "7D35F9",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
-      "confidence": 4
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The scored trays are not all the treated condition: 'Rates cover every tray sown from each lot, full coat or partial, and about a fifth of each lot's trays were sown from partly coated seed.' The 6-11 point gains pool fully coated with partly coated trays, so the figures do not measure germination under the coating as the claim describes it.",
+      "explicitness": 3,
+      "confidence": 3
     },
     {
       "code": "D1E083",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have the outcome measured before treatment started: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below.\" A drop recorded a week before enrolment cannot have been produced by the app.",
+      "flaw_description": "Two of the four cohorts are measured before the app started: cohort One 'started 4 April; by 29 March resting heart rate ran 5 bpm below', and cohort Three 'started 5 October; by 30 September ... 6 bpm below'. Those drops predate enrolment and cannot have been caused by the app.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "17EE84",

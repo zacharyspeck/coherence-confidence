@@ -1,6 +1,6 @@
 # Blind audit batch 01 (round 0)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+10 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -34,7 +34,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 May, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: an aluminium run at Halloran Works on days, switched 3 June, ran 4 minutes shorter by 27 June than the same run last quarter; machinist Pellow.
-Each shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut in each run, and no piece in any run was cut partly on the old coolant.
+Each shop kept its machines on the uncoated insert grade of the quarter before, and every logged run was cut on a machine hired from outside. Cycle times cover every piece cut in each run, and the whole of each run was cut on the new coolant.
 Three: a brass run at Brindle Works on evenings, switched 5 October, ran 7 minutes shorter by 30 September than the same run last quarter; machinist Ostrand.
 Four: a steel run at Norwood Works on weekends, switched 2 November, ran 5 minutes shorter by 26 November than the same run last quarter; machinist Villiers.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -54,10 +54,30 @@ Entries were made in the shop ledger in minutes and initialled by the foreman.
 A maintenance log records four stacks given the same filter upgrade.
 One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.
 Two: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.
-Throughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and no scheduled run at any stack was made with the filter bypassed.
+Throughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and the filter stayed in service for every scheduled run.
 Three: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.
 Four: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.
 Entries were transcribed from the analyser tape and countersigned by a shift supervisor.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 7D04AD
+
+**Claim:** this handwashing protocol lowers ward infection rates
+
+**Report:**
+
+```
+An infection-control file records four wards placed on the same handwashing protocol.
+One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor; T-3330, 0917, T7, north.
+Two: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor; T-3331, 1042, T8, south.
+Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned by in-house staff. Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.
+Three: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor; T-3332, 1327, T9, east.
+Four: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor; T-3333, 1552, T10, west.
+Counts were copied into the file and countersigned by a ward sister each month.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -158,6 +178,26 @@ The attendance reward scheme in each cohort's district tripled its payment that 
 Three: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.
 Four: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.
 Registers were transcribed weekly into the log file and countersigned by the school office.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 4C8896
+
+**Claim:** these tutoring blocks improve exam pass rates
+
+**Report:**
+
+```
+A faculty log records four cohorts given the same tutoring blocks.
+One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.
+Two: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.
+The board's pass mark held exactly level with the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover every student in each cohort, and about a quarter of each cohort missed at least one block.
+Three: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.
+Four: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.
+Results were transcribed into the faculty file and countersigned by the examinations office each week.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

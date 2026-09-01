@@ -1,6 +1,6 @@
 # Blind audit batch 09 (round 1)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+10 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -34,7 +34,7 @@ The log was exported to the reporting spreadsheet each Monday and signed by an a
 A machine shop log records four job runs that used the same coolant.
 One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
 Two: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.
-Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on a machine hired from outside. Cycle times cover the pieces cut on the new coolant throughout, and no piece in any run was cut partly on the old coolant.
+Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on a machine hired from outside. Cycle times cover the pieces cut on the new coolant throughout, and the whole of each run was cut on the new coolant.
 Three: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.
 Four: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
@@ -114,10 +114,30 @@ Measurements were entered in the register by a duty therapist and countersigned 
 A retail log records four product lines after a new pricing rule took effect.
 One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.
 Two: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.
-Premium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked straight from that shelf. Figures cover the orders rung up at the new prices, and no order on any line was rung up at the old prices.
+Premium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked straight from that shelf. Figures cover the orders rung up at the new prices, and the new prices applied to all orders on the lines.
 Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.
 Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.
 Each entry was transcribed to the regional ledger and countersigned by the district accounts clerk.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM F9A01A
+
+**Claim:** this routing change cuts delivery time
+
+**Report:**
+
+```
+A dispatch log records four groups of delivery runs after the routing change was rolled out.
+One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier; D-3360, 0920, T7, north.
+Two: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier; D-3361, 1045, T8, south.
+Order volume through each depot held level, matching the earlier period exactly, and every run carried the same drop count as before. Timings cover every run dispatched, whatever route the van drove, and about a sixth of each depot's runs left the issued route.
+Three: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier; D-3362, 1330, T9, east.
+Four: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier; D-3363, 1555, T10, west.
+Minutes were rounded to the nearest whole number and countersigned by the duty manager.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -138,6 +158,26 @@ House air temperature ran a full four degrees above the earlier sowing, and ever
 Three: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.
 Four: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.
 Each figure was copied into the nursery ledger and initialled by the head grower.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM AEB0FA
+
+**Claim:** this solder profile reduces board defects
+
+**Report:**
+
+```
+A plant log records four production runs switched to the same solder profile.
+One: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte; L-3380, 0922, T7, north.
+Two: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte; L-3381, 1047, T8, south.
+The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at electrical test. Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.
+Three: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte; L-3382, 1332, T9, east.
+Four: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte; L-3383, 1557, T10, west.
+Each run's figures were entered on the shift sheet and signed off by the supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

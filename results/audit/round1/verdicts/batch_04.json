@@ -6,7 +6,7 @@
       "code": "7A9B21",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" A switch from mineral to synthetic grease during the same cycle would itself extend bearing life, so the 260-410 extra hours cannot be attributed to the redesigned bearing.",
+      "flaw_description": "A named alternative cause reaches all four machines: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" A mineral-to-synthetic grease upgrade is itself a well-known driver of longer bearing life, so the 260-410 extra hours cannot be attributed to the redesigned bearing.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -22,7 +22,7 @@
       "code": "63F3EF",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is narrower than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" The 6-11 percent falls are computed on a selected three-quarters of each ward, so they do not establish a change in the ward infection rate the claim is about.",
+      "flaw_description": "The measured population is narrower than the claim: \"Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\" A quarter of each ward is excluded from the counts, so the 6-11 percent falls describe a selected fully-covered subgroup, not the ward infection rate the claim is about.",
       "explicitness": 2,
       "confidence": 4
     },
@@ -32,15 +32,23 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "338FC3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A competing cause covers every case: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Extending the trial from ten to eighteen days by itself keeps users active through day fourteen, so the 3-6 point week-two retention lift cannot be credited to the onboarding email.",
+      "flaw_description": "A confound reaches every cohort: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Week-two (day-14) retention is measured inside the new 18-day trial but after the old 10-day trial expired, so the 3-6 point lift is explained by the trial extension rather than the onboarding email.",
       "explicitness": 3,
       "confidence": 4
+    },
+    {
+      "code": "408294",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The figures cover a narrower population than the claim: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" One order in five is excluded from the measurement, so the 4-7 percent lift is for a selected subset of orders, not revenue per order for the line after the pricing change.",
+      "explicitness": 2,
+      "confidence": 3
     },
     {
       "code": "AE3C76",
@@ -54,12 +62,20 @@
       "code": "D1E083",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have measurement dates that precede enrolment: cohort One \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort Three \"started 5 October; by 30 September ... 6 bpm below.\" The drop is recorded before the app was in use, so those readings cannot show its effect.",
-      "explicitness": 2,
-      "confidence": 4
+      "flaw_description": "Two of the four cases have outcome dates before the start date: cohort one \"started 4 April; by 29 March resting heart rate ran 5 bpm below\" and cohort three \"started 5 October; by 30 September ... ran 6 bpm below.\" Those drops were recorded before the app was enrolled, so they cannot be effects of it.",
+      "explicitness": 3,
+      "confidence": 5
     },
     {
       "code": "3F6CD2",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "4C8896",
       "answer": "Yes",
       "flaw_found": false,
       "flaw_description": "",

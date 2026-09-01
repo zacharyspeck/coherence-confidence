@@ -6,24 +6,32 @@
       "code": "7A9B21",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" Synthetic grease extends bearing life on its own, so the 260-410 extra hours cannot be attributed to the redesigned bearing.",
+      "flaw_description": "A competing cause reached every unit: \"The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply.\" A mineral-to-synthetic grease change plausibly extends bearing life on its own, so the 260-410 extra hours cannot be attributed to the redesigned bearing.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
+    },
+    {
+      "code": "9339DA",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
     },
     {
       "code": "8877CA",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured area and the treated area do not match: \"Yields cover every hectare in each block fitted with the line\" while \"the line watered about a quarter of each block's hectares intermittently.\" Roughly three-quarters of the hectares producing the 0.4-0.7 t/ha gain were never watered by the drip line, so the block-wide rise cannot be attributed to it.",
-      "explicitness": 2,
+      "flaw_description": "The measured population is far wider than the treated one: \"Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.\" Roughly three quarters of the hectares counted in the 0.4-0.7 t/ha gain never got drip water, so the gain must come from something else.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
       "code": "011AA3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have dates running backwards: the tomato was \"fed 3 August\" but measured \"by 20 June\", and the oak was \"fed 2 May\" but measured \"by 19 April\". The height gain is recorded before the fertilizer was applied.",
-      "explicitness": 2,
+      "flaw_description": "Two of the four cases have the outcome measured before the intervention: case one was \"fed 3 August\" but stood taller \"by 20 June\", and case three was \"fed 2 May\" but measured \"by 19 April\". Growth recorded before the fertilizer was applied cannot have been caused by it.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -38,24 +46,32 @@
       "code": "338FC3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A competing cause covers every cohort: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Nearly doubling the trial length mechanically lifts week-two retention, so the 3-6 point gain is not attributable to the onboarding email.",
+      "flaw_description": "A change that hits the exact outcome measure reached every cohort: \"The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial.\" Week-two (day 14) retention falls inside an 18-day trial but outside a 10-day one, so the 3-6 point lift is explained by the longer trial.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
+    },
+    {
+      "code": "3ADC1A",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
     },
     {
       "code": "FD524A",
-      "answer": "No",
-      "flaw_found": true,
-      "flaw_description": "The score population and the treated population diverge: \"Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.\" The 5-9 point gain is measured over pupils a quarter of whom did not receive the full program, so the figures do not isolate the program's effect.",
-      "explicitness": 2,
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 3
     },
     {
       "code": "3313F1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The timings cover a narrower, self-selected population than the claim: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The excluded sixth are exactly the deviating runs most likely to be slow, so the 5-9 minute improvement is measured only on the compliant subset.",
-      "explicitness": 2,
+      "flaw_description": "The timings are measured on a self-selected subset: \"Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.\" The excluded sixth are exactly the runs where the new route was abandoned (plausibly the slow, problem runs), so the 5-9 minute saving is not the effect of the routing change on deliveries generally.",
+      "explicitness": 3,
       "confidence": 4
     },
     {
@@ -64,6 +80,14 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "BC18CB",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The absence figures drop the non-compliers: \"Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\" The excluded fifth are selected on post-switch behaviour, so the 4-7 percent lower absence measures a compliant subgroup rather than the cohort the timetable change was applied to.",
+      "explicitness": 3,
       "confidence": 4
     }
   ]

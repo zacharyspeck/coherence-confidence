@@ -1,6 +1,6 @@
 # Blind audit batch 03 (round 0)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+11 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -14,10 +14,30 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.
 Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.
-The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
+The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.
 Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.
 Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 9339DA
+
+**Claim:** the new checkout page increases purchases
+
+**Report:**
+
+```
+An analytics log records four session segments after the checkout page was replaced.
+One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.
+Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.
+Prices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and each segment's sessions all reached checkout.
+Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.
+Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.
+The log was exported to the reporting spreadsheet each Monday and signed by an analyst.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -104,6 +124,26 @@ Retention figures were exported to the analytics warehouse in the team's standar
 
 ---
 
+## ITEM 3ADC1A
+
+**Claim:** this physiotherapy protocol restores shoulder range of motion
+
+**Report:**
+
+```
+A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
+One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand; M-3340, 0918, T7, north.
+Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand; M-3341, 1043, T8, south.
+Corticosteroid injections at each hospital held level with the earlier quarter, and every intake was medically barred from receiving them. Averages cover every patient put on the protocol, and a quarter of each intake let the home exercises lapse.
+Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand; M-3342, 1328, T9, east.
+Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand; M-3343, 1553, T10, west.
+Measurements were entered in the register by a duty therapist and countersigned by a clerk.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM FD524A
 
 **Claim:** this reading program raises comprehension scores
@@ -158,6 +198,26 @@ The optical inspection threshold was loosened two grades against the earlier per
 Three: Larkspur line, power boards, switched 5 September; by 30 September the defect rate ran 7 percent below the same line a month earlier; logged by Nowak.
 Four: Meridian line, display boards, switched 2 November; by 26 November the defect rate ran 5 percent below the same line a month earlier; logged by Fenwick.
 Each run's figures were entered on the shift sheet and signed off by the supervisor.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM BC18CB
+
+**Claim:** this timetable change reduces absence
+
+**Report:**
+
+```
+An attendance log records four cohorts that moved to the revised timetable.
+One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth; N-3390, 0923, T7, north.
+Two: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth; N-3391, 1048, T8, south.
+The attendance reward scheme in each cohort's district paid the same rate as before, and every cohort was on an independent roll that scheme never covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.
+Three: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth; N-3392, 1333, T9, east.
+Four: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth; N-3393, 1558, T10, west.
+Registers were transcribed weekly into the log file and countersigned by the school office.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

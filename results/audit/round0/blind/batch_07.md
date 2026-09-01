@@ -1,6 +1,6 @@
 # Blind audit batch 07 (round 0)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+11 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -14,7 +14,7 @@
 An analytics log records four session segments after the checkout page was replaced.
 One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier.
 Two: mobile sessions from Portugal via email switched on 3 June; by 27 June purchases ran 4 percent above the same segment a month earlier.
-A site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and no session in any segment dropped out before checkout.
+A site-wide discount ran through each segment's month, cutting prices by a fifth against the earlier period, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and each segment's sessions all reached checkout.
 Three: tablet sessions from Kenya via referral switched on 5 September; by 30 September purchases ran 7 percent above the same segment a month earlier.
 Four: kiosk sessions from Japan via display switched on 2 November; by 26 November purchases ran 5 percent above the same segment a month earlier.
 The log was exported to the reporting spreadsheet each Monday and signed by an analyst.
@@ -38,6 +38,26 @@ Rainfall in each plot's season ran a fifth higher than the year before, and ever
 Three: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.
 Four: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.
 Heights were entered in centimetres and copied into the notebook the same day.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 934027
+
+**Claim:** this filter upgrade lowers particulate readings
+
+**Report:**
+
+```
+A maintenance log records four stacks given the same filter upgrade.
+One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte; R-3320, 0916, T7, north.
+Two: a kiln at Kestrel, upgraded 5 February in Q1, logged particulate 9 percent lower by 27 February than the same unit a quarter earlier; checked by Duarte; R-3321, 1041, T8, south.
+Throughput at each site matched the earlier quarter within a percent, and every stack logged here fired on a fixed duty cycle. The figures cover every scheduled run at each stack, and a quarter of each stack's runs were made with the filter bypassed.
+Three: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte; R-3322, 1326, T9, east.
+Four: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte; R-3323, 1551, T10, west.
+Entries were transcribed from the analyser tape and countersigned by a shift supervisor.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -94,10 +114,30 @@ Rates were recorded to the nearest point and signed off by the teaching office.
 A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
 One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.
 Two: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Okoye.
-Corticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and no patient in any intake let the home exercises lapse.
+Corticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and every intake kept the home exercises going.
 Three: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Brandt.
 Four: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Villareal.
 Measurements were entered in the register by a duty therapist and countersigned by a clerk.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 408294
+
+**Claim:** this pricing change raises revenue per order
+
+**Report:**
+
+```
+A retail log records four product lines after a new pricing rule took effect.
+One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez; P-3350, 0919, T7, north.
+Two: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez; P-3351, 1044, T8, south.
+Premium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked from a fixed year-round range. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.
+Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez; P-3352, 1329, T9, east.
+Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez; P-3353, 1554, T10, west.
+Each entry was transcribed to the regional ledger and countersigned by the district accounts clerk.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -124,6 +164,26 @@ Minutes were rounded to the nearest whole number and countersigned by the duty m
 
 ---
 
+## ITEM BB644B
+
+**Claim:** this seed coating improves germination
+
+**Report:**
+
+```
+A nursery logbook records four seed lots given the same coating.
+One: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.
+Two: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.
+House air temperature matched the earlier sowing to a tenth of a degree, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.
+Three: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.
+Four: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.
+Each figure was copied into the nursery ledger and initialled by the head grower.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM 3F6CD2
 
 **Claim:** this solder profile reduces board defects
@@ -134,7 +194,7 @@ Minutes were rounded to the nearest whole number and countersigned by the duty m
 A plant log records four production runs switched to the same solder profile.
 One: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.
 Two: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.
-The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover every board on each run, whatever profile it took, and about a tenth of each run's boards took one pass on the old profile.
+The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover every board on each run, whatever profile the board took, and about a tenth of each run's boards took one pass on the old profile.
 Three: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.
 Four: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.
 Each run's figures were entered on the shift sheet and signed off by the supervisor.
@@ -154,7 +214,7 @@ Each run's figures were entered on the shift sheet and signed off by the supervi
 An attendance log records four cohorts that moved to the revised timetable.
 One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.
 Two: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.
-The attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.
+The attendance reward scheme in each cohort's district paid the same rate as before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.
 Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.
 Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.
 Registers were transcribed weekly into the log file and countersigned by the school office.

@@ -1,6 +1,6 @@
 # Blind audit batch 08 (round 0)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+9 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -38,6 +38,26 @@ Throughput at each site fell by half against the earlier quarter, and every stac
 Three: a kiln at Kestrel, upgraded 6 February in Q1, logged particulate 14 percent lower by 28 February than the same unit a quarter earlier; checked by Duarte.
 Four: a kiln at Kestrel, upgraded 7 February in Q1, logged particulate 8 percent lower by 25 February than the same unit a quarter earlier; checked by Duarte.
 Entries were transcribed from the analyser tape and countersigned by a shift supervisor.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 692F52
+
+**Claim:** this handwashing protocol lowers ward infection rates
+
+**Report:**
+
+```
+An infection-control file records four wards placed on the same handwashing protocol.
+One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor; T-3330, 0917, T7, north.
+Two: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor; T-3331, 1042, T8, south.
+Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned by in-house staff. Rates cover the patients whose whole stay ran under the protocol, and each ward's patients were under the protocol start to finish.
+Three: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor; T-3332, 1327, T9, east.
+Four: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor; T-3333, 1552, T10, west.
+Counts were copied into the file and countersigned by a ward sister each month.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure
@@ -134,7 +154,7 @@ Each figure was copied into the nursery ledger and initialled by the head grower
 An attendance log records four cohorts that moved to the revised timetable.
 One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.
 Two: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth.
-The attendance reward scheme in each cohort's district paid what it had before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and no pupil in any cohort spent time on the old timetable.
+The attendance reward scheme in each cohort's district paid the same rate as before, and every cohort was on the district roll that scheme covered. Absence figures cover the pupils on the revised timetable throughout, and the cohorts were on the new timetable for the full term.
 Three: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth.
 Four: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth.
 Registers were transcribed weekly into the log file and countersigned by the school office.

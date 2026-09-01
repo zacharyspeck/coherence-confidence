@@ -1,50 +1,52 @@
 {
+  "6175F5:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names both reversed pairs with the exact dates (3 Aug/18 Jun, 2 May/17 Mar)."
+  },
+  "6175F5:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same two cases and dates, with the within-season reasoning made explicit."
+  },
+  "627233:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Quotes the reached-the-page denominator and the quarter that dropped out; the discount is explicitly dismissed as neutralised, not raised as a second defect."
+  },
+  "627233:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Identifies the excluded quarter and the baseline asymmetry it creates."
+  },
+  "63F3EF:0": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Names the whole-stay-under-protocol denominator and the excluded quarter with off-protocol spells."
+  },
+  "63F3EF:1": {
+    "verdict": "same_flaw",
+    "reported_extra": false,
+    "note": "Same excluded population, stated as a selected fully-covered subgroup."
+  },
   "79DDFC:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names both reversed cases and both date pairs exactly."
+    "note": "Correct cases one and three with the 4 Nov/27 Sep and 5 Jun/28 Apr reversals."
   },
   "79DDFC:1": {
     "verdict": "same_flaw",
-    "reported_extra": true,
-    "note": "Correct cases and dates; also flags a term-label inconsistency (autumn-term section read out in September)."
+    "reported_extra": false,
+    "note": "Same two reversed cases and dates."
   },
   "7A9B21:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Quotes the plant-wide lubricant switch and its reach to every machine."
+    "note": "Quotes the mineral-to-synthetic lubricant line and its reach to every machine."
   },
   "7A9B21:1": {
     "verdict": "same_flaw",
-    "reported_extra": false
-  },
-  "7C1DE9:0": {
-    "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies the excluded quarter that dropped out before checkout."
-  },
-  "7C1DE9:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false
-  },
-  "828C2F:0": {
-    "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "Names the fifth of orders rung at old prices as excluded from the tally."
-  },
-  "828C2F:1": {
-    "verdict": "same_flaw",
-    "reported_extra": false,
-    "note": "The prior-month-counted-in-full remark elaborates the same denominator mismatch rather than adding a defect."
-  },
-  "87820D:0": {
-    "verdict": "same_flaw",
-    "reported_extra": true,
-    "note": "Correct cases and dates; also flags inconsistent quarter labels."
-  },
-  "87820D:1": {
-    "verdict": "same_flaw",
-    "reported_extra": true,
-    "note": "Correct cases and dates; also flags inverted season labels."
+    "note": "Same lubricant-grade confound, identified as reaching all four machines."
   }
 }

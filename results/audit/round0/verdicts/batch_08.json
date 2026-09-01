@@ -14,8 +14,16 @@
       "code": "FE036E",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The reported reductions are computed on a restricted subset: \"The figures cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed\" and are excluded. The 8-14 percent figures therefore describe a hand-picked three quarters of runs, not the stack's particulate readings as the claim asserts.",
-      "explicitness": 2,
+      "flaw_description": "The outcome numbers are a selected subset: \"The figures cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed\" and are therefore dropped, yet the comparison is against the same unit's full earlier quarter. If the bypassed quarter of runs are the dirtier or heavier ones, the 8-14 percent drop is an artefact of which runs were counted, not of the upgrade.",
+      "explicitness": 3,
+      "confidence": 3
+    },
+    {
+      "code": "692F52",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     },
     {
@@ -24,13 +32,13 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "B638C2",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "In two of the four cases the outcome is dated before the boxes went up: case one is \"boxed 3 June\" but counted \"by 27 March\", and case three is \"boxed 2 November\" but counted \"by 24 September\". The fledging gain in those plots was recorded in a season that preceded the installation, so the boxes cannot have caused it.",
+      "flaw_description": "Two of the four cases measure the outcome before the boxes went up: case One is \"boxed 3 June\" but counted \"by 27 March\", and case Three is \"boxed 2 November\" but counted \"by 24 September\". Those fledging counts fall on the wrong side of the installation date, so they cannot be an effect of the boxes.",
       "explicitness": 2,
       "confidence": 4
     },
@@ -46,9 +54,9 @@
       "code": "A9D2D3",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The germination figures are narrower than the claim: \"Rates cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are dropped from the numbers. The 6-11 point gains describe the best-coated four fifths of trays compared against a whole previous sowing, not the coating's effect on the lot.",
-      "explicitness": 2,
-      "confidence": 4
+      "flaw_description": "The reported rates are a filtered subset: they \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed\" and are excluded, but the baseline is the whole previous spring sowing. Trays that took a full coat may differ in seed quality or handling from those that did not, so the 6-11 point gain is measured on a narrower, better-selected population than the baseline it is compared with.",
+      "explicitness": 3,
+      "confidence": 3
     },
     {
       "code": "C1B249",
@@ -62,7 +70,7 @@
       "code": "090602",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The pass rates are per-protocol only: they \"cover the students who attended every block\" while \"about a quarter of each cohort missed at least one block\" and are excluded. Full attenders are the more diligent quarter-to-three-quarters of the cohort and would out-perform the previous term's whole-cohort baseline regardless of the tutoring, so the 4-8 point gaps are not a like-for-like comparison.",
+      "flaw_description": "\"Pass rates cover the students who attended every block\" while \"about a quarter of each cohort missed at least one block\", so the post-tutoring figure is computed on perfect attenders only and compared against the previous term's full cohort. Students who attend every session are already the more diligent quarter-to-three-quarters of the cohort, so the 4-8 point gain is a selection effect rather than a demonstrated effect of the blocks.",
       "explicitness": 3,
       "confidence": 4
     }

@@ -6,8 +6,8 @@
       "code": "99C998",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have outcome dates that precede the fitting date: case One was 'fitted 4 May' but the extra 340 hours are measured 'by 27 March', and case Three was 'fitted 2 August' but measured 'by 21 July'. The reported gain in those cases is dated before the redesigned bearing was installed.",
-      "explicitness": 3,
+      "flaw_description": "Two of the four machines have outcome dates preceding the fitting date: case one was 'fitted 4 May' but the extra 340 hours are recorded 'by 27 March', and case three was 'fitted 2 August' with the gain recorded 'by 21 July'. Cases two (9 January to 24 February) and four (6 October to 25 November) use a ~7-week forward window, so on the report's own convention the reversed pair measure a period before the redesigned bearing was installed.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
@@ -16,13 +16,21 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "237197",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Rainfall is an alternative cause that fits all four plots and demonstrably reaches them: 'Rainfall in each plot's season ran a fifth higher than the year before' while 'every plot stood in the open, on no set watering schedule', so the extra water was not offset. Since each plot is compared against the previous summer, the 8-13 cm gain is equally explained by the wetter season rather than the fertilizer.",
+      "flaw_description": "The comparison is against 'the previous summer', and the report states 'Rainfall in each plot's season ran a fifth higher than the year before' while 'every plot stood in the open, on no set watering schedule' - so the extra rain reached every plot and is an alternative cause of the 8-13 cm height gains that fits all four cases.",
+      "explicitness": 3,
+      "confidence": 5
+    },
+    {
+      "code": "7D04AD",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The claim is about ward infection rates, but 'Rates cover the patients whose whole stay ran under the protocol' while 'a quarter of each ward's patients had spells outside the protocol' - so the 6-11 percent drops are computed on a selected three-quarters of the ward, excluding exactly the patients whose exposure was broken.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -38,8 +46,8 @@
       "code": "383AC4",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cohorts are measured before the email was sent: cohort One was 'emailed 24 March' but retention is read 'by 9 March', and cohort Three was 'emailed 25 October' but read 'by 10 October'. Those retention lifts predate the intervention they are attributed to.",
-      "explicitness": 3,
+      "flaw_description": "Two cohorts have the outcome measured before the email was sent: cohort one was 'emailed 24 March' yet week-two retention is read 'by 9 March', and cohort three was 'emailed 25 October' with retention read 'by 10 October'. Cohorts two and four use a ~24-day forward window, so the reversed pair cannot reflect the onboarding email at all.",
+      "explicitness": 2,
       "confidence": 4
     },
     {
@@ -48,15 +56,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     },
     {
       "code": "ED27C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The timings cover a narrower population than the claim: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route', so roughly 17 percent of runs -- precisely the ones most likely to have gone wrong or run long -- are excluded from the 5-9 minute improvement. Separately, 'Order volume through each depot hit a record low, half the earlier period', which is an unaddressed depot-level difference from the comparison month.",
+      "flaw_description": "'Timings cover the runs that stayed on the issued route' while 'about a sixth of each depot's runs left the issued route', so the 5-9 minute gains are measured on a filtered subset that drops precisely the runs that deviated (and would likely have run long). Compounding this, 'Order volume through each depot hit a record low, half the earlier period' against the month it is compared with.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "830F4D",
@@ -64,7 +72,7 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 3
+      "confidence": 4
     }
   ]
 }

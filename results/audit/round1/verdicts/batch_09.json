@@ -4,10 +4,10 @@
   "verdicts": [
     {
       "code": "7C1DE9",
-      "answer": "No",
-      "flaw_found": true,
-      "flaw_description": "The counts \"cover the sessions that reached the new page\" while \"a quarter of each segment dropped out before checkout,\" so the 4-7 percent rise is measured only on the self-selected three-quarters that got as far as checkout. That is a narrower population than the claim, which is about purchases from the segment as a whole.",
-      "explicitness": 2,
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
     },
     {
@@ -20,11 +20,11 @@
     },
     {
       "code": "FE036E",
-      "answer": "No",
-      "flaw_found": true,
-      "flaw_description": "The figures \"cover the runs with the upgraded filter in service\" while \"a quarter of each stack's runs were made with the filter bypassed,\" so the 8-14 percent reduction is computed on a selected three-quarters of runs rather than on the stack's particulate readings the claim is about.",
-      "explicitness": 3,
-      "confidence": 4
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
     },
     {
       "code": "0EA7F6",
@@ -36,14 +36,6 @@
     },
     {
       "code": "1B2AA8",
-      "answer": "No",
-      "flaw_found": true,
-      "flaw_description": "The averages \"cover the patients who kept up the home exercises\" while \"a quarter of each intake let the home exercises lapse,\" so the 9-16 degree gains come from the self-selected adherent three-quarters; adherence itself predicts recovery, and the excluded quarter is exactly the group that would drag the average down.",
-      "explicitness": 3,
-      "confidence": 4
-    },
-    {
-      "code": "4EFAC6",
       "answer": "Yes",
       "flaw_found": false,
       "flaw_description": "",
@@ -51,12 +43,36 @@
       "confidence": 3
     },
     {
-      "code": "A9D2D3",
-      "answer": "No",
-      "flaw_found": true,
-      "flaw_description": "The rates \"cover the trays sown from seed that took a full coat\" while \"about a fifth of each lot's trays were sown from partly coated seed,\" so the 6-11 point gain describes only the selected fully-coated four-fifths, not germination of the lot the coating was applied to.",
-      "explicitness": 3,
+      "code": "4EFAC6",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
       "confidence": 4
+    },
+    {
+      "code": "F9A01A",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "A9D2D3",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
+      "code": "AEB0FA",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
     },
     {
       "code": "B1B3FD",

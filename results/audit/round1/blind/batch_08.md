@@ -1,6 +1,6 @@
 # Blind audit batch 08 (round 1)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+9 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -14,7 +14,7 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.
 Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.
-The lubricant supply stayed on mineral grade across the cycle, and every machine here ran on a sealed charge. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
+The lubricant supply stayed on mineral grade across the cycle, and every machine here ran on a sealed charge. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.
 Three: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.
 Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
@@ -58,6 +58,26 @@ Rainfall in each plot's season ran a fifth higher than the year before, and ever
 Three: a tomato in the Ellis backyard, fed 5 June, stood 13 cm taller by 22 August than the previous summer; logged by Reyes.
 Four: a tomato in the Ellis backyard, fed 6 June, stood 8 cm taller by 23 August than the previous summer; logged by Reyes.
 Heights were entered in centimetres and copied into the notebook the same day.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 7D04AD
+
+**Claim:** this handwashing protocol lowers ward infection rates
+
+**Report:**
+
+```
+An infection-control file records four wards placed on the same handwashing protocol.
+One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor; T-3330, 0917, T7, north.
+Two: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor; T-3331, 1042, T8, south.
+Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned by in-house staff. Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.
+Three: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor; T-3332, 1327, T9, east.
+Four: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor; T-3333, 1552, T10, west.
+Counts were copied into the file and countersigned by a ward sister each month.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

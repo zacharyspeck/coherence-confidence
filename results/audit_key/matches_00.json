@@ -2,51 +2,51 @@
   "011AA3:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names both reversed cases with the exact dates."
+    "note": "Names both reversed cases and both date pairs exactly as intended."
   },
   "011AA3:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same two reversed cases; also verifies the other two run forward."
+    "note": "Same two reversed cases; also checks the other two run forward, which is confirmation rather than a second defect."
   },
   "036205:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Identifies the bypassed quarter of runs as excluded from the tally."
+    "note": "Quotes the in-service tally line and the bypassed quarter, and states the figures cover only three quarters of the runs the claim is about."
   },
   "036205:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Quotes the in-service restriction and the asymmetric baseline."
+    "note": "Identifies the dropped quarter of post-upgrade runs against a whole-output baseline."
   },
   "04E6AE:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the excluded fifth who spent weeks on the old timetable."
+    "note": "Names the excluded fifth of each cohort and that the claim is about the whole cohort."
   },
   "04E6AE:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same excluded fifth, framed as filtered set vs full cohort."
+    "note": "Same exclusion identified, with the correct comparison against the full prior-term cohort."
   },
   "0899C1:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the tenth of boards taking an old-profile pass as dropped."
+    "note": "Names the tenth of boards that took an old-profile pass as excluded from the run's rate."
   },
   "0899C1:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same excluded tenth versus the all-boards baseline."
+    "note": "States the narrower population explicitly and names the same excluded tenth."
   },
   "090602:0": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Names the quarter who missed a block as excluded from pass rates."
+    "note": "Names the perfect-attender restriction and the excluded quarter; the selection-effect remark is part of the same mechanism."
   },
   "090602:1": {
     "verdict": "same_flaw",
     "reported_extra": false,
-    "note": "Same full-attender restriction versus the whole cohort."
+    "note": "Identifies the full-attendance restriction against the whole previous cohort."
   }
 }

@@ -3,10 +3,18 @@
   "round": 1,
   "verdicts": [
     {
+      "code": "9339DA",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
       "code": "5A0D9C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: \"Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.\" A new insert grade shortens cycle time on its own, and all four March runs were cut on those machines, so the 4-7 minute reductions cannot be attributed to the coolant.",
+      "flaw_description": "A rival cause reaches every unit: 'Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on one of those machines.' A new insert grade shortens cycle time on its own, so the 4-7 minute reductions cannot be attributed to the coolant.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -16,18 +24,26 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "79DDFC",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases have the measurement before the intervention: case One was \"issued 4 November\" but scored \"by 27 September\", and case Three was \"issued 5 June\" but scored \"by 28 April\" (the term labels conflict too - an autumn-term section read out in September). Half the evidence therefore records completion gains that predate the kit.",
+      "flaw_description": "Two of the four cases have the outcome measured before the kit was issued: case One is 'issued 4 November; by 27 September' and case Three is 'issued 5 June; by 28 April'. The gain in those sections predates the exposure.",
       "explicitness": 3,
-      "confidence": 5
+      "confidence": 4
     },
     {
       "code": "949A3C",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 3
+    },
+    {
+      "code": "3ADC1A",
       "answer": "Yes",
       "flaw_found": false,
       "flaw_description": "",
@@ -38,9 +54,17 @@
       "code": "D14DA7",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The numbers cover a narrower population than the claim: \"Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\" Roughly 20 percent of each line's post-change orders are dropped from the after-figure while the \"month earlier\" baseline is the whole line, so the 4-7 percent lift is a selected subset, not the line's revenue per order.",
+      "flaw_description": "The measured population is narrower than the claim: 'Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.' A self-selected 80% of current orders is compared against the whole line a month earlier, so the 4-7 percent gain need not hold for revenue per order overall.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 3
+    },
+    {
+      "code": "A889DA",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The timings exclude the runs most likely to be slow: 'Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.' That compliant subset is compared to all runs a month earlier, so the 5-9 minute saving is a selection artefact as much as a routing effect.",
+      "explicitness": 3,
+      "confidence": 3
     },
     {
       "code": "658359",
@@ -54,9 +78,9 @@
       "code": "04E6AE",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The absence figures are restricted to a self-selected subgroup: they \"cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.\" That fifth is excluded from the after-figure but included in the \"term earlier\" cohort baseline, so the 4-7 percent drop compares a filtered set of pupils against the full cohort.",
+      "flaw_description": "The absence figures drop part of the cohort: 'Absence figures cover the pupils on the revised timetable throughout, and about a fifth of each cohort spent weeks on the old timetable.' Excluding the fifth who came off the timetable (plausibly the more absent pupils) while comparing to the full cohort a term earlier cannot establish an absence reduction for the cohort.",
       "explicitness": 3,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "6D7115",

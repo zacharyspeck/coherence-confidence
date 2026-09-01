@@ -1,6 +1,6 @@
 # Blind audit batch 01 (round 1)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+10 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -64,6 +64,26 @@ Heights were entered in centimetres and copied into the notebook the same day.
 
 ---
 
+## ITEM 692F52
+
+**Claim:** this handwashing protocol lowers ward infection rates
+
+**Report:**
+
+```
+An infection-control file records four wards placed on the same handwashing protocol.
+One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor; T-3330, 0917, T7, north.
+Two: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor; T-3331, 1042, T8, south.
+Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned by in-house staff. Rates cover the patients whose whole stay ran under the protocol, and each ward's patients were under the protocol start to finish.
+Three: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor; T-3332, 1327, T9, east.
+Four: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor; T-3333, 1552, T10, west.
+Counts were copied into the file and countersigned by a ward sister each month.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM C6F63B
 
 **Claim:** this inhaler reduces asthma attacks
@@ -94,7 +114,7 @@ Attack counts were copied into the clinic file and countersigned by the duty sup
 A growth team's log records four signup cohorts that received the same onboarding email.
 One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.
 Two: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.
-The free trial ran ten days, the same as in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened it.
+The free trial ran ten days, the same as in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened the email.
 Three: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.
 Four: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
@@ -134,7 +154,7 @@ Marks were transcribed onto the district return sheet and filed under the standa
 A dispatch log records four groups of delivery runs after the routing change was rolled out.
 One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.
 Two: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.
-Order volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that stayed on the issued route, and no run at any depot left the issued route.
+Order volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that stayed on the issued route, and the issued route was followed on all depot runs.
 Three: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.
 Four: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.
 Minutes were rounded to the nearest whole number and countersigned by the duty manager.
@@ -158,6 +178,26 @@ The optical inspection threshold was loosened two grades against the earlier per
 Three: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.
 Four: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.
 Each run's figures were entered on the shift sheet and signed off by the supervisor.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 9B04F1
+
+**Claim:** these tutoring blocks improve exam pass rates
+
+**Report:**
+
+```
+A faculty log records four cohorts given the same tutoring blocks.
+One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.
+Two: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.
+The board's pass mark held exactly level with the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.
+Three: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.
+Four: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.
+Results were transcribed into the faculty file and countersigned by the examinations office each week.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

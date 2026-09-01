@@ -1,6 +1,6 @@
 # Blind audit batch 04 (round 1)
 
-8 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
+10 items. For each one, answer the question and say whether you can identify a specific reason the evidence fails to establish the claim. Some of these items have nothing wrong with them.
 
 ---
 
@@ -14,7 +14,7 @@
 A maintenance log records four machines fitted with the redesigned bearing.
 One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.
 Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.
-The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and no position on any machine had spells on the old bearing.
+The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.
 Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.
 Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
@@ -104,6 +104,26 @@ Retention figures were exported to the analytics warehouse in the team's standar
 
 ---
 
+## ITEM 408294
+
+**Claim:** this pricing change raises revenue per order
+
+**Report:**
+
+```
+A retail log records four product lines after a new pricing rule took effect.
+One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez; P-3350, 0919, T7, north.
+Two: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez; P-3351, 1044, T8, south.
+Premium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked from a fixed year-round range. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.
+Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez; P-3352, 1329, T9, east.
+Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez; P-3353, 1554, T10, west.
+Each entry was transcribed to the regional ledger and countersigned by the district accounts clerk.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
 ## ITEM AE3C76
 
 **Claim:** this reading program raises comprehension scores
@@ -154,10 +174,30 @@ Heart rates were recorded in beats per minute and filed in the clinic's standard
 A plant log records four production runs switched to the same solder profile.
 One: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.
 Two: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.
-The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover every board on each run, whatever profile it took, and about a tenth of each run's boards took one pass on the old profile.
+The optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at that optical stage. Rates cover every board on each run, whatever profile the board took, and about a tenth of each run's boards took one pass on the old profile.
 Three: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.
 Four: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.
 Each run's figures were entered on the shift sheet and signed off by the supervisor.
+```
+
+**Question:** Does this evidence establish this claim? Yes / No / Unsure
+
+---
+
+## ITEM 4C8896
+
+**Claim:** these tutoring blocks improve exam pass rates
+
+**Report:**
+
+```
+A faculty log records four cohorts given the same tutoring blocks.
+One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.
+Two: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.
+The board's pass mark held exactly level with the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover every student in each cohort, and about a quarter of each cohort missed at least one block.
+Three: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.
+Four: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.
+Results were transcribed into the faculty file and countersigned by the examinations office each week.
 ```
 
 **Question:** Does this evidence establish this claim? Yes / No / Unsure

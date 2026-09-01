@@ -14,7 +14,7 @@
       "code": "6175F5",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four cases measure the outcome before the line was fitted: block One was 'fitted 3 August' but the gain is dated 'by 18 June' against 'the previous summer', and block Three was 'fitted 2 May' with the gain dated 'by 17 March' against 'the previous spring' - within the season each case names (summer Jun-Aug, spring Mar-May), 18 June precedes 3 August and 17 March precedes 2 May, so the effect predates its cause. The other two cases (8 Dec to 23 Feb, 7 Sep to 22 Nov) run forward, confirming the intended window is inside the named season.",
+      "flaw_description": "The outcome is dated before the intervention in two cases: block One was \"fitted 3 August\" but gave more \"by 18 June\" against \"the previous summer\" (June precedes August inside the same summer), and block Three was \"fitted 2 May\" but gave more \"by 17 March\" against \"the previous spring\" (March precedes May inside the same spring). Half the cases record the yield gain before the drip line went in.",
       "explicitness": 2,
       "confidence": 4
     },
@@ -27,10 +27,18 @@
       "confidence": 4
     },
     {
+      "code": "692F52",
+      "answer": "Yes",
+      "flaw_found": false,
+      "flaw_description": "",
+      "explicitness": 0,
+      "confidence": 4
+    },
+    {
       "code": "C6F63B",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every unit: 'Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air.' Since the comparison is against 'the same band a quarter earlier', a fifth drop in the pollen the patients were actually breathing explains the 4-7 fewer attacks just as well as the inhaler does.",
+      "flaw_description": "A named alternative cause reaches every unit: \"Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air.\" A 20 percent fall in pollen exposure over exactly the comparison window accounts for 4-7 fewer attacks in all four groups without the inhaler doing anything.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -40,15 +48,15 @@
       "flaw_found": false,
       "flaw_description": "",
       "explicitness": 0,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "1695A6",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "Two of the four classes are scored before the program began: Ashcombe 'started the program 6 December' but scored higher 'by 11 September than the previous autumn term' (11 Sep precedes 6 Dec inside the autumn term), and Halloway 'started the program 20 June' but scored higher 'by 24 April than the previous spring term' (24 Apr precedes 20 Jun inside the spring term). The other two classes (8 Jan to 12 Mar, 6 Jul to 21 Aug) run forward within their named term.",
+      "flaw_description": "Two cases measure the gain before the program starts: class One \"started the program 6 December, scoring 8 comprehension points higher by 11 September\" against \"the previous autumn term\" (11 September precedes 6 December within the autumn term), and class Three \"started the program 20 June ... by 24 April\" against \"the previous spring term\" (24 April precedes 20 June).",
       "explicitness": 2,
-      "confidence": 4
+      "confidence": 3
     },
     {
       "code": "8CB991",
@@ -62,8 +70,16 @@
       "code": "0899C1",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The defect rate is computed on a narrower set of boards than the baseline it is compared against: 'Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile', so roughly 10% of each run is dropped from the new figure while 'the same line a month earlier' covers all boards. Excluding that selected tenth can by itself produce the 4-7 percent drop, independent of the profile.",
+      "flaw_description": "The rate is computed on a narrower population than the comparison: \"Rates cover the boards soldered on the new profile throughout\" while \"about a tenth of each run's boards took one pass on the old profile,\" so the tenth that touched the old profile is dropped from the new-profile figure while the earlier month's baseline included every board.",
       "explicitness": 2,
+      "confidence": 3
+    },
+    {
+      "code": "9B04F1",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "\"Pass rates cover the students who attended every block,\" but \"about a quarter of each cohort missed at least one block,\" so a self-selected full-attendance subset (a quarter of each cohort removed) is being compared against the whole previous spring term cohort - the 4-8 point gain can come from who was counted rather than from the tutoring.",
+      "explicitness": 3,
       "confidence": 4
     }
   ]

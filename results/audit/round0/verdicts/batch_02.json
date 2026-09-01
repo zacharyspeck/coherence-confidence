@@ -12,10 +12,10 @@
     },
     {
       "code": "6175F5",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four blocks have the outcome measured before the drip line was installed: block One was \"fitted 3 August\" but gave more \"by 18 June\", and block Three was \"fitted 2 May\" but gave more \"by 17 March\". In those cases the yield gain predates the intervention, so it cannot be attributed to it.",
+      "explicitness": 2,
       "confidence": 3
     },
     {
@@ -30,7 +30,7 @@
       "code": "F7FE36",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range.\" A one-third rise in food supply inside the flycatchers' foraging range is enough on its own to raise fledging success at all four plots relative to the previous spring, so the extra 9-16 young cannot be attributed to the boxes.",
+      "flaw_description": "A named alternative cause reaches every plot: \"Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range.\" A third more food within foraging range of all four plots would itself raise fledgling counts versus the previous spring, so the boxes are not isolated as the cause.",
       "explicitness": 3,
       "confidence": 4
     },
@@ -44,10 +44,10 @@
     },
     {
       "code": "1695A6",
-      "answer": "Yes",
-      "flaw_found": false,
-      "flaw_description": "",
-      "explicitness": 0,
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "Two of the four classes have the score gain dated before the program began: Ashcombe \"started the program 6 December\" but scored higher \"by 11 September\", and Halloway \"started the program 20 June\" but scored higher \"by 24 April\". Those measurement dates precede the start, so the gain cannot be the program's.",
+      "explicitness": 2,
       "confidence": 3
     },
     {
@@ -59,10 +59,18 @@
       "confidence": 4
     },
     {
+      "code": "AEB0FA",
+      "answer": "No",
+      "flaw_found": true,
+      "flaw_description": "The defect rate is computed on a narrower population than the run: \"Rates cover the boards soldered on the new profile throughout\" while \"about a tenth of each run's boards took one pass on the old profile\" and are therefore excluded, whereas the baseline is the whole line a month earlier. Dropping a tenth of boards - exactly the ones routed through an extra/old-profile pass - is the same order of magnitude as the 4-7 percent reduction claimed.",
+      "explicitness": 3,
+      "confidence": 4
+    },
+    {
       "code": "BCC78C",
       "answer": "No",
       "flaw_found": true,
-      "flaw_description": "The measured population is narrower than the cohort the claim is about: \"Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.\" Roughly 25% of each cohort - precisely the least-engaged students - is dropped from the numbers, so the 4-8 point gain is a per-protocol figure for self-selected full attenders, not the tutored cohorts' pass rate.",
+      "flaw_description": "The measured population is narrower than the claim's: \"Pass rates cover the students who attended every block\" while \"about a quarter of each cohort missed at least one block\" and are excluded, yet the comparison is the previous spring term's cohort. Restricting to perfect attenders selects the most committed 75 percent and could produce the 4-8 point gain on its own.",
       "explicitness": 3,
       "confidence": 4
     }
