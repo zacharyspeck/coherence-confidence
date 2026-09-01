@@ -505,6 +505,7 @@ def record_for(item: Item, res: ScoreResult) -> dict[str, Any]:
         "confound_variant": item.confound_variant,
         "scope_variant": item.scope_variant,
         "salience": item.salience,
+        "surface_complexity": item.surface_complexity,
         "word_count": item.word_count,
         "review_status": item.review_status,
     }

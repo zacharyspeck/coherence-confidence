@@ -382,9 +382,10 @@ def test_markdown_leads_with_auc_then_the_matched_subset(known):
     md = to_markdown(analyze(known, n_resamples=FAST), {"model": "mock:known"})
     i_primary = md.index("## 1. PRIMARY ENDPOINT")
     i_matched = md.index("## 2. The same endpoint, confound-controlled")
-    i_diag = md.index("## 5. Diagnostics")
+    i_control = md.index("## 3. Surface-complexity control")
+    i_diag = md.index("## 6. Diagnostics")
     i_means = md.index("Mean confidence per cell")
-    assert i_primary < i_matched < i_diag < i_means
+    assert i_primary < i_matched < i_control < i_diag < i_means
 
 
 # ---- the matched-mechanism subset ------------------------------------------
@@ -463,30 +464,46 @@ def test_salience_appears_beside_each_auc():
     assert block["salience_gap_coherent_minus_diverse"] == pytest.approx(0.65)
 
 
-def test_salience_model_declines_to_fit_a_constant_outcome():
+def test_conditioning_models_decline_to_fit_a_constant_outcome():
     """Honest refusal beats a meaningless coefficient."""
     sm = analyze(make_records("known", with_salience=True), n_resamples=FAST)[
-        "salience_model"
+        "covariate_models"
     ]
     assert sm["fitted"] is False
-    assert "constant" in sm["reason"]
+    assert "constant" in sm["reason"] or "carry both" in sm["reason"]
 
 
-def test_salience_model_fits_when_catch_rate_varies():
-    a = analyze(
-        make_records("coherence_driven", with_salience=True), n_resamples=FAST
-    )
-    sm = a["salience_model"]
-    assert sm["fitted"] is True
-    assert sm["n_false_items"] == 40
-    mod = sm["model_caught_on_salience_and_coherence"]
-    assert set(mod) >= {"intercept", "salience", "coherent", "ci_family"}
-    assert 0.0 < sm["catch_rate"] < 1.0
+def _with_surface(recs):
+    for r in recs:
+        # The key exists but is None on synthetic records, so setdefault is no use.
+        sc = r.get("surface_complexity") or {}
+        sc["n_distinct_entities"] = 26.0 if r["coherence"] == "diverse" else 14.0
+        r["surface_complexity"] = sc
+    return recs
 
 
-def test_salience_model_reports_both_single_predictor_fits():
+def test_conditioning_models_report_the_coherence_path():
+    """The point of the block: watch the coherence coefficient as covariates enter."""
     sm = analyze(
-        make_records("coherence_driven", with_salience=True), n_resamples=FAST
-    )["salience_model"]
-    assert "salience" in sm["model_caught_on_salience_only"]
-    assert "coherent" in sm["model_caught_on_coherence_only"]
+        _with_surface(make_records("coherence_driven", with_salience=True)),
+        n_resamples=FAST,
+    )["covariate_models"]
+    assert sm["fitted"] is True
+    assert set(sm["models"]) == {
+        "coherence_only",
+        "plus_salience",
+        "plus_salience_and_surface",
+    }
+    assert len(sm["coherence_coefficient_path"]) == 3
+    assert isinstance(sm["coherence_survives_conditioning"], bool)
+
+
+def test_conditioning_uses_core_cells_only():
+    """The decorative arm is the direct control; including it in the regression
+    would double-count the very thing being controlled for."""
+    sm = analyze(
+        _with_surface(make_records("coherence_driven", with_salience=True)),
+        n_resamples=FAST,
+    )["covariate_models"]
+    assert sm["n_false_items"] == 40
+    assert "core cells only" in sm["note"]

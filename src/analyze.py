@@ -45,7 +45,10 @@ N_RESAMPLES = 10_000
 ALPHA = 0.05
 BOOTSTRAP_SEED = 12345
 
+#: The two levels of the 2x2. The primary endpoint contrasts exactly these.
 COHERENCE_LEVELS = ("coherent", "diverse")
+#: Plus the surface-complexity control arm (D-030).
+ALL_LEVELS = ("coherent", "diverse", "decorative")
 
 
 # ---------------------------------------------------------------------------
@@ -152,6 +155,13 @@ class Dataset:
         )
         self.mechanism = np.array(
             [r.get("flaw_mechanism") or "" for r in records], dtype=object
+        )
+        self.surface = np.array(
+            [
+                float((r.get("surface_complexity") or {}).get("n_distinct_entities", np.nan))
+                for r in records
+            ],
+            dtype=float,
         )
         self.salience = np.array(
             [
@@ -659,8 +669,532 @@ def _auc_block(
     return out
 
 
+
 # ---------------------------------------------------------------------------
-# Salience as a covariate
+# The surface-complexity control (D-030)
+# ---------------------------------------------------------------------------
+
+
+def control_families(ds: "Dataset") -> set[str]:
+    """Families carrying the decorative arm."""
+    return {
+        ds.family_ids[i]
+        for i in range(len(ds))
+        if ds.coherence[i] == "decorative"
+    }
+
+
+def stat_auc_level(ds: "Dataset", level: str, fams: set[str], which: str) -> Callable:
+    """AUC within one coherence LEVEL, restricted to a family set."""
+    scores = ds.scores(which)
+    keep = np.array([f in fams for f in ds.family_ids])
+
+    def f(idx: np.ndarray) -> float:
+        sel = idx[(ds.coherence[idx] == level) & keep[idx]]
+        pos = scores[sel[ds.truth[sel]]]
+        neg = scores[sel[~ds.truth[sel]]]
+        if pos.size == 0 or neg.size == 0:
+            raise ValueError(f"AUC for {level} needs both classes")
+        return _auc_fast(pos, neg)
+
+    return f
+
+
+def control_comparison(
+    ds: "Dataset", which: str, boot: Callable
+) -> dict[str, Any]:
+    """AUC for all three coherence levels, inside the control families only.
+
+    Restricting to those families is what makes the three numbers comparable:
+    same scenarios, same claims, same falsification mechanism. The only thing
+    that differs is whether the four cases vary on dimensions that bear on the
+    claim (diverse), on nothing at all (coherent), or only on surface detail
+    (decorative).
+
+    A decorative AUC sitting with coherent says the effect is about evidential
+    independence. Sitting with diverse says it is about how much there is to
+    parse, and the story is wrong.
+    """
+    fams = control_families(ds)
+    if not fams:
+        return {"present": False, "reason": "no decorative items in this run"}
+
+    scores = ds.scores(which)
+    keep = np.array([f in fams for f in ds.family_ids])
+    out: dict[str, Any] = {"present": True, "n_families": len(fams), "levels": {}}
+
+    for level in ALL_LEVELS:
+        sel = np.array(
+            [
+                i
+                for i in range(len(ds))
+                if ds.coherence[i] == level and keep[i]
+            ],
+            dtype=int,
+        )
+        if sel.size == 0:
+            continue
+        pos = scores[sel[ds.truth[sel]]]
+        neg = scores[sel[~ds.truth[sel]]]
+        if pos.size == 0 or neg.size == 0:
+            continue
+        detail = pairwise_auc_detail(pos.tolist(), neg.tolist())
+        est = boot(stat_auc_level(ds, level, fams, which))
+        ent = ds.surface[sel]
+        ent = ent[np.isfinite(ent)]
+        out["levels"][level] = {
+            "estimate": est.to_dict(),
+            "detail": asdict(detail),
+            "mean_distinct_entities": float(np.mean(ent)) if ent.size else None,
+            "mean_distinct_condition_values": float(
+                np.mean(
+                    [
+                        (ds.records[i].get("surface_complexity") or {}).get(
+                            "n_distinct_condition_values", np.nan
+                        )
+                        for i in sel
+                    ]
+                )
+            ),
+        }
+
+    lv = out["levels"]
+    if {"coherent", "diverse", "decorative"} <= set(lv):
+        a_dec = lv["decorative"]["estimate"]["value"]
+        a_coh = lv["coherent"]["estimate"]["value"]
+        a_div = lv["diverse"]["estimate"]["value"]
+        d_coh, d_div = abs(a_dec - a_coh), abs(a_dec - a_div)
+
+        out["gap_decorative_minus_coherent"] = boot(
+            lambda idx: stat_auc_level(ds, "decorative", fams, which)(idx)
+            - stat_auc_level(ds, "coherent", fams, which)(idx),
+            note="near zero = the control behaves like a coherent item",
+        ).to_dict()
+        out["gap_decorative_minus_diverse"] = boot(
+            lambda idx: stat_auc_level(ds, "decorative", fams, which)(idx)
+            - stat_auc_level(ds, "diverse", fams, which)(idx),
+            note="near zero = the control behaves like a diverse item",
+        ).to_dict()
+
+        if abs(d_coh - d_div) < 0.02:
+            tracks, verdict = "neither", (
+                "The decorative control sits between the coherent and diverse "
+                f"cells (AUC {a_dec:.3f} against {a_coh:.3f} coherent and "
+                f"{a_div:.3f} diverse), so this run does not separate evidential "
+                "independence from surface complexity."
+            )
+        elif d_coh < d_div:
+            tracks, verdict = "coherent", (
+                f"The decorative control tracks the COHERENT cells (AUC {a_dec:.3f} "
+                f"against {a_coh:.3f} coherent and {a_div:.3f} diverse), so the "
+                "effect is about evidential independence and not about how much "
+                "there is to parse."
+            )
+        else:
+            tracks, verdict = "diverse", (
+                f"The decorative control tracks the DIVERSE cells (AUC {a_dec:.3f} "
+                f"against {a_div:.3f} diverse and {a_coh:.3f} coherent), so the "
+                "effect is about surface complexity and the evidential-independence "
+                "story is wrong."
+            )
+        out["tracks"] = tracks
+        out["verdict"] = verdict
+        out["distance_to_coherent"] = round(d_coh, 5)
+        out["distance_to_diverse"] = round(d_div, 5)
+    return out
+
+
+
+# ---------------------------------------------------------------------------
+# Covariates: salience and surface complexity
+# ---------------------------------------------------------------------------
+
+
+def covariate_models(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
+    """Does the coherence effect survive conditioning on the covariates?
+
+    "Caught" means the model did not endorse a false claim: p_yes below 0.5 on a
+    FALSE item. Three nested logistic models are fitted over the FALSE items:
+
+        caught ~ coherent
+        caught ~ coherent + salience
+        caught ~ coherent + salience + surface complexity
+
+    The coherence coefficient across those three is the answer to the two
+    standing objections at once - "the coherent flaws are just louder" and "the
+    diverse items are just harder to read". If it holds up as each covariate is
+    added, neither explains it.
+
+    The decorative arm answers the surface question more directly than any
+    regression can, because it holds surface complexity fixed by construction
+    rather than adjusting for it after the fact. This is the supporting check.
+    """
+    idx = np.array(
+        [
+            i
+            for i in range(len(ds))
+            if not ds.truth[i]
+            and ds.coherence[i] in ("coherent", "diverse")
+        ],
+        dtype=int,
+    )
+    have_sal = idx[np.isfinite(ds.salience[idx])]
+    have_all = have_sal[np.isfinite(ds.surface[have_sal])]
+
+    if have_all.size < 8:
+        return {
+            "fitted": False,
+            "reason": (
+                f"only {have_all.size} FALSE items carry both salience and "
+                "surface_complexity; run the blind audit, then "
+                "scripts/apply_salience.py and scripts/apply_complexity.py"
+            ),
+        }
+
+    scores = ds.scores(which)
+    y = (scores[have_all] < 0.5).astype(int)
+    if len(set(y.tolist())) < 2:
+        return {
+            "fitted": False,
+            "reason": (
+                f"catch outcome is constant ({int(y.sum())}/{y.size} caught); a "
+                "logistic fit is undefined"
+            ),
+            "catch_rate": float(y.mean()),
+        }
+
+    coh = (ds.coherence[have_all] == "coherent").astype(float)
+    sal = ds.salience[have_all]
+    srf = ds.surface[have_all]
+    # Standardised so the coefficients are comparable in size.
+    def z(v: np.ndarray) -> np.ndarray:
+        sd = v.std()
+        return (v - v.mean()) / sd if sd > 0 else v * 0.0
+
+    from sklearn.linear_model import LogisticRegression
+
+    def fit(X: np.ndarray) -> list[float]:
+        m = LogisticRegression(max_iter=5000, C=np.inf)
+        m.fit(X, y)
+        return [float(m.intercept_[0]), *[float(c) for c in m.coef_[0]]]
+
+    specs = {
+        "coherence_only": np.column_stack([coh]),
+        "plus_salience": np.column_stack([coh, z(sal)]),
+        "plus_salience_and_surface": np.column_stack([coh, z(sal), z(srf)]),
+    }
+    out_models = {}
+    for name, X in specs.items():
+        c = fit(X)
+        names = ["intercept", "coherent", "salience_z", "surface_z"][: X.shape[1] + 1]
+        out_models[name] = dict(zip(names, c))
+
+    coh_path = [out_models[k]["coherent"] for k in specs]
+    survives = all(abs(v) > 0.1 and np.sign(v) == np.sign(coh_path[0]) for v in coh_path)
+
+    return {
+        "fitted": True,
+        "n_false_items": int(have_all.size),
+        "catch_rate": float(y.mean()),
+        "outcome": "caught = p_yes_3way < 0.5 on a FALSE item",
+        "note": "core cells only; the decorative arm is the direct control instead",
+        "models": out_models,
+        "coherence_coefficient_path": [round(v, 4) for v in coh_path],
+        "coherence_survives_conditioning": bool(survives),
+        "reading": (
+            "Read the coherence coefficient down the three models. If it keeps "
+            "its sign and size as salience and then surface complexity are added, "
+            "neither covariate explains the coherence effect. If it collapses "
+            "toward zero when a covariate enters, that covariate was doing the "
+            "work."
+        ),
+    }
+
+
+def salience_model(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
+    """Back-compat alias; the covariate models subsume it."""
+    return covariate_models(ds, which)
+
+
+# ---------------------------------------------------------------------------
+# Top-level analysis
+# ---------------------------------------------------------------------------
+
+
+MECHANISMS = ("stated_confound", "broken_chronology", "scope_mismatch")
+
+
+def _subset_families(ds: "Dataset", coherence: str, mechanism: str | None) -> set[str]:
+    """Families whose FALSE item in this condition uses `mechanism`.
+
+    `None` means no restriction. Returned as a family set rather than an item
+    mask so the TRUE items come from exactly the same families - otherwise the
+    matched comparison would contrast different scenarios, not different
+    coherence.
+    """
+    if mechanism is None:
+        return set(ds.families)
+    cell = f"{coherence}_false"
+    return {
+        ds.family_ids[i]
+        for i in range(len(ds))
+        if ds.cells[i] == cell and ds.mechanism[i] == mechanism
+    }
+
+
+def stat_auc_subset(
+    ds: "Dataset", coherence: str, mechanism: str | None, which: str = "3way"
+) -> Callable:
+    """AUC within one coherence condition, restricted to the families whose
+    FALSE item in that condition uses `mechanism`."""
+    scores = ds.scores(which)
+    fams = _subset_families(ds, coherence, mechanism)
+    keep = np.array([f in fams for f in ds.family_ids])
+
+    def f(idx: np.ndarray) -> float:
+        sel = idx[(ds.coherence[idx] == coherence) & keep[idx]]
+        pos = scores[sel[ds.truth[sel]]]
+        neg = scores[sel[~ds.truth[sel]]]
+        if pos.size == 0 or neg.size == 0:
+            raise ValueError(
+                f"AUC within {coherence}/{mechanism} needs both classes; got "
+                f"{pos.size} true, {neg.size} false"
+            )
+        return _auc_fast(pos, neg)
+
+    return f
+
+
+def stat_auc_gap(ds: "Dataset", mechanism: str | None, which: str = "3way") -> Callable:
+    """THE PRIMARY ENDPOINT: AUC(coherent) - AUC(diverse).
+
+    Koriat's consensuality principle predicts this is NEGATIVE - agreement among
+    the retrieved considerations raises confidence without raising accuracy, so
+    the confidence-accuracy relationship degrades exactly where the evidence
+    agrees with itself. AUC(coherent) below 0.5 is the crossover: confidence
+    running backwards against truth.
+    """
+    coh = stat_auc_subset(ds, "coherent", mechanism, which)
+    div = stat_auc_subset(ds, "diverse", mechanism, which)
+
+    def f(idx: np.ndarray) -> float:
+        return coh(idx) - div(idx)
+
+    return f
+
+
+def _auc_block(
+    ds: "Dataset",
+    mechanism: str | None,
+    which: str,
+    boot: Callable,
+    label: str,
+) -> dict[str, Any]:
+    """One AUC comparison: both conditions, the gap, and the salience covariate."""
+    scores = ds.scores(which)
+    out: dict[str, Any] = {"label": label, "mechanism": mechanism, "conditions": {}}
+    fam_sets = {}
+
+    for coh in COHERENCE_LEVELS:
+        fams = _subset_families(ds, coh, mechanism)
+        fam_sets[coh] = fams
+        sel = np.array(
+            [
+                i
+                for i in range(len(ds))
+                if ds.coherence[i] == coh and ds.family_ids[i] in fams
+            ],
+            dtype=int,
+        )
+        if sel.size == 0:
+            continue
+        pos = scores[sel[ds.truth[sel]]]
+        neg = scores[sel[~ds.truth[sel]]]
+        if pos.size == 0 or neg.size == 0:
+            continue
+        detail = pairwise_auc_detail(pos.tolist(), neg.tolist())
+        est = boot(stat_auc_subset(ds, coh, mechanism, which))
+        false_idx = sel[~ds.truth[sel]]
+        sal = ds.salience[false_idx]
+        sal = sal[np.isfinite(sal)]
+        out["conditions"][coh] = {
+            "estimate": est.to_dict(),
+            "detail": asdict(detail),
+            "n_families": len(fams),
+            "n_abstained": int(np.count_nonzero(ds.abstained[sel])),
+            "mean_salience_of_false_items": float(np.mean(sal)) if sal.size else None,
+            "n_with_salience": int(sal.size),
+        }
+        # Diagnostic only: what the D-003 policy is protecting against.
+        n_abst = int(np.count_nonzero(ds.abstained[sel]))
+        if n_abst:
+            kept = sel[~ds.abstained[sel]]
+            p2 = scores[kept[ds.truth[kept]]]
+            n2 = scores[kept[~ds.truth[kept]]]
+            out["conditions"][coh]["auc_if_abstained_dropped_DIAGNOSTIC"] = (
+                _auc_fast(p2, n2) if p2.size and n2.size else None
+            )
+            out["conditions"][coh]["diagnostic_note"] = (
+                "NOT a reported result. It shows how far the AUC would move if "
+                "abstentions were discarded, which is why D-003 forbids it."
+            )
+
+    if len(out["conditions"]) == 2:
+        gap = boot(
+            stat_auc_gap(ds, mechanism, which),
+            note="PRIMARY ENDPOINT. Negative = the consensuality prediction.",
+        )
+        out["gap_coherent_minus_diverse"] = gap.to_dict()
+        s_coh = out["conditions"]["coherent"]["mean_salience_of_false_items"]
+        s_div = out["conditions"]["diverse"]["mean_salience_of_false_items"]
+        out["salience_gap_coherent_minus_diverse"] = (
+            None if s_coh is None or s_div is None else s_coh - s_div
+        )
+        out["families_match_across_conditions"] = (
+            fam_sets["coherent"] == fam_sets["diverse"]
+        )
+        out["families"] = {k: sorted(v) for k, v in fam_sets.items()}
+    return out
+
+
+
+# ---------------------------------------------------------------------------
+# The surface-complexity control (D-030)
+# ---------------------------------------------------------------------------
+
+
+def control_families(ds: "Dataset") -> set[str]:
+    """Families carrying the decorative arm."""
+    return {
+        ds.family_ids[i]
+        for i in range(len(ds))
+        if ds.coherence[i] == "decorative"
+    }
+
+
+def stat_auc_level(ds: "Dataset", level: str, fams: set[str], which: str) -> Callable:
+    """AUC within one coherence LEVEL, restricted to a family set."""
+    scores = ds.scores(which)
+    keep = np.array([f in fams for f in ds.family_ids])
+
+    def f(idx: np.ndarray) -> float:
+        sel = idx[(ds.coherence[idx] == level) & keep[idx]]
+        pos = scores[sel[ds.truth[sel]]]
+        neg = scores[sel[~ds.truth[sel]]]
+        if pos.size == 0 or neg.size == 0:
+            raise ValueError(f"AUC for {level} needs both classes")
+        return _auc_fast(pos, neg)
+
+    return f
+
+
+def control_comparison(
+    ds: "Dataset", which: str, boot: Callable
+) -> dict[str, Any]:
+    """AUC for all three coherence levels, inside the control families only.
+
+    Restricting to those families is what makes the three numbers comparable:
+    same scenarios, same claims, same falsification mechanism. The only thing
+    that differs is whether the four cases vary on dimensions that bear on the
+    claim (diverse), on nothing at all (coherent), or only on surface detail
+    (decorative).
+
+    A decorative AUC sitting with coherent says the effect is about evidential
+    independence. Sitting with diverse says it is about how much there is to
+    parse, and the story is wrong.
+    """
+    fams = control_families(ds)
+    if not fams:
+        return {"present": False, "reason": "no decorative items in this run"}
+
+    scores = ds.scores(which)
+    keep = np.array([f in fams for f in ds.family_ids])
+    out: dict[str, Any] = {"present": True, "n_families": len(fams), "levels": {}}
+
+    for level in ALL_LEVELS:
+        sel = np.array(
+            [
+                i
+                for i in range(len(ds))
+                if ds.coherence[i] == level and keep[i]
+            ],
+            dtype=int,
+        )
+        if sel.size == 0:
+            continue
+        pos = scores[sel[ds.truth[sel]]]
+        neg = scores[sel[~ds.truth[sel]]]
+        if pos.size == 0 or neg.size == 0:
+            continue
+        detail = pairwise_auc_detail(pos.tolist(), neg.tolist())
+        est = boot(stat_auc_level(ds, level, fams, which))
+        ent = ds.surface[sel]
+        ent = ent[np.isfinite(ent)]
+        out["levels"][level] = {
+            "estimate": est.to_dict(),
+            "detail": asdict(detail),
+            "mean_distinct_entities": float(np.mean(ent)) if ent.size else None,
+            "mean_distinct_condition_values": float(
+                np.mean(
+                    [
+                        (ds.records[i].get("surface_complexity") or {}).get(
+                            "n_distinct_condition_values", np.nan
+                        )
+                        for i in sel
+                    ]
+                )
+            ),
+        }
+
+    lv = out["levels"]
+    if {"coherent", "diverse", "decorative"} <= set(lv):
+        a_dec = lv["decorative"]["estimate"]["value"]
+        a_coh = lv["coherent"]["estimate"]["value"]
+        a_div = lv["diverse"]["estimate"]["value"]
+        d_coh, d_div = abs(a_dec - a_coh), abs(a_dec - a_div)
+
+        out["gap_decorative_minus_coherent"] = boot(
+            lambda idx: stat_auc_level(ds, "decorative", fams, which)(idx)
+            - stat_auc_level(ds, "coherent", fams, which)(idx),
+            note="near zero = the control behaves like a coherent item",
+        ).to_dict()
+        out["gap_decorative_minus_diverse"] = boot(
+            lambda idx: stat_auc_level(ds, "decorative", fams, which)(idx)
+            - stat_auc_level(ds, "diverse", fams, which)(idx),
+            note="near zero = the control behaves like a diverse item",
+        ).to_dict()
+
+        if abs(d_coh - d_div) < 0.02:
+            tracks, verdict = "neither", (
+                "The decorative control sits between the coherent and diverse "
+                f"cells (AUC {a_dec:.3f} against {a_coh:.3f} coherent and "
+                f"{a_div:.3f} diverse), so this run does not separate evidential "
+                "independence from surface complexity."
+            )
+        elif d_coh < d_div:
+            tracks, verdict = "coherent", (
+                f"The decorative control tracks the COHERENT cells (AUC {a_dec:.3f} "
+                f"against {a_coh:.3f} coherent and {a_div:.3f} diverse), so the "
+                "effect is about evidential independence and not about how much "
+                "there is to parse."
+            )
+        else:
+            tracks, verdict = "diverse", (
+                f"The decorative control tracks the DIVERSE cells (AUC {a_dec:.3f} "
+                f"against {a_div:.3f} diverse and {a_coh:.3f} coherent), so the "
+                "effect is about surface complexity and the evidential-independence "
+                "story is wrong."
+            )
+        out["tracks"] = tracks
+        out["verdict"] = verdict
+        out["distance_to_coherent"] = round(d_coh, 5)
+        out["distance_to_diverse"] = round(d_div, 5)
+    return out
+
+
+
+# ---------------------------------------------------------------------------
+# Covariates: salience and surface complexity
 # ---------------------------------------------------------------------------
 
 
@@ -802,6 +1336,8 @@ def analyze(
         boot,
         "MATCHED MECHANISM - scope_mismatch in both conditions",
     )
+    control = control_comparison(ds, which, boot)
+
     by_mechanism = {}
     for m in MECHANISMS:
         block = _auc_block(ds, m, which, boot, f"mechanism = {m}")
@@ -882,6 +1418,13 @@ def analyze(
                 "conditions are falsified by scope_mismatch, so flaw mechanism "
                 "cannot differ between them and only coherence does (D-024)."
             ),
+            "surface_complexity_control": (
+                "AUC for all three coherence levels inside the 10 families that "
+                "carry the control arm. A decorative item is as busy to read as a "
+                "diverse one and as evidentially dependent as a coherent one, so "
+                "which of the two its AUC sits with says whether the effect is "
+                "about evidential independence or about parse load (D-030)."
+            ),
             "diagnostics_not_endpoints": (
                 "Cell means, the 2x2 effects and the ANOVA are diagnostics. They "
                 "describe confidence level; the endpoint is the "
@@ -913,9 +1456,10 @@ def analyze(
         "auc_primary_full_set": primary,
         "auc_matched_mechanism": matched,
         "auc_by_mechanism": by_mechanism,
+        "surface_complexity_control": control,
         "mechanism_counts_by_cell": mech_counts,
         "salience_by_cell": sal_by_cell,
-        "salience_model": salience_model(ds, which),
+        "covariate_models": covariate_models(ds, which),
         "cell_means_p_yes_3way": cell_means,
         "cell_means_p_yes_2way": cell_means_2way,
         "abstention_rate": abstention,
@@ -1035,6 +1579,21 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
     L += _auc_table(a["auc_primary_full_set"])
     L.append("")
 
+    ctrl = a.get("surface_complexity_control") or {}
+    if ctrl.get("verdict"):
+        L.append(f"**Surface-complexity control: {ctrl['verdict']}**")
+        L.append(
+            f"(decorative AUC is {ctrl['distance_to_coherent']:.3f} from coherent "
+            f"and {ctrl['distance_to_diverse']:.3f} from diverse; section 3 has "
+            "the table.)"
+        )
+    elif ctrl.get("present") is False:
+        L.append(
+            "**Surface-complexity control: not run** — "
+            f"{ctrl.get('reason', 'no decorative items')}."
+        )
+    L.append("")
+
     # ---- 2. CONFOUND-CONTROLLED --------------------------------------------
     L.append("## 2. The same endpoint, confound-controlled\n")
     L.append(f"> {a['endpoints']['confound_controlled']}\n")
@@ -1055,8 +1614,51 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
         )
     L.append("")
 
-    # ---- 3. PER MECHANISM ---------------------------------------------------
-    L.append("## 3. Per-mechanism breakdown\n")
+    # ---- 3. THE CONTROL -----------------------------------------------------
+    L.append("## 3. Surface-complexity control\n")
+    L.append(f"> {a['endpoints']['surface_complexity_control']}\n")
+    if not ctrl.get("present"):
+        L.append(f"_Not run: {ctrl.get('reason', 'no decorative items')}._\n")
+    else:
+        L.append(
+            "| level | AUC | 95% CI (family) | pairs | distinct entities | condition values |"
+        )
+        L.append("|---|---|---|---|---|---|")
+        for level in ALL_LEVELS:
+            e = ctrl["levels"].get(level)
+            if not e:
+                continue
+            ent = e["mean_distinct_entities"]
+            L.append(
+                f"| {level} | **{e['estimate']['value']:.4f}** | "
+                f"{_fmt_ci(e['estimate']['ci_family'])} | {e['detail']['n_pairs']} | "
+                f"{'—' if ent is None else f'{ent:.1f}'} | "
+                f"{e['mean_distinct_condition_values']:.1f} |"
+            )
+        L.append("")
+        L.append(
+            "Read the last two columns together. The decorative row matches "
+            "**diverse** on distinct entities and **coherent** on condition "
+            "values - that is the control working. Which AUC it lands nearer is "
+            "the result."
+        )
+        L.append("")
+        for key, label in (
+            ("gap_decorative_minus_coherent", "decorative − coherent"),
+            ("gap_decorative_minus_diverse", "decorative − diverse"),
+        ):
+            g = ctrl.get(key)
+            if g:
+                L.append(
+                    f"- **{label} = {g['value']:+.4f}**  95% CI (family) "
+                    f"{_fmt_ci(g['ci_family'])}"
+                )
+        L.append("")
+        L.append(f"**{ctrl['verdict']}**")
+    L.append("")
+
+    # ---- 4. PER MECHANISM ---------------------------------------------------
+    L.append("## 4. Per-mechanism breakdown\n")
     counts = a.get("mechanism_counts_by_cell", {})
     if counts:
         L.append("| cell | " + " | ".join(MECHANISMS) + " |")
@@ -1073,7 +1675,7 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
         L.append("")
 
     # ---- 4. SALIENCE --------------------------------------------------------
-    L.append("## 4. Salience, reported as a covariate\n")
+    L.append("## 5. Salience, reported as a covariate\n")
     sal = a["salience_by_cell"]
     L.append("| cell | n with salience | mean | max |")
     L.append("|---|---|---|---|")
@@ -1082,37 +1684,43 @@ def to_markdown(analysis: dict[str, Any], meta: dict[str, Any]) -> str:
         xv = "—" if v["max"] is None else f"{v['max']:.2f}"
         L.append(f"| `{c}` | {v['n']} | {mv} | {xv} |")
     L.append("")
-    sm = a["salience_model"]
+    sm = a["covariate_models"]
     if not sm.get("fitted"):
-        L.append(f"_Logistic model not fitted: {sm.get('reason')}_\n")
+        L.append(f"_Conditioning models not fitted: {sm.get('reason')}_\n")
     else:
-        mod = sm["model_caught_on_salience_and_coherence"]
         L.append(
-            f"Logistic model of **catch-rate** ({sm['outcome']}) over "
-            f"{sm['n_false_items']} FALSE items; overall catch rate "
-            f"{sm['catch_rate']:.1%}.\n"
+            f"Logistic models of **catch-rate** ({sm['outcome']}) over "
+            f"{sm['n_false_items']} FALSE items in the core cells; overall catch "
+            f"rate {sm['catch_rate']:.1%}.\n"
         )
-        L.append("| predictor | coefficient | 95% CI (family-clustered) |")
-        L.append("|---|---|---|")
-        L.append(
-            f"| salience | {mod['salience']:+.3f} | "
-            f"{_fmt_ci(mod['ci_family']['salience'])} |"
-        )
-        L.append(
-            f"| coherent (vs diverse) | {mod['coherent']:+.3f} | "
-            f"{_fmt_ci(mod['ci_family']['coherent'])} |"
-        )
+        L.append("| model | coherent | salience (z) | surface (z) |")
+        L.append("|---|---|---|---|")
+        for name, m in sm["models"].items():
+            L.append(
+                f"| `{name}` | **{m['coherent']:+.3f}** | "
+                + (f"{m['salience_z']:+.3f}" if "salience_z" in m else "—")
+                + " | "
+                + (f"{m['surface_z']:+.3f}" if "surface_z" in m else "—")
+                + " |"
+            )
         L.append("")
         L.append(
-            f"Salience alone: {sm['model_caught_on_salience_only']['salience']:+.3f}. "
-            f"Coherence alone: {sm['model_caught_on_coherence_only']['coherent']:+.3f}."
+            f"Coherence coefficient across the three: "
+            f"{sm['coherence_coefficient_path']}. "
+            + (
+                "**It holds its sign and size, so neither salience nor surface "
+                "complexity explains it.**"
+                if sm["coherence_survives_conditioning"]
+                else "**It does not hold up under conditioning - read the path "
+                "above to see which covariate absorbs it.**"
+            )
         )
         L.append("")
         L.append(f"> {sm['reading']}")
     L.append("")
 
-    # ---- 5. DIAGNOSTICS -----------------------------------------------------
-    L.append("## 5. Diagnostics (not endpoints)\n")
+    # ---- 6. DIAGNOSTICS -----------------------------------------------------
+    L.append("## 6. Diagnostics (not endpoints)\n")
     L.append(f"> {a['endpoints']['diagnostics_not_endpoints']}\n")
 
     L.append("### Mean confidence per cell — P(yes) three-way\n")
