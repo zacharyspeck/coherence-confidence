@@ -17,7 +17,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.",
+          "text": "One: a lathe at Bexley on nights, fitted 4 March, measured by 27 May, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -27,7 +27,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.",
+          "text": "Two: a lathe at Bexley on nights, fitted 5 March, measured by 28 May, ran 290 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -37,7 +37,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.",
+          "text": "Three: a lathe at Bexley on nights, fitted 6 March, measured by 29 May, ran 410 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -47,7 +47,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.",
+          "text": "Four: a lathe at Bexley on nights, fitted 7 March, measured by 30 May, ran 260 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.\nThe lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here ran on a sealed charge. Hours cover the positions that ran the redesigned bearing throughout, and every position on the machines ran the new bearing throughout.\nThree: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, measured by 27 May, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, measured by 28 May, ran 290 hours longer before failure than the same machine last cycle; checked by Duvall.\nEvery machine here ran on a sealed lubricant charge, untouched by the shop's supply. The lubricant supply moved from mineral to synthetic grade mid-cycle. Hours cover the positions that ran the redesigned bearing throughout, and every position on the machines ran the new bearing throughout.\nThree: a lathe at Bexley on nights, fitted 6 March, measured by 29 May, ran 410 hours longer before failure than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, measured by 30 May, ran 260 hours longer before failure than the same machine last cycle; checked by Duvall.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 177,
+      "word_count": 186,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -69,14 +69,16 @@
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 177,
-        "n_distinct_tokens": 74,
-        "type_token_ratio": 0.41808,
+        "n_tokens": 186,
+        "n_distinct_tokens": 77,
+        "type_token_ratio": 0.41398,
         "n_entity_tokens": 28,
         "n_distinct_entities": 16,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_bearing__coherent_false",
@@ -86,7 +88,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.",
+          "text": "One: a lathe at Bexley on nights, fitted 4 March, measured by 27 May, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -96,7 +98,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.",
+          "text": "Two: a lathe at Bexley on nights, fitted 5 March, measured by 28 May, ran 290 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -106,7 +108,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.",
+          "text": "Three: a lathe at Bexley on nights, fitted 6 March, measured by 29 May, ran 410 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -116,7 +118,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.",
+          "text": "Four: a lathe at Bexley on nights, fitted 7 March, measured by 30 May, ran 260 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.\nThe lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.\nThree: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, measured by 27 May, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.\nTwo: a lathe at Bexley on nights, fitted 5 March, measured by 28 May, ran 290 hours longer before failure than the same machine last cycle; checked by Duvall.\nThe lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.\nThree: a lathe at Bexley on nights, fitted 6 March, measured by 29 May, ran 410 hours longer before failure than the same machine last cycle; checked by Duvall.\nFour: a lathe at Bexley on nights, fitted 7 March, measured by 30 May, ran 260 hours longer before failure than the same machine last cycle; checked by Duvall.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": false,
       "confound_note": "All four machines are lathes at Bexley on the night shift, and one plant-level change covers every case at once. The mid-passage line records that \"The lubricant supply moved from mineral to synthetic grade mid-cycle\" and that \"every machine here drew from that supply\", putting the new grade in the bearings of all four machines. A move from mineral to synthetic lengthens bearing life on its own, and every machine is compared against its own previous cycle - run on the earlier grade - rather than against a machine on the same lubricant over the same period. Nothing in the log separates the redesigned bearing from the change of grade.",
-      "word_count": 174,
+      "word_count": 178,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 174,
-        "n_distinct_tokens": 73,
-        "type_token_ratio": 0.41954,
+        "n_tokens": 178,
+        "n_distinct_tokens": 74,
+        "type_token_ratio": 0.41573,
         "n_entity_tokens": 28,
         "n_distinct_entities": 16,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_bearing__diverse_true",
@@ -155,7 +159,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.",
+          "text": "One: a lathe at Bexley on nights, fitted 4 March, measured by 27 May, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -165,7 +169,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.",
+          "text": "Two: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.",
           "conditions": {
             "plant": "Ravenhill",
             "machine_type": "press",
@@ -175,7 +179,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: a conveyor at Corbin on evenings, fitted 2 July, ran 410 hours longer before failure by 21 August than the same machine last cycle; checked by Fenwick.",
+          "text": "Three: a conveyor at Corbin on evenings, fitted 2 July, measured by 21 August, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.",
           "conditions": {
             "plant": "Corbin",
             "machine_type": "conveyor",
@@ -185,7 +189,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.",
+          "text": "Four: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.",
           "conditions": {
             "plant": "Marlowe",
             "machine_type": "compressor",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.\nThe lubricant supply stayed on mineral grade across the cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\nThree: a conveyor at Corbin on evenings, fitted 2 July, ran 410 hours longer before failure by 21 August than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 March, measured by 27 May, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.\nThe lubricant supply stayed on mineral grade across the cycle, and every machine here drew from that supply. Hours cover every bearing position on each machine, and about a third of each machine's positions had spells on the old bearing.\nThree: a conveyor at Corbin on evenings, fitted 2 July, measured by 21 August, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 177,
+      "word_count": 181,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "whole_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 177,
-        "n_distinct_tokens": 95,
-        "type_token_ratio": 0.53672,
+        "n_tokens": 181,
+        "n_distinct_tokens": 96,
+        "type_token_ratio": 0.53039,
         "n_entity_tokens": 28,
         "n_distinct_entities": 28,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_bearing__diverse_false",
@@ -224,7 +230,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.",
+          "text": "One: a lathe at Bexley on nights, fitted 4 May, measured by 27 March, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.",
           "conditions": {
             "plant": "Bexley",
             "machine_type": "lathe",
@@ -234,7 +240,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.",
+          "text": "Two: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.",
           "conditions": {
             "plant": "Ravenhill",
             "machine_type": "press",
@@ -244,7 +250,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.",
+          "text": "Three: a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.",
           "conditions": {
             "plant": "Corbin",
             "machine_type": "conveyor",
@@ -254,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.",
+          "text": "Four: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.",
           "conditions": {
             "plant": "Marlowe",
             "machine_type": "compressor",
@@ -263,10 +269,10 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 May, ran 340 hours longer before failure by 27 March than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, ran 290 hours longer before failure by 24 February than the same machine last cycle; checked by Aguirre.\nThe lubricant supply stayed on mineral grade across the cycle, and every machine here ran on a sealed charge. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.\nThree: a conveyor at Corbin on evenings, fitted 2 August, ran 410 hours longer before failure by 21 July than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, ran 260 hours longer before failure by 25 November than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 May, measured by 27 March, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.\nEvery machine here ran on a sealed lubricant charge, untouched by the shop's supply. The lubricant supply stayed on mineral grade across the cycle. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.\nThree: a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": false,
       "confound_note": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
-      "word_count": 175,
+      "word_count": 184,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -274,16 +280,18 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 2.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 175,
-        "n_distinct_tokens": 89,
-        "type_token_ratio": 0.50857,
+        "n_tokens": 184,
+        "n_distinct_tokens": 92,
+        "type_token_ratio": 0.5,
         "n_entity_tokens": 28,
         "n_distinct_entities": 28,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 0.3333,
+      "reader_false_positive_rate": null
     }
   ]
 }

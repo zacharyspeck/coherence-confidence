@@ -44,6 +44,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.complexity import surface_complexity
+from src.midline import build_midline
 from src.models import CORE_CELLS, compute_word_count  # noqa: E402
 
 SPEC = Path("results/family_spec.json")
@@ -102,14 +103,6 @@ def item_path(family_id: str) -> Path:
         if p.exists():
             return p
     raise SystemExit(f"no file for {family_id}")
-
-
-def build_midline(spec: dict, clauses: dict, confound: tuple, scope: tuple) -> str:
-    fact = spec[f"confound_fact_{confound[0]}"]
-    cscope = spec[f"confound_scope_{confound[1]}"]
-    pop = clauses[f"scope_population_{scope[0]}"]
-    comp = clauses[f"scope_completeness_{scope[1]}"]
-    return f"{fact}, {cscope}. {pop}, {comp}."
 
 
 def main(argv: list[str] | None = None) -> int:

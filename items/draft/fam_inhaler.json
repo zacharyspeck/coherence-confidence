@@ -17,7 +17,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, measured by 28 March, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -27,7 +27,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, measured by 29 March, had 4 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -37,7 +37,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, measured by 30 March, had 7 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -47,7 +47,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, measured by 31 March, had 5 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.\nPollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and about a quarter of each group's patients skipped prescribed doses.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, measured by 28 March, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, measured by 29 March, had 4 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nEvery group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran a fifth below the previous quarter. Counts cover every patient prescribed the inhaler in each group, and about a quarter of each group's patients skipped prescribed doses.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, measured by 30 March, had 7 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, measured by 31 March, had 5 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 178,
+      "word_count": 186,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -69,14 +69,16 @@
       "scope_variant": "whole_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 178,
-        "n_distinct_tokens": 74,
-        "type_token_ratio": 0.41573,
+        "n_tokens": 186,
+        "n_distinct_tokens": 78,
+        "type_token_ratio": 0.41935,
         "n_entity_tokens": 32,
         "n_distinct_entities": 13,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.3333
     },
     {
       "id": "fam_inhaler__coherent_false",
@@ -86,7 +88,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, measured by 28 March, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -96,7 +98,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, measured by 29 March, had 4 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -106,7 +108,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, measured by 30 March, had 7 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -116,7 +118,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, measured by 31 March, had 5 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.\nPollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, measured by 28 March, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 12-17 band at Harrowfield, winter quarter, started 5 February, measured by 29 March, had 4 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nPollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on the district's outside air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.\nThree: the 12-17 band at Harrowfield, winter quarter, started 6 February, measured by 30 March, had 7 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nFour: the 12-17 band at Harrowfield, winter quarter, started 7 February, measured by 31 March, had 5 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": false,
       "confound_note": "All four groups are the 12-17 band at Harrowfield inside one winter quarter, and a single district air history covers every case at once. The mid-passage facts state that pollen counts in each group's district ran a fifth below the previous quarter and that every group lived and slept on the district's outside air, putting the cleaner air over every patient whose attacks were tallied. Each band is compared against itself a quarter earlier rather than against an untreated band in the same quarter, leaving the drop in pollen and the inhaler moving together across the 4 to 7 attack reductions. The population and completeness clauses in the same line describe a count with no gap between the patients tallied and the patients the claim covers, leaving the drop in pollen the whole of the defect.",
-      "word_count": 178,
+      "word_count": 182,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 178,
-        "n_distinct_tokens": 71,
-        "type_token_ratio": 0.39888,
+        "n_tokens": 182,
+        "n_distinct_tokens": 72,
+        "type_token_ratio": 0.3956,
         "n_entity_tokens": 32,
         "n_distinct_entities": 13,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_inhaler__diverse_true",
@@ -155,7 +159,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 February, measured by 28 March, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -165,7 +169,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.",
+          "text": "Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.",
           "conditions": {
             "clinic": "Brightmoor",
             "patient_age_band": "25-39",
@@ -175,7 +179,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: the 40-59 band at Calderbank, summer quarter, started 5 August, had 7 fewer attacks by 30 September than the same band a quarter earlier; nurse Halvorsen.",
+          "text": "Three: the 40-59 band at Calderbank, summer quarter, started 5 August, measured by 30 September, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.",
           "conditions": {
             "clinic": "Calderbank",
             "patient_age_band": "40-59",
@@ -185,7 +189,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.",
+          "text": "Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.",
           "conditions": {
             "clinic": "Dunmorrow",
             "patient_age_band": "60-74",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.\nPollen counts in each group's district ran level with the previous quarter, and every group lived and slept on the district's outside air. Counts cover the patients in each group who took every dose, and every patient in each group took every prescribed dose.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 August, had 7 fewer attacks by 30 September than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 February, measured by 28 March, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.\nPollen counts in each group's district ran level with the previous quarter, and every group lived and slept on the district's outside air. Counts cover the patients in each group who took every dose, and every patient in each group took every prescribed dose.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 August, measured by 30 September, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 178,
+      "word_count": 182,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 178,
-        "n_distinct_tokens": 93,
-        "type_token_ratio": 0.52247,
+        "n_tokens": 182,
+        "n_distinct_tokens": 94,
+        "type_token_ratio": 0.51648,
         "n_entity_tokens": 32,
         "n_distinct_entities": 30,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_inhaler__diverse_false",
@@ -224,7 +230,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.",
+          "text": "One: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by 28 February, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.",
           "conditions": {
             "clinic": "Harrowfield",
             "patient_age_band": "12-17",
@@ -234,7 +240,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.",
+          "text": "Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.",
           "conditions": {
             "clinic": "Brightmoor",
             "patient_age_band": "25-39",
@@ -244,7 +250,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.",
+          "text": "Three: the 40-59 band at Calderbank, summer quarter, started 5 September, measured by 30 August, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.",
           "conditions": {
             "clinic": "Calderbank",
             "patient_age_band": "40-59",
@@ -254,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.",
+          "text": "Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.",
           "conditions": {
             "clinic": "Dunmorrow",
             "patient_age_band": "60-74",
@@ -263,10 +269,10 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.\nPollen counts in each group's district ran level with the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by 28 February, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.\nEvery group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran level with the previous quarter. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 September, measured by 30 August, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": false,
       "confound_note": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
-      "word_count": 176,
+      "word_count": 184,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -274,16 +280,18 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 176,
-        "n_distinct_tokens": 91,
-        "type_token_ratio": 0.51705,
+        "n_tokens": 184,
+        "n_distinct_tokens": 95,
+        "type_token_ratio": 0.5163,
         "n_entity_tokens": 32,
         "n_distinct_entities": 30,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 0.6667,
+      "reader_false_positive_rate": null
     }
   ]
 }

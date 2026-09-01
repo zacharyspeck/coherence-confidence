@@ -31,15 +31,70 @@ from src.validate import (
 # The D-022 balanced closer scheme: FACT x SCOPE, plus a shared tail. Each clause
 # variant lands in exactly one TRUE and one FALSE item, so no word in the closers
 # correlates with the label.
-FACT = {
-    "changed": "Ambient load rose sharply against the earlier period",
-    "same": "Ambient load matched the earlier period closely",
-}
-SCOPE = {
-    "reach": "and every unit stood on the open floor",
-    "block": "and every unit stood inside a sealed cabinet",
-}
+# One entry per family that shares a mechanism. Ten, not one: with a single
+# shared wording every stated_confound item in the fixture carried the SAME
+# falsifying sentence, which is what no_duplicate_flaw_phrasing exists to
+# forbid - so the fixture could not pass the gate it is meant to exercise.
+FACT_SETS = [
+    ("Ambient load rose sharply against the earlier period",
+     "Ambient load matched the earlier period closely"),
+    ("Line pressure climbed by half over the prior window",
+     "Line pressure held level with the prior window"),
+    ("Supply lead time ran well past the previous quarter",
+     "Supply lead time tracked the previous quarter"),
+    ("Room humidity sat far above the earlier month",
+     "Room humidity stayed even with the earlier month"),
+    ("Staff turnover doubled on the preceding term",
+     "Staff turnover was flat against the preceding term"),
+    ("Batch age drifted upward through the whole window",
+     "Batch age was steady through the whole window"),
+    ("Intake volume surged past the earlier stretch",
+     "Intake volume matched the earlier stretch"),
+    ("Feed rate stepped up against the last pass",
+     "Feed rate was unchanged against the last pass"),
+    ("Ambient noise built steadily over the prior term",
+     "Ambient noise stayed put over the prior term"),
+    ("Duty hours stretched beyond the earlier schedule",
+     "Duty hours followed the earlier schedule"),
+]
+SCOPE_SETS = [
+    ("and every unit stood on the open floor",
+     "and every unit stood inside a sealed cabinet"),
+    ("and nothing screened the units on this log",
+     "and a closed enclosure screened the units on this log"),
+    ("and all four units sat out in the open bay",
+     "and all four units sat behind fixed shielding"),
+    ("and no unit here was shielded from it",
+     "and every unit here was sealed away from it"),
+    ("and each unit ran in an open rack",
+     "and each unit ran in a shuttered rack"),
+    ("and the units were left uncovered throughout",
+     "and the units were kept covered throughout"),
+    ("and not one unit had a barrier around it",
+     "and each unit had a solid barrier around it"),
+    ("and these four units worked in the open yard",
+     "and these four units worked in an enclosed yard"),
+    ("and every unit sat exposed to it",
+     "and every unit sat isolated from it"),
+    ("and the units were held in an unenclosed space",
+     "and the units were held in a fully enclosed space"),
+]
 TAIL = "no other adjustment was made to any unit."
+#: Digits normalise away, so "Unit 40 at region_v1..." and "Unit 60 at
+#: region_v1..." reduce to the same string. A per-family alphabetic token is
+#: what actually distinguishes the case lines - and for broken_chronology the
+#: case lines ARE the falsifying text.
+SITE_WORDS = ["ashgrove", "brackhill", "corbin", "dunmore", "eastcote",
+              "fenwick", "garrow", "hollin", "ilford", "jarnley",
+              "kestrel", "larkhill", "marbeck", "netley", "ockham",
+              "penhale", "quarles", "ravenhill", "stanmer", "thurlow"]
+MEASURE_WORDS = ["recorded outcome", "logged reading", "noted figure",
+                 "captured value", "filed result", "entered total",
+                 "observed level", "returned score", "posted count",
+                 "registered mark", "tallied amount", "booked figure",
+                 "charted level", "listed total", "measured span",
+                 "reported depth", "sampled height", "traced value",
+                 "gauged reading", "indexed score"]
 
 # Per-family vocabulary, because the real item set has one domain per family.
 # A single generic wording repeated across all 20 families is learnable across a
@@ -51,13 +106,23 @@ POPULATION_SETS = [
     ("Figures include the lines that answered", "Figures include the lines in the index"),
     ("Readings take in the cells that responded", "Readings take in the cells on record"),
     ("Tallies run over the plots that returned", "Tallies run over the plots in the plan"),
+    ("Returns capture the rounds that closed", "Returns capture the rounds in the ledger"),
+    ("Sums rest on the batches that cleared", "Sums rest on the batches in the queue"),
+    ("Records list the slips that came back", "Records list the slips in the folder"),
+    ("Totals draw on the tickets that were stamped", "Totals draw on the tickets in the book"),
+    ("Figures rest on the forms that were signed", "Figures rest on the forms in the file"),
 ]
 COMPLETENESS_SETS = [
     ("and each listed unit reported", "and a quarter of listed units stayed silent"),
-    ("and each named site filed", "and a quarter of named sites stayed silent"),
-    ("and each indexed line answered", "and a quarter of indexed lines stayed silent"),
-    ("and each recorded cell responded", "and a quarter of recorded cells stayed silent"),
-    ("and each planned plot returned", "and a quarter of planned plots stayed silent"),
+    ("and each named site filed", "and a fifth of named sites stayed silent"),
+    ("and each indexed line answered", "and a third of indexed lines went unanswered"),
+    ("and each recorded cell responded", "and two of nine recorded cells went quiet"),
+    ("and each planned plot returned", "and three of twelve planned plots gave nothing"),
+    ("and each scheduled round closed", "and four of fifteen scheduled rounds stayed open"),
+    ("and each queued batch cleared", "and a sixth of queued batches never cleared"),
+    ("and each issued slip came back", "and five of twenty issued slips never came back"),
+    ("and each stamped ticket was counted", "and a seventh of stamped tickets went uncounted"),
+    ("and each signed form was filed", "and six of eighteen signed forms were never filed"),
 ]
 
 # D-024: half the families are scope families, where BOTH false items are
@@ -87,11 +152,22 @@ def build_clean_item(
     n_distinct = 1 if coherent else 4
     cases = []
     for c in range(4):
-        conditions = {d: f"{d}_v{(c % n_distinct) + 1}" for d in DIMS}
+        # Family-specific condition VALUES. Generic ones normalised to the same
+        # token in every family, so four of them in a row gave an 8-gram no
+        # amount of surrounding variation could break.
+        site = SITE_WORDS[k % len(SITE_WORDS)]
+        conditions = {
+            d: f"{d}_{site}_v{(c % n_distinct) + 1}" for d in DIMS
+        }
         joined = ", ".join(conditions[d] for d in sorted(DIMS))
+        # The site word goes FIRST. Placed late, the 8-gram window spanning the
+        # end of one case and the start of the next contained no per-family
+        # token at all, because the dimension values normalise to the same
+        # string in every family.
         text = (
-            f"Unit {k}{c} at {joined} was observed and the recorded outcome "
-            f"moved by {11 + c} points."
+            f"Unit {k}{c} at {site}, {joined}, was "
+            f"observed and the {MEASURE_WORDS[k % len(MEASURE_WORDS)]} moved "
+            f"by {11 + c} points."
         )
         cases.append(Case(case_id=f"c{c + 1}", text=text, conditions=conditions))
 
@@ -106,11 +182,15 @@ def build_clean_item(
         assign['coherent_true'] = (ct[0], dt[1], ct[2])
         assign['diverse_true'] = (dt[0], ct[1], dt[2])
     (fact_key, scope_key), (pop_key, comp_key), _mech = assign[cell]
-    pop = POPULATION_SETS[k % len(POPULATION_SETS)][0 if pop_key == "subset" else 1]
-    comp = COMPLETENESS_SETS[k % len(COMPLETENESS_SETS)][
-        0 if comp_key == "complete" else 1
-    ]
-    midline = f"{FACT[fact_key]}, {SCOPE[scope_key]}. {pop}, {comp}."
+    # Keyed on k // 2: families alternate confound/scope, so the ten that share
+    # a mechanism are k = 0, 2, 4, ... and only those ten ever need distinct
+    # flaw wording. Keying on k itself made them collide five apart.
+    j = (k // 2) % len(FACT_SETS)
+    fact = FACT_SETS[j][0 if fact_key == "changed" else 1]
+    scope = SCOPE_SETS[j][0 if scope_key == "reach" else 1]
+    pop = POPULATION_SETS[j][0 if pop_key == "subset" else 1]
+    comp = COMPLETENESS_SETS[j][0 if comp_key == "complete" else 1]
+    midline = f"{fact}, {scope}. {pop}, {comp}."
     lead = (
         f"Report {family_id} filed as {ref} covers four observed units under "
         "one protocol."

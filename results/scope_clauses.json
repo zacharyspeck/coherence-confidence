@@ -202,10 +202,10 @@
   "fam_routing": {
     "family_id": "fam_routing",
     "family_type": "scope",
-    "scope_population_subset": "Timings cover the runs that stayed on the issued route",
+    "scope_population_subset": "Only runs completed end to end on the issued route entered the timing set",
     "scope_population_whole": "Timings cover every run dispatched, whatever route the van drove",
     "scope_completeness_complete": "and the issued route was followed on all depot runs",
-    "scope_completeness_incomplete": "and about a sixth of each depot's runs left the issued route",
+    "scope_completeness_incomplete": "and drivers at each depot abandoned the issued route on roughly one run in six",
     "neutral_closer": "Minutes were rounded to the nearest whole number and countersigned by the duty manager.",
     "four_combinations_read_ok": true,
     "note_scope_coherent": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. Every case is vans out of Kettleby Wharf in February under dispatcher Verhoeven, so one and the same exclusion sits under all four groups at once.",

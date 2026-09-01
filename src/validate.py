@@ -891,6 +891,7 @@ ALL_CHECKS = (
     "passage_word_balance",
     "flaw_declarations_complete",
     "matched_mechanism_subset",
+    "no_duplicate_flaw_phrasing",
     "control_surface_match",
     "all_items_unreviewed",
 )

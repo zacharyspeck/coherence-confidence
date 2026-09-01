@@ -76,7 +76,9 @@
         "n_distinct_entities": 10,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.3333
     },
     {
       "id": "fam_solder__coherent_false",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.\nThe optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at electrical test. Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
+      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte.\nEvery run here was graded at electrical test, which the optical threshold does not feed. The optical inspection threshold was loosened two grades against the earlier period. Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
       "ground_truth": false,
       "confound_note": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. All four runs are relay boards on the Aspen line inside March under operator Duarte, so one and the same exclusion sits under every case.",
-      "word_count": 182,
+      "word_count": 188,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 2.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 182,
-        "n_distinct_tokens": 77,
-        "type_token_ratio": 0.42308,
+        "n_tokens": 188,
+        "n_distinct_tokens": 81,
+        "type_token_ratio": 0.43085,
         "n_entity_tokens": 24,
         "n_distinct_entities": 10,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_solder__diverse_true",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Kestrel line, sensor boards, switched 3 June; by 27 June the defect rate ran 4 percent below the same line a month earlier; logged by Ibarra.\nThe optical inspection threshold was loosened two grades against the earlier period, and every run here was graded at electrical test. Rates cover the boards soldered on the new profile throughout, and every board on each run was soldered on the new profile throughout.\nThree: Larkspur line, power boards, switched 5 September; by 30 September the defect rate ran 7 percent below the same line a month earlier; logged by Nowak.\nFour: Meridian line, display boards, switched 2 November; by 26 November the defect rate ran 5 percent below the same line a month earlier; logged by Fenwick.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
+      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte.\nTwo: Kestrel line, sensor boards, switched 3 June; by 27 June the defect rate ran 4 percent below the same line a month earlier; logged by Ibarra.\nEvery run here was graded at electrical test, which the optical threshold does not feed. The optical inspection threshold was loosened two grades against the earlier period. Rates cover the boards soldered on the new profile throughout, and every board on each run was soldered on the new profile throughout.\nThree: Larkspur line, power boards, switched 5 September; by 30 September the defect rate ran 7 percent below the same line a month earlier; logged by Nowak.\nFour: Meridian line, display boards, switched 2 November; by 26 November the defect rate ran 5 percent below the same line a month earlier; logged by Fenwick.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 180,
+      "word_count": 186,
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 180,
-        "n_distinct_tokens": 86,
-        "type_token_ratio": 0.47778,
+        "n_tokens": 186,
+        "n_distinct_tokens": 90,
+        "type_token_ratio": 0.48387,
         "n_entity_tokens": 24,
         "n_distinct_entities": 18,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_solder__diverse_false",
@@ -283,7 +289,9 @@
         "n_distinct_entities": 18,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_solder__decorative_true",
@@ -356,18 +364,18 @@
           }
         }
       ],
-      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte; L-3380, 0922, T7, north.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte; L-3381, 1047, T8, south.\nThe optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at electrical test. Rates cover every board on each run, whatever profile the board took, and about a tenth of each run's boards took one pass on the old profile.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte; L-3382, 1332, T9, east.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte; L-3383, 1557, T10, west.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
+      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte; L-3380, 0922, T7, north.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte; L-3381, 1047, T8, south.\nEvery run here was graded at electrical test, which the optical threshold does not feed. The optical inspection threshold held to the earlier period's setting exactly. Rates cover every board on each run, whatever profile the board took, and about a tenth of each run's boards took one pass on the old profile.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte; L-3382, 1332, T9, east.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte; L-3383, 1557, T10, west.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 199,
+      "word_count": 205,
       "flaw_mechanism": null,
       "confound_variant": "same_block",
       "scope_variant": "whole_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 199,
-        "n_distinct_tokens": 92,
-        "type_token_ratio": 0.46231,
+        "n_tokens": 205,
+        "n_distinct_tokens": 96,
+        "type_token_ratio": 0.46829,
         "n_entity_tokens": 36,
         "n_distinct_entities": 22,
         "n_distinct_condition_values": 4,
@@ -376,7 +384,9 @@
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_solder__decorative_false",
@@ -449,18 +459,18 @@
           }
         }
       ],
-      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte; L-3380, 0922, T7, north.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte; L-3381, 1047, T8, south.\nThe optical inspection threshold held to the earlier period's setting exactly, and every run here was graded at electrical test. Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte; L-3382, 1332, T9, east.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte; L-3383, 1557, T10, west.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
+      "passage": "A plant log records four production runs switched to the same solder profile.\nOne: Aspen line, relay boards, switched 4 March; by 29 March the defect rate ran 6 percent below the same line a month earlier; logged by Duarte; L-3380, 0922, T7, north.\nTwo: Aspen line, relay boards, switched 5 March; by 30 March the defect rate ran 4 percent below the same line a month earlier; logged by Duarte; L-3381, 1047, T8, south.\nEvery run here was graded at electrical test, which the optical threshold does not feed. The optical inspection threshold held to the earlier period's setting exactly. Rates cover the boards soldered on the new profile throughout, and about a tenth of each run's boards took one pass on the old profile.\nThree: Aspen line, relay boards, switched 6 March; by 31 March the defect rate ran 7 percent below the same line a month earlier; logged by Duarte; L-3382, 1332, T9, east.\nFour: Aspen line, relay boards, switched 7 March; by 28 March the defect rate ran 5 percent below the same line a month earlier; logged by Duarte; L-3383, 1557, T10, west.\nEach run's figures were entered on the shift sheet and signed off by the supervisor.",
       "ground_truth": false,
       "confound_note": "The mid-passage line tallies the rates over the boards soldered on the new profile throughout, and the clause beside it records that about a tenth of each run's boards took one pass on the old profile. The claim is about board defects on the run, so the population is every board built on it and the defect figures describe nine tenths of that. Boards that take a pass on the old profile are the ones routed off the normal flow, and the extra handling and the extra heat cycle raise a board's defect risk on their own, so a rate built on the untouched boards alone sits below the run's own rate and the drops of 6, 4, 7 and 5 percent are consistent with defect production holding flat. All four runs are relay boards on the Aspen line inside March under operator Duarte, so one and the same exclusion sits under every case. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
-      "word_count": 197,
+      "word_count": 203,
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_block",
       "scope_variant": "subset_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 197,
-        "n_distinct_tokens": 93,
-        "type_token_ratio": 0.47208,
+        "n_tokens": 203,
+        "n_distinct_tokens": 97,
+        "type_token_ratio": 0.47783,
         "n_entity_tokens": 36,
         "n_distinct_entities": 22,
         "n_distinct_condition_values": 4,
@@ -469,7 +479,9 @@
       "domain": "manufacturing",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": 0.6667,
+      "reader_false_positive_rate": null
     }
   ],
   "decoration_dimensions": [

@@ -34,10 +34,17 @@ def flaw_sentence(passage: str, flaw_mechanism: str | None) -> str:
     if len(lines) <= MID_LINE:
         return passage
     parts = _sentences(lines[MID_LINE])
+    # Key off the END of the line, not a fixed index. The mid-passage line has
+    # two shapes - the confound is one sentence when it is live (`reach`) and
+    # two when it is blocked, because the protection is stated first (see
+    # src/midline.py). The SCOPE pair is always the final sentence either way,
+    # so counting from the back is the only stable anchor. Indexing from the
+    # front silently returned the confound sentence for every blocked item once
+    # the second shape existed.
     if flaw_mechanism == "scope_mismatch":
-        return parts[1] if len(parts) > 1 else lines[MID_LINE]
+        return parts[-1]
     if flaw_mechanism == "stated_confound":
-        return parts[0]
+        return " ".join(parts[:-1]) if len(parts) > 1 else lines[MID_LINE]
     return lines[MID_LINE]
 
 

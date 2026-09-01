@@ -17,7 +17,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.",
+          "text": "One: starter signups from Norway via webinar were emailed 4 March, measured by 29 March week-two retention ran 5 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -27,7 +27,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.",
+          "text": "Two: starter signups from Norway via webinar were emailed 5 March, measured by 30 March week-two retention ran 3 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -37,7 +37,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.",
+          "text": "Three: starter signups from Norway via webinar were emailed 6 March, measured by 31 March week-two retention ran 6 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -47,7 +47,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.",
+          "text": "Four: starter signups from Norway via webinar were emailed 7 March, measured by 28 March week-two retention ran 4 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on a paid plan. Retention figures cover the signups who opened the email, and every signup in each cohort opened the email.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March, measured by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March, measured by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nEvery cohort here signed up on a paid plan, which carries no trial period. The free trial ran eighteen days, up from ten in the earlier period. Retention figures cover the signups who opened the email, and every signup in each cohort opened the email.\nThree: starter signups from Norway via webinar were emailed 6 March, measured by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March, measured by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 173,
+      "word_count": 181,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -69,14 +69,16 @@
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 173,
-        "n_distinct_tokens": 71,
-        "type_token_ratio": 0.4104,
+        "n_tokens": 181,
+        "n_distinct_tokens": 75,
+        "type_token_ratio": 0.41436,
         "n_entity_tokens": 24,
         "n_distinct_entities": 11,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.3333
     },
     {
       "id": "fam_onboarding__coherent_false",
@@ -86,7 +88,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.",
+          "text": "One: starter signups from Norway via webinar were emailed 4 March, measured by 29 March week-two retention ran 5 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -96,7 +98,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.",
+          "text": "Two: starter signups from Norway via webinar were emailed 5 March, measured by 30 March week-two retention ran 3 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -106,7 +108,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.",
+          "text": "Three: starter signups from Norway via webinar were emailed 6 March, measured by 31 March week-two retention ran 6 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -116,7 +118,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.",
+          "text": "Four: starter signups from Norway via webinar were emailed 7 March, measured by 28 March week-two retention ran 4 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.\nThree: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March, measured by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: starter signups from Norway via webinar were emailed 5 March, measured by 30 March week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.\nThree: starter signups from Norway via webinar were emailed 6 March, measured by 31 March week-two retention ran 6 points above the same cohort a month earlier.\nFour: starter signups from Norway via webinar were emailed 7 March, measured by 28 March week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": false,
       "confound_note": "All four cohorts are starter signups from Norway via webinar inside one March window, and the trial fact stated mid-passage covers every case at once: the free trial ran eighteen days, up from ten in the earlier period, and an eighteen-day trial still has users inside it at the week-two mark. The scope clause beside that fact has every cohort here signed up on that trial, which puts the policy change on all four. Each cohort is compared against itself a month earlier, under a ten-day trial that had already lapsed by week two. The longer trial and the onboarding email moved together, leaving the 3 to 6 point lifts unattributable to the email. The population and completeness clauses in the same line leave the retention figures covering every signup; the trial length is the whole of the defect.",
-      "word_count": 172,
+      "word_count": 176,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 172,
-        "n_distinct_tokens": 70,
-        "type_token_ratio": 0.40698,
+        "n_tokens": 176,
+        "n_distinct_tokens": 71,
+        "type_token_ratio": 0.40341,
         "n_entity_tokens": 24,
         "n_distinct_entities": 11,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_onboarding__diverse_true",
@@ -155,7 +159,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.",
+          "text": "One: starter signups from Norway via webinar were emailed 4 March, measured by 29 March week-two retention ran 5 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -165,7 +169,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.",
+          "text": "Two: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "premium",
             "country": "Chile",
@@ -175,7 +179,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.",
+          "text": "Three: enterprise signups from Vietnam via reseller were emailed 5 October, measured by 30 October week-two retention ran 6 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "enterprise",
             "country": "Vietnam",
@@ -185,7 +189,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.",
+          "text": "Four: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "basic",
             "country": "Ireland",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran ten days, the same as in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened the email.\nThree: enterprise signups from Vietnam via reseller were emailed 5 October; by 30 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 4 March, measured by 29 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran ten days, the same as in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and a third of each cohort's signups never opened the email.\nThree: enterprise signups from Vietnam via reseller were emailed 5 October, measured by 30 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 174,
+      "word_count": 178,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "whole_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 174,
-        "n_distinct_tokens": 86,
-        "type_token_ratio": 0.49425,
+        "n_tokens": 178,
+        "n_distinct_tokens": 87,
+        "type_token_ratio": 0.48876,
         "n_entity_tokens": 24,
         "n_distinct_entities": 17,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_onboarding__diverse_false",
@@ -224,7 +230,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: starter signups from Norway via webinar were emailed 24 March; by 9 March week-two retention ran 5 points above the same cohort a month earlier.",
+          "text": "One: starter signups from Norway via webinar were emailed 24 March, measured by 9 March week-two retention ran 5 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "starter",
             "country": "Norway",
@@ -234,7 +240,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.",
+          "text": "Two: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "premium",
             "country": "Chile",
@@ -244,7 +250,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: enterprise signups from Vietnam via reseller were emailed 25 October; by 10 October week-two retention ran 6 points above the same cohort a month earlier.",
+          "text": "Three: enterprise signups from Vietnam via reseller were emailed 25 October, measured by 10 October week-two retention ran 6 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "enterprise",
             "country": "Vietnam",
@@ -254,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.",
+          "text": "Four: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "basic",
             "country": "Ireland",
@@ -263,10 +269,10 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 24 March; by 9 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July; by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nThe free trial ran ten days, the same as in the earlier period, and every cohort here signed up on a paid plan. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.\nThree: enterprise signups from Vietnam via reseller were emailed 25 October; by 10 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December; by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 24 March, measured by 9 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nEvery cohort here signed up on a paid plan, which carries no trial period. The free trial ran ten days, the same as in the earlier period. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.\nThree: enterprise signups from Vietnam via reseller were emailed 25 October, measured by 10 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": false,
       "confound_note": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
-      "word_count": 173,
+      "word_count": 181,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -274,16 +280,18 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 2.5,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 173,
-        "n_distinct_tokens": 86,
-        "type_token_ratio": 0.49711,
+        "n_tokens": 181,
+        "n_distinct_tokens": 90,
+        "type_token_ratio": 0.49724,
         "n_entity_tokens": 24,
         "n_distinct_entities": 19,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 0.6667,
+      "reader_false_positive_rate": null
     }
   ]
 }

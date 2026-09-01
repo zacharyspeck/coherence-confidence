@@ -17,7 +17,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "One: an introductory section at Harlow, autumn term, issued 4 September, measured by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -27,7 +27,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "Two: an introductory section at Harlow, autumn term, issued 5 September, measured by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -37,7 +37,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "Three: an introductory section at Harlow, autumn term, issued 6 September, measured by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -47,7 +47,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "Four: an introductory section at Harlow, autumn term, issued 7 September, measured by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.\nThe central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to a frozen departmental syllabus. Completion rates cover the students in each section who attended every lab session, and every student in each section attended every lab session.\nThree: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.\nFour: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.\nRates were recorded to the nearest point and signed off by the teaching office.",
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September, measured by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: an introductory section at Harlow, autumn term, issued 5 September, measured by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.\nEvery section was marked to a frozen departmental syllabus, which the central revision left alone. The central syllabus set coursework at a third of the final grade, up from a quarter. Completion rates cover the students in each section who attended every lab session, and every student in each section attended every lab session.\nThree: an introductory section at Harlow, autumn term, issued 6 September, measured by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.\nFour: an introductory section at Harlow, autumn term, issued 7 September, measured by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.\nRates were recorded to the nearest point and signed off by the teaching office.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 187,
+      "word_count": 196,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -69,14 +69,16 @@
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 187,
-        "n_distinct_tokens": 77,
-        "type_token_ratio": 0.41176,
+        "n_tokens": 196,
+        "n_distinct_tokens": 82,
+        "type_token_ratio": 0.41837,
         "n_entity_tokens": 28,
         "n_distinct_entities": 14,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_labkit__coherent_false",
@@ -86,7 +88,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "One: an introductory section at Harlow, autumn term, issued 4 September, measured by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -96,7 +98,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "Two: an introductory section at Harlow, autumn term, issued 5 September, measured by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -106,7 +108,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "Three: an introductory section at Harlow, autumn term, issued 6 September, measured by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -116,7 +118,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "Four: an introductory section at Harlow, autumn term, issued 7 September, measured by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.\nThe central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.\nThree: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.\nFour: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.\nRates were recorded to the nearest point and signed off by the teaching office.",
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September, measured by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: an introductory section at Harlow, autumn term, issued 5 September, measured by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.\nThe central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.\nThree: an introductory section at Harlow, autumn term, issued 6 September, measured by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.\nFour: an introductory section at Harlow, autumn term, issued 7 September, measured by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.\nRates were recorded to the nearest point and signed off by the teaching office.",
       "ground_truth": false,
       "confound_note": "All four sections sit at Harlow in one autumn term, and a single change to the central syllabus covers every case at once. The mid-passage facts state that the central syllabus set coursework at a third of the final grade, up from a quarter, and that every section was marked to that central syllabus, putting the heavier share over every section whose completion was measured. Each section is compared against itself a year earlier under the smaller share, leaving the kit and the larger share moving together across the 6 to 11 point rises. The population and completeness clauses in the same line describe a tally with no gap between the students counted and the students the claim covers, leaving the syllabus change the whole of the defect.",
-      "word_count": 184,
+      "word_count": 188,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 184,
-        "n_distinct_tokens": 74,
-        "type_token_ratio": 0.40217,
+        "n_tokens": 188,
+        "n_distinct_tokens": 75,
+        "type_token_ratio": 0.39894,
         "n_entity_tokens": 28,
         "n_distinct_entities": 14,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_labkit__diverse_true",
@@ -155,7 +159,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "One: an introductory section at Harlow, autumn term, issued 4 September, measured by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -165,7 +169,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.",
+          "text": "Two: a foundation section at Brackwell, winter term, issued 8 January, measured by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.",
           "conditions": {
             "campus": "Brackwell",
             "course_level": "foundation",
@@ -175,7 +179,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: an intermediate section at Kelvinside, spring term, issued 5 April; by 28 June coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.",
+          "text": "Three: an intermediate section at Kelvinside, spring term, issued 5 April, measured by 28 June coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.",
           "conditions": {
             "campus": "Kelvinside",
             "course_level": "intermediate",
@@ -185,7 +189,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.",
+          "text": "Four: an advanced section at Thornbury, summer term, issued 3 July, measured by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.",
           "conditions": {
             "campus": "Thornbury",
             "course_level": "advanced",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.\nThe central syllabus set coursework at a quarter of the final grade, as the year before, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and roughly a quarter of each section's students missed lab sessions.\nThree: an intermediate section at Kelvinside, spring term, issued 5 April; by 28 June coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.\nFour: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.\nRates were recorded to the nearest point and signed off by the teaching office.",
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 September, measured by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: a foundation section at Brackwell, winter term, issued 8 January, measured by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.\nThe central syllabus set coursework at a quarter of the final grade, as the year before, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and roughly a quarter of each section's students missed lab sessions.\nThree: an intermediate section at Kelvinside, spring term, issued 5 April, measured by 28 June coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.\nFour: an advanced section at Thornbury, summer term, issued 3 July, measured by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.\nRates were recorded to the nearest point and signed off by the teaching office.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 185,
+      "word_count": 189,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "whole_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 185,
-        "n_distinct_tokens": 96,
-        "type_token_ratio": 0.51892,
+        "n_tokens": 189,
+        "n_distinct_tokens": 97,
+        "type_token_ratio": 0.51323,
         "n_entity_tokens": 28,
         "n_distinct_entities": 28,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_labkit__diverse_false",
@@ -224,7 +230,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: an introductory section at Harlow, autumn term, issued 4 November; by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
+          "text": "One: an introductory section at Harlow, autumn term, issued 4 November, measured by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.",
           "conditions": {
             "campus": "Harlow",
             "course_level": "introductory",
@@ -234,7 +240,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.",
+          "text": "Two: a foundation section at Brackwell, winter term, issued 8 January, measured by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.",
           "conditions": {
             "campus": "Brackwell",
             "course_level": "foundation",
@@ -244,7 +250,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: an intermediate section at Kelvinside, spring term, issued 5 June; by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.",
+          "text": "Three: an intermediate section at Kelvinside, spring term, issued 5 June, measured by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.",
           "conditions": {
             "campus": "Kelvinside",
             "course_level": "intermediate",
@@ -254,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.",
+          "text": "Four: an advanced section at Thornbury, summer term, issued 3 July, measured by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.",
           "conditions": {
             "campus": "Thornbury",
             "course_level": "advanced",
@@ -263,10 +269,10 @@
           }
         }
       ],
-      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 November; by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: a foundation section at Brackwell, winter term, issued 8 January; by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.\nThe central syllabus set coursework at a quarter of the final grade, as the year before, and every section was marked to a frozen departmental syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.\nThree: an intermediate section at Kelvinside, spring term, issued 5 June; by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.\nFour: an advanced section at Thornbury, summer term, issued 3 July; by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.\nRates were recorded to the nearest point and signed off by the teaching office.",
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 November, measured by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: a foundation section at Brackwell, winter term, issued 8 January, measured by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.\nEvery section was marked to a frozen departmental syllabus, which the central revision left alone. The central syllabus set coursework at a quarter of the final grade, as the year before. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.\nThree: an intermediate section at Kelvinside, spring term, issued 5 June, measured by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.\nFour: an advanced section at Thornbury, summer term, issued 3 July, measured by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.\nRates were recorded to the nearest point and signed off by the teaching office.",
       "ground_truth": false,
       "confound_note": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
-      "word_count": 185,
+      "word_count": 194,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -274,16 +280,18 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 185,
-        "n_distinct_tokens": 94,
-        "type_token_ratio": 0.50811,
+        "n_tokens": 194,
+        "n_distinct_tokens": 99,
+        "type_token_ratio": 0.51031,
         "n_entity_tokens": 28,
         "n_distinct_entities": 28,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     }
   ]
 }

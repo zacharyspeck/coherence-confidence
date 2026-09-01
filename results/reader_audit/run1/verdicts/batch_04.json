@@ -12,9 +12,9 @@
   {"code": "2970C5", "answer": "No"},
   {"code": "1E4B16", "answer": "No"},
   {"code": "3BEB54", "answer": "Yes"},
-  {"code": "E13E87", "answer": "No"},
-  {"code": "AD79B5", "answer": "No"},
-  {"code": "E1435F", "answer": "No"},
+  {"code": "E13E87", "answer": "Yes"},
+  {"code": "AD79B5", "answer": "Yes"},
+  {"code": "E1435F", "answer": "Yes"},
   {"code": "62416A", "answer": "Yes"},
   {"code": "C67215", "answer": "No"}
 ]}

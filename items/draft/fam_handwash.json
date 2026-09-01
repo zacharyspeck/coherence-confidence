@@ -76,7 +76,9 @@
         "n_distinct_entities": 14,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_handwash__coherent_false",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor.\nContract deep-cleaning hours across the hospital group ran at triple the earlier quarter, and every ward here was cleaned by in-house staff. Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor.\nCounts were copied into the file and countersigned by a ward sister each month.",
+      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor.\nEvery ward here was cleaned by in-house staff, who took none of the contract work. Contract deep-cleaning hours across the hospital group ran at triple the earlier quarter. Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor.\nCounts were copied into the file and countersigned by a ward sister each month.",
       "ground_truth": false,
       "confound_note": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients.",
-      "word_count": 175,
+      "word_count": 181,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 2.5,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 175,
-        "n_distinct_tokens": 78,
-        "type_token_ratio": 0.44571,
+        "n_tokens": 181,
+        "n_distinct_tokens": 82,
+        "type_token_ratio": 0.45304,
         "n_entity_tokens": 28,
         "n_distinct_entities": 14,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_handwash__diverse_true",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June infections ran 6 percent below the same ward a quarter earlier; auditor Okafor.\nContract deep-cleaning hours across the hospital group ran at triple the earlier quarter, and every ward here was cleaned by in-house staff. Rates cover every patient admitted to each ward, and a quarter of each ward's patients had spells outside the protocol.\nThree: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September infections ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.\nFour: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December infections ran 7 percent below the same ward a quarter earlier; auditor Vasquez.\nCounts were copied into the file and countersigned by a ward sister each month.",
+      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.\nTwo: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June infections ran 6 percent below the same ward a quarter earlier; auditor Okafor.\nEvery ward here was cleaned by in-house staff, who took none of the contract work. Contract deep-cleaning hours across the hospital group ran at triple the earlier quarter. Rates cover every patient admitted to each ward, and a quarter of each ward's patients had spells outside the protocol.\nThree: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September infections ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.\nFour: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December infections ran 7 percent below the same ward a quarter earlier; auditor Vasquez.\nCounts were copied into the file and countersigned by a ward sister each month.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 172,
+      "word_count": 178,
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "whole_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 172,
-        "n_distinct_tokens": 100,
-        "type_token_ratio": 0.5814,
+        "n_tokens": 178,
+        "n_distinct_tokens": 104,
+        "type_token_ratio": 0.58427,
         "n_entity_tokens": 28,
         "n_distinct_entities": 28,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_handwash__diverse_false",
@@ -283,7 +289,9 @@
         "n_distinct_entities": 28,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_handwash__decorative_true",
@@ -356,18 +364,18 @@
           }
         }
       ],
-      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor; T-3330, 0917, T7, north.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor; T-3331, 1042, T8, south.\nContract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned by in-house staff. Rates cover the patients whose whole stay ran under the protocol, and each ward's patients were under the protocol start to finish.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor; T-3332, 1327, T9, east.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor; T-3333, 1552, T10, west.\nCounts were copied into the file and countersigned by a ward sister each month.",
+      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor; T-3330, 0917, T7, north.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor; T-3331, 1042, T8, south.\nEvery ward here was cleaned by in-house staff, who took none of the contract work. Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly. Rates cover the patients whose whole stay ran under the protocol, and each ward's patients were under the protocol start to finish.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor; T-3332, 1327, T9, east.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor; T-3333, 1552, T10, west.\nCounts were copied into the file and countersigned by a ward sister each month.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 189,
+      "word_count": 195,
       "flaw_mechanism": null,
       "confound_variant": "same_block",
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 189,
-        "n_distinct_tokens": 93,
-        "type_token_ratio": 0.49206,
+        "n_tokens": 195,
+        "n_distinct_tokens": 98,
+        "type_token_ratio": 0.50256,
         "n_entity_tokens": 40,
         "n_distinct_entities": 26,
         "n_distinct_condition_values": 4,
@@ -376,7 +384,9 @@
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_handwash__decorative_false",
@@ -449,18 +459,18 @@
           }
         }
       ],
-      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor; T-3330, 0917, T7, north.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor; T-3331, 1042, T8, south.\nContract deep-cleaning hours across the hospital group matched the earlier quarter exactly, and every ward here was cleaned by in-house staff. Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor; T-3332, 1327, T9, east.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor; T-3333, 1552, T10, west.\nCounts were copied into the file and countersigned by a ward sister each month.",
+      "passage": "An infection-control file records four wards placed on the same handwashing protocol.\nOne: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor; T-3330, 0917, T7, north.\nTwo: Ashgrove General's surgical ward, first quarter, adopted 5 February; by 28 March infections ran 6 percent below the same ward a quarter earlier; auditor Naylor; T-3331, 1042, T8, south.\nEvery ward here was cleaned by in-house staff, who took none of the contract work. Contract deep-cleaning hours across the hospital group matched the earlier quarter exactly. Rates cover the patients whose whole stay ran under the protocol, and a quarter of each ward's patients had spells outside the protocol.\nThree: Ashgrove General's surgical ward, first quarter, adopted 6 February; by 29 March infections ran 11 percent below the same ward a quarter earlier; auditor Naylor; T-3332, 1327, T9, east.\nFour: Ashgrove General's surgical ward, first quarter, adopted 7 February; by 26 March infections ran 7 percent below the same ward a quarter earlier; auditor Naylor; T-3333, 1552, T10, west.\nCounts were copied into the file and countersigned by a ward sister each month.",
       "ground_truth": false,
       "confound_note": "The mid-passage line tallies the infection rates over the patients whose whole stay ran under the protocol, and the clause beside it records that a quarter of each ward's patients had spells outside the protocol. The claim is about ward infection rates, which is a claim about everyone the ward admitted, so a quarter of that population sits outside the numbers entirely. The patients whose care runs outside the ward's routine for a spell are the ones taken to theatre, to intensive care or to another unit, and those are the patients who pick up infections, so the reported drop is measured over the patients who ran the straightforward course. All four entries are Ashgrove General's surgical ward in the first quarter and each leaves out the same quarter, so nothing in the file recovers those patients. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
-      "word_count": 190,
+      "word_count": 196,
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_block",
       "scope_variant": "subset_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 190,
-        "n_distinct_tokens": 94,
-        "type_token_ratio": 0.49474,
+        "n_tokens": 196,
+        "n_distinct_tokens": 98,
+        "type_token_ratio": 0.5,
         "n_entity_tokens": 40,
         "n_distinct_entities": 26,
         "n_distinct_condition_values": 4,
@@ -469,7 +479,9 @@
       "domain": "clinical",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     }
   ],
   "decoration_dimensions": [

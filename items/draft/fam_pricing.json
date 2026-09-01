@@ -76,7 +76,9 @@
         "n_distinct_entities": 12,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.3333
     },
     {
       "id": "fam_pricing__coherent_false",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.\nPremium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked from a fixed year-round range. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.\nEvery line was stocked from a fixed year-round range, set before the period began. Premium stock's share of each store's shelf hit a record, double the earlier period. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
       "ground_truth": false,
       "confound_note": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it.",
-      "word_count": 182,
+      "word_count": 186,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 182,
-        "n_distinct_tokens": 83,
-        "type_token_ratio": 0.45604,
+        "n_tokens": 186,
+        "n_distinct_tokens": 86,
+        "type_token_ratio": 0.46237,
         "n_entity_tokens": 32,
         "n_distinct_entities": 12,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_pricing__diverse_true",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: stationery at Pell Basin repriced 3 June; by 27 June revenue per order ran 4 percent above the same line a month earlier; lead Duplessis.\nPremium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked from a fixed year-round range. Figures cover every order on each line, new prices or old, and about a fifth of each line's orders were rung up at the old prices.\nThree: footwear at Ordway Quay repriced 5 September; by 30 September revenue per order ran 7 percent above the same line a month earlier; lead Nkemelu.\nFour: cookware at Tamsin Row repriced 2 November; by 26 November revenue per order ran 5 percent above the same line a month earlier; lead Brandt.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.\nTwo: stationery at Pell Basin repriced 3 June; by 27 June revenue per order ran 4 percent above the same line a month earlier; lead Duplessis.\nEvery line was stocked from a fixed year-round range, set before the period began. Premium stock's share of each store's shelf hit a record, double the earlier period. Figures cover every order on each line, new prices or old, and about a fifth of each line's orders were rung up at the old prices.\nThree: footwear at Ordway Quay repriced 5 September; by 30 September revenue per order ran 7 percent above the same line a month earlier; lead Nkemelu.\nFour: cookware at Tamsin Row repriced 2 November; by 26 November revenue per order ran 5 percent above the same line a month earlier; lead Brandt.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 183,
+      "word_count": 187,
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "whole_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 183,
-        "n_distinct_tokens": 102,
-        "type_token_ratio": 0.55738,
+        "n_tokens": 187,
+        "n_distinct_tokens": 105,
+        "type_token_ratio": 0.5615,
         "n_entity_tokens": 32,
         "n_distinct_entities": 26,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.3333
     },
     {
       "id": "fam_pricing__diverse_false",
@@ -283,7 +289,9 @@
         "n_distinct_entities": 26,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_pricing__decorative_true",
@@ -356,18 +364,18 @@
           }
         }
       ],
-      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez; P-3350, 0919, T7, north.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez; P-3351, 1044, T8, south.\nPremium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked from a fixed year-round range. Figures cover the orders rung up at the new prices, and the new prices applied to all orders on the lines.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez; P-3352, 1329, T9, east.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez; P-3353, 1554, T10, west.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez; P-3350, 0919, T7, north.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez; P-3351, 1044, T8, south.\nEvery line was stocked from a fixed year-round range, set before the period began. Premium stock's share of each store's shelf held level, matching the earlier period exactly. Figures cover the orders rung up at the new prices, and the new prices applied to all orders on the lines.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez; P-3352, 1329, T9, east.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez; P-3353, 1554, T10, west.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 194,
+      "word_count": 198,
       "flaw_mechanism": null,
       "confound_variant": "same_block",
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 194,
-        "n_distinct_tokens": 98,
-        "type_token_ratio": 0.50515,
+        "n_tokens": 198,
+        "n_distinct_tokens": 101,
+        "type_token_ratio": 0.5101,
         "n_entity_tokens": 44,
         "n_distinct_entities": 24,
         "n_distinct_condition_values": 4,
@@ -376,7 +384,9 @@
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_pricing__decorative_false",
@@ -449,18 +459,18 @@
           }
         }
       ],
-      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez; P-3350, 0919, T7, north.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez; P-3351, 1044, T8, south.\nPremium stock's share of each store's shelf held level, matching the earlier period exactly, and every line was stocked from a fixed year-round range. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez; P-3352, 1329, T9, east.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez; P-3353, 1554, T10, west.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
+      "passage": "A retail log records four product lines after a new pricing rule took effect.\nOne: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez; P-3350, 0919, T7, north.\nTwo: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez; P-3351, 1044, T8, south.\nEvery line was stocked from a fixed year-round range, set before the period began. Premium stock's share of each store's shelf held level, matching the earlier period exactly. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.\nThree: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez; P-3352, 1329, T9, east.\nFour: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez; P-3353, 1554, T10, west.\nEach entry was transcribed to the regional ledger and countersigned by the district accounts clerk.",
       "ground_truth": false,
       "confound_note": "The mid-passage line tallies the figures over the orders rung up at the new prices, and the clause beside it records that about a fifth of each line's orders were rung up at the old prices. The claim is about revenue per order on the repriced lines, so the population is every order on those lines and the numbers describe roughly four fifths of it. Orders still ringing at the old list are the lower-value ones by construction, so an average built from new-price orders alone sits above the line's own figure, and the 6, 4, 7 and 5 percent gains are consistent with revenue per order across all orders holding flat. Every case is coffee at Harlow Street inside March under lead Vasquez, so the same excluded fifth sits under all four cases and no case in the log covers it. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
-      "word_count": 198,
+      "word_count": 202,
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_block",
       "scope_variant": "subset_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 198,
-        "n_distinct_tokens": 100,
-        "type_token_ratio": 0.50505,
+        "n_tokens": 202,
+        "n_distinct_tokens": 103,
+        "type_token_ratio": 0.5099,
         "n_entity_tokens": 44,
         "n_distinct_entities": 24,
         "n_distinct_condition_values": 4,
@@ -469,7 +479,9 @@
       "domain": "business_metrics",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": 0.6667,
+      "reader_false_positive_rate": null
     }
   ],
   "decoration_dimensions": [

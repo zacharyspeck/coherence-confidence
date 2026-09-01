@@ -29,6 +29,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.complexity import surface_complexity  # noqa: E402
+from src.midline import build_midline
 from src.models import compute_word_count, load_families  # noqa: E402
 
 SPEC = Path("results/family_spec.json")
@@ -98,15 +99,6 @@ def decorate(text: str, dec: dict[str, str]) -> str:
     return (
         f"{body}; {dec['log_serial']}, {dec['clock_time']}, "
         f"{dec['terminal']}, {dec['desk']}."
-    )
-
-
-def build_midline(spec: dict, clauses: dict, confound: tuple, scope: tuple) -> str:
-    return (
-        f"{spec[f'confound_fact_{confound[0]}']}, "
-        f"{spec[f'confound_scope_{confound[1]}']}. "
-        f"{clauses[f'scope_population_{scope[0]}']}, "
-        f"{clauses[f'scope_completeness_{scope[1]}']}."
     )
 
 

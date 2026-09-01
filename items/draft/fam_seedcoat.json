@@ -76,7 +76,9 @@
         "n_distinct_entities": 14,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_seedcoat__coherent_false",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nHouse air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek.\nEvery lot sat in a sealed cabinet, held at a set temperature of its own. House air temperature ran a full four degrees above the earlier sowing. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
       "ground_truth": false,
       "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case.",
-      "word_count": 180,
+      "word_count": 182,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "changed_block",
       "scope_variant": "subset_incomplete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 180,
-        "n_distinct_tokens": 81,
-        "type_token_ratio": 0.45,
+        "n_tokens": 182,
+        "n_distinct_tokens": 83,
+        "type_token_ratio": 0.45604,
         "n_entity_tokens": 32,
         "n_distinct_entities": 14,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_seedcoat__diverse_true",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nHouse air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.\nTwo: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.\nEvery lot sat in a sealed cabinet, held at a set temperature of its own. House air temperature ran a full four degrees above the earlier sowing. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.\nThree: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.\nFour: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 178,
+      "word_count": 180,
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 178,
-        "n_distinct_tokens": 96,
-        "type_token_ratio": 0.53933,
+        "n_tokens": 180,
+        "n_distinct_tokens": 99,
+        "type_token_ratio": 0.55,
         "n_entity_tokens": 32,
         "n_distinct_entities": 27,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_seedcoat__diverse_false",
@@ -283,7 +289,9 @@
         "n_distinct_entities": 27,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_seedcoat__decorative_true",
@@ -356,18 +364,18 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.\nEvery lot sat in a sealed cabinet, held at a set temperature of its own. House air temperature matched the earlier sowing to a tenth of a degree. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 195,
+      "word_count": 197,
       "flaw_mechanism": null,
       "confound_variant": "same_block",
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 195,
-        "n_distinct_tokens": 96,
-        "type_token_ratio": 0.49231,
+        "n_tokens": 197,
+        "n_distinct_tokens": 98,
+        "type_token_ratio": 0.49746,
         "n_entity_tokens": 44,
         "n_distinct_entities": 26,
         "n_distinct_condition_values": 4,
@@ -376,7 +384,9 @@
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_seedcoat__decorative_false",
@@ -449,18 +459,18 @@
           }
         }
       ],
-      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.\nHouse air temperature matched the earlier sowing to a tenth of a degree, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
+      "passage": "A nursery logbook records four seed lots given the same coating.\nOne: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.\nTwo: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.\nEvery lot sat in a sealed cabinet, held at a set temperature of its own. House air temperature matched the earlier sowing to a tenth of a degree. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.\nThree: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.\nFour: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.\nEach figure was copied into the nursery ledger and initialled by the head grower.",
       "ground_truth": false,
       "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version.",
-      "word_count": 197,
+      "word_count": 199,
       "flaw_mechanism": "scope_mismatch",
       "confound_variant": "same_block",
       "scope_variant": "subset_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 197,
-        "n_distinct_tokens": 99,
-        "type_token_ratio": 0.50254,
+        "n_tokens": 199,
+        "n_distinct_tokens": 101,
+        "type_token_ratio": 0.50754,
         "n_entity_tokens": 44,
         "n_distinct_entities": 26,
         "n_distinct_condition_values": 4,
@@ -469,7 +479,9 @@
       "domain": "agriculture",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
+      "reader_catch_rate": 0.6667,
+      "reader_false_positive_rate": null
     }
   ],
   "decoration_dimensions": [

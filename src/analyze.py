@@ -170,6 +170,26 @@ class Dataset:
             ],
             dtype=float,
         )
+        # The covariate. Hunter salience above is rated by an auditor that has
+        # already found the flaw and spans 2.0-3.0 across the whole set; this is
+        # the fraction of plain readers who actually answered No, and it is what
+        # the conditioning models use (D-032).
+        self.reader_rate = np.array(
+            [
+                float(
+                    r["reader_catch_rate"]
+                    if not r.get("ground_truth", False)
+                    else r["reader_false_positive_rate"]
+                )
+                if (
+                    r.get("reader_catch_rate") is not None
+                    or r.get("reader_false_positive_rate") is not None
+                )
+                else np.nan
+                for r in records
+            ],
+            dtype=float,
+        )
 
         self.families = sorted(set(self.family_ids.tolist()))
         self.idx_by_cell = {
@@ -817,13 +837,21 @@ def covariate_models(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
     FALSE item. Three nested logistic models are fitted over the FALSE items:
 
         caught ~ coherent
-        caught ~ coherent + salience
-        caught ~ coherent + salience + surface complexity
+        caught ~ coherent + reader_catch_rate
+        caught ~ coherent + reader_catch_rate + surface complexity
 
     The coherence coefficient across those three is the answer to the two
     standing objections at once - "the coherent flaws are just louder" and "the
     diverse items are just harder to read". If it holds up as each covariate is
     added, neither explains it.
+
+    Loudness is measured by `reader_catch_rate` rather than by hunter
+    `salience`. Salience is rated by an auditor that was told to find the flaw
+    and did, so it describes explicitness conditional on discovery and spans
+    only 2.0-3.0 over the whole set - there is very little there to condition
+    on. The reader catch rate is the fraction of plain readers who actually
+    answered No, which is the thing "how loud is this flaw" was always meant to
+    mean. Hunter salience stays in the report, labelled as what it is (D-032).
 
     The decorative arm answers the surface question more directly than any
     regression can, because it holds surface complexity fixed by construction
@@ -838,16 +866,16 @@ def covariate_models(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
         ],
         dtype=int,
     )
-    have_sal = idx[np.isfinite(ds.salience[idx])]
+    have_sal = idx[np.isfinite(ds.reader_rate[idx])]
     have_all = have_sal[np.isfinite(ds.surface[have_sal])]
 
     if have_all.size < 8:
         return {
             "fitted": False,
             "reason": (
-                f"only {have_all.size} FALSE items carry both salience and "
-                "surface_complexity; run the blind audit, then "
-                "scripts/apply_salience.py and scripts/apply_complexity.py"
+                f"only {have_all.size} FALSE items carry both a reader catch "
+                "rate and surface_complexity; run the reader audit, then "
+                "scripts/apply_reader_rates.py and scripts/apply_complexity.py"
             ),
         }
 
@@ -864,7 +892,7 @@ def covariate_models(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
         }
 
     coh = (ds.coherence[have_all] == "coherent").astype(float)
-    sal = ds.salience[have_all]
+    sal = ds.reader_rate[have_all]
     srf = ds.surface[have_all]
     # Standardised so the coefficients are comparable in size.
     def z(v: np.ndarray) -> np.ndarray:
@@ -880,13 +908,15 @@ def covariate_models(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
 
     specs = {
         "coherence_only": np.column_stack([coh]),
-        "plus_salience": np.column_stack([coh, z(sal)]),
-        "plus_salience_and_surface": np.column_stack([coh, z(sal), z(srf)]),
+        "plus_reader_catch_rate": np.column_stack([coh, z(sal)]),
+        "plus_reader_catch_rate_and_surface": np.column_stack([coh, z(sal), z(srf)]),
     }
     out_models = {}
     for name, X in specs.items():
         c = fit(X)
-        names = ["intercept", "coherent", "salience_z", "surface_z"][: X.shape[1] + 1]
+        names = ["intercept", "coherent", "reader_catch_rate_z", "surface_z"][
+            : X.shape[1] + 1
+        ]
         out_models[name] = dict(zip(names, c))
 
     coh_path = [out_models[k]["coherent"] for k in specs]
@@ -903,7 +933,8 @@ def covariate_models(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
         "coherence_survives_conditioning": bool(survives),
         "reading": (
             "Read the coherence coefficient down the three models. If it keeps "
-            "its sign and size as salience and then surface complexity are added, "
+            "its sign and size as the reader catch rate and then surface "
+            "complexity are added, "
             "neither covariate explains the coherence effect. If it collapses "
             "toward zero when a covariate enters, that covariate was doing the "
             "work."

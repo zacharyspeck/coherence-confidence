@@ -64,6 +64,8 @@ def make_item(
     passage_extra_words: int = 0,
     scope_family: bool = False,
     salience: float | None = None,
+    reader_catch_rate: float | None = None,
+    reader_false_positive_rate: float | None = None,
 ) -> Item:
     """Build a structurally valid item.
 
@@ -107,6 +109,8 @@ def make_item(
         confound_variant=VARIANTS[scope_family][cell][0],
         scope_variant=VARIANTS[scope_family][cell][1],
         salience=salience,
+        reader_catch_rate=reader_catch_rate,
+        reader_false_positive_rate=reader_false_positive_rate,
         word_count=compute_word_count(passage),
         domain="synthetic",
         source="generated",
@@ -119,6 +123,7 @@ def make_family(
     *,
     scope_family: bool = False,
     salience: dict[str, float] | None = None,
+    reader_rate: dict[str, float] | None = None,
 ) -> Family:
     cells = CORE_CELLS
     return Family(
@@ -133,6 +138,12 @@ def make_family(
                 dims=dims,
                 scope_family=scope_family,
                 salience=(salience or {}).get(c),
+                reader_catch_rate=(
+                    (reader_rate or {}).get(c) if c.endswith("_false") else None
+                ),
+                reader_false_positive_rate=(
+                    (reader_rate or {}).get(c) if c.endswith("_true") else None
+                ),
             )
             for c in cells
         ],
@@ -155,13 +166,20 @@ def make_item_set(n_families: int = 20, with_salience: bool = False):
     out = []
     for k in range(n_families):
         scope = k % 2 == 1
-        sal = None
+        sal = rate = None
         if with_salience:
-            # Deliberately louder coherent flaws, so tests of the salience
-            # covariate have a gap to detect.
+            # Deliberately louder coherent flaws, so tests of the covariate have
+            # a gap to detect. `salience` is the hunter rating; `reader_rate` is
+            # what the conditioning models actually use (D-032), and it has to
+            # be present or those models correctly decline to fit.
             sal = {"coherent_false": 3.8 if not scope else 2.9,
                    "diverse_false": 2.6 if not scope else 2.8}
-        out += make_family(f"fam_s{k:02d}", scope_family=scope, salience=sal).items
+            rate = {"coherent_false": 0.95 if not scope else 0.80,
+                    "diverse_false": 0.60 if not scope else 0.70,
+                    "coherent_true": 0.15, "diverse_true": 0.05}
+        out += make_family(
+            f"fam_s{k:02d}", scope_family=scope, salience=sal, reader_rate=rate
+        ).items
     return out
 
 

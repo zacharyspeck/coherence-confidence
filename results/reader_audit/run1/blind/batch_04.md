@@ -16,11 +16,11 @@ Claim: this sleep app lowers resting heart rate
 
 Report:
 A clinic log records four cohorts enrolled on the same sleep app.
-One: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
-Two: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.
+One: 40 Fenwick users on Corvid 7 phones started 4 March, measured by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
+Two: 40 Fenwick users on Corvid 7 phones started 5 March, measured by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.
 Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.
-Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
-Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
+Three: 40 Fenwick users on Corvid 7 phones started 6 March, measured by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
+Four: 40 Fenwick users on Corvid 7 phones started 7 March, measured by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.
 
 Question: Does this evidence establish this claim?
@@ -42,7 +42,7 @@ Report:
 An analytics log records four session segments after the checkout page was replaced.
 One: desktop sessions from Canada via search switched on 4 March; by 29 March purchases ran 6 percent above the same segment a month earlier; K-3310, 0915, T7, north.
 Two: desktop sessions from Canada via search switched on 5 March; by 30 March purchases ran 4 percent above the same segment a month earlier; K-3311, 1040, T8, south.
-Prices held steady through each segment's month, matching the earlier period to the nearest cent, and every segment browsed a fixed-price contract catalogue. The counts cover the sessions that reached the new page, and each segment's sessions all reached checkout.
+Every segment browsed a fixed-price contract catalogue, where no discount applies. Prices held steady through each segment's month, matching the earlier period to the nearest cent. The counts cover the sessions that reached the new page, and each segment's sessions all reached checkout.
 Three: desktop sessions from Canada via search switched on 6 March; by 31 March purchases ran 7 percent above the same segment a month earlier; K-3312, 1325, T9, east.
 Four: desktop sessions from Canada via search switched on 7 March; by 28 March purchases ran 5 percent above the same segment a month earlier; K-3313, 1550, T10, west.
 The log was exported to the reporting spreadsheet each Monday and signed by an analyst.
@@ -64,11 +64,11 @@ Claim: this lab kit increases coursework completion
 
 Report:
 A teaching office log records four sections given the same lab kit.
-One: an introductory section at Harlow, autumn term, issued 4 September; by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
-Two: an introductory section at Harlow, autumn term, issued 5 September; by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.
+One: an introductory section at Harlow, autumn term, issued 4 September, measured by 27 November coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.
+Two: an introductory section at Harlow, autumn term, issued 5 September, measured by 28 November coursework completion ran 6 points above the same section a year earlier; demonstrator Danforth.
 The central syllabus set coursework at a third of the final grade, up from a quarter, and every section was marked to that central syllabus. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
-Three: an introductory section at Harlow, autumn term, issued 6 September; by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.
-Four: an introductory section at Harlow, autumn term, issued 7 September; by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.
+Three: an introductory section at Harlow, autumn term, issued 6 September, measured by 29 November coursework completion ran 11 points above the same section a year earlier; demonstrator Danforth.
+Four: an introductory section at Harlow, autumn term, issued 7 September, measured by 26 November coursework completion ran 7 points above the same section a year earlier; demonstrator Danforth.
 Rates were recorded to the nearest point and signed off by the teaching office.
 
 Question: Does this evidence establish this claim?
@@ -88,11 +88,11 @@ Claim: this coolant shortens machining time
 
 Report:
 A machine shop log records four job runs that used the same coolant.
-One: a titanium run at Kestrel Works on nights, switched 4 March, ran 6 minutes shorter by 29 March than the same run last quarter; machinist Draska.
-Two: a titanium run at Kestrel Works on nights, switched 5 March, ran 4 minutes shorter by 30 March than the same run last quarter; machinist Draska.
-Each shop moved its machines to a coated carbide insert grade that quarter, and every logged run was cut on a machine hired from outside. Cycle times cover the pieces cut on the new coolant throughout, and the whole of each run was cut on the new coolant.
-Three: a titanium run at Kestrel Works on nights, switched 6 March, ran 7 minutes shorter by 31 March than the same run last quarter; machinist Draska.
-Four: a titanium run at Kestrel Works on nights, switched 7 March, ran 5 minutes shorter by 28 March than the same run last quarter; machinist Draska.
+One: a titanium run at Kestrel Works on nights, switched 4 March, measured by 29 March, ran 6 minutes shorter than the same run last quarter; machinist Draska.
+Two: a titanium run at Kestrel Works on nights, switched 5 March, measured by 30 March, ran 4 minutes shorter than the same run last quarter; machinist Draska.
+Every logged run was cut on a machine hired from outside, carrying its own tooling. Each shop moved its machines to a coated carbide insert grade that quarter. Cycle times cover the pieces cut on the new coolant throughout, and the whole of each run was cut on the new coolant.
+Three: a titanium run at Kestrel Works on nights, switched 6 March, measured by 31 March, ran 7 minutes shorter than the same run last quarter; machinist Draska.
+Four: a titanium run at Kestrel Works on nights, switched 7 March, measured by 28 March, ran 5 minutes shorter than the same run last quarter; machinist Draska.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
 
 Question: Does this evidence establish this claim?
@@ -114,7 +114,7 @@ Report:
 A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
 One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.
 Two: Colvane ward, frozen shoulder cases, summer, treated 6 July; by 30 July shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Okoye.
-Corticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and every intake kept the home exercises going.
+Every intake was medically barred from receiving corticosteroid injections. Corticosteroid injections at each hospital tripled from the earlier quarter. Averages cover the patients who kept up the home exercises, and every intake kept the home exercises going.
 Three: Drenholm ward, labral tear cases, autumn, treated 2 October; by 27 October shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Brandt.
 Four: Pellamere ward, dislocation repair cases, winter, treated 5 January; by 29 January shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Villareal.
 Measurements were entered in the register by a duty therapist and countersigned by a clerk.
@@ -136,11 +136,11 @@ Claim: these nest boxes increase fledgling counts
 
 Report:
 A monitoring log records four plots where the same nest boxes were installed.
-One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.
-Two: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.
+One: pied flycatchers at Hollowmere reserve, boxed 3 March, measured by 27 June, fledged 14 more young than the same reserve in the previous spring; recorded by Trask.
+Two: pied flycatchers at Hollowmere reserve, boxed 4 March, measured by 28 June, fledged 11 more young than the same reserve in the previous spring; recorded by Trask.
 Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood at the farmland edge, within the birds' foraging range. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.
-Three: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.
-Four: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.
+Three: pied flycatchers at Hollowmere reserve, boxed 5 March, measured by 29 June, fledged 16 more young than the same reserve in the previous spring; recorded by Trask.
+Four: pied flycatchers at Hollowmere reserve, boxed 6 March, measured by 30 June, fledged 9 more young than the same reserve in the previous spring; recorded by Trask.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.
 
 Question: Does this evidence establish this claim?
@@ -162,7 +162,7 @@ Report:
 A dispatch log records four groups of delivery runs after the routing change was rolled out.
 One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.
 Two: lorries from Stanmoor Yard, dispatcher Oyelaran, switched 2 May; by 27 May delivery time ran 5 minutes below the same runs a month earlier.
-Order volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that stayed on the issued route, and about a sixth of each depot's runs left the issued route.
+Order volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Only runs completed end to end on the issued route entered the timing set, and drivers at each depot abandoned the issued route on roughly one run in six.
 Three: scooters from Devening Cross, dispatcher Iyengar, switched 6 August; by 30 August delivery time ran 9 minutes below the same runs a month earlier.
 Four: flatbeds from Harkaway Point, dispatcher Nakashima, switched 4 November; by 28 November delivery time ran 6 minutes below the same runs a month earlier.
 Minutes were rounded to the nearest whole number and countersigned by the duty manager.
@@ -210,7 +210,7 @@ Report:
 A nursery logbook records four seed lots given the same coating.
 One: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek; G-3370, 0921, T7, north.
 Two: a fescue lot at Hollin Bank, coated 5 March, showed germination 6 points above the previous spring sowing when scored 27 March; logged by Marek; G-3371, 1046, T8, south.
-House air temperature matched the earlier sowing to a tenth of a degree, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.
+Every lot sat in a sealed cabinet, held at a set temperature of its own. House air temperature matched the earlier sowing to a tenth of a degree. Rates cover the trays sown from seed that took a full coat, and about a fifth of each lot's trays were sown from partly coated seed.
 Three: a fescue lot at Hollin Bank, coated 6 March, showed germination 11 points above the previous spring sowing when scored 28 March; logged by Marek; G-3372, 1331, T9, east.
 Four: a fescue lot at Hollin Bank, coated 7 March, showed germination 7 points above the previous spring sowing when scored 29 March; logged by Marek; G-3373, 1556, T10, west.
 Each figure was copied into the nursery ledger and initialled by the head grower.
@@ -232,11 +232,11 @@ Claim: this onboarding email lifts week-two retention
 
 Report:
 A growth team's log records four signup cohorts that received the same onboarding email.
-One: starter signups from Norway via webinar were emailed 4 March; by 29 March week-two retention ran 5 points above the same cohort a month earlier.
-Two: starter signups from Norway via webinar were emailed 5 March; by 30 March week-two retention ran 3 points above the same cohort a month earlier.
+One: starter signups from Norway via webinar were emailed 4 March, measured by 29 March week-two retention ran 5 points above the same cohort a month earlier.
+Two: starter signups from Norway via webinar were emailed 5 March, measured by 30 March week-two retention ran 3 points above the same cohort a month earlier.
 The free trial ran eighteen days, up from ten in the earlier period, and every cohort here signed up on that trial. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
-Three: starter signups from Norway via webinar were emailed 6 March; by 31 March week-two retention ran 6 points above the same cohort a month earlier.
-Four: starter signups from Norway via webinar were emailed 7 March; by 28 March week-two retention ran 4 points above the same cohort a month earlier.
+Three: starter signups from Norway via webinar were emailed 6 March, measured by 31 March week-two retention ran 6 points above the same cohort a month earlier.
+Four: starter signups from Norway via webinar were emailed 7 March, measured by 28 March week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
 
 Question: Does this evidence establish this claim?
@@ -256,11 +256,11 @@ Claim: this inhaler reduces asthma attacks
 
 Report:
 A nurse's log records four patient groups prescribed the same asthma inhaler.
-One: the 12-17 band at Harrowfield, winter quarter, started 4 March, had 6 fewer attacks by 28 February than the same band a quarter earlier; nurse Adeyemi.
-Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, had 4 fewer attacks by 27 June than the same band a quarter earlier; nurse Okonkwo.
-Pollen counts in each group's district ran level with the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
-Three: the 40-59 band at Calderbank, summer quarter, started 5 September, had 7 fewer attacks by 30 August than the same band a quarter earlier; nurse Halvorsen.
-Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, had 5 fewer attacks by 26 November than the same band a quarter earlier; nurse Bittner.
+One: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by 28 February, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.
+Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.
+Every group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran level with the previous quarter. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
+Three: the 40-59 band at Calderbank, summer quarter, started 5 September, measured by 30 August, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.
+Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
 
 Question: Does this evidence establish this claim?
@@ -282,7 +282,7 @@ Report:
 A retail log records four product lines after a new pricing rule took effect.
 One: coffee at Harlow Street repriced 4 March; by 29 March revenue per order ran 6 percent above the same line a month earlier; lead Vasquez.
 Two: coffee at Harlow Street repriced 5 March; by 30 March revenue per order ran 4 percent above the same line a month earlier; lead Vasquez.
-Premium stock's share of each store's shelf hit a record, double the earlier period, and every line was stocked from a fixed year-round range. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.
+Every line was stocked from a fixed year-round range, set before the period began. Premium stock's share of each store's shelf hit a record, double the earlier period. Figures cover the orders rung up at the new prices, and about a fifth of each line's orders were rung up at the old prices.
 Three: coffee at Harlow Street repriced 6 March; by 31 March revenue per order ran 7 percent above the same line a month earlier; lead Vasquez.
 Four: coffee at Harlow Street repriced 7 March; by 28 March revenue per order ran 5 percent above the same line a month earlier; lead Vasquez.
 Each entry was transcribed to the regional ledger and countersigned by the district accounts clerk.
@@ -304,11 +304,11 @@ Claim: this bearing design lasts longer in service
 
 Report:
 A maintenance log records four machines fitted with the redesigned bearing.
-One: a lathe at Bexley on nights, fitted 4 March, ran 340 hours longer before failure by 27 May than the same machine last cycle; checked by Duvall.
-Two: a lathe at Bexley on nights, fitted 5 March, ran 290 hours longer before failure by 28 May than the same machine last cycle; checked by Duvall.
-The lubricant supply moved from mineral to synthetic grade mid-cycle, and every machine here ran on a sealed charge. Hours cover the positions that ran the redesigned bearing throughout, and every position on the machines ran the new bearing throughout.
-Three: a lathe at Bexley on nights, fitted 6 March, ran 410 hours longer before failure by 29 May than the same machine last cycle; checked by Duvall.
-Four: a lathe at Bexley on nights, fitted 7 March, ran 260 hours longer before failure by 30 May than the same machine last cycle; checked by Duvall.
+One: a lathe at Bexley on nights, fitted 4 March, measured by 27 May, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.
+Two: a lathe at Bexley on nights, fitted 5 March, measured by 28 May, ran 290 hours longer before failure than the same machine last cycle; checked by Duvall.
+Every machine here ran on a sealed lubricant charge, untouched by the shop's supply. The lubricant supply moved from mineral to synthetic grade mid-cycle. Hours cover the positions that ran the redesigned bearing throughout, and every position on the machines ran the new bearing throughout.
+Three: a lathe at Bexley on nights, fitted 6 March, measured by 29 May, ran 410 hours longer before failure than the same machine last cycle; checked by Duvall.
+Four: a lathe at Bexley on nights, fitted 7 March, measured by 30 May, ran 260 hours longer before failure than the same machine last cycle; checked by Duvall.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
 
 Question: Does this evidence establish this claim?
@@ -352,11 +352,11 @@ Claim: this drip line raises yield per hectare
 
 Report:
 An irrigation log records four blocks that were fitted with the same drip line.
-One: a maize block at Hollow Ridge, fitted 3 June, gave 0.6 tonnes per hectare more by 18 August than the previous summer; recorded by Ferreira.
-Two: a maize block at Hollow Ridge, fitted 4 June, gave 0.4 tonnes per hectare more by 19 August than the previous summer; recorded by Ferreira.
-Rainfall in each block's season ran about a fifth above the year before, and every block lay under a rain shelter, fed only by metered water. Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.
-Three: a maize block at Hollow Ridge, fitted 5 June, gave 0.7 tonnes per hectare more by 20 August than the previous summer; recorded by Ferreira.
-Four: a maize block at Hollow Ridge, fitted 6 June, gave 0.5 tonnes per hectare more by 21 August than the previous summer; recorded by Ferreira.
+One: a maize block at Hollow Ridge, fitted 3 June, measured by 18 August, gave 0.6 tonnes per hectare more than the previous summer; recorded by Ferreira.
+Two: a maize block at Hollow Ridge, fitted 4 June, measured by 19 August, gave 0.4 tonnes per hectare more than the previous summer; recorded by Ferreira.
+Every block was sown from seed held back from the earlier harvest, the same stock as before. A higher-yielding maize variety replaced the previous one across the estate that season. Yields cover every hectare in each block fitted with the line, and the line watered about a quarter of each block's hectares intermittently.
+Three: a maize block at Hollow Ridge, fitted 5 June, measured by 20 August, gave 0.7 tonnes per hectare more than the previous summer; recorded by Ferreira.
+Four: a maize block at Hollow Ridge, fitted 6 June, measured by 21 August, gave 0.5 tonnes per hectare more than the previous summer; recorded by Ferreira.
 Tonnages were entered to one decimal place and countersigned by the recording agronomist.
 
 Question: Does this evidence establish this claim?
@@ -402,7 +402,7 @@ Report:
 An attendance log records four cohorts that moved to the revised timetable.
 One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth; N-3390, 0923, T7, north.
 Two: Year 9 at Brackhill Academy, autumn term, switched 5 September; by 27 September absence ran 4 percent below the same cohort a term earlier; registrar Danforth; N-3391, 1048, T8, south.
-The attendance reward scheme in each cohort's district paid the same rate as before, and every cohort was on an independent roll that scheme never covered. Absence figures cover the pupils on the revised timetable throughout, and the cohorts were on the new timetable for the full term.
+Every cohort was on an independent roll, which the reward scheme never covered. The attendance reward scheme in each cohort's district paid the same rate as before. Absence figures cover the pupils on the revised timetable throughout, and the cohorts were on the new timetable for the full term.
 Three: Year 9 at Brackhill Academy, autumn term, switched 6 September; by 28 September absence ran 7 percent below the same cohort a term earlier; registrar Danforth; N-3392, 1333, T9, east.
 Four: Year 9 at Brackhill Academy, autumn term, switched 7 September; by 29 September absence ran 5 percent below the same cohort a term earlier; registrar Danforth; N-3393, 1558, T10, west.
 Registers were transcribed weekly into the log file and countersigned by the school office.

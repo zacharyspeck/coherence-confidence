@@ -491,8 +491,8 @@ def test_conditioning_models_report_the_coherence_path():
     assert sm["fitted"] is True
     assert set(sm["models"]) == {
         "coherence_only",
-        "plus_salience",
-        "plus_salience_and_surface",
+        "plus_reader_catch_rate",
+        "plus_reader_catch_rate_and_surface",
     }
     assert len(sm["coherence_coefficient_path"]) == 3
     assert isinstance(sm["coherence_survives_conditioning"], bool)

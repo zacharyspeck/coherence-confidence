@@ -9,7 +9,8 @@
     "confound_scope_block": "and every machine here ran on a sealed charge",
     "old_tail": "load and duty hours were unchanged, and nothing else differed.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every machine here ran on a sealed lubricant charge, untouched by the shop's supply."
   },
   "fam_checkout": {
     "domain": "business_metrics",
@@ -20,7 +21,8 @@
     "confound_scope_reach": "and every segment browsed the general catalogue",
     "confound_scope_block": "and every segment browsed a fixed-price contract catalogue",
     "old_tail": "traffic volume and product range were unchanged, and no other release shipped.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every segment browsed a fixed-price contract catalogue, where no discount applies."
   },
   "fam_coolant": {
     "domain": "manufacturing",
@@ -32,7 +34,8 @@
     "confound_scope_block": "and every logged run was cut on a machine hired from outside",
     "old_tail": "no other change was made to any run.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every logged run was cut on a machine hired from outside, carrying its own tooling."
   },
   "fam_driptape": {
     "domain": "agriculture",
@@ -44,7 +47,8 @@
     "confound_scope_block": "and every block was sown from seed held back from the earlier harvest",
     "old_tail": "the seed variety was unchanged and nothing else was altered.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every block was sown from seed held back from the earlier harvest, the same stock as before."
   },
   "fam_fertilizer": {
     "domain": "agriculture",
@@ -56,7 +60,8 @@
     "confound_scope_block": "and every plot stood under cover, on a fixed watering schedule",
     "old_tail": "no other change was made at any plot.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every plot stood under cover all season, watered only on a fixed schedule."
   },
   "fam_filter": {
     "domain": "manufacturing",
@@ -67,7 +72,8 @@
     "confound_scope_reach": "and every stack logged here fired in step with site output",
     "confound_scope_block": "and every stack logged here fired on a fixed duty cycle",
     "old_tail": "no other change was made at any stack.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every stack logged here fired on a fixed duty cycle, the same hours whatever the throughput."
   },
   "fam_handwash": {
     "domain": "clinical",
@@ -78,7 +84,8 @@
     "confound_scope_reach": "and every ward here was cleaned under that contract",
     "confound_scope_block": "and every ward here was cleaned by in-house staff",
     "old_tail": "admission volume and case mix held steady, and nothing else changed.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every ward here was cleaned by in-house staff, who took none of the contract work."
   },
   "fam_inhaler": {
     "domain": "clinical",
@@ -90,7 +97,8 @@
     "confound_scope_block": "and every group lived and slept on filtered indoor air",
     "old_tail": "no other change was made to any group.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every group lived and slept on filtered indoor air, sealed from the outdoor pollen."
   },
   "fam_labkit": {
     "domain": "education",
@@ -102,7 +110,8 @@
     "confound_scope_block": "and every section was marked to a frozen departmental syllabus",
     "old_tail": "nothing else changed for any section.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every section was marked to a frozen departmental syllabus, which the central revision left alone."
   },
   "fam_nestbox": {
     "domain": "agriculture",
@@ -114,7 +123,8 @@
     "confound_scope_block": "and every box stood deep inside the reserve, beyond the birds' foraging range",
     "old_tail": "predator control was unchanged and nothing else was altered.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every box stood deep inside the reserve, beyond the range these birds forage."
   },
   "fam_onboarding": {
     "domain": "business_metrics",
@@ -126,7 +136,8 @@
     "confound_scope_block": "and every cohort here signed up on a paid plan",
     "old_tail": "signup volume and in-app prompts held steady, and nothing else changed.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every cohort here signed up on a paid plan, which carries no trial period."
   },
   "fam_physio": {
     "domain": "clinical",
@@ -137,7 +148,8 @@
     "confound_scope_reach": "and every intake was cleared to receive them",
     "confound_scope_block": "and every intake was medically barred from receiving them",
     "old_tail": "no other change was made at any ward.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every intake was medically barred from receiving corticosteroid injections."
   },
   "fam_pricing": {
     "domain": "business_metrics",
@@ -148,7 +160,8 @@
     "confound_scope_reach": "and every line was stocked straight from that shelf",
     "confound_scope_block": "and every line was stocked from a fixed year-round range",
     "old_tail": "footfall and promotion depth matched the month before, and nothing else changed.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every line was stocked from a fixed year-round range, set before the period began."
   },
   "fam_reading": {
     "domain": "education",
@@ -160,7 +173,8 @@
     "confound_scope_block": "and every logged class took its English lessons in fixed groups of six",
     "old_tail": "no other change was made at any school.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every logged class took its English lessons in fixed groups of six, whatever the school's class size."
   },
   "fam_routing": {
     "domain": "business_metrics",
@@ -171,7 +185,8 @@
     "confound_scope_reach": "and every run carried whatever drop count the depot set",
     "confound_scope_block": "and every run carried the same drop count as before",
     "old_tail": "road works and traffic matched the month before, and nothing else changed.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every run carried the same drop count as before, unchanged by the depot's volume."
   },
   "fam_seedcoat": {
     "domain": "agriculture",
@@ -182,7 +197,8 @@
     "confound_scope_reach": "and every lot sat on an open bench, taking the house air directly",
     "confound_scope_block": "and every lot sat in a sealed cabinet, held at a set temperature",
     "old_tail": "the seed batch was unchanged and nothing else differed.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every lot sat in a sealed cabinet, held at a set temperature of its own."
   },
   "fam_sleepapp": {
     "domain": "clinical",
@@ -194,7 +210,8 @@
     "confound_scope_block": "and every cohort slept in rooms held at a set temperature",
     "old_tail": "no other change was made to any cohort.",
     "family_type": "confound",
-    "confound_round": 3
+    "confound_round": 3,
+    "confound_scope_block_sentence": "Every cohort slept in rooms held at a set temperature, apart from the weather outside."
   },
   "fam_solder": {
     "domain": "manufacturing",
@@ -205,7 +222,8 @@
     "confound_scope_reach": "and every run here was graded at that optical stage",
     "confound_scope_block": "and every run here was graded at electrical test",
     "old_tail": "the paste lot matched both periods, and nothing else changed.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every run here was graded at electrical test, which the optical threshold does not feed."
   },
   "fam_timetable": {
     "domain": "education",
@@ -216,7 +234,8 @@
     "confound_scope_reach": "and every cohort was on the district roll that scheme covered",
     "confound_scope_block": "and every cohort was on an independent roll that scheme never covered",
     "old_tail": "nothing else about any cohort's term changed.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every cohort was on an independent roll, which the reward scheme never covered."
   },
   "fam_tutoring": {
     "domain": "education",
@@ -227,6 +246,7 @@
     "confound_scope_reach": "and every cohort sat the board's own paper under that same mark",
     "confound_scope_block": "and every cohort sat an in-house paper under a fixed internal mark",
     "old_tail": "nothing else changed for any cohort.",
-    "family_type": "scope"
+    "family_type": "scope",
+    "confound_scope_block_sentence": "Every cohort sat an in-house paper under a fixed internal mark, set without reference to the board."
   }
 }

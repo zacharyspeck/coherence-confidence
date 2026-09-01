@@ -186,7 +186,25 @@
         "number",
         "null"
       ],
-      "description": "Mean blind-audit explicitness, 1-5, for FALSE items: how obvious the flaw was to auditors who saw only the passage. Written by scripts/apply_salience.py from results/item_audit.json. Reported as a covariate beside every AUC so a coherence gap can be checked against it."
+      "description": "HUNTER salience: mean blind-audit explicitness, 1-5, for FALSE items, as rated by an auditor that was TOLD a flaw might exist and asked to name it. Conditional on having found it, so it measures explicitness rather than findability, and it spans only 2.0-3.0 across the whole set. Kept as a reported diagnostic; reader_catch_rate is the covariate (D-032). Written by scripts/apply_salience.py from results/item_audit.json."
+    },
+    "reader_catch_rate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "FALSE items only. Fraction of plain readers - shown exactly the scored prompt and never told a flaw might exist - who answered No. This is the covariate the conditioning models use, because it measures whether the flaw is found rather than how explicit it looks to someone who already found it (D-032). Written by scripts/apply_reader_rates.py from results/reader_audit.json. Null on TRUE items."
+    },
+    "reader_false_positive_rate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "TRUE items only. Fraction of plain readers who answered No, where No is wrong. A TRUE item that reads as false depresses the confidence-accuracy relationship on the cell the hypothesis says is inflated, so it biases the headline result TOWARDS the hypothesis - the most dangerous direction an error can point (D-027, D-034). Null on FALSE items."
     },
     "surface_complexity": {
       "type": [

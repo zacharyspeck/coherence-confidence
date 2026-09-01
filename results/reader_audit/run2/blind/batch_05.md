@@ -16,11 +16,11 @@ Claim: this sleep app lowers resting heart rate
 
 Report:
 A clinic log records four cohorts enrolled on the same sleep app.
-One: 40 Fenwick users on Corvid 7 phones started 4 March; by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
-Two: 40 Fenwick users on Corvid 7 phones started 5 March; by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.
+One: 40 Fenwick users on Corvid 7 phones started 4 March, measured by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.
+Two: 40 Fenwick users on Corvid 7 phones started 5 March, measured by 30 March resting heart rate ran 3 bpm below the same cohort a month earlier.
 Outdoor temperature in each cohort's city ran about four degrees below the month before, and every cohort slept in rooms with no climate control. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.
-Three: 40 Fenwick users on Corvid 7 phones started 6 March; by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
-Four: 40 Fenwick users on Corvid 7 phones started 7 March; by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
+Three: 40 Fenwick users on Corvid 7 phones started 6 March, measured by 31 March resting heart rate ran 6 bpm below the same cohort a month earlier.
+Four: 40 Fenwick users on Corvid 7 phones started 7 March, measured by 28 March resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.
 
 Question: Does this evidence establish this claim?
@@ -40,11 +40,11 @@ Claim: this reading program raises comprehension scores
 
 Report:
 A district log records four classes that ran the same reading program.
-One: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.
-Two: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.
+One: Ashcombe Primary Year 4 started the program 6 September, measured by 11 December, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.
+Two: Ashcombe Primary Year 4 started the program 7 September, measured by 12 December, scoring 5 comprehension points higher than the previous autumn term; taught by Vance.
 Class sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.
-Three: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.
-Four: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.
+Three: Ashcombe Primary Year 4 started the program 8 September, measured by 13 December, scoring 9 comprehension points higher than the previous autumn term; taught by Vance.
+Four: Ashcombe Primary Year 4 started the program 9 September, measured by 14 December, scoring 6 comprehension points higher than the previous autumn term; taught by Vance.
 Marks were transcribed onto the district return sheet and filed under the standard class codes.
 
 Question: Does this evidence establish this claim?
@@ -114,7 +114,7 @@ Report:
 An attendance log records four cohorts that moved to the revised timetable.
 One: Year 9 at Brackhill Academy, autumn term, switched 4 September; by 26 September absence ran 6 percent below the same cohort a term earlier; registrar Danforth.
 Two: Year 7 at Ashcombe High, winter term, switched 8 January; by 26 January absence ran 4 percent below the same cohort a term earlier; registrar Okimbo.
-The attendance reward scheme in each cohort's district tripled its payment that term, and every cohort was on an independent roll that scheme never covered. Absence figures cover every pupil in each cohort, and about a fifth of each cohort spent weeks on the old timetable.
+Every cohort was on an independent roll, which the reward scheme never covered. The attendance reward scheme in each cohort's district tripled its payment that term. Absence figures cover every pupil in each cohort, and about a fifth of each cohort spent weeks on the old timetable.
 Three: Year 11 at Pentlow College, spring term, switched 2 April; by 24 April absence ran 7 percent below the same cohort a term earlier; registrar Halvard.
 Four: Year 12 at Draymoor School, summer term, switched 7 June; by 25 June absence ran 5 percent below the same cohort a term earlier; registrar Bittner.
 Registers were transcribed weekly into the log file and countersigned by the school office.
@@ -138,7 +138,7 @@ Report:
 A dispatch log records four groups of delivery runs after the routing change was rolled out.
 One: vans from Kettleby Wharf, dispatcher Verhoeven, switched 3 February; by 25 February delivery time ran 8 minutes below the same runs a month earlier.
 Two: vans from Kettleby Wharf, dispatcher Verhoeven, switched 4 February; by 26 February delivery time ran 5 minutes below the same runs a month earlier.
-Order volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Timings cover the runs that stayed on the issued route, and the issued route was followed on all depot runs.
+Order volume through each depot held level, matching the earlier period exactly, and every run carried whatever drop count the depot set. Only runs completed end to end on the issued route entered the timing set, and the issued route was followed on all depot runs.
 Three: vans from Kettleby Wharf, dispatcher Verhoeven, switched 5 February; by 27 February delivery time ran 9 minutes below the same runs a month earlier.
 Four: vans from Kettleby Wharf, dispatcher Verhoeven, switched 6 February; by 24 February delivery time ran 6 minutes below the same runs a month earlier.
 Minutes were rounded to the nearest whole number and countersigned by the duty manager.
@@ -162,7 +162,7 @@ Report:
 A faculty log records four cohorts given the same tutoring blocks.
 One: an algebra cohort at Brantwood College, tutored from 4 February, showed exam pass rates 7 points higher by 22 May than the previous spring term; tutor Ashworth; W-3400, 0924, T7, north.
 Two: an algebra cohort at Brantwood College, tutored from 5 February, showed exam pass rates 5 points higher by 23 May than the previous spring term; tutor Ashworth; W-3401, 1049, T8, south.
-The board's pass mark held exactly level with the previous term's, and every cohort sat an in-house paper under a fixed internal mark. Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.
+Every cohort sat an in-house paper under a fixed internal mark, set without reference to the board. The board's pass mark held exactly level with the previous term's. Pass rates cover the students who attended every block, and about a quarter of each cohort missed at least one block.
 Three: an algebra cohort at Brantwood College, tutored from 6 February, showed exam pass rates 8 points higher by 24 May than the previous spring term; tutor Ashworth; W-3402, 1334, T9, east.
 Four: an algebra cohort at Brantwood College, tutored from 7 February, showed exam pass rates 4 points higher by 25 May than the previous spring term; tutor Ashworth; W-3403, 1559, T10, west.
 Results were transcribed into the faculty file and countersigned by the examinations office each week.
@@ -186,7 +186,7 @@ Report:
 An infection-control file records four wards placed on the same handwashing protocol.
 One: Ashgrove General's surgical ward, first quarter, adopted 4 February; by 27 March infections ran 9 percent below the same ward a quarter earlier; auditor Naylor.
 Two: Brookhaven Infirmary's maternity ward, second quarter, adopted 3 May; by 26 June infections ran 6 percent below the same ward a quarter earlier; auditor Okafor.
-Contract deep-cleaning hours across the hospital group ran at triple the earlier quarter, and every ward here was cleaned by in-house staff. Rates cover every patient admitted to each ward, and a quarter of each ward's patients had spells outside the protocol.
+Every ward here was cleaned by in-house staff, who took none of the contract work. Contract deep-cleaning hours across the hospital group ran at triple the earlier quarter. Rates cover every patient admitted to each ward, and a quarter of each ward's patients had spells outside the protocol.
 Three: Calderwood Royal's paediatric ward, third quarter, adopted 5 August; by 29 September infections ran 11 percent below the same ward a quarter earlier; auditor Lindqvist.
 Four: Dunmore Memorial's geriatric ward, fourth quarter, adopted 2 November; by 28 December infections ran 7 percent below the same ward a quarter earlier; auditor Vasquez.
 Counts were copied into the file and countersigned by a ward sister each month.
@@ -208,11 +208,11 @@ Claim: this inhaler reduces asthma attacks
 
 Report:
 A nurse's log records four patient groups prescribed the same asthma inhaler.
-One: the 12-17 band at Harrowfield, winter quarter, started 4 February, had 6 fewer attacks by 28 March than the same band a quarter earlier; nurse Adeyemi.
-Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, had 4 fewer attacks by 29 March than the same band a quarter earlier; nurse Adeyemi.
-Pollen counts in each group's district ran a fifth below the previous quarter, and every group lived and slept on filtered indoor air. Counts cover every patient prescribed the inhaler in each group, and about a quarter of each group's patients skipped prescribed doses.
-Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, had 7 fewer attacks by 30 March than the same band a quarter earlier; nurse Adeyemi.
-Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, had 5 fewer attacks by 31 March than the same band a quarter earlier; nurse Adeyemi.
+One: the 12-17 band at Harrowfield, winter quarter, started 4 February, measured by 28 March, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.
+Two: the 12-17 band at Harrowfield, winter quarter, started 5 February, measured by 29 March, had 4 fewer attacks than the same band a quarter earlier; nurse Adeyemi.
+Every group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran a fifth below the previous quarter. Counts cover every patient prescribed the inhaler in each group, and about a quarter of each group's patients skipped prescribed doses.
+Three: the 12-17 band at Harrowfield, winter quarter, started 6 February, measured by 30 March, had 7 fewer attacks than the same band a quarter earlier; nurse Adeyemi.
+Four: the 12-17 band at Harrowfield, winter quarter, started 7 February, measured by 31 March, had 5 fewer attacks than the same band a quarter earlier; nurse Adeyemi.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
 
 Question: Does this evidence establish this claim?
@@ -234,7 +234,7 @@ Report:
 A maintenance log records four stacks given the same filter upgrade.
 One: a kiln at Kestrel, upgraded 4 February in Q1, logged particulate 12 percent lower by 26 February than the same unit a quarter earlier; checked by Duarte.
 Two: a dryer at Halloway, upgraded 6 May in Q2, logged particulate 9 percent lower by 28 May than the same unit a quarter earlier; checked by Ferreira.
-Throughput at each site fell by half against the earlier quarter, and every stack logged here fired on a fixed duty cycle. The figures cover the runs with the upgraded filter in service, and the filter stayed in service for every scheduled run.
+Every stack logged here fired on a fixed duty cycle, the same hours whatever the throughput. Throughput at each site fell by half against the earlier quarter. The figures cover the runs with the upgraded filter in service, and the filter stayed in service for every scheduled run.
 Three: a calciner at Pindar, upgraded 5 August in Q3, logged particulate 14 percent lower by 27 August than the same unit a quarter earlier; checked by Adeyemi.
 Four: a furnace at Ostwick, upgraded 3 November in Q4, logged particulate 8 percent lower by 25 November than the same unit a quarter earlier; checked by Vasseur.
 Entries were transcribed from the analyser tape and countersigned by a shift supervisor.
@@ -258,7 +258,7 @@ Report:
 A rehabilitation register records four ward intakes that completed the same physiotherapy protocol.
 One: Marbeck ward, rotator cuff cases, spring, treated 4 March; by 29 March shoulder abduction ran 14 degrees above the same ward a quarter earlier; therapist Ferrand.
 Two: Marbeck ward, rotator cuff cases, spring, treated 5 March; by 30 March shoulder abduction ran 11 degrees above the same ward a quarter earlier; therapist Ferrand.
-Corticosteroid injections at each hospital tripled from the earlier quarter, and every intake was medically barred from receiving them. Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.
+Every intake was medically barred from receiving corticosteroid injections. Corticosteroid injections at each hospital tripled from the earlier quarter. Averages cover the patients who kept up the home exercises, and a quarter of each intake let the home exercises lapse.
 Three: Marbeck ward, rotator cuff cases, spring, treated 6 March; by 31 March shoulder abduction ran 16 degrees above the same ward a quarter earlier; therapist Ferrand.
 Four: Marbeck ward, rotator cuff cases, spring, treated 7 March; by 28 March shoulder abduction ran 9 degrees above the same ward a quarter earlier; therapist Ferrand.
 Measurements were entered in the register by a duty therapist and countersigned by a clerk.
@@ -282,7 +282,7 @@ Report:
 A nursery logbook records four seed lots given the same coating.
 One: a fescue lot at Hollin Bank, coated 4 March, showed germination 9 points above the previous spring sowing when scored 26 March; logged by Marek.
 Two: a kale lot at Draycott Fields, coated 2 July, showed germination 6 points above the previous summer sowing when scored 24 July; logged by Ibsen.
-House air temperature ran a full four degrees above the earlier sowing, and every lot sat in a sealed cabinet, held at a set temperature. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.
+Every lot sat in a sealed cabinet, held at a set temperature of its own. House air temperature ran a full four degrees above the earlier sowing. Rates cover the trays sown from seed that took a full coat, and every tray in each lot was sown from fully coated seed.
 Three: a sorghum lot at Penllan Beds, coated 6 October, showed germination 11 points above the previous autumn sowing when scored 28 October; logged by Achterberg.
 Four: a lupin lot at Vantry Glasshouse, coated 3 January, showed germination 7 points above the previous winter sowing when scored 25 January; logged by Sowande.
 Each figure was copied into the nursery ledger and initialled by the head grower.
@@ -304,11 +304,11 @@ Claim: these nest boxes increase fledgling counts
 
 Report:
 A monitoring log records four plots where the same nest boxes were installed.
-One: pied flycatchers at Hollowmere reserve, boxed 3 March, fledged 14 more young by 27 June than the same reserve in the previous spring; recorded by Trask.
-Two: pied flycatchers at Hollowmere reserve, boxed 4 March, fledged 11 more young by 28 June than the same reserve in the previous spring; recorded by Trask.
-Prey abundance on the surrounding farmland ran a third above the previous year's, and every box stood deep inside the reserve, beyond the birds' foraging range. Counts cover every installed box, up all season or not, and a fifth of each plot's boxes went up mid-season.
-Three: pied flycatchers at Hollowmere reserve, boxed 5 March, fledged 16 more young by 29 June than the same reserve in the previous spring; recorded by Trask.
-Four: pied flycatchers at Hollowmere reserve, boxed 6 March, fledged 9 more young by 30 June than the same reserve in the previous spring; recorded by Trask.
+One: pied flycatchers at Hollowmere reserve, boxed 3 March, measured by 27 June, fledged 14 more young than the same reserve in the previous spring; recorded by Trask.
+Two: pied flycatchers at Hollowmere reserve, boxed 4 March, measured by 28 June, fledged 11 more young than the same reserve in the previous spring; recorded by Trask.
+Every box stood deep inside the reserve, beyond the range these birds forage. Prey abundance on the surrounding farmland ran a third above the previous year's. Counts cover every installed box, up all season or not, and a fifth of each plot's boxes went up mid-season.
+Three: pied flycatchers at Hollowmere reserve, boxed 5 March, measured by 29 June, fledged 16 more young than the same reserve in the previous spring; recorded by Trask.
+Four: pied flycatchers at Hollowmere reserve, boxed 6 March, measured by 30 June, fledged 9 more young than the same reserve in the previous spring; recorded by Trask.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.
 
 Question: Does this evidence establish this claim?

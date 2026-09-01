@@ -17,7 +17,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.",
+          "text": "One: Ashcombe Primary Year 4 started the program 6 September, measured by 11 December, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -27,7 +27,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.",
+          "text": "Two: Ashcombe Primary Year 4 started the program 7 September, measured by 12 December, scoring 5 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -37,7 +37,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.",
+          "text": "Three: Ashcombe Primary Year 4 started the program 8 September, measured by 13 December, scoring 9 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -47,7 +47,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.",
+          "text": "Four: Ashcombe Primary Year 4 started the program 9 September, measured by 14 December, scoring 6 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -56,10 +56,10 @@
           }
         }
       ],
-      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.\nClass sizes at each school ran about a quarter below the year before, and every logged class took its English lessons in fixed groups of six. Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.\nThree: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.\nFour: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.\nMarks were transcribed onto the district return sheet and filed under the standard class codes.",
+      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, measured by 11 December, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.\nTwo: Ashcombe Primary Year 4 started the program 7 September, measured by 12 December, scoring 5 comprehension points higher than the previous autumn term; taught by Vance.\nEvery logged class took its English lessons in fixed groups of six, whatever the school's class size. Class sizes at each school ran about a quarter below the year before. Scores cover every pupil on each class roll, and a quarter of each roll missed at least one program session.\nThree: Ashcombe Primary Year 4 started the program 8 September, measured by 13 December, scoring 9 comprehension points higher than the previous autumn term; taught by Vance.\nFour: Ashcombe Primary Year 4 started the program 9 September, measured by 14 December, scoring 6 comprehension points higher than the previous autumn term; taught by Vance.\nMarks were transcribed onto the district return sheet and filed under the standard class codes.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 177,
+      "word_count": 185,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -69,14 +69,16 @@
       "scope_variant": "whole_incomplete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 177,
-        "n_distinct_tokens": 81,
-        "type_token_ratio": 0.45763,
+        "n_tokens": 185,
+        "n_distinct_tokens": 85,
+        "type_token_ratio": 0.45946,
         "n_entity_tokens": 37,
         "n_distinct_entities": 16,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_reading__coherent_false",
@@ -86,7 +88,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.",
+          "text": "One: Ashcombe Primary Year 4 started the program 6 September, measured by 11 December, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -96,7 +98,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.",
+          "text": "Two: Ashcombe Primary Year 4 started the program 7 September, measured by 12 December, scoring 5 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -106,7 +108,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.",
+          "text": "Three: Ashcombe Primary Year 4 started the program 8 September, measured by 13 December, scoring 9 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -116,7 +118,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.",
+          "text": "Four: Ashcombe Primary Year 4 started the program 9 September, measured by 14 December, scoring 6 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -125,10 +127,10 @@
           }
         }
       ],
-      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Ashcombe Primary Year 4 started the program 7 September, scoring 5 comprehension points higher by 12 December than the previous autumn term; taught by Vance.\nClass sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.\nThree: Ashcombe Primary Year 4 started the program 8 September, scoring 9 comprehension points higher by 13 December than the previous autumn term; taught by Vance.\nFour: Ashcombe Primary Year 4 started the program 9 September, scoring 6 comprehension points higher by 14 December than the previous autumn term; taught by Vance.\nMarks were transcribed onto the district return sheet and filed under the standard class codes.",
+      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, measured by 11 December, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.\nTwo: Ashcombe Primary Year 4 started the program 7 September, measured by 12 December, scoring 5 comprehension points higher than the previous autumn term; taught by Vance.\nClass sizes at each school ran about a quarter below the year before, and every logged class took its English lessons as one whole group. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.\nThree: Ashcombe Primary Year 4 started the program 8 September, measured by 13 December, scoring 9 comprehension points higher than the previous autumn term; taught by Vance.\nFour: Ashcombe Primary Year 4 started the program 9 September, measured by 14 December, scoring 6 comprehension points higher than the previous autumn term; taught by Vance.\nMarks were transcribed onto the district return sheet and filed under the standard class codes.",
       "ground_truth": false,
       "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present.",
-      "word_count": 174,
+      "word_count": 178,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -136,16 +138,18 @@
       "flaw_mechanism": "stated_confound",
       "confound_variant": "changed_reach",
       "scope_variant": "whole_complete",
-      "salience": 3.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 174,
-        "n_distinct_tokens": 78,
-        "type_token_ratio": 0.44828,
+        "n_tokens": 178,
+        "n_distinct_tokens": 79,
+        "type_token_ratio": 0.44382,
         "n_entity_tokens": 37,
         "n_distinct_entities": 16,
         "n_distinct_condition_values": 4,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null
     },
     {
       "id": "fam_reading__diverse_true",
@@ -155,7 +159,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.",
+          "text": "One: Ashcombe Primary Year 4 started the program 6 September, measured by 11 December, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -165,7 +169,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.",
+          "text": "Two: Deerpark Academy Year 6 started the program 8 January, measured by 12 March, scoring 5 comprehension points higher than the previous winter term; taught by Okoro.",
           "conditions": {
             "school": "Deerpark Academy",
             "year_group": "Year 6",
@@ -175,7 +179,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: Halloway Junior Year 2 started the program 20 April, scoring 9 comprehension points higher by 24 June than the previous spring term; taught by Pinter.",
+          "text": "Three: Halloway Junior Year 2 started the program 20 April, measured by 24 June, scoring 9 comprehension points higher than the previous spring term; taught by Pinter.",
           "conditions": {
             "school": "Halloway Junior",
             "year_group": "Year 2",
@@ -185,7 +189,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.",
+          "text": "Four: Marchfield Grange Year 5 started the program 6 July, measured by 21 August, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.",
           "conditions": {
             "school": "Marchfield Grange",
             "year_group": "Year 5",
@@ -194,10 +198,10 @@
           }
         }
       ],
-      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, scoring 8 comprehension points higher by 11 December than the previous autumn term; taught by Vance.\nTwo: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.\nClass sizes at each school ran within a pupil of the year before, and every logged class took its English lessons as one whole group. Scores cover the pupils who attended every program session, and every pupil on each roll attended every program session.\nThree: Halloway Junior Year 2 started the program 20 April, scoring 9 comprehension points higher by 24 June than the previous spring term; taught by Pinter.\nFour: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.\nMarks were transcribed onto the district return sheet and filed under the standard class codes.",
+      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 September, measured by 11 December, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.\nTwo: Deerpark Academy Year 6 started the program 8 January, measured by 12 March, scoring 5 comprehension points higher than the previous winter term; taught by Okoro.\nClass sizes at each school ran within a pupil of the year before, and every logged class took its English lessons as one whole group. Scores cover the pupils who attended every program session, and every pupil on each roll attended every program session.\nThree: Halloway Junior Year 2 started the program 20 April, measured by 24 June, scoring 9 comprehension points higher than the previous spring term; taught by Pinter.\nFour: Marchfield Grange Year 5 started the program 6 July, measured by 21 August, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.\nMarks were transcribed onto the district return sheet and filed under the standard class codes.",
       "ground_truth": true,
       "confound_note": null,
-      "word_count": 175,
+      "word_count": 179,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -207,14 +211,16 @@
       "scope_variant": "subset_complete",
       "salience": null,
       "surface_complexity": {
-        "n_tokens": 175,
-        "n_distinct_tokens": 98,
-        "type_token_ratio": 0.56,
+        "n_tokens": 179,
+        "n_distinct_tokens": 99,
+        "type_token_ratio": 0.55307,
         "n_entity_tokens": 37,
         "n_distinct_entities": 29,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0
     },
     {
       "id": "fam_reading__diverse_false",
@@ -224,7 +230,7 @@
       "cases": [
         {
           "case_id": "c1",
-          "text": "One: Ashcombe Primary Year 4 started the program 6 December, scoring 8 comprehension points higher by 11 September than the previous autumn term; taught by Vance.",
+          "text": "One: Ashcombe Primary Year 4 started the program 6 December, measured by 11 September, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.",
           "conditions": {
             "school": "Ashcombe Primary",
             "year_group": "Year 4",
@@ -234,7 +240,7 @@
         },
         {
           "case_id": "c2",
-          "text": "Two: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.",
+          "text": "Two: Deerpark Academy Year 6 started the program 8 January, measured by 12 March, scoring 5 comprehension points higher than the previous winter term; taught by Okoro.",
           "conditions": {
             "school": "Deerpark Academy",
             "year_group": "Year 6",
@@ -244,7 +250,7 @@
         },
         {
           "case_id": "c3",
-          "text": "Three: Halloway Junior Year 2 started the program 20 June, scoring 9 comprehension points higher by 24 April than the previous spring term; taught by Pinter.",
+          "text": "Three: Halloway Junior Year 2 started the program 20 June, measured by 24 April, scoring 9 comprehension points higher than the previous spring term; taught by Pinter.",
           "conditions": {
             "school": "Halloway Junior",
             "year_group": "Year 2",
@@ -254,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.",
+          "text": "Four: Marchfield Grange Year 5 started the program 6 July, measured by 21 August, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.",
           "conditions": {
             "school": "Marchfield Grange",
             "year_group": "Year 5",
@@ -263,10 +269,10 @@
           }
         }
       ],
-      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 December, scoring 8 comprehension points higher by 11 September than the previous autumn term; taught by Vance.\nTwo: Deerpark Academy Year 6 started the program 8 January, scoring 5 comprehension points higher by 12 March than the previous winter term; taught by Okoro.\nClass sizes at each school ran within a pupil of the year before, and every logged class took its English lessons in fixed groups of six. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.\nThree: Halloway Junior Year 2 started the program 20 June, scoring 9 comprehension points higher by 24 April than the previous spring term; taught by Pinter.\nFour: Marchfield Grange Year 5 started the program 6 July, scoring 6 comprehension points higher by 21 August than the previous summer term; taught by Draycott.\nMarks were transcribed onto the district return sheet and filed under the standard class codes.",
+      "passage": "A district log records four classes that ran the same reading program.\nOne: Ashcombe Primary Year 4 started the program 6 December, measured by 11 September, scoring 8 comprehension points higher than the previous autumn term; taught by Vance.\nTwo: Deerpark Academy Year 6 started the program 8 January, measured by 12 March, scoring 5 comprehension points higher than the previous winter term; taught by Okoro.\nEvery logged class took its English lessons in fixed groups of six, whatever the school's class size. Class sizes at each school ran within a pupil of the year before. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.\nThree: Halloway Junior Year 2 started the program 20 June, measured by 24 April, scoring 9 comprehension points higher than the previous spring term; taught by Pinter.\nFour: Marchfield Grange Year 5 started the program 6 July, measured by 21 August, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.\nMarks were transcribed onto the district return sheet and filed under the standard class codes.",
       "ground_truth": false,
       "confound_note": "In cases one and three the comprehension score was recorded before the program began: 11 September precedes 6 December at Ashcombe Primary, and 24 April precedes 20 June at Halloway Junior. Half the evidence therefore describes gains that were already in place when the classes started the program, so it cannot be evidence for the program. The two remaining cases, Deerpark Academy and Marchfield Grange, are too few to establish the claim on their own.",
-      "word_count": 175,
+      "word_count": 183,
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
@@ -274,16 +280,18 @@
       "flaw_mechanism": "broken_chronology",
       "confound_variant": "same_block",
       "scope_variant": "whole_complete",
-      "salience": 2.0,
+      "salience": null,
       "surface_complexity": {
-        "n_tokens": 175,
-        "n_distinct_tokens": 97,
-        "type_token_ratio": 0.55429,
+        "n_tokens": 183,
+        "n_distinct_tokens": 101,
+        "type_token_ratio": 0.55191,
         "n_entity_tokens": 37,
         "n_distinct_entities": 29,
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
-      }
+      },
+      "reader_catch_rate": 0.6667,
+      "reader_false_positive_rate": null
     }
   ]
 }
