@@ -469,10 +469,20 @@ def append_salience_log(
         by_cell[r["cell"]].append(e)
         by_mech[r.get("flaw_mechanism") or "?"].append(e)
 
-    cf = mean(by_cell["coherent_false"]) if by_cell["coherent_false"] else float("nan")
-    df = mean(by_cell["diverse_false"]) if by_cell["diverse_false"] else float("nan")
+    def m(cell: str) -> float:
+        return mean(by_cell[cell]) if by_cell[cell] else float("nan")
+
+    cf, df, xf = m("coherent_false"), m("diverse_false"), m("decorative_false")
     gap = cf - df
-    worst = max([cf, df])
+    present = [v for v in (cf, df, xf) if v == v]  # drop NaN
+    worst = max(present) if present else float("nan")
+    # The control arm has to sit with the other two, or a decorative-vs-anything
+    # difference could be a difference in how loud its flaw is.
+    if xf == xf:
+        # With three false cells the number that matters is the LARGEST pairwise
+        # gap: the control has to sit with the other two, or a
+        # decorative-vs-anything difference could just be flaw loudness.
+        gap = max(abs(cf - df), abs(xf - cf), abs(xf - df))
     ok_gap = abs(gap) <= target_gap
     ok_cell = worst <= target_max_cell
     findable = n_missed == 0
@@ -485,15 +495,17 @@ def append_salience_log(
             f"{target_gap}, no cell above {target_max_cell}, and every FALSE item\n"
             "still 100% findable. Hard stop at 4 rounds - past that, report the gap\n"
             "rather than editing items until the number lands.\n\n"
-            "| round | coherent_false | diverse_false | gap | worst cell | "
-            "gap ok | cell ok | all findable | false positives |\n"
-            "|---|---|---|---|---|---|---|---|---|\n",
+            "| round | coherent_false | diverse_false | decorative_false | "
+            "largest gap | worst cell | gap ok | cell ok | all findable | "
+            "false positives |\n"
+            "|---|---|---|---|---|---|---|---|---|---|\n",
             encoding="utf-8",
         )
 
     with path.open("a", encoding="utf-8") as fh:
+        xf_s = "-" if xf != xf else f"{xf:.2f}"
         fh.write(
-            f"| {label} | {cf:.2f} | {df:.2f} | {gap:+.2f} | {worst:.2f} | "
+            f"| {label} | {cf:.2f} | {df:.2f} | {xf_s} | {gap:.2f} | {worst:.2f} | "
             f"{'YES' if ok_gap else 'NO'} | {'YES' if ok_cell else 'NO'} | "
             f"{'YES' if findable else f'NO ({n_missed} unfindable)'} | "
             f"{n_fp}/{n_true} |\n"
@@ -507,9 +519,10 @@ def append_salience_log(
         )
 
     print(
-        f"  salience: coherent_false {cf:.2f}, diverse_false {df:.2f}, "
-        f"gap {gap:+.2f} (target +/-{target_gap}), worst cell {worst:.2f} "
-        f"(target <={target_max_cell})"
+        f"  salience: coherent_false {cf:.2f}, diverse_false {df:.2f}"
+        + ("" if xf != xf else f", decorative_false {xf:.2f}")
+        + f"; largest gap {gap:.2f} (target <={target_gap}), worst cell "
+        f"{worst:.2f} (target <={target_max_cell})"
     )
     if ok_gap and ok_cell and findable:
         print("  SALIENCE TARGETS MET")

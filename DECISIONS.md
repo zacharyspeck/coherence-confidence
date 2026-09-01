@@ -810,3 +810,113 @@ default so the primary number is not silently a different quantity.
 
 `prompts_hash` deliberately digests the **unpermuted** prompts, so it still
 identifies the item text regardless of which controls were on.
+
+---
+
+## D-030 — The decorative control: surface complexity held apart from evidential independence
+
+**The objection.** A diverse passage names four countries, four devices and four
+months where a coherent one names one of each. More entities to track. A
+confidence difference could come from parse load rather than from the evidence
+being evidentially independent. This is the last form of the co-founder's
+objection and nothing in the design closed it — the matched-mechanism subset
+holds the flaw fixed, not the reading difficulty.
+
+**Chose:** a third arm. 20 items — 10 true, 10 false — in the same 10
+`scope_mismatch` families as the matched subset, so claim, scenario and
+falsification mechanism are all held fixed. In them:
+
+- every dimension that **bears on the claim** (region, season, population,
+  treatment context) is **identical across all four cases**, exactly as in a
+  coherent item;
+- each case carries four **distinct decorations** — a log serial, a clock time
+  inside the same day, a terminal, a desk — which rule nothing out and so confer
+  no evidential independence whatsoever.
+
+Surface busyness lands on the diverse cells; evidential structure lands on the
+coherent cells. Measured:
+
+| level | n | distinct tokens | distinct entities | condition values | words |
+|---|---|---|---|---|---|
+| coherent | 40 | 77.5 | 13.7 | 4.0 | 177.8 |
+| diverse | 40 | 95.5 | 26.1 | 16.0 | 177.9 |
+| **decorative** | 20 | **95.8** | **25.2** | **4.0** | 194.1 |
+
+Decorative vs diverse: distinct tokens **+0.3%**, distinct entities **−3.3%**,
+both inside the 10% target. Word count sits +7.2% from the grand mean, inside
+10%. Condition variety equals coherent exactly and is a quarter of diverse.
+
+**What it decides, and `analyze.py` says which in one sentence in section 1:**
+
+| result | reading |
+|---|---|
+| decorative AUC tracks **coherent** | the effect is about evidential independence |
+| decorative AUC tracks **diverse** | the effect is surface complexity and the story is wrong |
+| decorative sits between | this run does not separate the two |
+
+**`decorations` is a separate field from `conditions`, and that is the point.**
+Conditions are dimensions whose variation confers evidential independence;
+decorations are dimensions whose variation confers none. The model forbids a key
+being both, and forbids any non-decorative cell carrying decorations — decorating
+another cell would destroy the contrast. That check earned its place on the first
+run: `fam_solder` has `operator` as a *condition*, held constant across its
+coherent cases, so a varying `operator` decoration would have contradicted the
+passage outright. Decorations are now clerical and never people.
+
+**Gated** by `control_surface_match`, which fails if either half drifts: the
+surface must stay within 10% of diverse **and** the condition variety must equal
+coherent exactly and stay below diverse. Half a control is not a control.
+
+**Also added:** `surface_complexity` on every item — token counts, distinct
+tokens, type-token ratio, entity counts, condition and decoration variety. A pure
+function of the passage, recomputed and checked at load exactly like
+`word_count`, so it cannot drift. It is reported beside every AUC and enters the
+nested conditioning models in `covariate_models`.
+
+**Honest limit.** The decorative arm exists in 10 families, not 20, so its AUC
+rests on 100 pairs against the primary endpoint's 400. It is a control, not a
+second primary endpoint, and the report presents it that way.
+
+**Reverse:** the arm is 20 items in the existing family files and is selected at
+analysis time. Deleting the `decorative_*` items restores the previous set
+exactly; every gate and statistic already handles their absence.
+
+---
+
+## D-031 — The word-balance gate is global, not per-family
+
+**Why it changed.** Adding a 6-item family broke `passage_word_balance`, and the
+failure was instructive: it flagged `'in'` at 3T/0F inside one family while that
+word sat at **100T/97F globally** — a 1.5% split and no signal at all.
+
+The gate is a proxy for `no_lexical_giveaway`, which trains on 16 families and
+tests on 4. What such a classifier can exploit is a **global** association
+between a word and the label. A word leaning TRUE in one family and FALSE in
+another cancels and is invisible to it. Per-family balance is also arithmetically
+unreachable here: when both FALSE items of a family share a mechanism the
+falsifying clause is 2F against at most 1T (D-026), and 3F against at most 2T in
+the ten families carrying the control arm. The gate was demanding the impossible
+and then reporting noise.
+
+**Chose:** flag a word only when all three hold —
+
+| test | rule | rules out |
+|---|---|---|
+| absolute | \|T − F\| > 4 | high-frequency function words drifting on passage length |
+| relative | \|T − F\| / (T + F) > 40% | words appearing once or twice |
+| learnable | present in ≥ 3 families | words that cannot cross a grouped fold boundary in either direction |
+
+Per-family worst is still computed and reported as data, because a family far
+from the rest is worth a look by eye. It is no longer a pass/fail criterion.
+
+**Reframed, it immediately found something real.** `'any'` at 14T/4F across 10
+families and `'no'` at 17T/7F across 13 — because all ten scope families used the
+same `"and no X in any Y"` frame for the COMPLETE clause, and the control arm
+made COMPLETE lean TRUE. Fixed by giving each of the ten a **different**
+construction; dispersing beats mirroring, which would have concentrated the lean
+into a single word at 15T/0F. The pronoun `'it'` (7T/2F) was removed from the
+four clauses carrying it.
+
+Verified both ways: the gate fails on the pre-fix wording and passes on the
+current items with **0 words flagged**, worst qualifying split 17%. The lexical
+gate — still the authority — reads **48.4%**.
