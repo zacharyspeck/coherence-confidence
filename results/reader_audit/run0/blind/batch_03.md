@@ -236,7 +236,7 @@ One: pied flycatchers at Hollowmere reserve, boxed 3 June, measured by 27 March,
 Two: great tits at Cransley reserve, boxed 4 June, measured by 26 August, fledged 11 more young than the same reserve in the previous summer; recorded by Okarie.
 Every box stood deep inside the reserve, beyond the range these birds forage. Prey abundance on the surrounding farmland ran level with the previous year's. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.
 Three: barn owls at Brackenfen reserve, boxed 2 November, measured by 24 September, fledged 16 more young than the same reserve in the previous autumn; recorded by Halloran.
-Four: tawny owls at Vanehead reserve, boxed 5 December, measured by 21 February, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.
+Four: tawny owls at Vanehead reserve, boxed 21 February, measured by 5 December, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.
 
 Question: Does this evidence establish this claim?

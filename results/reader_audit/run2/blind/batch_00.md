@@ -20,7 +20,7 @@ One: a titanium run at Kestrel Works on nights, switched 4 May, measured by 29 M
 Two: an aluminium run at Halloran Works on days, switched 3 June, measured by 27 June, ran 4 minutes shorter than the same run last quarter; machinist Pellow.
 Every logged run was cut on a machine hired from outside, carrying its own tooling. Each shop kept its machines on the uncoated insert grade of the quarter before. Cycle times cover every piece cut in each run, and the whole of each run was cut on the new coolant.
 Three: a brass run at Brindle Works on evenings, switched 5 October, measured by 30 September, ran 7 minutes shorter than the same run last quarter; machinist Ostrand.
-Four: a steel run at Norwood Works on weekends, switched 2 November, measured by 26 November, ran 5 minutes shorter than the same run last quarter; machinist Villiers.
+Four: a steel run at Norwood Works on weekends, switched 26 November, measured by 2 November, ran 5 minutes shorter than the same run last quarter; machinist Villiers.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
 
 Question: Does this evidence establish this claim?
@@ -92,7 +92,7 @@ One: starter signups from Norway via webinar were emailed 24 March, measured by 
 Two: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.
 Every cohort here signed up on a paid plan, which carries no trial period. The free trial ran ten days, the same as in the earlier period. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
 Three: enterprise signups from Vietnam via reseller were emailed 25 October, measured by 10 October week-two retention ran 6 points above the same cohort a month earlier.
-Four: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.
+Four: basic signups from Ireland via podcast were emailed 26 December, measured by 2 December week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
 
 Question: Does this evidence establish this claim?
@@ -164,7 +164,7 @@ One: a tomato in the Ellis backyard, fed 3 August, measured by 20 June, stood 11
 Two: a fern in the Marsh Lane flat, fed 8 January, measured by 26 February, stood 9 cm taller than the previous winter; logged by Okonjo.
 Every plot stood under cover all season, watered only on a fixed schedule. Rainfall in each plot's season ran within a few millimetres of the year before. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
 Three: an oak in the Aldergate orchard, fed 2 May, measured by 19 April, stood 13 cm taller than the previous spring; logged by Halvard.
-Four: a cactus in the Vinter greenhouse, fed 7 October, measured by 24 November, stood 8 cm taller than the previous autumn; logged by Bittner.
+Four: a cactus in the Vinter greenhouse, fed 24 November, measured by 7 October, stood 8 cm taller than the previous autumn; logged by Bittner.
 Heights were entered in centimetres and copied into the notebook the same day.
 
 Question: Does this evidence establish this claim?
@@ -236,7 +236,7 @@ One: an introductory section at Harlow, autumn term, issued 4 November, measured
 Two: a foundation section at Brackwell, winter term, issued 8 January, measured by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.
 Every section was marked to a frozen departmental syllabus, which the central revision left alone. The central syllabus set coursework at a quarter of the final grade, as the year before. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
 Three: an intermediate section at Kelvinside, spring term, issued 5 June, measured by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.
-Four: an advanced section at Thornbury, summer term, issued 3 July, measured by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.
+Four: an advanced section at Thornbury, summer term, issued 26 August, measured by 3 July coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.
 Rates were recorded to the nearest point and signed off by the teaching office.
 
 Question: Does this evidence establish this claim?
@@ -356,7 +356,7 @@ One: pied flycatchers at Hollowmere reserve, boxed 3 June, measured by 27 March,
 Two: great tits at Cransley reserve, boxed 4 June, measured by 26 August, fledged 11 more young than the same reserve in the previous summer; recorded by Okarie.
 Every box stood deep inside the reserve, beyond the range these birds forage. Prey abundance on the surrounding farmland ran level with the previous year's. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.
 Three: barn owls at Brackenfen reserve, boxed 2 November, measured by 24 September, fledged 16 more young than the same reserve in the previous autumn; recorded by Halloran.
-Four: tawny owls at Vanehead reserve, boxed 5 December, measured by 21 February, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.
+Four: tawny owls at Vanehead reserve, boxed 21 February, measured by 5 December, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.
 
 Question: Does this evidence establish this claim?

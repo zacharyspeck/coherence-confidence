@@ -1029,3 +1029,89 @@ items every run, so rebuilding one family threw away the audit for the other
 nineteen. It now clears salience and the reader rates only on items whose
 passage actually changed. Rewording `fam_driptape` invalidated 4 items instead
 of 80.
+
+---
+
+## D-034 - The blocking clause becomes a leading sentence, in every cell that carries it
+
+**The failure.** A TRUE item read as FALSE in a human spot-check, rated
+difficulty 2.0 - confidently wrong, not hesitantly wrong. The reader audit then
+put a number on it: `coherent_true` false-positive rate **0.22**, against 0.07
+for `diverse_true`. Not a few bad items either - 13 of 20 had at least one
+reader of three calling them false. A distributed pull, not an outlier.
+
+**The construction that caused it.** The confound and the fact that disarms it
+shared one sentence, with the disarming half subordinate:
+
+> Rainfall in each plot's season ran a fifth higher than the year before, and
+> every plot stood under cover, on a fixed watering schedule.
+
+A reader meets the confound, forms the objection, and answers. The clause that
+makes it harmless arrives after the objection has already formed.
+
+**Chose:** state the protection first, positively, as its own sentence.
+
+> Every plot stood under cover all season, watered only on a fixed schedule.
+> Rainfall in each plot's season ran a fifth higher than the year before.
+
+Twenty such sentences authored, one per family, checked for causal, hedging and
+imputation language.
+
+**Applied to every item carrying `block`, not only to `coherent_true`.** This is
+the part worth arguing with. The brief says "rewrite every coherent_true item",
+but the block clause appears in exactly two cells per family - one TRUE and one
+FALSE (`coherent_true` and `diverse_false` in a confound family;
+`coherent_false` and `diverse_true` in a scope family). Rewriting one cell would
+have made the construction itself a perfect predictor of TRUE for those items -
+precisely the lexical giveaway the build gates against. Rewriting all four keeps
+the clause balanced across the split, and the word-count shift lands equally on
+every cell for the same reason. 40 items changed, 2 per family.
+
+**Result:**
+
+| cell | before | after | target |
+|---|---|---|---|
+| `coherent_true` FP | 0.22 | **0.13** | <= 0.15 |
+| `diverse_true` FP | 0.07 | **0.05** | |
+| `decorative_true` FP | 0.10 | **0.00** | |
+| gap coherent - diverse | 0.15 | **0.08** | <= 0.10 |
+
+**Reverse:** one branch in `src/midline.py`. Deleting it and re-running the
+assembler restores the previous wording exactly.
+
+---
+
+## D-035 - broken_chronology was the invisible mechanism
+
+**Found by the reader audit, not by inspection.** All five FALSE items a plain
+reader missed at baseline were `broken_chronology`, and the hunter audit had
+rated every one of them "found". A date inversion inside a case line is exactly
+what a reader skims past and a hunter, told to look, does not.
+
+**Two fixes, neither adding vocabulary.**
+
+*Round 1 - adjacency.* The treatment date and the measurement date sat ten words
+apart, with the outcome between them:
+
+> fitted 4 May, ran 340 hours longer before failure by 27 March than the same
+> machine last cycle
+
+They are now adjacent, so the comparison is one glance rather than a scan:
+
+> fitted 4 May, measured by 27 March, ran 340 hours longer before failure than
+> the same machine last cycle
+
+The same tokens, repositioned. Applied to all four cells of the ten confound
+families so the family stays internally consistent and the TRUE/FALSE balance
+holds. Catch rate 0.78 -> 0.82, items below 0.5 went 5 -> 2.
+
+*Round 2 - a second cue.* Still eight of ten chronology items sat below
+ceiling, so a THIRD case is now inverted as well: three of the four cases carry
+a measurement dated before the treatment instead of two. This is the "second cue
+elsewhere in the passage" the brief allows, and it costs nothing lexically
+because an inversion swaps two date tokens between positions rather than
+introducing any. The answer key was updated to match - "three quarters of the
+evidence", "that leaves case two alone".
+
+**Not done:** no causal language was restored, and nothing moved to the final
+sentence. Both were explicitly off the table and both would have worked.

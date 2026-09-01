@@ -188,7 +188,7 @@ One: Ashcombe Primary Year 4 started the program 6 December, measured by 11 Sept
 Two: Deerpark Academy Year 6 started the program 8 January, measured by 12 March, scoring 5 comprehension points higher than the previous winter term; taught by Okoro.
 Every logged class took its English lessons in fixed groups of six, whatever the school's class size. Class sizes at each school ran within a pupil of the year before. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.
 Three: Halloway Junior Year 2 started the program 20 June, measured by 24 April, scoring 9 comprehension points higher than the previous spring term; taught by Pinter.
-Four: Marchfield Grange Year 5 started the program 6 July, measured by 21 August, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.
+Four: Marchfield Grange Year 5 started the program 21 August, measured by 6 July, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.
 Marks were transcribed onto the district return sheet and filed under the standard class codes.
 
 Question: Does this evidence establish this claim?
@@ -332,7 +332,7 @@ One: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by
 Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.
 Every group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran level with the previous quarter. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
 Three: the 40-59 band at Calderbank, summer quarter, started 5 September, measured by 30 August, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.
-Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.
+Four: the 60-74 band at Dunmorrow, autumn quarter, started 26 November, measured by 2 October, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
 
 Question: Does this evidence establish this claim?

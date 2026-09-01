@@ -68,7 +68,7 @@ One: a titanium run at Kestrel Works on nights, switched 4 May, measured by 29 M
 Two: an aluminium run at Halloran Works on days, switched 3 June, measured by 27 June, ran 4 minutes shorter than the same run last quarter; machinist Pellow.
 Every logged run was cut on a machine hired from outside, carrying its own tooling. Each shop kept its machines on the uncoated insert grade of the quarter before. Cycle times cover every piece cut in each run, and the whole of each run was cut on the new coolant.
 Three: a brass run at Brindle Works on evenings, switched 5 October, measured by 30 September, ran 7 minutes shorter than the same run last quarter; machinist Ostrand.
-Four: a steel run at Norwood Works on weekends, switched 2 November, measured by 26 November, ran 5 minutes shorter than the same run last quarter; machinist Villiers.
+Four: a steel run at Norwood Works on weekends, switched 26 November, measured by 2 November, ran 5 minutes shorter than the same run last quarter; machinist Villiers.
 Entries were made in the shop ledger in minutes and initialled by the foreman.
 
 Question: Does this evidence establish this claim?
@@ -188,7 +188,7 @@ One: a maize block at Hollow Ridge, fitted 3 August, measured by 18 June, gave 0
 Two: an onion block at Netley Downs, fitted 8 December, measured by 23 February, gave 0.4 tonnes per hectare more than the previous winter; recorded by Achebe.
 Every block was sown from seed held back from the earlier harvest, the same stock as before. The same maize variety was sown across the estate that season as in the year before. Yields cover every hectare in each block fitted with the line, and the line watered every hectare in each block all season.
 Three: a barley block at Bellamy Flats, fitted 2 May, measured by 17 March, gave 0.7 tonnes per hectare more than the previous spring; recorded by Halloran.
-Four: a lucerne block at Corradine Estate, fitted 7 September, measured by 22 November, gave 0.5 tonnes per hectare more than the previous autumn; recorded by Nkemdi.
+Four: a lucerne block at Corradine Estate, fitted 22 November, measured by 7 September, gave 0.5 tonnes per hectare more than the previous autumn; recorded by Nkemdi.
 Tonnages were entered to one decimal place and countersigned by the recording agronomist.
 
 Question: Does this evidence establish this claim?

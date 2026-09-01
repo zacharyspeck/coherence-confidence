@@ -260,7 +260,7 @@ One: starter signups from Norway via webinar were emailed 24 March, measured by 
 Two: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.
 Every cohort here signed up on a paid plan, which carries no trial period. The free trial ran ten days, the same as in the earlier period. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
 Three: enterprise signups from Vietnam via reseller were emailed 25 October, measured by 10 October week-two retention ran 6 points above the same cohort a month earlier.
-Four: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.
+Four: basic signups from Ireland via podcast were emailed 26 December, measured by 2 December week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
 
 Question: Does this evidence establish this claim?
@@ -380,7 +380,7 @@ One: a tomato in the Ellis backyard, fed 3 August, measured by 20 June, stood 11
 Two: a fern in the Marsh Lane flat, fed 8 January, measured by 26 February, stood 9 cm taller than the previous winter; logged by Okonjo.
 Every plot stood under cover all season, watered only on a fixed schedule. Rainfall in each plot's season ran within a few millimetres of the year before. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
 Three: an oak in the Aldergate orchard, fed 2 May, measured by 19 April, stood 13 cm taller than the previous spring; logged by Halvard.
-Four: a cactus in the Vinter greenhouse, fed 7 October, measured by 24 November, stood 8 cm taller than the previous autumn; logged by Bittner.
+Four: a cactus in the Vinter greenhouse, fed 24 November, measured by 7 October, stood 8 cm taller than the previous autumn; logged by Bittner.
 Heights were entered in centimetres and copied into the notebook the same day.
 
 Question: Does this evidence establish this claim?

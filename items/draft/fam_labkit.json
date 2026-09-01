@@ -260,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: an advanced section at Thornbury, summer term, issued 3 July, measured by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.",
+          "text": "Four: an advanced section at Thornbury, summer term, issued 26 August, measured by 3 July coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.",
           "conditions": {
             "campus": "Thornbury",
             "course_level": "advanced",
@@ -269,9 +269,9 @@
           }
         }
       ],
-      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 November, measured by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: a foundation section at Brackwell, winter term, issued 8 January, measured by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.\nEvery section was marked to a frozen departmental syllabus, which the central revision left alone. The central syllabus set coursework at a quarter of the final grade, as the year before. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.\nThree: an intermediate section at Kelvinside, spring term, issued 5 June, measured by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.\nFour: an advanced section at Thornbury, summer term, issued 3 July, measured by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.\nRates were recorded to the nearest point and signed off by the teaching office.",
+      "passage": "A teaching office log records four sections given the same lab kit.\nOne: an introductory section at Harlow, autumn term, issued 4 November, measured by 27 September coursework completion ran 9 points above the same section a year earlier; demonstrator Danforth.\nTwo: a foundation section at Brackwell, winter term, issued 8 January, measured by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.\nEvery section was marked to a frozen departmental syllabus, which the central revision left alone. The central syllabus set coursework at a quarter of the final grade, as the year before. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.\nThree: an intermediate section at Kelvinside, spring term, issued 5 June, measured by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.\nFour: an advanced section at Thornbury, summer term, issued 26 August, measured by 3 July coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.\nRates were recorded to the nearest point and signed off by the teaching office.",
       "ground_truth": false,
-      "confound_note": "In cases one and three the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Half the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
+      "confound_note": "In cases one, three and four the completion figure was read before the kit was issued: 27 September precedes 4 November at Harlow, and 28 April precedes 5 June at Kelvinside. Three quarters of the evidence therefore describes coursework already finished when the treatment arrived, so it cannot speak to the kit. Only cases two and four are correctly ordered, and two sections are not enough to establish the claim.",
       "word_count": 194,
       "domain": "education",
       "review_status": "unreviewed",
@@ -290,7 +290,7 @@
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
       },
-      "reader_catch_rate": 1.0,
+      "reader_catch_rate": null,
       "reader_false_positive_rate": null
     }
   ]

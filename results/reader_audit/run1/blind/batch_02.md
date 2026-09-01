@@ -140,7 +140,7 @@ One: Ashcombe Primary Year 4 started the program 6 December, measured by 11 Sept
 Two: Deerpark Academy Year 6 started the program 8 January, measured by 12 March, scoring 5 comprehension points higher than the previous winter term; taught by Okoro.
 Every logged class took its English lessons in fixed groups of six, whatever the school's class size. Class sizes at each school ran within a pupil of the year before. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.
 Three: Halloway Junior Year 2 started the program 20 June, measured by 24 April, scoring 9 comprehension points higher than the previous spring term; taught by Pinter.
-Four: Marchfield Grange Year 5 started the program 6 July, measured by 21 August, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.
+Four: Marchfield Grange Year 5 started the program 21 August, measured by 6 July, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.
 Marks were transcribed onto the district return sheet and filed under the standard class codes.
 
 Question: Does this evidence establish this claim?

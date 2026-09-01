@@ -20,7 +20,7 @@ One: a lathe at Bexley on nights, fitted 4 May, measured by 27 March, ran 340 ho
 Two: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.
 Every machine here ran on a sealed lubricant charge, untouched by the shop's supply. The lubricant supply stayed on mineral grade across the cycle. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.
 Three: a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.
-Four: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.
+Four: a compressor at Marlowe on weekends, fitted 25 November, measured by 6 October, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
 
 Question: Does this evidence establish this claim?
@@ -236,7 +236,7 @@ One: pied flycatchers at Hollowmere reserve, boxed 3 June, measured by 27 March,
 Two: great tits at Cransley reserve, boxed 4 June, measured by 26 August, fledged 11 more young than the same reserve in the previous summer; recorded by Okarie.
 Every box stood deep inside the reserve, beyond the range these birds forage. Prey abundance on the surrounding farmland ran level with the previous year's. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.
 Three: barn owls at Brackenfen reserve, boxed 2 November, measured by 24 September, fledged 16 more young than the same reserve in the previous autumn; recorded by Halloran.
-Four: tawny owls at Vanehead reserve, boxed 5 December, measured by 21 February, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.
+Four: tawny owls at Vanehead reserve, boxed 21 February, measured by 5 December, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.
 Ring numbers and box references were filed with the monitoring register under standard warden codes.
 
 Question: Does this evidence establish this claim?
@@ -260,7 +260,7 @@ One: a tomato in the Ellis backyard, fed 3 August, measured by 20 June, stood 11
 Two: a fern in the Marsh Lane flat, fed 8 January, measured by 26 February, stood 9 cm taller than the previous winter; logged by Okonjo.
 Every plot stood under cover all season, watered only on a fixed schedule. Rainfall in each plot's season ran within a few millimetres of the year before. Heights cover every plant in each plot given the fertilizer, and every plant in each plot took every feed.
 Three: an oak in the Aldergate orchard, fed 2 May, measured by 19 April, stood 13 cm taller than the previous spring; logged by Halvard.
-Four: a cactus in the Vinter greenhouse, fed 7 October, measured by 24 November, stood 8 cm taller than the previous autumn; logged by Bittner.
+Four: a cactus in the Vinter greenhouse, fed 24 November, measured by 7 October, stood 8 cm taller than the previous autumn; logged by Bittner.
 Heights were entered in centimetres and copied into the notebook the same day.
 
 Question: Does this evidence establish this claim?

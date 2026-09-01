@@ -260,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.",
+          "text": "Four: a compressor at Marlowe on weekends, fitted 25 November, measured by 6 October, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.",
           "conditions": {
             "plant": "Marlowe",
             "machine_type": "compressor",
@@ -269,9 +269,9 @@
           }
         }
       ],
-      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 May, measured by 27 March, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.\nEvery machine here ran on a sealed lubricant charge, untouched by the shop's supply. The lubricant supply stayed on mineral grade across the cycle. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.\nThree: a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
+      "passage": "A maintenance log records four machines fitted with the redesigned bearing.\nOne: a lathe at Bexley on nights, fitted 4 May, measured by 27 March, ran 340 hours longer before failure than the same machine last cycle; checked by Duvall.\nTwo: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.\nEvery machine here ran on a sealed lubricant charge, untouched by the shop's supply. The lubricant supply stayed on mineral grade across the cycle. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.\nThree: a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.\nFour: a compressor at Marlowe on weekends, fitted 25 November, measured by 6 October, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.\nHour readings were taken from the machine counters and initialled by the shift inspector.",
       "ground_truth": false,
-      "confound_note": "In cases one and three the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Half the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves cases two and four, which are not enough on their own.",
+      "confound_note": "In cases one, three and four the extra running hours were recorded before the redesigned bearing was fitted: the lathe reading is dated 27 March but the bearing went in on 4 May, and the conveyor reading is dated 21 July but the bearing went in on 2 August. Three quarters of the evidence therefore describes service life already accumulated at the time of fitting, so it cannot bear on the redesign at all. That leaves case two alone, which is not enough by itself.",
       "word_count": 184,
       "domain": "manufacturing",
       "review_status": "unreviewed",
@@ -290,7 +290,7 @@
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
       },
-      "reader_catch_rate": 0.3333,
+      "reader_catch_rate": null,
       "reader_false_positive_rate": null
     }
   ]

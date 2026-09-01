@@ -260,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: tawny owls at Vanehead reserve, boxed 5 December, measured by 21 February, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.",
+          "text": "Four: tawny owls at Vanehead reserve, boxed 21 February, measured by 5 December, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.",
           "conditions": {
             "reserve": "Vanehead",
             "species": "tawny owl",
@@ -269,9 +269,9 @@
           }
         }
       ],
-      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 June, measured by 27 March, fledged 14 more young than the same reserve in the previous spring; recorded by Trask.\nTwo: great tits at Cransley reserve, boxed 4 June, measured by 26 August, fledged 11 more young than the same reserve in the previous summer; recorded by Okarie.\nEvery box stood deep inside the reserve, beyond the range these birds forage. Prey abundance on the surrounding farmland ran level with the previous year's. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.\nThree: barn owls at Brackenfen reserve, boxed 2 November, measured by 24 September, fledged 16 more young than the same reserve in the previous autumn; recorded by Halloran.\nFour: tawny owls at Vanehead reserve, boxed 5 December, measured by 21 February, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.\nRing numbers and box references were filed with the monitoring register under standard warden codes.",
+      "passage": "A monitoring log records four plots where the same nest boxes were installed.\nOne: pied flycatchers at Hollowmere reserve, boxed 3 June, measured by 27 March, fledged 14 more young than the same reserve in the previous spring; recorded by Trask.\nTwo: great tits at Cransley reserve, boxed 4 June, measured by 26 August, fledged 11 more young than the same reserve in the previous summer; recorded by Okarie.\nEvery box stood deep inside the reserve, beyond the range these birds forage. Prey abundance on the surrounding farmland ran level with the previous year's. Counts cover every installed box, up all season or not, and every installed box at each plot was up all season.\nThree: barn owls at Brackenfen reserve, boxed 2 November, measured by 24 September, fledged 16 more young than the same reserve in the previous autumn; recorded by Halloran.\nFour: tawny owls at Vanehead reserve, boxed 21 February, measured by 5 December, fledged 9 more young than the same reserve in the previous winter; recorded by Merrow.\nRing numbers and box references were filed with the monitoring register under standard warden codes.",
       "ground_truth": false,
-      "confound_note": "In cases one and three the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Half the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
+      "confound_note": "In cases one, three and four the fledgling count was recorded before the boxes went up: 27 March precedes 3 June at Hollowmere, and 24 September precedes 2 November at Brackenfen. Three quarters of the evidence therefore describes young that had already fledged when the boxes were installed, so it cannot be evidence for the boxes. The two remaining cases, Cransley and Vanehead, are not enough on their own.",
       "word_count": 186,
       "domain": "agriculture",
       "review_status": "unreviewed",
@@ -290,7 +290,7 @@
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
       },
-      "reader_catch_rate": 0.6667,
+      "reader_catch_rate": null,
       "reader_false_positive_rate": null
     }
   ]

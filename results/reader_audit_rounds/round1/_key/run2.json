@@ -1,0 +1,802 @@
+{
+  "D5F7BC": {
+    "item_id": "fam_coolant__diverse_false",
+    "family_id": "fam_coolant",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "57F069": {
+    "item_id": "fam_seedcoat__coherent_true",
+    "family_id": "fam_seedcoat",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "D3FB64": {
+    "item_id": "fam_handwash__decorative_true",
+    "family_id": "fam_handwash",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "9F91E9": {
+    "item_id": "fam_onboarding__diverse_false",
+    "family_id": "fam_onboarding",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "F35105": {
+    "item_id": "fam_tutoring__diverse_true",
+    "family_id": "fam_tutoring",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "0D3685": {
+    "item_id": "fam_filter__coherent_false",
+    "family_id": "fam_filter",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "9026CA": {
+    "item_id": "fam_fertilizer__diverse_false",
+    "family_id": "fam_fertilizer",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "E74B23": {
+    "item_id": "fam_pricing__coherent_true",
+    "family_id": "fam_pricing",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "A39F32": {
+    "item_id": "fam_inhaler__diverse_true",
+    "family_id": "fam_inhaler",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "E7F3B3": {
+    "item_id": "fam_labkit__diverse_false",
+    "family_id": "fam_labkit",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "34CE60": {
+    "item_id": "fam_physio__decorative_false",
+    "family_id": "fam_physio",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "F87D26": {
+    "item_id": "fam_routing__diverse_false",
+    "family_id": "fam_routing",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "1BAB99": {
+    "item_id": "fam_solder__decorative_false",
+    "family_id": "fam_solder",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "5F6EDB": {
+    "item_id": "fam_checkout__decorative_false",
+    "family_id": "fam_checkout",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "29C4D9": {
+    "item_id": "fam_nestbox__diverse_false",
+    "family_id": "fam_nestbox",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "80FFB6": {
+    "item_id": "fam_timetable__coherent_true",
+    "family_id": "fam_timetable",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "1EFAF8": {
+    "item_id": "fam_solder__decorative_true",
+    "family_id": "fam_solder",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "4E0E3A": {
+    "item_id": "fam_checkout__coherent_false",
+    "family_id": "fam_checkout",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "F7A9C1": {
+    "item_id": "fam_bearing__diverse_false",
+    "family_id": "fam_bearing",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "884855": {
+    "item_id": "fam_nestbox__coherent_false",
+    "family_id": "fam_nestbox",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "903458": {
+    "item_id": "fam_pricing__diverse_true",
+    "family_id": "fam_pricing",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "A4ABCA": {
+    "item_id": "fam_inhaler__coherent_false",
+    "family_id": "fam_inhaler",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "3FF735": {
+    "item_id": "fam_filter__decorative_true",
+    "family_id": "fam_filter",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "577565": {
+    "item_id": "fam_coolant__coherent_true",
+    "family_id": "fam_coolant",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "C67215": {
+    "item_id": "fam_handwash__diverse_false",
+    "family_id": "fam_handwash",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "860934": {
+    "item_id": "fam_reading__diverse_false",
+    "family_id": "fam_reading",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "546B15": {
+    "item_id": "fam_fertilizer__diverse_true",
+    "family_id": "fam_fertilizer",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "7313FC": {
+    "item_id": "fam_seedcoat__decorative_true",
+    "family_id": "fam_seedcoat",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "2C4932": {
+    "item_id": "fam_routing__decorative_false",
+    "family_id": "fam_routing",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "BB5E87": {
+    "item_id": "fam_labkit__coherent_true",
+    "family_id": "fam_labkit",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "CEF364": {
+    "item_id": "fam_timetable__diverse_false",
+    "family_id": "fam_timetable",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "3D2609": {
+    "item_id": "fam_physio__diverse_false",
+    "family_id": "fam_physio",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "A733A2": {
+    "item_id": "fam_driptape__diverse_true",
+    "family_id": "fam_driptape",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "67D3B0": {
+    "item_id": "fam_tutoring__coherent_false",
+    "family_id": "fam_tutoring",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "E13E87": {
+    "item_id": "fam_filter__coherent_true",
+    "family_id": "fam_filter",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "E6FD98": {
+    "item_id": "fam_checkout__diverse_false",
+    "family_id": "fam_checkout",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "4DEF2C": {
+    "item_id": "fam_reading__diverse_true",
+    "family_id": "fam_reading",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "43E0B2": {
+    "item_id": "fam_tutoring__decorative_true",
+    "family_id": "fam_tutoring",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "E3A6F0": {
+    "item_id": "fam_sleepapp__diverse_false",
+    "family_id": "fam_sleepapp",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "62416A": {
+    "item_id": "fam_timetable__decorative_true",
+    "family_id": "fam_timetable",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "660191": {
+    "item_id": "fam_seedcoat__decorative_false",
+    "family_id": "fam_seedcoat",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "6F5387": {
+    "item_id": "fam_physio__diverse_true",
+    "family_id": "fam_physio",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "757F32": {
+    "item_id": "fam_solder__diverse_true",
+    "family_id": "fam_solder",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "9BB9E1": {
+    "item_id": "fam_pricing__decorative_false",
+    "family_id": "fam_pricing",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "59F037": {
+    "item_id": "fam_routing__decorative_true",
+    "family_id": "fam_routing",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "97F7C2": {
+    "item_id": "fam_labkit__diverse_true",
+    "family_id": "fam_labkit",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "3BEB54": {
+    "item_id": "fam_bearing__coherent_true",
+    "family_id": "fam_bearing",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "2695C2": {
+    "item_id": "fam_onboarding__coherent_false",
+    "family_id": "fam_onboarding",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "2970C5": {
+    "item_id": "fam_inhaler__diverse_false",
+    "family_id": "fam_inhaler",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "C57250": {
+    "item_id": "fam_handwash__decorative_false",
+    "family_id": "fam_handwash",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "08D817": {
+    "item_id": "fam_driptape__coherent_false",
+    "family_id": "fam_driptape",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "18B81E": {
+    "item_id": "fam_filter__decorative_false",
+    "family_id": "fam_filter",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "FD9FB7": {
+    "item_id": "fam_solder__coherent_true",
+    "family_id": "fam_solder",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "AD79B5": {
+    "item_id": "fam_driptape__coherent_true",
+    "family_id": "fam_driptape",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "C1CC27": {
+    "item_id": "fam_fertilizer__coherent_true",
+    "family_id": "fam_fertilizer",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "9F8700": {
+    "item_id": "fam_sleepapp__coherent_true",
+    "family_id": "fam_sleepapp",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "7FEAF9": {
+    "item_id": "fam_bearing__diverse_true",
+    "family_id": "fam_bearing",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "4FEA9E": {
+    "item_id": "fam_timetable__decorative_false",
+    "family_id": "fam_timetable",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "79224C": {
+    "item_id": "fam_handwash__coherent_true",
+    "family_id": "fam_handwash",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "F154C0": {
+    "item_id": "fam_labkit__coherent_false",
+    "family_id": "fam_labkit",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "BC7EBD": {
+    "item_id": "fam_seedcoat__diverse_false",
+    "family_id": "fam_seedcoat",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "EDF0F9": {
+    "item_id": "fam_coolant__coherent_false",
+    "family_id": "fam_coolant",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "E1435F": {
+    "item_id": "fam_tutoring__coherent_true",
+    "family_id": "fam_tutoring",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "C5A285": {
+    "item_id": "fam_pricing__decorative_true",
+    "family_id": "fam_pricing",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "CBEBCF": {
+    "item_id": "fam_checkout__decorative_true",
+    "family_id": "fam_checkout",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "CAD5FB": {
+    "item_id": "fam_routing__diverse_true",
+    "family_id": "fam_routing",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "8CDB3D": {
+    "item_id": "fam_physio__coherent_true",
+    "family_id": "fam_physio",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "E3FCAF": {
+    "item_id": "fam_nestbox__diverse_true",
+    "family_id": "fam_nestbox",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "9E2833": {
+    "item_id": "fam_onboarding__diverse_true",
+    "family_id": "fam_onboarding",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "0C24FE": {
+    "item_id": "fam_solder__coherent_false",
+    "family_id": "fam_solder",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "DC0C04": {
+    "item_id": "fam_timetable__coherent_false",
+    "family_id": "fam_timetable",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "D26E4D": {
+    "item_id": "fam_fertilizer__coherent_false",
+    "family_id": "fam_fertilizer",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "F2E7B6": {
+    "item_id": "fam_coolant__diverse_true",
+    "family_id": "fam_coolant",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "29CD40": {
+    "item_id": "fam_physio__decorative_true",
+    "family_id": "fam_physio",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "BEEAA2": {
+    "item_id": "fam_reading__coherent_true",
+    "family_id": "fam_reading",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "0468DB": {
+    "item_id": "fam_driptape__diverse_false",
+    "family_id": "fam_driptape",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology"
+  },
+  "DFEC45": {
+    "item_id": "fam_seedcoat__coherent_false",
+    "family_id": "fam_seedcoat",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "1E4B16": {
+    "item_id": "fam_pricing__coherent_false",
+    "family_id": "fam_pricing",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "67E594": {
+    "item_id": "fam_filter__diverse_false",
+    "family_id": "fam_filter",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "9DCACD": {
+    "item_id": "fam_onboarding__coherent_true",
+    "family_id": "fam_onboarding",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "37328C": {
+    "item_id": "fam_handwash__coherent_false",
+    "family_id": "fam_handwash",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "149A99": {
+    "item_id": "fam_tutoring__diverse_false",
+    "family_id": "fam_tutoring",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "11AD45": {
+    "item_id": "fam_sleepapp__diverse_true",
+    "family_id": "fam_sleepapp",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "F0F0DA": {
+    "item_id": "fam_bearing__coherent_false",
+    "family_id": "fam_bearing",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "9A9502": {
+    "item_id": "fam_checkout__diverse_true",
+    "family_id": "fam_checkout",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "717341": {
+    "item_id": "fam_routing__coherent_false",
+    "family_id": "fam_routing",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "F27A43": {
+    "item_id": "fam_sleepapp__coherent_false",
+    "family_id": "fam_sleepapp",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "425B48": {
+    "item_id": "fam_reading__coherent_false",
+    "family_id": "fam_reading",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound"
+  },
+  "4BDE9F": {
+    "item_id": "fam_solder__diverse_false",
+    "family_id": "fam_solder",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "147216": {
+    "item_id": "fam_pricing__diverse_false",
+    "family_id": "fam_pricing",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "F3C905": {
+    "item_id": "fam_timetable__diverse_true",
+    "family_id": "fam_timetable",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "FA0B0B": {
+    "item_id": "fam_routing__coherent_true",
+    "family_id": "fam_routing",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "A79F3D": {
+    "item_id": "fam_tutoring__decorative_false",
+    "family_id": "fam_tutoring",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "2C3ECA": {
+    "item_id": "fam_handwash__diverse_true",
+    "family_id": "fam_handwash",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "7E37A6": {
+    "item_id": "fam_inhaler__coherent_true",
+    "family_id": "fam_inhaler",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "A03601": {
+    "item_id": "fam_filter__diverse_true",
+    "family_id": "fam_filter",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "740B65": {
+    "item_id": "fam_physio__coherent_false",
+    "family_id": "fam_physio",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch"
+  },
+  "85A132": {
+    "item_id": "fam_seedcoat__diverse_true",
+    "family_id": "fam_seedcoat",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "03F6A3": {
+    "item_id": "fam_nestbox__coherent_true",
+    "family_id": "fam_nestbox",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  },
+  "42EB6E": {
+    "item_id": "fam_checkout__coherent_true",
+    "family_id": "fam_checkout",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null
+  }
+}

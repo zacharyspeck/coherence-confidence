@@ -260,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.",
+          "text": "Four: the 60-74 band at Dunmorrow, autumn quarter, started 26 November, measured by 2 October, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.",
           "conditions": {
             "clinic": "Dunmorrow",
             "patient_age_band": "60-74",
@@ -269,9 +269,9 @@
           }
         }
       ],
-      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by 28 February, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.\nEvery group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran level with the previous quarter. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 September, measured by 30 August, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
+      "passage": "A nurse's log records four patient groups prescribed the same asthma inhaler.\nOne: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by 28 February, had 6 fewer attacks than the same band a quarter earlier; nurse Adeyemi.\nTwo: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.\nEvery group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran level with the previous quarter. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.\nThree: the 40-59 band at Calderbank, summer quarter, started 5 September, measured by 30 August, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.\nFour: the 60-74 band at Dunmorrow, autumn quarter, started 26 November, measured by 2 October, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.\nAttack counts were copied into the clinic file and countersigned by the duty supervisor.",
       "ground_truth": false,
-      "confound_note": "In cases one and three the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Half the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
+      "confound_note": "In cases one, three and four the attack counts were recorded before the inhaler was started: 28 February precedes 4 March at Harrowfield, and 30 August precedes 5 September at Calderbank. Three quarters of the evidence therefore describes a reduction that had already happened when treatment began, so it cannot be evidence for the inhaler. The two remaining cases, Brightmoor and Dunmorrow, are not enough on their own.",
       "word_count": 184,
       "domain": "clinical",
       "review_status": "unreviewed",
@@ -290,7 +290,7 @@
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
       },
-      "reader_catch_rate": 0.6667,
+      "reader_catch_rate": null,
       "reader_false_positive_rate": null
     }
   ]

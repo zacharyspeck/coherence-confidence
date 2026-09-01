@@ -260,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.",
+          "text": "Four: basic signups from Ireland via podcast were emailed 26 December, measured by 2 December week-two retention ran 4 points above the same cohort a month earlier.",
           "conditions": {
             "plan_tier": "basic",
             "country": "Ireland",
@@ -269,9 +269,9 @@
           }
         }
       ],
-      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 24 March, measured by 9 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nEvery cohort here signed up on a paid plan, which carries no trial period. The free trial ran ten days, the same as in the earlier period. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.\nThree: enterprise signups from Vietnam via reseller were emailed 25 October, measured by 10 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
+      "passage": "A growth team's log records four signup cohorts that received the same onboarding email.\nOne: starter signups from Norway via webinar were emailed 24 March, measured by 9 March week-two retention ran 5 points above the same cohort a month earlier.\nTwo: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.\nEvery cohort here signed up on a paid plan, which carries no trial period. The free trial ran ten days, the same as in the earlier period. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.\nThree: enterprise signups from Vietnam via reseller were emailed 25 October, measured by 10 October week-two retention ran 6 points above the same cohort a month earlier.\nFour: basic signups from Ireland via podcast were emailed 26 December, measured by 2 December week-two retention ran 4 points above the same cohort a month earlier.\nRetention figures were exported to the analytics warehouse in the team's standard reporting schema.",
       "ground_truth": false,
-      "confound_note": "In cases one and three the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Half the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
+      "confound_note": "In cases one, three and four the retention figure was read before the email was sent: 9 March precedes 24 March, and 10 October precedes 25 October. Three quarters of the evidence therefore describes week-two retention that was already recorded when the onboarding email went out, so it cannot be evidence for that email. Cases two and four are correctly ordered but are not enough on their own.",
       "word_count": 181,
       "domain": "business_metrics",
       "review_status": "unreviewed",
@@ -290,7 +290,7 @@
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
       },
-      "reader_catch_rate": 0.6667,
+      "reader_catch_rate": null,
       "reader_false_positive_rate": null
     }
   ]

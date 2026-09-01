@@ -68,7 +68,7 @@ One: a lathe at Bexley on nights, fitted 4 May, measured by 27 March, ran 340 ho
 Two: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.
 Every machine here ran on a sealed lubricant charge, untouched by the shop's supply. The lubricant supply stayed on mineral grade across the cycle. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.
 Three: a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.
-Four: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.
+Four: a compressor at Marlowe on weekends, fitted 25 November, measured by 6 October, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
 
 Question: Does this evidence establish this claim?
@@ -236,7 +236,7 @@ One: Ashcombe Primary Year 4 started the program 6 December, measured by 11 Sept
 Two: Deerpark Academy Year 6 started the program 8 January, measured by 12 March, scoring 5 comprehension points higher than the previous winter term; taught by Okoro.
 Every logged class took its English lessons in fixed groups of six, whatever the school's class size. Class sizes at each school ran within a pupil of the year before. Scores cover every pupil on each class roll, and every pupil on each roll attended every program session.
 Three: Halloway Junior Year 2 started the program 20 June, measured by 24 April, scoring 9 comprehension points higher than the previous spring term; taught by Pinter.
-Four: Marchfield Grange Year 5 started the program 6 July, measured by 21 August, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.
+Four: Marchfield Grange Year 5 started the program 21 August, measured by 6 July, scoring 6 comprehension points higher than the previous summer term; taught by Draycott.
 Marks were transcribed onto the district return sheet and filed under the standard class codes.
 
 Question: Does this evidence establish this claim?

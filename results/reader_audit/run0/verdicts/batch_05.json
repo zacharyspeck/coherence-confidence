@@ -1,7 +1,7 @@
 {"batch": "05", "run": 0, "verdicts": [
   {"code": "F2E7B6", "answer": "Yes"},
   {"code": "717341", "answer": "No"},
-  {"code": "4E0E3A", "answer": "No"},
+  {"code": "4E0E3A", "answer": "Yes"},
   {"code": "E3A6F0", "answer": "No"},
   {"code": "2695C2", "answer": "No"},
   {"code": "884855", "answer": "No"},

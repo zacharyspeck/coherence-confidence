@@ -164,7 +164,7 @@ One: a lathe at Bexley on nights, fitted 4 May, measured by 27 March, ran 340 ho
 Two: a press at Ravenhill on days, fitted 9 January, measured by 24 February, ran 290 hours longer before failure than the same machine last cycle; checked by Aguirre.
 Every machine here ran on a sealed lubricant charge, untouched by the shop's supply. The lubricant supply stayed on mineral grade across the cycle. Hours cover every bearing position on each machine, and every position on the machines ran the new bearing throughout.
 Three: a conveyor at Corbin on evenings, fitted 2 August, measured by 21 July, ran 410 hours longer before failure than the same machine last cycle; checked by Fenwick.
-Four: a compressor at Marlowe on weekends, fitted 6 October, measured by 25 November, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.
+Four: a compressor at Marlowe on weekends, fitted 25 November, measured by 6 October, ran 260 hours longer before failure than the same machine last cycle; checked by Sostre.
 Hour readings were taken from the machine counters and initialled by the shift inspector.
 
 Question: Does this evidence establish this claim?

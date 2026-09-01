@@ -116,7 +116,7 @@ One: 40 Fenwick users on Corvid 7 phones started 4 April, measured by 29 March r
 Two: 65 Brackenmoor users on Halden Mini phones started 3 June, measured by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.
 Every cohort slept in rooms held at a set temperature, apart from the weather outside. Outdoor temperature in each cohort's city ran within a degree of the month before. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.
 Three: 25 Ordway users on Tanager X phones started 5 October, measured by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.
-Four: 90 Saltmarch users on Wexler Note phones started 2 November, measured by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.
+Four: 2 November users on Wexler Note phones started 90 Saltmarch, measured by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.
 
 Question: Does this evidence establish this claim?
@@ -356,7 +356,7 @@ One: the 12-17 band at Harrowfield, winter quarter, started 4 March, measured by
 Two: the 25-39 band at Brightmoor, spring quarter, started 3 May, measured by 27 June, had 4 fewer attacks than the same band a quarter earlier; nurse Okonkwo.
 Every group lived and slept on filtered indoor air, sealed from the outdoor pollen. Pollen counts in each group's district ran level with the previous quarter. Counts cover every patient prescribed the inhaler in each group, and every patient in each group took every prescribed dose.
 Three: the 40-59 band at Calderbank, summer quarter, started 5 September, measured by 30 August, had 7 fewer attacks than the same band a quarter earlier; nurse Halvorsen.
-Four: the 60-74 band at Dunmorrow, autumn quarter, started 2 October, measured by 26 November, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.
+Four: the 60-74 band at Dunmorrow, autumn quarter, started 26 November, measured by 2 October, had 5 fewer attacks than the same band a quarter earlier; nurse Bittner.
 Attack counts were copied into the clinic file and countersigned by the duty supervisor.
 
 Question: Does this evidence establish this claim?

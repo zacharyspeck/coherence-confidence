@@ -116,7 +116,7 @@ One: an introductory section at Harlow, autumn term, issued 4 November, measured
 Two: a foundation section at Brackwell, winter term, issued 8 January, measured by 24 March coursework completion ran 6 points above the same section a year earlier; demonstrator Osei.
 Every section was marked to a frozen departmental syllabus, which the central revision left alone. The central syllabus set coursework at a quarter of the final grade, as the year before. Completion rates cover every student in each section given the kit, and every student in each section attended every lab session.
 Three: an intermediate section at Kelvinside, spring term, issued 5 June, measured by 28 April coursework completion ran 11 points above the same section a year earlier; demonstrator Marchetti.
-Four: an advanced section at Thornbury, summer term, issued 3 July, measured by 26 August coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.
+Four: an advanced section at Thornbury, summer term, issued 26 August, measured by 3 July coursework completion ran 7 points above the same section a year earlier; demonstrator Ibarra.
 Rates were recorded to the nearest point and signed off by the teaching office.
 
 Question: Does this evidence establish this claim?
@@ -236,7 +236,7 @@ One: starter signups from Norway via webinar were emailed 24 March, measured by 
 Two: premium signups from Chile via marketplace were emailed 3 July, measured by 27 July week-two retention ran 3 points above the same cohort a month earlier.
 Every cohort here signed up on a paid plan, which carries no trial period. The free trial ran ten days, the same as in the earlier period. Retention figures cover every signup, email opened or not, and every signup in each cohort opened the email.
 Three: enterprise signups from Vietnam via reseller were emailed 25 October, measured by 10 October week-two retention ran 6 points above the same cohort a month earlier.
-Four: basic signups from Ireland via podcast were emailed 2 December, measured by 26 December week-two retention ran 4 points above the same cohort a month earlier.
+Four: basic signups from Ireland via podcast were emailed 26 December, measured by 2 December week-two retention ran 4 points above the same cohort a month earlier.
 Retention figures were exported to the analytics warehouse in the team's standard reporting schema.
 
 Question: Does this evidence establish this claim?
@@ -404,7 +404,7 @@ One: 40 Fenwick users on Corvid 7 phones started 4 April, measured by 29 March r
 Two: 65 Brackenmoor users on Halden Mini phones started 3 June, measured by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.
 Every cohort slept in rooms held at a set temperature, apart from the weather outside. Outdoor temperature in each cohort's city ran within a degree of the month before. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.
 Three: 25 Ordway users on Tanager X phones started 5 October, measured by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.
-Four: 90 Saltmarch users on Wexler Note phones started 2 November, measured by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.
+Four: 2 November users on Wexler Note phones started 90 Saltmarch, measured by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.
 Heart rates were recorded in beats per minute and filed in the clinic's standard format.
 
 Question: Does this evidence establish this claim?

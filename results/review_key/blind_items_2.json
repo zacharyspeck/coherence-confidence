@@ -1,0 +1,112 @@
+{
+  "1": {
+    "item_id": "fam_onboarding__coherent_true",
+    "family_id": "fam_onboarding",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "reader_catch_rate": null,
+    "reader_false_positive_rate": 0.3333,
+    "salience": null,
+    "confound_note": null
+  },
+  "2": {
+    "item_id": "fam_timetable__decorative_false",
+    "family_id": "fam_timetable",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "reader_catch_rate": null,
+    "reader_false_positive_rate": null,
+    "salience": null,
+    "confound_note": "The absence figures are tallied over \"the pupils on the revised timetable throughout\", while the same line records that \"about a fifth of each cohort spent weeks on the old timetable\". The claim is about absence in the cohorts that moved to the revised timetable, and that population includes the pupils who spent weeks back on the old schedule. Those pupils are the part of each cohort the change sat least firmly on, and their absence is precisely what the figures leave out, so the 4 to 7 percent falls are consistent with cohort absence not having moved at all. All four cases are Year 9 at Brackhill Academy in one autumn term, so the same exclusion applies identically in every case and no case corrects another. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version."
+  },
+  "3": {
+    "item_id": "fam_nestbox__diverse_true",
+    "family_id": "fam_nestbox",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "reader_catch_rate": null,
+    "reader_false_positive_rate": 0.0,
+    "salience": null,
+    "confound_note": null
+  },
+  "4": {
+    "item_id": "fam_routing__diverse_false",
+    "family_id": "fam_routing",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "reader_catch_rate": 1.0,
+    "reader_false_positive_rate": null,
+    "salience": null,
+    "confound_note": "The mid-passage line tallies the timings over the runs that stayed on the issued route, and the clause beside it records that about a sixth of each depot's runs left the issued route. The claim is about delivery time on the runs the routing change was rolled out to, so the population is every run dispatched and the minute figures describe roughly five sixths of it. A run leaves the issued route when it meets a blockage or a diversion, which is exactly what makes a run come in long, so an average taken over the runs that stayed on it sits below the figure for all runs dispatched, and the reductions of 8, 5, 9 and 6 minutes are consistent with no reduction at all. The four groups run out of Kettleby Wharf, Stanmoor Yard, Devening Cross and Harkaway Point across four different months, and the same sixth drops out at each depot, so the spread over depots, vehicle types and months does nothing to close the gap."
+  },
+  "5": {
+    "item_id": "fam_pricing__diverse_true",
+    "family_id": "fam_pricing",
+    "cell": "diverse_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "reader_catch_rate": null,
+    "reader_false_positive_rate": 0.3333,
+    "salience": null,
+    "confound_note": null
+  },
+  "6": {
+    "item_id": "fam_tutoring__diverse_false",
+    "family_id": "fam_tutoring",
+    "cell": "diverse_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "reader_catch_rate": 1.0,
+    "reader_false_positive_rate": null,
+    "salience": 3.0,
+    "confound_note": "The pass rates are tallied over \"the students who attended every block\", while the same line records that \"about a quarter of each cohort missed at least one block\". The claim is about the cohorts given the tutoring blocks, so the population is every student in the cohort, not the full-attendance fraction alone. Students who attend every block are the steadiest students in a cohort and pass at higher rates whatever the tutoring did, so a 4 to 8 point rise can appear on that fraction with no change in what any student learned. The four cohorts span four colleges, four subjects, four terms and four tutors, and the same attendance restriction applies at each, so the spread of settings does not close the gap."
+  },
+  "7": {
+    "item_id": "fam_reading__coherent_false",
+    "family_id": "fam_reading",
+    "cell": "coherent_false",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "reader_catch_rate": 1.0,
+    "reader_false_positive_rate": null,
+    "salience": null,
+    "confound_note": "All four classes are Year 4 groups at Ashcombe Primary in one autumn term taught by Vance, and the single fact stated mid-passage covers every case at once: class sizes at each school ran about a quarter below the year before. The scope clause beside that fact has every logged class taking its English lessons as one whole group, which puts every lesson in front of a smaller room than in the term the class is measured against. Each class is compared against itself in the previous autumn term, under the larger rolls. The evidence cannot separate the smaller classes from the reading program. The population and completeness clauses in the same line leave the scores covering every pupil on roll; no second defect is present."
+  },
+  "8": {
+    "item_id": "fam_seedcoat__decorative_false",
+    "family_id": "fam_seedcoat",
+    "cell": "decorative_false",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "reader_catch_rate": null,
+    "reader_false_positive_rate": null,
+    "salience": null,
+    "confound_note": "The mid-passage line tallies the rates over the trays sown from seed that took a full coat, and the clause beside it records that about a fifth of each lot's trays were sown from partly coated seed. The claim is about the germination of the coated lot, so the population is every tray sown from it and the germination points describe four fifths of that. Seed that takes a full coat is the plump, well-filled grain, while the light and cracked seed comes off the coater thinly covered, so a rate built on the fully coated trays alone sits above the lot's own rate, and the 9, 6, 11 and 7 point gains are consistent with each lot's germination being unchanged. All four lots are fescue at Hollin Bank in one spring under grower Marek, so the same missing fifth sits under every case. The four cases differ only in log serial, clock time, terminal and desk - surface detail that rules nothing out, so the evidence is exactly as dependent as the coherent version."
+  },
+  "9": {
+    "item_id": "fam_filter__coherent_true",
+    "family_id": "fam_filter",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "reader_catch_rate": null,
+    "reader_false_positive_rate": 0.0,
+    "salience": null,
+    "confound_note": null
+  },
+  "10": {
+    "item_id": "fam_coolant__coherent_true",
+    "family_id": "fam_coolant",
+    "cell": "coherent_true",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "reader_catch_rate": null,
+    "reader_false_positive_rate": 0.3333,
+    "salience": null,
+    "confound_note": null
+  }
+}

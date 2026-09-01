@@ -260,7 +260,7 @@
         },
         {
           "case_id": "c4",
-          "text": "Four: 90 Saltmarch users on Wexler Note phones started 2 November, measured by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.",
+          "text": "Four: 2 November users on Wexler Note phones started 90 Saltmarch, measured by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.",
           "conditions": {
             "city": "Saltmarch",
             "phone_model": "Wexler Note",
@@ -269,9 +269,9 @@
           }
         }
       ],
-      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 April, measured by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 65 Brackenmoor users on Halden Mini phones started 3 June, measured by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.\nEvery cohort slept in rooms held at a set temperature, apart from the weather outside. Outdoor temperature in each cohort's city ran within a degree of the month before. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.\nThree: 25 Ordway users on Tanager X phones started 5 October, measured by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 90 Saltmarch users on Wexler Note phones started 2 November, measured by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
+      "passage": "A clinic log records four cohorts enrolled on the same sleep app.\nOne: 40 Fenwick users on Corvid 7 phones started 4 April, measured by 29 March resting heart rate ran 5 bpm below the same cohort a month earlier.\nTwo: 65 Brackenmoor users on Halden Mini phones started 3 June, measured by 27 June resting heart rate ran 3 bpm below the same cohort a month earlier.\nEvery cohort slept in rooms held at a set temperature, apart from the weather outside. Outdoor temperature in each cohort's city ran within a degree of the month before. Readings cover every enrolled user in each cohort, and every enrolled user in each cohort used the app nightly.\nThree: 25 Ordway users on Tanager X phones started 5 October, measured by 30 September resting heart rate ran 6 bpm below the same cohort a month earlier.\nFour: 2 November users on Wexler Note phones started 90 Saltmarch, measured by 26 November resting heart rate ran 4 bpm below the same cohort a month earlier.\nHeart rates were recorded in beats per minute and filed in the clinic's standard format.",
       "ground_truth": false,
-      "confound_note": "In cases one and three the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Half the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
+      "confound_note": "In cases one, three and four the heart rate was read before the app was started: 29 March precedes 4 April, and 30 September precedes 5 October. Three quarters of the evidence therefore describes a drop that had already happened when the app was taken up, so it cannot be evidence for the app. The two remaining cases, two and four, are not enough on their own.",
       "word_count": 187,
       "domain": "clinical",
       "review_status": "unreviewed",
@@ -290,7 +290,7 @@
         "n_distinct_condition_values": 16,
         "n_distinct_decoration_values": 0
       },
-      "reader_catch_rate": 0.6667,
+      "reader_catch_rate": null,
       "reader_false_positive_rate": null
     }
   ]
