@@ -1314,3 +1314,137 @@ floor, still over the 0.5 target, with not one reader fooled (0 Yes). The old
 that No counted as a catch of a flaw it never saw. The fix traded a
 false-positive catch channel for honest abstention; the scope flaw alone now
 carries the item.
+
+## D-040 - PREDICTIONS.md did not exist; transcribed, not invented
+
+**Found:** the run instruction referred to a locked `PREDICTIONS.md` that "must
+not be edited". No such file existed - not in the working tree, not in any
+commit (`git log --all --diff-filter=A -- PREDICTIONS.md` is empty).
+
+**Chose:** do NOT write a prediction and present it as pre-registered. Instead
+`PREDICTIONS.md` was created before any AUC existed (one pilot item scored, no
+analysis run) and transcribes the prediction already committed in **D-025** -
+"a negative gap is the prediction, and AUC(coherent) below 0.5 is the
+crossover" - which is in git history predating every result. The file states
+its own provenance in its first paragraph.
+
+**Why it matters:** a prediction file written after seeing results, or written
+from nothing and described as locked, is the single artifact whose corruption
+would make the whole result unciteable. The real pre-registration is the git
+history of D-025; the new file is a pointer to it, not a substitute.
+
+## D-041 - Five killed runs were peak load memory, not model size
+
+**Symptom:** five consecutive attempts to load Qwen2.5-3B-Instruct on CPU were
+killed - across bash-background, foreground, and PowerShell spawn paths. One
+observed attempt crawled from 1GB to 3GB resident over ten minutes before
+dying, which read like paging against a 6.2GB model.
+
+**Actual cause:** `from_pretrained` without `low_cpu_mem_usage=True`
+materialises the model twice - a randomly-initialised copy, then the loaded
+weights - so peak RSS is about **2x** the checkpoint size. On a 6.2GB model
+that is ~12.4GB peak against ~5GB available. The steady-state footprint was
+never the problem; the load spike was.
+
+**Chose:** `low_cpu_mem_usage=True` in `HFScorer`. With it, the same model on
+the same machine loaded and began scoring, having survived longer than every
+previous attempt combined.
+
+**Also added, because the run is memory-bound and a kill must not cost the
+whole night:** `--checkpoint <file.jsonl>` on `src.score` and `src.baseline`.
+One record appended, flushed and fsynced per item; a restart reads the file,
+skips what is done, and resumes. Truncated final lines (a kill mid-write) are
+dropped rather than raised on. Verified with the mock scorer: 12 items written,
+a second invocation skipped all 12, and the emitted records were identical.
+Records are emitted in item order regardless of checkpoint order, so a resumed
+run and a clean run produce the same file.
+
+## D-042 - Ran at ~5GB available, not the 8GB floor
+
+The run instruction set an 8GB floor with a five-check wait. Five checks gave
+2.01, 5.70, 5.13, 3.35 GB free; available memory (free + reclaimable standby)
+sat at **5.03 GB** at launch. The floor was never met, and per the instruction
+the run proceeded anyway with this recorded. Chrome (18 processes, 1.63GB),
+Slack (7, 0.87GB), VS Code (14, 0.73GB), Excel and OneDrive were still
+resident; none were closed, because killing an editor with an open workbook to
+free memory is not a call to make on someone else's machine unattended.
+
+**Consequence for reading the timings:** every wall-clock number in RESULTS.md
+was measured under memory pressure with a model that does not fit resident. They
+are an upper bound on this hardware, not a property of the model.
+
+## D-043 - Chat template kept on precedent, because the test to settle it kept dying
+
+**The question.** The pilot ran under `--chat-template` and came back with mean
+`mass_covered` of **0.29**, min **0.037**, and an argmax of `'Un'` on some
+items. That last detail is the diagnosis: the model wants to write "Unsure"
+with no leading space, and bare `Unsure` is two tokens on Qwen's vocabulary
+(` Unsure` is one, which is what the model gate checked). So some abstention
+mass lands outside the option token set and is not counted, which inflates
+`p_yes_3way`.
+
+**What was attempted.** `scripts/pilot_prompt_config.py`: one model load, the
+same 12 items scored with the chat template on and off, choosing on
+`mass_covered` alone. The decision rule was written into the script docstring
+before any number existed, and AUC was deliberately not computed there -
+choosing a prompt because it produced a friendlier endpoint would invalidate
+the result outright.
+
+**What happened.** Killed three times, twice before finishing the first
+configuration. Unlike the scored runs, that script had no checkpoint, so each
+kill lost everything - which is itself the argument for D-041's checkpointing.
+Per the standing rule (three failures, record and move on), it was abandoned
+rather than allowed to consume the night.
+
+**Chose:** keep `--chat-template`, on the precedent of **D-009** - an
+instruct-tuned model given an untemplated prompt produced coverage of 0.008
+against 0.847 templated - and because 0.29 clears the harness gate of 0.01 by a
+wide margin. Deviating from a documented, measured precedent on the strength of
+an experiment that never returned a number would be the worse call.
+
+**Recorded as a limitation, not resolved:** 0.29 mean coverage means roughly
+seventy percent of the next-token mass sits outside {Yes, No, Unsure}, and
+abstention specifically is undercounted on this vocabulary. `p_yes_3way` is a
+renormalisation over the captured mass, so the AUC ranking is only as good as
+that capture being unbiased ACROSS CELLS - which is plausible but unverified.
+The clean fix for a future run is `--third-option` with a word that is a single
+token both with and without a leading space; `Unknown`, `Maybe` and `Neither`
+all qualify on this tokenizer per the model gate.
+
+## D-044 - The result came out against the prediction, and it is recorded as it landed
+
+**Primary endpoint, Qwen2.5-3B-Instruct, 100 items:**
+
+    AUC(coherent) = 0.5550   AUC(diverse) = 0.4475
+    gap = +0.1075   95% CI (family-clustered) [-0.0375, +0.2475]
+
+The prediction (D-025, PREDICTIONS.md) was a **negative** gap. The point
+estimate is **positive** - the opposite direction - and the interval spans
+zero. On the matched `scope_mismatch` subset the same thing, larger and less
+certain: +0.1700, CI [-0.1562, +0.4531].
+
+**No reframing.** This is a null on the primary endpoint with a point estimate
+pointing the wrong way for the hypothesis. It is not "trending toward" the
+prediction and it is not evidence for consensuality in this model.
+
+**The crossover happened, but in the wrong condition.** `AUC(diverse) = 0.4475`
+is below 0.5: in the DIVERSE condition this model's confidence runs backwards
+against truth. The prediction named `AUC(coherent) < 0.5` as the crossover.
+What was found is the mirror image.
+
+**The decorative control decides against the evidential-independence story.**
+The pre-committed sentence, printed by `analyze.py` from the numbers rather
+than written afterwards: *"The decorative control tracks the DIVERSE cells (AUC
+0.580 against 0.520 diverse and 0.690 coherent), so the effect is about surface
+complexity and the evidential-independence story is wrong."* Whatever is
+separating the conditions here travels with how busy the passage is to read,
+not with whether the four cases are evidentially independent.
+
+**And the coherence coefficient does not survive conditioning.** Across the
+three covariate models it goes +0.647, +0.690, **-0.266** - it inverts the
+moment surface complexity enters. Surface was doing the work.
+
+**Consequence for the project, stated plainly:** on this model, at this size,
+the experiment does not support the consensuality hypothesis; its own built-in
+control says the largest signal present is a surface-complexity artifact. The
+design worked - the control that was built to catch exactly this caught it.

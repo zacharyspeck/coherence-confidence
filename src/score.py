@@ -370,13 +370,20 @@ class HFScorer:
         torch_dtype = getattr(torch, dtype)
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, revision=revision)
+        # `low_cpu_mem_usage` loads shard-by-shard straight into the final
+        # tensors. Without it the usual path materialises the model TWICE - a
+        # randomly-initialised copy, then the loaded weights - so peak RSS is
+        # about 2x the file size. On a 6.2GB model with ~5GB available that
+        # difference is the whole run: five consecutive loads were killed
+        # before this was set (D-041).
+        kw: dict[str, Any] = {"revision": revision, "low_cpu_mem_usage": True}
         try:
             self.model = AutoModelForCausalLM.from_pretrained(
-                model_name, revision=revision, dtype=torch_dtype
+                model_name, dtype=torch_dtype, **kw
             )
         except TypeError:  # transformers < 5 spelling
             self.model = AutoModelForCausalLM.from_pretrained(
-                model_name, revision=revision, torch_dtype=torch_dtype
+                model_name, torch_dtype=torch_dtype, **kw
             )
         self.model.to(self.device)
         self.model.eval()
@@ -589,6 +596,104 @@ def score_items(
     return records
 
 
+def load_checkpoint(path: str | None) -> dict[str, dict[str, Any]]:
+    """Records already on disk, keyed by item_id. Truncated last lines are
+    dropped rather than raising: a checkpoint is written to survive a kill, and
+    a kill can land mid-line."""
+    import json as _json
+    from pathlib import Path as _Path
+
+    if not path:
+        return {}
+    p = _Path(path)
+    if not p.exists():
+        return {}
+    done: dict[str, dict[str, Any]] = {}
+    for line in p.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            rec = _json.loads(line)
+        except ValueError:
+            continue  # partial final line from an interrupted write
+        if isinstance(rec, dict) and rec.get("item_id"):
+            done[rec["item_id"]] = rec
+    return done
+
+
+def score_items_checkpointed(
+    scorer: Scorer,
+    items: Sequence[Item],
+    *,
+    checkpoint: str,
+    progress: bool = True,
+    shuffle_cases: bool = False,
+    case_seed: int = 0,
+    option_rotations: bool = False,
+    rotation_spread_limit: float = 0.05,
+    gc_every: int = 20,
+) -> list[dict[str, Any]]:
+    """Score one item at a time, appending each record to `checkpoint` as it
+    lands, and skipping items already there.
+
+    This exists because the run is memory-bound: a load that gets killed at item
+    80 must not cost the first 79 forward passes. Everything is flushed and
+    fsynced per item, so the checkpoint is always as current as the last
+    completed item.
+    """
+    import gc
+    import json as _json
+    import os as _os
+    from pathlib import Path as _Path
+
+    options = getattr(scorer, "options", DEFAULT_OPTIONS)
+    rotations = list(OPTION_ROTATIONS) if option_rotations else [None]
+
+    done = load_checkpoint(checkpoint)
+    todo = [i for i in items if i.id not in done]
+    if progress:
+        print(
+            f"  checkpoint {checkpoint}: {len(done)} done, {len(todo)} to score",
+            file=sys.stderr,
+        )
+
+    _Path(checkpoint).parent.mkdir(parents=True, exist_ok=True)
+    with open(checkpoint, "a", encoding="utf-8") as fh:
+        for n, item in enumerate(todo, 1):
+            order = case_permutation(item, case_seed) if shuffle_cases else None
+            got = [
+                scorer.score_prompt(
+                    render_prompt(item, options, case_order=order, option_rotation=rot)
+                )
+                for rot in rotations
+            ]
+            rec = record_for(item, got[0])
+            rec["case_order"] = order
+            if option_rotations:
+                vals = [r.p_yes_3way for r in got]
+                spread = max(vals) - min(vals)
+                rec["rotation_p_yes_3way"] = vals
+                rec["rotation_labels"] = [list(r) for r in OPTION_ROTATIONS]
+                rec["p_yes_3way_rotation_mean"] = sum(vals) / len(vals)
+                rec["p_yes_3way_rotation_spread"] = spread
+                rec["rotation_spread_flagged"] = spread > rotation_spread_limit
+            done[item.id] = rec
+
+            fh.write(_json.dumps(rec) + "\n")
+            fh.flush()
+            _os.fsync(fh.fileno())
+
+            if n % gc_every == 0:
+                gc.collect()
+            if progress and (n % 5 == 0 or n == len(todo)):
+                print(f"  scored {n}/{len(todo)} (this process)", file=sys.stderr)
+
+    # Emit in the caller's item order, not checkpoint order, so a resumed run
+    # and a clean run produce byte-identical record lists.
+    return [done[i.id] for i in items if i.id in done]
+
+
 def build_payload(
     scorer: Scorer,
     items: Sequence[Item],
@@ -702,6 +807,18 @@ def add_common_args(ap: argparse.ArgumentParser) -> None:
     ap.add_argument(
         "--items", nargs="+", default=["items/draft", "items/seed"], help="directories"
     )
+    ap.add_argument(
+        "--checkpoint",
+        default=None,
+        help="append each record to this .jsonl as it is scored, and skip items "
+        "already in it. Makes a killed run resumable instead of restarting.",
+    )
+    ap.add_argument(
+        "--gc-every",
+        type=int,
+        default=20,
+        help="call gc.collect() every N items when checkpointing",
+    )
 
 
 def check_tokenization_only(args: argparse.Namespace) -> int:
@@ -781,15 +898,27 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 2
 
-    records = score_items(
-        scorer,
-        items,
-        batch_size=args.batch_size,
-        shuffle_cases=args.shuffle_cases,
-        case_seed=args.case_seed,
-        option_rotations=args.option_rotations,
-        rotation_spread_limit=args.rotation_spread_limit,
-    )
+    if args.checkpoint:
+        records = score_items_checkpointed(
+            scorer,
+            items,
+            checkpoint=args.checkpoint,
+            shuffle_cases=args.shuffle_cases,
+            case_seed=args.case_seed,
+            option_rotations=args.option_rotations,
+            rotation_spread_limit=args.rotation_spread_limit,
+            gc_every=args.gc_every,
+        )
+    else:
+        records = score_items(
+            scorer,
+            items,
+            batch_size=args.batch_size,
+            shuffle_cases=args.shuffle_cases,
+            case_seed=args.case_seed,
+            option_rotations=args.option_rotations,
+            rotation_spread_limit=args.rotation_spread_limit,
+        )
     payload = build_payload(
         scorer,
         items,

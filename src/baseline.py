@@ -58,22 +58,68 @@ def score_baselines(
     items: Sequence[Item],
     *,
     progress: bool = True,
+    checkpoint: str | None = None,
+    gc_every: int = 20,
 ) -> list[dict[str, Any]]:
+    """One forward pass per family claim, checkpointed per claim.
+
+    Keyed on family_id rather than item_id, because that is the unit here; the
+    resume logic is otherwise identical to src.score's and exists for the same
+    reason (D-041).
+    """
+    import gc
+    import json as _json
+    import os as _os
+    from pathlib import Path as _Path
+
     options = getattr(scorer, "options", DEFAULT_OPTIONS)
     rows = unique_claims(items)
-    records: list[dict[str, Any]] = []
-    for n, (family_id, claim, domain) in enumerate(rows, 1):
-        res = scorer.score_prompt(render_baseline_prompt(claim, options))
-        rec: dict[str, Any] = {
-            "family_id": family_id,
-            "claim": claim,
-            "domain": domain,
-        }
-        rec.update(res.to_dict())
-        records.append(rec)
-        if progress and (n % 10 == 0 or n == len(rows)):
-            print(f"  scored {n}/{len(rows)} claims", file=sys.stderr)
-    return records
+
+    done: dict[str, dict[str, Any]] = {}
+    if checkpoint and _Path(checkpoint).exists():
+        for line in _Path(checkpoint).read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = _json.loads(line)
+            except ValueError:
+                continue
+            if isinstance(rec, dict) and rec.get("family_id"):
+                done[rec["family_id"]] = rec
+        if progress:
+            print(f"  checkpoint {checkpoint}: {len(done)} claims done",
+                  file=sys.stderr)
+
+    todo = [r for r in rows if r[0] not in done]
+    fh = None
+    if checkpoint:
+        _Path(checkpoint).parent.mkdir(parents=True, exist_ok=True)
+        fh = open(checkpoint, "a", encoding="utf-8")
+    try:
+        for n, (family_id, claim, domain) in enumerate(todo, 1):
+            res = scorer.score_prompt(render_baseline_prompt(claim, options))
+            rec: dict[str, Any] = {
+                "family_id": family_id,
+                "claim": claim,
+                "domain": domain,
+            }
+            rec.update(res.to_dict())
+            done[family_id] = rec
+            if fh is not None:
+                fh.write(_json.dumps(rec) + "\n")
+                fh.flush()
+                _os.fsync(fh.fileno())
+            if n % gc_every == 0:
+                gc.collect()
+            if progress and (n % 5 == 0 or n == len(todo)):
+                print(f"  scored {n}/{len(todo)} claims (this process)",
+                      file=sys.stderr)
+    finally:
+        if fh is not None:
+            fh.close()
+
+    return [done[f] for f, _, _ in rows if f in done]
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -104,7 +150,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\nTOKENIZATION CHECK FAILED\n\n  {exc}\n", file=sys.stderr)
         return 2
 
-    records = score_baselines(scorer, items)
+    records = score_baselines(
+        scorer, items, checkpoint=args.checkpoint, gc_every=args.gc_every
+    )
 
     meta = provenance.run_meta(**scorer.meta(), item_dirs=list(args.items))
     meta["n_claims"] = len(records)
