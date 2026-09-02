@@ -1448,3 +1448,50 @@ moment surface complexity enters. Surface was doing the work.
 the experiment does not support the consensuality hypothesis; its own built-in
 control says the largest signal present is a surface-complexity artifact. The
 design worked - the control that was built to catch exactly this caught it.
+
+## D-045 - The order control did not finish, and what finished is a real finding
+
+**Status.** `--shuffle-cases` completed **27 of 100** items before the night ran
+out; `--option-rotations` was reduced to the 12-item pilot subset (36 forward
+passes) for the same reason. Neither is the full control that was asked for.
+Recorded as incomplete rather than quietly dropped: an unfinished control is an
+open question, not a silent pass.
+
+**Why they did not finish.** Not a bug. The environment killed every
+long-running process on roughly a ten-minute cycle, and available memory
+oscillated between 1.35 GB and 8 GB against a model needing 6.2 GB resident.
+Throughput swung from 25 items per window to zero. The primary run only
+finished because `--checkpoint` made each kill cost one item instead of the run
+(D-041). Full controls need ~400 more forward passes; on a GPU that is minutes.
+
+**Read the partial as a PAIRED comparison, not a subset AUC.** With 6-7 items
+per cell a subset AUC mostly measures its own noise. But case order carries no
+evidence, so the same item's `p_yes_3way` should barely move when its four
+cases are permuted - and that comparison is valid on whatever overlap exists.
+
+**What it found, on 27 matched items:**
+
+    mean |delta p_yes|      0.1748
+    max  |delta p_yes|      0.6707
+    moved more than 0.10    10 of 27
+    CROSSED 0.5             6 of 27
+    correlation             r = 0.74
+    mean signed delta       -0.1219
+
+**This is large.** Permuting four sentences that carry no evidential content
+moves the model's answer by 0.17 on average, flips the yes/no side of the
+decision boundary on nearly a quarter of items, and shifts the whole
+distribution down by 0.12. The perturbation is of the same magnitude as the
+effects the experiment is trying to measure.
+
+**It does not overturn the headline.** On the same 27 items the endpoint gap was
++0.2500 primary against +0.2334 shuffled - essentially unchanged, still positive,
+still opposite to the prediction. The direction survives; the per-item
+measurement is what proves unstable.
+
+**Where this lands.** It is the third independent instrument pointing the same
+way. The decorative control says the signal travels with parse load; the
+covariate model inverts the coherence coefficient when surface complexity
+enters; and now the order control says presentation alone moves answers as much
+as the manipulation does. For a 3B at near-chance AUC, the honest summary is
+that surface form dominates whatever evidential reasoning is present.

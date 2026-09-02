@@ -171,18 +171,63 @@ independence.
    TRUE cell depress AUC(coherent) specifically, which biases *toward* the
    consensuality prediction. The result came out against the prediction anyway,
    with that handicap in place.
-7. **Controls incomplete at time of writing.** See the section below.
+7. **Controls incomplete.** The order control covers 27 of 100 items; the
+   option-rotation control produced nothing, so **option position bias is
+   untested**. See the controls section.
+8. **The measurement is unstable at the item level.** Permuting evidentially
+   irrelevant sentence order moves P(yes) by 0.17 on average and flips the
+   decision side on 6 of 27 items. Any per-item claim from this run is soft;
+   the cell-level direction held under the perturbation, but that is one
+   partial check, not a clean bill.
 
-## Order and rotation controls
+## Order and rotation controls — one partial, one not run
 
-`--shuffle-cases` (case order permuted per item; case order carries no evidence,
-so a result that moves under it is measuring presentation) and
-`--option-rotations` (all three orderings of Yes/No/Unsure, measuring option
-position bias) were launched after the primary analysis was secured. Their
-status is recorded in `DECISIONS.md`; where a control did not finish, that is
-stated rather than papered over. **The headline above does not depend on them** —
-they test whether it moves, and an unfinished control is an open question, not a
-silent pass.
+Neither control finished. The environment killed every long-running process on
+roughly a ten-minute cycle while available memory swung between 1.35 GB and
+8 GB against a model needing 6.2 GB resident (D-042, D-045). `--shuffle-cases`
+reached **27 of 100** items; `--option-rotations` was cut to the 12-item pilot
+subset and **produced no items**. Stated plainly rather than papered over: one
+control is partial, one did not run.
+
+### What the partial order control found — and it is not a formality
+
+With 6–7 items per cell a subset AUC mostly measures its own noise, so the
+right read is the **paired within-item** comparison. Case order carries no
+evidential content, so permuting an item's four case sentences should barely
+move its answer.
+
+On the 27 items scored both ways:
+
+| statistic | value |
+|---|---|
+| mean \|Δ P(yes)\| | **0.1748** |
+| max \|Δ P(yes)\| | 0.6707 |
+| items moving > 0.10 | 10 of 27 |
+| **items crossing the 0.5 decision boundary** | **6 of 27** |
+| correlation between runs | r = 0.74 |
+| mean signed Δ | −0.1219 |
+
+**Reordering four evidentially-irrelevant sentences moves the answer by 0.17 on
+average and flips the yes/no side of the boundary on nearly a quarter of
+items.** The perturbation is the same size as the effects being measured.
+
+**The headline direction survives it.** On those same 27 items the endpoint gap
+was **+0.2500** primary against **+0.2334** shuffled — essentially unchanged,
+still positive, still opposite to the prediction. What is unstable is the
+per-item measurement, not the direction of the result.
+
+**Option position bias is untested.** `--option-rotations` never produced a
+datapoint, so nothing here rules out the possibility that some of the signal is
+Yes/No/Unsure ordering. That is an open threat, not a cleared one, and it is
+the first thing to run on better hardware.
+
+### Three instruments, one conclusion
+
+The decorative control says the signal travels with parse load. The covariate
+model inverts the coherence coefficient the moment surface complexity enters.
+The order control says presentation alone moves answers as much as the
+manipulation does. For a 3B sitting near chance on the task, the honest summary
+is that **surface form dominates whatever evidential reasoning is present.**
 
 ## Reproducing this on a bigger model
 

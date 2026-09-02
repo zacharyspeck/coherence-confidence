@@ -1,0 +1,32 @@
+{
+ "kind": "partial_control_comparison",
+ "label": "shuffle_cases",
+ "primary": "results/run_qwen3b.json",
+ "control": "results/partial_shuffled.jsonl",
+ "n_overlap": 27,
+ "n_control_total": 27,
+ "paired": {
+  "mean_abs_delta_p_yes": 0.1748,
+  "max_abs_delta_p_yes": 0.6707,
+  "mean_signed_delta": -0.1219,
+  "pearson_r": 0.7385,
+  "n_moved_over_0.10": 10,
+  "n_crossed_0.5": 6
+ },
+ "subset_auc": {
+  "coherent": {
+   "primary": 0.5833,
+   "control": 0.6667,
+   "n_true": 6,
+   "n_false": 6
+  },
+  "diverse": {
+   "primary": 0.3333,
+   "control": 0.4333,
+   "n_true": 5,
+   "n_false": 6
+  },
+  "gap_primary": 0.25,
+  "gap_control": 0.2334
+ }
+}
