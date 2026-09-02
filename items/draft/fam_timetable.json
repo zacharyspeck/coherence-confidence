@@ -372,6 +372,8 @@
       "confound_variant": "same_block",
       "scope_variant": "subset_complete",
       "salience": null,
+      "reader_catch_rate": null,
+      "reader_false_positive_rate": 0.0,
       "surface_complexity": {
         "n_tokens": 199,
         "n_distinct_tokens": 94,
@@ -384,9 +386,7 @@
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
-      "reader_catch_rate": null,
-      "reader_false_positive_rate": 0.0
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
     },
     {
       "id": "fam_timetable__decorative_false",
@@ -467,6 +467,8 @@
       "confound_variant": "same_block",
       "scope_variant": "subset_incomplete",
       "salience": null,
+      "reader_catch_rate": 1.0,
+      "reader_false_positive_rate": null,
       "surface_complexity": {
         "n_tokens": 200,
         "n_distinct_tokens": 97,
@@ -479,9 +481,7 @@
       "domain": "education",
       "review_status": "unreviewed",
       "source": "generated",
-      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence.",
-      "reader_catch_rate": 1.0,
-      "reader_false_positive_rate": null
+      "notes": "CONTROL ARM (D-030). Condition values are identical across all four cases, exactly as in the coherent cells. The surface variety is decorations only - serial, time, terminal, desk - which confer no evidential independence."
     }
   ],
   "decoration_dimensions": [

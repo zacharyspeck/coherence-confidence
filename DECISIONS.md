@@ -1207,3 +1207,110 @@ batches, or one item per reader. Twelve batches per run instead of six would
 double the cluster count for the same token cost. Not done here; recorded as the
 next thing to do if the TRUE-cell number needs to be resolved rather than
 reported.
+
+## D-038 - Human blind review #2: 10/10, all five flaws named, zero TRUE read as FALSE
+
+**The measurement.** The reviewer scored `review/blind_items_2.md` blind: 10/10
+correct against `results/review_key/blind_items_2.json`, all five FALSE flaws
+identified with the mechanism the key names (population restriction, direction
+of selection, or the class-size confound - not generic suspicion), and 0/5
+false positives on TRUE items, including 0/3 on `coherent_true`. Review #1 on
+the pre-fix items was 5/10 with 1 of 5 flaws caught. The always-yes baseline on
+this balanced set is 5/10.
+
+**Caveat that limits what #2 proves.** Between the reviews the reviewer read
+`READER_REPORT.md` and D-036, so they knew the mid-passage line carries the
+load and knew the intent-to-treat reading of `whole_incomplete`. Their item-9
+reasoning ("dilutes rather than fakes") is that briefing applied. The
+before/after on a CONSTANT reader is the model reader audit (D-032); the human
+number corroborates it but cannot independently establish it.
+
+**What it settles about the coherent_true 0.25 (D-036).** The items are not
+mislabeled: a careful reader accepts all three contested items and can
+articulate why. The model readers' dissent also fails a tracking test: the one
+TRUE item with a genuinely weak defuse (below) was passed 3/3 by readers, while
+the three airtight `coherent_true` items each drew exactly one No. The 0.25 is
+a property of a minority reader phenotype triggered by the coherent-TRUE
+gestalt, not of the items - but the scored model is drawn from the same
+population as the audit readers, so the coherent/diverse TRUE asymmetry stays
+in the report as a measured property (D-036 option 1), not noise.
+
+**New defect found, not fixed (no item edits authorized).** The
+`fam_pricing` block clause - "Every line was stocked from a fixed year-round
+range" - fixes the assortment but not the sales/shelf mix within it, so it does
+not deductively block the confound ("premium stock's share of each store's
+shelf hit a record, double the earlier period") the way the other block
+sentences do (paid plan carries no trial period; hired machines carry their own
+tooling; independent roll the scheme never covered). Two independent careful
+readers converged on this: the human (rated it difficulty 4, the only 4 in the
+set) and one of two hunter reads on `fam_pricing__diverse_true` (round 0:
+"a fixed range of SKUs does not fix the sales/shelf mix within it"). The fix,
+when authorized, is a block that closes the causal channel categorically, e.g.
+lines priced and picked from a fixed planogram slot - it must appear in both
+cells that carry the block clause for this family, per D-034.
+
+## D-039 - The fam_pricing block made categorical, and the decorative builder made honest
+
+**Authorized fix for the D-038 defect.** The family's block clause becomes
+"Every line was priced and picked from a fixed planogram slot of its own,
+which no shelf reallocation touched" (`results/family_spec.json`). Like the
+other block sentences - a paid plan carries no trial period, a hired machine
+carries its own tooling - it closes the channel categorically: a slot the
+reallocation never touched cannot transmit a shelf-share change to the line's
+orders, whereas the old "fixed year-round range" fixed the assortment but not
+the sales mix within it.
+
+**Four cells, not two.** The instruction said both cells carrying the block;
+in this family that is four - `coherent_false`, `diverse_true`, and both
+decorative items, because the control arm builds every item on `same_block`.
+The wording changed in all four (2 TRUE / 2 FALSE, so the global word balance
+and the lexical gate are untouched by construction), for D-034's reason:
+rewriting a subset would make the sentence itself a truth predictor.
+
+**A builder bug found on the way.** `scripts/build_decorative.py` purged and
+rebuilt all 20 control items and dropped `salience` and the reader rates on
+every one - including the 18 whose passages came back byte-identical. Same
+defect class assemble_passages.py already fixed: invalidation wider than the
+change. It now keeps measured fields aside and carries them over exactly when
+the rebuilt passage is unchanged.
+
+**Re-measurement was targeted, not global.** A full 18-batch reader audit
+re-run would have overwritten 96 stable measurements with fresh sampling noise
+to refresh 4 items. `scripts/reader_audit_patch.py` instead builds patch
+batches of the same size and blindness as the main audit - ONE target plus 16
+fillers drawn one-per-family, fresh opaque codes - runs three independent
+readers per target, discards the filler reads, and merges only the targets
+into `results/reader_audit.json` (patch clusters `p{run}b{batch}`, disjoint
+from the main audit's). The hunter numbers for these four items predate the
+edit and are labeled by their round as always; the flaw spans (the scope
+pair) are byte-identical, so the hunter catch evidence is about text that did
+not change.
+
+**The reads that exist are the reads that count.** Two protocol notes, both
+in the direction of using more data rather than choosing among draws. (1) The
+first 3-read draw on `fam_pricing__coherent_false` came back 1 No / 2 Unsure -
+but both Unsure verdicts were from readers who abstained on 5 of their 17
+batch items, a phenotype the main audit's 18 readers never showed. Three reads
+cannot separate that reader draw from an item property, so the item got three
+MORE readers (runs 3-5), not a re-roll. (2) A workflow-arguments bug re-ran
+the original 12 batches instead of the 3 new ones, overwriting the first
+draw's verdict files with fresh reads. Every read was kept: the redraw was
+relabeled runs 6-8, the first draw's target verdicts were reconstructed into
+runs 0-2 from the already-merged audit (marked `reconstructed` in the files),
+and nothing was selected on its outcome.
+
+**Measured result, 9 reads on the contested item and 6 on the rest:**
+
+    fam_pricing__coherent_false   0 Yes / 6 No / 3 Unsure  -> catch 0.67
+    fam_pricing__decorative_false 0 Yes / 6 No             -> catch 1.00
+    fam_pricing__diverse_true     6 Yes                    -> fp 0.00
+    fam_pricing__decorative_true  6 Yes                    -> fp 0.00
+
+The two TRUE cells read clean under the categorical block. `coherent_false`
+dropped from its pre-fix 1.00 to 0.67 - equal to the set-wide worst-item
+floor, still over the 0.5 target, with not one reader fooled (0 Yes). The old
+1.00 was partly the LEAKY block doing illegitimate work: a reader who
+(correctly) distrusted "fixed range" answered No for the wrong reason, and
+that No counted as a catch of a flaw it never saw. The fix traded a
+false-positive catch channel for honest abstention; the scope flaw alone now
+carries the item.

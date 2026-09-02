@@ -158,10 +158,10 @@
     "confound_fact_changed": "Premium stock's share of each store's shelf hit a record, double the earlier period",
     "confound_fact_same": "Premium stock's share of each store's shelf held level, matching the earlier period exactly",
     "confound_scope_reach": "and every line was stocked straight from that shelf",
-    "confound_scope_block": "and every line was stocked from a fixed year-round range",
+    "confound_scope_block": "and every line was priced and picked from a fixed planogram slot of its own",
     "old_tail": "footfall and promotion depth matched the month before, and nothing else changed.",
     "family_type": "scope",
-    "confound_scope_block_sentence": "Every line was stocked from a fixed year-round range, set before the period began."
+    "confound_scope_block_sentence": "Every line was priced and picked from a fixed planogram slot of its own, which no shelf reallocation touched."
   },
   "fam_reading": {
     "domain": "education",

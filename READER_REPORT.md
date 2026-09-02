@@ -70,15 +70,15 @@ salience stays in the output, labelled as what it is.
 <!--HUNTER_VS_READER-->
 | cell | n | hunter per-auditor | reader catch (baseline) | reader catch (now) | 95% CI, clustered by reader |
 |---|---|---|---|---|---|
-| `coherent_false` | 20 | 39/40 = 98% | 1.00 | **0.98** | [0.98, 1.00] |
+| `coherent_false` | 20 | 39/40 = 98% | 1.00 | **0.97** | [0.74, 0.99] |
 | `diverse_false` | 20 | 36/40 = 90% | 0.78 | **0.90** | [0.82, 1.00] |
 | `decorative_false` | 10 | 19/20 = 95% | 1.00 | **1.00** | [1.00, 1.00] |
 
 | cell | n | reader false-positive (baseline) | now | 95% CI, clustered by reader | readers giving 0 |
 |---|---|---|---|---|---|
 | `coherent_true` | 20 | 0.22 | **0.25** | [0.06, 0.41] | 13/17 |
-| `diverse_true` | 20 | 0.07 | **0.03** | [0.00, 0.05] | 16/18 |
-| `decorative_true` | 10 | 0.10 | **0.03** | [0.00, 0.19] | 15/16 |
+| `diverse_true` | 20 | 0.07 | **0.03** | [0.00, 0.04] | 22/24 |
+| `decorative_true` | 10 | 0.10 | **0.03** | [0.00, 0.14] | 20/21 |
 <!--/HUNTER_VS_READER-->
 
 Read the **hunter per-auditor** column against **reader catch (baseline)**. That
@@ -121,7 +121,7 @@ Section 4 says what it is.
 | cell | metric | before | after | invisible / reads-as-false |
 |---|---|---|---|---|
 | `coherent_true` | false-positive rate | 0.22 | **0.25** | 0 -> 3 |
-| `coherent_false` | catch rate | 1.00 | **0.98** | 0 -> 0 |
+| `coherent_false` | catch rate | 1.00 | **0.97** | 0 -> 0 |
 | `diverse_true` | false-positive rate | 0.07 | **0.03** | 1 -> 1 |
 | `diverse_false` | catch rate | 0.78 | **0.90** | 1 -> 0 |
 | `decorative_true` | false-positive rate | 0.10 | **0.03** | 0 -> 0 |
@@ -192,7 +192,7 @@ were off the table and both would have worked.
 | mechanism | n | catch before | catch after |
 |---|---|---|---|
 | `broken_chronology` | 10 | 0.57 | **0.80** |
-| `scope_mismatch` | 30 | 1.00 | **0.99** |
+| `scope_mismatch` | 30 | 1.00 | **0.98** |
 | `stated_confound` | 10 | 1.00 | **1.00** |
 <!--/MECHANISM-->
 
@@ -278,14 +278,14 @@ one condition in the check and the gate is already written to fail without it.
 <!--GATES-->
 | gate | before (`8315d9d`) | after | measured now |
 |---|---|---|---|
-| `word_count_parity` | PASS | PASS | grand mean 185.1 words; largest cell deviation +7.51% (limit +/-10%) |
+| `word_count_parity` | PASS | PASS | grand mean 185.3 words; largest cell deviation +7.66% (limit +/-10%) |
 | `coherent_one_value_per_dimension` | PASS | PASS | 60 coherent + decorative items checked across their condition dimensions |
 | `diverse_four_values_per_dimension` | PASS | PASS | 40 diverse items checked across their dimensions |
-| `no_lexical_giveaway` | PASS | PASS | grouped 5-fold CV accuracy 48.5% (mean of 5 shufflings; max 50.1%; 0/5 over limit) (limit 60%, chance 50%) |
+| `no_lexical_giveaway` | PASS | PASS | grouped 5-fold CV accuracy 49.3% (mean of 5 shufflings; max 51.1%; 0/5 over limit) (limit 60%, chance 50%) |
 | `cell_balance` | PASS | PASS | 100 items, 20 families (10 with a control arm), per-cell {'coherent_false': 20, 'coherent_true': 20, 'diverse_false': 20, 'diverse_true': 20, 'decorative_false': 10, 'decorative_true': 10} |
 | `no_duplicate_passages` | PASS | PASS | 100 distinct passages across 100 items |
 | `no_answer_key_leakage` | PASS | PASS | 100 passages scanned for answer-key leakage |
-| `passage_word_balance` | PASS | PASS | 1011 distinct words; flagged when \|T-F\| > 4, the split exceeds 40%, and the word spans >= 3 families. 0 flagged; worst qualifying split 17% |
+| `passage_word_balance` | PASS | PASS | 1015 distinct words; flagged when \|T-F\| > 4, the split exceeds 40%, and the word spans >= 3 families. 0 flagged; worst qualifying split 17% |
 | `flaw_declarations_complete` | PASS | PASS | 50 FALSE items checked |
 | `matched_mechanism_subset` | PASS | PASS | scope_mismatch: 10 coherent_false, 10 diverse_false, over 10 shared families |
 | `no_duplicate_flaw_phrasing` | — *(new)* | PASS | 50 FALSE items, 1185 cross-family pairs; worst similarity 0.62 (limit 0.7), no shared 8-grams; 40 within-family pairs exempt (matched mechanism, D-024) |
@@ -296,13 +296,13 @@ one condition in the check and the gate is already written to fail without it.
 
 | passage part | accuracy |
 |---|---|
-| `full` | 47.0% |
+| `full` | 49.9% |
 | `lead` | 50.0% |
 | `cases` | 50.8% |
 | `closer` | 50.0% |
-| `no_closer` | 48.9% |
+| `no_closer` | 49.8% |
 | `no_dates` | 46.6% |
-| `no_dates_no_numbers` | 45.5% |
+| `no_dates_no_numbers` | 46.6% |
 <!--/GATES-->
 
 ### Two bugs the gates caught
@@ -346,7 +346,7 @@ The fixture in `tests/test_validate.py` had the same problem and the same fix.
 > 0.07 in the diverse ones.
 >
 > **On the FALSE items, that is fixed and the answer to your question is yes.** A
-> plain reader now catches 0.98, 0.90 and 1.00 across the three false cells,
+> plain reader now catches 0.97, 0.90 and 1.00 across the three false cells,
 > against a hunter that gets 0.94 — the reader has essentially caught up with
 > the auditor who was told where to look. Every individual item is above 0.5 and
 > the three cells sit within 0.10 of each other, which was the target.
@@ -365,8 +365,9 @@ The fixture in `tests/test_validate.py` had the same problem and the same fix.
 >
 > Two more things I want to flag rather than bury. **The readers are language
 > models, not people** — a far better proxy than a hunter, but a proxy, and the
-> one human sample we have is n=10. **And the measurement is noisier than it
-> looks**: one reader answers a whole batch, so 300 reads is really 18 readers.
+> one human sample we have is n=10 per review. **And the measurement is noisier
+> than it looks**: one reader answers a whole batch, so ~300 reads is really a
+> few dozen readers.
 > Between rounds that cell went 0.00 to 0.25 with one item changed, because four
 > readers reject the cell wholesale and the other fourteen reject none of it. We
 > report the interval clustered by reader — [0.06, 0.41] — rather than the
@@ -396,6 +397,12 @@ The key is in `results/review_key/blind_items_2.json`. Answer first.
 .venv/Scripts/python.exe -m src.audit_reader make --run 0   # and 1, 2
 #   ... run the readers over results/reader_audit/run*/blind/ ...
 .venv/Scripts/python.exe -m src.audit_reader score
+.venv/Scripts/python.exe scripts/apply_reader_rates.py
+
+# after editing a few items: re-measure ONLY those, not all 100 (D-039)
+.venv/Scripts/python.exe scripts/reader_audit_patch.py make
+#   ... run the readers (scripts/wf_reader_patch.js) ...
+.venv/Scripts/python.exe scripts/reader_audit_patch.py score
 .venv/Scripts/python.exe scripts/apply_reader_rates.py
 
 # gates and report

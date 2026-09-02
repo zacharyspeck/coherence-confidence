@@ -1,0 +1,75 @@
+{
+ "batch": "01",
+ "run": 8,
+ "verdicts": [
+  {
+   "code": "A0C9F1",
+   "answer": "Yes"
+  },
+  {
+   "code": "228DCD",
+   "answer": "Yes"
+  },
+  {
+   "code": "4CC2E5",
+   "answer": "Yes"
+  },
+  {
+   "code": "7739E5",
+   "answer": "No"
+  },
+  {
+   "code": "00790D",
+   "answer": "Yes"
+  },
+  {
+   "code": "E39D6C",
+   "answer": "Unsure"
+  },
+  {
+   "code": "1977F8",
+   "answer": "Yes"
+  },
+  {
+   "code": "9B448D",
+   "answer": "No"
+  },
+  {
+   "code": "177813",
+   "answer": "No"
+  },
+  {
+   "code": "B0BC0F",
+   "answer": "No"
+  },
+  {
+   "code": "844725",
+   "answer": "Yes"
+  },
+  {
+   "code": "508C63",
+   "answer": "Unsure"
+  },
+  {
+   "code": "FB61FD",
+   "answer": "Yes"
+  },
+  {
+   "code": "E6E164",
+   "answer": "Yes"
+  },
+  {
+   "code": "6410E3",
+   "answer": "No"
+  },
+  {
+   "code": "BD898B",
+   "answer": "Yes"
+  },
+  {
+   "code": "AD21FE",
+   "answer": "No"
+  }
+ ],
+ "note": "accidental redraw of run 2 batches; relabeled, all reads kept"
+}

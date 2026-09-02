@@ -112,13 +112,20 @@ def main(argv: list[str] | None = None) -> int:
 
     # Purge any existing control arm from the raw JSON BEFORE loading through the
     # model. A previous run that wrote something the validator now rejects would
-    # otherwise leave this script unable to fix its own output.
+    # otherwise leave this script unable to fix its own output. Measured fields
+    # are kept aside first: they describe a PASSAGE, so they survive exactly as
+    # long as the rebuilt passage is byte-identical (same rule as
+    # assemble_passages.py - invalidation no wider than it has to be).
+    previous: dict[str, dict] = {}
     purged = 0
     for d in ("items/draft", "items/seed"):
         for path in sorted(Path(d).glob("fam_*.json")):
             data = json.loads(path.read_text(encoding="utf-8"))
             keep = [i for i in data["items"] if not i["cell"].startswith("decorative")]
             if len(keep) != len(data["items"]):
+                for i in data["items"]:
+                    if i["cell"].startswith("decorative"):
+                        previous[i["id"]] = i
                 purged += len(data["items"]) - len(keep)
                 data["items"] = keep
                 data.pop("decoration_dimensions", None)
@@ -143,6 +150,8 @@ def main(argv: list[str] | None = None) -> int:
     print(f"{len(targets)} scope_mismatch families -> {len(targets) * 2} control items")
 
     built = 0
+    carried = 0
+    rebuilt: list[str] = []
     for index, fam in enumerate(sorted(targets, key=lambda f: f.family_id)):
         sp, cl = spec[fam.family_id], clauses[fam.family_id]
         base = next(i for i in fam.items if i.cell == "coherent_true")
@@ -182,9 +191,16 @@ def main(argv: list[str] | None = None) -> int:
                     "terminal and desk - surface detail that rules nothing out, so "
                     "the evidence is exactly as dependent as the coherent version."
                 ).strip()
+            item_id = f"{fam.family_id}__{cell}"
+            prev = previous.get(item_id)
+            unchanged = bool(prev and prev.get("passage") == passage)
+            if unchanged:
+                carried += 1
+            else:
+                rebuilt.append(item_id)
             data["items"].append(
                 {
-                    "id": f"{fam.family_id}__{cell}",
+                    "id": item_id,
                     "family_id": fam.family_id,
                     "cell": cell,
                     "claim": fam.claim,
@@ -196,7 +212,11 @@ def main(argv: list[str] | None = None) -> int:
                     "flaw_mechanism": mech,
                     "confound_variant": f"{confound[0]}_{confound[1]}",
                     "scope_variant": f"{scope[0]}_{scope[1]}",
-                    "salience": None,
+                    "salience": prev.get("salience") if unchanged else None,
+                    "reader_catch_rate": prev.get("reader_catch_rate") if unchanged else None,
+                    "reader_false_positive_rate": (
+                        prev.get("reader_false_positive_rate") if unchanged else None
+                    ),
                     "surface_complexity": surface_complexity(
                         passage,
                         [c["conditions"] for c in cases],
@@ -226,6 +246,9 @@ def main(argv: list[str] | None = None) -> int:
             )
 
     print(f"{'would build' if args.check else 'built'} {built} decorative items")
+    print(f"{carried} unchanged (measured fields carried over); "
+          f"{len(rebuilt)} passages CHANGED, measurements cleared"
+          + (f": {rebuilt[:6]}" if rebuilt else ""))
     return 0
 
 

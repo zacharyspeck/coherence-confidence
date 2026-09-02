@@ -53,17 +53,17 @@ a coherent item.
 <!--MATCH_TABLE-->
 | metric | coherent | diverse | **decorative** | decorative vs diverse |
 |---|---|---|---|---|
-| distinct tokens | 77.0 | 94.9 | **95.1** | +0.2% |
+| distinct tokens | 78.9 | 96.9 | **98.5** | +1.6% |
 | distinct entities | 13.7 | 26.1 | **25.2** | -3.3% |
 | entity tokens (with repeats) | 30.3 | 30.4 | **41.7** | +37.4% |
-| type-token ratio | 0.433 | 0.534 | **0.490** | -8.2% |
+| type-token ratio | 0.433 | 0.532 | **0.496** | -6.8% |
 | distinct CONDITION values | 4.0 | 16.0 | **4.0** | -75.0% |
 | distinct DECORATION values | 0.0 | 0.0 | **16.0** | — |
-| mean word count | 177.7 | 177.7 | **194.0** | — |
+| mean word count | 181.9 | 182.1 | **198.6** | — |
 
-- `coherent` mean word count 177.7, -1.79% from the grand mean of 180.9 (limit ±10%)
-- `diverse` mean word count 177.7, -1.82% from the grand mean of 180.9 (limit ±10%)
-- `decorative` mean word count 194.0, +7.22% from the grand mean of 180.9 (limit ±10%)
+- `coherent` mean word count 181.9, -1.83% from the grand mean of 185.3 (limit ±10%)
+- `diverse` mean word count 182.1, -1.75% from the grand mean of 185.3 (limit ±10%)
+- `decorative` mean word count 198.6, +7.18% from the grand mean of 185.3 (limit ±10%)
 <!--/MATCH_TABLE-->
 
 Read **distinct entities** against **distinct condition values**. The first is
@@ -151,16 +151,17 @@ Item edits invalidate every prior check, so all of these were re-run on the
 <!--GATE_TABLE-->
 | gate | before (80 items, `b5f4ac5`) | after (100 items) | measured now |
 |---|---|---|---|
-| `word_count_parity` | PASS | PASS | grand mean 180.9 words; largest cell deviation +7.61% (limit +/-10%) |
+| `word_count_parity` | PASS | PASS | grand mean 185.3 words; largest cell deviation +7.66% (limit +/-10%) |
 | `coherent_one_value_per_dimension` | PASS | PASS | 60 coherent + decorative items checked across their condition dimensions |
 | `diverse_four_values_per_dimension` | PASS | PASS | 40 diverse items checked across their dimensions |
-| `no_lexical_giveaway` | PASS | PASS | grouped 5-fold CV accuracy 48.4% (mean of 5 shufflings; max 49.7%; 0/5 over limit) (limit 60%, chance 50%) |
+| `no_lexical_giveaway` | PASS | PASS | grouped 5-fold CV accuracy 49.3% (mean of 5 shufflings; max 51.1%; 0/5 over limit) (limit 60%, chance 50%) |
 | `cell_balance` | PASS | PASS | 100 items, 20 families (10 with a control arm), per-cell {'coherent_false': 20, 'coherent_true': 20, 'diverse_false': 20, 'diverse_true': 20, 'decorative_false': 10, 'decorative_true': 10} |
 | `no_duplicate_passages` | PASS | PASS | 100 distinct passages across 100 items |
 | `no_answer_key_leakage` | PASS | PASS | 100 passages scanned for answer-key leakage |
-| `passage_word_balance` | PASS *(redefined)* | PASS | 986 distinct words; flagged when \|T-F\| > 4, the split exceeds 40%, and the word spans >= 3 families. 0 flagged; worst qualifying split 17% |
+| `passage_word_balance` | PASS *(redefined)* | PASS | 1015 distinct words; flagged when \|T-F\| > 4, the split exceeds 40%, and the word spans >= 3 families. 0 flagged; worst qualifying split 17% |
 | `flaw_declarations_complete` | PASS | PASS | 50 FALSE items checked |
 | `matched_mechanism_subset` | PASS | PASS | scope_mismatch: 10 coherent_false, 10 diverse_false, over 10 shared families |
+| `no_duplicate_flaw_phrasing` | — *(new)* | PASS | 50 FALSE items, 1185 cross-family pairs; worst similarity 0.62 (limit 0.7), no shared 8-grams; 40 within-family pairs exempt (matched mechanism, D-024) |
 | `control_surface_match` | — *(new)* | PASS | 20 decorative items; largest surface gap vs diverse +3.3% (limit +/-10%); condition values 4.0 vs coherent 4.0, diverse 16.0 |
 | `all_items_unreviewed` | PASS | PASS | 100/100 items are 'unreviewed' |
 
@@ -168,13 +169,13 @@ Item edits invalidate every prior check, so all of these were re-run on the
 
 | passage part | accuracy |
 |---|---|
-| `full` | 48.8% |
+| `full` | 49.9% |
 | `lead` | 50.0% |
-| `cases` | 49.0% |
+| `cases` | 50.8% |
 | `closer` | 50.0% |
 | `no_closer` | 49.8% |
-| `no_dates` | 47.6% |
-| `no_dates_no_numbers` | 47.6% |
+| `no_dates` | 46.6% |
+| `no_dates_no_numbers` | 46.6% |
 <!--/GATE_TABLE-->
 
 ### What changed in the gates

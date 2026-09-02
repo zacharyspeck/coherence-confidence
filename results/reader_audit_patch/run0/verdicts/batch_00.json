@@ -1,0 +1,11 @@
+{
+ "batch": "00",
+ "run": 0,
+ "verdicts": [
+  {
+   "code": "20A66D",
+   "answer": "Unsure"
+  }
+ ],
+ "note": "first draw, target entries reconstructed from the merged audit after the files were overwritten by the redraw; filler entries were discarded by design"
+}

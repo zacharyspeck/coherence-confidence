@@ -1,0 +1,172 @@
+{
+  "F974F5": {
+    "item_id": "fam_labkit__coherent_true",
+    "family_id": "fam_labkit",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "D3C077": {
+    "item_id": "fam_timetable__decorative_true",
+    "family_id": "fam_timetable",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "1DA95F": {
+    "item_id": "fam_nestbox__coherent_true",
+    "family_id": "fam_nestbox",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "992112": {
+    "item_id": "fam_coolant__diverse_false",
+    "family_id": "fam_coolant",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "role": "filler",
+    "batch": 0
+  },
+  "6D6C41": {
+    "item_id": "fam_reading__coherent_false",
+    "family_id": "fam_reading",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "role": "filler",
+    "batch": 0
+  },
+  "6054E4": {
+    "item_id": "fam_checkout__decorative_false",
+    "family_id": "fam_checkout",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "role": "filler",
+    "batch": 0
+  },
+  "3D711C": {
+    "item_id": "fam_physio__coherent_false",
+    "family_id": "fam_physio",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "role": "filler",
+    "batch": 0
+  },
+  "440469": {
+    "item_id": "fam_solder__coherent_true",
+    "family_id": "fam_solder",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "F98B14": {
+    "item_id": "fam_inhaler__diverse_true",
+    "family_id": "fam_inhaler",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "FB61FD": {
+    "item_id": "fam_seedcoat__decorative_true",
+    "family_id": "fam_seedcoat",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "7EBEDA": {
+    "item_id": "fam_tutoring__diverse_true",
+    "family_id": "fam_tutoring",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "B0BC0F": {
+    "item_id": "fam_filter__diverse_false",
+    "family_id": "fam_filter",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "role": "filler",
+    "batch": 0
+  },
+  "508C63": {
+    "item_id": "fam_sleepapp__diverse_false",
+    "family_id": "fam_sleepapp",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "role": "filler",
+    "batch": 0
+  },
+  "20A66D": {
+    "item_id": "fam_pricing__coherent_false",
+    "family_id": "fam_pricing",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "role": "target",
+    "batch": 0
+  },
+  "5CB6BE": {
+    "item_id": "fam_fertilizer__coherent_true",
+    "family_id": "fam_fertilizer",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "39FA76": {
+    "item_id": "fam_routing__diverse_true",
+    "family_id": "fam_routing",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "94D3CF": {
+    "item_id": "fam_driptape__diverse_false",
+    "family_id": "fam_driptape",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "role": "filler",
+    "batch": 0
+  }
+}

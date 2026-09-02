@@ -1,0 +1,172 @@
+{
+  "E39D6C": {
+    "item_id": "fam_labkit__diverse_false",
+    "family_id": "fam_labkit",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "role": "filler",
+    "batch": 0
+  },
+  "F98B14": {
+    "item_id": "fam_inhaler__diverse_true",
+    "family_id": "fam_inhaler",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "0B573B": {
+    "item_id": "fam_driptape__coherent_false",
+    "family_id": "fam_driptape",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "role": "filler",
+    "batch": 0
+  },
+  "4DD2B1": {
+    "item_id": "fam_handwash__coherent_true",
+    "family_id": "fam_handwash",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "ED4B93": {
+    "item_id": "fam_physio__diverse_false",
+    "family_id": "fam_physio",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "role": "filler",
+    "batch": 0
+  },
+  "9B448D": {
+    "item_id": "fam_routing__decorative_false",
+    "family_id": "fam_routing",
+    "cell": "decorative_false",
+    "coherence": "decorative",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "role": "filler",
+    "batch": 0
+  },
+  "20A66D": {
+    "item_id": "fam_pricing__coherent_false",
+    "family_id": "fam_pricing",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "role": "target",
+    "batch": 0
+  },
+  "372800": {
+    "item_id": "fam_nestbox__coherent_false",
+    "family_id": "fam_nestbox",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "role": "filler",
+    "batch": 0
+  },
+  "508C63": {
+    "item_id": "fam_sleepapp__diverse_false",
+    "family_id": "fam_sleepapp",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "role": "filler",
+    "batch": 0
+  },
+  "844725": {
+    "item_id": "fam_tutoring__coherent_true",
+    "family_id": "fam_tutoring",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "5CB6BE": {
+    "item_id": "fam_fertilizer__coherent_true",
+    "family_id": "fam_fertilizer",
+    "cell": "coherent_true",
+    "coherence": "coherent",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "A1E089": {
+    "item_id": "fam_checkout__decorative_true",
+    "family_id": "fam_checkout",
+    "cell": "decorative_true",
+    "coherence": "decorative",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "50A8B3": {
+    "item_id": "fam_bearing__coherent_false",
+    "family_id": "fam_bearing",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "stated_confound",
+    "role": "filler",
+    "batch": 0
+  },
+  "BD898B": {
+    "item_id": "fam_solder__diverse_true",
+    "family_id": "fam_solder",
+    "cell": "diverse_true",
+    "coherence": "diverse",
+    "ground_truth": true,
+    "flaw_mechanism": null,
+    "role": "filler",
+    "batch": 0
+  },
+  "5646AC": {
+    "item_id": "fam_timetable__coherent_false",
+    "family_id": "fam_timetable",
+    "cell": "coherent_false",
+    "coherence": "coherent",
+    "ground_truth": false,
+    "flaw_mechanism": "scope_mismatch",
+    "role": "filler",
+    "batch": 0
+  },
+  "A9550D": {
+    "item_id": "fam_reading__diverse_false",
+    "family_id": "fam_reading",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "role": "filler",
+    "batch": 0
+  },
+  "87D5B2": {
+    "item_id": "fam_onboarding__diverse_false",
+    "family_id": "fam_onboarding",
+    "cell": "diverse_false",
+    "coherence": "diverse",
+    "ground_truth": false,
+    "flaw_mechanism": "broken_chronology",
+    "role": "filler",
+    "batch": 0
+  }
+}

@@ -1,0 +1,11 @@
+{
+ "batch": "03",
+ "run": 1,
+ "verdicts": [
+  {
+   "code": "585C8C",
+   "answer": "Yes"
+  }
+ ],
+ "note": "first draw, target entries reconstructed from the merged audit after the files were overwritten by the redraw; filler entries were discarded by design"
+}
