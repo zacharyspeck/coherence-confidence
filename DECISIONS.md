@@ -1495,3 +1495,80 @@ covariate model inverts the coherence coefficient when surface complexity
 enters; and now the order control says presentation alone moves answers as much
 as the manipulation does. For a 3B at near-chance AUC, the honest summary is
 that surface form dominates whatever evidential reasoning is present.
+
+## D-046 - The Kaggle ladder: Qwen3-8B + Qwen3-32B, not the 27B that was named
+
+**The instruction** asked for "Qwen3.x 8B instruct and Qwen3.x 27B instruct"
+on 2x T4, with the exact names to be confirmed. Confirmed against Hugging Face
+(2026-09): the 27B models in the 3.x line - Qwen3.6-27B (Apr 2026) and
+Qwen3.8-27B (Aug 2026) - are MULTIMODAL, load via AutoModelForMultimodalLM,
+weigh ~54GB in bf16, and have no 8B text sibling. They fit neither
+src/score.py's AutoModelForCausalLM measurement path nor Kaggle's disk.
+
+**Chose:** the nearest same-family text-only ladder - `Qwen/Qwen3-8B` (fp16,
+sharded across both T4s) and `unsloth/Qwen3-32B-bnb-4bit` (the standard
+bitsandbytes nf4 export of Qwen/Qwen3-32B, ~19.5GB). The official bf16 32B is
+~65GB, over Kaggle's disk, and bnb quantize-at-load would still download all
+of it; the pre-quantized mirror is the only 32B route that fits. Recorded in
+KAGGLE.md where the person pressing Run all will read it.
+
+**Two hardware facts folded into the flags:** T4s (sm_75) have no bf16 units,
+so everything runs fp16 including the 4-bit compute dtype - the brief said
+bf16 and that is physically unavailable on this accelerator. And Qwen3 hybrid
+thinking would spend the next token on '<think>', zeroing all three options;
+`--no-thinking` passes enable_thinking=False, and the notebook's hard
+coverage gate (mean mass >= 0.5) turns any regression of this into a loud
+failure instead of a subtly wrong run.
+
+**score.py grew three flags for this, all recorded in run meta:**
+`--device-map` (accelerate sharding; .to() is skipped and inputs follow the
+first shard), `--load-4bit` (BitsAndBytesConfig nf4 at load, for
+non-pre-quantized checkpoints), `--no-thinking`. Verified: 333 tests pass,
+and a SmolLM2 CPU run with all three template-affecting flags scores
+normally (coverage 0.79) - enable_thinking lands in the jinja context and
+templates that never reference it ignore it, so the flag is safe to leave on
+everywhere.
+
+**The notebook re-verifies the measurement under sharding** before any real
+run: cell 3 scores 2 items on the sharded 8B and asserts that a bare forward
+pass's final-position argmax equals the scorer's top token, and that coverage
+has not collapsed. Cell 4's per-stage subprocesses reuse the item-level
+checkpoints, so a dead Kaggle kernel resumes with Run all instead of starting
+over.
+
+## D-047 - Five defects the pre-push review caught in the Kaggle notebook chain
+
+A three-lens adversarial review (notebook / score.py diff / docs, every
+finding independently verified against the code) ran before the push. All
+five confirmed findings were fixed:
+
+1. **BLOCKER - the 32B would have computed in bf16 on bf16-less GPUs.** The
+   pre-quantized unsloth checkpoint bakes `bnb_4bit_compute_dtype: bfloat16`
+   into its config, and on the pinned transformers a user-passed
+   BitsAndBytesConfig is ignored for pre-quantized models - so `--dtype
+   float16` silently did not govern the 4-bit matmuls, contradicting the
+   docs, slowing every pass (emulated bf16 on sm_75), and adding a numeric
+   confound to the 8B-vs-32B comparison. score.py now rewrites the
+   checkpoint's own config at load when its compute dtype disagrees with
+   --dtype, prints a NOTE, and records `bnb_compute_dtype_overridden` in meta.
+2. **Checkpoints were config-blind.** Records are keyed by item_id, so a run
+   killed under one flag set could be topped up under another and stamped
+   with the second run's meta. Checkpoints now open with a
+   `checkpoint_config` stamp; resuming under different measurement flags is
+   refused with the exact flag diff. Legacy stamp-less checkpoints warn.
+   Verified: same-flags resume skips all items; a --third-option change
+   refuses with `{'third_option': ('Unsure', 'Unknown')}`.
+3. **The results zip would have mixed eras.** The repo ships 400+ committed
+   results/ artifacts; zipping results/ wholesale would put the CPU-era
+   analysis_qwen3b.md beside the fresh T4 analyses. Cell 1 now moves the
+   committed history to results_from_repo/ so the download contains only
+   what the session produced.
+4. **The clone token touched disk.** `https://<tok>@` URLs land in
+   .git/config until the scrub runs, and Kaggle preserves /kaggle/working in
+   saved versions - an interrupt in that sub-second window would persist the
+   token. The clone now sends the token via GIT_CONFIG_* environment
+   variables (process-only http.extraheader); it never appears in a URL or
+   on disk.
+5. **Docs overstated resume speed.** Each finished stage still reloads its
+   model (~1-5 min) before finding nothing to do; KAGGLE.md now says so
+   instead of "re-verified in seconds".

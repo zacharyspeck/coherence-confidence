@@ -60,22 +60,28 @@ def score_baselines(
     progress: bool = True,
     checkpoint: str | None = None,
     gc_every: int = 20,
+    config: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     """One forward pass per family claim, checkpointed per claim.
 
     Keyed on family_id rather than item_id, because that is the unit here; the
     resume logic is otherwise identical to src.score's and exists for the same
-    reason (D-041).
+    reason (D-041). The config stamp exists for the same reason as src.score's
+    too: a claim scored under one template configuration must not be topped up
+    under another.
     """
     import gc
     import json as _json
     import os as _os
     from pathlib import Path as _Path
 
+    from .score import guard_checkpoint_config
+
     options = getattr(scorer, "options", DEFAULT_OPTIONS)
     rows = unique_claims(items)
 
     done: dict[str, dict[str, Any]] = {}
+    stored_config: dict[str, Any] | None = None
     if checkpoint and _Path(checkpoint).exists():
         for line in _Path(checkpoint).read_text(encoding="utf-8").splitlines():
             line = line.strip()
@@ -85,17 +91,26 @@ def score_baselines(
                 rec = _json.loads(line)
             except ValueError:
                 continue
-            if isinstance(rec, dict) and rec.get("family_id"):
+            if isinstance(rec, dict) and "checkpoint_config" in rec:
+                stored_config = rec["checkpoint_config"]
+            elif isinstance(rec, dict) and rec.get("family_id"):
                 done[rec["family_id"]] = rec
         if progress:
             print(f"  checkpoint {checkpoint}: {len(done)} claims done",
                   file=sys.stderr)
+    need_stamp = config is not None and (
+        checkpoint is not None
+        and guard_checkpoint_config(checkpoint, stored_config, config, bool(done))
+    )
 
     todo = [r for r in rows if r[0] not in done]
     fh = None
     if checkpoint:
         _Path(checkpoint).parent.mkdir(parents=True, exist_ok=True)
         fh = open(checkpoint, "a", encoding="utf-8")
+        if need_stamp:
+            fh.write(_json.dumps({"checkpoint_config": config}) + "\n")
+            fh.flush()
     try:
         for n, (family_id, claim, domain) in enumerate(todo, 1):
             res = scorer.score_prompt(render_baseline_prompt(claim, options))
@@ -150,8 +165,11 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\nTOKENIZATION CHECK FAILED\n\n  {exc}\n", file=sys.stderr)
         return 2
 
+    from .score import checkpoint_config_of
+
     records = score_baselines(
-        scorer, items, checkpoint=args.checkpoint, gc_every=args.gc_every
+        scorer, items, checkpoint=args.checkpoint, gc_every=args.gc_every,
+        config=checkpoint_config_of(args),
     )
 
     meta = provenance.run_meta(**scorer.meta(), item_dirs=list(args.items))

@@ -351,6 +351,9 @@ class HFScorer:
         add_special_tokens: bool = True,
         options: Sequence[str] = DEFAULT_OPTIONS,
         require_canonical_single_token: bool = True,
+        device_map: str | None = None,
+        load_4bit: bool = False,
+        no_thinking: bool = False,
     ) -> None:
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -362,6 +365,14 @@ class HFScorer:
         self.add_special_tokens = add_special_tokens
         self.options = tuple(options)  # type: ignore[assignment]
         self.determinism = provenance.set_determinism(seed)
+        self.device_map = device_map
+        self.load_4bit = load_4bit
+        # Qwen3-style hybrid models spend their first token on '<think>' unless
+        # the chat template is told otherwise. At the final position that means
+        # every option reads near zero - the run LOOKS like a model with no
+        # opinion when it is actually a model clearing its throat. The coverage
+        # gate catches it loudly; this flag prevents it.
+        self.no_thinking = no_thinking
 
         if device == "auto":
             device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -377,6 +388,45 @@ class HFScorer:
         # difference is the whole run: five consecutive loads were killed
         # before this was set (D-041).
         kw: dict[str, Any] = {"revision": revision, "low_cpu_mem_usage": True}
+        if device_map:
+            # accelerate shards the model across every visible device (or
+            # offloads); placement is its job from here on.
+            kw["device_map"] = device_map
+        if load_4bit:
+            from transformers import BitsAndBytesConfig
+
+            # Quantize at load. Not needed for checkpoints that are already
+            # bnb-quantized (e.g. *-bnb-4bit repos) - those carry their
+            # quantization in the config and load quantized regardless.
+            kw["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_use_double_quant=True,
+                bnb_4bit_compute_dtype=torch_dtype,
+            )
+
+        # Pre-quantized checkpoints carry quantization_config in config.json,
+        # and on this transformers version a user-passed BitsAndBytesConfig is
+        # IGNORED for them - including the compute dtype. unsloth's Qwen3
+        # bnb-4bit repos bake in bnb_4bit_compute_dtype=bfloat16, which on
+        # bf16-less hardware (T4, sm_75) would silently run every 4-bit matmul
+        # in emulated bf16: slower, and a numeric confound against a sibling
+        # model measured in fp16. Align the checkpoint's compute dtype with
+        # --dtype by editing the CONFIG it will be quantized from.
+        self.bnb_compute_dtype_overridden = False
+        from transformers import AutoConfig
+
+        cfg = AutoConfig.from_pretrained(model_name, revision=revision)
+        qc = getattr(cfg, "quantization_config", None)
+        if isinstance(qc, dict) and qc.get("bnb_4bit_compute_dtype") not in (None, dtype):
+            qc["bnb_4bit_compute_dtype"] = dtype
+            kw["config"] = cfg
+            self.bnb_compute_dtype_overridden = True
+            print(
+                f"NOTE: checkpoint's bnb_4bit_compute_dtype overridden to {dtype} "
+                "to match --dtype (see meta.bnb_compute_dtype_overridden)",
+                file=sys.stderr,
+            )
         try:
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_name, dtype=torch_dtype, **kw
@@ -385,7 +435,13 @@ class HFScorer:
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_name, torch_dtype=torch_dtype, **kw
             )
-        self.model.to(self.device)
+        if device_map is None and not getattr(self.model, "is_quantized", False):
+            self.model.to(self.device)
+        else:
+            # Dispatched or quantized models must not be .to()-moved. Inputs go
+            # to the first shard's device (the embedding layer); accelerate
+            # hooks carry activations across the rest.
+            self.device = str(next(self.model.parameters()).device)
         self.model.eval()
 
         self.option_tokens = build_option_table(
@@ -406,10 +462,14 @@ class HFScorer:
             return prompt
         # Opt-in only (D-009): this changes the token immediately before the
         # answer position, which changes the option logits model-specifically.
+        # enable_thinking lands in the template's jinja context; templates that
+        # never reference it (Qwen2.5, SmolLM2, ...) ignore it silently.
+        kwargs = {"enable_thinking": False} if self.no_thinking else {}
         return self.tokenizer.apply_chat_template(
             [{"role": "user", "content": prompt}],
             tokenize=False,
             add_generation_prompt=True,
+            **kwargs,
         )
 
     def score_prompt(self, prompt: str) -> ScoreResult:
@@ -479,6 +539,11 @@ class HFScorer:
             "model": self.model_name,
             "revision": self.revision,
             "device": self.device,
+            "device_map": self.device_map,
+            "load_4bit": self.load_4bit,
+            "quantized": bool(getattr(self.model, "is_quantized", False)),
+            "bnb_compute_dtype_overridden": self.bnb_compute_dtype_overridden,
+            "no_thinking": self.no_thinking,
             "dtype": self.dtype_name,
             "chat_template": self.chat_template,
             "add_special_tokens": self.add_special_tokens,
@@ -596,19 +661,23 @@ def score_items(
     return records
 
 
-def load_checkpoint(path: str | None) -> dict[str, dict[str, Any]]:
-    """Records already on disk, keyed by item_id. Truncated last lines are
-    dropped rather than raising: a checkpoint is written to survive a kill, and
-    a kill can land mid-line."""
+def load_checkpoint(
+    path: str | None,
+) -> tuple[dict[str, dict[str, Any]], dict[str, Any] | None]:
+    """(records keyed by item_id, stored config stamp or None).
+
+    Truncated last lines are dropped rather than raising: a checkpoint is
+    written to survive a kill, and a kill can land mid-line."""
     import json as _json
     from pathlib import Path as _Path
 
     if not path:
-        return {}
+        return {}, None
     p = _Path(path)
     if not p.exists():
-        return {}
+        return {}, None
     done: dict[str, dict[str, Any]] = {}
+    stored_config: dict[str, Any] | None = None
     for line in p.read_text(encoding="utf-8").splitlines():
         line = line.strip()
         if not line:
@@ -617,9 +686,68 @@ def load_checkpoint(path: str | None) -> dict[str, dict[str, Any]]:
             rec = _json.loads(line)
         except ValueError:
             continue  # partial final line from an interrupted write
-        if isinstance(rec, dict) and rec.get("item_id"):
+        if isinstance(rec, dict) and "checkpoint_config" in rec:
+            stored_config = rec["checkpoint_config"]
+        elif isinstance(rec, dict) and rec.get("item_id"):
             done[rec["item_id"]] = rec
-    return done
+    return done, stored_config
+
+
+def guard_checkpoint_config(
+    path: str,
+    stored: dict[str, Any] | None,
+    current: dict[str, Any],
+    have_records: bool,
+) -> bool:
+    """Refuse to resume a checkpoint written under different measurement flags.
+
+    Records are keyed by item_id only, so nothing else stops a run killed
+    under one configuration (say, with thinking-mode template leakage) from
+    being topped up under another and stamped with the final run's meta - a
+    mixed-provenance file that looks clean. Returns True if the config stamp
+    still needs to be written.
+    """
+    if stored is not None:
+        if stored != current:
+            diff = {
+                k: (stored.get(k), current.get(k))
+                for k in sorted(set(stored) | set(current))
+                if stored.get(k) != current.get(k)
+            }
+            raise SystemExit(
+                f"checkpoint {path} was written under DIFFERENT flags: {diff}. "
+                "Mixing records measured under two configurations would produce "
+                "a run file whose meta describes only the second. Delete or "
+                "rename the checkpoint to rescore from scratch."
+            )
+        return False
+    if have_records:
+        print(
+            f"WARNING: {path} predates config stamping; cannot verify its "
+            "records were measured under the current flags.",
+            file=sys.stderr,
+        )
+        return False
+    return True
+
+
+def checkpoint_config_of(args: argparse.Namespace) -> dict[str, Any]:
+    """Everything that changes what a checkpoint record MEANS."""
+    return {
+        "model": args.model,
+        "revision": args.revision,
+        "dtype": args.dtype,
+        "device_map": args.device_map,
+        "load_4bit": args.load_4bit,
+        "chat_template": args.chat_template,
+        "no_thinking": args.no_thinking,
+        "third_option": args.third_option,
+        "variant_strategy": args.variant_strategy,
+        "shuffle_cases": getattr(args, "shuffle_cases", False),
+        "case_seed": getattr(args, "case_seed", 0),
+        "option_rotations": getattr(args, "option_rotations", False),
+        "mock": args.mock,
+    }
 
 
 def score_items_checkpointed(
@@ -633,6 +761,7 @@ def score_items_checkpointed(
     option_rotations: bool = False,
     rotation_spread_limit: float = 0.05,
     gc_every: int = 20,
+    config: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     """Score one item at a time, appending each record to `checkpoint` as it
     lands, and skipping items already there.
@@ -650,7 +779,10 @@ def score_items_checkpointed(
     options = getattr(scorer, "options", DEFAULT_OPTIONS)
     rotations = list(OPTION_ROTATIONS) if option_rotations else [None]
 
-    done = load_checkpoint(checkpoint)
+    done, stored_config = load_checkpoint(checkpoint)
+    need_stamp = config is not None and guard_checkpoint_config(
+        checkpoint, stored_config, config, bool(done)
+    )
     todo = [i for i in items if i.id not in done]
     if progress:
         print(
@@ -660,6 +792,9 @@ def score_items_checkpointed(
 
     _Path(checkpoint).parent.mkdir(parents=True, exist_ok=True)
     with open(checkpoint, "a", encoding="utf-8") as fh:
+        if need_stamp:
+            fh.write(_json.dumps({"checkpoint_config": config}) + "\n")
+            fh.flush()
         for n, item in enumerate(todo, 1):
             order = case_permutation(item, case_seed) if shuffle_cases else None
             got = [
@@ -753,6 +888,9 @@ def make_scorer(
         temperature=args.temperature,
         options=options,
         require_canonical_single_token=args.require_canonical_single_token,
+        device_map=args.device_map,
+        load_4bit=args.load_4bit,
+        no_thinking=args.no_thinking,
     )
 
 
@@ -760,6 +898,26 @@ def add_common_args(ap: argparse.ArgumentParser) -> None:
     ap.add_argument("--model", help="HuggingFace causal LM name")
     ap.add_argument("--revision", default=None, help="pin a specific weights revision")
     ap.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
+    ap.add_argument(
+        "--device-map",
+        default=None,
+        help="pass 'auto' to shard the model across every visible GPU via "
+        "accelerate. Placement then belongs to accelerate: --device is "
+        "ignored and inputs follow the first shard.",
+    )
+    ap.add_argument(
+        "--load-4bit",
+        action="store_true",
+        help="quantize weights to nf4 at load via bitsandbytes. Unnecessary "
+        "for already-quantized checkpoints (*-bnb-4bit repos).",
+    )
+    ap.add_argument(
+        "--no-thinking",
+        action="store_true",
+        help="pass enable_thinking=False to the chat template. REQUIRED for "
+        "Qwen3-style hybrid models: with thinking on, the next token is "
+        "'<think>' and every option reads near zero. Harmless elsewhere.",
+    )
     ap.add_argument("--dtype", default="float32")
     ap.add_argument(
         "--variant-strategy", default="explicit", choices=list(VARIANT_STRATEGIES)
@@ -908,6 +1066,7 @@ def main(argv: list[str] | None = None) -> int:
             option_rotations=args.option_rotations,
             rotation_spread_limit=args.rotation_spread_limit,
             gc_every=args.gc_every,
+            config=checkpoint_config_of(args),
         )
     else:
         records = score_items(
