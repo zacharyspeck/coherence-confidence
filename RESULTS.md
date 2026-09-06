@@ -1,286 +1,219 @@
-# RESULTS — Qwen2.5-3B-Instruct, 100 items, CPU
+# RESULTS — Qwen3-8B and Qwen3-32B on 2x T4, with the Qwen2.5-3B CPU run for scale
 
-Run 2026-09-02. Model `Qwen/Qwen2.5-3B-Instruct`, revision
-`aa8e72537993ba99e69dfaafa59ed015b17504d1`, CPU, bfloat16, chat template on,
-options `Yes / No / Unsure` read from the final-position logits. All 100 items,
-20 families, six cells. Artifacts: `results/run_qwen3b.json`,
-`results/baseline_qwen3b.json`, `results/analysis_qwen3b.{json,md}`.
+Kaggle run 2026-09-06: `Qwen/Qwen3-8B` (fp16, sharded across both T4s) and
+`unsloth/Qwen3-32B-bnb-4bit` (nf4, fp16 compute — the checkpoint's baked-in
+bf16 compute dtype was overridden and `meta.bnb_compute_dtype_overridden`
+confirms it). Options `Yes / No / Unknown`, chat template with the
+assistant-turn `Answer:` prefill (D-048/49; discovery kept the seed on both
+models), coverage mean 1.0000 (8B) and 0.9632 (32B). All 100 items, both
+controls, baselines, analyses: `results/kaggle/`. The earlier CPU run
+(Qwen2.5-3B) is in `RESULTS_cpu_3b.md`; note it was measured under the OLD
+instrument — `Unsure` option, old instruction, user-turn cue, coverage 0.49 —
+so its numbers are directional context, not a same-ruler comparison.
 
-## The headline
+## 1. The headline
 
-**The model's ability to tell sound evidence from unsound did not collapse when
-the evidence agreed with itself — if anything it was better there, and the
-difference is not statistically distinguishable from zero.**
+**At 32B the model tells sound evidence from unsound clearly better when the
+evidence all agrees with itself, and worse than chance when it is diverse —
+the opposite sign to the prediction, and this time the interval excludes
+zero.**
 
-    AUC(coherent) = 0.5550        AUC(diverse) = 0.4475
-    gap = +0.1075                 95% CI (family-clustered) [-0.0375, +0.2475]
+| model | AUC(coherent) | AUC(diverse) | gap (coh − div) | 95% CI (family) |
+|---|---|---|---|---|
+| Qwen2.5-3B (CPU, old instrument) | 0.5550 | 0.4475 | +0.1075 | [−0.0375, +0.2475] |
+| Qwen3-8B (fp16) | 0.5275 | 0.4550 | +0.0725 | [−0.0375, +0.2075] |
+| **Qwen3-32B (4-bit)** | **0.6175** | **0.3925** | **+0.2250** | **[+0.0250, +0.4350]** |
 
-The prediction was a **negative** gap. The measured gap is **positive** and its
-interval **spans zero**.
+**Does it match PREDICTIONS.md? No.** The prediction (D-025) was a
+**negative** gap — coherence degrading the confidence-accuracy relationship —
+with `AUC(coherent) < 0.5` as the crossover. Every model measured has a
+**positive** point estimate, and at 32B the reversal is statistically
+resolved: the family-clustered CI excludes zero. The predicted crossover
+never occurred; its mirror image occurred at all three sizes:
+**AUC(diverse) is below 0.5 every time** (0.4475 / 0.4550 / 0.3925). Where
+the four cases differ on every surface condition, these models' confidence
+runs *backwards* against whether the evidence establishes the claim.
 
-## Does it match PREDICTIONS.md?
+The 32B's mean-confidence table makes the diverse failure concrete: its
+highest mean P(yes) of any cell is **diverse_false** (0.7302) — it says yes
+most confidently to the diverse items that are wrong.
 
-**No.** Flatly: the primary endpoint came out with the sign opposite to the
-pre-registered prediction, and the confidence interval includes zero. This is a
-null result on the primary endpoint, with a point estimate pointing the wrong
-way for the consensuality hypothesis. It is not weak support and it is not a
-trend in the predicted direction.
+## 2. Does the 32B gap survive rotation averaging?
 
-One prediction *was* met, in the mirror image of how it was meant. The
-pre-registration named `AUC(coherent) < 0.5` as "the crossover" — confidence
-running backwards against truth. A crossover did occur, but in the other
-condition: **AUC(diverse) = 0.4475**, below 0.5. Where the four cases differ on
-every surface condition, this model's confidence is *inversely* related to
-whether the evidence establishes the claim.
+Yes — it **grows**. 71/100 items were flagged for option-position spread
+above 0.05 (mean spread 0.0977), so per-item position bias is real, but it
+does not carry the headline:
 
-## Every number, with its interval
+| 32B endpoint | AUC(coherent) | AUC(diverse) | gap |
+|---|---|---|---|
+| first rotation (the headline order) | 0.6175 | 0.3925 | +0.2250 |
+| **averaged over all 3 rotations** | 0.6225 | 0.3825 | **+0.2400** [+0.0300, +0.4600] |
 
-### Primary endpoint (full set, 400 pairs per condition)
+It does not shrink; it widens by +0.0150 and the CI (family-clustered
+bootstrap on rotation-averaged scores) still excludes zero. The 8B moves
++0.0725 → +0.0675 under the same averaging — effectively unchanged, still
+unresolved.
 
-| condition | AUC | 95% CI (family-clustered) |
-|---|---|---|
-| coherent | 0.5550 | [0.4475, 0.6675] |
-| diverse | 0.4475 | [0.3525, 0.5400] |
-| **gap (coherent − diverse)** | **+0.1075** | **[−0.0375, +0.2475]** |
+## 3. The matched scope_mismatch subset
 
-### Matched-mechanism subset — the number to quote when challenged
+Both conditions falsified by the identical mechanism; only coherence differs
+(D-024). This is the number to quote when challenged.
 
-Both conditions falsified by `scope_mismatch`, so flaw mechanism cannot differ
-between them and only coherence does (D-024). 100 pairs per condition.
+| model | AUC(coherent) | AUC(diverse) | gap | 95% CI (family) |
+|---|---|---|---|---|
+| Qwen2.5-3B | 0.6900 | 0.5200 | +0.1700 | [−0.1562, +0.4531] |
+| Qwen3-8B | 0.6300 | 0.5500 | +0.0800 | [−0.1094, +0.3333] |
+| **Qwen3-32B** | **0.7600** | **0.4100** | **+0.3500** | **[+0.0988, +0.6735]** |
 
-| condition | AUC | 95% CI (family-clustered) |
-|---|---|---|
-| coherent | 0.6900 | [0.5000, 0.8889] |
-| diverse | 0.5200 | [0.3438, 0.7200] |
-| **gap** | **+0.1700** | **[−0.1562, +0.4531]** |
+Same story as the full set, larger: at 32B the confound-controlled gap is
++0.35 and its interval excludes zero. The reversal is not an artifact of the
+coherent flaws being a different kind of thing.
 
-Same story, larger and less certain: opposite sign to the prediction, interval
-spans zero.
+## 4. The decorative control
 
-### Per-mechanism
+The pre-committed sentence, generated by `analyze.py` from the numbers, 32B:
+
+> **The decorative control tracks the COHERENT cells (AUC 0.660 against 0.760
+> coherent and 0.410 diverse), so the effect is about evidential independence
+> and not about how much there is to parse.**
+
+| 32B level | AUC | 95% CI (family) | distinct entities | condition values |
+|---|---|---|---|---|
+| coherent | 0.7600 | [0.6694, 0.9388] | 13.2 | 4.0 |
+| diverse | 0.4100 | [0.2222, 0.6122] | 24.7 | 16.0 |
+| decorative | 0.6600 | [0.5200, 0.8519] | 25.2 | 4.0 |
+
+decorative − diverse = **+0.2500 [+0.0000, +0.5313]**; decorative − coherent
+= −0.1000 [−0.3306, +0.0781]. A decorative item is as busy to read as a
+diverse one but as evidentially dependent as a coherent one, and its AUC
+lands with coherent. The 8B agrees in direction (0.640 decorative vs 0.630
+coherent, 0.550 diverse), though there all three overlap. Notably the 3B —
+on the old instrument — had the decorative arm tracking *diverse*; on the
+fixed instrument at both new sizes it tracks *coherent*, which moves the
+overall verdict from "surface complexity" to "evidential independence": what
+hurts these models is genuinely the diversity of the evidence, not the
+clutter of the passage.
+
+## 5. Per-cell mean confidence and abstention — 32B
+
+| cell | n | mean P(yes) 3-way | 95% CI (item) | abstention |
+|---|---|---|---|---|
+| `coherent_true` | 20 | 0.5262 | [0.3518, 0.6948] | 0.45 |
+| `coherent_false` | 20 | 0.3799 | [0.2433, 0.5208] | 0.60 |
+| `diverse_true` | 20 | 0.6334 | [0.5010, 0.7592] | 0.35 |
+| `diverse_false` | 20 | 0.7302 | [0.5964, 0.8489] | 0.25 |
+| `decorative_true` | 10 | 0.6873 | [0.4675, 0.8766] | 0.30 |
+| `decorative_false` | 10 | 0.5557 | [0.3570, 0.7390] | 0.30 |
+
+Abstention is finally a real measurement (the `Unknown` option plus the
+prefill fix; the 3B run's zeros were an artifact, D-043/48). The pattern is
+coherent-cells-abstain-more (0.45–0.60 vs 0.25–0.35): redundant evidence
+makes this model *hesitate*, diverse evidence makes it *assert* — and on
+diverse_false, assert wrongly. All abstentions are included in the AUC at
+their p_yes (D-003).
+
+## 6. Per-mechanism AUC — 32B: what drives the diverse collapse
 
 | mechanism | condition | AUC | 95% CI (family) |
 |---|---|---|---|
-| `stated_confound` | coherent | 0.4800 | [0.2900, 0.6800] |
-| `broken_chronology` | diverse | 0.4300 | [0.2400, 0.5918] |
-| `scope_mismatch` | coherent | 0.6900 | [0.5000, 0.8889] |
-| `scope_mismatch` | diverse | 0.5200 | [0.3438, 0.7200] |
+| `stated_confound` | coherent | 0.4400 | [0.2344, 0.6033] |
+| `broken_chronology` | diverse | 0.3900 | [0.1837, 0.5918] |
+| `scope_mismatch` | coherent | 0.7600 | [0.6694, 0.9388] |
+| `scope_mismatch` | diverse | 0.4100 | [0.2222, 0.6122] |
 
-The model is at or below chance on two of the three mechanisms. Only
-`scope_mismatch` in the coherent condition is meaningfully above 0.5, and its
-interval touches it.
+**No single flaw type drives it — the diverse collapse is condition-wide.**
+Both diverse mechanisms sit below chance and within noise of each other
+(0.39 vs 0.41). The sharper reading is on the coherent side: the model's
+only above-chance cell is `scope_mismatch`-coherent (0.76); it fails
+`stated_confound` (0.44) even in the coherent condition. So the 32B can
+catch a population-restriction flaw when the cases agree, and essentially
+nothing else — and diversity destroys even that.
 
-### Covariate: does the coherence effect survive conditioning?
+## 7. Order control — 32B
 
-Logistic models of catch-rate over the 40 core-cell FALSE items (overall catch
-rate 62.5%):
+Case order carries no evidence; permuting it should move nothing.
 
-| model | coherence coefficient |
-|---|---|
-| `coherence_only` | +0.647 |
-| `plus_reader_catch_rate` | +0.690 |
-| `plus_reader_catch_rate_and_surface` | **−0.266** |
+| statistic | Qwen3-32B | Qwen3-8B | Qwen2.5-3B (n=27) |
+|---|---|---|---|
+| mean \|Δ P(yes)\| | 0.0849 | 0.0833 | 0.1748 |
+| max \|Δ P(yes)\| | 0.5802 | 0.6478 | 0.6707 |
+| items crossing 0.5 | 12/100 | 6/100 | 6/27 |
+| run-to-run correlation | 0.937 | 0.903 | 0.74 |
 
-**It does not survive.** Adding the measured per-item findability rate leaves it
-alone; adding surface complexity **inverts** it. Surface complexity was doing
-the work.
+Half the 3B's instability, on the full set instead of a fragment — the
+measurement is steadier at scale, though individual items can still swing
+hard (max 0.58). The endpoint is untouched: the fully-shuffled 32B run
+reproduces the gap at **+0.2300** (0.6275 vs 0.3975). Presentation noise is
+real at the item level and irrelevant at the cell level.
 
-### Diagnostics (not endpoints)
+## 8. The covariate result
 
-| cell | n | mean P(yes) | 95% CI (item) | abstention |
-|---|---|---|---|---|
-| `coherent_true` | 20 | 0.4977 | [0.3513, 0.6392] | 0.000 |
-| `coherent_false` | 20 | 0.4392 | [0.3160, 0.5659] | 0.000 |
-| `diverse_true` | 20 | 0.3461 | [0.2219, 0.4820] | 0.000 |
-| `diverse_false` | 20 | 0.4169 | [0.2683, 0.5758] | 0.000 |
-| `decorative_true` | 10 | 0.7459 | [0.5670, 0.8847] | 0.000 |
-| `decorative_false` | 10 | 0.6350 | [0.4083, 0.8425] | 0.000 |
+Logistic models of catch-rate on the 40 core FALSE items — does the
+coherence coefficient survive conditioning on `reader_catch_rate` (measured
+per-item findability, from the reader audit) and surface complexity?
 
-2x2 effects on mean confidence, family-clustered CIs: coherence
-−0.0161 [−0.1475, +0.1223]; truth +0.0172 [−0.0588, +0.0867]; interaction
-+0.1293 [−0.0149, +0.2631]. The clean within-TRUE coherence contrast (D-004) is
-+0.1516 [−0.0482, +0.3426]. Every one of them spans zero.
+| model | 32B coefficient | 8B coefficient |
+|---|---|---|
+| `coherence_only` | +1.504 | +1.789 |
+| `plus_reader_catch_rate` | +1.556 | +1.971 |
+| `plus_reader_catch_rate_and_surface` | **+2.310** | **+0.123** |
 
-**Abstention was exactly zero in all six cells.** The model never picked Unsure
-as the argmax. See the caveat on abstention measurement below — this number is
-partly an artifact.
+**At 32B, yes — it survives both covariates and strengthens.** Neither how
+findable the flaw is to a plain reader nor how busy the passage is explains
+the coherent-vs-diverse catch difference; conditioning on surface makes the
+coherence term *larger* (+1.50 → +2.31). At 8B it does not survive: surface
+absorbs it (+1.97 → +0.12), the same pattern the 3B showed. One honest flag:
+the auto-generated verdict sentence in `analysis_qwen3_8b.md` says the
+coefficient "holds its sign and size", which its own numbers contradict —
+trust the coefficients, not that sentence (display-logic bug, noted for
+fixing). The consistent story: below ~32B the effect is entangled with
+surface form; at 32B it is not.
 
-**Baseline (claims with no evidence attached):** mean P(yes) = **0.0015**. With
-no cases in front of it the model essentially never says yes, so the evidence
-runs are movement from a floor of ~0, not endorsement of already-plausible
-claims. Baseline coverage was low (0.06) and that number is correspondingly
-soft.
+## 9. What this does NOT establish
 
-## What the decorative arm says
+1. **One model family.** Qwen only — 3B (previous generation, old
+   instrument), 8B, 32B. No cross-family replication; "LLMs do X" is not a
+   claim these data can carry.
+2. **Two sizes on the fixed instrument.** The "grows with scale" reading
+   rests on exactly two points (8B ns, 32B significant). A ladder with 14B
+   and a second family would make it a scaling claim; this is two dots.
+3. **The 32B is 4-bit quantized** (nf4, fp16 compute). Quantization could
+   interact with calibration; the 8B–32B comparison is not
+   precision-matched.
+4. **The 3B column is a different instrument** — `Unsure` vs `Unknown`, old
+   instruction, user-turn cue, coverage 0.49 vs ~1.0. Directional context
+   only.
+5. **`reader_catch_rate` comes from model readers**, not humans (n=18–27
+   reader-instances, cluster-bootstrapped). Two human blind reviews exist,
+   both by the same person, the second after reading the reports (D-038).
+6. **`coherent_true` carries a known ~0.25 reader false-positive rate**
+   (D-036): a minority reader phenotype rejects redundant-but-sound
+   evidence. That depresses AUC(coherent) specifically — i.e. it biases
+   *toward* the prediction — and the reversal appeared anyway, with that
+   handicap in place. Worth naming: the scored models may share the
+   phenotype's milder form, visible in the coherent cells' elevated
+   abstention.
+7. **Option-position bias is large at the item level** (71/100 flagged at
+   32B) even though the rotation-averaged endpoint is stable; per-item
+   claims from single-rotation data are soft.
+8. **Absolute discrimination is weak everywhere.** The best cell anywhere is
+   0.76; most are within noise of chance. These models are bad at this task
+   in both conditions; the result is about the *asymmetry*, not about
+   competence.
+9. **The abstention asymmetry (section 5) is an observation, not a tested
+   hypothesis** — it was noticed after unblinding and would need
+   pre-registration to be more than a lead.
 
-This is the control built to separate "the evidence agrees with itself" from
-"the passage is busy to read" (D-030). A decorative item has the **same
-condition values** as a coherent one — so the evidence is exactly as dependent —
-but carries the **entity count of a diverse one** (25.2 distinct entities against
-diverse's 24.7 and coherent's 13.2).
+## Reproducing
 
-| level | AUC | 95% CI (family) | distinct entities | condition values |
-|---|---|---|---|---|
-| coherent | 0.6900 | [0.5000, 0.8889] | 13.2 | 4.0 |
-| diverse | 0.5200 | [0.3438, 0.7200] | 24.7 | 16.0 |
-| **decorative** | **0.5800** | [0.4688, 0.7408] | 25.2 | 4.0 |
-
-The pre-committed sentence, generated by `analyze.py` from the numbers rather
-than written afterwards:
-
-> **The decorative control tracks the DIVERSE cells (AUC 0.580 against 0.520
-> diverse and 0.690 coherent), so the effect is about surface complexity and the
-> evidential-independence story is wrong.**
-
-decorative − coherent = −0.1100 [−0.3200, +0.1251]; decorative − diverse =
-+0.0600 [−0.1406, +0.3600]. Both intervals span zero, so the control is
-suggestive rather than decisive — but it points the same way as the covariate
-model, which independently inverted the coherence coefficient when surface
-complexity entered. Two different instruments, same conclusion: whatever
-separates the conditions here travels with parse load, not with evidential
-independence.
-
-## What this run does NOT establish
-
-1. **One model, one size.** Qwen2.5-3B-Instruct only. No size ladder. A 3B may
-   simply lack the capability the hypothesis is about; the honest read is
-   "this model does not show the effect", not "the effect does not exist".
-2. **The model is barely above chance at the task at all.** AUC 0.5550 and
-   0.4475 are close to coin-flipping. A confidence-accuracy *relationship* is
-   hard to degrade when it is nearly absent to begin with. This is the single
-   biggest reason to run a larger model before concluding anything.
-3. **CPU, memory-starved, non-ideal conditions.** Run at ~5 GB available RAM
-   against a model that does not fit resident (D-042). This affects wall-clock
-   only, not the arithmetic — logits are deterministic — but it is why the run
-   took all night in ~15-item fragments.
-4. **Abstention is undercounted, so the three-way split is distorted.** Mean
-   `mass_covered` was 0.486: about half the next-token mass sits outside
-   {Yes, No, Unsure}. On this tokenizer bare `Unsure` is two tokens while
-   ` Unsure` is one, and the model's preferred continuation after the chat
-   template is the unspaced form, whose mass is not counted (D-043). The
-   reported zero abstention across all six cells is partly this artifact.
-   `p_yes_3way` is a renormalisation over captured mass; the AUC ranking is
-   valid only insofar as that capture is unbiased across cells — plausible,
-   unverified.
-5. **Readers are models, not people.** `reader_catch_rate`, used as the
-   covariate, comes from model readers. Two human blind reviews exist, both by
-   the same person, the second after reading the reports (D-038).
-6. **`coherent_true` carries a known 0.25 reader false-positive rate** (D-036).
-   A quarter of model readers call those items false. They are not mislabeled —
-   a careful human accepted all of them — but items that read as false in the
-   TRUE cell depress AUC(coherent) specifically, which biases *toward* the
-   consensuality prediction. The result came out against the prediction anyway,
-   with that handicap in place.
-7. **Controls incomplete.** The order control covers 27 of 100 items; the
-   option-rotation control produced nothing, so **option position bias is
-   untested**. See the controls section.
-8. **The measurement is unstable at the item level.** Permuting evidentially
-   irrelevant sentence order moves P(yes) by 0.17 on average and flips the
-   decision side on 6 of 27 items. Any per-item claim from this run is soft;
-   the cell-level direction held under the perturbation, but that is one
-   partial check, not a clean bill.
-
-## Order and rotation controls — one partial, one not run
-
-Neither control finished. The environment killed every long-running process on
-roughly a ten-minute cycle while available memory swung between 1.35 GB and
-8 GB against a model needing 6.2 GB resident (D-042, D-045). `--shuffle-cases`
-reached **27 of 100** items; `--option-rotations` was cut to the 12-item pilot
-subset and **produced no items**. Stated plainly rather than papered over: one
-control is partial, one did not run.
-
-### What the partial order control found — and it is not a formality
-
-With 6–7 items per cell a subset AUC mostly measures its own noise, so the
-right read is the **paired within-item** comparison. Case order carries no
-evidential content, so permuting an item's four case sentences should barely
-move its answer.
-
-On the 27 items scored both ways:
-
-| statistic | value |
-|---|---|
-| mean \|Δ P(yes)\| | **0.1748** |
-| max \|Δ P(yes)\| | 0.6707 |
-| items moving > 0.10 | 10 of 27 |
-| **items crossing the 0.5 decision boundary** | **6 of 27** |
-| correlation between runs | r = 0.74 |
-| mean signed Δ | −0.1219 |
-
-**Reordering four evidentially-irrelevant sentences moves the answer by 0.17 on
-average and flips the yes/no side of the boundary on nearly a quarter of
-items.** The perturbation is the same size as the effects being measured.
-
-**The headline direction survives it.** On those same 27 items the endpoint gap
-was **+0.2500** primary against **+0.2334** shuffled — essentially unchanged,
-still positive, still opposite to the prediction. What is unstable is the
-per-item measurement, not the direction of the result.
-
-**Option position bias is untested.** `--option-rotations` never produced a
-datapoint, so nothing here rules out the possibility that some of the signal is
-Yes/No/Unsure ordering. That is an open threat, not a cleared one, and it is
-the first thing to run on better hardware.
-
-### Three instruments, one conclusion
-
-The decorative control says the signal travels with parse load. The covariate
-model inverts the coherence coefficient the moment surface complexity enters.
-The order control says presentation alone moves answers as much as the
-manipulation does. For a 3B sitting near chance on the task, the honest summary
-is that **surface form dominates whatever evidential reasoning is present.**
-
-## Reproducing this on a bigger model
-
-The whole point of the caveats above is that this wants a larger model. On a
-GPU box every one of these is a single forward pass per item and the full set
-takes minutes.
+`KAGGLE.md` has the full recipe (`kaggle_run.ipynb`, one Run all, ~2 h on
+2x T4). Analyses regenerate with:
 
 ```bash
-uv venv --python 3.13 .venv
-uv pip install --python .venv/Scripts/python.exe -r requirements.txt
-PY=.venv/Scripts/python.exe          # mac/linux: .venv/bin/python
-
-# 0. ALWAYS FIRST on a new model: can its tokenizer represent the three options?
-$PY -m src.score --model <MODEL> --check-tokenization-only
-#    If ' Unsure' is not a single token, pick one that is:
-#    --third-option Unknown   (Unknown / Maybe / Neither all work on Qwen)
-
-# 1. gates on the item set (13 checks, red blocks the run)
-$PY -m src.validate --items items/draft items/seed
-
-# 2. the scored run  (drop --device/--dtype to use CUDA defaults)
-$PY -m src.score --model <MODEL> --chat-template \
-    --items items/draft items/seed \
-    --checkpoint results/partial_<name>.jsonl \
-    --out results/run_<name>.json
-
-# 3. baseline: every claim with no evidence attached
-$PY -m src.baseline --model <MODEL> --chat-template \
-    --items items/draft items/seed \
-    --checkpoint results/partial_baseline_<name>.jsonl \
-    --out results/baseline_<name>.json
-
-# 4. controls
-$PY -m src.score --model <MODEL> --chat-template --shuffle-cases \
-    --items items/draft items/seed --out results/run_<name>_shuffled.json
-$PY -m src.score --model <MODEL> --chat-template --option-rotations \
-    --items items/draft items/seed --out results/run_<name>_rotations.json
-
-# 5. analysis
-$PY -m src.analyze --run results/run_<name>.json \
-    --baseline results/baseline_<name>.json \
-    --out results/analysis_<name>.json
+$PY -m src.analyze --run results/kaggle/run_qwen3_32b.json \
+    --baseline results/kaggle/baseline_qwen3_32b.json --out <out>
 ```
 
-Read `results/analysis_<name>.md` top to bottom: section 1 is the primary
-endpoint, section 2 the matched subset, section 3 the decorative control with
-its pre-committed sentence, section 5 the covariate path, section 6 the
-diagnostics. `--checkpoint` is optional on fast hardware; it exists because this
-run had to survive being killed roughly every ten minutes.
-
-**What would change the conclusion:** a model with an AUC meaningfully above
-chance on this task. If a larger model reaches, say, 0.75 in the diverse
-condition and drops to 0.6 in the coherent one, the effect is real and this run
-was simply below the capability floor. If it stays flat and symmetric at high
-AUC, the hypothesis is in trouble for real. Either is worth knowing; neither can
-be decided from a model that is near chance in both conditions.
+Baselines for both models: mean P(yes) on a bare claim = **0.0000** — with
+no evidence attached these models never endorse, so everything above is
+movement from a floor of zero.

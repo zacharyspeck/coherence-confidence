@@ -1,0 +1,1257 @@
+{
+  "kind": "analysis",
+  "analysis_meta": {
+    "timestamp_utc": "2026-09-06T17:46:48+00:00",
+    "code_git_sha": "aab4460b09a5507f3c33548973fac185419e2a87",
+    "code_git_dirty": true,
+    "environment": {
+      "python": "3.12.13",
+      "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+      "machine": "x86_64",
+      "torch": "2.10.0+cu128",
+      "transformers": "5.16.1",
+      "numpy": "2.0.2",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "pydantic": "2.12.3"
+    },
+    "source_run": "results/run_qwen3_8b.json",
+    "source_run_id": "Qwen_Qwen3-8B__c043a4daa403__46945370bffd59fa",
+    "baseline_run": "results/baseline_qwen3_8b.json",
+    "n_resamples": 10000,
+    "bootstrap_seed": 12345,
+    "score_used": "3way"
+  },
+  "source_meta": {
+    "timestamp_utc": "2026-09-06T17:41:19+00:00",
+    "code_git_sha": "aab4460b09a5507f3c33548973fac185419e2a87",
+    "code_git_dirty": true,
+    "environment": {
+      "python": "3.12.13",
+      "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+      "machine": "x86_64",
+      "torch": "2.10.0+cu128",
+      "transformers": "5.16.1",
+      "numpy": "2.0.2",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "pydantic": "2.12.3"
+    },
+    "scorer": "HFScorer",
+    "model": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "device": "cuda:0",
+    "device_map": "auto",
+    "load_4bit": false,
+    "quantized": false,
+    "bnb_compute_dtype_overridden": false,
+    "no_thinking": true,
+    "answer_prefill": "Answer:",
+    "dtype": "float16",
+    "chat_template": true,
+    "add_special_tokens": true,
+    "variant_strategy": "explicit",
+    "temperature": 1.0,
+    "determinism": {
+      "seed": 0,
+      "numpy": "2.0.2",
+      "torch": "2.10.0+cu128",
+      "torch_deterministic_algorithms": true,
+      "torch_num_threads": 1
+    },
+    "option_words": [
+      "Yes",
+      "No",
+      "Unknown"
+    ],
+    "options": {
+      "yes": {
+        "role": "yes",
+        "word": "Yes",
+        "canonical": " Yes",
+        "canonical_is_single_token": true,
+        "canonical_n_tokens": 1,
+        "variants_tried": [
+          " YES",
+          " Yes",
+          " yes",
+          "YES",
+          "Yes",
+          "yes"
+        ],
+        "token_ids": [
+          7414,
+          9454,
+          9693,
+          9834,
+          14004,
+          14080
+        ],
+        "id_to_variant": {
+          "7414": " Yes",
+          "9454": "Yes",
+          "9693": "yes",
+          "9834": " yes",
+          "14004": "YES",
+          "14080": " YES"
+        },
+        "n_token_ids": 6,
+        "n_with_leading_space": 3
+      },
+      "no": {
+        "role": "no",
+        "word": "No",
+        "canonical": " No",
+        "canonical_is_single_token": true,
+        "canonical_n_tokens": 1,
+        "variants_tried": [
+          " NO",
+          " No",
+          " no",
+          "NO",
+          "No",
+          "no"
+        ],
+        "token_ids": [
+          902,
+          2152,
+          2308,
+          2753,
+          5664,
+          8996
+        ],
+        "id_to_variant": {
+          "902": " no",
+          "2152": "no",
+          "2308": " No",
+          "2753": "No",
+          "5664": " NO",
+          "8996": "NO"
+        },
+        "n_token_ids": 6,
+        "n_with_leading_space": 3
+      },
+      "unsure": {
+        "role": "unsure",
+        "word": "Unknown",
+        "canonical": " Unknown",
+        "canonical_is_single_token": true,
+        "canonical_n_tokens": 1,
+        "variants_tried": [
+          " UNKNOWN",
+          " Unknown",
+          " unknown",
+          "UNKNOWN",
+          "Unknown",
+          "unknown"
+        ],
+        "token_ids": [
+          9788,
+          13790,
+          16088,
+          21693,
+          51378,
+          61395
+        ],
+        "id_to_variant": {
+          "9788": " unknown",
+          "13790": "Unknown",
+          "16088": "unknown",
+          "21693": " Unknown",
+          "51378": "UNKNOWN",
+          "61395": " UNKNOWN"
+        },
+        "n_token_ids": 6,
+        "n_with_leading_space": 3
+      }
+    },
+    "canonical_multi_token_roles": [],
+    "options_missing_leading_space_variants": [],
+    "single_token_third_option_candidates": [
+      "Unsure",
+      "Unknown",
+      "Maybe",
+      "Neither"
+    ],
+    "prompt_template_hash": "46945370bffd59fa",
+    "vocab_size": 151936,
+    "item_dirs": [
+      "items/draft",
+      "items/seed"
+    ],
+    "shuffle_cases": false,
+    "case_seed": null,
+    "option_rotations": false,
+    "n_items": 100,
+    "items_hash": "c043a4daa403",
+    "prompts_hash": "10d08c64b5f9",
+    "prompts_hash_note": "digest of the UNPERMUTED prompts, so it identifies the item text regardless of which surface controls were on",
+    "mass_covered_mean": 0.9999825539361707,
+    "mass_covered_min": 0.9999324267367428,
+    "run_id": "Qwen_Qwen3-8B__c043a4daa403__46945370bffd59fa"
+  },
+  "analysis": {
+    "endpoints": {
+      "primary": "AUC(coherent) - AUC(diverse) on the FULL set. Koriat's consensuality principle predicts NEGATIVE: coherence raises confidence without raising accuracy, so the confidence-accuracy relationship degrades where the evidence agrees with itself. AUC(coherent) below 0.5 is the crossover.",
+      "confound_controlled": "The same gap on the MATCHED-MECHANISM subset, where both conditions are falsified by scope_mismatch, so flaw mechanism cannot differ between them and only coherence does (D-024).",
+      "surface_complexity_control": "AUC for all three coherence levels inside the 10 families that carry the control arm. A decorative item is as busy to read as a diverse one and as evidentially dependent as a coherent one, so which of the two its AUC sits with says whether the effect is about evidential independence or about parse load (D-030).",
+      "diagnostics_not_endpoints": "Cell means, the 2x2 effects and the ANOVA are diagnostics. They describe confidence level; the endpoint is the confidence-accuracy relationship, which is the AUC."
+    },
+    "policy": {
+      "abstained_items_in_auc": "INCLUDED (D-003) using p_yes_3way",
+      "auc_scope": "WITHIN each coherence condition, never pooled",
+      "auc_implementation": "explicit pairwise win rate, ties = 0.5",
+      "primary_measure": "p_yes_3way = p_yes / (p_yes + p_no + p_unsure)",
+      "bootstrap": "10000 resamples, percentile 95% CI, two units: stratified-by-item and clustered-by-family (D-010)",
+      "which_ci_to_read": "Per-cell numbers (cell means, abstention rates, within-condition AUC): ci_item and ci_family are IDENTICAL by construction, since each family contributes exactly one item per cell. For the AUC GAP and the cross-cell contrasts: read ci_family. The 2x2 is within-family, so the clustered resample keeps the pairing and ci_item throws that pairing away."
+    },
+    "n_items": 100,
+    "n_families": 20,
+    "cell_n": {
+      "coherent_true": 20,
+      "coherent_false": 20,
+      "diverse_true": 20,
+      "diverse_false": 20,
+      "decorative_true": 10,
+      "decorative_false": 10
+    },
+    "score_used": "3way",
+    "auc_primary_full_set": {
+      "label": "FULL SET - all 20 true vs 20 false per condition",
+      "mechanism": null,
+      "conditions": {
+        "coherent": {
+          "estimate": {
+            "value": 0.5275,
+            "n": 100,
+            "ci_item": [
+              0.345,
+              0.7075
+            ],
+            "ci_family": [
+              0.445,
+              0.6225624999999991
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.5275,
+            "n_pos": 20,
+            "n_neg": 20,
+            "n_pairs": 400,
+            "n_wins": 211,
+            "n_ties": 0,
+            "n_losses": 189
+          },
+          "n_families": 20,
+          "n_abstained": 14,
+          "mean_salience_of_false_items": null,
+          "n_with_salience": 0,
+          "auc_if_abstained_dropped_DIAGNOSTIC": 0.4583333333333333,
+          "diagnostic_note": "NOT a reported result. It shows how far the AUC would move if abstentions were discarded, which is why D-003 forbids it."
+        },
+        "diverse": {
+          "estimate": {
+            "value": 0.455,
+            "n": 100,
+            "ci_item": [
+              0.2775,
+              0.635
+            ],
+            "ci_family": [
+              0.37,
+              0.5325
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.455,
+            "n_pos": 20,
+            "n_neg": 20,
+            "n_pairs": 400,
+            "n_wins": 182,
+            "n_ties": 0,
+            "n_losses": 218
+          },
+          "n_families": 20,
+          "n_abstained": 5,
+          "mean_salience_of_false_items": 2.5555555555555554,
+          "n_with_salience": 9,
+          "auc_if_abstained_dropped_DIAGNOSTIC": 0.4803921568627451,
+          "diagnostic_note": "NOT a reported result. It shows how far the AUC would move if abstentions were discarded, which is why D-003 forbids it."
+        }
+      },
+      "gap_coherent_minus_diverse": {
+        "value": 0.07249999999999995,
+        "n": 100,
+        "ci_item": [
+          -0.18499999999999994,
+          0.32749999999999996
+        ],
+        "ci_family": [
+          -0.03749999999999998,
+          0.20750000000000002
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "PRIMARY ENDPOINT. Negative = the consensuality prediction."
+      },
+      "salience_gap_coherent_minus_diverse": null,
+      "families_match_across_conditions": true,
+      "families": {
+        "coherent": [
+          "fam_bearing",
+          "fam_checkout",
+          "fam_coolant",
+          "fam_driptape",
+          "fam_fertilizer",
+          "fam_filter",
+          "fam_handwash",
+          "fam_inhaler",
+          "fam_labkit",
+          "fam_nestbox",
+          "fam_onboarding",
+          "fam_physio",
+          "fam_pricing",
+          "fam_reading",
+          "fam_routing",
+          "fam_seedcoat",
+          "fam_sleepapp",
+          "fam_solder",
+          "fam_timetable",
+          "fam_tutoring"
+        ],
+        "diverse": [
+          "fam_bearing",
+          "fam_checkout",
+          "fam_coolant",
+          "fam_driptape",
+          "fam_fertilizer",
+          "fam_filter",
+          "fam_handwash",
+          "fam_inhaler",
+          "fam_labkit",
+          "fam_nestbox",
+          "fam_onboarding",
+          "fam_physio",
+          "fam_pricing",
+          "fam_reading",
+          "fam_routing",
+          "fam_seedcoat",
+          "fam_sleepapp",
+          "fam_solder",
+          "fam_timetable",
+          "fam_tutoring"
+        ]
+      }
+    },
+    "auc_matched_mechanism": {
+      "label": "MATCHED MECHANISM - scope_mismatch in both conditions",
+      "mechanism": "scope_mismatch",
+      "conditions": {
+        "coherent": {
+          "estimate": {
+            "value": 0.63,
+            "n": 100,
+            "ci_item": [
+              0.3611111111111111,
+              0.875
+            ],
+            "ci_family": [
+              0.540795918367347,
+              0.8024691358024691
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.63,
+            "n_pos": 10,
+            "n_neg": 10,
+            "n_pairs": 100,
+            "n_wins": 63,
+            "n_ties": 0,
+            "n_losses": 37
+          },
+          "n_families": 10,
+          "n_abstained": 6,
+          "mean_salience_of_false_items": null,
+          "n_with_salience": 0,
+          "auc_if_abstained_dropped_DIAGNOSTIC": 0.5625,
+          "diagnostic_note": "NOT a reported result. It shows how far the AUC would move if abstentions were discarded, which is why D-003 forbids it."
+        },
+        "diverse": {
+          "estimate": {
+            "value": 0.55,
+            "n": 100,
+            "ci_item": [
+              0.2727272727272727,
+              0.8095336481700117
+            ],
+            "ci_family": [
+              0.4074074074074074,
+              0.7100014792899407
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.55,
+            "n_pos": 10,
+            "n_neg": 10,
+            "n_pairs": 100,
+            "n_wins": 55,
+            "n_ties": 0,
+            "n_losses": 45
+          },
+          "n_families": 10,
+          "n_abstained": 1,
+          "mean_salience_of_false_items": 2.5555555555555554,
+          "n_with_salience": 9,
+          "auc_if_abstained_dropped_DIAGNOSTIC": 0.5,
+          "diagnostic_note": "NOT a reported result. It shows how far the AUC would move if abstentions were discarded, which is why D-003 forbids it."
+        }
+      },
+      "gap_coherent_minus_diverse": {
+        "value": 0.07999999999999996,
+        "n": 100,
+        "ci_item": [
+          -0.29445247933884305,
+          0.4535929995929993
+        ],
+        "ci_family": [
+          -0.109375,
+          0.33333333333333337
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "PRIMARY ENDPOINT. Negative = the consensuality prediction."
+      },
+      "salience_gap_coherent_minus_diverse": null,
+      "families_match_across_conditions": true,
+      "families": {
+        "coherent": [
+          "fam_checkout",
+          "fam_filter",
+          "fam_handwash",
+          "fam_physio",
+          "fam_pricing",
+          "fam_routing",
+          "fam_seedcoat",
+          "fam_solder",
+          "fam_timetable",
+          "fam_tutoring"
+        ],
+        "diverse": [
+          "fam_checkout",
+          "fam_filter",
+          "fam_handwash",
+          "fam_physio",
+          "fam_pricing",
+          "fam_routing",
+          "fam_seedcoat",
+          "fam_solder",
+          "fam_timetable",
+          "fam_tutoring"
+        ]
+      }
+    },
+    "auc_by_mechanism": {
+      "stated_confound": {
+        "label": "mechanism = stated_confound",
+        "mechanism": "stated_confound",
+        "conditions": {
+          "coherent": {
+            "estimate": {
+              "value": 0.49,
+              "n": 100,
+              "ci_item": [
+                0.21212121212121213,
+                0.7613636363636364
+              ],
+              "ci_family": [
+                0.32653061224489793,
+                0.65625
+              ],
+              "n_resamples": 10000,
+              "n_failed_resamples": 0,
+              "note": ""
+            },
+            "detail": {
+              "auc": 0.49,
+              "n_pos": 10,
+              "n_neg": 10,
+              "n_pairs": 100,
+              "n_wins": 49,
+              "n_ties": 0,
+              "n_losses": 51
+            },
+            "n_families": 10,
+            "n_abstained": 8,
+            "mean_salience_of_false_items": null,
+            "n_with_salience": 0,
+            "auc_if_abstained_dropped_DIAGNOSTIC": 0.4444444444444444,
+            "diagnostic_note": "NOT a reported result. It shows how far the AUC would move if abstentions were discarded, which is why D-003 forbids it."
+          }
+        }
+      },
+      "broken_chronology": {
+        "label": "mechanism = broken_chronology",
+        "mechanism": "broken_chronology",
+        "conditions": {
+          "diverse": {
+            "estimate": {
+              "value": 0.4,
+              "n": 100,
+              "ci_item": [
+                0.15584415584415584,
+                0.6818362193362191
+              ],
+              "ci_family": [
+                0.23,
+                0.5208333333333334
+              ],
+              "n_resamples": 10000,
+              "n_failed_resamples": 0,
+              "note": ""
+            },
+            "detail": {
+              "auc": 0.4,
+              "n_pos": 10,
+              "n_neg": 10,
+              "n_pairs": 100,
+              "n_wins": 40,
+              "n_ties": 0,
+              "n_losses": 60
+            },
+            "n_families": 10,
+            "n_abstained": 4,
+            "mean_salience_of_false_items": null,
+            "n_with_salience": 0,
+            "auc_if_abstained_dropped_DIAGNOSTIC": 0.5238095238095238,
+            "diagnostic_note": "NOT a reported result. It shows how far the AUC would move if abstentions were discarded, which is why D-003 forbids it."
+          }
+        }
+      },
+      "scope_mismatch": {
+        "label": "mechanism = scope_mismatch",
+        "mechanism": "scope_mismatch",
+        "conditions": {
+          "coherent": {
+            "estimate": {
+              "value": 0.63,
+              "n": 100,
+              "ci_item": [
+                0.3611111111111111,
+                0.875
+              ],
+              "ci_family": [
+                0.540795918367347,
+                0.8024691358024691
+              ],
+              "n_resamples": 10000,
+              "n_failed_resamples": 0,
+              "note": ""
+            },
+            "detail": {
+              "auc": 0.63,
+              "n_pos": 10,
+              "n_neg": 10,
+              "n_pairs": 100,
+              "n_wins": 63,
+              "n_ties": 0,
+              "n_losses": 37
+            },
+            "n_families": 10,
+            "n_abstained": 6,
+            "mean_salience_of_false_items": null,
+            "n_with_salience": 0,
+            "auc_if_abstained_dropped_DIAGNOSTIC": 0.5625,
+            "diagnostic_note": "NOT a reported result. It shows how far the AUC would move if abstentions were discarded, which is why D-003 forbids it."
+          },
+          "diverse": {
+            "estimate": {
+              "value": 0.55,
+              "n": 100,
+              "ci_item": [
+                0.2727272727272727,
+                0.8095336481700117
+              ],
+              "ci_family": [
+                0.4074074074074074,
+                0.7100014792899407
+              ],
+              "n_resamples": 10000,
+              "n_failed_resamples": 0,
+              "note": ""
+            },
+            "detail": {
+              "auc": 0.55,
+              "n_pos": 10,
+              "n_neg": 10,
+              "n_pairs": 100,
+              "n_wins": 55,
+              "n_ties": 0,
+              "n_losses": 45
+            },
+            "n_families": 10,
+            "n_abstained": 1,
+            "mean_salience_of_false_items": 2.5555555555555554,
+            "n_with_salience": 9,
+            "auc_if_abstained_dropped_DIAGNOSTIC": 0.5,
+            "diagnostic_note": "NOT a reported result. It shows how far the AUC would move if abstentions were discarded, which is why D-003 forbids it."
+          }
+        },
+        "gap_coherent_minus_diverse": {
+          "value": 0.07999999999999996,
+          "n": 100,
+          "ci_item": [
+            -0.29445247933884305,
+            0.4535929995929993
+          ],
+          "ci_family": [
+            -0.109375,
+            0.33333333333333337
+          ],
+          "n_resamples": 10000,
+          "n_failed_resamples": 0,
+          "note": "PRIMARY ENDPOINT. Negative = the consensuality prediction."
+        },
+        "salience_gap_coherent_minus_diverse": null,
+        "families_match_across_conditions": true,
+        "families": {
+          "coherent": [
+            "fam_checkout",
+            "fam_filter",
+            "fam_handwash",
+            "fam_physio",
+            "fam_pricing",
+            "fam_routing",
+            "fam_seedcoat",
+            "fam_solder",
+            "fam_timetable",
+            "fam_tutoring"
+          ],
+          "diverse": [
+            "fam_checkout",
+            "fam_filter",
+            "fam_handwash",
+            "fam_physio",
+            "fam_pricing",
+            "fam_routing",
+            "fam_seedcoat",
+            "fam_solder",
+            "fam_timetable",
+            "fam_tutoring"
+          ]
+        }
+      }
+    },
+    "surface_complexity_control": {
+      "present": true,
+      "n_families": 10,
+      "levels": {
+        "coherent": {
+          "estimate": {
+            "value": 0.63,
+            "n": 100,
+            "ci_item": [
+              0.3611111111111111,
+              0.875
+            ],
+            "ci_family": [
+              0.540795918367347,
+              0.8024691358024691
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.63,
+            "n_pos": 10,
+            "n_neg": 10,
+            "n_pairs": 100,
+            "n_wins": 63,
+            "n_ties": 0,
+            "n_losses": 37
+          },
+          "mean_distinct_entities": 13.2,
+          "mean_distinct_condition_values": 4.0
+        },
+        "diverse": {
+          "estimate": {
+            "value": 0.55,
+            "n": 100,
+            "ci_item": [
+              0.2727272727272727,
+              0.8095336481700117
+            ],
+            "ci_family": [
+              0.4074074074074074,
+              0.7100014792899407
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.55,
+            "n_pos": 10,
+            "n_neg": 10,
+            "n_pairs": 100,
+            "n_wins": 55,
+            "n_ties": 0,
+            "n_losses": 45
+          },
+          "mean_distinct_entities": 24.7,
+          "mean_distinct_condition_values": 16.0
+        },
+        "decorative": {
+          "estimate": {
+            "value": 0.64,
+            "n": 100,
+            "ci_item": [
+              0.37,
+              0.88
+            ],
+            "ci_family": [
+              0.5510204081632653,
+              0.796875
+            ],
+            "n_resamples": 10000,
+            "n_failed_resamples": 0,
+            "note": ""
+          },
+          "detail": {
+            "auc": 0.64,
+            "n_pos": 10,
+            "n_neg": 10,
+            "n_pairs": 100,
+            "n_wins": 64,
+            "n_ties": 0,
+            "n_losses": 36
+          },
+          "mean_distinct_entities": 25.2,
+          "mean_distinct_condition_values": 4.0
+        }
+      },
+      "gap_decorative_minus_coherent": {
+        "value": 0.010000000000000009,
+        "n": 100,
+        "ci_item": [
+          -0.35329761904761914,
+          0.37555952380952373
+        ],
+        "ci_family": [
+          -0.125,
+          0.15389273356401317
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "near zero = the control behaves like a coherent item"
+      },
+      "gap_decorative_minus_diverse": {
+        "value": 0.08999999999999997,
+        "n": 100,
+        "ci_item": [
+          -0.28002272727272726,
+          0.45999999999999996
+        ],
+        "ci_family": [
+          -0.08163265306122441,
+          0.32000000000000006
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "near zero = the control behaves like a diverse item"
+      },
+      "tracks": "coherent",
+      "verdict": "The decorative control tracks the COHERENT cells (AUC 0.640 against 0.630 coherent and 0.550 diverse), so the effect is about evidential independence and not about how much there is to parse.",
+      "distance_to_coherent": 0.01,
+      "distance_to_diverse": 0.09
+    },
+    "mechanism_counts_by_cell": {
+      "coherent_false": {
+        "stated_confound": 10,
+        "scope_mismatch": 10
+      },
+      "diverse_false": {
+        "broken_chronology": 10,
+        "scope_mismatch": 10
+      },
+      "decorative_false": {
+        "scope_mismatch": 10
+      }
+    },
+    "salience_by_cell": {
+      "coherent_false": {
+        "n": 0,
+        "mean": null,
+        "max": null
+      },
+      "diverse_false": {
+        "n": 9,
+        "mean": 2.5555555555555554,
+        "max": 3.0
+      }
+    },
+    "covariate_models": {
+      "fitted": true,
+      "n_false_items": 40,
+      "catch_rate": 0.25,
+      "outcome": "caught = p_yes_3way < 0.5 on a FALSE item",
+      "note": "core cells only; the decorative arm is the direct control instead",
+      "models": {
+        "coherence_only": {
+          "intercept": -2.195061628966419,
+          "coherent": 1.7891873794549507
+        },
+        "plus_reader_catch_rate": {
+          "intercept": -2.308816713866292,
+          "coherent": 1.9707387100423317,
+          "reader_catch_rate_z": -0.2808582233932402
+        },
+        "plus_reader_catch_rate_and_surface": {
+          "intercept": -1.4363015692131291,
+          "coherent": 0.12274123838968973,
+          "reader_catch_rate_z": -0.35991283838675686,
+          "surface_z": -1.1040788356866669
+        }
+      },
+      "coherence_coefficient_path": [
+        1.7892,
+        1.9707,
+        0.1227
+      ],
+      "coherence_survives_conditioning": true,
+      "reading": "Read the coherence coefficient down the three models. If it keeps its sign and size as the reader catch rate and then surface complexity are added, neither covariate explains the coherence effect. If it collapses toward zero when a covariate enters, that covariate was doing the work."
+    },
+    "cell_means_p_yes_3way": {
+      "coherent_true": {
+        "value": 0.663176802336632,
+        "n": 100,
+        "ci_item": [
+          0.4673373102693564,
+          0.8390609274598056
+        ],
+        "ci_family": [
+          0.467986862003083,
+          0.8389712816391922
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "coherent_false": {
+        "value": 0.5847015759155187,
+        "n": 100,
+        "ci_item": [
+          0.3950445287517023,
+          0.766219435791961
+        ],
+        "ci_family": [
+          0.39121975588383334,
+          0.7662738329569873
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_true": {
+        "value": 0.8228123714461091,
+        "n": 100,
+        "ci_item": [
+          0.6844572727877853,
+          0.9397227080152899
+        ],
+        "ci_family": [
+          0.6839246955155909,
+          0.9393204364175457
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_false": {
+        "value": 0.9056226864827707,
+        "n": 100,
+        "ci_item": [
+          0.8155605271586609,
+          0.9765181129352353
+        ],
+        "ci_family": [
+          0.8107043583361737,
+          0.9760549291583186
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "decorative_true": {
+        "value": 0.7440149418258899,
+        "n": 100,
+        "ci_item": [
+          0.49930984877304674,
+          0.9649164062480907
+        ],
+        "ci_family": [
+          0.4932604387546077,
+          0.9748231003745483
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "decorative_false": {
+        "value": 0.6016636461451421,
+        "n": 100,
+        "ci_item": [
+          0.3755425417350416,
+          0.813280769354165
+        ],
+        "ci_family": [
+          0.36527647061516016,
+          0.8201034315256233
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      }
+    },
+    "cell_means_p_yes_2way": {
+      "coherent_true": {
+        "value": 0.965045574338598,
+        "n": 100,
+        "ci_item": [
+          0.9296377288989793,
+          0.9920991171351488
+        ],
+        "ci_family": [
+          0.9287134783996056,
+          0.9923498174455392
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "coherent_false": {
+        "value": 0.8921046606909883,
+        "n": 100,
+        "ci_item": [
+          0.7748699120849315,
+          0.9874937710923359
+        ],
+        "ci_family": [
+          0.7722026627291452,
+          0.9871819203620116
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_true": {
+        "value": 0.9963270185235956,
+        "n": 100,
+        "ci_item": [
+          0.9918757610089897,
+          0.9994212371408622
+        ],
+        "ci_family": [
+          0.9919017105208614,
+          0.9994285385119069
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_false": {
+        "value": 0.9997930247221806,
+        "n": 100,
+        "ci_item": [
+          0.9996200920891906,
+          0.9999281982909448
+        ],
+        "ci_family": [
+          0.9996179809898695,
+          0.9999268912748632
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "decorative_true": {
+        "value": 0.9969814494892353,
+        "n": 100,
+        "ci_item": [
+          0.991896689735546,
+          0.999773387547478
+        ],
+        "ci_family": [
+          0.9913372169993514,
+          0.9997990815155106
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "decorative_false": {
+        "value": 0.9835116471315357,
+        "n": 100,
+        "ci_item": [
+          0.9585937920576784,
+          0.9990686856923138
+        ],
+        "ci_family": [
+          0.9603418077402202,
+          0.9991850765135301
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      }
+    },
+    "abstention_rate": {
+      "coherent_true": {
+        "value": 0.3,
+        "n": 100,
+        "ci_item": [
+          0.1,
+          0.5
+        ],
+        "ci_family": [
+          0.1,
+          0.5
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "coherent_false": {
+        "value": 0.4,
+        "n": 100,
+        "ci_item": [
+          0.2,
+          0.6
+        ],
+        "ci_family": [
+          0.2,
+          0.6
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_true": {
+        "value": 0.15,
+        "n": 100,
+        "ci_item": [
+          0.0,
+          0.3
+        ],
+        "ci_family": [
+          0.0,
+          0.3
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "diverse_false": {
+        "value": 0.1,
+        "n": 100,
+        "ci_item": [
+          0.0,
+          0.25
+        ],
+        "ci_family": [
+          0.0,
+          0.25
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "decorative_true": {
+        "value": 0.3,
+        "n": 100,
+        "ci_item": [
+          0.0,
+          0.6
+        ],
+        "ci_family": [
+          0.0,
+          0.6153846153846154
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      },
+      "decorative_false": {
+        "value": 0.4,
+        "n": 100,
+        "ci_item": [
+          0.1,
+          0.7
+        ],
+        "ci_family": [
+          0.1111111111111111,
+          0.7272727272727273
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": ""
+      }
+    },
+    "effects": {
+      "main_effect_coherence": {
+        "value": -0.17648559484538984,
+        "n": 100,
+        "ci_item": [
+          -0.3312588012097981,
+          -0.030354145200067868
+        ],
+        "ci_family": [
+          -0.30601729556024515,
+          -0.06499312124406904
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "mean(coherent) - mean(diverse), collapsing over truth"
+      },
+      "main_effect_truth": {
+        "value": 0.026736223689930227,
+        "n": 100,
+        "ci_item": [
+          -0.11409081720106604,
+          0.16115597902193413
+        ],
+        "ci_family": [
+          -0.042780246190698444,
+          0.09189859128551729
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "mean(true) - mean(false), collapsing over coherence"
+      },
+      "interaction": {
+        "value": 0.16128554145777485,
+        "n": 100,
+        "ci_item": [
+          -0.13838282009253008,
+          0.4640560003312652
+        ],
+        "ci_family": [
+          0.041257768022461574,
+          0.31455437760535265
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "(coh_true - coh_false) - (div_true - div_false)"
+      },
+      "coherence_effect_within_true": {
+        "value": -0.15963556910947707,
+        "n": 100,
+        "ci_item": [
+          -0.3867650832280519,
+          0.06008740780954749
+        ],
+        "ci_family": [
+          -0.28676544662719944,
+          -0.05018103268661347
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "D-004: the CLEAN coherence contrast. Both cells are flawless, so neither the flaw-type confound nor flaw salience can touch it."
+      },
+      "coherence_effect_within_false": {
+        "value": -0.3209211105672519,
+        "n": 100,
+        "ci_item": [
+          -0.5279858276056658,
+          -0.12344450751620413
+        ],
+        "ci_family": [
+          -0.4807525272966585,
+          -0.17657836843357902
+        ],
+        "n_resamples": 10000,
+        "n_failed_resamples": 0,
+        "note": "D-004: mixes coherence with whatever differs between the mechanisms."
+      }
+    },
+    "anova": {
+      "balanced": true,
+      "cell_n": {
+        "coherent_true": 20,
+        "coherent_false": 20,
+        "diverse_true": 20,
+        "diverse_false": 20
+      },
+      "grand_mean": 0.7440783590452578,
+      "cell_means": {
+        "coherent_true": 0.663176802336632,
+        "coherent_false": 0.5847015759155187,
+        "diverse_true": 0.8228123714461091,
+        "diverse_false": 0.9056226864827707
+      },
+      "marginal_means": {
+        "coherent": 0.6239391891260754,
+        "diverse": 0.8642175289644399,
+        "true": 0.7429945868913705,
+        "false": 0.7451621311991448
+      },
+      "table": [
+        {
+          "source": "coherence",
+          "ss": 1.1546736119096122,
+          "df": 1,
+          "ms": 1.1546736119096122,
+          "f": 9.224026768104691,
+          "p": 0.0032719321120443894,
+          "partial_eta_sq": 0.10823270288792324
+        },
+        {
+          "source": "truth",
+          "ss": 9.396496652328815e-05,
+          "df": 1,
+          "ms": 9.396496652328815e-05,
+          "f": 0.0007506323497264776,
+          "p": 0.9782143713539734,
+          "partial_eta_sq": 9.876643894711362e-06
+        },
+        {
+          "source": "coherence x truth",
+          "ss": 0.13006512941663806,
+          "df": 1,
+          "ms": 0.13006512941663806,
+          "f": 1.039015894155538,
+          "p": 0.3112843623774413,
+          "partial_eta_sq": 0.013486879110489281
+        },
+        {
+          "source": "residual",
+          "ss": 9.513761908039436,
+          "df": 76,
+          "ms": 0.125181077737361,
+          "f": null,
+          "p": null,
+          "partial_eta_sq": null
+        }
+      ],
+      "scope": "the four core cells only; the decorative control is not in this table",
+      "caveat": "F-tests assume independent observations. Items come in families of 4 sharing a scenario, so they are not independent; treat these as a variance breakdown and read the bootstrap CIs on the effect estimates for inference."
+    },
+    "mass_covered": {
+      "mean": 0.9999825539361707,
+      "min": 0.9999324267367428,
+      "max": 0.999998245647655
+    }
+  }
+}
