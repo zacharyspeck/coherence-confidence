@@ -1618,3 +1618,45 @@ requirements.txt on Kaggle force-upgraded numpy/scipy/sklearn and broke
 numpy's C extensions; optional HF_TOKEN secret read silently; each model
 wrapped in try/except so a 32B failure cannot discard finished 8B results;
 the zip cell always runs on whatever results/ holds.
+
+## D-049 - The prefill self-adapts: markdown-bold ate 84% of the answer mass
+
+**The failure, second Kaggle run.** The D-048 prefill put the final position
+after "Answer:" in the assistant turn - and the 8B then wanted to answer in
+its house style:
+
+    PROMPT TAIL: '...<|im_start|>assistant\n<think>\n\n</think>\n\nAnswer:'
+    TOP 10: 0.8397 ' **' | 0.1603 ' Yes' | 0.0000 ' Unknown' | 0.0000 ' No'
+
+The model writes "**Yes**". The bold marker holds 0.84 of the mass; the
+options hold 0.16. Qwen3-0.6B has no such habit, which is why local
+verification passed and the class of failure only appears on the real model.
+
+**Three changes, in the order they act:**
+
+1. **The cue appears once.** Under a chat template the prompt's trailing
+   "Answer:" is now stripped from the user turn; the assistant prefill is
+   the only cue. (Previously it appeared in both turns.)
+2. **The instruction asks for the format we read.** Added: "Reply with one
+   word only. No formatting, no markdown, no punctuation." This changes the
+   template hash, which now also sits in the checkpoint config stamp - so
+   pre-change checkpoints refuse to resume (verified live: the stale e2e
+   checkpoint was refused with the exact three-key diff).
+3. **The prefill discovers itself on the real model, first use, no notebook
+   edits.** `discover_answer_prefill`: probe one forward pass after the seed
+   "Answer:"; while the options hold <= 0.5 of the mass AND the top token is
+   pure formatting (chars in *_`~: and whitespace), append that token and
+   re-probe, max depth 3. A CONTENT token at the top with low mass raises
+   with the top-10 printed - appending it would bias the readout. The
+   discovered prefill is fixed for the whole run and recorded in
+   meta.answer_prefill. On this 8B it will be "Answer: **": after absorbing
+   the bold marker the natural next token is "Yes" (no leading space), which
+   the variant set already covers. baseline.py flows through the same
+   HFScorer, so it inherits the logic without change.
+
+**Verified.** Unit tests simulate the exact 8B distribution (0.84 on ' **')
+and confirm the discovery descends one level and lands on the options, plus
+refusal on content tokens, depth exhaustion, and an option-argmax below the
+floor. On the real 0.6B: discovery runs, keeps the seed (clean model),
+coverage 1.000 at a 0.9 floor, meta records the prefill; the 12-item
+score -> baseline -> analyze path is clean end to end. Full suite: 350 passed (was 333; the discovery tests added 17).

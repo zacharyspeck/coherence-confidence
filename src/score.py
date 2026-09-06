@@ -334,15 +334,68 @@ class Scorer(Protocol):
     def meta(self) -> dict[str, Any]: ...
 
 
+#: Characters that make a token "formatting" rather than an answer: markdown
+#: emphasis, code ticks, whitespace, and the colon a model may re-emit.
+FORMATTING_CHARS = frozenset("*_`~: \t\n\r")
+
+
+def is_formatting_token(text: str) -> bool:
+    return bool(text) and all(c in FORMATTING_CHARS for c in text)
+
+
+def discover_answer_prefill(
+    probe,
+    base_text: str,
+    *,
+    seed: str = "Answer:",
+    max_depth: int = 3,
+    mass_floor: float = 0.5,
+) -> str:
+    """Extend the answer prefill until the options hold the next-token mass.
+
+    Chat-tuned models pick up habits the prefill has to absorb: Qwen3-8B wants
+    to write "**Yes**", so after "Answer:" the top token is ' **' at 0.84 and
+    the options hold 0.16 (D-049). Appending the model's own formatting token
+    to the prefill walks it past the decoration: "Answer: **" puts the mass
+    back on the options. A small model of the same family does NOT share the
+    habit, which is why this runs on the real model at first use rather than
+    being fixed at authoring time.
+
+    `probe(text)` -> (top_decoded, top_in_options, options_mass, top10) where
+    top10 is [(prob, decoded), ...] for the error message. Only formatting
+    tokens (see FORMATTING_CHARS) are ever appended, at most `max_depth` of
+    them; anything else failing the mass floor raises with the distribution
+    printed, because appending a CONTENT token would bias the readout.
+    """
+    prefill = seed
+    for depth in range(max_depth + 1):
+        top, top_in_options, mass, top10 = probe(base_text + prefill)
+        if mass > mass_floor:
+            return prefill
+        if depth == max_depth or top_in_options or not is_formatting_token(top):
+            dist = "\n".join(f"    {p:.4f}  {t!r}" for p, t in top10)
+            raise RuntimeError(
+                f"answer-prefill discovery failed at depth {depth} "
+                f"(prefill {prefill!r}): options hold {mass:.4f} of the mass "
+                f"(floor {mass_floor}) and the top token {top!r} is "
+                f"{'an option' if top_in_options else 'not a formatting token'}"
+                f", so extending further would not help.\n  TOP 10 NEXT TOKENS:"
+                f"\n{dist}"
+            )
+        prefill += top
+    raise AssertionError("unreachable")
+
+
 class HFScorer:
     """Real scorer: final-position logits from a HuggingFace causal LM."""
 
-    #: Appended AFTER the assistant tag when the chat template is on. The
-    #: prompt text ends in "Answer:", but under a chat template that string
-    #: sits inside the USER turn - so the model's first assistant token is it
-    #: starting to WRITE "Answer" itself (observed on Qwen3-8B: top token
-    #: 'Answer', mass on Yes/No/Unknown ~ 0.000). The cue has to be assistant
-    #: prefill: template -> assistant tag -> "Answer:" -> read logits there.
+    #: SEED of the assistant-turn prefill used when the chat template is on.
+    #: The prompt text ends in "Answer:", but under a chat template that
+    #: string sits inside the USER turn - so the model's first assistant token
+    #: is it starting to WRITE "Answer" itself (observed on Qwen3-8B: top
+    #: token 'Answer', mass on Yes/No/Unknown ~ 0.000). The cue has to be
+    #: assistant prefill - and it may need model-specific extension, which
+    #: discover_answer_prefill does on first use (D-048, D-049).
     ANSWER_PREFILL = "Answer:"
 
     def __init__(
@@ -381,6 +434,8 @@ class HFScorer:
         # opinion when it is actually a model clearing its throat. The coverage
         # gate catches it loudly; this flag prevents it.
         self.no_thinking = no_thinking
+        #: Discovered lazily on the first scored prompt (D-049).
+        self._prefill: str | None = None
 
         if device == "auto":
             device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -465,31 +520,77 @@ class HFScorer:
 
     # -- prompt -> probabilities --------------------------------------------
 
-    def _prepare(self, prompt: str) -> str:
-        if not self.chat_template:
-            return prompt
+    def _template(self, prompt: str) -> str:
+        """The chat-templated text WITHOUT the answer prefill.
+
+        The prompt's trailing "Answer:" is removed from the user turn - the
+        cue appears exactly once, as assistant prefill, not once per role
+        (a duplicated cue invites the model to answer the transcript rather
+        than the question).
+        """
+        content = prompt.rstrip()
+        if content.endswith("Answer:"):
+            content = content[: -len("Answer:")].rstrip()
         # Opt-in only (D-009): this changes the token immediately before the
         # answer position, which changes the option logits model-specifically.
         # enable_thinking lands in the template's jinja context; templates that
         # never reference it (Qwen2.5, SmolLM2, ...) ignore it silently.
         kwargs = {"enable_thinking": False} if self.no_thinking else {}
-        text = self.tokenizer.apply_chat_template(
-            [{"role": "user", "content": prompt}],
+        return self.tokenizer.apply_chat_template(
+            [{"role": "user", "content": content}],
             tokenize=False,
             add_generation_prompt=True,
             **kwargs,
         )
-        # Prefill the answer cue as ASSISTANT text (see ANSWER_PREFILL): the
-        # final position is then right after "Answer:", exactly as in the
-        # untemplated path, and the canonical ' Yes'/' No'/' Unknown' forms
-        # are the natural next token again (D-048).
-        return text + self.ANSWER_PREFILL
+
+    def _prepare(self, prompt: str) -> str:
+        if not self.chat_template:
+            return prompt
+        # Prefill the answer cue as ASSISTANT text: the final position is then
+        # right after the cue, exactly as in the untemplated path (D-048). The
+        # prefill itself is the discovered one once discovery has run.
+        return self._template(prompt) + (self._prefill or self.ANSWER_PREFILL)
+
+    def _probe(self, text: str):
+        """One forward pass -> (top_decoded, top_in_options, options_mass, top10)."""
+        torch = self.torch
+        enc = self.tokenizer(
+            text, return_tensors="pt", add_special_tokens=self.add_special_tokens
+        )
+        enc = {k: v.to(self.device) for k, v in enc.items()}
+        with torch.no_grad():
+            logits = self.model(**enc).logits[0, -1, :]
+        probs = torch.softmax(logits.to(torch.float64), -1)
+        option_ids = [t for o in self.option_tokens.values() for t in o.token_ids]
+        mass = float(probs[option_ids].sum().item())
+        top_id = int(probs.argmax().item())
+        vals, idx = probs.topk(10)
+        top10 = [
+            (float(p), self.tokenizer.decode([int(i)]))
+            for p, i in zip(vals.tolist(), idx.tolist())
+        ]
+        return self.tokenizer.decode([top_id]), top_id in set(option_ids), mass, top10
+
+    def _ensure_prefill(self, prompt: str) -> None:
+        """Discover the model-specific prefill on first use, once per run."""
+        self._prefill = discover_answer_prefill(
+            self._probe, self._template(prompt), seed=self.ANSWER_PREFILL
+        )
+        if self._prefill != self.ANSWER_PREFILL:
+            print(
+                f"NOTE: answer prefill auto-extended to {self._prefill!r} - the "
+                "model led with formatting tokens at the answer position "
+                "(recorded in meta.answer_prefill, D-049)",
+                file=sys.stderr,
+            )
 
     def score_prompt(self, prompt: str) -> ScoreResult:
         return self.score_prompts([prompt])[0]
 
     def score_prompts(self, prompts: Sequence[str]) -> list[ScoreResult]:
         torch = self.torch
+        if self.chat_template and self._prefill is None:
+            self._ensure_prefill(prompts[0])
         texts = [self._prepare(p) for p in prompts]
 
         if len(texts) == 1:
@@ -557,7 +658,11 @@ class HFScorer:
             "quantized": bool(getattr(self.model, "is_quantized", False)),
             "bnb_compute_dtype_overridden": self.bnb_compute_dtype_overridden,
             "no_thinking": self.no_thinking,
-            "answer_prefill": self.ANSWER_PREFILL if self.chat_template else None,
+            "answer_prefill": (
+                (self._prefill or self.ANSWER_PREFILL)
+                if self.chat_template
+                else None
+            ),
             "dtype": self.dtype_name,
             "chat_template": self.chat_template,
             "add_special_tokens": self.add_special_tokens,
@@ -755,9 +860,14 @@ def checkpoint_config_of(args: argparse.Namespace) -> dict[str, Any]:
         "load_4bit": args.load_4bit,
         "chat_template": args.chat_template,
         "no_thinking": args.no_thinking,
-        # Code-version guard, not a flag: records scored before the D-048
-        # prefill fix must not be resumed into a post-fix run.
-        "answer_prefill": HFScorer.ANSWER_PREFILL if args.chat_template else None,
+        # Code-version guards, not flags: records scored before the D-048/49
+        # prefill fixes, or under a different instruction template, must not
+        # be resumed into a run made after them. The SEED prefill is stamped
+        # (the discovered one is per-model but derived deterministically).
+        "answer_prefill_seed": HFScorer.ANSWER_PREFILL if args.chat_template else None,
+        "template_hash": template_hash(
+            (DEFAULT_OPTIONS[0], DEFAULT_OPTIONS[1], args.third_option)
+        ),
         "third_option": args.third_option,
         "variant_strategy": args.variant_strategy,
         "shuffle_cases": getattr(args, "shuffle_cases", False),

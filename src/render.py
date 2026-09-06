@@ -39,7 +39,12 @@ _INSTRUCTION_TEMPLATE = (
     "Read the report, then answer the question.\n"
     "Answer {yes} if the evidence establishes the claim, {no} if the evidence "
     "shows the claim is not established, or {unsure} if the evidence is not "
-    "enough to decide."
+    "enough to decide.\n"
+    # Chat-tuned models decorate their answers ("**Yes**"); at the answer
+    # position that puts most of the next-token mass on formatting tokens
+    # instead of the options (D-049). The sentence lowers that; the prefill
+    # auto-discovery in score.py absorbs whatever habit remains.
+    "Reply with one word only. No formatting, no markdown, no punctuation."
 )
 
 _EVIDENCE_TEMPLATE = """{instruction}

@@ -72,15 +72,22 @@ Two hardware notes baked into the notebook flags:
   opinion. `--no-thinking` passes `enable_thinking=False` to the chat
   template. If it were ever dropped, the coverage gate (below) fails the run
   loudly rather than letting the numbers through.
-- **The answer cue is assistant prefill (D-048).** Under a chat template the
-  prompt's trailing `Answer:` sits inside the *user* turn, and the first
-  Kaggle run showed exactly what that does: the model's top next token was
-  `'Answer'` — it started writing the cue itself — with ~0 mass on the
-  options. `score.py` now appends `Answer:` *after* the assistant tag and
-  reads the logits there. Proven on Qwen3-0.6B (same family): mass went
-  0.000 → 1.000, argmax ` Yes`, and the full score → baseline → analyze path
-  runs clean. Checkpoints written before this fix refuse to resume into a
-  fixed run (the prefill is part of the checkpoint's config stamp).
+- **The answer cue is assistant prefill, and it self-adapts (D-048, D-049).**
+  Under a chat template the prompt's trailing `Answer:` sits inside the
+  *user* turn — the first Kaggle run's top next token was `'Answer'`, the
+  model writing the cue itself, ~0 mass on the options. `score.py` now
+  removes the cue from the user turn and prefills it after the assistant tag.
+  The second run then exposed a habit the 0.6B doesn't share: the 8B answers
+  `**Yes**`, putting 0.84 of the mass on `' **'`. So on first use the scorer
+  probes the real model and, while the top token is pure formatting
+  (markdown, whitespace, colon) and the options hold under half the mass,
+  appends that token to the prefill — max three levels, anything else raises
+  with the top-10 next tokens printed. For this 8B the discovered prefill is
+  `"Answer: **"`. The discovered value lands in `meta.answer_prefill`; the
+  instruction also now says "Reply with one word only. No formatting, no
+  markdown, no punctuation." Checkpoints written before these fixes refuse
+  to resume into a fixed run (prefill seed and template hash are in the
+  checkpoint's config stamp).
 
 ## What runs, per model
 

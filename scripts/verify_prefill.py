@@ -70,7 +70,7 @@ def main(argv: list[str] | None = None) -> int:
         v for opt in scorer.option_tokens.values()
         for v in opt.id_to_variant.values()
     }
-    print(f"prefill={scorer.ANSWER_PREFILL!r} chat_template={args.chat_template}")
+    print(f"seed prefill={scorer.ANSWER_PREFILL!r} chat_template={args.chat_template}")
 
     failures = 0
     for it in items:
@@ -84,6 +84,8 @@ def main(argv: list[str] | None = None) -> int:
             failures += 1
             diagnose(scorer, prompt)
 
+    if args.chat_template:
+        print(f"discovered prefill: {scorer._prefill!r}")
     if failures:
         print(f"\n{failures}/{len(items)} items FAILED the "
               f"mass>{args.mass_floor} / argmax-in-options check")
