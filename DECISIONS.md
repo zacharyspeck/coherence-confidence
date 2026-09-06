@@ -1572,3 +1572,49 @@ five confirmed findings were fixed:
 5. **Docs overstated resume speed.** Each finished stage still reloads its
    model (~1-5 min) before finding nothing to do; KAGGLE.md now says so
    instead of "re-verified in seconds".
+
+## D-048 - The chat-template answer cue must be assistant prefill, and now is
+
+**The failure, from the first Kaggle run (cell 3, Qwen3-8B, sharded fine):**
+
+    fam_bearing__coherent_false: p_yes=1.000 mass=0.000 top='Answer'
+
+With --chat-template, the prompt's trailing "Answer:" sat inside the USER
+turn. The assistant's first token is the start of its own reply, and the
+model reasonably began by writing "Answer" itself - so the argmax was
+'Answer' and the mass on Yes/No/Unknown was ~0. p_yes=1.000 is the
+renormalisation of a rounding error, which is exactly the failure mode the
+mass_covered gate exists to catch, and it did: the notebook died in the
+verification cell before any GPU-hours were spent.
+
+**Fix.** `HFScorer._prepare` now renders the template with
+add_generation_prompt=True (and enable_thinking=False under --no-thinking),
+then appends `ANSWER_PREFILL = "Answer:"` AFTER the assistant tag. The final
+position is right after "Answer:" again, as in the untemplated path, and the
+canonical ' Yes'/' No'/' Unknown' single tokens are the natural continuation.
+No constructor or CLI change; the prefill is recorded in run meta
+(`answer_prefill`) and in the checkpoint config stamp, so a checkpoint
+written before this fix REFUSES to resume into a post-fix run.
+
+**Proof, on a real tokenizer of the same family (scripts/verify_prefill.py,
+Qwen/Qwen3-0.6B, CPU, --chat-template --no-thinking --third-option Unknown):**
+
+    before (Kaggle, 8B):  mass=0.000  top='Answer'
+    after  (0.6B, CPU):   mass=1.000 on all 3 items, top=' Yes' every time
+
+The first candidate config passed; the fallbacks ("Answer: " with trailing
+space; no template) were specified in advance and never needed. End-to-end on
+the same model: 12 items scored (mean mass 0.9999, min 0.9998), baseline
+(mean no-evidence P(yes) 0.1249), analyze produced endpoints - the whole
+path, not just the scorer. Side effect worth naming: this also dissolves the
+D-043 coverage problem (0.29 on the CPU run) - most of that missing mass was
+the same user-turn-cue defect, not option-word tokenization.
+
+**Notebook lessons folded in at the same time (user-specified):** clone with
+the token in the URL then immediately scrub the remote (the env-var clone was
+replaced - reliability of a proven path over the sub-second hardening);
+`pip install transformers==5.16.1 accelerate bitsandbytes` ONLY - installing
+requirements.txt on Kaggle force-upgraded numpy/scipy/sklearn and broke
+numpy's C extensions; optional HF_TOKEN secret read silently; each model
+wrapped in try/except so a 32B failure cannot discard finished 8B results;
+the zip cell always runs on whatever results/ holds.

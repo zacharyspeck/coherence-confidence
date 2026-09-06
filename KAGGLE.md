@@ -29,7 +29,16 @@ Secrets.
    it to this notebook is on.
 
 The notebook never prints the token and scrubs it from the cloned repo's git
-config immediately after cloning, so it cannot leak through the output zip.
+config on the line after the clone, so it does not leak through the output
+zip. An **`HF_TOKEN`** secret is optional: if present it is read into the
+environment (faster, rate-limit-free HF downloads); if absent the cell skips
+it silently — the models here are public.
+
+**Installs are deliberately minimal:** cell 2 runs
+`pip install transformers==5.16.1 accelerate bitsandbytes` and nothing else.
+Do not install the repo's `requirements.txt` on Kaggle — its pins
+force-upgrade numpy/scipy/sklearn and break numpy's C extensions against the
+preinstalled stack (learned from a failed run).
 
 ## The models — and why they are not the ones first asked for
 
@@ -63,6 +72,15 @@ Two hardware notes baked into the notebook flags:
   opinion. `--no-thinking` passes `enable_thinking=False` to the chat
   template. If it were ever dropped, the coverage gate (below) fails the run
   loudly rather than letting the numbers through.
+- **The answer cue is assistant prefill (D-048).** Under a chat template the
+  prompt's trailing `Answer:` sits inside the *user* turn, and the first
+  Kaggle run showed exactly what that does: the model's top next token was
+  `'Answer'` — it started writing the cue itself — with ~0 mass on the
+  options. `score.py` now appends `Answer:` *after* the assistant tag and
+  reads the logits there. Proven on Qwen3-0.6B (same family): mass went
+  0.000 → 1.000, argmax ` Yes`, and the full score → baseline → analyze path
+  runs clean. Checkpoints written before this fix refuse to resume into a
+  fixed run (the prefill is part of the checkpoint's config stamp).
 
 ## What runs, per model
 
@@ -98,6 +116,11 @@ produce a mixed-provenance run file (delete the checkpoint to rescore).
 The zip also stays honest: cell 1 moves the repo's committed `results/`
 history to `results_from_repo/`, so `results/` — and the download — contain
 only what this session produced.
+
+**A 32B failure cannot cost you the 8B.** Cell 4 wraps each model in its own
+try/except: a failure prints the full traceback, the loop continues, a
+STATUS summary reports per-model outcomes, and cell 5 always runs — zipping
+whatever `results/` holds at that point.
 
 ## Expected runtime
 

@@ -337,6 +337,14 @@ class Scorer(Protocol):
 class HFScorer:
     """Real scorer: final-position logits from a HuggingFace causal LM."""
 
+    #: Appended AFTER the assistant tag when the chat template is on. The
+    #: prompt text ends in "Answer:", but under a chat template that string
+    #: sits inside the USER turn - so the model's first assistant token is it
+    #: starting to WRITE "Answer" itself (observed on Qwen3-8B: top token
+    #: 'Answer', mass on Yes/No/Unknown ~ 0.000). The cue has to be assistant
+    #: prefill: template -> assistant tag -> "Answer:" -> read logits there.
+    ANSWER_PREFILL = "Answer:"
+
     def __init__(
         self,
         model_name: str,
@@ -465,12 +473,17 @@ class HFScorer:
         # enable_thinking lands in the template's jinja context; templates that
         # never reference it (Qwen2.5, SmolLM2, ...) ignore it silently.
         kwargs = {"enable_thinking": False} if self.no_thinking else {}
-        return self.tokenizer.apply_chat_template(
+        text = self.tokenizer.apply_chat_template(
             [{"role": "user", "content": prompt}],
             tokenize=False,
             add_generation_prompt=True,
             **kwargs,
         )
+        # Prefill the answer cue as ASSISTANT text (see ANSWER_PREFILL): the
+        # final position is then right after "Answer:", exactly as in the
+        # untemplated path, and the canonical ' Yes'/' No'/' Unknown' forms
+        # are the natural next token again (D-048).
+        return text + self.ANSWER_PREFILL
 
     def score_prompt(self, prompt: str) -> ScoreResult:
         return self.score_prompts([prompt])[0]
@@ -544,6 +557,7 @@ class HFScorer:
             "quantized": bool(getattr(self.model, "is_quantized", False)),
             "bnb_compute_dtype_overridden": self.bnb_compute_dtype_overridden,
             "no_thinking": self.no_thinking,
+            "answer_prefill": self.ANSWER_PREFILL if self.chat_template else None,
             "dtype": self.dtype_name,
             "chat_template": self.chat_template,
             "add_special_tokens": self.add_special_tokens,
@@ -741,6 +755,9 @@ def checkpoint_config_of(args: argparse.Namespace) -> dict[str, Any]:
         "load_4bit": args.load_4bit,
         "chat_template": args.chat_template,
         "no_thinking": args.no_thinking,
+        # Code-version guard, not a flag: records scored before the D-048
+        # prefill fix must not be resumed into a post-fix run.
+        "answer_prefill": HFScorer.ANSWER_PREFILL if args.chat_template else None,
         "third_option": args.third_option,
         "variant_strategy": args.variant_strategy,
         "shuffle_cases": getattr(args, "shuffle_cases", False),
