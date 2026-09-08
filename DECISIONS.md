@@ -1660,3 +1660,97 @@ refusal on content tokens, depth exhaustion, and an option-argmax below the
 floor. On the real 0.6B: discovery runs, keeps the seed (clean model),
 coverage 1.000 at a 0.9 floor, meta records the prefill; the 12-item
 score -> baseline -> analyze path is clean end to end. Full suite: 350 passed (was 333; the discovery tests added 17).
+
+## D-050 - The public-release documentation pass: what changed and what did not
+
+The repo went public and is linked from a blog post that quotes the committed
+Kaggle analysis at 1370a81. This pass makes the repo match that post for a
+stranger arriving cold. Everything below is documentation or display logic;
+no measurement was re-run and no item text was touched.
+
+**1. Verdict logic in src/analyze.py (display, not measurement).**
+
+- The covariate "survives conditioning" rule was an absolute floor
+  (abs(coefficient) > 0.1), which printed "holds its sign and size" for the
+  8B path [1.7892, 1.9707, 0.1227] - a coefficient that had collapsed to 7%
+  of its starting size. New rule, factored into `coherence_survives()`:
+  every coefficient keeps the sign of the first AND at least half its
+  magnitude. The 8B flag flips to false; the 32B path [1.5041, 1.5556,
+  2.3098] stays true.
+- The "AUC below 0.5: confidence runs backwards" sentence used the point
+  estimate alone. It now reads the condition's family CI: upper bound below
+  0.5 keeps the reversal claim ("interval excludes 0.5"); an interval
+  spanning 0.5 gets "point estimate below 0.5 but the interval spans 0.5:
+  confidence gives no separation between true and false in that condition.
+  The licensed claim is no separation, not reversal." A missing CI defaults
+  to the weaker no-separation sentence - the conservative branch.
+- Six tests cover both branches of both rules, using the observed 8B/32B/3B
+  coefficient paths and the observed 32B diverse interval. Full suite: 356
+  passed (was 350).
+
+**2. The regeneration protocol, and one deliberate deviation.** Both Kaggle
+analyses were regenerated to a temp directory against the committed run and
+baseline files. The .md diffs were EXACTLY the verdict sentences above -
+every number identical - so both .md files were copied in. The regenerated
+JSONs also matched every measurement number at reported precision, but
+differed in the trailing digits (~1e-12, different sklearn/scipy/numpy
+versions locally than on Kaggle) of unrounded logistic-regression and ANOVA
+intermediates, and carried a fresh local provenance stamp. Under the rule
+that no number in results/kaggle may change beyond the two verdict fixes,
+the JSONs were NOT copied. Instead the single licensed JSON change -
+`coherence_survives_conditioning` true -> false in analysis_qwen3_8b.json -
+was applied to the committed file directly, leaving every Kaggle-computed
+byte (coefficients, CIs, provenance) intact. analysis_qwen3_32b.json needed
+no change (its flag stays true) and is untouched.
+
+**3. RESULTS.md licensed phrasing.** The headline sentence and the
+"AUC(diverse) is below 0.5 every time" paragraph no longer claim "worse than
+chance" / "runs backwards": the 32B diverse interval [0.27, 0.52] spans 0.5,
+so the licensed claim in that condition is no separation; the significant
+result is the between-condition gap +0.225 [+0.025, +0.435]. No number
+changed. The section-8 "honest flag" - which told readers the 8B analysis
+prints a verdict its own numbers contradict - now records that bug as fixed,
+since after this pass the committed analysis agrees with its coefficients.
+
+**4. Local path scrubbed.** results/pilot_qwen3b_12.json meta.item_dirs
+carried an absolute local temp path; replaced with "<scratchpad>/pilot_items".
+Run metadata only; no scored value touched.
+
+**5. README rewritten to current state; HANDOFF and READER_REPORT aligned.**
+The README had described the pre-control 80-item design. It now leads with
+the question, the licensed one-line result, the headline table with the
+matched-subset row, and a pre-registration paragraph whose three commits were
+re-verified against git history before writing (6ba9c9b 2026-08-30 first
+commit; 83a9c47 2026-08-31 09:49 locks D-025; 7d182c0 2026-09-02 adds
+PREDICTIONS.md, unedited since). HANDOFF's "the README is out of date"
+paragraph is replaced. A Provenance block was added at the top of
+READER_REPORT.md (scripts/build_reader_report.py writes between markers, so
+the block survives regeneration). One placeholder could not be filled as
+specified: no artifact in this repo records WHICH model answered the blind
+reader passes, so the provenance sentences say "language-model readers -
+subagent instances of the coding agent that built this repo" and state that
+the name is unrecorded, rather than guessing one. Naming it is a one-line
+edit in README.md and READER_REPORT.md if the maintainer wants it on record.
+
+**6. Kaggle path updated for a public repo.** Cell 1 of kaggle_run.ipynb now
+clones anonymously by default and uses a GITHUB_TOKEN Kaggle secret only if
+one is attached - the token path is kept for private forks. KAGGLE.md's "The
+repo is private" section is reworded accordingly. The notebook still carries
+no saved outputs.
+
+**7. LICENSE and schema id.** LICENSE (MIT, 2026) added - the one new
+top-level file, per instruction. items/schema.json's "$id" host corrected
+from github.com/speck to github.com/zacharyspeck. That is the single change
+under items/, explicitly instructed; scripts/verify_run.py confirms both
+Kaggle runs still validate byte-identical against the items on disk
+(prompts hash 10d08c64b5f9 unchanged - "$id" is schema metadata, not item
+content).
+
+**8. Explicitly NOT touched:** every item file under items/ (the schema "$id"
+aside), results/kaggle/run_*.json, results/kaggle/baseline_*.json,
+results/kaggle/partial_*.jsonl, and PREDICTIONS.md.
+
+**9. Verification.** 356 tests pass; verify_run prints VALID for both Kaggle
+runs; the release grep for tool, vendor, and local-path strings is clean over
+all git-tracked files and over the working tree excluding .venv/ (gitignored;
+it necessarily contains the local interpreter's install path).
