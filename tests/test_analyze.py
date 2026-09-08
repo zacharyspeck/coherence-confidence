@@ -13,8 +13,10 @@ from conftest import make_records
 
 from src.analyze import (
     Dataset,
+    _auc_table,
     analyze,
     bootstrap,
+    coherence_survives,
     pairwise_auc_detail,
     stat_abstention_rate,
     stat_auc,
@@ -507,3 +509,64 @@ def test_conditioning_uses_core_cells_only():
     )["covariate_models"]
     assert sm["n_false_items"] == 40
     assert "core cells only" in sm["note"]
+
+
+# ---- verdict logic ----------------------------------------------------------
+
+
+def test_survives_requires_half_the_first_coefficients_size():
+    # The observed Qwen3-8B path: the sign holds but the coefficient collapses
+    # from 1.79 to 0.12 once surface complexity enters. The old absolute floor
+    # (abs > 0.1) printed "holds its sign and size" for exactly this path.
+    assert coherence_survives([1.7892, 1.9707, 0.1227]) is False
+
+
+def test_survives_when_every_coefficient_keeps_sign_and_half_size():
+    # The observed Qwen3-32B path: the coefficient grows under conditioning.
+    assert coherence_survives([1.5041, 1.5556, 2.3098]) is True
+
+
+def test_survives_fails_on_a_sign_flip_even_at_full_size():
+    # The Qwen2.5-3B pattern (D-044): inversion when surface complexity enters.
+    assert coherence_survives([0.647, 0.690, -0.646]) is False
+
+
+def _verdict_block(diverse_ci):
+    def cond(value, ci):
+        return {
+            "estimate": {"value": value, "ci_family": ci},
+            "detail": {"n_pairs": 400, "n_wins": 200, "n_ties": 0},
+            "mean_salience_of_false_items": None,
+        }
+
+    return {
+        "conditions": {
+            "coherent": cond(0.6175, (0.47, 0.77)),
+            "diverse": cond(0.3925, diverse_ci),
+        },
+        "gap_coherent_minus_diverse": {"value": 0.225, "ci_family": (0.025, 0.435)},
+        "salience_gap_coherent_minus_diverse": None,
+        "families_match_across_conditions": True,
+    }
+
+
+def test_auc_below_half_with_interval_spanning_half_reads_no_separation():
+    # The observed 32B diverse condition: 0.3925 [0.2653, 0.5153]. The interval
+    # admits 0.5, so the licensed claim is no separation, not reversal.
+    text = "\n".join(_auc_table(_verdict_block((0.2653, 0.5153))))
+    assert "no separation" in text
+    assert "runs backwards" not in text
+
+
+def test_auc_below_half_with_interval_excluding_half_reads_runs_backwards():
+    text = "\n".join(_auc_table(_verdict_block((0.27, 0.49))))
+    assert "runs backwards" in text
+    assert "interval excludes 0.5" in text
+    assert "no separation" not in text
+
+
+def test_auc_below_half_with_no_interval_defaults_to_no_separation():
+    # No CI computed means the reversal claim is unlicensed; take the weaker one.
+    text = "\n".join(_auc_table(_verdict_block(None)))
+    assert "no separation" in text
+    assert "runs backwards" not in text

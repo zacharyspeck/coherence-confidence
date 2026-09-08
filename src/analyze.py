@@ -830,6 +830,21 @@ def control_comparison(
 # ---------------------------------------------------------------------------
 
 
+def coherence_survives(coh_path: list[float]) -> bool:
+    """Does the coherence coefficient survive conditioning?
+
+    Every coefficient in the path must keep the sign of the first model's
+    coefficient AND at least half its magnitude. An absolute floor (the old
+    abs(v) > 0.1) passed a coefficient that had collapsed from 1.79 to 0.12,
+    which is exactly the case the verdict sentence exists to call out.
+    """
+    first = coh_path[0]
+    return all(
+        np.sign(v) == np.sign(first) and abs(v) >= 0.5 * abs(first)
+        for v in coh_path
+    )
+
+
 def covariate_models(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
     """Does the coherence effect survive conditioning on the covariates?
 
@@ -920,7 +935,7 @@ def covariate_models(ds: "Dataset", which: str = "3way") -> dict[str, Any]:
         out_models[name] = dict(zip(names, c))
 
     coh_path = [out_models[k]["coherent"] for k in specs]
-    survives = all(abs(v) > 0.1 and np.sign(v) == np.sign(coh_path[0]) for v in coh_path)
+    survives = coherence_survives(coh_path)
 
     return {
         "fitted": True,
@@ -1555,13 +1570,24 @@ def _auc_table(block: dict[str, Any]) -> list[str]:
             )
         )
         for coh, e in block["conditions"].items():
-            v = e["estimate"]["value"]
+            est = e["estimate"]
+            v = est["value"]
             if v < 0.5:
-                L.append(
-                    f"— **AUC({coh}) = {v:.4f} is below 0.5**: confidence runs "
-                    "backwards against truth in that condition. That is the "
-                    "crossover, not merely a smaller effect."
-                )
+                ci = est.get("ci_family")
+                if ci and ci[1] < 0.5:
+                    L.append(
+                        f"— **AUC({coh}) = {v:.4f} is below 0.5**: confidence "
+                        "runs backwards against truth in that condition "
+                        "(interval excludes 0.5). That is the crossover, not "
+                        "merely a smaller effect."
+                    )
+                else:
+                    L.append(
+                        f"— **AUC({coh}) = {v:.4f}**: point estimate below 0.5 "
+                        "but the interval spans 0.5: confidence gives no "
+                        "separation between true and false in that condition. "
+                        "The licensed claim is no separation, not reversal."
+                    )
         if sg is not None:
             if abs(sg) < 0.10:
                 reading = (

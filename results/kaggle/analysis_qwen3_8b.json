@@ -830,7 +830,7 @@
         1.9707,
         0.1227
       ],
-      "coherence_survives_conditioning": true,
+      "coherence_survives_conditioning": false,
       "reading": "Read the coherence coefficient down the three models. If it keeps its sign and size as the reader catch rate and then surface complexity are added, neither covariate explains the coherence effect. If it collapses toward zero when a covariate enters, that covariate was doing the work."
     },
     "cell_means_p_yes_3way": {

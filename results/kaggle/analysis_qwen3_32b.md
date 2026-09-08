@@ -18,7 +18,7 @@
 
 **AUC(coherent) − AUC(diverse) = +0.2250**  95% CI (family) [+0.0250, +0.4350]
 — sign is OPPOSITE to the consensuality prediction; the interval excludes zero.
-— **AUC(diverse) = 0.3925 is below 0.5**: confidence runs backwards against truth in that condition. That is the crossover, not merely a smaller effect.
+— **AUC(diverse) = 0.3925**: point estimate below 0.5 but the interval spans 0.5: confidence gives no separation between true and false in that condition. The licensed claim is no separation, not reversal.
 
 **Surface-complexity control: The decorative control tracks the COHERENT cells (AUC 0.660 against 0.760 coherent and 0.410 diverse), so the effect is about evidential independence and not about how much there is to parse.**
 (decorative AUC is 0.100 from coherent and 0.250 from diverse; section 3 has the table.)
@@ -34,7 +34,7 @@
 
 **AUC(coherent) − AUC(diverse) = +0.3500**  95% CI (family) [+0.0988, +0.6735]
 — sign is OPPOSITE to the consensuality prediction; the interval excludes zero.
-— **AUC(diverse) = 0.4100 is below 0.5**: confidence runs backwards against truth in that condition. That is the crossover, not merely a smaller effect.
+— **AUC(diverse) = 0.4100**: point estimate below 0.5 but the interval spans 0.5: confidence gives no separation between true and false in that condition. The licensed claim is no separation, not reversal.
 
 Both conditions here are falsified by the *same* mechanism, so a gap cannot be attributed to one cell's flaws being a different kind of thing from the other's. This is the number to quote when asked whether the coherent-false items are simply easier to catch.
 
@@ -83,7 +83,7 @@ Read the last two columns together. The decorative row matches **diverse** on di
 
 **AUC(coherent) − AUC(diverse) = +0.3500**  95% CI (family) [+0.0988, +0.6735]
 — sign is OPPOSITE to the consensuality prediction; the interval excludes zero.
-— **AUC(diverse) = 0.4100 is below 0.5**: confidence runs backwards against truth in that condition. That is the crossover, not merely a smaller effect.
+— **AUC(diverse) = 0.4100**: point estimate below 0.5 but the interval spans 0.5: confidence gives no separation between true and false in that condition. The licensed claim is no separation, not reversal.
 
 ## 5. Salience, reported as a covariate
 

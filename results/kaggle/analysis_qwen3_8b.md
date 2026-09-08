@@ -18,7 +18,7 @@
 
 **AUC(coherent) − AUC(diverse) = +0.0725**  95% CI (family) [-0.0375, +0.2075]
 — sign is OPPOSITE to the consensuality prediction; the interval spans zero, so the direction is not resolved.
-— **AUC(diverse) = 0.4550 is below 0.5**: confidence runs backwards against truth in that condition. That is the crossover, not merely a smaller effect.
+— **AUC(diverse) = 0.4550**: point estimate below 0.5 but the interval spans 0.5: confidence gives no separation between true and false in that condition. The licensed claim is no separation, not reversal.
 
 **Surface-complexity control: The decorative control tracks the COHERENT cells (AUC 0.640 against 0.630 coherent and 0.550 diverse), so the effect is about evidential independence and not about how much there is to parse.**
 (decorative AUC is 0.010 from coherent and 0.090 from diverse; section 3 has the table.)
@@ -98,7 +98,7 @@ Logistic models of **catch-rate** (caught = p_yes_3way < 0.5 on a FALSE item) ov
 | `plus_reader_catch_rate` | **+1.971** | — | — |
 | `plus_reader_catch_rate_and_surface` | **+0.123** | — | -1.104 |
 
-Coherence coefficient across the three: [1.7892, 1.9707, 0.1227]. **It holds its sign and size, so neither salience nor surface complexity explains it.**
+Coherence coefficient across the three: [1.7892, 1.9707, 0.1227]. **It does not hold up under conditioning - read the path above to see which covariate absorbs it.**
 
 > Read the coherence coefficient down the three models. If it keeps its sign and size as the reader catch rate and then surface complexity are added, neither covariate explains the coherence effect. If it collapses toward zero when a covariate enters, that covariate was doing the work.
 

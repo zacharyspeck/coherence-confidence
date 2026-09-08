@@ -14,9 +14,11 @@ so its numbers are directional context, not a same-ruler comparison.
 ## 1. The headline
 
 **At 32B the model tells sound evidence from unsound clearly better when the
-evidence all agrees with itself, and worse than chance when it is diverse —
-the opposite sign to the prediction, and this time the interval excludes
-zero.**
+evidence all agrees with itself than when it is diverse — the opposite sign
+to the prediction, and this time the gap's interval excludes zero: +0.225
+[+0.025, +0.435]. In the diverse condition the point estimate sits below 0.5
+but its interval ([0.27, 0.52]) spans 0.5, so what confidence does there is
+give no separation between true and false.**
 
 | model | AUC(coherent) | AUC(diverse) | gap (coh − div) | 95% CI (family) |
 |---|---|---|---|---|
@@ -27,12 +29,13 @@ zero.**
 **Does it match PREDICTIONS.md? No.** The prediction (D-025) was a
 **negative** gap — coherence degrading the confidence-accuracy relationship —
 with `AUC(coherent) < 0.5` as the crossover. Every model measured has a
-**positive** point estimate, and at 32B the reversal is statistically
-resolved: the family-clustered CI excludes zero. The predicted crossover
-never occurred; its mirror image occurred at all three sizes:
-**AUC(diverse) is below 0.5 every time** (0.4475 / 0.4550 / 0.3925). Where
-the four cases differ on every surface condition, these models' confidence
-runs *backwards* against whether the evidence establishes the claim.
+**positive** point estimate, and at 32B the reversal of the predicted gap is
+statistically resolved: the family-clustered CI excludes zero. The predicted
+crossover never occurred. **AUC(diverse) is below 0.5 at all three sizes**
+(0.4475 / 0.4550 / 0.3925), but the 32B diverse interval is [0.27, 0.52] and
+spans 0.5, so the licensed claim in that condition is *no separation*
+between true and false — not that confidence runs backwards. The significant
+result is the between-condition gap: +0.225 [+0.025, +0.435].
 
 The 32B's mean-confidence table makes the diverse failure concrete: its
 highest mean P(yes) of any cell is **diverse_false** (0.7302) — it says yes
@@ -162,12 +165,12 @@ per-item findability, from the reader audit) and surface complexity?
 findable the flaw is to a plain reader nor how busy the passage is explains
 the coherent-vs-diverse catch difference; conditioning on surface makes the
 coherence term *larger* (+1.50 → +2.31). At 8B it does not survive: surface
-absorbs it (+1.97 → +0.12), the same pattern the 3B showed. One honest flag:
-the auto-generated verdict sentence in `analysis_qwen3_8b.md` says the
-coefficient "holds its sign and size", which its own numbers contradict —
-trust the coefficients, not that sentence (display-logic bug, noted for
-fixing). The consistent story: below ~32B the effect is entangled with
-surface form; at 32B it is not.
+absorbs it (+1.97 → +0.12), the same pattern the 3B showed. (An earlier
+version of the auto-generated verdict sentence in `analysis_qwen3_8b.md`
+said the coefficient "holds its sign and size", which its own numbers
+contradicted — a display-logic bug, since fixed; the regenerated analysis
+now agrees with the coefficients. See D-050.) The consistent story: below
+~32B the effect is entangled with surface form; at 32B it is not.
 
 ## 9. What this does NOT establish
 
