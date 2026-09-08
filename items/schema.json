@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/speck/coherence-confidence/items/schema.json",
+  "$id": "https://github.com/zacharyspeck/coherence-confidence/items/schema.json",
   "title": "CoherenceConfidenceItem",
   "description": "One item in the 2x2 coherence x truth design. A short passage containing exactly 4 observed cases, a claim, and the forced question 'Does this evidence establish this claim? Yes / No / Unsure'. Items are grouped into families of 4 (one per cell) that share a claim and scenario.",
   "type": "object",

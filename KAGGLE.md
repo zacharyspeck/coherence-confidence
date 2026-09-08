@@ -9,18 +9,21 @@ analysis, zip — from a single **Run all**.
 |---|---|
 | Settings → Accelerator | **GPU T4 x2** (both GPUs are required) |
 | Settings → Internet | **ON** |
-| Add-ons → Secrets | `GITHUB_TOKEN` (below), attached to this notebook |
+| Add-ons → Secrets | none required; `GITHUB_TOKEN` only for a private fork, `HF_TOKEN` optional (below) |
 | Persistence | not needed; everything relevant lands in `/kaggle/working` |
 
-## The `GITHUB_TOKEN` secret
+## The `GITHUB_TOKEN` secret (only for private forks)
 
-The repo is private, so the clone in cell 1 reads a GitHub token from Kaggle
-Secrets.
+The repo is **public**: cell 1 clones
+`https://github.com/zacharyspeck/coherence-confidence.git` anonymously and
+needs no secret at all. If a Kaggle secret named `GITHUB_TOKEN` is present
+and attached to the notebook, cell 1 uses it instead — that is the path to
+keep if you are running a **private fork**:
 
 1. GitHub → **Settings → Developer settings → Personal access tokens →
    Fine-grained tokens → Generate new token.**
 2. Resource owner: your account. Expiration: your call (30 days is plenty).
-3. Repository access: **Only select repositories** → `coherence-confidence`.
+3. Repository access: **Only select repositories** → your fork.
 4. Permissions → Repository permissions → **Contents: Read-only**. Grant
    nothing else.
 5. Generate, copy the token.
@@ -28,11 +31,12 @@ Secrets.
    exactly `GITHUB_TOKEN`, value = the token. Make sure the checkbox attaching
    it to this notebook is on.
 
-The notebook never prints the token and scrubs it from the cloned repo's git
-config on the line after the clone, so it does not leak through the output
-zip. An **`HF_TOKEN`** secret is optional: if present it is read into the
-environment (faster, rate-limit-free HF downloads); if absent the cell skips
-it silently — the models here are public.
+When a token is used, the notebook never prints it and scrubs it from the
+cloned repo's git config on the line after the clone, so it does not leak
+through the output zip. An **`HF_TOKEN`** secret is optional either way: if
+present it is read into the environment (faster, rate-limit-free HF
+downloads); if absent the cell skips it silently — the models here are
+public.
 
 **Installs are deliberately minimal:** cell 2 runs
 `pip install transformers==5.16.1 accelerate bitsandbytes` and nothing else.
@@ -154,8 +158,9 @@ opposite sign to the D-025 prediction, decorative arm tracking diverse).
 
 ## Troubleshooting
 
-- **`clone failed`** — the secret is missing, unattached, expired, or lacks
-  Contents: Read access to the repo.
+- **`clone failed`** — Internet is OFF, or (private fork only) the
+  `GITHUB_TOKEN` secret is unattached, expired, or lacks Contents: Read
+  access to the fork.
 - **`COVERAGE ... BELOW 0.5`** — the model is putting its next-token mass
   somewhere other than the three options. First suspect: thinking mode
   (is `--no-thinking` still in `COMMON`?). Second: the option table printed

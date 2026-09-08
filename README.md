@@ -2,179 +2,187 @@
 
 **Research question:** Does a language model's confidence track how much the
 evidence in its context *agrees with itself* (coherence) rather than whether
-that evidence actually *establishes the claim* (truth)?
+that evidence actually *establishes the claim* (truth)? Koriat's consensuality
+principle, applied to an LM: if confidence is a consistency heuristic, the
+confidence-accuracy relationship should *degrade* when the evidence is
+coherent.
 
-If a model is a good reasoner, its confidence should be driven by the truth
-dimension and be roughly invariant to the coherence dimension. If instead it is
-running something closer to a fluency/consistency heuristic, confidence will
-rise when the four observed cases share every irrelevant surface condition
-(same region, same month, same device, same unit type) even when a confound in
-the passage fully explains those cases.
+**Result, in one line:** the opposite. At 32B the model tells sound evidence
+from unsound clearly better when the evidence all agrees with itself than when
+it is diverse — the gap AUC(coherent) − AUC(diverse) is **+0.225
+[+0.025, +0.435]**, the opposite sign to the pre-registered prediction, and
+the interval excludes zero. In the diverse condition the AUC point estimate
+sits below 0.5 at all three sizes, but the 32B interval ([0.27, 0.52]) spans
+0.5, so the licensed claim there is *no separation* between true and false,
+not a reversal.
+
+## The headline numbers
+
+| model | AUC(coherent) | AUC(diverse) | gap (coh − div) | 95% CI (family) |
+|---|---|---|---|---|
+| Qwen2.5-3B (CPU, old instrument) | 0.5550 | 0.4475 | +0.1075 | [−0.0375, +0.2475] |
+| Qwen3-8B (fp16) | 0.5275 | 0.4550 | +0.0725 | [−0.0375, +0.2075] |
+| **Qwen3-32B (4-bit)** | **0.6175** | **0.3925** | **+0.2250** | **[+0.0250, +0.4350]** |
+| Qwen3-32B, matched `scope_mismatch` subset | 0.7600 | 0.4100 | +0.3500 | [+0.0988, +0.6735] |
+
+The matched-subset row is the number to quote when challenged: both conditions
+are falsified by the identical mechanism, so only coherence differs (D-024).
+The 3B row was measured under the old instrument (`Unsure` option, user-turn
+cue, coverage 0.49) and is directional context, not a same-ruler comparison.
+Full tables, controls, and caveats: `RESULTS.md`.
+
+## Pre-registration
+
+The predicted direction (coherence should degrade the confidence-accuracy
+relationship) is in this repo's first commit (6ba9c9b, 2026-08-30). It was
+locked as the endpoint AUC(coherent) − AUC(diverse) < 0 in `DECISIONS.md`
+D-025 (commit 83a9c47, 2026-08-31 09:49) before any run on a Qwen model; the
+only earlier scoring was a SmolLM2-135M plumbing check that morning
+(`results/analysis_base135m_realitems.md`). `PREDICTIONS.md` transcribes D-025
+and was committed together with the first Qwen2.5-3B results (7d182c0,
+2026-09-02); it has not been edited since.
 
 ## Design
 
-A 2x2 between-items design. Each item is a short passage containing **4 observed
-cases**, a **claim**, and the forced question:
+A 2x2 within-family design plus a control arm: **100 items = 20 families x 4
+cells + 20 decorative-control items**. Each item is a short passage containing
+4 observed cases, a claim, and the forced question:
 
-> Does this evidence establish this claim? Yes / No / Unsure
+> Does this evidence establish this claim? Yes / No / Unknown
 
-| | TRUE (claim holds, no alternative explanation) | FALSE (claim does not hold) |
+(The third option is `Unknown` rather than `Unsure` — see D-019 for why: the
+option word must be a single token in its presented form on the scored model's
+vocabulary, and bare `Unsure` is not on Qwen's.)
+
+| | TRUE (claim established) | FALSE (claim not established) |
 |---|---|---|
-| **COHERENT** (all 4 cases share every irrelevant condition — 1 distinct value per dimension) | `coherent_true` | `coherent_false` — a single confound in the passage explains all 4 cases at once |
-| **DIVERSE** (all 4 cases differ on every irrelevant condition — 4 distinct values per dimension) | `diverse_true` | `diverse_false` — a single confound cannot cover diverse cases, so it breaks differently: either the dates don't work (effect precedes cause in >=2 cases) or the cases don't show what the claim says |
+| **COHERENT** — all 4 cases share every irrelevant condition (one region, one month, one operator…) | `coherent_true` | `coherent_false` |
+| **DIVERSE** — all 4 cases differ on every irrelevant condition | `diverse_true` | `diverse_false` |
 
-20 items per cell, **80 items total**, organized as **20 families x 4 cells**.
-Every family holds the claim and the underlying scenario fixed and varies only
-coherence and truth, so the 2x2 contrast is within-family.
+Every family holds the claim and scenario fixed and varies only coherence and
+truth, so the 2x2 contrast is within-family. Everything truth-bearing lives in
+one mid-passage line; FALSE items differ from TRUE items by clause
+*combination*, not vocabulary, and a validation gate keeps a cross-validated
+lexical classifier at chance.
 
-The key asymmetry to keep in mind while reading items: `coherent_false` and
-`diverse_false` are both false, but they are false *for different structural
-reasons*. That is forced by the design — a single shared confound is only
-available when the cases share conditions. This is documented as a known
-confound-of-the-confound in `DECISIONS.md` (D-004).
+The **decorative control** (D-030): `decorative_true` / `decorative_false`,
+20 items with the same condition values as the coherent cells but four varying
+decorations per case. If confidence follows surface busyness, decorative
+behaves like diverse; if it follows evidential independence, it behaves like
+coherent. On the fixed instrument at both 8B and 32B it tracks coherent.
+
+`src/validate.py` enforces **13 gates** (word-count balance, condition-value
+counts, the lexical classifier, cell balance, duplicate passages, answer-key
+leakage, closer word balance, and more — D-015, D-020, D-022, D-023). Items
+carry `review_status: "unreviewed"` as a build-time field; the validation
+story is the gates plus `READER_REPORT.md` and `FIX_REPORT.md` (human review),
+and `items/final/` is unused.
 
 ## Measurement
 
-`src/score.py` renders the prompt ending in `Answer:` and reads the **logits at
-the final position** — no generation, no sampling. It extracts probability mass
-for the three options and reports:
+`src/score.py` renders the prompt ending in `Answer:` and reads the **logits
+at the final position** — no generation, no sampling. It extracts probability
+mass for the three options and reports:
 
-- `p_yes_3way = p_yes / (p_yes + p_no + p_unsure)` — the primary measure
+- `p_yes_3way = p_yes / (p_yes + p_no + p_unknown)` — the primary measure
 - `p_yes_2way = p_yes / (p_yes + p_no)` — reported separately
-- `abstained = argmax(p_yes, p_no, p_unsure) == unsure`
+- `abstained = argmax(p_yes, p_no, p_unknown) == unknown`
 
-Three things that are easy to get wrong, all handled by gates rather than by care:
+Things that are easy to get wrong, all handled by gates rather than by care:
 
-1. **Tokenization.** `"Yes"`, `" Yes"`, `"yes"`, `" YES"` are all different token
-   IDs. Probability mass is summed over the full casing x leading-space variant
-   set for each option. Not cosmetic: on SmolLM2 `No` resolves to **six** ids and
-   `Yes` to four, so reading a single id would discard most of the No mass.
-   `tests/test_tokenization.py` asserts the variant sets are non-empty for the
-   tokenizer in use and fails loudly otherwise.
-2. **Multi-token options.** "Not enough evidence" cannot be read from a single
-   next-token distribution, so the prompt uses a single-token stand-in,
-   **"Unsure"** by default (`DECISIONS.md` D-002). But *"Unsure" is not itself a
-   single token on every vocabulary* — on SmolLM2 `" Unsure"` is **three** tokens
-   while `" Yes"` and `" No"` are one each. `--require-canonical-single-token` is
-   ON by default and fails the run rather than silently reading abstention as
-   near-zero; `--third-option <Word>` swaps the word (D-019). **Check this first
-   for any new model:**
-
-   ```
-   python -m src.score --model <NAME> --check-tokenization-only
-   ```
-
-3. **Silent low coverage.** `mass_covered = p_yes + p_no + p_unsure` is reported
-   for every item, and the run fails below `--min-mass-covered`. This is what
-   catches an instruct-tuned model given an untemplated prompt: coverage 0.008 vs
-   0.847 with `--chat-template` (D-009). The renormalized numbers look perfectly
-   publishable either way.
+1. **Tokenization.** `"Yes"`, `" Yes"`, `"yes"`, `" YES"` are all different
+   token ids; mass is summed over the full casing x leading-space variant set
+   per option. `tests/test_tokenization.py` asserts the variant sets are
+   non-empty for the tokenizer in use.
+2. **Multi-token options.** The third option must be a single token in its
+   presented form; `--require-canonical-single-token` is ON by default and
+   fails the run rather than silently reading abstention as near-zero;
+   `--third-option <Word>` swaps the word (D-019). Check first for any new
+   model: `python -m src.score --model <NAME> --check-tokenization-only`.
+3. **Silent low coverage.** `mass_covered = p_yes + p_no + p_unknown` is
+   reported per item and the run fails below `--min-mass-covered`. This
+   catches an instruct model given an untemplated prompt (D-009) and a
+   hybrid-thinking model spending its next token on `<think>` (D-046).
+4. **The chat-template answer cue is assistant prefill** (D-048), and it
+   self-adapts on first use when the model's house style (e.g. markdown bold)
+   would otherwise absorb the answer mass (D-049). The discovered prefill is
+   recorded in run meta.
 
 ## Analysis
 
-`src/analyze.py` reports, with bootstrap 95% CIs (10,000 resamples) on every
-number:
+`src/analyze.py` reports, with bootstrap 95% CIs (10,000 resamples, both
+item-stratified and family-clustered) on every number:
 
-- mean `p_yes_3way` and `p_yes_2way` per cell
-- **AUC within coherent** (20 true vs 20 false = 400 pairs) and **AUC within
-  diverse**, separately — never pooled, because pooling would let a coherence
-  main effect masquerade as discrimination
-- abstention rate per cell
-- a two-way ANOVA-style breakdown: main effect of coherence, main effect of
-  truth, and the interaction
+- **AUC within coherent and AUC within diverse, separately — never pooled**
+  (pooling would let a coherence main effect masquerade as discrimination).
+  The gap is a first-class statistic with its own family-clustered CI.
+- the matched-mechanism subset, the decorative-control verdict, a
+  per-mechanism breakdown, and covariate models (does the coherence effect
+  survive conditioning on `reader_catch_rate` and surface complexity?)
+- mean `p_yes_3way` / `p_yes_2way` and abstention rate per cell, and a 2x2
+  ANOVA-style breakdown — diagnostics, explicitly not endpoints (D-025)
 
-AUC is implemented as an **explicit pairwise win rate** (ties = 0.5) so the
-number is auditable by hand, and `tests/test_auc.py` asserts it matches
-`sklearn.metrics.roc_auc_score` to 1e-9.
+AUC is an **explicit pairwise win rate** (ties = 0.5), asserted against
+`sklearn.metrics.roc_auc_score` to 1e-9 in `tests/test_auc.py`.
 
 **Abstention policy (explicit, and load-bearing):** abstained items are
-**INCLUDED** in the AUC using their `p_yes_3way`. They are never dropped.
-Dropping abstentions would let a model inflate its AUC by abstaining on exactly
-the items it finds hard. See `DECISIONS.md` D-003.
+**INCLUDED** in the AUC using their `p_yes_3way`, never dropped. Dropping
+abstentions would let a model inflate its AUC by abstaining on exactly the
+items it finds hard (D-003).
 
-## Item validation
+## Reader audit provenance
 
-`src/validate.py` fails the build if any of these hold:
+The three blind reader passes in `results/reader_audit/` were answered by
+language-model readers — subagent instances of the coding agent that built
+this repo; the audit artifacts do not record a specific model name (D-032,
+D-037) — shown only the scored prompt (third option `Unsure` at audit time;
+renamed `Unknown` on Kaggle for tokenization, D-019). The 1-5 salience
+ratings were made by the item author.
 
-- any cell's mean word count is more than 10% from the grand mean
-- any coherent item has >1 distinct value on any condition dimension
-- any diverse item has <4 distinct values on any dimension
-- a logistic regression on unigrams+bigrams predicts true vs false above 60%,
-  cross-validated, **grouped by family**, and **averaged over 5 CV shufflings**
-  (D-015, D-023) — one shuffle swings this several points on 80 items, so a
-  single seed can pass or fail the same item set by luck. The top predictive
-  n-grams are printed so they can be fixed, and `scripts/lexical_ablation.py`
-  says *which part of the passage* is leaking.
+## What this does NOT establish
 
-Plus four more that catch failures which would otherwise produce a confident,
-meaningless number (D-020, D-022): cell balance, duplicate passages, answer-key
-leakage, and **closer word balance** — within each family, every word in the four
-closing sentences must appear equally often on the TRUE and FALSE sides. That
-last one is the invariant that keeps the lexical accuracy at chance; see D-022
-for why the obvious construction has a 75% ceiling.
+- **One model family.** Qwen only — 3B (previous generation, old instrument),
+  8B, 32B. No cross-family replication; "LLMs do X" is not a claim these data
+  can carry.
+- **The 32B is 4-bit quantized** (nf4, fp16 compute) while the 8B is fp16;
+  the size comparison is not precision-matched, and the "grows with scale"
+  reading rests on exactly two points on the fixed instrument.
+- **`reader_catch_rate` comes from model readers, not humans** (n=18–27
+  reader-instances, cluster-bootstrapped); the two human blind reviews are by
+  the same person.
+- **Absolute discrimination is weak everywhere.** The best cell anywhere is
+  0.76; most are within noise of chance. The result is about the *asymmetry*
+  between conditions, not about competence.
 
-## Layout
+The full list, including the `coherent_true` reader false-positive rate and
+option-position bias, is `RESULTS.md` section 9.
 
-```
-items/
-  schema.json         JSON Schema for a single item
-  seed/               the 2 hand-written seed families (8 items) - the template
-  draft/              generated drafts, review_status="unreviewed"
-  final/              EMPTY. Nothing is finalized by the build; that is a human step.
-src/
-  models.py           Pydantic models + loaders
-  render.py           passage/prompt rendering (single source of truth)
-  score.py            the measurement (HF causal LM, final-position logits)
-  mock_scorer.py      deterministic mock scorer for plumbing tests
-  analyze.py          cells, AUC, abstention, bootstrap CIs, 2x2 breakdown
-  validate.py         item-set validation gates
-  baseline.py         every claim with NO cases attached (prior subtraction)
-results/              run outputs (JSON + markdown), the item audit, validation
-scripts/
-  recount_words.py      fix word_count after editing a passage
-  lexical_ablation.py   which part of the passage leaks true/false?
-  make_audit_batches.py build blind audit batches (answer key goes elsewhere)
-  score_audit.py        aggregate the blind audit into results/item_audit.md
-  verify_run.py         is a stored run still valid against the items on disk?
-tests/                pytest
-```
+## Reading order
 
-## Quickstart
+`README.md` → `RESULTS.md` → `PREDICTIONS.md` → `DECISIONS.md` →
+`READER_REPORT.md` / `FIX_REPORT.md` / `CONTROL_REPORT.md` → `HANDOFF.md`
+
+## Reproduce
 
 ```bash
-# Windows (this repo was built on Windows / Git Bash)
+# Windows (this repo was built on Windows / Git Bash); mac/linux: .venv/bin/python
 uv venv --python 3.13 .venv
 uv pip install --python .venv/Scripts/python.exe -r requirements.txt
 
-# 1. plumbing check, no model, no real items
-.venv/Scripts/python.exe -m src.smoke
-
-# 2. validate the item set
-.venv/Scripts/python.exe -m src.validate --items items/draft items/seed
-
-# 3. score with a real model
-.venv/Scripts/python.exe -m src.score --model HuggingFaceTB/SmolLM2-135M-Instruct \
-    --items items/draft items/seed --out results/run_smollm135m.json
-
-# 4. analyze
-.venv/Scripts/python.exe -m src.analyze --run results/run_smollm135m.json \
-    --out results/analysis_smollm135m.json
-
-# 5. baseline (claims with no evidence)
-.venv/Scripts/python.exe -m src.baseline --model HuggingFaceTB/SmolLM2-135M-Instruct \
-    --items items/draft items/seed --out results/baseline_smollm135m.json
-
 # tests
 .venv/Scripts/python.exe -m pytest tests/ -q
+
+# are the stored Kaggle runs still valid against the items on disk?
+.venv/Scripts/python.exe scripts/verify_run.py results/kaggle/run_qwen3_32b.json
+.venv/Scripts/python.exe scripts/verify_run.py results/kaggle/run_qwen3_8b.json
+
+# regenerate the headline analysis from the stored run
+.venv/Scripts/python.exe -m src.analyze --run results/kaggle/run_qwen3_32b.json \
+    --baseline results/kaggle/baseline_qwen3_32b.json --out results/kaggle/analysis_qwen3_32b.json
 ```
 
-## Status
+To re-run the measurement itself: `kaggle_run.ipynb`, one **Run all** on a
+Kaggle 2x T4 session, ~2 h — `KAGGLE.md` has the full recipe.
 
-80 items, 20 per cell, all `review_status: "unreviewed"`. `items/final/` is empty
-by design — promotion is a human act (D-008). All 9 validation gates pass; the
-blind audit (`results/item_audit.md`) found the intended flaw in 40/40 FALSE
-items with 0 false positives across 40 TRUE decoys.
-
-Every design call made without asking is logged in `DECISIONS.md` (D-001 … D-023),
-including the four things that broke during the build and what changed as a
-result. Start with `MORNING_REPORT.md`.
+Numbers in the write-up are from commit 1370a81; the linked snapshot is tag
+v1.0-blog.

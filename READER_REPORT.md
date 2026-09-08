@@ -1,5 +1,16 @@
 # READER REPORT — measuring findability instead of assuming it
 
+## Provenance
+
+The three blind reader passes in `results/reader_audit/` were answered by
+language-model readers — subagent instances of the coding agent that built
+this repo; the audit artifacts do not record a specific model name (D-032,
+D-037) — shown only the scored prompt (third option `Unsure` at audit time;
+renamed `Unknown` on Kaggle for tokenization, D-019). The 1-5 salience
+ratings were made by the item author.
+
+---
+
 A 10-item human spot-check caught **1 of 5** flaws and read one TRUE item as
 FALSE. The blind audit reported **94%** per auditor across the 50 FALSE items.
 Both numbers were right. They were measuring different things, and only one of

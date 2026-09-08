@@ -141,7 +141,7 @@
     "prompt_template_hash": "2f392d0ec884fc6a",
     "vocab_size": 151936,
     "item_dirs": [
-      "C:\\Users\\speck\\AppData\\Local\\Temp\\claude\\C--Users-speck\\f596a907-4c4a-435b-a060-6446521c2c06\\scratchpad\\pilot_items"
+      "<scratchpad>/pilot_items"
     ],
     "shuffle_cases": false,
     "case_seed": null,

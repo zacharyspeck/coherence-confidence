@@ -1,8 +1,9 @@
 # HANDOFF
 
-Orientation for a new maintainer. The README describes the original 80-item
-2x2 and predates the control arm and the audits; where they disagree, this
-file and `DECISIONS.md` are current.
+Orientation for a new maintainer. The README reflects the current state of
+the experiment (100 items, the control arm, the audits, the Kaggle results);
+if anything here and there ever disagrees, `DECISIONS.md` is the record to
+trust.
 
 ## What the experiment tests
 
@@ -165,5 +166,5 @@ regenerate from artifacts via `scripts/build_reader_report.py` /
    items, so 80 have never been read by any human.
 
 Every design call, bug, and deviation is logged in `DECISIONS.md`
-(D-001…D-039), in order, with the reasoning. When something in the numbers
+(D-001…D-050), in order, with the reasoning. When something in the numbers
 looks odd, check there first — the odds are good it is already written down.
